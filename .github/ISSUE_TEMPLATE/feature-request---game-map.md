@@ -2,7 +2,7 @@
 name: Feature request - Game Map
 about: Have an idea how we could improve the map?
 title: ''
-labels: ''
+labels: map feature request, triage required
 assignees: ''
 
 ---

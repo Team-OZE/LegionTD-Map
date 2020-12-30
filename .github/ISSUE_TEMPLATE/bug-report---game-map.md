@@ -2,7 +2,7 @@
 name: Bug report - Game Map
 about: Found a bug while playing the map?
 title: ''
-labels: ''
+labels: map bug, triage required
 assignees: ''
 
 ---
