@@ -1,0 +1,680 @@
+[I000]
+Art=ReplaceableTextures\CommandButtons\BTNINV_Sword_25.blp
+Description="+150 attack, +30% attack speed, +10000hp, +6 armor."
+Name=Sword of Pwnage
+Tip=|cffFFcc00Sword of Pwnage|r
+Ubertip="An incredibly powerful sword given to a King to compensate for an empty team. Provides +150 damage, +30% attack speed, +10000 hit points, and +6 armor."
+
+[I001]
+Art=ReplaceableTextures\CommandButtons\BTNInvulnerable.blp
+Description=Unkillable
+Name=Unkillable
+Tip=|cffFFcc00Unkillable|r
+Ubertip=This King is unkillable.|n|n+1000 hp regen|n+100% attack speed|n+1000 damage|n+100 armor
+
+[I002]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Permanently increases Agility.
+Hotkey=A
+Name=Tome of 400 hp
+Tip=Purchase Tome of |cffffcc00A|rgility
+Ubertip=Permanently increases the Agility of the Hero by 1 when used.
+
+[I003]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Permanently increases Agility.
+Hotkey=A
+Name=Tome of 4 Damage
+Tip=Purchase Tome of |cffffcc00A|rgility
+Ubertip=Permanently increases the Agility of the Hero by 1 when used.
+
+[afac]
+Art=ReplaceableTextures\CommandButtons\BTNAlleriaFlute.blp
+Description="Damage increase, inflicted by nearby friendly troops in ranged combat."
+Name=Flute of Accuracy
+Tip=Flute of Accuracy
+Ubertip="Damage increase, inflicted by nearby troops in ranged combat, on the10%.|nSuppresses the effect''Accuracy Auras''."
+
+[ajen]
+Art=ReplaceableTextures\CommandButtons\BTNJanggo.blp
+Description=Increased movement speed and combat speed of friendly troops.
+Name=Chalice of Endurance
+Tip=Chalice of Endurance
+Ubertip=Increase the speed of movement and combat for the hero and the friendly troops surrounding him.|nSuppresses the effect''Stamina Auras''.
+
+[ankh]
+Art=ReplaceableTextures\CommandButtons\BTNAnkh.blp
+Description=Resurrection of the hero in case|n death.
+Hotkey=A
+Name=Cross of Rebirth
+Tip=Cross of Rebirth(|cffffcc00A|r)
+Ubertip=Automatic resurrection of a hero with500 units. health in case of his death.
+
+[belv]
+Art=ReplaceableTextures\CommandButtons\BTNBoots.blp
+Description=Increasing the agility of the hero.
+Hotkey=E
+Name=Kehl-Talas boots
+Tip=Kehl-Talas boots(|cffffcc00E|r)
+Ubertip=Increasing the hero's agility by6 units.
+
+[bgst]
+Art=ReplaceableTextures\CommandButtons\BTNBelt.blp
+Description=Increased hero strength.
+Hotkey=B
+Name=Warrior's Belt(+6)
+Tip=Warrior's Belt(+6) (|cffffcc00B|r)
+Ubertip=Increasing hero power by6 units.
+
+[brac]
+Art=ReplaceableTextures\CommandButtons\BTNRunedBracers.blp
+Description="Damage reduction, spells inflicted on the hero."
+Hotkey=R
+Name=Rune Bracelets
+Tip=Rune Bracelets(|cffffcc00R|r)
+Ubertip="Damage reduction, spells inflicted on the hero, on the33%."
+
+[bspd]
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+Description=Speeding up the movement of the hero.
+Hotkey=S
+Name=Boots-walkers
+Tip=Boots-walkers(|cffffcc00S|r)
+Ubertip=Increased hero movement speed.
+
+[ciri]
+Art=ReplaceableTextures\CommandButtons\BTNRobeOfTheMagi.blp
+Description=Raising the hero's mind.
+Hotkey=R
+Name=Mage robe(+6)
+Tip=Mage robe(|cffffcc00R|r)
+Ubertip=Raising the hero's mind by6 units.
+
+[ckng]
+Art=ReplaceableTextures\CommandButtons\BTNHelmutPurple.blp
+Description="Increased strength, intelligence and dexterity of the hero5 units."
+Hotkey=K
+Name=Royal crown(+5)
+Tip=Royal crown(+5) (|cffffcc00K|r)
+Ubertip="Increased strength, intelligence and dexterity of the hero5 units."
+
+[clfm]
+Art=ReplaceableTextures\CommandButtons\BTNCloakOfFlames.blp
+Description="Flames surround the hero, scorching opponents."
+Name=Fire cloak
+Tip=Fire cloak
+Ubertip="The hero is enveloped in flames, inflicting his opponents on10 units. damage per second.|nSuppresses the effect''Heat of the Underworld''."
+
+[clsd]
+Art=ReplaceableTextures\CommandButtons\BTNCloak.blp
+Description=Invisibility at night.
+Hotkey=C
+Name=Cloak of Shadows
+Tip=Cloak of Shadows(|cffffcc00C|r)
+Ubertip="Hero, wearing this cloak, becomes invisible at night. When attacking an enemy, as well as the use of an ability or spell, the hero becomes visible again."
+
+[cnob]
+Art=ReplaceableTextures\CommandButtons\BTNCirclet.blp
+Description="Increased agility, the strength and mind of the hero on2 units."
+Hotkey=C
+Name=Crown of nobility
+Tip=Crown of nobility(|cffffcc00C|r)
+Ubertip="Increased strength, agility and intelligence of the hero2 units."
+
+[crys]
+Art=ReplaceableTextures\CommandButtons\BTNCrystalBall.blp
+Description=Scouting specific areas of the map.
+Hotkey=C
+Name=crystal ball
+Tip=crystal ball(|cffffcc00C|r)
+Ubertip=Clearing the specified area of the map from the Fog of War and detecting invisible combat units. |nTime of action- 10 sec.
+
+[desc]
+Art=ReplaceableTextures\CommandButtons\BTNDaggerOfEscape.blp
+Description=Short distance teleportation.
+Hotkey=E
+Name=Mage's dagger
+Tip=Mage's dagger(|cffffcc00E|r)
+Ubertip=This dagger allows the hero to teleport short distances.
+
+[evtl]
+Art=ReplaceableTextures\CommandButtons\BTNTalisman.blp
+Description=The hero gets a chance to dodge enemy attacks.
+Name=Talisman of Protection
+Tip=Talisman of Protection
+Ubertip=The hero gets15% chance to dodge enemy attacks.|nSuppresses the effect of abilities''Serpentine agility'' and''Drunk master''.
+
+[fgdg]
+Art=ReplaceableTextures\CommandButtons\BTNDoomGuard.blp
+Description=Calling the Gatekeeper of Hell.
+Name=Demon figurine
+Tip=Demon figurine
+Ubertip="Calling the Gatekeeper of Hell, fighting on the side of the hero.|nTime of action- 180 sec."
+
+[fgfh]
+Art=ReplaceableTextures\CommandButtons\BTNFelHound.blp
+Description=Summon Hell Hunter.
+Name=Collar with spikes
+Tip=Collar with spikes
+Ubertip="Summon Hell Hunter, fighting on the side of the hero.|nTime of action- 180 sec."
+
+[fgrd]
+Art=ReplaceableTextures\CommandButtons\BTNRedDragon.blp
+Description=Summoning the red dragon.
+Hotkey=E
+Name=Dragon egg
+Tip=Dragon egg(|cffffcc00E|r)
+Ubertip="Summoning the red dragon, fighting on the side of the hero.|nTime of action- 180 sec."
+
+[fgrg]
+Art=ReplaceableTextures\CommandButtons\BTNRockGolem.blp
+Description=Summon Stone Golem.
+Name=Stone talisman
+Tip=Stone talisman
+Ubertip="Summon Stone Golem, fighting by your side.|nTime of action- 180 sec."
+
+[fgsk]
+Art=ReplaceableTextures\CommandButtons\BTNBookOfTheDead.blp
+Description=Calling skeletons.
+Name=Book of the Dead
+Tip=Book of the Dead
+Ubertip=Call4 ordinary skeletons and4 skeletons-archers.|nTime of action- 120 sec.
+
+[gcel]
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp
+Description=Increased combat speed.
+Name=Gloves of Speed
+Tip=Gloves of Speed
+Ubertip=Increase the hero's combat speed by15%.
+
+[hcun]
+Art=ReplaceableTextures\CommandButtons\BTNHoodOfCunning.blp
+Description=Increase the agility and mind of the hero.
+Name=Hood of Cunning
+Tip=Hood of Cunning
+Ubertip=Increasing the agility and mind of the hero by4 units.
+
+[hlst]
+Art=ReplaceableTextures\CommandButtons\BTNHealthStone.blp
+Description="Increased health recovery rate. Being swallowed, the stone instantly replenishes health."
+Name=Health Stone
+Tip=Health Stone
+Ubertip="Increase the speed of health recovery of the hero1 units. per second. Being swallowed, restores500 units. health."
+
+[hval]
+Art=ReplaceableTextures\CommandButtons\BTNHelmOfValor.blp
+Description=Increased strength and agility|n hero.
+Name=Helm of Valor
+Tip=Helm of Valor
+Ubertip=Increasing the strength and agility of the hero by4 units.
+
+[infs]
+Art=ReplaceableTextures\CommandButtons\BTNInfernalStone.blp
+Description=Summon Fire Golem.
+Name=Inferno Stone
+Tip=Inferno Stone
+Ubertip="A fire golem falls from the sky, inflicting50 units. damage and stuns ground enemies for4 sec. Time of action- 180 sec."
+
+[kpin]
+Art=ReplaceableTextures\CommandButtons\BTNPipeOfInsight.blp
+Description=Increased mana regeneration rate for nearby troops.
+Name=Flute of Insight
+Tip=Flute of Insight
+Ubertip=Increase the speed of mana regeneration of the hero and the friendly troops around him.|nSuppresses the effect''Arcane Aura''.
+
+[lgdh]
+Art=ReplaceableTextures\CommandButtons\BTNHornOfDoom.blp
+Description="Increased movement speed and health regeneration of friendly troops, nearby."
+Name=Legion Trumpet
+Tip=Legion Trumpet
+Ubertip=Increased movement speed and health regeneration for the hero and the troops around him.|nSuppresses the effect''Death Auras''.
+
+[lhst]
+Art=ReplaceableTextures\CommandButtons\BTNLionHorn.blp
+Description=Protective aura around the hero.
+Name=Horn of Winds
+Tip=Horn of Winds
+Ubertip=Increasing the protection of the hero and the surrounding troops by1 units.|nSuppresses the effect''Armor of Faith''.
+
+[manh]
+Art=ReplaceableTextures\CommandButtons\BTNManual.blp
+Description=Increased health by50 units. Used once.
+Name=Medical treatise
+Tip=Medical treatise
+Ubertip=Increase the hero's maximum health by50 units. Used once.
+
+[mcou]
+Art=ReplaceableTextures\CommandButtons\BTNMedalionOfCourage.blp
+Description=Increasing the strength and mind of the hero.
+Name=Medal of Courage
+Tip=Medal of Courage
+Ubertip=Increasing the strength and mind of the hero by4 units.
+
+[mnst]
+Art=ReplaceableTextures\CommandButtons\BTNManaStone.blp
+Description="Increased mana regeneration rate. Being swallowed, the stone instantly replenishes mana."
+Name=Mana Stone
+Tip=Mana Stone
+Ubertip="Increased hero's mana regeneration rate by25%. Being swallowed, restores300 units. mana."
+
+[modt]
+Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
+Description=The mask gives the hero the ability to steal health from opponents.
+Name=Death mask
+Tip=Death mask
+Ubertip="50% damage, inflicted by the hero, turns into his health."
+
+[odef]
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfDarkness.blp
+Description="Opponents, killed by a hero, rise from the dead and serve him."
+Hotkey=B
+Name=Orb of Darkness
+Tip=Orb of Darkness(|cffffcc00B|r)
+Ubertip="Increasing the hero's attack power by6 units. Besides, the hero acquires the ability to attack air targets, and each enemy killed by him rises from the dead and fights on his side for80 sec."
+
+[ofro]
+Art=ReplaceableTextures\CommandButtons\BTNOrbOfFrost.blp
+Description=When attacking
+Hotkey=R
+Name=Sphere of Ice
+Tip=Sphere of Ice(|cffffcc00R|r)
+Ubertip="With each attack, the hero freezes the enemy, inflicting on him5 units. damage and reducing the speed of its movement and combat. Besides, the hero gets the opportunity to attack air targets."
+
+[pdiv]
+Art=ReplaceableTextures\CommandButtons\BTNPotionOfDivinity.blp
+Description=Temporary invulnerability of the hero.
+Hotkey=D
+Name=Elixir of Invulnerability
+Tip=Elixir of Invulnerability(|cffffcc00D|r)
+Ubertip="After drinking this potion, hero on25 sec. becomes invulnerable to weapons and spells."
+
+[penr]
+Art=ReplaceableTextures\CommandButtons\BTNPendantOfEnergy.blp
+Description=Additional mana.
+Name=Amulet of Energy
+Tip=Amulet of Energy
+Ubertip=Increase the hero's mana by150 units.
+
+[pghe]
+Art=ReplaceableTextures\CommandButtons\BTNPotionGreen.blp
+Description=Health recovery.
+Hotkey=R
+Name=Healing potion
+Tip=Healing potion(|cffffcc00R|r)
+Ubertip=Recovery500 units. health.
+
+[pgma]
+Art=ReplaceableTextures\CommandButtons\BTNPotionBlueBig.blp
+Description=Mana recovery.
+Hotkey=M
+Name=Elixir of Mana
+Tip=Elixir of Mana(|cffffcc00M|r)
+Ubertip=Recovery300 units. mana.
+
+[pmna]
+Art=ReplaceableTextures\CommandButtons\BTNPendantOfMana.blp
+Description=Additional mana.
+Name=Amulet of Mana
+Tip=Amulet of Mana
+Ubertip=Increase the hero's mana by250 units.
+
+[pnvl]
+Art=ReplaceableTextures\CommandButtons\BTNLesserInvulneralbility.blp
+Buttonpos=2,2
+Description=Temporary invulnerability of the hero.
+Hotkey=N
+Name=Brew of Invincibility
+Tip=Brew of Invincibility(|cffffcc00N|r)
+Ubertip="After drinking this potion, hero on7 sec. becomes invulnerable to weapons and spells."
+
+[pnvu]
+Art=ReplaceableTextures\CommandButtons\BTNGreaterInvulneralbility.blp
+Description=Temporary invulnerability of the hero.
+Hotkey=I
+Name=Potion of Invulnerability
+Tip=Potion of Invulnerability(|cffffcc00I|r)
+Ubertip="After drinking this potion, hero on15 sec. becomes invulnerable to weapons and spells."
+
+[pomn]
+Art=ReplaceableTextures\CommandButtons\BTNPotionOfOmniscience.blp
+Description=Scouting the entire map.
+Hotkey=O
+Name=Potion of All Vision
+Tip=Potion of All Vision(|cffffcc00O|r)
+Ubertip=Clearing the entire map from the Fog of War on5 sec.
+
+[pres]
+Art=ReplaceableTextures\CommandButtons\BTNPotionOfRestoration.blp
+Description=Restore health and mana.
+Hotkey=R
+Name=Elixir of Rebirth
+Tip=Elixir of Rebirth(|cffffcc00R|r)
+Ubertip=Recovery500 units. health and200 units. hero mana.
+
+[prvt]
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt.blp
+Buttonpos=1
+Description=Increased health.
+Hotkey=V
+Name=Talisman of Health
+Tip=Talisman of Health(|cffffcc00V|r)
+Ubertip=Increase the hero's health by150 units.
+
+[rag1]
+Art=ReplaceableTextures\CommandButtons\BTNSlippersOfAgility.blp
+Description=Increasing the hero's agility by3 units.
+Hotkey=A
+Name=Shoes of Agility(+3)
+Tip=Shoes of Agility(+3) (|cffffcc00A|r)
+Ubertip=Increasing the hero's agility by3 units.
+
+[rat6]
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+Description=Increased attack power on6 units.
+Name=Battle claws(+6)
+Tip=Battle claws(+6)
+Ubertip=Increasing the hero's attack power by6 units.
+
+[rat9]
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+Description=Increased attack power on9 units.
+Hotkey=C
+Name=Battle claws(+9)
+Tip=Battle claws(+9) (|cffffcc00C|r)
+Ubertip=Increasing the hero's attack power by6 units.
+
+[ratc]
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+Description=Increased attack power on12 units.
+Name=Battle claws(+12)
+Tip=Battle claws(+12)
+Ubertip=Increasing the hero's attack power by12 units.
+
+[ratf]
+Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
+Description=Increased attack power on15 units.
+Name=Battle claws(+15)
+Tip=Battle claws(+15)
+Ubertip=Increasing the hero's attack power by15 units.
+
+[rde1]
+Art=ReplaceableTextures\CommandButtons\BTNRingGreen.blp
+Description=Increasing protection by2 units.
+Hotkey=2
+Name=Ring of Protection(+2)
+Tip=Ring of Protection(+|cffffcc002|r)
+Ubertip=Increasing the hero's defense by2 units.
+
+[rde2]
+Art=ReplaceableTextures\CommandButtons\BTNRingGreen.blp
+Description=Increasing protection by3 units.
+Hotkey=3
+Name=Ring of Protection(+3)
+Tip=Ring of Protection(+|cffffcc003|r)
+Ubertip=Increasing the hero's defense by3 units.
+
+[rde3]
+Art=ReplaceableTextures\CommandButtons\BTNRingGreen.blp
+Description=Increasing protection by4 units.
+Hotkey=4
+Name=Ring of Protection(+4)
+Tip=Ring of Protection(+|cffffcc004|r)
+Ubertip=Increasing the hero's defense by4 units.
+
+[rde4]
+Art=ReplaceableTextures\CommandButtons\BTNRingGreen.blp
+Description=Increasing protection by5 units.
+Hotkey=5
+Name=Ring of Protection(+5)
+Tip=Ring of Protection(+|cffffcc005|r)
+Ubertip=Increasing the hero's defense by5 units.
+
+[rej3]
+Art=ReplaceableTextures\CommandButtons\BTNRejuvPotion.blp
+Description=Restore health and mana.
+Hotkey=R
+Name=Rejuvenation Potion
+Tip=Rejuvenation Potion(|cffffcc00R|r)
+Ubertip=Recovery200 units. health and75 units. hero mana for30 sec.
+
+[rhth]
+Art=ReplaceableTextures\CommandButtons\BTNPeriapt1.blp
+Description=Increased health.
+Hotkey=H
+Name=Life Stone
+Tip=Life Stone(|cffffcc00H|r)
+Ubertip=Increased health by300 units.
+
+[rin1]
+Art=ReplaceableTextures\CommandButtons\BTNMantleOfIntelligence.blp
+Description=Raising the mind on3 units.
+Hotkey=I
+Name=Scholar's Mantle(+3)
+Tip=Scholar's Mantle(+3) (|cffffcc00I|r)
+Ubertip=Raising the hero's mind by3 units.
+
+[rlif]
+Art=ReplaceableTextures\CommandButtons\BTNRingSkull.blp
+Description=Accelerating health recovery.
+Hotkey=R
+Name=Ring of Regeneration
+Tip=New eng: Tip=Ring of Regeneration(|cffffcc00R|r)
+Ubertip=Increased health regeneration rate by2 units. per second.
+
+[rst1]
+Art=ReplaceableTextures\CommandButtons\BTNGauntletsOfOgrePower.blp
+Description=Increasing hero power by3 units.
+Hotkey=S
+Name=Ogre gauntlets(+3)
+Tip=Ogre gauntlets(+3) (|cffffcc00S|r)
+Ubertip=Increasing hero power by3 units.
+
+[rwiz]
+Art=ReplaceableTextures\CommandButtons\BTNSobiMask.blp
+Buttonpos=2
+Description=Increased mana regeneration.
+Hotkey=B
+Name=Sobi mask
+Tip=Sobi mask(|cffffcc00B|r)
+Ubertip=Increased mana regeneration rate by50%.
+
+[sand]
+Art=ReplaceableTextures\CommandButtons\BTNSnazzyScrollPurple.blp
+Description=Temporary revival of the dead.
+Name=Scroll of Electroplating
+Tip=Scroll of Electroplating
+Ubertip="Revitalization6 corpses, nearby, on the40 sec."
+
+[sbch]
+Art=ReplaceableTextures\CommandButtons\BTNBoneChimes.blp
+Description=Nearby warriors steal enemy health with each attack.
+Name=Bone bells
+Tip=Bone bells
+Ubertip="15% damage, inflicted on the enemy by the hero or one of the soldiers around him, turns into health.|nSuppress the effect''Vampirism''."
+
+[shar]
+Art=ReplaceableTextures\CommandButtons\BTNIceShard.blp
+Description=Ghost Knight Summons.
+Name=Ice shard
+Tip=Ice shard
+Ubertip="Ghost Knight Summons, fighting by your side.|n|nTime of action- 180 sec."
+
+[spsh]
+Art=ReplaceableTextures\CommandButtons\BTNSpellShieldAmulet.blp
+Description=Dispel enemy spells.
+Hotkey=A
+Name=Amulet of Protection
+Tip=Amulet of Protection(|cffffcc00A|r)
+Ubertip="Neutralizing harmful spells, aimed at the hero. Recharge time- 40 sec."
+
+[sres]
+Art=ReplaceableTextures\CommandButtons\BTNScrollOfHealing.blp
+Description="Restoration of health and mana for troops, nearby."
+Hotkey=R
+Name=Scroll of Rebirth
+Tip=Scroll of Rebirth(|cffffcc00R|r)
+Ubertip="Recovery300 units. health and150 units. mana for all friendly troops, next to the hero."
+
+[sror]
+Art=ReplaceableTextures\CommandButtons\BTNSnazzyScrollGreen.blp
+Description="Damage increase, inflicted by the said warrior."
+Name=Scroll of the Beast
+Tip=Scroll of the Beast
+Ubertip="Damage increase, by friendly troops, on the25%. Time of action- 45 sec."
+
+[srrc]
+Art=ReplaceableTextures\CommandButtons\BTNSnazzyScroll.blp
+Description=Resurrect fallen soldiers of your army.
+Name=Scroll of Resurrection
+Tip=Scroll of Resurrection
+Ubertip="Resurrection6 fallen friendly warriors, whose bodies lie nearby."
+
+[ssil]
+Art=ReplaceableTextures\CommandButtons\BTNStaffOfSilence.blp
+Description=Depriving opponents of the ability to use magic.
+Hotkey=E
+Name=Staff of Silence
+Tip=Staff of Silence(|cffffcc00E|r)
+Ubertip="Opponents, caught in the area of this staff, lose the ability to cast spells."
+
+[tdex]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Increasing the agility of the hero.
+Hotkey=A
+Name=Book of Dexterity
+Tip=Book of Dexterity(|cffffcc00A|r)
+Ubertip=Increasing the hero's agility by1 units.
+
+[tdx2]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Increasing the agility of the hero.
+Name=Book of Dexterity(+2)
+Tip=Book of Dexterity(+2)
+Ubertip=Increasing the hero's agility by2 units. Used once.
+
+[texp]
+Art=ReplaceableTextures\CommandButtons\BTNTomeBrown.blp
+Description=Additional experience.
+Hotkey=E
+Name=Experience Book
+Tip=Experience Book(|cffffcc00E|r)
+Ubertip=Increasing the hero's experience by100 units.
+
+[tin2]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Raising the hero's mind.
+Name=Book of Wisdom(+2)
+Tip=Book of Wisdom(+2)
+Ubertip=Raising the hero's mind by2 units. Used once.
+
+[tint]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Raising the hero's mind.
+Hotkey=T
+Name=Book of Wisdom
+Tip=Book of Wisdom(|cffffcc00T|r)
+Ubertip=Raising the hero's mind by1 units. Used once.
+
+[tkno]
+Art=ReplaceableTextures\CommandButtons\BTNTomeRed.blp
+Description=Hero Level Up.
+Hotkey=P
+Name=Knowledge Book
+Tip=Knowledge Book(|cffffcc00P|r)
+Ubertip=Increasing the level of the hero by1 units.
+
+[totw]
+Art=ReplaceableTextures\CommandButtons\BTNStone.blp
+Description=Calling the Beorns.
+Name=Talisman of the Forest
+Tip=Talisman of the Forest
+Ubertip="With this stone you can summon beorns, ready to fight by your side.|nTime of action- 180 sec."
+
+[tpow]
+Art=ReplaceableTextures\CommandButtons\BTNTomeRed.blp
+Description="Increased strength, agility and intelligence of the hero. Used once."
+Name=Knowledge Book
+Tip=Knowledge Book
+Ubertip="Increased strength, agility and intelligence of the hero1 units. Used once."
+
+[tst2]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Increased hero power. Used once.
+Name=Book of Power(+2)
+Tip=Book of Power(+2)
+Ubertip=Increasing hero power by2 units. Used once.
+
+[tstr]
+Art=ReplaceableTextures\CommandButtons\BTNTome.blp
+Description=Increased hero power. Used once.
+Hotkey=S
+Name=Book of Power
+Tip=Book of Power(|cffffcc00S|r)
+Ubertip=Increasing hero power by1 units. Used once.
+
+[ward]
+Art=ReplaceableTextures\CommandButtons\BTNDrum.blp
+Description="Increased attack power of friendly troops, nearby."
+Hotkey=W
+Name=Orc War Drums
+Tip=Orc War Drums(|cffffcc00W|r)
+Ubertip="Increased attack power of friendly troops, next to the hero, on the10%. |nSuppresses the effect of the ability''Fighting spirit''."
+
+[wcyc]
+Art=ReplaceableTextures\CommandButtons\BTNWandOfCyclone.blp
+Description=Ability to cast a spell''Tornado''.
+Name=Rod of Winds
+Tip=Rod of Winds
+Ubertip="Allows the hero to cast a spell''Tornado'', whirlwind, which throws the enemy into the air.|nTime of action- 20 sec."
+
+[whwd]
+Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
+Description=Summoning the spirit-healer.
+Name=Perfume-healers
+Tip=Perfume-healers
+Ubertip="Summoning the spirit, healing friendly troops. Time of action- 30 sec."
+
+[wild]
+Art=ReplaceableTextures\CommandButtons\BTNAmuletOftheWild.blp
+Description=Beorn's challenge.
+Name=Amulet of the Forest
+Tip=Amulet of the Forest
+Ubertip="Beorn's challenge, fighting by your side.|n|nTime of action- 180 sec."
+
+[will]
+Art=ReplaceableTextures\CommandButtons\BTNWand.blp
+Description=Create an illusionary double.
+Hotkey=I
+Name=Wand of Illusion
+Tip=Wand of Illusion(|cffffcc00I|r)
+Ubertip=Create Illusionary Warrior Doppelganger. The double is unable to attack and disappears after60 sec. The enemy inflicts on him 2-multiple damage.
+
+[wlsd]
+Art=ReplaceableTextures\CommandButtons\BTNStarWand.blp
+Description=Allows you to cast a spell''Lightning shield''.
+Name=Lightning Rod
+Tip=Lightning Rod
+Ubertip="Allows you to cast a spell''Lightning shield''. The warrior is surrounded by an electric field, inflicting20 units. damage.|nTime of action- 20 sec."
+
+[woms]
+Art=ReplaceableTextures\CommandButtons\BTNWandOfManaSteal.blp
+Description=Ability to steal mana.
+Hotkey=W
+Name=Wand of Drain Mana
+Tip=Wand of Drain Mana(|cffffcc00W|r)
+Ubertip=Stealing mana from the specified warrior and transferring it to the hero.
+
+[wshs]
+Art=ReplaceableTextures\CommandButtons\BTNWandOfShadowSight.blp
+Description=The ability to look at the world through the eyes of opponents.
+Hotkey=W
+Name=Wand of Alien Eyes
+Tip=Wand of Alien Eyes(|cffffcc00W|r)
+Ubertip="Using this rod on an enemy warrior, you can see everything, what does he see."
+
+[wswd]
+Art=ReplaceableTextures\CommandButtons\BTNSentryWard.blp
+Description=Allows you to cast a spell''Invisible Guardian''.
+Name=Invisible Guardians
+Tip=Invisible Guardians
+Ubertip="Summoning the spirit, observing the specified area. Time of action- 300 sec."

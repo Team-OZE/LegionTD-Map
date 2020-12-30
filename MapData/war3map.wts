@@ -1,0 +1,26 @@
+STRING 0
+{
+|cffAA3333Primary Game Modes|r (only 1 allowed)
+-ap: All Pick. All players can pick their race. This is the default mode.
+-ar: All Random. All players are given a random race.
+-sd: Single Draft. All players are given 2 random races to choose from.
+-hp: Host Pick. Pick pick one race, everyone are given same race to host.
+-ph: Prophet Handpicked: Prophet with manual & incremental (up to 6) cost rerolls.
+-pr: Prophet Random: You have no re-rolls, every round your units are automatically re-rolled. Finishing waves rewards less gold.
+
+|cffAA3333Secondary Game Modes|r (can be combined)
+-mm: Master Mind. Restricted vision and limited scoreboard information.
+-mi: Mirrored Rolls. Rolls are sync between counterpart players (Red with Yellow, Blue with Orange, ...)
+-ah: Auto Heals. Players no longer need to manually heal the king.
+-qg: Quick Game. Removing levels 20 -> 30.
+-li: Limited Income. Pure lumber is disabled.
+-hg: Hourglass: You receive gold for enemy leaks.
+-gg: Good Game: Enemies that reach king area give 50% gold when killed.
+-cb: Change Builder: Enable change builder, player can change to difference build.
+-cc: Challenge Champions: Champions can be manually challenged.
+-ac: All Champions: All waves above level 5 will spawn a Champion (except Boss Waves).
+-nc: No Champions: There won't be any Champions in the game at all.
+-eq: eq spawn: 10 time more creep.
+
+|cffAA3333-ranked|r is a shortcut for -pracahmiqg
+}

@@ -1,0 +1,483 @@
+[a07w]
+name=Invulnerable
+
+[aami]
+name=Thing: immunity to magic
+order=antimagicshell
+
+[aand]
+editorsuffix=(enemy)
+
+[aapl]
+art=ReplaceableTextures\PassiveButtons\PASBTNPlagueCloud.blp
+buttonpos=1,2
+name=Poison cloud
+requires=Rupc
+targetart=Abilities\Spells\Undead\PlagueCloud\PlagueCloudCaster.mdl
+tip=Poison cloud
+ubertip="Plague infects all enemy living creatures, nearby. Plague inflicts<Aap1,DataB1> units. damage per second. |nTime of action- <Aap1,DataA1> sec."
+
+[aarm]
+name=Mana regeneration aura
+
+[abli]
+name=Spoilage
+
+[acar]
+effectsound=LoadUnload
+name=Passenger
+
+[acbr]
+hotkey=B
+name=Berserker Rage
+tip=Berserker Rage(|cffffcc00B|r)
+ubertip="Increased combat speed by<ACbr,DataA1,%>%. Time of action- <ACbr,Dur1> sec."
+
+[acha]
+name=Dark
+requires=Roch
+
+[acma]
+editorsuffix=(always on.)
+
+[adet]
+buttonpos=0,2
+name=Detector
+
+[adt2]
+editorsuffix=(Shadow)
+
+[adt3]
+editorsuffix=(gnome helicopter)
+
+[adta]
+art=ReplaceableTextures\CommandButtons\BTNReveal.blp
+buttonpos=0,0
+hotkey=R
+name=Scout
+tip=Scout(|cffffcc00R|r)
+
+[aia2]
+art=ReplaceableTextures\CommandButtons\BTNSlippersOfAgility.blp
+
+[aiab]
+name=Thing: increasing the characteristics of the hero
+
+[aias]
+name=Thing: increased combat speed
+
+[aide]
+name=Thing: increased protection
+
+[aifc]
+art=ReplaceableTextures\CommandButtons\BTNRavenForm.blp
+name=Carpet-aircraft
+
+[aifi]
+missileart=Abilities\Weapons\FireBallMissile\FireBallMissile.mdl
+missilehoming=1
+missilespeed=900
+name=Thing: Firebolt
+
+[aiga]
+effectart=Abilities\Spells\NightElf\NatureTouch\NatureTouchTarget.mdl
+
+[aihe]
+name=Thing: heal
+targetart=Abilities\Spells\Items\AIhe\AIheTarget.mdl
+targetattach=origin
+
+[aii2]
+art=ReplaceableTextures\CommandButtons\BTNMantleOfIntelligence.blp
+
+[aima]
+name=Thing: mana recovery
+targetart=Abilities\Spells\Items\AIma\AImaTarget.mdl
+targetattach=origin
+
+[aimi]
+art=ReplaceableTextures\CommandButtons\BTNTomeRed.blp
+casterart=Abilities\Spells\Items\AIlm\AIlmTarget.mdl
+casterattach=origin
+name=Item Permanent Life Gain,Thing: health recovery
+
+[aiml]
+name=Thing: increased health
+
+[aimm]
+name=Thing: increased mana
+
+[aite]
+areaeffectart=Abilities\Spells\Human\MassTeleport\MassTeleportTo.mdl
+casterart=Abilities\Spells\Human\MassTeleport\MassTeleportCaster.mdl
+specialart=Abilities\Spells\Human\MassTeleport\MassTeleportTarget.mdl
+targetart=Abilities\Spells\Human\MassTeleport\MassTeleportTarget.mdl
+
+[aivi]
+name=Thing: temporary invisibility
+targetart=Abilities\Spells\Items\AIvi\AIviTarget.mdl
+targetattach=chest
+
+[amou]
+art=ReplaceableTextures\CommandButtons\BTNTemp.blp
+buttonpos=1,1
+hotkey=R
+name=Saddle
+order=mount
+tip=Transformation(|cffffcc00R|r)
+ubertip=The hero turns into another creature.
+unart=ReplaceableTextures\CommandButtons\BTNTemp.blp
+unbuttonpos=1,1
+unhotkey=R
+unorder=dismount
+untip=Normal appearance(|cffffcc00R|r)
+unubertip=The hero takes on his normal form.
+
+[amtc]
+effectsound=LoadUnload
+name=Passenger
+
+[anei]
+art=ReplaceableTextures\CommandButtons\BTNSelectUnit.blp
+buttonpos=3,2
+hotkey=U
+name=User choice
+tip=User choice(|cffffcc00U|r)
+
+[anf1]
+art=ReplaceableTextures\CommandButtons\BTNPocketFactory.blp
+buttonpos=0,2
+editorsuffix= (Upgrade Level 1)
+name=Plant
+tip="Plant, level1"
+ubertip=Plant.
+
+[anf2]
+art=ReplaceableTextures\CommandButtons\BTNPocketFactory.blp
+buttonpos=0,2
+editorsuffix= (Upgrade Level 2)
+name=Plant
+tip="Plant, level2"
+ubertip=Plant.
+
+[anf3]
+art=ReplaceableTextures\CommandButtons\BTNPocketFactory.blp
+buttonpos=0,2
+editorsuffix= (Upgrade Level 3)
+name=Plant
+tip="Plant, level3"
+ubertip=Plant.
+
+[angl]
+art=ReplaceableTextures\CommandButtons\BTNGLExchange.blp
+buttonpos=0,2
+casterart=Abilities\Spells\Other\TempSpellArt\TempSpellArt.mdl
+hotkey=L
+name=Exchange of gold for wood
+targetart=Abilities\Spells\Other\TempSpellArt\TempSpellArt.mdl
+tip=Exchange%d units. gold on%d units. wood(|cffffcc00L|r)
+
+[anit]
+name=Reading traces
+requires=Ronv
+
+[anlg]
+art=ReplaceableTextures\CommandButtons\BTNLGExchange.blp
+buttonpos=0,0
+casterart=Abilities\Spells\Other\TempSpellArt\TempSpellArt.mdl
+hotkey=G
+name=Trade wood for gold
+targetart=Abilities\Spells\Other\TempSpellArt\TempSpellArt.mdl
+tip=Exchange%d units. wood on%d units. gold(|cffffcc00G|r)
+
+[anrl]
+effectsoundlooped=FountainOfLifeLoop
+name=Health recovery
+targetart=Abilities\Spells\Other\ANrm\ANrmTarget.mdl
+
+[anrm]
+effectsoundlooped=FountainOfLifeLoop
+targetart=Abilities\Spells\Other\ANrl\ANrlTarget.mdl
+
+[aoac]
+art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
+buttonpos=0,2
+name=Fighting spirit
+targetart=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
+targetattach=origin
+tip=Fighting spirit
+ubertip="Increased attack power of friendly troops, nearby."
+
+[aque]
+order=revive
+targetart=Abilities\Spells\Human\ReviveHuman\ReviveHuman.mdl,Abilities\Spells\Orc\ReviveOrc\ReviveOrc.mdl,Abilities\Spells\Undead\ReviveUndead\ReviveUndead.mdl,Abilities\Spells\NightElf\ReviveNightElf\ReviveNightElf.mdl,Abilities\Spells\Demon\ReviveDemon\ReviveDemon.mdl
+
+[aroo]
+art=ReplaceableTextures\CommandButtons\BTNRoot.blp
+buttonpos=3,2
+hotkey=R
+name=Put down roots
+order=root
+tip=Put down roots(|cffffcc00R|r)
+ubertip="Ordering the tree to root in a specified location. Putting down roots, The tree is able to perform its main functions(eg, serve to train troops) and goes into the category of fortified objects."
+unart=ReplaceableTextures\CommandButtons\BTNUproot.blp
+unbuttonpos=3,2
+unhotkey=R
+unorder=unroot
+untip=Pull out the roots(|cffffcc00R|r)
+unubertip="Ordering the tree to pull roots out of the ground. After that, the Tree gains the ability to move and attack opponents, and also gains heavy protection."
+
+[artn]
+name=Return
+
+[aumd]
+name=Call of Darkness(Malganus)
+
+[awhe]
+art=ReplaceableTextures\CommandButtons\BTNWispHealOn.blp
+buttonpos=2,2
+hotkey=L
+name=heal
+order=wispheal
+orderoff=wisphealoff
+orderon=wisphealon
+requires=Rewh
+targetart=Abilities\Spells\Human\Heal\HealTarget.mdl
+tip=Treat(|cffffcc00L|r)
+ubertip="Healing wounded friendly troops, nearby."
+unart=ReplaceableTextures\CommandButtons\BTNWispHealOff.blp
+unbuttonpos=2,2
+unhotkey=L
+untip="|cffc3dbffRight click, to activate auto-cast.|r"
+unubertip="|cffc3dbffRight click, to deactivate auto-cast.|r"
+
+[besi]
+buffart=ReplaceableTextures\CommandButtons\BTNShadowStrike.blp
+bufftip=Poisoned knife
+buffubertip=This unit was hit by Shadow Strike; it will take damage over time and move more slowly.
+targetart=Abilities\Spells\NightElf\shadowstrike\shadowstrike.mdl
+targetattach=overhead
+
+[bhbh]
+buffart=ReplaceableTextures\CommandButtons\BTNBash.blp
+bufftip=Swipe
+buffubertip="This warrior is stunned. He can't move, attack and use magic."
+targetart=Abilities\Spells\Human\Thunderclap\ThunderclapTarget.mdl
+targetattach=overhead
+
+[bnhe]
+buffart=ReplaceableTextures\CommandButtons\BTNSlow.blp
+bufftip=Neutral: heal
+buffubertip=This warrior is being healed. His health is gradually restored.
+spelldetail=1
+
+[bnmo]
+buffart=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
+bufftip=Storm
+buffubertip=This warrior is caught in a thunderstorm and is taking lightning damage..
+
+[bnsp]
+bufftip=Saving zombies
+buffubertip=This zombie has been saved for future use..
+
+[bows]
+buffart=ReplaceableTextures\CommandButtons\BTNWarStomp.blp
+bufftip=Thunder tread
+buffubertip="This warrior is stunned by the Thunder tread. He can't move, attack and use magic."
+
+[btau]
+buffart=ReplaceableTextures\CommandButtons\BTNTaunt.blp
+bufftip=Insult
+buffubertip=This warrior is insulted and therefore invulnerable.
+
+[budp]
+buffart=ReplaceableTextures\CommandButtons\BTNDeathPact.blp
+targetart=Abilities\Spells\Undead\DeathPact\DeathPactCaster.mdl
+targetattach=origin
+
+[bulo]
+buffart=ReplaceableTextures\CommandButtons\BTNLocustSwarm.blp
+bufftip=Mosquitoes
+
+[mdpb]
+art=ReplaceableTextures\CommandButtons\BTNPebble.blp
+description=Turning an enemy into stone.
+hotkey=P
+name=Medusa Stone
+tip=Medusa Stone(|cffffcc00P|r)
+ubertip="Transformation of one enemy unit, non-hero, in stone. Petrified troops disappear completely from the game."
+
+[mliq]
+missilearc=0.35
+missileart=Abilities\Spells\Orc\LiquidFire\BatRiderMissile.mdl
+missilespeed=900
+
+[nws2]
+art=ReplaceableTextures\CommandButtons\BTNDragonHawk.blp
+attachmentanimprops=medium
+buttonpos=1,0
+missilearc=0.15
+missileart=Abilities\Weapons\DragonHawkMissile\DragonHawkMissile.mdl
+missilehoming=1
+missilespeed=1100
+
+[oang]
+art=ReplaceableTextures\CommandButtons\BTNGuardianWard.blp
+missilearc=0.15
+missileart=Abilities\Weapons\AncestralGuardianMissile\AncestralGuardianMissile.mdl
+missilehoming=1
+missilespeed=1200
+name=Spirit-defender
+
+[orbr]
+art=ReplaceableTextures\CommandButtons\BTNReinforcedBurrows.blp
+buttonpos=0,1
+hotkey=O
+missilearc=0.15
+missileart=abilities\weapons\huntermissile\huntermissile.mdl
+missilespeed=1200
+name=Fortified Orc Lair
+specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
+tip=Fortified Lair(|cffffcc00O|r)
+ubertip=Provides food for the Horde army. Can serve as a hideout for slaves.|n|n|cffffcc00Can fire at ground and air targets.|r
+
+[recb]
+art=ReplaceableTextures\CommandButtons\BTNCorrosiveBreath.blp
+buttonpos=0,2
+hotkey=B
+name=Acrid breath
+tip=Acrid breath(|cffffcc00B|r)
+ubertip="Chimeras gain the ability to breathe a corrosive substance, destroying buildings."
+
+[redc]
+art=ReplaceableTextures\CommandButtons\BTNDOCAdeptTraining.blp,ReplaceableTextures\CommandButtons\BTNDOCMasterTraining.blp
+buttonpos=1,2
+hotkey=L,L
+name=Druid Initiation-bears,Druid High Initiation-bears
+requires1=etoe
+requirescount=2
+tip=Druid Initiation-bears(|cffffcc00L|r),Druid High Initiation-bears(|cffffcc00L|r)
+ubertip="Increased mana, speed of its recovery, druid attack power and health-bears, also teaching them the spell''Rejuvenation''.","Increased mana, speed of its recovery, druid attack power and health-bears, as well as training their ability to take on a bear form."
+
+[reeb]
+art=ReplaceableTextures\CommandButtons\BTNEnchantedBears.blp
+buttonpos=1,1
+hotkey=M
+name=Bear roar
+requires=Redc
+requiresamount=2
+tip=Bear roar(|cffffcc00M|r)
+ubertip=Allows druids-bears to use the ability''Roar'' in the guise of bears.
+
+[rehs]
+art=ReplaceableTextures\CommandButtons\BTNHardenedSkin.blp
+buttonpos=2,1
+hotkey=H
+name=Stone armor
+requires=etoe,eden
+tip=Stone armor(|cffffcc00H|r)
+ubertip="Damage reduction, inflicted on a mountain giant with conventional weapons."
+
+[reht]
+art=ReplaceableTextures\CommandButtons\BTNTameHippogriff.blp
+buttonpos=0,2
+hotkey=I
+name=Taming hippogryphs
+tip=Taming hippogryphs(|cffffcc00I|r) 
+ubertip=Tamed hippogriffs allow archers to ride on their backs.
+
+[remg]
+art=ReplaceableTextures\CommandButtons\BTNUpgradeMoonGlaive.blp
+buttonpos=1,2
+hotkey=G
+name=Moonglaive
+requires=edob,etoe
+tip=Moonglaive(|cffffcc00G|r)
+ubertip=The huntress gains the ability to hit multiple targets with a single attack.
+
+[rers]
+art=ReplaceableTextures\CommandButtons\BTNResistantSkin.blp
+buttonpos=2,2
+hotkey=T
+name=Protection from magic
+requires=etoe,eden
+tip=Protection from magic(|cffffcc00T|r)
+ubertip="Damage reduction, inflicted on the mountain giant by spells."
+
+[resc]
+art=ReplaceableTextures\CommandButtons\BTNSentinel.blp
+buttonpos=1,1
+hotkey=S
+name=Watch owl
+requires=edob,etoa
+tip=Watch owl(|cffffcc00S|r)
+ubertip=The huntress acquires the ability to send an owl to scout the surrounding area. |nAt the same time, the owl discovers all invisible opponents.
+
+[resi]
+art=ReplaceableTextures\CommandButtons\BTNDryadDispelMagic.blp
+buttonpos=0,2
+hotkey=S
+name=Dispel the spell
+tip=Dispel the spell(|cffffcc00S|r)
+ubertip="Dryads gain the ability to dispel enemy positive spells and remove negative spells from friendly warriors. |nDamages creatures, summoned by magic."
+
+[rnam]
+art=ReplaceableTextures\CommandButtons\BTNNagaArmorUp1.blp,ReplaceableTextures\CommandButtons\BTNNagaArmorUp2.blp,ReplaceableTextures\CommandButtons\BTNNagaArmorUp3.blp
+buttonpos=1,2
+hotkey=C,C,C
+name=Coral scales,Chitin scales,Bone scales
+tip=Coral scales(|cffffcc00C|r),Chitin scales(|cffffcc00C|r),Bone scales(|cffffcc00C|r)
+ubertip=Increased protection of all warriors-naked.,Increased protection of all warriors-naked.,Increased protection of all warriors-naked.
+
+[rnat]
+art=ReplaceableTextures\CommandButtons\BTNNagaWeaponUp1.blp,ReplaceableTextures\CommandButtons\BTNNagaWeaponUp2.blp,ReplaceableTextures\CommandButtons\BTNNagaWeaponUp3.blp
+buttonpos=0,2
+hotkey=B,B,B
+name=Coral scales,Chitin scales,Bone scales
+tip=Coral Blades(|cffffcc00B|r),Chitin Blades(|cffffcc00B|r),Bone Blades(|cffffcc00B|r)
+ubertip=Increase the attack power of all warriors-naked.,Increase the attack power of all warriors-naked.,Increase the attack power of all warriors-naked.
+
+[rnen]
+art=ReplaceableTextures\CommandButtons\BTNEnsnare.blp
+buttonpos=0,2
+hotkey=N
+name=Hunter
+tip=Hunter(|cffffcc00N|r)
+ubertip="The naga-warriors ability appears''Hunter'', thanks to which they can capture opponents with a network. Flying creature caught in the net falls to the ground, and it can be attacked by ground troops."
+
+[rnsb]
+art=ReplaceableTextures\CommandButtons\BTNNagaBurrow.blp
+buttonpos=2,2
+hotkey=U
+name=Immersion
+tip=Immersion(|cffffcc00U|r)
+ubertip="Nagi-warriors and sea dragons gain the ability to dive under water, becoming invisible to enemies."
+
+[rnsi]
+art=ReplaceableTextures\CommandButtons\BTNDryadDispelMagic.blp
+buttonpos=1,2
+hotkey=B
+name=Dispel the spell
+tip=Dispel the spell(|cffffcc00B|r)
+ubertip="Couatli gain the ability to dispel enemy positive spells and remove negative spells from friendly warriors. |nDamages creatures, summoned by magic."
+
+[rnsw]
+art=ReplaceableTextures\CommandButtons\BTNSirenAdept.blp,ReplaceableTextures\CommandButtons\BTNSirenMaster.blp
+buttonpos=0,2
+hotkey=N,N
+name=Consecration of the sirens,Siren's Supreme Initiation
+tip=Consecration of the sirens(|cffffcc00N|r),Siren's Supreme Initiation(|cffffcc00N|r)
+ubertip="Increased mana and recovery rate for nagas-sirens, increasing their health, as well as teaching them the spell''Ice armor''.","Increased mana and recovery rate for nagas-sirens, increasing their health, as well as teaching them the spell''Tornado''."
+
+[roch]
+art=ReplaceableTextures\CommandButtons\BTNOrcMeleeUpOne.blp
+name=Dark
+
+[sbr2]
+editorsuffix= (alternative)
+
+[sra2]
+editorsuffix= (alternative)
+
+[xnto]
+effectart=Abilities\Spells\Other\Tornado\Tornado.mdl

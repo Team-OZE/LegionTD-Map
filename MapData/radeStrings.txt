@@ -1,0 +1,838 @@
+[R000]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=King Hit Points (1),King Hit Points (2),King Hit Points (3),King Hit Points (4),King Hit Points (5),King Hit Points (6),King Hit Points (7),King Hit Points (8),King Hit Points (9),King Hit Points (10),King Hit Points (11),King Hit Points (12),King Hit Points (13),King Hit Points (14),King Hit Points (15),King Hit Points (16),King Hit Points (17),King Hit Points (18),King Hit Points (19),King Hit Points (20),King Hit Points (21),King Hit Points (22),King Hit Points (23),King Hit Points (24),King Hit Points (25),King Hit Points (26),King Hit Points (27),King Hit Points (28),King Hit Points (29),King Hit Points (30),King Hit Points (31),King Hit Points (32),King Hit Points (33),King Hit Points (34),King Hit Points (35),King Hit Points (36),King Hit Points (37),King Hit Points (38),King Hit Points (39),King Hit Points (40),King Hit Points (41),King Hit Points (42),King Hit Points (43),King Hit Points (44),King Hit Points (45),King Hit Points (46),King Hit Points (47),King Hit Points (48),King Hit Points (49),King Hit Points (50)
+Tip=""
+Ubertip=""
+Hotkey=
+[R001]
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=King Attack (1),King Attack (2),King Attack (3),King Attack (4),King Attack (5),King Attack (6),King Attack (7),King Attack (8),King Attack (9),King Attack (10),King Attack (11),King Attack (12),King Attack (13),King Attack (14),King Attack (15),King Attack (16),King Attack (17),King Attack (18),King Attack (19),King Attack (20),King Attack (21),King Attack (22),King Attack (23),King Attack (24),King Attack (25),King Attack (26),King Attack (27),King Attack (28),King Attack (29),King Attack (30)
+Tip=
+Ubertip=
+Hotkey=
+[R002]
+Art=ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp,ReplaceableTextures\CommandButtons\BTNHeal.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=King Regeneration (1),King Regeneration (2),King Regeneration (3),King Regeneration (4),King Regeneration (5),King Regeneration (6),King Regeneration (7),King Regeneration (8),King Regeneration (9),King Regeneration (10),King Regeneration (11),King Regeneration (12),King Regeneration (13),King Regeneration (14),King Regeneration (15),King Regeneration (16),King Regeneration (17),King Regeneration (18),King Regeneration (19),King Regeneration (20),King Regeneration (21),King Regeneration (22),King Regeneration (23),King Regeneration (24),King Regeneration (25),King Regeneration (26),King Regeneration (27),King Regeneration (28),King Regeneration (29),King Regeneration (30),King Regeneration (31),King Regeneration (32),King Regeneration (33),King Regeneration (34),King Regeneration (35)
+Tip=
+Ubertip=
+Hotkey=
+[R003]
+Art=ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp
+Buttonpos=0,0
+Requirescount=2
+Requires=u00N
+Requires1=u00R
+Name=Advanced Lumberjack Training 1,Advanced Lumberjack Training 2,Advanced Lumberjack Training 3,Advanced Lumberjack Training 4,Advanced Lumberjack Training 5,Advanced Lumberjack Training 6,Advanced Lumberjack Training 7,Advanced Lumberjack Training 8
+Tip=Research Advanced Lumberjack Training - [|cffffcc00Q|r] 1/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 2/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 3/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 4/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 5/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 6/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 7/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 8/16
+Ubertip=Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.
+Hotkey=Q
+Requires2=u00S
+[R004]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=Creeps HP Modifier 1-12,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier
+Tip=""
+Ubertip=""
+Hotkey=
+[R005]
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNSteelMelee.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier,Creeps ATK Modifier
+Tip=,,
+Ubertip=,,
+Hotkey=,,
+[R006]
+Art=ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp
+Buttonpos=1,1
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=King Armor (1),King Armor (2),King Armor (3),King Armor (4),King Armor (5),King Armor (6),King Armor (7),King Armor (8),King Armor (9),King Armor (10),King Armor (11),King Armor (12),King Armor (13),King Armor (14),King Armor (15),King Armor (16),King Armor (17),King Armor (18),King Armor (19),King Armor (20),King Armor (21),King Armor (22),King Armor (23),King Armor (24),King Armor (25),King Armor (26),King Armor (27),King Armor (28),King Armor (29),King Armor (30)
+Tip=,,
+Ubertip=,,
+Hotkey=,,
+[R007]
+Art=ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp,ReplaceableTextures\CommandButtons\BTNGlove.blp
+Buttonpos=0,1
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=King Attack Speed (1),King Attack Speed (2),King Attack Speed (3),King Attack Speed (4),King Attack Speed (5),King Attack Speed (6),King Attack Speed (7),King Attack Speed (8),King Attack Speed (9),King Attack Speed (10),King Attack Speed (11),King Attack Speed (12),King Attack Speed (13),King Attack Speed (14),King Attack Speed (15),King Attack Speed (16),King Attack Speed (17),King Attack Speed (18),King Attack Speed (19),King Attack Speed (20),King Attack Speed (21),King Attack Speed (22),King Attack Speed (23),King Attack Speed (24),King Attack Speed (25),King Attack Speed (26),King Attack Speed (27),King Attack Speed (28),King Attack Speed (29),King Attack Speed (30)
+Tip=,,
+Ubertip=,,
+Hotkey=,,
+[R008]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=King HP Modifier
+Tip=""
+Ubertip=""
+Hotkey=
+[R009]
+Art=ReplaceableTextures\CommandButtons\BTNBootsOfSpeed.blp
+Buttonpos=0,0
+Requires=
+Name=Speed Bonus
+Tip=""
+Ubertip=""
+Hotkey=
+[R00A]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=ASPD Bonus
+Tip=""
+Ubertip=""
+Hotkey=
+[Ruba]
+Art=ReplaceableTextures\CommandButtons\BTNBansheeAdept.blp,ReplaceableTextures\CommandButtons\BTNBansheeMaster.blp
+Buttonpos=1,2
+Requirescount=2
+Requires=
+Requires1=unp2
+Name=Banshee Adept Training,Banshee Master Training
+Tip=B|cffffcc00a|rnshee Adept Training,B|cffffcc00a|rnshee Master Training
+Ubertip="Increases Banshees' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Anti-magic Shell.","Increases Banshees' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Possession."
+Hotkey=A,A
+[Rhla]
+Art=ReplaceableTextures\CommandButtons\BTNLeatherUpgradeOne.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeTwo.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp
+Buttonpos=1,1
+Requirescount=3
+Requires=
+Requires1=hkee
+Requires2=hcas
+Name=Studded Leather Armor,Reinforced Leather Armor,Dragonhide Armor
+Tip=Upgrade to Studded Leather |cffffcc00A|rrmor,Upgrade to Reinforced Leather |cffffcc00A|rrmor,Upgrade to Dragonhide |cffffcc00A|rrmor
+Ubertip="Increases the armor of Riflemen, Mortar Teams, Dragonhawk Riders and Gryphon Riders.","Further increases the armor of Riflemen, Mortar Teams, Dragonhawk Riders and Gryphon Riders.","Further increases the armor of Riflemen, Mortar Teams, Dragonhawk Riders and Gryphon Riders."
+Hotkey=A,A,A
+[Rema]
+Art=ReplaceableTextures\CommandButtons\BTNMoonArmor.blp,ReplaceableTextures\CommandButtons\BTNImprovedMoonArmor.blp,ReplaceableTextures\CommandButtons\BTNAdvancedMoonArmor.blp
+Buttonpos=0,1
+Requirescount=3
+Requires=
+Requires1=etoa
+Requires2=etoe
+Name=Moon Armor,Improved Moon Armor,Advanced Moon Armor
+Tip=Upgrade to Moon |cffffcc00A|rrmor,Upgrade to Improved Moon |cffffcc00A|rrmor,Upgrade to Advanced Moon |cffffcc00A|rrmor
+Ubertip="Increases the armor of Archers, Huntresses, and Hippogryph Riders.","Further increases the armor of Archers, Huntresses, and Hippogryph Riders.","Further increases the armor of Archers, Huntresses, and Hippogryph Riders."
+Hotkey=A,A,A
+[Rhra]
+Art=ReplaceableTextures\CommandButtons\BTNHumanMissileUpOne.blp,ReplaceableTextures\CommandButtons\BTNHumanMissileUpTwo.blp,ReplaceableTextures\CommandButtons\BTNHumanMissileUpThree.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=hkee
+Requires2=hcas
+Name=Black Gunpowder,Refined Gunpowder,Imbued Gunpowder
+Tip=Upgrade to Black |cffffcc00G|runpowder,Upgrade to Refined |cffffcc00G|runpowder,Upgrade to Imbued |cffffcc00G|runpowder
+Ubertip="Increases the ranged attack damage of Riflemen, Mortar Teams, Siege Engines and Flying Machines.","Further increases the ranged attack damage of Riflemen, Mortar Teams, Siege Engines and Flying Machines.","Further increases the ranged attack damage of Riflemen, Mortar Teams, Siege Engines and Flying Machines."
+Hotkey=G,G,G
+[Rora]
+Art=ReplaceableTextures\CommandButtons\BTNSteelRanged.blp,ReplaceableTextures\CommandButtons\BTNThoriumRanged.blp,ReplaceableTextures\CommandButtons\BTNArcaniteRanged.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=ostr
+Requires2=ofrt
+Name=Steel Ranged Weapons,Thorium Ranged Weapons,Arcanite Ranged Weapons
+Tip=Upgrade to Steel |cffffcc00R|ranged Weapons,Upgrade to Thorium |cffffcc00R|ranged Weapons,Upgrade to Arcanite |cffffcc00R|ranged Weapons
+Ubertip="Increases the ranged attack damage of Headhunters, Wind Riders, Troll Batriders and Demolishers.","Further increases the ranged attack damage of Headhunters, Wind Riders, Troll Batriders and Demolishers.","Further increases the ranged attack damage of Headhunters, Wind Riders, Troll Batriders and Demolishers."
+Hotkey=R,R,R
+[Rura]
+Art=ReplaceableTextures\CommandButtons\BTNCreatureAttack.blp,ReplaceableTextures\CommandButtons\BTNImprovedCreatureAttack.blp,ReplaceableTextures\CommandButtons\BTNAdvancedCreatureAttack.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=unp1
+Requires2=unp2
+Name=Creature Attack,Improved Creature Attack,Advanced Creature Attack
+Tip=Upgrade to Creature |cffffcc00A|rttack,Upgrade to Improved Creature |cffffcc00A|rttack,Upgrade to Advanced Creature |cffffcc00A|rttack
+Ubertip="Increases the attack damage of Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms.","Further increases the attack damage of Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms.","Further increases the attack damage of Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms."
+Hotkey=A,A,A
+[R00B]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=Mana Regen Bonus
+Tip=""
+Ubertip=""
+Hotkey=
+[Rufb]
+Art=ReplaceableTextures\CommandButtons\BTNFreezingBreath.blp
+Buttonpos=0,2
+Name=Freezing Breath
+Tip=Research Freezing |cffffcc00B|rreath
+Ubertip="Enables Frost Wyrms to use the Freezing Breath ability. When cast on a building, temporarily stops production."
+Hotkey=B
+[Rhgb]
+Art=ReplaceableTextures\CommandButtons\BTNHumanArtilleryUpOne.blp
+Buttonpos=0,2
+Requires=hcas
+Name=Flying Machine Bombs
+Tip=Research Flying Machine |cffffcc00B|rombs
+Ubertip="Allows Flying Machines to attack land units."
+Hotkey=B
+[Rhhb]
+Art=ReplaceableTextures\CommandButtons\BTNStormHammer.blp
+Buttonpos=0,2
+Requires=
+Name=Storm Hammers
+Tip=Research Storm |cffffcc00H|rammers
+Ubertip="Causes a Gryphon Rider's attacks to damage multiple units."
+Hotkey=H
+[Reib]
+Art=ReplaceableTextures\CommandButtons\BTNImprovedBows.blp
+Buttonpos=0,1
+Requires=etoa
+Name=Improved Bows
+Tip=Research |cffffcc00I|rmproved Bows
+Ubertip="Increases the Archer's and Hippogryph Rider's attack range."
+Hotkey=I
+[Renb]
+Art=ReplaceableTextures\CommandButtons\BTNNaturesBlessing.blp
+Buttonpos=2,0
+Requires=etoa
+Name=Nature's Blessing
+Tip=Research |cffffcc00N|rature's Blessing
+Ubertip="Upgrades all Ancients' and Treants' movement speed and armor."
+Hotkey=N
+[Repb]
+Art=ReplaceableTextures\CommandButtons\BTNVorpalBlades.blp
+Buttonpos=2,2
+Requires=etoa,edob
+Name=Vorpal Blades
+Tip=Research Vor|cffffcc00p|ral Blades
+Ubertip="Permits the glaives launched by the Glaive Thrower to strike through initial ground targets and damage those behind. Also allows them to attack trees."
+Hotkey=P
+[Rorb]
+Requires=ofrt
+Art=ReplaceableTextures\CommandButtons\BTNReinforcedBurrows.blp
+Buttonpos=2,1
+Name=Reinforced Defenses
+Tip=Reinforced |cffffcc00D|refenses
+Ubertip="Upgrades Burrows and Watch Towers so that they have Fortified armor."
+Hotkey=D
+[Ruwb]
+Art=ReplaceableTextures\CommandButtons\BTNWeb.blp
+Buttonpos=1,2
+Requires=ugrv,unp1
+Name=Web
+Tip=Research |cffffcc00W|reb
+Ubertip="Enables Crypt Fiends to use the Web ability. Web binds a target enemy air unit in webbing, forcing it to the ground. Webbed units can be hit as though they were land units."
+Hotkey=W
+[R00C]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=HP Regen Bonus
+Tip=""
+Ubertip=""
+Hotkey=
+[Rhac]
+Art=ReplaceableTextures\CommandButtons\BTNStoneArchitecture.blp,ReplaceableTextures\CommandButtons\BTNArcaniteArchitecture.blp,ReplaceableTextures\CommandButtons\BTNImbuedMasonry.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=hkee
+Requires2=hcas
+Name=Improved Masonry,Advanced Masonry,Imbued Masonry
+Tip=Upgrade to Improved |cffffcc00M|rasonry,Upgrade to Advanced |cffffcc00M|rasonry,Upgrade to Imbued |cffffcc00M|rasonry
+Ubertip="Increases the armor and hit points of Human buildings.","Further increases the armor and hit points of Human buildings.","Further increases the armor and hit points of Human buildings."
+Hotkey=M,M,M
+[Ruac]
+Art=ReplaceableTextures\CommandButtons\BTNCannibalize.blp
+Buttonpos=0,1
+Name=Cannibalize
+Tip=Research |cffffcc00C|rannibalize
+Ubertip="Enables Ghouls and Abominations to use the Cannibalize ability. Cannibalize consumes a nearby corpse to restore health."
+Hotkey=C
+[Reec]
+Art=ReplaceableTextures\CommandButtons\BTNEnchantedCrows.blp
+Buttonpos=1,1
+Requires=Redt
+Requiresamount=2
+Name=Mark of the Talon
+Tip=Research |cffffcc00M|rark of the Talon
+Ubertip="Allows Druids of the Talon to cast Faerie Fire while in Storm Crow Form."
+Hotkey=M
+[Rhfc]
+Art=ReplaceableTextures\CommandButtons\BTNFlakCannons.blp
+Buttonpos=0,1
+Requires=hcas
+Name=Flak Cannons
+Tip=Research Flak |cffffcc00C|rannons
+Ubertip="Upgrades the weapons on Flying Machines to give them an area effect damage attack against air units."
+Hotkey=C
+[Rupc]
+Art=ReplaceableTextures\CommandButtons\BTNPlagueCloud.blp
+Buttonpos=1,2
+Requires=unp2
+Name=Disease Cloud
+Tip=Research |cffffcc00D|risease Cloud
+Ubertip="Gives Abominations a Disease Cloud aura that deals <Aap1,DataB1> damage per second for <Aap1,DataA1> seconds to nearby enemy units. Meat Wagons will cause Disease Clouds wherever they attack that deal <Aap2,DataB1> damage per second for <Aap2,DataA1> seconds to nearby enemy units. |nUndead are immune to Disease Cloud."
+Hotkey=D
+[R00D]
+Art=ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp
+Buttonpos=3,0
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=Change Builder,Change Builder,Change Builder,Change Builder,Change Builder
+Tip=Change Builder 1/5,Change Builder 2/5,Change Builder 3/5,Change Builder 4/5,Change Builder 5/5
+Ubertip=you can still use change builder 5 times.,you can still use change builder 4 times.,you can still use change builder 3 times.,you can still use change builder 2 times.,you can only use change builder for 1 more time.
+Hotkey=,,
+[Rhcd]
+Art=ReplaceableTextures\CommandButtons\BTNCloudOfFog.blp
+Buttonpos=1,2
+Requires=hvlt
+Name=Cloud
+Tip=Research |cffffcc00C|rloud
+Ubertip="Provides Dragonhawk Riders with the Cloud ability, which stops ranged buildings from attacking."
+Hotkey=C
+[Rowd]
+Art=ReplaceableTextures\CommandButtons\BTNWitchDoctorAdept.blp,ReplaceableTextures\CommandButtons\BTNWitchDoctorMaster.blp
+Buttonpos=1,2
+Requirescount=2
+Requires=
+Requires1=ofrt
+Name=Witch Doctor Adept Training,Witch Doctor Master Training
+Tip=Witch |cffffcc00D|roctor Adept Training,Witch |cffffcc00D|roctor Master Training
+Ubertip="Increases Witch Doctors' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Stasis Trap.","Increases Witch Doctors' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Healing Ward."
+Hotkey=D,D
+[R00E]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=Creeps HP Modifier 13-23,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier
+Tip=""
+Ubertip=""
+Hotkey=
+[Rhde]
+Art=ReplaceableTextures\CommandButtons\BTNDefend.blp
+Buttonpos=0,2
+Name=Defend
+Tip=Research |cffffcc00D|refend
+UberTip="Allows Footmen to use the Defend ability, which increases their defensive capabilities against Piercing attacks."
+Hotkey=D
+[Rhme]
+Art=ReplaceableTextures\CommandButtons\BTNSteelMelee.blp,ReplaceableTextures\CommandButtons\BTNThoriumMelee.blp,ReplaceableTextures\CommandButtons\BTNArcaniteMelee.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=hkee
+Requires2=hcas
+Name=Iron Forged Swords,Steel Forged Swords,Mithril Forged Swords
+Tip=Upgrade to Iron Forged |cffffcc00S|rwords,Upgrade to Steel Forged |cffffcc00S|rwords,Upgrade to Mithril Forged |cffffcc00S|rwords
+Ubertip="Increases the attack damage of Militia, Footmen, Spell Breakers, Dragonhawk Riders, Gryphon Riders and Knights.","Further increases the attack damage of Militia, Footmen, Spell Breakers, Dragonhawk Riders, Gryphon Riders and Knights.","Further increases the attack damage of Militia, Footmen, Spell Breakers, Dragonhawk Riders, Gryphon Riders and Knights."
+Hotkey=S,S,S
+[Rome]
+Art=ReplaceableTextures\CommandButtons\BTNOrcMeleeUpOne.blp,ReplaceableTextures\CommandButtons\BTNOrcMeleeUpTwo.blp,ReplaceableTextures\CommandButtons\BTNOrcMeleeUpThree.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=ostr
+Requires2=ofrt
+Name=Steel Melee Weapons,Thorium Melee Weapons,Arcanite Melee Weapons
+Tip=Upgrade to Steel |cffffcc00M|relee Weapons,Upgrade to Thorium |cffffcc00M|relee Weapons,Upgrade to Arcanite |cffffcc00M|relee Weapons
+Ubertip="Increases the melee attack damage of Grunts, Raiders and Tauren.","Further increases the melee attack damage of Grunts, Raiders and Tauren.","Further increases the melee attack damage of Grunts, Raiders and Tauren."
+Hotkey=M,M,M
+[Rume]
+Art=ReplaceableTextures\CommandButtons\BTNUnholyStrength.blp,ReplaceableTextures\CommandButtons\BTNImprovedUnholyStrength.blp,ReplaceableTextures\CommandButtons\BTNAdvancedUnholyStrength.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=unp1
+Requires2=unp2
+Name=Unholy Strength,Improved Unholy Strength,Advanced Unholy Strength
+Tip=Upgrade to Unholy |cffffcc00S|rtrength,Upgrade to Improved Unholy |cffffcc00S|rtrength,Upgrade to Advanced Unholy |cffffcc00S|rtrength
+Ubertip="Increases the attack damage of Ghouls, Meat Wagons, Abominations, Skeleton Warriors, and Skeletal Mages.","Further increases the attack damage of Ghouls, Meat Wagons, Abominations, Skeleton Warriors, and Skeletal Mages.","Further increases the attack damage of Ghouls, Meat Wagons, Abominations, Skeleton Warriors, and Skeletal Mages."
+Hotkey=S,S,S
+[Rune]
+Art=ReplaceableTextures\CommandButtons\BTNNecromancerAdept.blp,ReplaceableTextures\CommandButtons\BTNNecromancerMaster.blp
+Buttonpos=0,2
+Requirescount=2
+Requires=
+Requires1=unp2
+Name=Necromancer Adept Training,Necromancer Master Training
+Tip=N|cffffcc00e|rcromancer Adept Training,N|cffffcc00e|rcromancer Master Training
+Ubertip="Increases Necromancers' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Unholy Frenzy.","Increases Necromancers' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Cripple."
+Hotkey=E,E
+[Rhse]
+Art=ReplaceableTextures\CommandButtons\BTNMagicalSentry.blp
+Buttonpos=2,2
+Name=Magic Sentry
+Tip=Research |cffffcc00M|ragic Sentry
+Ubertip="Provides Human towers with the ability to detect invisible units."
+Hotkey=M
+[R00F]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp,ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=0,0
+Requires=
+Name=Creeps HP Modifier 24-30,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier,Creeps HP Modifier
+Tip=""
+Ubertip=""
+Hotkey=
+[Robf]
+Requires=ofrt
+Art=ReplaceableTextures\CommandButtons\BTNFireRocks.blp
+Buttonpos=2,2
+Name=Burning Oil
+Tip=Bur|cffffcc00n|ring Oil
+Ubertip="Upgrades Demolishers to fire rocks smothered in burning oil, which causes the ground to burn."
+Hotkey=N
+[Rugf]
+Art=ReplaceableTextures\CommandButtons\BTNGhoulFrenzy.blp
+Buttonpos=0,2
+Requires=ugrv,unp2
+Name=Ghoul Frenzy
+Tip=Research Ghoul Fren|cffffcc00z|ry
+Ubertip="Increases the attack rate of Ghouls by <Rugf,base1,%>%, and increases their movement speed."
+Hotkey=Z
+[Rolf]
+Art=ReplaceableTextures\CommandButtons\BTNLiquidFire.blp
+Buttonpos=2,2
+Requires=ofrt,ovln
+Name=Liquid Fire
+Tip=Research |cffffcc00L|riquid Fire
+Ubertip="Gives Troll Batriders the Liquid Fire attack, which deals damage over time to enemy buildings, stops them from being repaired, and reduces the attack rate of enemy buildings."
+Hotkey=L
+[Rusf]
+Art=ReplaceableTextures\CommandButtons\BTNStoneForm.blp
+Buttonpos=2,2
+Requires=ugrv,unp2
+Name=Stone Form
+Tip=Research |cffffcc00S|rtone Form
+Ubertip="Enables the ability for Gargoyles to assume Stone Form. Stone Form transforms the Gargoyle into a statue with high armor, spell immunity, and regeneration. The Gargoyle cannot attack in this form."
+Hotkey=S
+[R00G]
+Art=ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp,ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp
+Buttonpos=3,0
+Requirescount=3
+Requires=
+Requires1=
+Requires2=
+Name=Change Tower,Change Tower,Change Tower,Change Tower,Change Tower
+Tip=Change Tower 1/6,Change Tower 2/6,Change Tower 3/6,Change Tower 4/6 ,Change Tower 5/6 ,Change Tower 6/6 
+Ubertip="Get Random Towers.|n|nyou can still use random 6 time, |n|n(next random cost 50 gold & 50 lumber)|n","Get Random Towers.|n|nyou can still use change tower 5 time, |n|n(next random cost 100 gold & 100 lumber)","Get Random Towers.|n|nyou can still use random 4 time, |n|n(next random cost 150 gold & 150 lumber)","Get Random Towers. |n|nyou can still use random 3 time, |n|n(next random cost 200 gold & 200 lumber)","Get Random Towers. |n|nyou can still use random 2 time, |n|n(next random cost 250 gold & 250 lumber)","Get Random Towers. |n|n(this is your final random)"
+Hotkey=,,
+[Ropg]
+Art=ReplaceableTextures\CommandButtons\BTNPillage.blp
+Buttonpos=2,0
+Name=Pillage
+Tip=Pilla|cffffcc00g|re
+Ubertip="Causes Peons', Grunts', and Raiders' attacks to gain resources when hitting enemy buildings."
+Hotkey=G
+[R00H]
+Art=ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp
+Buttonpos=0,0
+Requirescount=8
+Requires=
+Requires1=
+Requires2=
+Requires3=
+Requires4=
+Requires5=
+Requires7=
+Name=Advanced Lumberjack Training 9,Advanced Lumberjack Training 10,Advanced Lumberjack Training 11,Advanced Lumberjack Training 12,Advanced Lumberjack Training 13,Advanced Lumberjack Training 14,Advanced Lumberjack Training 15,Advanced Lumberjack Training 16
+Tip=Research Advanced Lumberjack Training - [|cffffcc00Q|r] 9/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 10/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 11/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 12/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 13/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 14/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 15/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 16/16
+Ubertip=Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.,Increases the amount of lumber that Wisp harvests by 1.
+Hotkey=Q
+[Rhlh]
+Art=ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp,ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade2.blp
+Buttonpos=0,0
+Requirescount=2
+Requires=hkee
+Requires1=hcas
+Name=Improved Lumber Harvesting,Advanced Lumber Harvesting
+Tip=Improved |cffffcc00L|rumber Harvesting,Advanced |cffffcc00L|rumber Harvesting
+Ubertip="Increases the amount of lumber that Peasants can carry by <Rhlh,mod1>.","Further increases the amount of lumber that Peasants can carry by <Rhlh,mod1>."
+Hotkey=L,L
+[Rerh]
+Art=ReplaceableTextures\CommandButtons\BTNReinforcedHides.blp,ReplaceableTextures\CommandButtons\BTNImprovedReinforcedHides.blp,ReplaceableTextures\CommandButtons\BTNAdvancedReinforcedHides.blp
+Buttonpos=1,1
+Requirescount=3
+Requires=
+Requires1=etoa
+Requires2=etoe
+Name=Reinforced Hides,Improved Reinforced Hides,Advanced Reinforced Hides
+Tip=Upgrade to |cffffcc00R|reinforced Hides,Upgrade to Improved |cffffcc00R|reinforced Hides,Upgrade to Advanced |cffffcc00R|reinforced Hides
+Ubertip="Increases the armor of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras.","Further increases the armor of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras.","Further increases the armor of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras."
+Hotkey=R,R,R
+[R00I]
+Art=ReplaceableTextures\CommandButtons\BTNVillagerKid.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeTwo.blp,ReplaceableTextures\CommandButtons\BTNLeatherUpgradeThree.blp
+Buttonpos=3,2
+Requirescount=3
+Requires=u00V,u012
+Requires1=hkee
+Requires2=hcas
+Name=Change Builder to Mercenary,Reinforced Leather Armor,Dragonhide Armor
+Tip=Change Builder to Mercenary,Upgrade to Reinforced Leather |cffffcc00A|rrmor,Upgrade to Dragonhide |cffffcc00A|rrmor
+Ubertip=Note: |n- you can only change once !!|n- Enable with -CB mode|n- Disable with -li mode,"Further increases the armor of Riflemen, Mortar Teams, Dragonhawk Riders and Gryphon Riders.","Further increases the armor of Riflemen, Mortar Teams, Dragonhawk Riders and Gryphon Riders."
+Hotkey=,A,A
+[Rhri]
+Art=ReplaceableTextures\CommandButtons\BTNDwarvenLongRifle.blp
+Buttonpos=1,2
+Requires=harm
+Name=Long Rifles
+Tip=Upgrade to |cffffcc00L|rong Rifles
+Ubertip="Increases the range of Riflemen attacks."
+Hotkey=L
+[Robk]
+Art=ReplaceableTextures\CommandButtons\BTNHeadHunterBerserker.blp
+Buttonpos=1,2
+Requires=ofrt,ofor
+Name=Berserker Upgrade
+Tip=B|cffffcc00e|rrserker Upgrade
+Ubertip="Transforms Headhunters into Troll Berserkers, giving them increased hit points and the Berserk ability."
+Hotkey=E
+[Remk]
+Art=ReplaceableTextures\CommandButtons\BTNMarksmanship.blp
+Buttonpos=0,2
+Requires=edob,etoe
+Name=Marksmanship
+Tip=Research |cffffcc00M|rarksmanship
+Ubertip="Increases damage of Archers and Hippogryph Riders by <Remk,base1>."
+Hotkey=M
+[Rhfl]
+Art=ReplaceableTextures\CommandButtons\BTNFlare.blp
+Buttonpos=1,2
+Requires=hkee
+Name=Flare
+Tip=Research Fla|cffffcc00r|re
+Ubertip="Provides Mortar Teams with the Flare ability. Flares can be used to reveal any area of the map. |nCan see invisible units."
+Hotkey=R
+[Rusl]
+Art=ReplaceableTextures\CommandButtons\BTNSkeletalLongevity.blp
+Buttonpos=2,2
+Name=Skeletal Longevity
+Tip=Research |cffffcc00S|rkeletal Longevity
+Ubertip="Increases the duration of raised Skeleton Warriors and Skeletal Mages by <Rusl,base1> seconds."
+Hotkey=S
+[Rwdm]
+Art=ReplaceableTextures\CommandButtons\BTNDrum.blp
+Buttonpos=1,2
+Requires=ofrt,ofor
+Name=War Drums Damage Increase
+Tip=Upgrade War |cffffcc00D|rrums
+Ubertip="Increases the damage bonus that the War Drums aura on the Kodo Beast gives. War Drums increases the damage of friendly units around Kodo Beasts."
+Hotkey=D
+[Repm]
+Art=ReplaceableTextures\CommandButtons\BTNPackBeast.blp
+Buttonpos=3,0
+Requires=eden
+Name=Backpack
+EditorSuffix= (Night Elf)
+Tip=Research |cffffcc00B|rackpack
+Ubertip="Gives specific Night Elf ground units the ability to carry items."
+Hotkey=B
+[Rhpm]
+Art=ReplaceableTextures\CommandButtons\BTNPackBeast.blp
+Buttonpos=3,0
+Requires=hvlt
+Name=Backpack
+EditorSuffix= (Human)
+Tip=Research |cffffcc00B|rackpack
+Ubertip="Gives specific Human ground units the ability to carry items."
+Hotkey=B
+[Ropm]
+Art=ReplaceableTextures\CommandButtons\BTNPackBeast.blp
+Buttonpos=3,0
+Requires=ovln
+Name=Backpack
+EditorSuffix= (Orc)
+Tip=Research |cffffcc00B|rackpack
+Ubertip="Gives specific Orc ground units the ability to carry items."
+Hotkey=B
+[Rupm]
+Art=ReplaceableTextures\CommandButtons\BTNPackBeast.blp
+Buttonpos=3,0
+Requires=utom
+Name=Backpack
+EditorSuffix= (Undead)
+Tip=Research |cffffcc00B|rackpack
+Ubertip="Gives specific Undead ground units the ability to carry items."
+Hotkey=B
+[Resm]
+Art=ReplaceableTextures\CommandButtons\BTNStrengthOfTheMoon.blp,ReplaceableTextures\CommandButtons\BTNImprovedStrengthOfTheMoon.blp,ReplaceableTextures\CommandButtons\BTNAdvancedStrengthOfTheMoon.blp
+Buttonpos=0,0
+Requirescount=3
+Requires=
+Requires1=etoa
+Requires2=etoe
+Name=Strength of the Moon,Improved Strength of the Moon,Advanced Strength of the Moon
+Tip=Upgrade to Strength of the |cffffcc00M|roon,Upgrade to Improved Strength of the |cffffcc00M|roon,Upgrade to Advanced Strength of the |cffffcc00M|roon
+Ubertip="Increases the damage of Archers, Huntresses, Glaive Throwers, and Hippogryph Riders.","Further increases the damage of Archers, Huntresses, Glaive Throwers, and Hippogryph Riders.","Further increases the damage of Archers, Huntresses, Glaive Throwers, and Hippogryph Riders."
+Hotkey=M,M,M
+[Rusm]
+Requires=unp2
+Art=ReplaceableTextures\CommandButtons\BTNSkeletonMage.blp
+Buttonpos=2,1
+Name=Skeletal Mastery
+Tip=Research Skeletal |cffffcc00M|rastery
+Ubertip="Causes one of the two skeletons created by Raise Dead to be a Skeletal Mage."
+Hotkey=M
+[Rhan]
+Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
+Buttonpos=2,2
+Requires=hlum,hcas,hbla
+Name=Animal War Training
+Tip=Research |cffffcc00A|rnimal War Training
+Ubertip="Increases the maximum hit points of Knights, Dragonhawk Riders, and Gryphon Riders by <Rhan,base1>."
+Hotkey=A
+[Roen]
+Art=ReplaceableTextures\CommandButtons\BTNEnsnare.blp
+Buttonpos=0,2
+Name=Ensnare
+Tip=Research E|cffffcc00n|rsnare
+Ubertip="Enables Raiders to use the Ensnare ability. Ensnare causes a target enemy unit to be bound to the ground so that it cannot move. Air units that are ensnared can be attacked as though they were land units."
+Hotkey=N
+[Rgfo]
+Art=ReplaceableTextures\CommandButtons\BTNGlyph.blp,ReplaceableTextures\CommandButtons\BTNGlyph.blp,ReplaceableTextures\CommandButtons\BTNGlyph.blp
+Name=Glyph of Fortification,Glyph of Fortification,Glyph of Fortification
+EditorSuffix= (Upgrade 1), (Upgrade 2), (Upgrade 3)
+[Rosp]
+Art=ReplaceableTextures\CommandButtons\BTNSpikedBarricades.blp,ReplaceableTextures\CommandButtons\BTNImprovedSpikedBarricades.blp,ReplaceableTextures\CommandButtons\BTNAdvancedSpikedBarricades.blp
+Buttonpos=2,0
+Requirescount=3
+Requires=
+Requires1=ostr
+Requires2=ofrt
+Name=Spiked Barricades,Improved Spiked Barricades,Advanced Spiked Barricades
+Tip=Upgrade to |cffffcc00S|rpiked Barricades,Upgrade to Improved |cffffcc00S|rpiked Barricades,Upgrade to Advanced |cffffcc00S|rpiked Barricades
+Ubertip="Surrounds Orc buildings with spikes that damage enemy melee attackers. Deals <Rosp,base1> damage per attack.","Increases the amount of damage inflicted on melee attackers by <Rosp,mod1>.","Further increases the amount of damage inflicted on melee attackers by <Rosp,mod1>."
+Hotkey=S,S,S
+[Rusp]
+Art=ReplaceableTextures\CommandButtons\BTNDestroyer.blp
+ButtonPos=2,2
+Requires=unp2,utom
+Name=Destroyer Form
+Tip=Research Des|cffffcc00t|rroyer Form
+Ubertip="Allows the Obsidian Statue to transform into a Destroyer, a large flying unit that must devour magic to sustain its mana. The Destroyer has Spell Immunity, Devour Magic, Absorb Mana, and Orb of Annihilation. |n|n|cffffcc00Attacks land and air units.|r"
+Hotkey=T
+[Rhar]
+Art=ReplaceableTextures\CommandButtons\BTNHumanArmorUpOne.blp,ReplaceableTextures\CommandButtons\BTNHumanArmorUpTwo.blp,ReplaceableTextures\CommandButtons\BTNHumanArmorUpThree.blp
+Buttonpos=0,1
+Requirescount=3
+Requires=
+Requires1=hkee
+Requires2=hcas
+Name=Iron Plating,Steel Plating,Mithril Plating
+Tip=Upgrade to Iron |cffffcc00P|rlating,Upgrade to Steel |cffffcc00P|rlating,Upgrade to Mithril |cffffcc00P|rlating
+Ubertip="Increases the armor of Militia, Footmen, Spell Breakers, Knights, Flying Machines and Siege Engines.","Further increases the armor of Militia, Footmen, Spell Breakers, Knights, Flying Machines and Siege Engines.","Further increases the armor of Militia, Footmen, Spell Breakers, Knights, Flying Machines and Siege Engines."
+Hotkey=P,P,P
+[Roar]
+Art=ReplaceableTextures\CommandButtons\BTNSteelArmor.blp,ReplaceableTextures\CommandButtons\BTNThoriumArmor.blp,ReplaceableTextures\CommandButtons\BTNArcaniteArmor.blp
+Buttonpos=0,1
+Requirescount=3
+Requires=
+Requires1=ostr
+Requires2=ofrt
+Name=Steel Armor,Thorium Armor,Arcanite Armor
+Tip=Upgrade to Steel Unit |cffffcc00A|rrmor,Upgrade to Thorium Unit |cffffcc00A|rrmor,Upgrade to Arcanite Unit |cffffcc00A|rrmor
+Ubertip="Increases the armor of Grunts, Raiders, Troll Batriders, Tauren, Headhunters, Wind Riders and Demolishers.","Further increases the armor of Grunts, Raiders, Troll Batriders, Tauren, Headhunters, Wind Riders and Demolishers.","Further increases the armor of Grunts, Raiders, Troll Batriders, Tauren, Headhunters, Wind Riders and Demolishers."
+Hotkey=A,A,A
+[Ruar]
+Art=ReplaceableTextures\CommandButtons\BTNUnholyArmor.blp,ReplaceableTextures\CommandButtons\BTNImprovedUnholyArmor.blp,ReplaceableTextures\CommandButtons\BTNAdvancedUnholyArmor.blp
+Buttonpos=0,1
+Requirescount=3
+Requires=
+Requires1=unp1
+Requires2=unp2
+Name=Unholy Armor,Improved Unholy Armor,Advanced Unholy Armor
+Tip=Upgrade to |cffffcc00U|rnholy Armor,Upgrade to Improved |cffffcc00U|rnholy Armor,Upgrade to Advanced |cffffcc00U|rnholy Armor
+Ubertip="Increases the armor of Ghouls, Abominations, Skeleton Warriors, and Skeletal Mages.","Further increases the armor of Ghouls, Abominations, Skeleton Warriors, and Skeletal Mages.","Further increases the armor of Ghouls, Abominations, Skeleton Warriors, and Skeletal Mages."
+Hotkey=U,U,U
+[Rucr]
+Art=ReplaceableTextures\CommandButtons\BTNCreatureCarapace.blp,ReplaceableTextures\CommandButtons\BTNImprovedCreatureCarapace.blp,ReplaceableTextures\CommandButtons\BTNAdvancedCreatureCarapace.blp
+Buttonpos=1,1
+Requirescount=3
+Requires=
+Requires1=unp1
+Requires2=unp2
+Name=Creature Carapace,Improved Creature Carapace,Advanced Creature Carapace
+Tip=Upgrade to Creature |cffffcc00C|rarapace,Upgrade to Improved Creature |cffffcc00C|rarapace,Upgrade to Advanced Creature |cffffcc00C|rarapace
+Ubertip="Increases the armor of Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms.","Further increases the armor of Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms.","Further increases the armor of the Crypt Fiends, Gargoyles, Destroyers, and Frost Wyrms."
+Hotkey=C,C,C
+[Rotr]
+Art=ReplaceableTextures\CommandButtons\BTNRegenerate.blp
+Buttonpos=1,1
+Requires=ostr,ofor
+Name=Troll Regeneration,Improved Troll Regeneration,Advanced Troll Regeneration
+Tip=Research Troll |cffffcc00R|regeneration, Research Improved Troll |cffffcc00R|regeneration, Research Advanced Troll |cffffcc00R|regeneration
+Ubertip="Increases the hit point regeneration rate of Headhunters, Witch Doctors and Troll Batriders.","Further increases the hit point regeneration rate of Headhunters, Witch Doctors and Troll Batriders.","Further increases the hit point regeneration rate of Headhunters, Witch Doctors and Troll Batriders."
+Hotkey=R
+[Robs]
+Art=ReplaceableTextures\CommandButtons\BTNBerserk.blp
+Buttonpos=0,2
+Requires=ostr
+Name=Berserker Strength
+Tip=Research |cffffcc00B|rerserker Strength
+Ubertip="Improves the fighting capabilities of Grunts with a <Robs,base1> hit point increase, and <Robs,base2> bonus attack damage."
+Hotkey=B
+[Rhfs]
+Art=ReplaceableTextures\CommandButtons\BTNFragmentationBombs.blp
+Buttonpos=1,1
+Requires=hcas
+Name=Fragmentation Shards
+Tip=Research Fragmentation |cffffcc00S|rhards
+Ubertip="Upgrades the mortar shells on Mortar Teams to increase the damage they deal to Unarmored and Medium armor units."
+Hotkey=S
+[Rhss]
+Requires=hvlt,hcas
+Art=ReplaceableTextures\CommandButtons\BTNControlMagic.blp
+Buttonpos=2,1
+Name=Control Magic
+Tip=Research Control Ma|cffffcc00g|ric
+Ubertip="Gives Spell Breakers the ability to take control of enemy summoned units."
+Hotkey=G
+[Rovs]
+Art=ReplaceableTextures\CommandButtons\BTNEnvenomedSpear.blp
+Buttonpos=2,1
+Requires=ofrt
+Name=Envenomed Spears
+Tip=Research |cffffcc00E|rnvenomed Spears
+Ubertip="Adds an additional poison effect to Wind Riders' attacks. A unit poisoned by Envenomed Spears takes damage over time."
+Hotkey=E
+[Rews]
+Art=ReplaceableTextures\CommandButtons\BTNWellSpring.blp
+Buttonpos=3,0
+Requires=etoe
+Name=Well Spring
+Tip=Research W|cffffcc00e|rll Spring
+Ubertip="Increases the amount of mana that can be stored in Moon Wells by <Rews,base1>, and their rate of mana regeneration by <Rews,base2,%>%."
+Hotkey=E
+[Rows]
+Art=ReplaceableTextures\CommandButtons\BTNSmash.blp
+Buttonpos=0,2
+Name=Pulverize
+Tip=Research |cffffcc00P|rulverize
+Ubertip="Gives Tauren the Pulverize ability. Pulverize gives Tauren a chance of dealing area effect damage on their attacks."
+Hotkey=P
+[Redt]
+Art=ReplaceableTextures\CommandButtons\BTNDOTAdeptTraining.blp,ReplaceableTextures\CommandButtons\BTNDOTMasterTraining.blp
+Buttonpos=1,2
+Requirescount=2
+Requires=
+Requires1=etoe
+Name=Druid of the Talon Adept Training,Druid of the Talon Master Training
+Tip=Druid of the T|cffffcc00a|rlon Adept Training,Druid of the T|cffffcc00a|rlon Master Training
+Ubertip="Increases their Night Elf Form's mana capacity, mana regeneration rate, hit points, and gives them the ability Storm Crow Form.","Increases their Night Elf Form's mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Cyclone."
+Hotkey=A,A
+[Rhpt]
+Art=ReplaceableTextures\CommandButtons\BTNPriestAdept.blp,ReplaceableTextures\CommandButtons\BTNPriestMaster.blp
+Buttonpos=1,2
+Requirescount=2
+Requires=
+Requires1=hcas
+Name=Priest Adept Training,Priest Master Training
+Tip=Pries|cffffcc00t|r Adept Training,Pries|cffffcc00t|r Master Training
+Ubertip="Increases Priests' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Dispel Magic.","Increases Priests' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Inner Fire."
+Hotkey=T,T
+[Rhrt]
+Art=ReplaceableTextures\CommandButtons\BTNScatterRockets.blp
+Buttonpos=2,2
+Requires=hcas
+Name=Barrage
+Tip=Research Barra|cffffcc00g|re
+Ubertip="Upgrades Siege Engines, giving them the Barrage ability, which allows them to damage nearby enemy air units."
+Hotkey=G
+[Rhst]
+Art=ReplaceableTextures\CommandButtons\BTNSorceressAdept.blp,ReplaceableTextures\CommandButtons\BTNSorceressMaster.blp
+Buttonpos=0,2
+Requirescount=2
+Requires=
+Requires1=hcas
+Name=Sorceress Adept Training,Sorceress Master Training
+Tip=S|cffffcc00o|rrceress Adept Training,S|cffffcc00o|rrceress Master Training
+Ubertip="Increases Sorceresses' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Invisibility.","Increases Sorceresses' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Polymorph."
+Hotkey=O,O
+[Rost]
+Art=ReplaceableTextures\CommandButtons\BTNShamanAdept.blp,ReplaceableTextures\CommandButtons\BTNShamanMaster.blp
+Buttonpos=0,2
+Requirescount=2
+Requires=
+Requires1=ofrt
+Name=Shaman Adept Training,Shaman Master Training
+Tip=Sha|cffffcc00m|ran Adept Training,Sha|cffffcc00m|ran Master Training
+Ubertip="Increases Shaman mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Lightning Shield.","Increases Shaman mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Bloodlust."
+Hotkey=M,M
+[Rowt]
+Art=ReplaceableTextures\CommandButtons\BTNSpiritWalkerAdeptTraining.blp,ReplaceableTextures\CommandButtons\BTNSpiritWalkerMasterTraining.blp
+Buttonpos=2,2
+Requirescount=2
+Requires=
+Requires1=ofrt
+Name=Spirit Walker Adept Training,Spirit Walker Master Training
+Tip=Spi|cffffcc00r|rit Walker Adept Training,Spi|cffffcc00r|rit Walker Master Training
+Ubertip="Increases Spirit Walkers' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Disenchant.","Increases Spirit Walkers' mana capacity, mana regeneration rate, hit points, and gives them the ability to cast Ancestral Spirit."
+Hotkey=R,R
+[Rubu]
+Art=ReplaceableTextures\CommandButtons\BTNCryptFiendBurrow.blp
+Buttonpos=1,1
+Requires=unp1,ugrv
+Name=Burrow
+Tip=Research |cffffcc00B|rurrow
+Ubertip="Crypt Fiends gain the ability to burrow. Burrowed Crypt Fiends are invisible and gain increased hit point regeneration, but cannot attack."
+Hotkey=B
+[Reuv]
+Art=ReplaceableTextures\CommandButtons\BTNUltravision.blp
+Buttonpos=2,0
+Name=Ultravision
+Tip=Upgrade to |cffffcc00U|rltravision
+Ubertip="Gives Night Elves the ability to see as far at night as they do during the day."
+Hotkey=U
+[Rguv]
+Art=ReplaceableTextures\CommandButtons\BTNGlyph.blp
+Name=Glyph of Ultravision
+EditorSuffix= (Upgrade)
+[Resw]
+Art=ReplaceableTextures\CommandButtons\BTNStrengthOfTheWild.blp,ReplaceableTextures\CommandButtons\BTNImprovedStrengthOfTheWild.blp,ReplaceableTextures\CommandButtons\BTNAdvancedStrengthOfTheWild.blp
+Buttonpos=1,0
+Requirescount=3
+Requires=
+Requires1=etoa
+Requires2=etoe
+Name=Strength of the Wild,Improved Strength of the Wild,Advanced Strength of the Wild
+Tip=Upgrade to Strength of the |cffffcc00W|rild,Upgrade to Improved Strength of the |cffffcc00W|rild,Upgrade to Advanced Strength of the |cffffcc00W|rild
+Ubertip="Increases the damage of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras.","Further increases the damage of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras.","Further increases the damage of Druids of the Claw in Bear Form, Druids of the Talon in Storm Crow Form, Dryads, Mountain Giants, Faerie Dragons, Hippogryphs, and Chimaeras."
+Hotkey=W,W,W
+[Ruex]
+Art=ReplaceableTextures\CommandButtons\BTNExhumeCorpses.blp
+Buttonpos=0,2
+Requires=unp2
+Name=Exhume Corpses
+Tip=Research |cffffcc00E|rxhume Corpses
+Ubertip="Gives Meat Wagons the ability to generate corpses."
+Hotkey=E
+[R999]
+Name=Dark Presence
+[R998]
+Name=Royal Presence
+[R997]
+Name=Harvest increased
+[R996]
+Name=Harvest reduced
+[R995]
+Name=Upgrade Provoke Anarchy
+
