@@ -37,6 +37,7 @@
             this.textBoxUnpackMapSourcePath = new System.Windows.Forms.TextBox();
             this.buttonUnpackMapSourcePath = new System.Windows.Forms.Button();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.buttonPlayTestMap = new System.Windows.Forms.Button();
             this.buttonPackMap = new System.Windows.Forms.Button();
             this.buttonPackMapSourcePath = new System.Windows.Forms.Button();
             this.textBoxPackMapSourcePath = new System.Windows.Forms.TextBox();
@@ -48,8 +49,14 @@
             this.saveFileDialogPackMapTarget = new System.Windows.Forms.SaveFileDialog();
             this.folderBrowserDialogUnpackMapTarget = new System.Windows.Forms.FolderBrowserDialog();
             this.folderBrowserDialogPackMapSource = new System.Windows.Forms.FolderBrowserDialog();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.buttonWar3exePath = new System.Windows.Forms.Button();
+            this.textBoxWar3ExePath = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.openFileDialogWar3exePath = new System.Windows.Forms.OpenFileDialog();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -63,7 +70,7 @@
             this.groupBox1.Controls.Add(this.buttonUnpackMapSourcePath);
             this.groupBox1.Location = new System.Drawing.Point(47, 41);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(446, 626);
+            this.groupBox1.Size = new System.Drawing.Size(446, 205);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Unpack Map";
@@ -132,6 +139,7 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.buttonPlayTestMap);
             this.groupBox2.Controls.Add(this.buttonPackMap);
             this.groupBox2.Controls.Add(this.buttonPackMapSourcePath);
             this.groupBox2.Controls.Add(this.textBoxPackMapSourcePath);
@@ -141,16 +149,26 @@
             this.groupBox2.Controls.Add(this.buttonPackMapTargetPath);
             this.groupBox2.Location = new System.Drawing.Point(554, 41);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(446, 626);
+            this.groupBox2.Size = new System.Drawing.Size(446, 265);
             this.groupBox2.TabIndex = 0;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pack Map";
+            // 
+            // buttonPlayTestMap
+            // 
+            this.buttonPlayTestMap.Location = new System.Drawing.Point(232, 134);
+            this.buttonPlayTestMap.Name = "buttonPlayTestMap";
+            this.buttonPlayTestMap.Size = new System.Drawing.Size(199, 49);
+            this.buttonPlayTestMap.TabIndex = 4;
+            this.buttonPlayTestMap.Text = "Test Map";
+            this.buttonPlayTestMap.UseVisualStyleBackColor = true;
+            this.buttonPlayTestMap.Click += new System.EventHandler(this.buttonPlayTestMap_Click);
             // 
             // buttonPackMap
             // 
             this.buttonPackMap.Location = new System.Drawing.Point(22, 134);
             this.buttonPackMap.Name = "buttonPackMap";
-            this.buttonPackMap.Size = new System.Drawing.Size(403, 49);
+            this.buttonPackMap.Size = new System.Drawing.Size(204, 50);
             this.buttonPackMap.TabIndex = 3;
             this.buttonPackMap.Text = "Pack";
             this.buttonPackMap.UseVisualStyleBackColor = true;
@@ -217,11 +235,55 @@
             // 
             this.saveFileDialogPackMapTarget.Filter = "Warcraft 3 Maps|*.w3x";
             // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.buttonWar3exePath);
+            this.groupBox3.Controls.Add(this.textBoxWar3ExePath);
+            this.groupBox3.Controls.Add(this.label5);
+            this.groupBox3.Location = new System.Drawing.Point(47, 524);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(843, 150);
+            this.groupBox3.TabIndex = 1;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Text = "Warcraft III config";
+            // 
+            // buttonWar3exePath
+            // 
+            this.buttonWar3exePath.Location = new System.Drawing.Point(529, 46);
+            this.buttonWar3exePath.Name = "buttonWar3exePath";
+            this.buttonWar3exePath.Size = new System.Drawing.Size(37, 34);
+            this.buttonWar3exePath.TabIndex = 2;
+            this.buttonWar3exePath.Text = "...";
+            this.buttonWar3exePath.UseVisualStyleBackColor = true;
+            this.buttonWar3exePath.Click += new System.EventHandler(this.buttonWar3exePath_Click);
+            // 
+            // textBoxWar3ExePath
+            // 
+            this.textBoxWar3ExePath.Location = new System.Drawing.Point(152, 48);
+            this.textBoxWar3ExePath.Name = "textBoxWar3ExePath";
+            this.textBoxWar3ExePath.Size = new System.Drawing.Size(362, 31);
+            this.textBoxWar3ExePath.TabIndex = 1;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(18, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(128, 25);
+            this.label5.TabIndex = 0;
+            this.label5.Text = "Warcraft III.exe";
+            // 
+            // openFileDialogWar3exePath
+            // 
+            this.openFileDialogWar3exePath.FileName = "openFileDialog1";
+            this.openFileDialogWar3exePath.Filter = "Warcraft III client|Warcraft III.exe";
+            // 
             // MapPublisherForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1031, 735);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MapPublisherForm";
@@ -230,6 +292,8 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -256,6 +320,12 @@
         private System.Windows.Forms.Button buttonPackMapTargetPath;
         private System.Windows.Forms.Button buttonUnpackMap;
         private System.Windows.Forms.Button buttonPackMap;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button buttonWar3exePath;
+        private System.Windows.Forms.TextBox textBoxWar3ExePath;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.OpenFileDialog openFileDialogWar3exePath;
+        private System.Windows.Forms.Button buttonPlayTestMap;
     }
 }
 

@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.Win32;
 using StormLibSharp;
 
 namespace MapPublishingApp
@@ -20,6 +22,7 @@ namespace MapPublishingApp
         public MapPublisherForm()
         {
             InitializeComponent();
+            findWarcraft3ExePath();
         }
 
         private void buttonUnpackMapSourcePath_Click(object sender, EventArgs e)
@@ -70,6 +73,65 @@ namespace MapPublishingApp
             string outputMapPath = textBoxPackMapTargetPath.Text;
 
             MapPublisher.PackMap(inputFolderPath, outputMapPath);
+        }
+
+        private void buttonWar3exePath_Click(object sender, EventArgs e)
+        {
+            if (openFileDialogWar3exePath.ShowDialog() == DialogResult.OK)
+            {
+                textBoxWar3ExePath.Text = openFileDialogWar3exePath.FileName;
+            }
+        }
+
+        private void buttonPlayTestMap_Click(object sender, EventArgs e)
+        {
+            string mapPath = textBoxPackMapTargetPath.Text;
+            string war3exePath = textBoxWar3ExePath.Text;
+
+            if (String.IsNullOrWhiteSpace(mapPath))
+            {
+                MessageBox.Show("Map path path not set");
+                return;
+            }
+
+            if (!File.Exists(mapPath))
+            {
+                MessageBox.Show(String.Format("Map at {0} does not exist.", mapPath));
+                return;
+            }
+
+            if (String.IsNullOrWhiteSpace(war3exePath))
+            {
+                MessageBox.Show("War3.exe path not set");
+                return;
+            }
+
+            if (!File.Exists(war3exePath))
+            {
+                MessageBox.Show(String.Format("War3.exe at {0} does not exist.", mapPath));
+                return;
+            }
+
+            Process.Start(war3exePath, String.Format("-launch -nowfpause -window -loadfile \"{0}\"", mapPath));
+        }
+
+        private void findWarcraft3ExePath()
+        {
+            try
+            {
+                string path = (string)Registry.LocalMachine.OpenSubKey(@"SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\Warcraft III").GetValue("DISPLAYICON");
+
+                if (File.Exists(path))
+                {
+                    textBoxWar3ExePath.Text = path;
+                }
+
+            }
+            catch
+            {
+                // Couldnt look in registry. Lets not set it then.
+
+            }
         }
     }
 }
