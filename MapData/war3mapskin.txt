@@ -70,6 +70,6 @@ RESOURCE_UBERTIP_GOLD=Gold is collect from creeps bounty, income and bonus.
 RESOURCE_UBERTIP_UPKEEP=For lastest version:|nhttps://discord.gg/dhtvnvH|nEdited by OZE Team
 RESOURCE_UBERTIP_UPKEEP_INFO=|c00101c29 .|r
 RESOURCE_UBERTIP_UPKEEP_INFO_WOOD=|c00101c29 .|r
-UPKEEP_NONE=|CFFF5CD6D OZE v5.0 x20
+UPKEEP_NONE=|CFFF5CD6D OZE v5.0b x20
 UPPER_BUTTON_QUEST_TIP=|c00ff0202 Information about Legion TD|R (|Cfffed312F9|R)
 UPPER_BUTTON_QUEST_UBER=You can find basic information and forum link in here.

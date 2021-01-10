@@ -3808,7 +3808,7 @@ endif
 endif
 endfunction
 function BDE takes nothing returns nothing
-set ZV="v5.0 Release"
+set ZV="v5.0b Release"
 endfunction
 function BDX takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
@@ -4385,7 +4385,7 @@ call TriggerExecute(MS)
 call TriggerExecute(TS)
 call TriggerExecute(QS)
 call A_V(1.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0 |cff8a55fcTe|cff9744faam |cffa018feOZE|r "+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -aphgggmmcbeq")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0b |cff8a55fcTe|cff9744faam |cffa018feOZE|r "+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -aphgggmmcbeq")
 call TriggerExecute(KT)
 set SD=true
 call StartTimerBJ(KA,false,20.)
@@ -6878,7 +6878,7 @@ call CreateQuestBJ(2,"Credits","Based on Legion TD |cffe2222cMEGA|r
 Edited by Rholor, RaVeN and Team OZE
 -------","ReplaceableTextures\\CommandButtons\\BTNHydralisk.blp")
 call CreateQuestBJ(2,ZV+" Changelog","Latest changes:
-v4.7d -> v5.0
+v4.7d -> v5.0b
 ----
 New secondary mode -QG, Quick Game
 New secondary mode -MI, Mirrored Rolls
@@ -25210,7 +25210,7 @@ call SetStartLocPrioCount(8,0)
 call SetStartLocPrioCount(9,0)
 endfunction
 function config takes nothing returns nothing
-call SetMapName("|cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0 |cff8a55fcTe|cff9744faam |cffa018feOZE")
+call SetMapName("|cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0b |cff8a55fcTe|cff9744faam |cffa018feOZE")
 call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies.
 
 Edited by OZE Team")
