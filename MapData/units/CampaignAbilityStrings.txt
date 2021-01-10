@@ -5655,7 +5655,7 @@ Missilespeed=1050
 Name=King's Shockwave
 Order=shockwave
 Tip=King's Shock|cffffcc00w|rave
-Ubertip="A wave of force that ripples outward, causing 270 damage and 8dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 350 damage and 10dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 650 damage and 15dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 750 damage and 20dps for 20 seconds to enemy units in a line (up to 1200 range)."
+Ubertip="A wave of force that ripples outward, causing 450 damage and 8dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 350 damage and 10dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 650 damage and 15dps for 20 seconds to enemy units in a line (up to 1200 range).","A wave of force that ripples outward, causing 750 damage and 20dps for 20 seconds to enemy units in a line (up to 1200 range)."
 
 [A983]
 Art=ReplaceableTextures\PassiveButtons\PASBTNImmolation.blp
