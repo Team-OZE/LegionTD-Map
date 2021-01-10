@@ -27,4 +27,4 @@ jobs:
     - uses: actions/upload-artifact@v2
       with:
         name: Legion TD Map (w3x)
-        path: *.w3x
+        path: ${{ github.workspace }}/*.w3x
