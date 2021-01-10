@@ -2,6 +2,8 @@
 
 # 🗺️ Legion TD OZE Edition
 
+![Map Bundling](https://github.com/Team-OZE/LegionTD-Map/workflows/Map%20Bundling/badge.svg?branch=main)
+
 This repository contains all the files related to the Warcraft III map **Legion TD OZE Edition**.
 
 > If you want to download the latest version, head to the [Releases Section](https://github.com/Team-OZE/LegionTD-Map/releases).
