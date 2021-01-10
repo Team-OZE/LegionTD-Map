@@ -23,7 +23,7 @@ jobs:
         Expand-Archive -Path tool.zip -DestinationPath tool
     - name: Bundle the map
       run: |
-        & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_OZE_$($GITHUB_SHA.Substring(0,7)).w3x"
+        & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_OZE_$(git rev-parse --short HEAD).w3x"
     - uses: actions/upload-artifact@v2
       with:
         name: Legion TD Map (w3x)
