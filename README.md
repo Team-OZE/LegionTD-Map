@@ -1,3 +1,5 @@
+![LTD OZE](banner.png)
+
 # 🗺️ Legion TD OZE Edition
 
 This repository contains all the files related to the Warcraft III map **Legion TD OZE Edition**.
