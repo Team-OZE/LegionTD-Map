@@ -23,10 +23,8 @@ jobs:
         Expand-Archive -Path tool.zip -DestinationPath tool
     - name: Bundle the map
       run: |
-        & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_Release.w3x"
-    - name: Add SHORT_SHA env property with commit short sha
-      run: echo "SHORT_SHA=`echo ${GITHUB_SHA} | cut -c1-8`" >> $GITHUB_ENV
+        & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_OZE_$($GITHUB_SHA.Substring(0,7)).w3x"
     - uses: actions/upload-artifact@v2
       with:
         name: Legion TD Map (w3x)
-        path: Legion_TD_OZE_${SHORT_SHA}.w3x
+        path: *.w3x
