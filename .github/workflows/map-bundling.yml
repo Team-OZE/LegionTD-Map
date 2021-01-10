@@ -1,0 +1,27 @@
+name: Map Bundling
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: windows-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.301
+    - name: Fetch OZEdit Cmdline
+      uses: wei/wget@v1
+      with:
+        args: -O tool.zip https://github.com/Team-OZE/OZEdit/releases/download/v0.1/OZEdit-Cmd-x86-debug.zip
+    - name: Extract
+      run: |
+        wget https://github.com/Team-OZE/OZEdit/releases/download/v0.1/OZEdit-Cmd-x86-debug.zip -O /tmp/tool.zip
+        unzip /tmp/tool.zip -d /tmp
