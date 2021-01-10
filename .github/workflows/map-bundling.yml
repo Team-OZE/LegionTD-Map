@@ -24,3 +24,7 @@ jobs:
     - name: Bundle the map
       run: |
         & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_Release.w3x"
+    - uses: actions/upload-artifact@v2
+      with:
+        name: Legion_TD_Release.w3x
+        path: Legion_TD_Release.w3x
