@@ -19,5 +19,8 @@ jobs:
         dotnet-version: 3.1.301
     - name: Fetch & extract
       run: |
-        wget https://github.com/Team-OZE/OZEdit/releases/download/v0.1/OZEdit-Cmd-x86-debug.zip -O /tmp/tool.zip
-        unzip /tmp/tool.zip -d /tmp
+        Invoke-WebRequest -OutFile tool.zip https://github.com/Team-OZE/OZEdit/releases/download/v0.1/OZEdit-Cmd-x86-debug.zip
+        Expand-Archive -Path tool.zip -DestinationPath tool
+    - name: Bundle the map
+      run: |
+        & "$(Get-Location)\tool\OZEdit.exe" "$(Get-Location)\MapData" "$(Get-Location)\Legion_TD_Release.w3x"
