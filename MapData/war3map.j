@@ -9602,8 +9602,8 @@ local trigger bK
 set MN=false
 set bj_forLoopBIndex=1
 set bj_forLoopBIndexEnd=(StringLength(BE)-1)/2
-if BE=="-ranked" then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AARanked mode|r")
+if BE=="-pro" then
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAPro mode|r")
 set BE="-pracahmiqg"
 endif
 loop
