@@ -1697,9 +1697,9 @@ ResearchArt=ReplaceableTextures\CommandButtons\BTNDrunkenDodge.blp
 Researchbuttonpos=2
 Researchhotkey=B
 Researchtip="Drunk master, [|cffffcc00Level%d|r] (|cffffcc00B|r)"
-Researchubertip="Gives a percent chance to avoid attacks and a 10% chance to deal additional damage. |n|n|cffffcc00Level 1|r - 7% dodge, 2 times normal damage. |n|cffffcc00Level 2|r - 14% dodge, 3 times normal damage. |n|cffffcc00Level 3|r - 21% dodge, 4 times normal damage."
+Researchubertip="Gives a percent chance to avoid attacks and a 20% chance to deal additional damage. |n|n|cffffcc00Level 1|r - 7% dodge, 2 times normal damage. |n|cffffcc00Level 2|r - 14% dodge, 3 times normal damage. |n|cffffcc00Level 3|r - 21% dodge, 4 times normal damage."
 Tip=|cffff8000Coup De Grace|r
-Ubertip="The Warden has 55% chance to backstabs her enemies for x4 the damage with every hit, and has a 10% chance to evade an attack."
+Ubertip="The Warden has 55% chance to backstabs her enemies for x4 the damage with every hit, and has a 20% chance to evade an attack."
 
 [A07M]
 Art=ReplaceableTextures\PassiveButtons\PASBTNScatterRockets.blp
