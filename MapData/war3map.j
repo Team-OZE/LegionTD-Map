@@ -13238,7 +13238,6 @@ elseif DHV==VAV[C8V+4] then
 call ExecuteFunc("MIV")
 elseif DHV==VAV[C8V+5] then
 set N6[3]=N6[1]
-call DoNotSaveReplay()
 call ExecuteFunc("MRV")
 elseif DHV==VAV[C8V+6] then
 call ExecuteFunc("F1V")
@@ -22950,7 +22949,6 @@ set TG[18]="|CFF0380FCCr|CFF13A0ECy |CFF13A0ECzzz"
 set TG[19]="|CFF80FF00A|CFF00FFFFl|CFF4ACA13o|CFF9DF279n|CFFF1F874e"
 set TG[20]="|CFFF93706Mi|CFFE6571Ass |CFFC97136M|CFFAE8251y"
 set TG[21]="|CFFFCA48DNothing|CFFFA8D69 is|CFFF85E29 fo|CFFF8541Dre|CFFA78F58ver"
-call DoNotSaveReplay()
 call SetMapFlag(MAP_LOCK_RESOURCE_TRADING,true)
 call SetCameraBounds(-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
