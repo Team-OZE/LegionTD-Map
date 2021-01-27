@@ -4385,7 +4385,7 @@ call TriggerExecute(MS)
 call TriggerExecute(TS)
 call TriggerExecute(QS)
 call A_V(1.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0b |cff8a55fcTe|cff9744faam |cffa018feOZE|r "+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -aphgggmmcbeq")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r"+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -aphgggmmcbeq")
 call TriggerExecute(KT)
 set SD=true
 call StartTimerBJ(KA,false,20.)
@@ -13238,7 +13238,6 @@ elseif DHV==VAV[C8V+4] then
 call ExecuteFunc("MIV")
 elseif DHV==VAV[C8V+5] then
 set N6[3]=N6[1]
-call DoNotSaveReplay()
 call ExecuteFunc("MRV")
 elseif DHV==VAV[C8V+6] then
 call ExecuteFunc("F1V")
@@ -22950,7 +22949,6 @@ set TG[18]="|CFF0380FCCr|CFF13A0ECy |CFF13A0ECzzz"
 set TG[19]="|CFF80FF00A|CFF00FFFFl|CFF4ACA13o|CFF9DF279n|CFFF1F874e"
 set TG[20]="|CFFF93706Mi|CFFE6571Ass |CFFC97136M|CFFAE8251y"
 set TG[21]="|CFFFCA48DNothing|CFFFA8D69 is|CFFF85E29 fo|CFFF8541Dre|CFFA78F58ver"
-call DoNotSaveReplay()
 call SetMapFlag(MAP_LOCK_RESOURCE_TRADING,true)
 call SetCameraBounds(-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
@@ -25210,7 +25208,7 @@ call SetStartLocPrioCount(8,0)
 call SetStartLocPrioCount(9,0)
 endfunction
 function config takes nothing returns nothing
-call SetMapName("|cff00fff7Le|cff14e7f8gio|cff31c2f9n TD |cff6386fb5.0b |cff8a55fcTe|cff9744faam |cffa018feOZE")
+call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
 call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies.
 
 Edited by OZE Team")
