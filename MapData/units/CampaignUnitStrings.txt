@@ -2241,7 +2241,7 @@ Name=Whelp
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Whelp (|cffFFcc00A|r)
-Ubertip="Flying dragon, filled with youthful energy.|n|n|cffFFcc00+5 income|r|n|cffCCCCCCPierce damage, Light armor.|r"
+Ubertip="Flying dragon, filled with youthful energy.|n|n|cffFFcc00+5 income|r|n|cffCCCCCCPierce damage, Medium armor.|r"
 
 [h04R]
 Art=ReplaceableTextures\CommandButtons\BTNGhoul.blp
