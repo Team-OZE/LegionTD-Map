@@ -2547,7 +2547,7 @@ Name=Gargoyle
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Gargoyle (|cffFFcc00F|r)
-Ubertip="Ominous flyer often seen among the dead.|n|n|cffFFcc00+22 income|r|n|cffCCCCCCNormal damage, Light armor.|r"
+Ubertip="Ominous flyer often seen among the dead.|n|n|cffFFcc00+22 income|r|n|cffCCCCCCNormal damage, Medium armor.|r"
 
 [h05N]
 Art=ReplaceableTextures\CommandButtons\BTNBanshee.blp
@@ -5024,7 +5024,7 @@ Name=Gargoyle
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Gargoyle (|cffFFcc00F|r)
-Ubertip="Ominous flyer often seen among the dead.|n|n|cffffcc00+22 income|r|n|cffccccccNormal damage, Light armor.|r"
+Ubertip="Ominous flyer often seen among the dead.|n|n|cffffcc00+22 income|r|n|cffccccccNormal damage, Medium armor.|r"
 
 [h0B8]
 Art=ReplaceableTextures\CommandButtons\BTNSeaGiant.blp
