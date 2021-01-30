@@ -27,6 +27,7 @@ gamecache K=null
 group MC=null
 boolean array L
 boolean array M
+boolean x3Mode=false
 integer array P
 integer array Q
 integer Q3=0
@@ -192,7 +193,6 @@ group NA=null
 group array BA
 player array CA
 boolean DA=false
-string FA=null
 boolean GA=false
 boolean HA=false
 boolean JA=false
@@ -262,6 +262,8 @@ integer array OC
 boolean AC=false
 texttag BC=null
 texttag CC=null
+texttag texttagGameMode1=null
+texttag texttagGameMode2=null
 integer array DC
 boolean FC=false
 boolean HC=false
@@ -747,7 +749,6 @@ trigger A3=null
 trigger N3=null
 trigger B3=null
 trigger C3=null
-trigger D3=null
 trigger F3=null
 trigger G3=null
 trigger H3=null
@@ -1767,8 +1768,7 @@ code ref_function_IAX=null
 code ref_function_IFX=null
 code ref_function_IGX=null
 code ref_function_IHX=null
-code ref_function_IJX=null
-code ref_function_IKX=null
+code ref_ProcessGameMode=null
 code ref_function_ILX=null
 code ref_function_IMX=null
 code ref_function_IPX=null
@@ -4385,10 +4385,10 @@ call TriggerExecute(MS)
 call TriggerExecute(TS)
 call TriggerExecute(QS)
 call A_V(1.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r"+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -aphgggmmcbeq")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"Welcome to |cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r"+" you have 20 seconds to enter gamemodes, if you don't enter any command, the default mode is -pr")
 call TriggerExecute(KT)
 set SD=true
-call StartTimerBJ(KA,false,20.)
+call StartTimerBJ(KA,false,30.)
 call CreateTimerDialogBJ(KA,"Game starts in")
 set LA=bj_lastCreatedTimerDialog
 call TriggerExecute(G3)
@@ -9591,243 +9591,180 @@ return HC==false
 endfunction
 function IHX takes nothing returns nothing
 set HC=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEQ mode|r: 10 time on creep spawn.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEQ mode|r: 10 time on creep spawn.")
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
 function IIX takes nothing returns boolean
 return XJ==false
 endfunction
-function IJX takes nothing returns nothing
-local trigger bK
-set MN=false
-set bj_forLoopBIndex=1
-set bj_forLoopBIndexEnd=(StringLength(BE)-1)/2
-if BE=="-pro" then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAPro mode|r")
-set BE="-pracahmiqg"
-endif
-loop
-exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
-set FA=SubStringBJ(BE,2*bj_forLoopBIndex,2*bj_forLoopBIndex+1)
-set MN=false
-if FA=="ar" or FA=="ah" or FA=="ph" or FA=="pr" or FA=="ap" or FA=="sd" or FA=="hp" or FA=="mm" or FA=="nm" or FA=="hg" or FA=="gg" or FA=="cb" or FA=="li" or FA=="eg" or FA=="qg" or FA=="mi" or FA=="ns" or FA=="cc" or FA=="nc" or FA=="ac" or FA=="eq" or FA=="gm" or FA=="gc" or FA=="gl" or FA=="cl" or FA=="lc" then
-set MN=true
-endif
-set bj_forLoopBIndex=bj_forLoopBIndex+1
-endloop
-if MN==false then
-set bK=null
-return
-endif
-set bj_forLoopBIndex=1
-set bj_forLoopBIndexEnd=(StringLength(BE)-1)/2
-loop
-exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
-set FA=SubStringBJ(BE,2*bj_forLoopBIndex,2*bj_forLoopBIndex+1)
-set MN=false
-if FA=="hp" then
-set MN=true
-call ConditionalTriggerExecute(T2)
-endif
-if FA=="ah" then
-set yn=true
-endif
-if FA=="ph" then
-set MN=true
-call ConditionalTriggerExecute(U2)
-endif
-if FA=="pr" then
-set MN=true
-call ConditionalTriggerExecute(W2)
-endif
-if FA=="ar" then
-set MN=true
-call ConditionalTriggerExecute(S2)
-endif
-if FA=="ap" then
-set MN=true
-call ConditionalTriggerExecute(P2)
-endif
-if FA=="sd" then
-set MN=true
-call ConditionalTriggerExecute(Q2)
-endif
-if FA=="li" then
-set MN=true
-call ConditionalTriggerExecute(Y2)
-endif
-if FA=="eg" then
-set MN=true
-call ConditionalTriggerExecute(Y9)
-endif
-if FA=="qg" then
-set MN=true
-call ConditionalTriggerExecute(Y10)
-endif
-if FA=="mi" then
-set MN=true
-set MIRROR=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMirror Mode|r: Rolls are mirrored with your opponent counterpart.")
-endif
-if FA=="mm" then
-set MN=true
-call ConditionalTriggerExecute(V3)
-endif
-if FA=="nm" then
-set MN=true
-call ConditionalTriggerExecute(O3)
-endif
-if FA=="gg" then
-set MN=true
-call ConditionalTriggerExecute(X3)
-endif
-if FA=="cb" then
-set MN=true
-call ConditionalTriggerExecute(R3)
-endif
-if FA=="cc" then
-set MN=true
-call ConditionalTriggerExecute(I3)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(B3)
-call DestroyTrigger(A3)
-call DestroyTrigger(N3)
-endif
-if FA=="ac" then
-set MN=true
-call ConditionalTriggerExecute(A3)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(B3)
-call DestroyTrigger(I3)
-call DestroyTrigger(N3)
-endif
-if FA=="nc" then
-set MN=true
-call ConditionalTriggerExecute(N3)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-call DestroyTrigger(I3)
-call DestroyTrigger(A3)
-endif
-if FA=="gm" then
-set MN=true
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(I3)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(B3)
-call DestroyTrigger(A3)
-call DestroyTrigger(N3)
-endif
-if FA=="gc" then
-set MN=true
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-endif
-if FA=="gl" then
-set MN=true
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(Y2)
-endif
-if FA=="lc" then
-set MN=true
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(Y2)
-endif
-if FA=="cl" then
-set MN=true
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(Y2)
-endif
-if MN then
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(B3)
-endif
-set bj_forLoopBIndex=bj_forLoopBIndex+1
-endloop
-call DisableTrigger(GetTriggeringTrigger())
-if yn then
-set bK=CreateTrigger()
-call TriggerRegisterUnitEvent(bK,H6,EVENT_UNIT_DAMAGED)
-call TriggerAddAction(bK,ref_function_eK)
-set bK=CreateTrigger()
-call TriggerRegisterUnitEvent(bK,U6,EVENT_UNIT_DAMAGED)
-call TriggerAddAction(bK,ref_function_iK)
-endif
-set bK=null
+
+function ProcessGameMode takes nothing returns nothing
+	local trigger myTrigger
+	local integer stringPosition=1
+	local string parameter=""
+	local boolean additionalModes=false
+	
+	// Covert input-string to lower case
+	set BE=StringCase(BE,false)
+	
+	// Check for 'pro'-mode
+	if BE=="-pro" then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAPro mode|r")
+		set BE="-pracmiqg"
+	endif
+	
+	// Loop over all parameters (ignores wrong input)
+	loop
+		exitwhen stringPosition>(StringLength(BE)-1)/2
+		
+		// Get next parameter
+		set parameter=SubStringBJ(BE,2*stringPosition,2*stringPosition+1)
+		set MN=true
+		
+		if parameter=="ph" then
+			set additionalModes=true
+			call ConditionalTriggerExecute(U2)
+		
+		elseif parameter=="pr" then
+			set additionalModes=true
+			call ConditionalTriggerExecute(W2)		
+		
+		//elseif parameter=="hp" then
+		//	set additionalModes=true
+		//	call ConditionalTriggerExecute(T2)
+		
+		//elseif parameter=="ar" then
+		//	set additionalModes=true
+		//	call ConditionalTriggerExecute(S2)
+		
+		//elseif parameter=="ap" then
+		//	set additionalModes=true
+		//	call ConditionalTriggerExecute(P2)
+		
+		//elseif parameter=="sd" then
+		//	set additionalModes=true
+		//	call ConditionalTriggerExecute(Q2)
+		
+		//elseif parameter=="ah" then
+		//	set MN=false
+		//	set yn=true
+		
+		//elseif parameter=="li" then
+		//	call ConditionalTriggerExecute(Y2)
+		
+		elseif parameter=="eg" then
+			call ConditionalTriggerExecute(Y9)
+		
+		elseif parameter=="qg" then
+			call ConditionalTriggerExecute(Y10)
+		
+		elseif parameter=="mi" then
+			set MIRROR=true
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMirror Mode|r: Rolls are mirrored with your opponent counterpart.")
+		
+		elseif parameter=="cc" then
+			call ConditionalTriggerExecute(I3)
+			call ConditionalTriggerExecute(V3)
+			call ConditionalTriggerExecute(X3)
+			call DestroyTrigger(A3)
+			call DestroyTrigger(N3)
+		
+		elseif parameter=="ac" then
+			call ConditionalTriggerExecute(A3)
+			call ConditionalTriggerExecute(V3)
+			call ConditionalTriggerExecute(X3)
+			call DestroyTrigger(I3)
+			call DestroyTrigger(N3)
+		
+		elseif parameter=="x3" then
+			set x3Mode=true
+		
+		//elseif parameter=="nc" then
+		//	call ConditionalTriggerExecute(N3)
+		//	call ConditionalTriggerExecute(V3)
+		//	call ConditionalTriggerExecute(X3)
+		//	call ConditionalTriggerExecute(R3)
+		//	call DestroyTrigger(I3)
+		//	call DestroyTrigger(A3)
+		
+		//elseif parameter=="mm" then
+		//	call ConditionalTriggerExecute(V3)
+		
+		//elseif parameter=="nm" then
+		//	call ConditionalTriggerExecute(O3)
+		
+		//elseif parameter=="gg" then
+		//	call ConditionalTriggerExecute(X3)
+		
+		//elseif parameter=="cb" then
+		//	call ConditionalTriggerExecute(R3)
+		
+		//elseif parameter=="gm" then
+		//	call ConditionalTriggerExecute(X3)
+		//	call ConditionalTriggerExecute(I3)
+		//	call ConditionalTriggerExecute(V3)
+		//	call ConditionalTriggerExecute(X3)
+		//	call DestroyTrigger(A3)
+		//	call DestroyTrigger(N3)
+		
+		//elseif parameter=="gc" then
+		//	call ConditionalTriggerExecute(X3)
+		//	call ConditionalTriggerExecute(R3)
+		
+		//elseif parameter=="gl" then
+		//	call ConditionalTriggerExecute(X3)
+		//	call ConditionalTriggerExecute(Y2)
+		
+		//elseif parameter=="lc" or parameter=="cl" then
+		//	call ConditionalTriggerExecute(R3)
+		//	call ConditionalTriggerExecute(Y2)
+		
+		//else
+		//	set MN=false
+		endif
+		
+		//if MN then
+		//	call ConditionalTriggerExecute(E3)
+		//	call ConditionalTriggerExecute(B3)
+		//endif
+		
+		// Add some modes if only a single certain mode has been selected
+		//if StringLength(BE)==3 and additionalModes then
+		//	call ConditionalTriggerExecute(V3)
+		//	call ConditionalTriggerExecute(X3)
+		//	call ConditionalTriggerExecute(R3)
+		//endif
+		
+		set stringPosition=stringPosition+1
+	endloop
+	
+	call ConditionalTriggerExecute(E3) // "hg"
+	call ConditionalTriggerExecute(B3) // "eq"
+	call ConditionalTriggerExecute(X3) // "gg"
+	call ConditionalTriggerExecute(V3) // "mm"
+	
+	call DisableTrigger(GetTriggeringTrigger())
+	
+	if(true) then // "ah"
+		set yn=true
+		set myTrigger=CreateTrigger()
+		call TriggerRegisterUnitEvent(myTrigger,H6,EVENT_UNIT_DAMAGED)
+		call TriggerAddAction(myTrigger,ref_function_eK)
+		set myTrigger=CreateTrigger()
+		call TriggerRegisterUnitEvent(myTrigger,U6,EVENT_UNIT_DAMAGED)
+		call TriggerAddAction(myTrigger,ref_function_iK)
+	endif
+	
+	set myTrigger=null
 endfunction
-function IKX takes nothing returns nothing
-set UO=SubStringBJ(BE,2,3)
-if UO=="ap" then
-call ConditionalTriggerExecute(P2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-elseif UO=="ar" then
-call ConditionalTriggerExecute(S2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-elseif UO=="sd" then
-call ConditionalTriggerExecute(Q2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-elseif UO=="hp" then
-call ConditionalTriggerExecute(T2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-elseif UO=="ph" then
-call ConditionalTriggerExecute(U2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-elseif UO=="pr" then
-call ConditionalTriggerExecute(W2)
-call ConditionalTriggerExecute(V3)
-call ConditionalTriggerExecute(E3)
-call ConditionalTriggerExecute(X3)
-call ConditionalTriggerExecute(R3)
-call ConditionalTriggerExecute(B3)
-return
-endif
-call DisableTrigger(GetTriggeringTrigger())
-endfunction
+
 function ILX takes nothing returns boolean
 return RN or GetTriggerPlayer()==Player(0)
 endfunction
 function IMX takes nothing returns nothing
 set BE=GetEventPlayerChatString()
 if SD then
-if StringLength(BE)==3 then
-call TriggerExecute(D3)
-else
 call TriggerExecute(C3)
-endif
 call PauseTimerBJ(false,KA)
 call StartTimerBJ(KA,false,1.)
 else
@@ -9864,11 +9801,7 @@ set BE="-"+BE
 endif
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"HostBot has entered the game-mode: |cffFFcc00"+BE+"|r")
 call DisableTrigger(F3)
-if StringLength(BE)==3 then
-call TriggerExecute(D3)
-else
 call TriggerExecute(C3)
-endif
 call ResumeTimer(KA)
 call StartTimerBJ(KA,false,1.)
 endif
@@ -9883,7 +9816,7 @@ set LN="-ap"
 //call AdjustPlayerStateBJ(2000,Player(0),PLAYER_STATE_RESOURCE_FOOD_CAP)
 endif
 if RD then
-set LN="-hp"
+//set LN="-hp"
 endif
 if SH then
 set LN="-ph"
@@ -9892,40 +9825,16 @@ if TH then
 set LN="-pr"
 endif
 if HA then
-set LN="-ar"
+//set LN="-ar"
 endif
 if JB then
-set LN="-sd"
+//set LN="-sd"
 endif
 if JA then
-set LN=LN+"li"
+//set LN=LN+"li"
 endif
 if GL then
-set LN=LN+"eg"
-endif
-if HCC then
-set LN=LN+"qg"
-endif
-if MIRROR then
-set LN=LN+"mi"
-endif
-if yn then
-set LN=LN+"ah"
-endif
-if ZN then
-set LN=LN+"mm"
-endif
-if ZB then
-set LN=LN+"hg"
-endif
-if AC then
-set LN=LN+"nm"
-endif
-if FC then
-set LN=LN+"gg"
-endif
-if PC then
-set LN=LN+"cb"
+//set LN=LN+"eg"
 endif
 if EJ then
 set LN=LN+"cc"
@@ -9933,14 +9842,38 @@ endif
 if XJ then
 set LN=LN+"ac"
 endif
+if MIRROR then
+set LN=LN+"mi"
+endif
+if HCC then
+set LN=LN+"qg"
+endif
+if ZN then
+//set LN=LN+"mm"
+endif
+if ZB then
+//set LN=LN+"hg"
+endif
+if AC then
+//set LN=LN+"nm"
+endif
+if FC then
+//set LN=LN+"gg"
+endif
+if PC then
+//set LN=LN+"cb"
+endif
 if OJ then
-set LN=LN+"nc"
+//set LN=LN+"nc"
 endif
 if ZH then
-set LN=LN+"ns"
+//set LN=LN+"ns"
 endif
 if HC then
-set LN=LN+"eq"
+//set LN=LN+"eq"
+endif
+if x3Mode then
+	set LN=LN+"x3"
 endif
 if VB then
 call MultiboardSetTitleText(JR,IR+"|cffFF0000 ("+LN+"*)|r")
@@ -9961,15 +9894,13 @@ function RQX takes nothing returns boolean
 return EC==false
 endfunction
 function ITX takes nothing returns nothing
+call DestroyTextTag(texttagGameMode1)
+call DestroyTextTag(texttagGameMode2)
 call DestroyTextTag(CC)
 call DestroyTextTag(BC)
 if RQX() then
-call TriggerExecute(P2)
-call TriggerExecute(E3)
-call TriggerExecute(X3)
-call TriggerExecute(V3)
-call TriggerExecute(R3)
-call TriggerExecute(B3)
+set BE="-pr"
+call ProcessGameMode()
 endif
 call DisableTrigger(U2)
 call DisableTrigger(W2)
@@ -10007,7 +9938,7 @@ endfunction
 function IVX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set FC=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAGood Game|r: You receive gold for ally leaks.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAGood Game|r: You receive gold for ally leaks.")
 endfunction
 function IWX takes nothing returns nothing
 if CountPlayersInForceBJ(ZI)==1 then
@@ -13709,6 +13640,16 @@ endif
 set u=CreateUnit(OX,GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
 call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnteringUnit())))
 call SetUnitUserData(u,IQE)
+
+if x3Mode then
+	set u=CreateUnit(OX,GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
+	call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnteringUnit())))
+	call SetUnitUserData(u,IQE)
+	set u=CreateUnit(OX,GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
+	call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnteringUnit())))
+	call SetUnitUserData(u,IQE)
+endif
+
 set NH[IQE]=NH[IQE]+GetUnitLevel(GetEnteringUnit())*20
 call RemoveUnit(GetEnteringUnit())
 call TriggerExecute(XT)
@@ -14750,7 +14691,7 @@ set ZN=true
 call FogEnableOn()
 call FogMaskEnableOn()
 call ForForce(ZI,ref_function_R5X)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMastermind|r: Restricted vision and limited scoreboard information.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMastermind|r: Restricted vision and limited scoreboard information.")
 endfunction
 function R7X takes nothing returns boolean
 return ZB==false
@@ -14769,7 +14710,7 @@ endfunction
 function R8X takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set ZB=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAHourglass|r: You receive gold for enemy leaks.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAHourglass|r: You receive gold for enemy leaks.")
 endfunction
 function R9X takes nothing returns boolean
 return FC==false
@@ -14872,30 +14813,52 @@ function R9E takes location IVE,real IEE,real IXE returns location
 return Location(GetLocationX(IVE)+IEE*Cos(IXE*bj_DEGTORAD),GetLocationY(IVE)+IEE*Sin(IXE*bj_DEGTORAD))
 endfunction
 function RDX takes nothing returns nothing
+
 set FE=GetUnitLoc(KV[1+GetPlayerId(Player(0))])
-set NX=R9E(FE,-400.,0.)
-call CreateTextTagLocBJ("Primary Mode (pick 1 only)
-|cffFFcc00-AP|r: All Pick
-|cffFFcc00-SD|r: Single Draft
-|cffFFcc00-AR|r: All Random
-|cffFFcc00-HP|r: Host Pick
-|cffFFcc00-PH|r: Prophet Handpicked
-|cffFFcc00-PR|r: Prophet Random   ",NX,0.,11.,100.,100.,100.,0.)
+call CreateTextTagLocBJ("|CFFFF0000Choose Game Mode|r",Location(-7450,4750),0.,15.,100.,100.,100.,0.)
+set texttagGameMode1=bj_lastCreatedTextTag
+call SetTextTagLifespanBJ(texttagGameMode1,15.)
+call RemoveLocation(NX)
+
+set NX=R9E(FE,-500.,-50.)
+call CreateTextTagLocBJ("|CFFFF0000-PRO|r: League (|CFFFF0000-PRACMIQG|r)\n or customized modes below",NX,0.,10.,100.,100.,100.,0.)
+set texttagGameMode2=bj_lastCreatedTextTag
+call SetTextTagLifespanBJ(texttagGameMode2,15.)
+call RemoveLocation(NX)
+
+set NX=R9E(FE,-600.,0.)
+
+//|cffFFcc00-AP|r: All Pick
+//|cffFFcc00-SD|r: Single Draft
+//|cffFFcc00-AR|r: All Random
+//|cffFFcc00-HP|r: Host Pick
+
+call CreateTextTagLocBJ("|cffFFcc00Primary Mode (pick one)|r
+|CFFFF0000-PR|r: Prophet Random (default)
+|CFFFF0000-PH|r: Prophet Handpicked\n\n\n\n",NX,0.,10.,100.,100.,100.,0.)
+
 set CC=bj_lastCreatedTextTag
 call SetTextTagLifespanBJ(CC,15.)
 call RemoveLocation(NX)
-set NX=R9E(FE,100.,0.)
-call CreateTextTagLocBJ("Secondary Mode:
-|CFFFF0000-MM|r: Master Mind 
-|CFFFF0000-HG|r: Hour Glass
-|CFFFF0000-CB|r: Change Builder
-|CFFFF0000-EQ|r: 10x creep spawn
-|CFFFF0000-QG|r: Quick Game No W21-30
-|CFFFF0000-MI|r: Mirrored drafts
-|CFFFF0000-NS|r: NO Saving
+
+set NX=R9E(FE,0.,0.)
+
+//|CFFFF0000-MM|r: Master Mind 
+//|CFFFF0000-HG|r: Hour Glass
+//|CFFFF0000-CB|r: Change Builder
+//|CFFFF0000-EQ|r: 10x creep spawn
+//|CFFFF0000-NS|r: NO Saving
+//|CFFFF0000-NC|r: No Champions
+
+call CreateTextTagLocBJ("|cffFFcc00Secondary Mode (optional)|r
 |CFFFF0000-CC|r: Challenge Champions
-|CFFFF0000-AC|r: All Champions 
-|CFFFF0000-NC|r: No Champions",NX,0.,11.,100.,100.,100.,0.)
+|CFFFF0000-AC|r: All Champions (from Lvl 6)
+|CFFFF0000-MI|r: Mirrored Rolls (Red=Yellow...)
+|CFFFF0000-QG|r: Quick Game (No Lvl 21-29)
+|CFFFF0000-X3|r: Triple Creep Send",NX,0.,10.,100.,100.,100.,0.)
+
+call SetUnitPosition(KV[1+GetPlayerId(Player(0))],-7080,4000)
+
 set BC=bj_lastCreatedTextTag
 call SetTextTagLifespanBJ(BC,15.)
 call ShowTextTagForceBJ(true,CC,bj_FORCE_ALL_PLAYERS)
@@ -21343,7 +21306,6 @@ set EA=""
 set XA=null
 set NA=null
 set DA=false
-set FA=""
 set GA=false
 set HA=false
 set JA=false
@@ -21383,6 +21345,8 @@ set EC=false
 set AC=false
 set BC=null
 set CC=null
+set texttagGameMode1=null
+set texttagGameMode2=null
 set FC=false
 set HC=false
 set PC=false
@@ -21841,7 +21805,6 @@ set A3=null
 set N3=null
 set B3=null
 set C3=null
-set D3=null
 set F3=null
 set G3=null
 set H3=null
@@ -22730,8 +22693,7 @@ set ref_function_IAX=function IAX
 set ref_function_IFX=function IFX
 set ref_function_IGX=function IGX
 set ref_function_IHX=function IHX
-set ref_function_IJX=function IJX
-set ref_function_IKX=function IKX
+set ref_ProcessGameMode=function ProcessGameMode
 set ref_function_ILX=function ILX
 set ref_function_IMX=function IMX
 set ref_function_IPX=function IPX
@@ -24429,9 +24391,7 @@ set B3=CreateTrigger()
 call TriggerAddCondition(B3,Condition(ref_function_IGX))
 call TriggerAddAction(B3,ref_function_IHX)
 set C3=CreateTrigger()
-call TriggerAddAction(C3,ref_function_IJX)
-set D3=CreateTrigger()
-call TriggerAddAction(D3,ref_function_IKX)
+call TriggerAddAction(C3,ref_ProcessGameMode)
 set F3=CreateTrigger()
 call TriggerRegisterPlayerChatEvent(F3,Player(0),"-",false)
 call TriggerRegisterPlayerChatEvent(F3,Player(1),"-",false)
