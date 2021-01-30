@@ -25211,7 +25211,7 @@ function config takes nothing returns nothing
 call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
 call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies.
 
-Edited by OZE Team")
+Edited by Team OZE")
 call SetPlayers(10)
 call SetTeams(2)
 call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
