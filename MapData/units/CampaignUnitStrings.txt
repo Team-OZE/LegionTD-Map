@@ -9020,13 +9020,13 @@ Ubertip=|cffccccccDamage: |r|cffff8000201-221|r|cffcccccc|nSpeed: |r|cffff8000 0
 [h995]
 Art=ReplaceableTextures\CommandButtons\BTNBeastiary.blp
 BuildingSoundLabel=BuildingConstructionLoop
-Buttonpos=3
+Buttonpos=2
 Hotkey=Q
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missilespeed=1500,1500
 Name=War Room
-Sellunits=u997,u01K
+Sellunits=u997
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Ubertip=,
 
@@ -9744,9 +9744,9 @@ Art=ReplaceableTextures\CommandButtons\BTNPillage.blp
 Buttonpos=2
 Hotkey=E
 Missilespeed=1500,1500
-Name= Economic Growth
-Tip= |cffFFcc00E|rconomic Growth
-Ubertip=Invest Food to Increase your Income |nWorks only in -EG Mode|n|n|cffFFcc00+10 Income|r
+Name= Unused
+Tip= Unused
+Ubertip=Unused
 
 [u997]
 Art=ReplaceableTextures\CommandButtons\BTNDeathPact.blp
