@@ -18178,6 +18178,7 @@ else
 set OX=Player(9)
 set PE=U6
 endif
+call SetPlayerTechMaxAllowedSwap($52303030,50,OX) // Set max. King HP
 if GetUnitTypeId(GetSoldUnit())==$75393938 then
 if GetPlayerTechCountSimple($52303030,OX)<GetPlayerTechMaxAllowedSwap($52303030,OX)-4 then
 set bj_forLoopBIndex=1
@@ -18277,6 +18278,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endif
+call SetPlayerTechMaxAllowedSwap($52303032,30,OX) // Set max. King Regeneration
 if GetUnitTypeId(GetSoldUnit())==$75303041 then
 if GetPlayerTechCountSimple($52303032,OX)<GetPlayerTechMaxAllowedSwap($52303032,OX) then
 call ForForce(RJE(OX),ref_function_XPX)
@@ -20725,9 +20727,6 @@ function eK takes nothing returns nothing
 local real wk
 if GetEventDamage()+1.>=GetUnitState(H6,UNIT_STATE_LIFE) then
 set wk=GetUnitState(H6,UNIT_STATE_MAX_LIFE)
-if wk>50000. then
-set wk=50000.
-endif
 call SetUnitState(H6,UNIT_STATE_LIFE,wk)
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",H6,"origin"))
 set GRR=GRR-1
@@ -20743,9 +20742,6 @@ function iK takes nothing returns nothing
 local real wk
 if GetEventDamage()+1.>=GetUnitState(U6,UNIT_STATE_LIFE) then
 set wk=GetUnitState(U6,UNIT_STATE_MAX_LIFE)
-if wk>50000. then
-set wk=50000.
-endif
 call SetUnitState(U6,UNIT_STATE_LIFE,wk)
 call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",U6,"origin"))
 set GII=GII-1
