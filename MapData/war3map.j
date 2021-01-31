@@ -14926,17 +14926,8 @@ call UnitAddAbility(GetTriggerUnit(),$41657468)
 if GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0 then
 loop
 exitwhen i>8
-if IsUnitInGroup(GetTriggerUnit(),IG[i]) and GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0 and OE!=9 and OE!=19 then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFFcc00Champion:|r *Now see what have you done!!!*")
-set TV[i]=R2I(TV[i]/2)
-elseif IsUnitInGroup(GetTriggerUnit(),IG[i]) and GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0 and OE==9 then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFFcc00Champion:|r *GG!!!*")
-set TV[i]=R2I(TV[i]/2)
-elseif IsUnitInGroup(GetTriggerUnit(),IG[i]) and GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0 and OE==19 then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFFcc00Champion:|r *GG!!!*")
-set TV[i]=R2I(TV[i]/2)
-elseif IsUnitInGroup(GetTriggerUnit(),IG[i]) and GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0 and OE==29 then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFFcc00Champion:|r *GG!!!*")
+if IsUnitInGroup(GetTriggerUnit(),IG[i]) and GetUnitAbilityLevel(GetTriggerUnit(),$41393231)>0  then
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFFcc00Champion:|r 'Don't you dare use anarchy on me!'")
 set TV[i]=R2I(TV[i]/2)
 endif
 set i=i+1
