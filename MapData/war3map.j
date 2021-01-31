@@ -10383,7 +10383,7 @@ call StartTimerBJ(NE,false,50.)
 call TimerDialogSetTitle(EX,"Next wave in")
 else
 call PauseTimerBJ(true,NE)
-call TimerDialogSetTitle(EX,"This is Final Boss !!")
+call TimerDialogSetTitle(EX,"This is the final round!")
 endif
 endfunction
 function K0E takes nothing returns nothing
