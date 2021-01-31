@@ -603,7 +603,7 @@ Ubertip="Conjures a fanatic to attack its master's enemies. Lasts 60 seconds. (6
 Art=ReplaceableTextures\CommandButtons\BTNKelThuzad.blp
 Name=Diablo
 Tip=Diablo
-Ubertip="Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (60 second cooldown)|n|n(51-54 Damage, 1 Speed, 450HP, Piercing/Light). Summons Imps (they have a skill: Immolation)"
+Ubertip="Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (60 second cooldown)|n|n(51-54 Damage, 1 Speed, 700HP, Chaos/Unarmored). Summons Imps (they have a skill: Immolation)"
 
 [A02P]
 Art=ReplaceableTextures\CommandButtons\BTNInfernal.blp
