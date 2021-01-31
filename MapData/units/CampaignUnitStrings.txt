@@ -4314,7 +4314,7 @@ Name=Elite Archer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=|cffFFcc00F|r - Promote to Elite Archer
-Ubertip=|cffccccccDamage: |r|cffff800025-25|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000600|r|cffcccccc|nHit Points: |r|cffff8000650|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Multishot (5)|r|n
+Ubertip=|cffccccccDamage: |r|cffff800025-25|r|cffcccccc|nSpeed: |r|cffff80000.72|r|cffcccccc|nRange: |r|cffff8000600|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Multishot (5)|r|n
 
 [h09N]
 Art=ReplaceableTextures\CommandButtons\BTNFootman.blp
