@@ -2123,13 +2123,13 @@ Researchhotkey=N
 Researchtip="Ice star, [|cffffcc00Level%d|r] (|cffffcc00N|r)"
 Researchubertip="Blasts enemy units around a target enemy unit with a wave of damaging frost that slows movement and attack rate. |n|n|cffffcc00Level 1|r - 100 target damage, 50 nova damage. |n|cffffcc00Level 2|r - 100 target damage, 100 nova damage. |n|cffffcc00Level 3|r - 100 target damage, 150 nova damage."
 Tip=Frost Nova
-Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 10 nova damage."
+Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 20 nova damage."
 
 [A099]
 Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
 Name=Frost Nova
 Tip=Frost Nova
-Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 10 nova damage."
+Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 20 nova damage."
 
 [A09A]
 Art=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
