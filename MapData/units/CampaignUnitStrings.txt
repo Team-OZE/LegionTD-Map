@@ -1986,7 +1986,7 @@ Name=Violet
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=|cffFFcc00F|r - Promote to Violet
-Ubertip=|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300|r|cffcccccc|nHit Points: |r|cffff8000650|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n
+Ubertip=|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300|r|cffcccccc|nHit Points: |r|cffff8000850|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n
 
 [h046]
 Art=ReplaceableTextures\CommandButtons\BTNRockGolem.blp
