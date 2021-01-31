@@ -23,6 +23,7 @@ integer array Used3
 integer array Used4
 integer array Used5
 integer array Used6
+integer kingSpell=0
 gamecache K=null
 group MC=null
 boolean array L
@@ -17708,6 +17709,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Your King received +2 armo
 endfunction
 function X3X takes nothing returns nothing
 set PE=H6
+set EE=kingSpell
 set RR=OR[EE]
 set Q3=RR
 call UnitAddAbility(PE,RR)
@@ -17744,7 +17746,7 @@ function X4X takes nothing returns nothing
 local image img
 set PE=H6
 if OE==4 then
-set EE=GetRandomInt(1,3)
+set EE=kingSpell
 set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(EE)+".blp",128.,128.,0.,-4615.,-3772.,0.,0.,0.,0.,3)
 call SetImageRenderAlways(img,true)
 if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
@@ -17775,7 +17777,7 @@ set img=null
 endfunction
 function X5X takes nothing returns nothing
 set PE=U6
-set EE=GetRandomInt(1,3)
+set EE=kingSpell
 set RR=OR[EE]
 set F5=RR
 call UnitAddAbility(PE,RR)
@@ -17813,7 +17815,7 @@ function X6X takes nothing returns nothing
 local image img
 set PE=U6
 if OE==4 then
-set EE=GetRandomInt(1,3)
+set EE=kingSpell
 set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(EE)+".blp",128.,128.,0.,4475.,-3772.,0.,0.,0.,0.,3)
 call SetImageRenderAlways(img,true)
 if IsPlayerAlly(GetLocalPlayer(),Player(9)) or IsPlayerObserver(GetLocalPlayer()) then
@@ -25174,4 +25176,5 @@ call DefineStartLocation(9,4545.,-3260.)
 call InitCustomPlayerSlots()
 call InitCustomTeams()
 call InitAllyPriorities()
+set kingSpell=GetRandomInt(1,3)
 endfunction
