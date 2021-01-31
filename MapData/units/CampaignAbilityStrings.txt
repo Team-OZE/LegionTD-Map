@@ -58,7 +58,7 @@ Art=ReplaceableTextures\CommandButtons\BTNGrabTree.blp
 Name=Knock Out
 Order=bash
 Tip=Knock Out
-Ubertip="Each attack has a 27% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0,35 sec."
+Ubertip="Each attack has a 33% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0,35 sec."
 
 [A00F]
 Art=ReplaceableTextures\PassiveButtons\PASBTNPoisonSting.blp
