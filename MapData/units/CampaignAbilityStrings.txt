@@ -1120,7 +1120,7 @@ Name=Boss Unit
 Art=ReplaceableTextures\CommandButtons\BTNWeb.blp
 Name=Sticky Webs
 Tip=Sticky Webs
-Ubertip=Attacks slow enemies' movement by 20% and attack by 15% for 6 seconds. Air units only.
+Ubertip=Attacks slow enemies' movement by 40% and attack by 30% for 6 seconds. Air units only.
 
 [A050]
 Art=ReplaceableTextures\CommandButtons\BTNBandit.blp
