@@ -17708,7 +17708,6 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Your King received +2 armo
 endfunction
 function X3X takes nothing returns nothing
 set PE=H6
-set EE=GetRandomInt(1,3)
 set RR=OR[EE]
 set Q3=RR
 call UnitAddAbility(PE,RR)
