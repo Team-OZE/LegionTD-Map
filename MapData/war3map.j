@@ -7784,25 +7784,17 @@ call UnitAddAbility(u,$41393437)
 call UnitAddAbility(uu,$41393438)
 call UnitApplyTimedLife(u,$42544C46,3.)
 call UnitApplyTimedLife(uu,$42544C46,3.)
-if BLE<145. and OE!=4 then
+if OE<4 then
 call UnitAddAbility(BHE,$41393039)
 elseif OE==4 or OE==5 then
 call UnitAddAbility(BHE,$41393037)
-elseif BLE==213. then
-call UnitAddAbility(BHE,$41393134)
-elseif BLE==290. then
-call UnitAddAbility(BHE,$41393133)
-elseif BLE==212. then
-call UnitAddAbility(BHE,$41393132)
-elseif BLE==328. then
-call UnitAddAbility(BHE,$41393338)
 elseif OE==10 then
 call UnitAddAbility(BHE,$41393334)
 elseif OE==20 then
 call UnitAddAbility(BHE,$41393238)
 elseif OE==30 then
 call UnitAddAbility(BHE,$41393238)
-elseif BLE>329. and BLE<1000. then
+elseif BLE<1000. then
 call UnitAddAbility(BHE,$41393337)
 elseif BLE>=1000. and BLE<1500. then
 call UnitAddAbility(BHE,$41393336)
