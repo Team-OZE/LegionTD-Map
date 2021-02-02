@@ -59,7 +59,7 @@ integer array TV
 integer array UV
 integer array WV
 string array YV
-string ZV=null
+string mapVersion=null
 integer EE=0
 integer array XE
 integer OE=0
@@ -1395,7 +1395,7 @@ code ref_function_DHE=null
 code ref_function_DKE=null
 code ref_function_DQE=null
 code ref_function_DTE=null
-code ref_function_DUE=null
+code ref_function_CreateQuests=null
 code ref_function_DWE=null
 code ref_function_D_E=null
 code ref_function_D0E=null
@@ -3809,7 +3809,7 @@ endif
 endif
 endfunction
 function BDE takes nothing returns nothing
-set ZV="v5.0b Release"
+set mapVersion="v5.0b Release"
 endfunction
 function BDX takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
@@ -6856,45 +6856,45 @@ call UnitResetCooldown(GetEnumUnit())
 call IssueImmediateOrderById(GetEnumUnit(),852589)
 endif
 endfunction
-function DUE takes nothing returns nothing
+
+function CreateQuests takes nothing returns nothing
+call CreateQuestBJ(0,"Game Modes","|cffAA3333Primary Game Modes|r (only 1 allowed)
+-pr: Prophet Random: You have no re-rolls, every round your units are automatically re-rolled. Finishing waves rewards less gold
+-ph: Prophet Handpicked: Prophet with manual & incremental (up to 6) cost rerolls
+
+|cffAA3333Secondary Game Modes|r (can be combined),
+-cc: Challenge Champions: Champions can be manually challenged
+-ac: All Champions: All waves from level 6 will spawn a champion
+-mi: Mirrored Rolls. Rolls are sync between counterpart players (Red with Yellow, Blue with Orange, ...)
+-qg: Quick Game (No Lvl 21-29)
+-x3: Triple Creep Send","ReplaceableTextures\\CommandButtons\\BTNScrollUber.blp")
+
+call CreateQuestBJ(0,"Income","|cffAA3333Income|r
+- Income is earned every level
+- Purchase summons with lumber to add to your income
+
+|cffAA3333Fact Sheet|r
+- Most summons add 5% of their lumber cost, in gold, to your income. Other summons add less income, but have special abilities
+- You can play alone or with ally vs computer","ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
+
 call CreateQuestBJ(0,"Summons","|cffAA3333Using Summons|r
 - Summons can be purchased at your Barracks or Advanced Barracks.
 - Summons cost lumber and do not cost food.
 - Summons automatically attack the opposing team at the beginning of each round. Like Fighters, you do not need to control them.
-- Summons add to your income. ","ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
-call CreateQuestBJ(0,"Income","|cffAA3333Income|R
-- Income is earned every level.
-- Purchase summons with lumber to add to your income.
+- Summons add to your income","ReplaceableTextures\\CommandButtons\\BTNBarracks.blp")
 
-|cffAA3333Fact Sheet|r
-- Most summons add 5% of their lumber cost, in gold, to your income. Other summons add less income, but have special abilities.
-- You can play alone or with ally vs computer","ReplaceableTextures\\CommandButtons\\BTNChestOfGold.blp")
-call CreateQuestBJ(0,"King","|cffAA3333King|r
+call CreateQuestBJ(2,"King","|cffAA3333King|r
 - Protect your King longer than your opponents can protect theirs to win
 - You can purchase upgrades for your King at your Town.
-- You can attack the enemy King by summoning units. See the Summoned Units information panel for details.
-- You can control your King by clicking on ","ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp")
-call CreateQuestBJ(2,"Game Modes","TRIGSTR_000","ReplaceableTextures\\CommandButtons\\BTNScrollUber.blp")
-call CreateQuestBJ(2,"Credits","Based on Legion TD |cffe2222cMEGA|r
-Edited by Rholor, RaVeN and Team OZE
--------","ReplaceableTextures\\CommandButtons\\BTNHydralisk.blp")
-call CreateQuestBJ(2,ZV+" Changelog","Latest changes:
-v4.7d -> v5.0b
-----
-New secondary mode -QG, Quick Game
-New secondary mode -MI, Mirrored Rolls
+- You can attack the enemy King by summoning units. See the Summoned Units information panel for details
+- You can control your King by clicking on him","ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp")
 
-New Balance Update
-Fixed Resources being visible to enemies
-Arena Boss Minions stuck less
-Boss CC enabled (implemented value check for boss CC, w10 = 7199 value, w20 = 30000 value)
-Killing Boss CC gives Gold to your team (like arena)
-Heros from Altar of King level up to 11 and acquire 1 new ability
-Balance Update: Check https://discord.gg/dhtvnvH for all unit changes. 
-Tweaked by Rholor & RaVeN
-----
-Original version edited by Rholor and Team OZE","ReplaceableTextures\\CommandButtons\\BTNBloodKey.blp")
+call CreateQuestBJ(2,"Credits","Based on Legion TD |cffe2222cMEGA|r
+Edited by Rholor, RaVeN and Team OZE","ReplaceableTextures\\CommandButtons\\BTNHydralisk.blp")
+
+call CreateQuestBJ(2,mapVersion+" Changelog","Goto: https://discord.gg/dhtvnvH","ReplaceableTextures\\CommandButtons\\BTNBloodKey.blp")
 endfunction
+
 function DUX takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetEnumUnit())>=100. and UnitHasBuffBJ(GetEnumUnit(),$4230304F)==false and UnitHasBuffBJ(GetEnumUnit(),$4230315A)==false then
 call UnitResetCooldown(GetEnumUnit())
@@ -21180,7 +21180,7 @@ set CV=0
 set DV=0
 set GV=0
 call Player(0)
-set ZV=""
+set mapVersion=""
 set EE=0
 set OE=0
 set IE=CreateGroup()
@@ -22303,7 +22303,7 @@ set ref_function_DHE=function DHE
 set ref_function_DKE=function DKE
 set ref_function_DQE=function DQE
 set ref_function_DTE=function DTE
-set ref_function_DUE=function DUE
+set ref_function_CreateQuests=function CreateQuests
 set ref_function_DWE=function DWE
 set ref_function_D_E=function D_E
 set ref_function_D0E=function D0E
@@ -23486,7 +23486,7 @@ set SS=CreateTrigger()
 call TriggerRegisterTimerEventSingle(SS,1.)
 call TriggerAddAction(SS,ref_function_DTE)
 set TS=CreateTrigger()
-call TriggerAddAction(TS,ref_function_DUE)
+call TriggerAddAction(TS,ref_function_CreateQuests)
 set US=CreateTrigger()
 call DisableTrigger(US)
 call TriggerRegisterTimerEventPeriodic(US,1.)
@@ -25149,9 +25149,7 @@ call SetStartLocPrioCount(9,0)
 endfunction
 function config takes nothing returns nothing
 call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
-call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies.
-
-Edited by Team OZE")
+call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies. Edited by Team OZE")
 call SetPlayers(10)
 call SetTeams(2)
 call SetGamePlacement(MAP_PLACEMENT_TEAMS_TOGETHER)
