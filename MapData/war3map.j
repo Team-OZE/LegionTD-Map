@@ -13,7 +13,7 @@ button array WH
 force P3=null
 integer GRR=0
 integer GII=0
-player Keek=null
+player localPlayer=null
 boolean G=false
 boolean H=false
 boolean J=false
