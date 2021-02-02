@@ -17,12 +17,7 @@ player localPlayer=null
 boolean G=false
 boolean H=false
 boolean J=false
-integer array Used1
-integer array Used2
-integer array Used3
-integer array Used4
-integer array Used5
-integer array Used6
+integer array RolledUnits
 integer kingSpell=0
 gamecache K=null
 group MC=null
@@ -199,7 +194,7 @@ boolean HA=false
 boolean JA=false
 boolean GL=false
 boolean HCC=false
-boolean MIRROR=false
+boolean mirrorMode=false
 timer KA=null
 timerdialog LA=null
 group array MA
@@ -2688,7 +2683,6 @@ function Trig_quickCls_Actions takes nothing returns nothing
     endif
 endfunction
 
-//===========================================================================
 function InitTrig_quickCls takes nothing returns nothing
     set gg_trg_quickCls = CreateTrigger(  )
     call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(0), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
@@ -2702,410 +2696,111 @@ function InitTrig_quickCls takes nothing returns nothing
     call TriggerAddAction( gg_trg_quickCls, function Trig_quickCls_Actions )
 endfunction
 
-
-
-// r-mach : ReRoll function
-function ReRollNah takes player pla returns nothing
-local integer pid=GetPlayerId(pla)
-local integer array lvx
-local integer i
-local integer j
-local integer a
-local integer mPid
-local player mPla
-
-if pid<=3 then
-set mPid=pid+4
-set mPla=Player(mPid)
-else
-set mPid=pid-4
-set mPla=Player(mPid)
-endif
-
-// call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Debug:|r  Mirror debug. " + I2S(pid) + " " + I2S(mPid))
-call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($68304138,0,pla)
-set i=1
-set j=1
-loop
-
-if Used1[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-
-set j=j+1
-exitwhen j>PB[1]
-endloop
-
-set j=GetRandomInt(1,i-1)
-set i=lvx[j]
-set Used1[pid]=i
-if MIRROR==true then
-set Used1[mPid]=i // Mirror
-endif
-set j=1
-loop
-exitwhen j>PB[1]
-if j==i then
-call SetPlayerTechMaxAllowedSwap(MB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(MB[j],-1,mPla) // Mirror
-endif
-if VisualPick[pid*6]!=null then
-call ShowImage(VisualPick[pid*6],false)
-call DestroyImage(VisualPick[pid*6])
-endif
-
-// Mirror
-if MIRROR==true then
-if VisualPick[mPid*6]!=null then
-call ShowImage(VisualPick[mPid*6],false)
-call DestroyImage(VisualPick[mPid*6])
-endif
-endif
-
-set VisualPick[pid*6]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(MB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2],VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-if MIRROR==true then
-set VisualPick[mPid*6]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(MB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2],VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-endif
-call SetImageRenderAlways(VisualPick[pid*6],true)
-if MIRROR==true then
-call SetImageRenderAlways(VisualPick[mPid*6],true)
-endif
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6],true)
-else
-call ShowImage(VisualPick[pid*6],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6],true)
-else
-call ShowImage(VisualPick[mPid*6],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(MB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(MB[j],0,mPla)
-endif
-endif
-
-
-
-set j=j+1
-endloop
-set i=1
-set j=1
-loop
-if Used2[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-set j=j+1
-exitwhen j>PB[2]
-endloop
-set j=GetRandomInt(1,i-1)
-set i=lvx[j]
-set Used2[pid]=i
-if MIRROR==true then
-set Used2[mPid]=i
-endif
-set j=1
-loop
-exitwhen j>PB[2]
-if j==i then
-call SetPlayerTechMaxAllowedSwap(QB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(QB[j],-1,mPla)
-endif
-if VisualPick[pid*6+1]!=null then
-call ShowImage(VisualPick[pid*6+1],false)
-call DestroyImage(VisualPick[pid*6+1])
-endif
-if MIRROR==true then
-if VisualPick[mPid*6+1]!=null then
-call ShowImage(VisualPick[mPid*6+1],false)
-call DestroyImage(VisualPick[mPid*6+1])
-endif
-endif
-set VisualPick[pid*6+1]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(QB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2]+104,VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-if MIRROR==true then
-set VisualPick[mPid*6+1]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(QB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2]+104,VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-endif
-call SetImageRenderAlways(VisualPick[pid*6+1],true)
-if MIRROR==true then
-call SetImageRenderAlways(VisualPick[mPid*6+1],true)
-endif
-
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6+1],true)
-else
-call ShowImage(VisualPick[pid*6+1],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6+1],true)
-else
-call ShowImage(VisualPick[mPid*6+1],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(QB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(QB[j],0,mPla)
-endif
-endif
-set j=j+1
-endloop
-set i=1
-set j=1
-loop
-if Used3[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-set j=j+1
-exitwhen j>PB[3]
-endloop
-set j=GetRandomInt(1,i-1)
-set i=lvx[j]
-set Used3[pid]=i
-if MIRROR==true then
-set Used3[mPid]=i
-endif
-set j=1
-loop
-exitwhen j>PB[3]
-if j==i then
-call SetPlayerTechMaxAllowedSwap(SB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(SB[j],-1,mPla)
-endif
-if VisualPick[pid*6+2]!=null then
-call ShowImage(VisualPick[pid*6+2],false)
-call DestroyImage(VisualPick[pid*6+2])
-endif
-if MIRROR==true then
-if VisualPick[mPid*6+2]!=null then
-call ShowImage(VisualPick[mPid*6+2],false)
-call DestroyImage(VisualPick[mPid*6+2])
-endif
-endif
-set VisualPick[pid*6+2]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(SB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2]+208,VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[pid*6+2],true)
-if MIRROR==true then
-set VisualPick[mPid*6+2]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(SB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2]+208,VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[mPid*6+2],true)
-endif
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6+2],true)
-else
-call ShowImage(VisualPick[pid*6+2],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6+2],true)
-else
-call ShowImage(VisualPick[mPid*6+2],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(SB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(SB[j],0,mPla)
-endif
-endif
-set j=j+1
-endloop
-set i=1
-set j=1
-loop
-if Used4[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-set j=j+1
-exitwhen j>PB[4]
-endloop
-set j=GetRandomInt(1,i-1)
-set i=lvx[j]
-set Used4[pid]=i
-if MIRROR==true then
-set Used4[mPid]=i
-endif
-set j=1
-loop
-exitwhen j>PB[4]
-if j==i then
-call SetPlayerTechMaxAllowedSwap(TB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(TB[j],-1,mPla)
-endif
-if VisualPick[pid*6+3]!=null then
-call ShowImage(VisualPick[pid*6+3],false)
-call DestroyImage(VisualPick[pid*6+3])
-endif
-if MIRROR==true then
-if VisualPick[mPid*6+3]!=null then
-call ShowImage(VisualPick[mPid*6+3],false)
-call DestroyImage(VisualPick[mPid*6+3])
-endif
-endif
-set VisualPick[pid*6+3]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(TB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2]+312,VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[pid*6+3],true)
-if MIRROR==true then
-set VisualPick[mPid*6+3]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(TB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2]+312,VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[mPid*6+3],true)
-endif
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6+3],true)
-else
-call ShowImage(VisualPick[pid*6+3],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6+3],true)
-else
-call ShowImage(VisualPick[mPid*6+3],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(TB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(TB[j],0,mPla)
-endif
-endif
-set j=j+1
-endloop
-set i=1
-set j=1
-loop
-if Used5[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-set j=j+1
-exitwhen j>PB[5]
-endloop
-set j=GetRandomInt(1,i-1)
-set a=lvx[j]
-if UB[a]==$68313856 and GetRandomInt(1,5)!=5 then
-loop
-exitwhen lvx[j]!=a
-set j=GetRandomInt(1,i-1)
-endloop
-endif
-set i=lvx[j]
-set j=1
-loop
-exitwhen j>PB[5]
-set Used5[pid]=i
-if MIRROR==true then
-set Used5[mPid]=i
-endif
-if j==i then
-call SetPlayerTechMaxAllowedSwap(UB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(UB[j],-1,mPla)
-endif
-if VisualPick[pid*6+4]!=null then
-call ShowImage(VisualPick[pid*6+4],false)
-call DestroyImage(VisualPick[pid*6+4])
-endif
-if MIRROR==true then
-if VisualPick[mPid*6+4]!=null then
-call ShowImage(VisualPick[mPid*6+4],false)
-call DestroyImage(VisualPick[mPid*6+4])
-endif
-endif
-set VisualPick[pid*6+4]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(UB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2]+416,VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[pid*6+4],true)
-if MIRROR==true then
-set VisualPick[mPid*6+4]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(UB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2]+416,VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[mPid*6+4],true)
-endif
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6+4],true)
-else
-call ShowImage(VisualPick[pid*6+4],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6+4],true)
-else
-call ShowImage(VisualPick[mPid*6+4],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(UB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(UB[j],0,mPla)
-endif
-endif
-set j=j+1
-endloop
-set i=1
-set j=1
-loop
-if Used6[pid]!=j then
-set lvx[i]=j
-set i=i+1
-endif
-set j=j+1
-exitwhen j>PB[6]
-endloop
-set j=GetRandomInt(1,i-1)
-set i=lvx[j]
-set Used6[pid]=i
-if MIRROR==true then
-set Used6[mPid]=i
-endif
-set j=1
-loop
-exitwhen j>PB[6]
-if j==i then
-call SetPlayerTechMaxAllowedSwap(WB[j],-1,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(WB[j],-1,mPla)
-endif
-if VisualPick[pid*6+5]!=null then
-call ShowImage(VisualPick[pid*6+5],false)
-call DestroyImage(VisualPick[pid*6+5])
-endif
-if MIRROR==true then
-if VisualPick[mPid*6+5]!=null then
-call ShowImage(VisualPick[mPid*6+5],false)
-call DestroyImage(VisualPick[mPid*6+5])
-endif
-endif
-set VisualPick[pid*6+5]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(WB[j])+".blp",104.,104.,0.,VisualPickXY[pid*2]+520,VisualPickXY[pid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[pid*6+5],true)
-if MIRROR==true then
-set VisualPick[mPid*6+5]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(WB[j])+".blp",104.,104.,0.,VisualPickXY[mPid*2]+520,VisualPickXY[mPid*2+1],256.,0.,0.,0.,3)
-call SetImageRenderAlways(VisualPick[mPid*6+5],true)
-endif
-if IsPlayerAlly(Keek,pla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[pid*6+5],true)
-else
-call ShowImage(VisualPick[pid*6+5],false)
-endif
-if MIRROR==true then
-if IsPlayerAlly(Keek,mPla) or IsPlayerObserver(Keek) then
-call ShowImage(VisualPick[mPid*6+5],true)
-else
-call ShowImage(VisualPick[mPid*6+5],false)
-endif
-endif
-else
-call SetPlayerTechMaxAllowedSwap(WB[j],0,pla)
-if MIRROR==true then
-call SetPlayerTechMaxAllowedSwap(WB[j],0,mPla)
-endif
-endif
-set j=j+1
-endloop
+function ReRollNah takes player myPlayer returns nothing
+	local player mirrorPlayer
+	local integer playerID=GetPlayerId(myPlayer)
+	local integer mirrorPlayerID=0
+	local integer unitID=0
+	local integer myInteger=0	
+	local integer array tierIndex
+	local integer unitsPerTier=1
+	local integer unitCounter=1
+	
+	// Get mirror player and player-id
+	set mirrorPlayerID=(playerID+4)%8
+	set mirrorPlayer=Player(mirrorPlayerID)
+	
+	call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($68304138,0,myPlayer)
+	
+	loop
+		exitwhen unitID>5
+		
+		set unitsPerTier=1
+		set unitCounter=1
+		loop
+			if RolledUnits[unitID+playerID*6]!=unitCounter then
+				set tierIndex[unitsPerTier]=unitCounter
+				set unitsPerTier=unitsPerTier+1
+			endif
+			
+			set unitCounter=unitCounter+1
+			exitwhen unitCounter>PB[unitID+1]
+		endloop
+		
+		// Roll random unit from index range
+		set unitCounter=GetRandomInt(1,unitsPerTier-1)
+		set unitsPerTier=tierIndex[unitCounter]
+		
+		// Save unit
+		set RolledUnits[unitID+playerID*6]=unitsPerTier
+		if mirrorMode then
+			set RolledUnits[unitID+(playerID%4)*6]=unitsPerTier
+		endif
+		
+		set unitCounter=1
+		loop
+			exitwhen unitCounter>PB[unitID+1]
+			
+			if	   unitID==0 then
+				set myInteger=MB[unitCounter]
+			elseif unitID==1 then
+				set myInteger=QB[unitCounter] 
+			elseif unitID==2 then
+				set myInteger=SB[unitCounter] 
+			elseif unitID==3 then
+				set myInteger=TB[unitCounter]
+			elseif unitID==4 then
+				set myInteger=UB[unitCounter] 
+			elseif unitID==5 then
+				set myInteger=WB[unitCounter]
+			endif
+			
+			if unitCounter==unitsPerTier then
+				call SetPlayerTechMaxAllowedSwap(myInteger,-1,myPlayer)
+				if mirrorMode then
+					call SetPlayerTechMaxAllowedSwap(myInteger,-1,mirrorPlayer)
+				endif
+				
+				if VisualPick[playerID*6+unitID]!=null then
+					call ShowImage(VisualPick[playerID*6+unitID],false)
+					call DestroyImage(VisualPick[playerID*6+unitID])
+				endif
+				if mirrorMode then
+					if VisualPick[mirrorPlayerID*6+unitID]!=null then
+						call ShowImage(VisualPick[mirrorPlayerID*6+unitID],false)
+						call DestroyImage(VisualPick[mirrorPlayerID*6+unitID])
+					endif
+				endif
+				
+				// Create visual images of the roll
+				set VisualPick[playerID*6+unitID]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(myInteger)+".blp",104.,104.,0.,VisualPickXY[playerID*2]+104*unitID,VisualPickXY[playerID*2+1],256.,0.,0.,0.,3)
+				if mirrorMode then
+					set VisualPick[mirrorPlayerID*6+unitID]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(myInteger)+".blp",104.,104.,0.,VisualPickXY[mirrorPlayerID*2]+104*unitID,VisualPickXY[mirrorPlayerID*2+1],256.,0.,0.,0.,3)
+				endif
+				
+				call SetImageRenderAlways(VisualPick[playerID*6+unitID],true)
+				if mirrorMode then
+					call SetImageRenderAlways(VisualPick[mirrorPlayerID*6+unitID],true)
+				endif
+				
+				// Show images for allies or observers
+				call ShowImage(VisualPick[playerID*6+unitID],IsPlayerAlly(localPlayer,myPlayer) or IsPlayerObserver(localPlayer))
+				
+				// Show images for mirror player if in morror mode
+				call ShowImage(VisualPick[mirrorPlayerID*6+unitID],mirrorMode)
+			else
+				call SetPlayerTechMaxAllowedSwap(myInteger,0,myPlayer)
+				if mirrorMode then
+					call SetPlayerTechMaxAllowedSwap(myInteger,0,mirrorPlayer)
+				endif
+			endif
+			
+			set unitCounter=unitCounter+1
+		endloop
+		
+		set unitID=unitID+1
+	endloop
 endfunction
 
 function AAX takes nothing returns nothing
@@ -9655,7 +9350,7 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(Y10)
 		
 		elseif parameter=="mi" then
-			set MIRROR=true
+			set mirrorMode=true
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMirror Mode|r: Rolls are mirrored with your opponent counterpart.")
 		
 		elseif parameter=="cc" then
@@ -9838,7 +9533,7 @@ endif
 if XJ then
 set LN=LN+"ac"
 endif
-if MIRROR then
+if mirrorMode then
 set LN=LN+"mi"
 endif
 if HCC then
@@ -14548,14 +14243,9 @@ set WB[EE]=$68304430
 set PB[6]=EE
 set i=0
 loop
-set Used1[i]=99
-set Used2[i]=99
-set Used3[i]=99
-set Used4[i]=99
-set Used5[i]=99
-set Used6[i]=99
-set i=i+1
-exitwhen i>7
+	set RolledUnits[i]=99
+	set i=i+1
+	exitwhen i>47 // 8 Players * 6 Units
 endloop
 endfunction
 function QZV takes nothing returns nothing
@@ -18905,12 +18595,7 @@ call DestroyGroup(FGG)
 set FGG=GetUnitsInRectMatching(GetPlayableMapRect(),Condition(ref_function_F111))
 call ForGroupBJ(FGG,ref_function_F112)
 endfunction
-//function HandleCount takes nothing returns nothing
-//local location L = Location(0,0)
-//call BJDebugMsg(I2S(GetHandleId(L)-0x100000))
-//call RemoveLocation(L)
-//set L = null
-//endfunction
+
 function Z4E takes nothing returns boolean
 return GetSpellAbilityId()==$41393639
 endfunction
