@@ -1,4 +1,10 @@
 globals
+	boolean isTestVersion=true // Set to false for release version
+	boolean x3Mode=false
+	boolean ggMode=false
+	integer array RolledUnits
+	integer kingSpell=0
+
 gamecache BO=null
 trigger V=null
 hashtable HY=null
@@ -17,13 +23,10 @@ player localPlayer=null
 boolean G=false
 boolean H=false
 boolean J=false
-integer array RolledUnits
-integer kingSpell=0
 gamecache K=null
 group MC=null
 boolean array L
 boolean array M
-boolean x3Mode=false
 integer array P
 integer array Q
 integer Q3=0
@@ -4279,32 +4282,41 @@ call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),11.,UO+" levels: |cffFF8700
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function CPE takes nothing returns nothing
-call A_V(2.)
-call TimerDialogDisplay(LA,false)
-call DestroyTimerDialog(LA)
-call StartTimerBJ(NE,false,80.)
-call StartTimerBJ(NE,false,80.)
-call CreateTimerDialogBJ(NE,"Level "+I2S(OE+1)+" in")
-set EX=bj_lastCreatedTimerDialog
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.," ")
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"You have |cffFFcc0080|r seconds until level |cffFFcc00"+I2S(OE+1)+"|r begins.")
-call PlaySoundBJ(EQ)
-call MultiboardMinimize(JR,false)
-call ConditionalTriggerExecute(S4)
-call TriggerExecute(AT)
-call TriggerExecute(OT)
-call TriggerExecute(XT)
-call TriggerExecute(RT)
-call TriggerExecute(BT)
-if QH then
-call TriggerExecute(XS)
-endif
-call DisableTrigger(GetTriggeringTrigger())
-if HH>4 then
-set ZF[10]=true
-endif
+	local real timerRound
+	if ggMode then
+		set timerRound=300.
+	else
+		set timerRound=80.
+	endif
+	
+	call A_V(2.)
+	call TimerDialogDisplay(LA,false)
+	call DestroyTimerDialog(LA)
+	
+	call StartTimerBJ(NE,false,timerRound)
+	call CreateTimerDialogBJ(NE,"Level "+I2S(OE+1)+" in")
+	set EX=bj_lastCreatedTimerDialog
+	
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"\nYou have |cffFFcc00"+I2S(R2I(timerRound))+"|r seconds until level |cffFFcc00"+I2S(OE+1)+"|r begins.")
+	call PlaySoundBJ(EQ)
+	call MultiboardMinimize(JR,false)
+	call ConditionalTriggerExecute(S4)
+	call TriggerExecute(AT)
+	call TriggerExecute(OT)
+	call TriggerExecute(XT)
+	call TriggerExecute(RT)
+	call TriggerExecute(BT)
+	if QH then
+	call TriggerExecute(XS)
+	endif
+	call DisableTrigger(GetTriggeringTrigger())
+	if HH>4 then
+	set ZF[10]=true
+	endif
 endfunction
+
 function CPX takes nothing returns nothing
 call ClearTextMessagesBJ(I3E(Condition(ref_function_Q4E)))
 call DestroyForce(S8)
@@ -6608,33 +6620,39 @@ endfunction
 function DWX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303158)==false,UnitHasBuffBJ(GetFilterUnit(),$42303159)==false))
 endfunction
+
 function DXE takes nothing returns nothing
-local real x=GetPlayerStartLocationX(GetEnumPlayer())
-local real y=GetPlayerStartLocationY(GetEnumPlayer())
-call AdjustPlayerStateBJ(750,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-call AdjustPlayerStateBJ(150,GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)
-call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_FOOD_CAP_CEILING,250)
-set bj_lastCreatedUnit=CreateUnit(GetEnumPlayer(),$65303030,x,y,bj_UNIT_FACING)
-set KV[1+GetPlayerId(GetOwningPlayer(bj_lastCreatedUnit))]=bj_lastCreatedUnit
-call SelectUnitForPlayerSingle(bj_lastCreatedUnit,GetEnumPlayer())
-call ForceAddPlayer(ZI,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($68304442,1,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($68393936,1,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($65303033,10,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52303044,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52303047,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52303048,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52393937,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52393936,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
-call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
-if GetPlayerTeam(GetEnumPlayer())==0 then
-set GRR=GRR+1
-else
-set GII=GII+1
-endif
+	local real x=GetPlayerStartLocationX(GetEnumPlayer())
+	local real y=GetPlayerStartLocationY(GetEnumPlayer())
+	
+	local integer gold=750
+	local integer lumber=150
+	
+	call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD,gold)
+	call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER,lumber)
+	call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_FOOD_CAP_CEILING,250)
+	set bj_lastCreatedUnit=CreateUnit(GetEnumPlayer(),$65303030,x,y,bj_UNIT_FACING)
+	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastCreatedUnit))]=bj_lastCreatedUnit
+	call SelectUnitForPlayerSingle(bj_lastCreatedUnit,GetEnumPlayer())
+	call ForceAddPlayer(ZI,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($68304442,1,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($68393936,1,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($65303033,10,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303044,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303047,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303048,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52393937,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52393936,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
+	if GetPlayerTeam(GetEnumPlayer())==0 then
+	set GRR=GRR+1
+	else
+	set GII=GII+1
+	endif
 endfunction
+
 function DXX takes nothing returns boolean
 return IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit()))
 endfunction
@@ -9320,6 +9338,10 @@ function ProcessGameMode takes nothing returns nothing
 			set additionalModes=true
 			call ConditionalTriggerExecute(W2)		
 		
+		elseif isTestVersion and parameter=="ap" then
+			set additionalModes=true
+			call ConditionalTriggerExecute(P2)
+		
 		//elseif parameter=="hp" then
 		//	set additionalModes=true
 		//	call ConditionalTriggerExecute(T2)
@@ -9327,10 +9349,6 @@ function ProcessGameMode takes nothing returns nothing
 		//elseif parameter=="ar" then
 		//	set additionalModes=true
 		//	call ConditionalTriggerExecute(S2)
-		
-		//elseif parameter=="ap" then
-		//	set additionalModes=true
-		//	call ConditionalTriggerExecute(P2)
 		
 		//elseif parameter=="sd" then
 		//	set additionalModes=true
@@ -9369,6 +9387,13 @@ function ProcessGameMode takes nothing returns nothing
 		
 		elseif parameter=="x3" then
 			set x3Mode=true
+			
+		elseif isTestVersion and S2I(parameter)>0 and S2I(parameter)<36 then
+			set ggMode=true
+			set OE=OE+S2I(parameter)-1
+			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_GOLD,100000)
+			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_LUMBER,100000)
+			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_FOOD_CAP,1000)
 		
 		//elseif parameter=="nc" then
 		//	call ConditionalTriggerExecute(N3)
@@ -9502,9 +9527,6 @@ call DisableTrigger(GetTriggeringTrigger())
 set LN=""
 if GA then
 set LN="-ap"
-//call AdjustPlayerStateBJ(300000,Player(0),PLAYER_STATE_RESOURCE_GOLD)
-//call AdjustPlayerStateBJ(300000,Player(0),PLAYER_STATE_RESOURCE_LUMBER)
-//call AdjustPlayerStateBJ(2000,Player(0),PLAYER_STATE_RESOURCE_FOOD_CAP)
 endif
 if RD then
 //set LN="-hp"
@@ -9634,8 +9656,8 @@ endfunction
 function IWX takes nothing returns nothing
 if CountPlayersInForceBJ(ZI)==1 then
 set RN=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"|cffFFcc00Single Player Mode Enabled|r
-You can now use the -start command to start the next level.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"|cffFFcc00Single Player Mode Enabled|r
+//You can now use the -start command to start the next level.")
 call EnableTrigger(I5)
 else
 call TriggerExecute(M3)
@@ -14498,60 +14520,56 @@ endfunction
 function R9E takes location IVE,real IEE,real IXE returns location
 return Location(GetLocationX(IVE)+IEE*Cos(IXE*bj_DEGTORAD),GetLocationY(IVE)+IEE*Sin(IXE*bj_DEGTORAD))
 endfunction
+
 function RDX takes nothing returns nothing
-
-set FE=GetUnitLoc(KV[1+GetPlayerId(Player(0))])
-call CreateTextTagLocBJ("|CFFFF0000Choose Game Mode|r",Location(-7450,4750),0.,15.,100.,100.,100.,0.)
-set texttagGameMode1=bj_lastCreatedTextTag
-call SetTextTagLifespanBJ(texttagGameMode1,15.)
-call RemoveLocation(NX)
-
-set NX=R9E(FE,-500.,-50.)
-call CreateTextTagLocBJ("|CFFFF0000-PRO|r: League (|CFFFF0000-PRACMIQG|r)\n or customized modes below",NX,0.,10.,100.,100.,100.,0.)
-set texttagGameMode2=bj_lastCreatedTextTag
-call SetTextTagLifespanBJ(texttagGameMode2,15.)
-call RemoveLocation(NX)
-
-set NX=R9E(FE,-600.,0.)
-
-//|cffFFcc00-AP|r: All Pick
-//|cffFFcc00-SD|r: Single Draft
-//|cffFFcc00-AR|r: All Random
-//|cffFFcc00-HP|r: Host Pick
-
-call CreateTextTagLocBJ("|cffFFcc00Primary Mode (pick one)|r
-|CFFFF0000-PR|r: Prophet Random (default)
-|CFFFF0000-PH|r: Prophet Handpicked\n\n\n\n",NX,0.,10.,100.,100.,100.,0.)
-
-set CC=bj_lastCreatedTextTag
-call SetTextTagLifespanBJ(CC,15.)
-call RemoveLocation(NX)
-
-set NX=R9E(FE,0.,0.)
-
-//|CFFFF0000-MM|r: Master Mind 
-//|CFFFF0000-HG|r: Hour Glass
-//|CFFFF0000-CB|r: Change Builder
-//|CFFFF0000-EQ|r: 10x creep spawn
-//|CFFFF0000-NS|r: NO Saving
-//|CFFFF0000-NC|r: No Champions
-
-call CreateTextTagLocBJ("|cffFFcc00Secondary Mode (optional)|r
-|CFFFF0000-CC|r: Challenge Champions
-|CFFFF0000-AC|r: All Champions (from Lvl 6)
-|CFFFF0000-MI|r: Mirrored Rolls (Red=Yellow...)
-|CFFFF0000-QG|r: Quick Game (No Lvl 21-29)
-|CFFFF0000-X3|r: Triple Creep Send",NX,0.,10.,100.,100.,100.,0.)
-
-call SetUnitPosition(KV[1+GetPlayerId(Player(0))],-7080,4000)
-
-set BC=bj_lastCreatedTextTag
-call SetTextTagLifespanBJ(BC,15.)
-call ShowTextTagForceBJ(true,CC,bj_FORCE_ALL_PLAYERS)
-call ShowTextTagForceBJ(true,BC,bj_FORCE_ALL_PLAYERS)
-call RemoveLocation(FE)
-call RemoveLocation(NX)
+	local string printGameModes
+	
+	call CreateTextTagLocBJ("|CFFFF0000Choose Game Mode|r",Location(-7450,4750),0.,15.,100.,100.,100.,0.)
+	set texttagGameMode1=bj_lastCreatedTextTag
+	call SetTextTagLifespanBJ(texttagGameMode1,15.)
+	
+	call CreateTextTagLocBJ("|CFFFF0000-PRO|r: League (|CFFFF0000-PRACMIQG|r)\n or customized modes below",Location(-7420,4600),0.,10.,100.,100.,100.,0.)
+	set texttagGameMode2=bj_lastCreatedTextTag
+	call SetTextTagLifespanBJ(texttagGameMode2,15.)
+	
+	set printGameModes="|cffFFcc00Primary Mode (pick one)|r
+						|CFFFF0000-PR|r: Prophet Random (default)
+						|CFFFF0000-PH|r: Prophet Handpicked\n"
+	
+	if isTestVersion then
+		set printGameModes=printGameModes+"|c00FF7F00-AP: All Pick (TEST ONLY)|r\n\n\n\n"
+	else
+		set printGameModes=printGameModes+"\n\n\n\n"
+	endif
+	
+	call CreateTextTagLocBJ(printGameModes,Location(-7700,4150),0.,10.,100.,100.,100.,0.)
+	
+	set CC=bj_lastCreatedTextTag
+	call SetTextTagLifespanBJ(CC,15.)
+	
+	set printGameModes="|cffFFcc00Secondary Mode (optional)|r
+						|CFFFF0000-CC|r: Challenge Champions
+						|CFFFF0000-AC|r: All Champions (from Lvl 6)
+						|CFFFF0000-MI|r: Mirrored Rolls (Red=Yellow...)
+						|CFFFF0000-QG|r: Quick Game (No Lvl 21-29)
+						|CFFFF0000-X3|r: Triple Creep Send\n"
+	
+	if isTestVersion then
+		set printGameModes=printGameModes+"|c00FF7F00-07: Start at Lvl 7 (TEST ONLY)|r"
+	else
+		set printGameModes=printGameModes+"\n"
+	endif
+	
+	call CreateTextTagLocBJ(printGameModes,Location(-7050,4150),0.,10.,100.,100.,100.,0.)
+	
+	call SetUnitPosition(KV[1+GetPlayerId(Player(0))],-7080,4000)
+	
+	set BC=bj_lastCreatedTextTag
+	call SetTextTagLifespanBJ(BC,15.)
+	call ShowTextTagForceBJ(true,CC,bj_FORCE_ALL_PLAYERS)
+	call ShowTextTagForceBJ(true,BC,bj_FORCE_ALL_PLAYERS)
 endfunction
+
 function REE takes nothing returns nothing
 local unit RXE=GetAttacker()
 local unit ROE=GetTriggerUnit()
@@ -18456,9 +18474,6 @@ endfunction
 function Y_11 takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set HCC=true
-//call AdjustPlayerStateBJ(300000,Player(0),PLAYER_STATE_RESOURCE_GOLD)
-//call AdjustPlayerStateBJ(300000,Player(0),PLAYER_STATE_RESOURCE_LUMBER)
-//call AdjustPlayerStateBJ(2000,Player(0),PLAYER_STATE_RESOURCE_FOOD_CAP)
 //set QC[20]="27000"
 set QC[30]="30000"
 set QC[31]="31000"
