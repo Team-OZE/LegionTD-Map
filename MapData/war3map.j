@@ -7691,6 +7691,9 @@ endfunction
 function F1E takes nothing returns nothing
 local integer j=0
 set OE=OE+1
+if isTestVersion then
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffff0000THIS VERION IS MEANT FOR TESTING PURPOSES ONLY|r")
+endif
 set RX=true
 if OE==21 and HCC then
 set OE=OE+9
