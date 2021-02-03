@@ -3643,10 +3643,10 @@ endif
 endfunction
 function BLX takes nothing returns nothing
 call A_V(8.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cff33AA33Tip:|r  Level 17+ is getting harder and harder. make sure you have enough value.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cff33AA33Tip:|r Level 17+ is getting harder and harder. Make sure you have enough value")
 endfunction
 function BMX takes nothing returns nothing
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r If you finish off your creeps, your fighters will warp back to the King to catch any leaks.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r If you finish off your creeps, your fighters will teleport to the King to catch leaks")
 endfunction
 function BNE takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
@@ -3699,26 +3699,26 @@ return HC
 endfunction
 function BQX takes nothing returns nothing
 if MH==false then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  you can start votekick by type \"-vk\" (It will open votekick menu).")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can start votekick by type \"-vk\". It will open the votekick menu")
 else
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  -vk is disable on this game (because it is host by hostbot).")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r -vk is disable on this game, because of hostbot")
 endif
 endfunction
 function BRX takes nothing returns boolean
 return JA==false and EC
 endfunction
 function BSX takes nothing returns nothing
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  you can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\" .")
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  Join https://discord.gg/dhtvnvH and get the latest updates for this mod.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\"")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join https://discord.gg/dhtvnvH and get the latest updates for this mod")
 endfunction
 function BTX takes nothing returns nothing
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  Sending extra creeps at levels 1, 10, 20, 30 is a viable option.")
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r  Challenging Boss Wave gives Gold to your Team Mates as well as to you!")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Sending extra creeps at levels 1, 10, 20, 30 is a viable option.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Challenging Boss Levels gives extra gold to you AND your team mates")
 endfunction
 function BUX takes nothing returns nothing
 local real x
 local real y
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Enemies who reach the middle areas (pinged) receive +2 armor. So be careful if building in the middle.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Enemies who reach the dark green areas (pinged) receive +2 armor")
 set x=GetRectCenterX(VK)
 set y=GetRectCenterY(VK)
 call PingMinimapForForceEx(RJE(Player(8)),x,y,6.,0,100.,100.,100.)
@@ -7717,10 +7717,10 @@ call A_V(8.)
 call TriggerExecute(RW)
 if OE==11 and XJ==false and EJ==false and OJ==false then
 call A_V(3.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to Purge buffs from enemies including Champions.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 elseif OE==6 and XJ or EJ and OJ==false then
 call A_V(3.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to Purge buffs from enemies including Champions.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 endif
 set PA=true
 if EJ==false and XJ==false and OJ==false then
@@ -9180,7 +9180,7 @@ call SetPlayerTechMaxAllowedSwap($68304442,0,GetTriggerPlayer())
 call SetPlayerTechMaxAllowedSwap($52303044,0,GetTriggerPlayer())
 call SetPlayerTechMaxAllowedSwap($52303047,0,GetTriggerPlayer())
 call SetPlayerTechMaxAllowedSwap($52303049,0,GetTriggerPlayer())
-call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),12.,"|cff33AA33Tip:|r  Change builder is disabled after you built Altar of Heros !!")
+call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),12.,"|cff33AA33Tip:|r Change builder is disabled after you built Altar of Heroes")
 call DestroyForce(S8)
 set S8=null
 endfunction
@@ -9280,12 +9280,10 @@ function ICX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EJ=true
 call OIE()
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAChallenge Champions|r: Champions can be manually challenged.")
 endfunction
 function IDX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set XJ=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAAll Champions|r: Champions will spawn in all normal waves above level 5")
 endfunction
 function IEX takes nothing returns boolean
 return AC==false
@@ -9318,7 +9316,6 @@ function ProcessGameMode takes nothing returns nothing
 	
 	// Check for 'pro'-mode
 	if BE=="-pro" then
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAPro mode|r")
 		set BE="-pracmiqg"
 	endif
 	
@@ -9333,15 +9330,18 @@ function ProcessGameMode takes nothing returns nothing
 		if parameter=="ph" then
 			set additionalModes=true
 			call ConditionalTriggerExecute(U2)
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Handpicked|r: Everyone has random units and up to 6 manual rerolls")
 		
 		elseif parameter=="pr" then
 			set additionalModes=true
-			call ConditionalTriggerExecute(W2)		
+			call ConditionalTriggerExecute(W2)
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
 		
 		elseif isTestVersion and parameter=="ap" then
 			set additionalModes=true
 			call ConditionalTriggerExecute(P2)
-		
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
+			
 		//elseif parameter=="hp" then
 		//	set additionalModes=true
 		//	call ConditionalTriggerExecute(T2)
@@ -9365,11 +9365,12 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(Y9)
 		
 		elseif parameter=="qg" then
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
 			call ConditionalTriggerExecute(Y10)
 		
 		elseif parameter=="mi" then
 			set mirrorMode=true
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMirror Mode|r: Rolls are mirrored with your opponent counterpart.")
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Mirror Mode|r: Rolls are mirrored with your opponent counterpart")
 		
 		elseif parameter=="cc" then
 			call ConditionalTriggerExecute(I3)
@@ -9377,6 +9378,7 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(X3)
 			call DestroyTrigger(A3)
 			call DestroyTrigger(N3)
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
 		
 		elseif parameter=="ac" then
 			call ConditionalTriggerExecute(A3)
@@ -9384,10 +9386,12 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(X3)
 			call DestroyTrigger(I3)
 			call DestroyTrigger(N3)
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
 		
 		elseif parameter=="x3" then
 			set x3Mode=true
-			
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000X3-Mode|r: Everything you send will be tripled")
+		
 		elseif isTestVersion and S2I(parameter)>0 and S2I(parameter)<36 then
 			set ggMode=true
 			set OE=OE+S2I(parameter)-1
@@ -9637,7 +9641,6 @@ call DisableTrigger(F3)
 call DisableTrigger(K3)
 call TriggerExecute(H3)
 call ForForce(ZI,ref_function_ISX)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,3.,"Game will begin shortly...")
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
 function IUX takes nothing returns nothing
@@ -9663,7 +9666,7 @@ else
 call TriggerExecute(M3)
 endif
 if IN==false or HO==false then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"|cffFFcc00Single Team Mode Enabled|r
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Single Team Mode Enabled|r
 You can now use the -start command to start the next level.")
 call EnableTrigger(I5)
 endif
@@ -9671,7 +9674,7 @@ endfunction
 function IXX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set AC=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Middle|r: Enemies that reach the middle (Dark Grass) give no gold when killed.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Middle|r: Enemies that reach the middle (Dark Grass) give no gold when killed")
 endfunction
 function IYX takes nothing returns nothing
 call DisableTrigger(I5)
@@ -9956,13 +9959,13 @@ set AX=IX
 endif
 call AdjustPlayerStateBJ(AX,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
 if AX>0 then
-call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(AX)+"|r gold from your King's kills.")
+call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(AX)+"|r gold from your King's kills")
 call DestroyForce(S8)
 set S8=null
 endif
 set AX=OO[30]*2
 call AdjustPlayerStateBJ(AX,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(AX)+"|r gold for completing the level.")
+call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(AX)+"|r gold for completing the level")
 call DestroyForce(S8)
 set S8=null
 call FogModifierStart(CF[1+GetPlayerId(GetEnumPlayer())])
@@ -9980,7 +9983,7 @@ endfunction
 function JHE takes nothing returns nothing
 set BN[1+GetPlayerId(GetEnumPlayer())]=BN[1+GetPlayerId(GetEnumPlayer())]+BI[1+GetPlayerId(GetEnumPlayer())]
 call AdjustPlayerStateBJ(BI[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You earned |cffFFcc00"+I2S(BI[1+GetPlayerId(GetEnumPlayer())])+"|r gold from your income.")
+call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You earned |cffFFcc00"+I2S(BI[1+GetPlayerId(GetEnumPlayer())])+"|r gold from your income")
 call DestroyForce(S8)
 set S8=null
 endfunction
@@ -10060,7 +10063,7 @@ call ForForce(ZI,ref_function_JHE)
 endif
 call PlaySoundBJ(YP)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cff33AA33Congratulations!|r Both teams have completed Legion TD MEGA. To break the tie, a bonus wave will be spawned in |cffFFcc0060|r seconds. This wave will continuously spawn units until a King is defeated!")
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cffAA3333This is the final opportunity to build or upgrade fighters.|r")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cffAA3333This is the final opportunity to build or upgrade units|r")
 call StartTimerBJ(NE,false,60.)
 call TimerDialogSetTitle(EX,"Next wave in")
 call ForForce(ZI,ref_function_JPE)
@@ -10312,7 +10315,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cffFF00002|r")
 call A_V(1.)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cffFF00001|r")
 call A_V(1.)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cff00FF00FIGHT START !|r")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cff00FF00FIGHT START!|r")
 set CG=true
 call ForGroup(ZD,ref_function_K7E)
 call ForGroup(VF,ref_function_K8E)
@@ -11059,7 +11062,7 @@ if RF!=OF then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFF0000East vs West : "+I2S(RF)+" vs "+I2S(OF)+"|r")
 if OF>RF then
 set EE=OF-RF
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00EAST TEAM received FREE units to help them. |r")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00EAST TEAM received FREE units to help them|r")
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=EE
 loop
@@ -11136,7 +11139,7 @@ set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 else
 set EE=RF-OF
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00WEST TEAM received FREE units to help them. |r")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00WEST TEAM received FREE units to help them|r")
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=EE
 loop
@@ -14533,11 +14536,11 @@ function RDX takes nothing returns nothing
 	call SetTextTagLifespanBJ(texttagGameMode2,15.)
 	
 	set printGameModes="|cffFFcc00Primary Mode (pick one)|r
-						|CFFFF0000-PR|r: Prophet Random (default)
-						|CFFFF0000-PH|r: Prophet Handpicked\n"
+						|CFFFF0000-PR|r: Reroll every round (default)
+						|CFFFF0000-PH|r: Manual reroll (6 times)\n"
 	
 	if isTestVersion then
-		set printGameModes=printGameModes+"|c00FF7F00-AP: All Pick (TEST ONLY)|r\n\n\n\n"
+		set printGameModes=printGameModes+"|c00FF7F00-AP: Pick builder (TEST ONLY)|r\n\n\n\n"
 	else
 		set printGameModes=printGameModes+"\n\n\n\n"
 	endif
@@ -14589,18 +14592,18 @@ function REX takes nothing returns nothing
 set EE=CountPlayersInForceBJ(ZI)
 if GetClickedButton()==MF then
 set TF=TF+1
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted |c00ff0202yes|r. ")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted |c00ff0202yes|r")
 elseif GetClickedButton()==PF then
 set UF=UF+1
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted |c000041ffno|r. ")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted |c000041ffno|r")
 elseif GetClickedButton()==QF then
 set VG=VG+1
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted : I don't care. ")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted : I don't care")
 endif
 set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(EE)*.5,1,1)+")"
 if I2R(TF-UF)>=I2R(EE)/1.5 then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked")
 if Player(SF-1)==GetLocalPlayer() then
 call EndGame(false)
 endif
@@ -14609,7 +14612,7 @@ call TriggerExecute(L2)
 call PauseTimerBJ(true,WF)
 elseif I2R(TF-UF)>=I2R(EE)/2. and UF+VG+TF==EE then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked.")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked")
 if Player(SF-1)==GetLocalPlayer() then
 call EndGame(false)
 endif
@@ -14618,7 +14621,7 @@ call TriggerExecute(L2)
 call PauseTimerBJ(true,WF)
 elseif UF+VG+TF==EE then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Vote Fail ! "+BE+"")
+call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Vote Fail! "+BE+"")
 set YF=false
 set ZF[EG]=false
 endif
@@ -14642,7 +14645,6 @@ function RFX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
 set GA=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00All Pick (default)|r: pick your race with your Race Picker unit.")
 endfunction
 function RGE takes nothing returns nothing
 call UnitRemoveAbility(GetTriggerUnit(),$41657468)
@@ -14666,7 +14668,7 @@ function RHX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
 set SH=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Prophet|r: all prophet.")
+//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Prophet|r: all prophet.")
 call A_V(1.)
 call ForForce(ZI,ref_function_RGX)
 endfunction
@@ -14714,7 +14716,6 @@ function RKX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
 set TH=true
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Prophet Random|r: Everyone has Prophet. Every round you random new units. Finishing waves reward less gold")
 call A_V(1.)
 set OO[1]=11
 set OO[2]=12
@@ -17630,15 +17631,11 @@ endfunction
 function XFX takes nothing returns nothing
 local real x=GetRectCenterX(PL)
 local real y=GetRectCenterY(PL)
-if FC then
-call DisplayTimedTextToForce(RJE(Player(8)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not give full  bounty. you can click on creep to read bounty detail.")
+
+call DisplayTimedTextToForce(RJE(Player(8)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not give full bounty")
 call DestroyForce(S8)
 set S8=null
-else
-call DisplayTimedTextToForce(RJE(Player(8)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not grant bounty.")
-call DestroyForce(S8)
-set S8=null
-endif
+
 call PingMinimapForForceEx(RJE(Player(8)),x,y,5.,2,100.,100.,100.)
 call DestroyForce(S8)
 set S8=null
@@ -17663,15 +17660,11 @@ endfunction
 function XHX takes nothing returns nothing
 local real x=GetRectCenterX(LK)
 local real y=GetRectCenterY(LK)
-if FC then
-call DisplayTimedTextToForce(RJE(Player(9)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not give full  bounty. you can click on creep to read bounty detail.")
+
+call DisplayTimedTextToForce(RJE(Player(9)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not give full bounty")
 call DestroyForce(S8)
 set S8=null
-else
-call DisplayTimedTextToForce(RJE(Player(9)),15.,"|cffFFcc00Tip:|r Units that leak to the King area (middle) do not grant bounty.")
-call DestroyForce(S8)
-set S8=null
-endif
+
 call PingMinimapForForceEx(RJE(Player(9)),x,y,5.,2,100.,100.,100.)
 call DestroyForce(S8)
 set S8=null
@@ -18490,7 +18483,6 @@ set QX[32]=18
 set QX[33]=7
 set QX[34]=11
 set QX[35]=2
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAQuick Game|r: Waves 21-29 have been removed")
 endfunction
 function Y_9 takes nothing returns boolean
 return GL==false
@@ -24171,7 +24163,7 @@ set G4=CreateTrigger()
 call TriggerRegisterTimerEventSingle(G4,115.)
 call TriggerAddAction(G4,ref_function_BMX)
 set H4=CreateTrigger()
-call TriggerRegisterTimerEventSingle(H4,15.)
+call TriggerRegisterTimerEventSingle(H4,40.)
 call TriggerAddCondition(H4,Condition(ref_function_BPX))
 call TriggerAddAction(H4,ref_function_BQX)
 set J4=CreateTrigger()
@@ -24181,7 +24173,7 @@ set D6=CreateTrigger()
 call TriggerRegisterTimerEventSingle(D6,65.)
 call TriggerAddAction(D6,ref_function_BTX)
 set K4=CreateTrigger()
-call TriggerRegisterTimerEventSingle(K4,10.)
+call TriggerRegisterTimerEventSingle(K4,20.)
 call TriggerAddAction(K4,ref_function_BUX)
 set L4=CreateTrigger()
 call TriggerAddAction(L4,ref_function_BWX)
