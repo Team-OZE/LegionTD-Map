@@ -1976,7 +1976,7 @@ Ubertip=An aura that gives nearby friendly units a 11% bonus damage to their ran
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
 Name=Advanced Telescope
 Tip=Advanced Telescope
-Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. Does not stack with Telescope)
+Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. Does not stack with Telescope
 
 [A08L]
 Art=,
