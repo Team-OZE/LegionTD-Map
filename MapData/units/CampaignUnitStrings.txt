@@ -3411,7 +3411,7 @@ Name=Hatchling
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Hatchling [|cffFFcc00Q|r]
-Ubertip=|cffccccccDamage: |r|cffff80009-10|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff800095|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n
+Ubertip=|cffccccccDamage: |r|cffff80009-10|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff800180|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n
 Upgrade=h07L
 
 [h07K]
