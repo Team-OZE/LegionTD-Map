@@ -251,13 +251,11 @@ globals
 	integer array WB
 	boolean EC=false
 	integer array OC
-	boolean AC=false
 	texttag BC=null
 	texttag CC=null
 	texttag texttagGameMode1=null
 	texttag texttagGameMode2=null
 	integer array DC
-	boolean PC=false
 	string array QC
 	boolean array SC
 	unit array WC
@@ -723,7 +721,6 @@ globals
 	trigger W2=null
 	trigger Y10=null
 	trigger Z2=null
-	trigger R3=null
 	trigger I3=null
 	trigger A3=null
 	trigger N3=null
@@ -1268,7 +1265,6 @@ globals
 	code ref_function_RAX=null
 	code ref_function_RGX=null
 	code ref_function_RJX=null
-	code ref_function_INX=null
 	code ref_function_eK=null
 	code ref_function_iK=null
 	code ref_function_ISX=null
@@ -1709,8 +1705,6 @@ globals
 	code ref_function_RKX=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
-	code ref_function_IOX=null
-	code ref_function_IBX=null
 	code ref_function_IRX=null
 	code ref_function_ICX=null
 	code ref_function_IIX=null
@@ -9805,9 +9799,6 @@ function I3X takes nothing returns nothing
 		call SetPlayerTechMaxAllowedSwap(WB[bj_forLoopAIndex],-1,GetTriggerPlayer())
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	if PC and GetUnitTypeId(GetTriggerUnit())==$75303049 then
-		call SetPlayerTechResearchedSwap($52303044,4,GetTriggerPlayer())
-	endif
 	if SC[1+GetPlayerId(GetTriggerPlayer())]==false then
 		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	
@@ -9828,13 +9819,6 @@ endfunction
 
 function IAX takes nothing returns boolean
 	return OJ==false
-endfunction
-
-function IBX takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set PC=true
-	call ForForce(ZI,ref_function_INX)
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAChange Builder|r: Player can change builder.")
 endfunction
 
 function OIE takes nothing returns nothing
@@ -9964,20 +9948,6 @@ function ProcessGameMode takes nothing returns nothing
 			
 		//elseif parameter=="nc" then
 			//	call ConditionalTriggerExecute(N3)
-			//	call ConditionalTriggerExecute(R3)
-			
-		//elseif parameter=="cb" then
-			//	call ConditionalTriggerExecute(R3)
-			
-		//elseif parameter=="gm" then
-			//	call ConditionalTriggerExecute(I3)
-			
-		//elseif parameter=="gc" then
-			//	call ConditionalTriggerExecute(R3)
-			
-			
-		//elseif parameter=="lc" or parameter=="cl" then
-			//	call ConditionalTriggerExecute(R3)
 		endif
 		set stringPosition=stringPosition+1
 	endloop
@@ -10002,19 +9972,10 @@ function IMX takes nothing returns nothing
 	endif
 endfunction
 
-function INX takes nothing returns nothing
-	call SetPlayerTechMaxAllowedSwap($52303044,5,GetEnumPlayer())
-	call SetPlayerTechMaxAllowedSwap($52303047,6,GetEnumPlayer())
-endfunction
-
 function IOE takes nothing returns boolean
 	local real IEE=GetDestructableX(GetFilterDestructable())-D8
 	local real IXE=GetDestructableY(GetFilterDestructable())-F8
 	return IEE*IEE+IXE*IXE<=bj_enumDestructableRadius
-endfunction
-
-function IOX takes nothing returns boolean
-	return PC==false
 endfunction
 
 function IPX takes nothing returns nothing
@@ -10064,17 +10025,8 @@ function IQX takes nothing returns nothing
 	if HCC then
 		set LN=LN+"qg"
 	endif
-	if AC then
-		//set LN=LN+"nm"
-	endif
-	if PC then
-		//set LN=LN+"cb"
-	endif
 	if OJ then
 		//set LN=LN+"nc"
-	endif
-	if ZH then
-		//set LN=LN+"ns"
 	endif
 	if x3Mode then
 		set LN=LN+"x3"
@@ -10117,7 +10069,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(Y10)
 	call DisableTrigger(Z2)
 	call DisableTrigger(I8)
-	call DisableTrigger(R3)
 	call DisableTrigger(C3)
 	call DisableTrigger(F3)
 	call DisableTrigger(K3)
@@ -22540,12 +22491,10 @@ function initGlobals takes nothing returns nothing
 	set RB=null
 	set IB=null
 	set EC=false
-	set AC=false
 	set BC=null
 	set CC=null
 	set texttagGameMode1=null
 	set texttagGameMode2=null
-	set PC=false
 	set JD=null
 	set KD=null
 	set LD=null
@@ -22985,7 +22934,6 @@ function initGlobals takes nothing returns nothing
 	set W2=null
 	set Y10=null
 	set Z2=null
-	set R3=null
 	set I3=null
 	set A3=null
 	set N3=null
@@ -23402,7 +23350,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RAX=function RAX
 	set ref_function_RGX=function RGX
 	set ref_function_RJX=function RJX
-	set ref_function_INX=function INX
 	set ref_function_eK=function eK
 	set ref_function_iK=function iK
 	set ref_function_ISX=function ISX
@@ -23843,8 +23790,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
-	set ref_function_IOX=function IOX
-	set ref_function_IBX=function IBX
 	set ref_function_IRX=function IRX
 	set ref_function_ICX=function ICX
 	set ref_function_IIX=function IIX
@@ -25488,9 +25433,6 @@ function main takes nothing returns nothing
 	set Z2=CreateTrigger()
 	call TriggerAddCondition(Z2,Condition(ref_function_R2X))
 	call TriggerAddAction(Z2,ref_function_R3X)
-	set R3=CreateTrigger()
-	call TriggerAddCondition(R3,Condition(ref_function_IOX))
-	call TriggerAddAction(R3,ref_function_IBX)
 	set I3=CreateTrigger()
 	call TriggerAddCondition(I3,Condition(ref_function_IRX))
 	call TriggerAddAction(I3,ref_function_ICX)
