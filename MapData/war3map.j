@@ -195,7 +195,6 @@ globals
 	boolean GA=false
 	boolean HA=false
 	boolean JA=false
-	boolean GL=false
 	boolean HCC=false
 	boolean mirrorMode=false
 	timer KA=null
@@ -735,7 +734,6 @@ globals
 	trigger U2=null
 	trigger W2=null
 	trigger Y2=null
-	trigger Y9=null
 	trigger Y10=null
 	trigger Z2=null
 	trigger V3=null
@@ -797,9 +795,6 @@ globals
 	trigger C5=null
 	trigger D6=null
 	trigger W5=null
-	trigger vB=null
-	trigger fB=null
-	trigger fBB=null
 	trigger gB=null
 	trigger array Y5
 	force Z5=null
@@ -1141,7 +1136,6 @@ globals
 	code ref_function_F4E=null
 	code ref_function_F7E=null
 	code ref_function_GEE=null
-	code ref_function_GRE=null
 	code ref_function_GNE=null
 	code ref_function_G4E=null
 	code ref_function_G5E=null
@@ -1235,11 +1229,8 @@ globals
 	code ref_function_YWE=null
 	code ref_function_YYE=null
 	code ref_function_Y_E=null
-	code ref_function_Y_9=null
-	code ref_function_Y19=null
 	code ref_function_Y_10=null
 	code ref_function_Y_11=null
-	code ref_function_Y0X=null
 	code ref_function_Y0E=null
 	code ref_function_ZSE=null
 	code ref_function_ZTE=null
@@ -1867,16 +1858,11 @@ globals
 	code ref_function_B0X=null
 	code ref_function_FOX=null
 	code ref_function_G9=null
-	code ref_function_J9=null
 	code ref_function_K9=null
 	code ref_function_L9=null
-	code ref_function_F88=null
-	code ref_function_F99=null
 	code ref_function_TRL=null
 	code ref_function_TRL1=null
 	code ref_function_TRL2=null
-	code ref_function_F100=null
-	code ref_function_F101=null
 	code ref_function_F111=null
 	code ref_function_F112=null
 	code ref_function_FTA=null
@@ -3501,12 +3487,7 @@ function B4X takes nothing returns nothing
 	set EE=EE+1
 	set FE=GetUnitLoc(GetEnumUnit())
 	set OX=GetOwningPlayer(GetEnumUnit())
-	if GL==false then
-		set BE="Gold:            |cffFFcc00"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_GOLD))+"|r|nLumber:       |cff339933"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_LUMBER))+"|r|nFood:            |cff993333"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_USED))+"/"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_CAP))+"|r|n"
-	
-	else
-		set BE="Gold:            |cffFFcc00"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_GOLD))+"|r|nLumber:       |cff339933"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_LUMBER))+"|r|nFood:            |cff993333"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_USED))+"/"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_CAP))+"|r|nTechnology: |cffB0C4DE"+TLL1[1+GetPlayerId(OX)]+" ("+I2S(T88[1+GetPlayerId(OX)])+")|r"
-	endif
+	set BE="Gold:            |cffFFcc00"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_GOLD))+"|r|nLumber:       |cff339933"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_LUMBER))+"|r|nFood:            |cff993333"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_USED))+"/"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_CAP))+"|r|n"
 	set DB[EE]=BXE(FE,BE,255.,255.,255.,OX)
 	call RemoveLocation(FE)
 endfunction
@@ -9288,9 +9269,6 @@ function G2E takes nothing returns nothing
 		call G1E()
 		call ODE()
 	endif
-	if true then
-		call ForForce(ZI,ref_function_GRE)
-	endif
 	call SetPlayerStateBJ(Player(8),PLAYER_STATE_RESOURCE_GOLD,0)
 	call SetPlayerStateBJ(Player(9),PLAYER_STATE_RESOURCE_GOLD,0)
 	call PlaySoundBJ(OQ)
@@ -9579,18 +9557,6 @@ function GPV takes nothing returns nothing
 	endif
 	set GQV=null
 	set DGV=null
-endfunction
-
-function GRE takes nothing returns nothing
-	call AdjustPlayerStateBJ(BI[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-	set BN[1+GetPlayerId(GetEnumPlayer())]=BN[1+GetPlayerId(GetEnumPlayer())]+BI[1+GetPlayerId(GetEnumPlayer())]
-	call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"::: You earned |cffFFcc00"+I2S(BI[1+GetPlayerId(GetEnumPlayer())])+"|r gold from your income. ")
-	if GL then
-		set T88[1+GetPlayerId(GetEnumPlayer())]=T88[1+GetPlayerId(GetEnumPlayer())]-T88[1+GetPlayerId(GetEnumPlayer())]
-		call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"::: Your |cffB0C4DE"+I2S(T88[1+GetPlayerId(GetEnumPlayer())])+"|r Technology has been reset. ")
-		call DestroyForce(S8)
-		set S8=null
-	endif
 endfunction
 
 function GRV takes nothing returns nothing
@@ -10055,9 +10021,6 @@ function ProcessGameMode takes nothing returns nothing
 		//elseif parameter=="li" then
 			//	call ConditionalTriggerExecute(Y2)
 		
-		//elseif parameter=="eg" then
-			//call ConditionalTriggerExecute(Y9)
-		
 		elseif parameter=="qg" then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
 			call ConditionalTriggerExecute(Y10)
@@ -10253,9 +10216,6 @@ function IQX takes nothing returns nothing
 	if JA then
 		//set LN=LN+"li"
 	endif
-	if GL then
-		//set LN=LN+"eg"
-	endif
 	if EJ then
 		set LN=LN+"cc"
 	endif
@@ -10334,7 +10294,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(Q2)
 	call DisableTrigger(T2)
 	call DisableTrigger(Y2)
-	call DisableTrigger(Y9)
 	call DisableTrigger(Y10)
 	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
@@ -20248,71 +20207,8 @@ function Y_11 takes nothing returns nothing
 	set QX[35]=2
 endfunction
 
-function Y_9 takes nothing returns boolean
-	return GL==false
-endfunction
-
-function Y19 takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set GL=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEconomic Growth|r: Use Food to Increase Your Income")
-	call ForForce(ZI,ref_function_Y0X)
-endfunction
-
-function Y0X takes nothing returns nothing
-	local player RSE=Player(0)
-	set Y66=CreateUnit(RSE,'e031',-5888.,4252.,300.)
-	call AdjustPlayerStateBJ(-8,GetEnumPlayer(),PLAYER_STATE_RESOURCE_FOOD_CAP)
-	set TLL[1]="I"
-	set TLL[2]="II"
-	set TLL[3]="III"
-	set TLL[4]="IV"
-	set TLL[5]="V"
-	if T88[1+GetPlayerId(GetEnumPlayer())]<=15 then
-		set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[1]
-	
-	elseif T88[1+GetPlayerId(GetEnumPlayer())]>15 and T88[1+GetPlayerId(GetEnumPlayer())]<=25 then
-		set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[2]
-	
-	elseif T88[1+GetPlayerId(GetEnumPlayer())]>25 and T88[1+GetPlayerId(GetEnumPlayer())]<=35 then
-		set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[3]
-	
-	elseif T88[1+GetPlayerId(GetEnumPlayer())]>35 and T88[1+GetPlayerId(GetEnumPlayer())]<=45 then
-		set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[4]
-	
-	elseif T88[1+GetPlayerId(GetEnumPlayer())]>45 then
-		set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[5]
-	endif
-	set RSE=null
-endfunction
-
 function G9 takes nothing returns boolean
 	return(GetUnitTypeId(GetSoldUnit())=='u01K')
-endfunction
-
-function J9 takes nothing returns nothing
-	if GL then
-		set BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+10
-		call AdjustPlayerStateBJ(8,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_RESOURCE_FOOD_USED)
-		call DisplayTimedTextToForce(bj_FORCE_PLAYER[GetPlayerId(GetOwningPlayer(GetTriggerUnit()))],3.,"You trade 8 Food for 10 Income")
-	endif
-	if GL==false then
-		call DisplayTimedTextToPlayer(GetTriggerPlayer(),0.,0.,5.,"You can use |cffB0C4DEEconomic Growth|r only in EG mode.")
-	endif
-endfunction
-
-function F99 takes nothing returns boolean
-	return(GetUnitTypeId(GetConstructingStructure())==$68303234)
-endfunction
-
-function F88 takes nothing returns nothing
-	//set IX=T88[1+GetPlayerId(GetTriggerPlayer())]
-	if GL then
-		call A_V(2.)
-		call TriggerExecute(gB)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffB0C4DEEconomic Growth|r: +1")
-		//call ForForce(call ForForce(bj_FORCE_ALL_PLAYER,ref_function_TRL1)
-	endif
 endfunction
 
 function TRL takes nothing returns nothing
@@ -20342,18 +20238,6 @@ function TRL2 takes nothing returns nothing
 	
 	elseif T88[1+GetPlayerId(GetTriggerPlayer())]>45 then
 		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[5]
-	endif
-endfunction
-
-function F100 takes nothing returns boolean
-	return(GetUnitTypeId(GetCancelledStructure())==$68303234)
-endfunction
-
-function F101 takes nothing returns nothing
-	if GL then
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffB0C4DEEconomic Growth|r: -10")
-		set T88[1+GetPlayerId(GetTriggerPlayer())]=T88[1+GetPlayerId(GetTriggerPlayer())]-10
-		call ForForce(ZI,ref_function_TRL2)
 	endif
 endfunction
 
@@ -23573,7 +23457,6 @@ function initGlobals takes nothing returns nothing
 	set U2=null
 	set W2=null
 	set Y2=null
-	set Y9=null
 	set Y10=null
 	set Z2=null
 	set V3=null
@@ -23848,7 +23731,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_F4E=function F4E
 	set ref_function_F7E=function F7E
 	set ref_function_GEE=function GEE
-	set ref_function_GRE=function GRE
 	set ref_function_GNE=function GNE
 	set ref_function_G4E=function G4E
 	set ref_function_G5E=function G5E
@@ -23942,11 +23824,8 @@ function initGlobals takes nothing returns nothing
 	set ref_function_YWE=function YWE
 	set ref_function_YYE=function YYE
 	set ref_function_Y_E=function Y_E
-	set ref_function_Y_9=function Y_9
-	set ref_function_Y19=function Y19
 	set ref_function_Y_10=function Y_10
 	set ref_function_Y_11=function Y_11
-	set ref_function_Y0X=function Y0X
 	set ref_function_Y0E=function Y0E
 	set ref_function_ZSE=function ZSE
 	set ref_function_ZTE=function ZTE
@@ -24574,14 +24453,9 @@ function initGlobals takes nothing returns nothing
 	set ref_function_B0X=function B0X
 	set ref_function_FOX=function FOX
 	set ref_function_G9=function G9
-	set ref_function_J9=function J9
-	set ref_function_F88=function F88
-	set ref_function_F99=function F99
 	set ref_function_TRL=function TRL
 	set ref_function_TRL1=function TRL1
 	set ref_function_TRL1=function TRL2
-	set ref_function_F100=function F100
-	set ref_function_F101=function F101
 	set ref_function_F111=function F111
 	set ref_function_F112=function F112
 	set ref_function_FTA=function FTA
@@ -25290,18 +25164,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterTimerEventPeriodic(US,1.)
 	call TriggerAddCondition(US,Condition(ref_function_DWE))
 	call TriggerAddAction(US,ref_function_D_E)
-	set vB=CreateTrigger()
-	call TriggerRegisterAnyUnitEventBJ(vB,EVENT_PLAYER_UNIT_SELL)
-	call TriggerAddCondition(vB,Condition(ref_function_G9))
-	call TriggerAddAction(vB,ref_function_J9)
-	set fB=CreateTrigger()
-	call TriggerRegisterAnyUnitEventBJ(fB,EVENT_PLAYER_UNIT_CONSTRUCT_START)
-	call TriggerAddCondition(fB,Condition(ref_function_F99))
-	call TriggerAddAction(fB,ref_function_F88)
-	set fBB=CreateTrigger()
-	call TriggerRegisterAnyUnitEventBJ(fBB,EVENT_PLAYER_UNIT_CONSTRUCT_CANCEL)
-	call TriggerAddCondition(fBB,Condition(ref_function_F100))
-	call TriggerAddAction(fBB,ref_function_F101)
 	set gB=CreateTrigger()
 	call TriggerRegisterTimerEventPeriodic(gB,2.)
 	call TriggerAddCondition(gB,Condition(ref_function_F111))
@@ -26136,9 +25998,6 @@ function main takes nothing returns nothing
 	set Y2=CreateTrigger()
 	call TriggerAddCondition(Y2,Condition(ref_function_R_X))
 	call TriggerAddAction(Y2,ref_function_R1X)
-	set Y9=CreateTrigger()
-	call TriggerAddCondition(Y9,Condition(ref_function_Y_9))
-	call TriggerAddAction(Y9,ref_function_Y19)
 	set Y10=CreateTrigger()
 	call TriggerAddCondition(Y10,Condition(ref_function_Y_10))
 	call TriggerAddAction(Y10,ref_function_Y_11)
