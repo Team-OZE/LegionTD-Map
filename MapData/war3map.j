@@ -9842,7 +9842,13 @@ function ProcessGameMode takes nothing returns nothing
 	local trigger myTrigger
 	local integer stringPosition=1
 	local string parameter=""
-	local boolean additionalModes=false
+	local boolean mode_ph=false
+	local boolean mode_pr=false
+	local boolean mode_ap=false
+	local boolean mode_qg=false
+	local boolean mode_mi=false
+	local boolean mode_cc=false
+	local boolean mode_ac=false
 	
 	// Mastermind
 	call FogEnableOn()
@@ -9887,41 +9893,28 @@ function ProcessGameMode takes nothing returns nothing
 		set MN=true
 		
 		if parameter=="ph" then
-			set additionalModes=true
-			call ConditionalTriggerExecute(U2)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Handpicked|r: Everyone has random units and up to 6 manual rerolls")
+			set mode_ph=true
 		
 		elseif parameter=="pr" then
-			set additionalModes=true
-			call ConditionalTriggerExecute(W2)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
-		
+			set mode_pr=true
+			
 		elseif isTestVersion and parameter=="ap" then
-			set additionalModes=true
-			call ConditionalTriggerExecute(P2)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
+			set mode_ap=true
 		
 		elseif parameter=="qg" then
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
-			call ConditionalTriggerExecute(Y10)
+			set mode_qg=true
 		
 		elseif parameter=="mi" then
-			set mirrorMode=true
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Mirror Mode|r: Rolls are mirrored with your opponent counterpart")
+			set mode_mi=true
 		
 		elseif parameter=="cc" then
-			call ConditionalTriggerExecute(I3)
-			call DestroyTrigger(A3)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
+			set mode_cc=true
 		
 		elseif parameter=="ac" then
-			call ConditionalTriggerExecute(A3)
-			call DestroyTrigger(I3)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
+			set mode_ac=true
 		
 		elseif parameter=="x3" then
 			set x3Mode=true
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000X3-Mode|r: Everything you send will be tripled")
 		
 		elseif isTestVersion and S2I(parameter)>0 and S2I(parameter)<36 then
 			set ggMode=true
@@ -9932,6 +9925,48 @@ function ProcessGameMode takes nothing returns nothing
 		endif
 		set stringPosition=stringPosition+1
 	endloop
+	
+	if	   mode_ph then
+		call ConditionalTriggerExecute(U2)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Handpicked|r: Everyone has random units and up to 6 manual rerolls")
+		
+	elseif mode_pr then
+		call ConditionalTriggerExecute(W2)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
+	
+	elseif mode_ap then
+		call ConditionalTriggerExecute(P2)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
+	endif
+	
+	if mode_qg then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
+		call ConditionalTriggerExecute(Y10)
+	endif
+	
+	if mode_mi then
+		if mode_pr then
+			set mirrorMode=true
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Mirror Mode|r: Rolls are mirrored with your opponent counterpart")
+		else
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|c00FFFFFFMirror Mode|r: Only allowed in combination with -PR")
+		endif
+	endif
+	
+	if     mode_cc then
+		call ConditionalTriggerExecute(I3)
+		call DestroyTrigger(A3)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
+	
+	elseif mode_ac then
+		call ConditionalTriggerExecute(A3)
+		call DestroyTrigger(I3)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
+	endif
+	
+	if x3Mode then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000X3-Mode|r: Everything you send will be tripled")
+	endif
 	
 	call DisableTrigger(GetTriggeringTrigger())
 	set myTrigger=null
