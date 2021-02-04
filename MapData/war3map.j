@@ -249,7 +249,6 @@ globals
 	integer array TB
 	integer array UB
 	integer array WB
-	boolean ZB=false
 	boolean EC=false
 	integer array OC
 	boolean AC=false
@@ -725,7 +724,6 @@ globals
 	trigger W2=null
 	trigger Y10=null
 	trigger Z2=null
-	trigger E3=null
 	trigger O3=null
 	trigger R3=null
 	trigger I3=null
@@ -1714,8 +1712,6 @@ globals
 	code ref_function_RKX=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
-	code ref_function_R7X=null
-	code ref_function_R8X=null
 	code ref_function_IEX=null
 	code ref_function_IXX=null
 	code ref_function_IOX=null
@@ -9022,10 +9018,6 @@ function FWE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	if ZB==false then
-		call SetPlayerState(Player(9),PLAYER_STATE_RESOURCE_GOLD,0)
-		call SetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD,0)
-	endif
 	if CG==false then
 		set CG=true
 	endif
@@ -10020,7 +10012,6 @@ function ProcessGameMode takes nothing returns nothing
 		set stringPosition=stringPosition+1
 	endloop
 	
-	call ConditionalTriggerExecute(E3) // "hg"
 	call ConditionalTriggerExecute(B3) // "eq"
 		
 	call DisableTrigger(GetTriggeringTrigger())
@@ -10105,9 +10096,6 @@ function IQX takes nothing returns nothing
 	if HCC then
 		set LN=LN+"qg"
 	endif
-	if ZB then
-		//set LN=LN+"hg"
-	endif
 	if AC then
 		//set LN=LN+"nm"
 	endif
@@ -10163,7 +10151,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(P2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(Z2)
-	call DisableTrigger(E3)
 	call DisableTrigger(B3)
 	call DisableTrigger(I8)
 	call DisableTrigger(O3)
@@ -15397,10 +15384,6 @@ function R3X takes nothing returns nothing
 	endloop
 endfunction
 
-function R7X takes nothing returns boolean
-	return ZB==false
-endfunction
-
 function OHE takes nothing returns nothing
 	local timer t=CreateTimer()
 	call TimerStart(t,1.,false,ref_function_OGE)
@@ -15412,12 +15395,6 @@ function R8E takes nothing returns nothing
 	call IssueImmediateOrderById(GetTriggerUnit(),851972)
 	call PauseUnit(GetTriggerUnit(),false)
 	call OHE()
-endfunction
-
-function R8X takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set ZB=true
-	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAHourglass|r: You receive gold for enemy leaks.")
 endfunction
 
 function RAX takes nothing returns nothing
@@ -15567,7 +15544,7 @@ function RDX takes nothing returns nothing
 	|CFFFF0000-X3|r: Triple Creep Send\n"
 	
 	if isTestVersion then
-		set printGameModes=printGameModes+"|c00FF7F00-07: Start at Lvl 7 (TEST ONLY)|r"
+		set printGameModes=printGameModes+"|c00FF7F00-07: Start at e.g. Lvl 7 (TEST ONLY)|r"
 	
 	else
 		set printGameModes=printGameModes+"\n"
@@ -22605,7 +22582,6 @@ function initGlobals takes nothing returns nothing
 	set OB=false
 	set RB=null
 	set IB=null
-	set ZB=false
 	set EC=false
 	set AC=false
 	set BC=null
@@ -23053,7 +23029,6 @@ function initGlobals takes nothing returns nothing
 	set W2=null
 	set Y10=null
 	set Z2=null
-	set E3=null
 	set O3=null
 	set R3=null
 	set I3=null
@@ -23914,8 +23889,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
-	set ref_function_R7X=function R7X
-	set ref_function_R8X=function R8X
 	set ref_function_IEX=function IEX
 	set ref_function_IXX=function IXX
 	set ref_function_IOX=function IOX
@@ -25565,9 +25538,6 @@ function main takes nothing returns nothing
 	set Z2=CreateTrigger()
 	call TriggerAddCondition(Z2,Condition(ref_function_R2X))
 	call TriggerAddAction(Z2,ref_function_R3X)
-	set E3=CreateTrigger()
-	call TriggerAddCondition(E3,Condition(ref_function_R7X))
-	call TriggerAddAction(E3,ref_function_R8X)
 	set O3=CreateTrigger()
 	call TriggerAddCondition(O3,Condition(ref_function_IEX))
 	call TriggerAddAction(O3,ref_function_IXX)
