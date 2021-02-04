@@ -260,7 +260,6 @@ globals
 	texttag texttagGameMode1=null
 	texttag texttagGameMode2=null
 	integer array DC
-	boolean FC=false
 	boolean HC=false
 	boolean PC=false
 	string array QC
@@ -730,7 +729,6 @@ globals
 	trigger Z2=null
 	trigger V3=null
 	trigger E3=null
-	trigger X3=null
 	trigger O3=null
 	trigger R3=null
 	trigger I3=null
@@ -1724,8 +1722,6 @@ globals
 	code ref_function_R6X=null
 	code ref_function_R7X=null
 	code ref_function_R8X=null
-	code ref_function_R9X=null
-	code ref_function_IVX=null
 	code ref_function_IEX=null
 	code ref_function_IXX=null
 	code ref_function_IOX=null
@@ -8761,10 +8757,8 @@ function FLE takes nothing returns nothing
 	set QO=I2R(GB[EE])/S2R(QC[numberLvl])
 	set QN=I2R(HB[EE])/500.
 	set QO=QO-QN
-	if FC==false then
-		set OD[bj_forLoopAIndex]=0.
 	
-	elseif QO>=1. then
+	if QO>=1. then
 		set OD[EE]=1.
 	
 	elseif QO>=.1 then
@@ -9971,7 +9965,6 @@ function ProcessGameMode takes nothing returns nothing
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
 		
 		//elseif parameter=="ah" then
-			//	set MN=false
 			//	set yn=true
 		
 		elseif parameter=="qg" then
@@ -9985,7 +9978,6 @@ function ProcessGameMode takes nothing returns nothing
 		elseif parameter=="cc" then
 			call ConditionalTriggerExecute(I3)
 			call ConditionalTriggerExecute(V3)
-			call ConditionalTriggerExecute(X3)
 			call DestroyTrigger(A3)
 			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
@@ -9993,7 +9985,6 @@ function ProcessGameMode takes nothing returns nothing
 		elseif parameter=="ac" then
 			call ConditionalTriggerExecute(A3)
 			call ConditionalTriggerExecute(V3)
-			call ConditionalTriggerExecute(X3)
 			call DestroyTrigger(I3)
 			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
@@ -10012,33 +10003,23 @@ function ProcessGameMode takes nothing returns nothing
 		//elseif parameter=="nc" then
 			//	call ConditionalTriggerExecute(N3)
 			//	call ConditionalTriggerExecute(V3)
-			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(R3)
 			//	call DestroyTrigger(I3)
 			//	call DestroyTrigger(A3)
-			
-		//elseif parameter=="mm" then
-			//	call ConditionalTriggerExecute(V3)
-			
+		
 		//elseif parameter=="nm" then
 			//	call ConditionalTriggerExecute(O3)
-			
-		//elseif parameter=="gg" then
-			//	call ConditionalTriggerExecute(X3)
 			
 		//elseif parameter=="cb" then
 			//	call ConditionalTriggerExecute(R3)
 			
 		//elseif parameter=="gm" then
-			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(I3)
 			//	call ConditionalTriggerExecute(V3)
-			//	call ConditionalTriggerExecute(X3)
 			//	call DestroyTrigger(A3)
 			//	call DestroyTrigger(N3)
 			
 		//elseif parameter=="gc" then
-			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(R3)
 			
 		//elseif parameter=="gl" then
@@ -10046,29 +10027,12 @@ function ProcessGameMode takes nothing returns nothing
 			
 		//elseif parameter=="lc" or parameter=="cl" then
 			//	call ConditionalTriggerExecute(R3)
-			
-		//else
-			//	set MN=false
 		endif
-		
-		//if MN then
-		//	call ConditionalTriggerExecute(E3)
-		//	call ConditionalTriggerExecute(B3)
-		//endif
-		
-		// Add some modes if only a single certain mode has been selected
-		//if StringLength(BE)==3 and additionalModes then
-		//	call ConditionalTriggerExecute(V3)
-		//	call ConditionalTriggerExecute(X3)
-		//	call ConditionalTriggerExecute(R3)
-		//endif
-		
 		set stringPosition=stringPosition+1
 	endloop
 	
 	call ConditionalTriggerExecute(E3) // "hg"
 	call ConditionalTriggerExecute(B3) // "eq"
-	call ConditionalTriggerExecute(X3) // "gg"
 	call ConditionalTriggerExecute(V3) // "mm"
 	
 	call DisableTrigger(GetTriggeringTrigger())
@@ -10164,17 +10128,11 @@ function IQX takes nothing returns nothing
 	if HCC then
 		set LN=LN+"qg"
 	endif
-	if ZN then
-		//set LN=LN+"mm"
-	endif
 	if ZB then
 		//set LN=LN+"hg"
 	endif
 	if AC then
 		//set LN=LN+"nm"
-	endif
-	if FC then
-		//set LN=LN+"gg"
 	endif
 	if PC then
 		//set LN=LN+"cb"
@@ -10230,7 +10188,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
 	call DisableTrigger(E3)
-	call DisableTrigger(X3)
 	call DisableTrigger(B3)
 	call DisableTrigger(I8)
 	call DisableTrigger(O3)
@@ -10250,12 +10207,6 @@ function IUX takes nothing returns nothing
 	call PauseTimer(KA)
 	call DestroyTimer(KA)
 	call TriggerExecute(N4)
-endfunction
-
-function IVX takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set FC=true
-	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAGood Game|r: You receive gold for ally leaks.")
 endfunction
 
 function IWX takes nothing returns nothing
@@ -15493,13 +15444,13 @@ function R5X takes nothing returns nothing
 	endif
 endfunction
 
+// -mm
 function R6X takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set ZN=true
 	call FogEnableOn()
 	call FogMaskEnableOn()
 	call ForForce(ZI,ref_function_R5X)
-	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMastermind|r: Restricted vision and limited scoreboard information.")
 endfunction
 
 function R7X takes nothing returns boolean
@@ -15523,10 +15474,6 @@ function R8X takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set ZB=true
 	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAHourglass|r: You receive gold for enemy leaks.")
-endfunction
-
-function R9X takes nothing returns boolean
-	return FC==false
 endfunction
 
 function RAX takes nothing returns nothing
@@ -18904,44 +18851,40 @@ function XAX takes nothing returns nothing
 	set BG=true
 	set HB[GetUnitUserData(GetTriggerUnit())]=HB[GetUnitUserData(GetTriggerUnit())]+1
 	call UnitAddAbility(GetTriggerUnit(),$41303744)
-	if FC then
-		set QO=OD[GetUnitUserData(GetTriggerUnit())]
-		if QO>=1. then
-			call UnitAddAbility(GetTriggerUnit(),$4130415A)
-		
-		elseif QO>=.9 and QO>1. then
-			call UnitAddAbility(GetTriggerUnit(),$41303851)
-		
-		elseif QO>=.8 and QO>.9 then
-			call UnitAddAbility(GetTriggerUnit(),$41304230)
-		
-		elseif QO>=.7 and QO>.8 then
-			call UnitAddAbility(GetTriggerUnit(),$41304158)
-		
-		elseif QO>=.6 and QO>.7 then
-			call UnitAddAbility(GetTriggerUnit(),$41304159)
-		
-		elseif QO>=.5 and QO>.6 then
-			call UnitAddAbility(GetTriggerUnit(),$41304157)
-		
-		elseif QO>=.4 and QO>.5 then
-			call UnitAddAbility(GetTriggerUnit(),$4130384E)
-		
-		elseif QO>=.4 and QO>.5 then
-			call UnitAddAbility(GetTriggerUnit(),$4130384E)
-		
-		elseif QO>=.3 and QO>.4 then
-			call UnitAddAbility(GetTriggerUnit(),$41303850)
-		
-		elseif QO>=.2 and QO>.3 then
-			call UnitAddAbility(GetTriggerUnit(),$4130384F)
-		
-		elseif QO>=.1 and QO>.2 then
-			call UnitAddAbility(GetTriggerUnit(),$41304156)
-		
-		else
-			call UnitAddAbility(GetTriggerUnit(),$41303852)
-		endif
+	
+	set QO=OD[GetUnitUserData(GetTriggerUnit())]
+	if QO>=1. then
+		call UnitAddAbility(GetTriggerUnit(),$4130415A)
+	
+	elseif QO>=.9 and QO>1. then
+		call UnitAddAbility(GetTriggerUnit(),$41303851)
+	
+	elseif QO>=.8 and QO>.9 then
+		call UnitAddAbility(GetTriggerUnit(),$41304230)
+	
+	elseif QO>=.7 and QO>.8 then
+		call UnitAddAbility(GetTriggerUnit(),$41304158)
+	
+	elseif QO>=.6 and QO>.7 then
+		call UnitAddAbility(GetTriggerUnit(),$41304159)
+	
+	elseif QO>=.5 and QO>.6 then
+		call UnitAddAbility(GetTriggerUnit(),$41304157)
+	
+	elseif QO>=.4 and QO>.5 then
+		call UnitAddAbility(GetTriggerUnit(),$4130384E)
+	
+	elseif QO>=.4 and QO>.5 then
+		call UnitAddAbility(GetTriggerUnit(),$4130384E)
+	
+	elseif QO>=.3 and QO>.4 then
+		call UnitAddAbility(GetTriggerUnit(),$41303850)
+	
+	elseif QO>=.2 and QO>.3 then
+		call UnitAddAbility(GetTriggerUnit(),$4130384F)
+	
+	elseif QO>=.1 and QO>.2 then
+		call UnitAddAbility(GetTriggerUnit(),$41304156)
 	
 	else
 		call UnitAddAbility(GetTriggerUnit(),$41303852)
@@ -22739,7 +22682,6 @@ function initGlobals takes nothing returns nothing
 	set CC=null
 	set texttagGameMode1=null
 	set texttagGameMode2=null
-	set FC=false
 	set HC=false
 	set PC=false
 	set JD=null
@@ -23183,7 +23125,6 @@ function initGlobals takes nothing returns nothing
 	set Z2=null
 	set V3=null
 	set E3=null
-	set X3=null
 	set O3=null
 	set R3=null
 	set I3=null
@@ -24049,8 +23990,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_R6X=function R6X
 	set ref_function_R7X=function R7X
 	set ref_function_R8X=function R8X
-	set ref_function_R9X=function R9X
-	set ref_function_IVX=function IVX
 	set ref_function_IEX=function IEX
 	set ref_function_IXX=function IXX
 	set ref_function_IOX=function IOX
@@ -25706,9 +25645,6 @@ function main takes nothing returns nothing
 	set E3=CreateTrigger()
 	call TriggerAddCondition(E3,Condition(ref_function_R7X))
 	call TriggerAddAction(E3,ref_function_R8X)
-	set X3=CreateTrigger()
-	call TriggerAddCondition(X3,Condition(ref_function_R9X))
-	call TriggerAddAction(X3,ref_function_IVX)
 	set O3=CreateTrigger()
 	call TriggerAddCondition(O3,Condition(ref_function_IEX))
 	call TriggerAddAction(O3,ref_function_IXX)
