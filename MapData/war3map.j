@@ -723,7 +723,6 @@ globals
 	trigger W2=null
 	trigger Y10=null
 	trigger Z2=null
-	trigger O3=null
 	trigger R3=null
 	trigger I3=null
 	trigger A3=null
@@ -1710,8 +1709,6 @@ globals
 	code ref_function_RKX=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
-	code ref_function_IEX=null
-	code ref_function_IXX=null
 	code ref_function_IOX=null
 	code ref_function_IBX=null
 	code ref_function_IRX=null
@@ -9861,10 +9858,6 @@ function IDX takes nothing returns nothing
 	set XJ=true
 endfunction
 
-function IEX takes nothing returns boolean
-	return AC==false
-endfunction
-
 function IFX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set OJ=true
@@ -9972,32 +9965,23 @@ function ProcessGameMode takes nothing returns nothing
 		//elseif parameter=="nc" then
 			//	call ConditionalTriggerExecute(N3)
 			//	call ConditionalTriggerExecute(R3)
-			//	call DestroyTrigger(I3)
-			//	call DestroyTrigger(A3)
-		
-		//elseif parameter=="nm" then
-			//	call ConditionalTriggerExecute(O3)
 			
 		//elseif parameter=="cb" then
 			//	call ConditionalTriggerExecute(R3)
 			
 		//elseif parameter=="gm" then
 			//	call ConditionalTriggerExecute(I3)
-			//	call DestroyTrigger(A3)
-			//	call DestroyTrigger(N3)
 			
 		//elseif parameter=="gc" then
 			//	call ConditionalTriggerExecute(R3)
 			
-		//elseif parameter=="gl" then
-			//	call ConditionalTriggerExecute(X3)
 			
 		//elseif parameter=="lc" or parameter=="cl" then
 			//	call ConditionalTriggerExecute(R3)
 		endif
 		set stringPosition=stringPosition+1
 	endloop
-		
+	
 	call DisableTrigger(GetTriggeringTrigger())
 	set myTrigger=null
 endfunction
@@ -10133,7 +10117,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(Y10)
 	call DisableTrigger(Z2)
 	call DisableTrigger(I8)
-	call DisableTrigger(O3)
 	call DisableTrigger(R3)
 	call DisableTrigger(C3)
 	call DisableTrigger(F3)
@@ -10172,12 +10155,6 @@ function IWX takes nothing returns nothing
 		endif
 		call EnableTrigger(I5)
 	endif
-endfunction
-
-function IXX takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set AC=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Middle|r: Enemies that reach the middle (Dark Grass) give no gold when killed")
 endfunction
 
 function IYX takes nothing returns nothing
@@ -23008,7 +22985,6 @@ function initGlobals takes nothing returns nothing
 	set W2=null
 	set Y10=null
 	set Z2=null
-	set O3=null
 	set R3=null
 	set I3=null
 	set A3=null
@@ -23867,8 +23843,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
-	set ref_function_IEX=function IEX
-	set ref_function_IXX=function IXX
 	set ref_function_IOX=function IOX
 	set ref_function_IBX=function IBX
 	set ref_function_IRX=function IRX
@@ -25514,9 +25488,6 @@ function main takes nothing returns nothing
 	set Z2=CreateTrigger()
 	call TriggerAddCondition(Z2,Condition(ref_function_R2X))
 	call TriggerAddAction(Z2,ref_function_R3X)
-	set O3=CreateTrigger()
-	call TriggerAddCondition(O3,Condition(ref_function_IEX))
-	call TriggerAddAction(O3,ref_function_IXX)
 	set R3=CreateTrigger()
 	call TriggerAddCondition(R3,Condition(ref_function_IOX))
 	call TriggerAddAction(R3,ref_function_IBX)
