@@ -269,7 +269,6 @@ globals
 	boolean array SC
 	unit array WC
 	real array OD
-	boolean RD=false
 	player JD=null
 	player KD=null
 	player LD=null
@@ -729,7 +728,6 @@ globals
 	trigger P2=null
 	trigger Q2=null
 	trigger S2=null
-	trigger T2=null
 	trigger U2=null
 	trigger W2=null
 	trigger Y10=null
@@ -756,7 +754,6 @@ globals
 	trigger U3=null
 	trigger W3=null
 	trigger Y3=null
-	trigger Z3=null
 	trigger V4=null
 	trigger E4=null
 	trigger X4=null
@@ -1289,7 +1286,6 @@ globals
 	code ref_function_RMX=null
 	code ref_function_RSX=null
 	code ref_function_RUX=null
-	code ref_function_RYX=null
 	code ref_function_R5X=null
 	code ref_function_INX=null
 	code ref_function_eK=null
@@ -1730,7 +1726,6 @@ globals
 	code ref_function_RFX=null
 	code ref_function_RPX=null
 	code ref_function_RWX=null
-	code ref_function_RZX=null
 	code ref_function_RHX=null
 	code ref_function_RKX=null
 	code ref_function_R2X=null
@@ -1772,8 +1767,6 @@ globals
 	code ref_function_AEX=null
 	code ref_function_AXX=null
 	code ref_function_AOX=null
-	code ref_function_AIX=null
-	code ref_function_ANX=null
 	code ref_function_ABX=null
 	code ref_function_ACX=null
 	code ref_function_ADX=null
@@ -3036,18 +3029,8 @@ function ARX takes nothing returns boolean
 	return GetUnitTypeId(GetTriggerUnit())==$75303031 or GetUnitTypeId(GetTriggerUnit())==$75303043 or GetUnitTypeId(GetTriggerUnit())==$75303030 or GetUnitTypeId(GetTriggerUnit())==$75303033 or GetUnitTypeId(GetTriggerUnit())==$75303032 or GetUnitTypeId(GetTriggerUnit())==$75303047 or GetUnitTypeId(GetTriggerUnit())==$75303048 or GetUnitTypeId(GetTriggerUnit())==$75303049 or GetUnitTypeId(GetTriggerUnit())==$7530304A or GetUnitTypeId(GetTriggerUnit())==$7530304C or GetUnitTypeId(GetTriggerUnit())==$7530304F or GetUnitTypeId(GetTriggerUnit())==$7530304D or GetUnitTypeId(GetTriggerUnit())==$7530304B or GetUnitTypeId(GetTriggerUnit())==$75303054 or GetUnitTypeId(GetTriggerUnit())==$75303045 or GetUnitTypeId(GetTriggerUnit())==$75303050 or GetUnitTypeId(GetTriggerUnit())==$75303055 or GetUnitTypeId(GetTriggerUnit())==$7530305A
 endfunction
 
-function AIX takes nothing returns boolean
-	return RD and GetOwningPlayer(GetTriggerUnit())==Player(0) and ARX()
-endfunction
-
 function AJX takes nothing returns boolean
 	return GetResearched()==$52303047
-endfunction
-
-function ANX takes nothing returns nothing
-	call ForForce(ZI,ref_function_AAX)
-	call TriggerExecute(AT)
-	call DisableTrigger(GetTriggeringTrigger())
 endfunction
 
 function AOX takes nothing returns nothing
@@ -9997,10 +9980,6 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(P2)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
 			
-		//elseif parameter=="hp" then
-			//	set additionalModes=true
-			//	call ConditionalTriggerExecute(T2)
-			
 		//elseif parameter=="ar" then
 			//	set additionalModes=true
 			//	call ConditionalTriggerExecute(S2)
@@ -10185,9 +10164,6 @@ function IQX takes nothing returns nothing
 	if GA then
 		set LN="-ap"
 	endif
-	if RD then
-		//set LN="-hp"
-	endif
 	if SH then
 		set LN="-ph"
 	endif
@@ -10276,7 +10252,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(P2)
 	call DisableTrigger(S2)
 	call DisableTrigger(Q2)
-	call DisableTrigger(T2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
@@ -15845,11 +15820,11 @@ function RGX takes nothing returns nothing
 	set p=null
 endfunction
 
+//-ap
 function RHX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set SH=true
-	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Prophet|r: all prophet.")
 	call A_V(1.)
 	call ForForce(ZI,ref_function_RGX)
 endfunction
@@ -16257,21 +16232,6 @@ function RYE takes nothing returns nothing
 	endif
 endfunction
 
-function RYX takes nothing returns nothing
-	if GetEnumPlayer()!=Player(0) then
-		set bj_forLoopAIndex=0
-		set bj_forLoopAIndexEnd=15
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetEnumPlayer())
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		call SetPlayerTechMaxAllowedSwap($65303032,0,GetEnumPlayer())
-		call SetPlayerTechMaxAllowedSwap($75303045,0,GetEnumPlayer())
-		call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
-	endif
-endfunction
-
 function RZE takes nothing returns nothing
 	if XV==VV then
 		if VV>=5 then
@@ -16315,15 +16275,6 @@ function RZE takes nothing returns nothing
 		endif
 		set XV=VV
 	endif
-endfunction
-
-function RZX takes nothing returns nothing
-	set EC=true
-	set RD=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Host Pick|r: host will pick same builder for everyone. ")
-	call A_V(1.)
-	call ForForce(ZI,ref_function_RYX)
-	call DisableTrigger(GetTriggeringTrigger())
 endfunction
 
 function R_E takes nothing returns nothing
@@ -22981,7 +22932,6 @@ function initGlobals takes nothing returns nothing
 	set FC=false
 	set HC=false
 	set PC=false
-	set RD=false
 	set JD=null
 	set KD=null
 	set LD=null
@@ -23419,7 +23369,6 @@ function initGlobals takes nothing returns nothing
 	set P2=null
 	set Q2=null
 	set S2=null
-	set T2=null
 	set U2=null
 	set W2=null
 	set Y10=null
@@ -23446,7 +23395,6 @@ function initGlobals takes nothing returns nothing
 	set U3=null
 	set W3=null
 	set Y3=null
-	set Z3=null
 	set V4=null
 	set E4=null
 	set X4=null
@@ -23851,7 +23799,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RMX=function RMX
 	set ref_function_RSX=function RSX
 	set ref_function_RUX=function RUX
-	set ref_function_RYX=function RYX
 	set ref_function_R5X=function R5X
 	set ref_function_INX=function INX
 	set ref_function_eK=function eK
@@ -24292,7 +24239,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RFX=function RFX
 	set ref_function_RPX=function RPX
 	set ref_function_RWX=function RWX
-	set ref_function_RZX=function RZX
 	set ref_function_RHX=function RHX
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
@@ -24334,8 +24280,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_AEX=function AEX
 	set ref_function_AXX=function AXX
 	set ref_function_AOX=function AOX
-	set ref_function_AIX=function AIX
-	set ref_function_ANX=function ANX
 	set ref_function_ABX=function ABX
 	set ref_function_ACX=function ACX
 	set ref_function_ADX=function ADX
@@ -25948,9 +25892,6 @@ function main takes nothing returns nothing
 	set S2=CreateTrigger()
 	call TriggerAddCondition(S2,Condition(ref_function_RQX))
 	call TriggerAddAction(S2,ref_function_RWX)
-	set T2=CreateTrigger()
-	call TriggerAddCondition(T2,Condition(ref_function_RQX))
-	call TriggerAddAction(T2,ref_function_RZX)
 	set U2=CreateTrigger()
 	call TriggerAddCondition(U2,Condition(ref_function_RQX))
 	call TriggerAddAction(U2,ref_function_RHX)
@@ -26037,10 +25978,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterAnyUnitEventBJ(Y3,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
 	call TriggerAddCondition(Y3,Condition(ref_function_AXX))
 	call TriggerAddAction(Y3,ref_function_AOX)
-	set Z3=CreateTrigger()
-	call TriggerRegisterAnyUnitEventBJ(Z3,EVENT_PLAYER_UNIT_UPGRADE_FINISH)
-	call TriggerAddCondition(Z3,Condition(ref_function_AIX))
-	call TriggerAddAction(Z3,ref_function_ANX)
 	set V4=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(V4,EVENT_PLAYER_UNIT_SPELL_CAST)
 	call TriggerAddCondition(V4,Condition(ref_function_ABX))
