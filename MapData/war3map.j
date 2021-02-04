@@ -242,7 +242,6 @@ globals
 	integer array FB
 	integer array GB
 	integer array HB
-	boolean JB=false
 	integer array KB
 	integer array LB
 	integer array MB
@@ -725,7 +724,6 @@ globals
 	trigger L2=null
 	trigger M2=null
 	trigger P2=null
-	trigger Q2=null
 	trigger U2=null
 	trigger W2=null
 	trigger Y10=null
@@ -1280,8 +1278,6 @@ globals
 	code ref_function_RAX=null
 	code ref_function_RGX=null
 	code ref_function_RJX=null
-	code ref_function_RLX=null
-	code ref_function_RMX=null
 	code ref_function_R5X=null
 	code ref_function_INX=null
 	code ref_function_eK=null
@@ -1720,7 +1716,6 @@ globals
 	code ref_function_RDX=null
 	code ref_function_RQX=null
 	code ref_function_RFX=null
-	code ref_function_RPX=null
 	code ref_function_RHX=null
 	code ref_function_RKX=null
 	code ref_function_R2X=null
@@ -9975,10 +9970,6 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(P2)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
 		
-		//elseif parameter=="sd" then
-			//	set additionalModes=true
-			//	call ConditionalTriggerExecute(Q2)
-		
 		//elseif parameter=="ah" then
 			//	set MN=false
 			//	set yn=true
@@ -10161,9 +10152,6 @@ function IQX takes nothing returns nothing
 	if TH then
 		set LN="-pr"
 	endif
-	if JB then
-		//set LN="-sd"
-	endif
 	if EJ then
 		set LN=LN+"cc"
 	endif
@@ -10238,7 +10226,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(U2)
 	call DisableTrigger(W2)
 	call DisableTrigger(P2)
-	call DisableTrigger(Q2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
@@ -15904,36 +15891,6 @@ function RKX takes nothing returns nothing
 	call ForForce(ZI,ref_function_RJX)
 endfunction
 
-function RLX takes nothing returns nothing
-	call SetPlayerTechMaxAllowedSwap($75303045,0,GetEnumPlayer())
-	call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
-	set bj_forLoopAIndex=0
-	set bj_forLoopAIndexEnd=ER
-	loop
-		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetEnumPlayer())
-		set bj_forLoopAIndex=bj_forLoopAIndex+1
-	endloop
-endfunction
-
-function RMX takes nothing returns nothing
-	set EE=GetRandomInt(0,ER)
-	set IX=BAE(0,ER,EE)
-	call SetPlayerTechMaxAllowedSwap(OC[EE],1,GetEnumPlayer())
-	call SetPlayerTechMaxAllowedSwap(OC[IX],1,GetEnumPlayer())
-	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer())
-	if EE<12 and IX<12 then
-		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303035,1)
-	
-	elseif EE>=6 and IX>=6 then
-		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303037,1)
-	
-	else
-		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303036,1)
-	endif
-	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-endfunction
-
 function ROX takes nothing returns nothing
 	set EE=CountPlayersInForceBJ(ZI)
 	set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(EE)*.5,1,1)+")"
@@ -15960,16 +15917,6 @@ function ROX takes nothing returns nothing
 	call PauseTimerBJ(true,WF)
 	set YF=false
 	call MultiboardDisplay(JR,true)
-endfunction
-
-function RPX takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set EC=true
-	set JB=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00Single Draft|r: you will receive 2 random races to choose from in a moment.")
-	call ForForce(ZI,ref_function_RLX)
-	call A_V(1.)
-	call ForForce(ZI,ref_function_RMX)
 endfunction
 
 function RRE takes nothing returns nothing
@@ -22785,7 +22732,6 @@ function initGlobals takes nothing returns nothing
 	set OB=false
 	set RB=null
 	set IB=null
-	set JB=false
 	set ZB=false
 	set EC=false
 	set AC=false
@@ -23231,7 +23177,6 @@ function initGlobals takes nothing returns nothing
 	set L2=null
 	set M2=null
 	set P2=null
-	set Q2=null
 	set U2=null
 	set W2=null
 	set Y10=null
@@ -23658,8 +23603,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RAX=function RAX
 	set ref_function_RGX=function RGX
 	set ref_function_RJX=function RJX
-	set ref_function_RLX=function RLX
-	set ref_function_RMX=function RMX
 	set ref_function_R5X=function R5X
 	set ref_function_INX=function INX
 	set ref_function_eK=function eK
@@ -24098,7 +24041,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RDX=function RDX
 	set ref_function_RQX=function RQX
 	set ref_function_RFX=function RFX
-	set ref_function_RPX=function RPX
 	set ref_function_RHX=function RHX
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
@@ -25746,9 +25688,6 @@ function main takes nothing returns nothing
 	set P2=CreateTrigger()
 	call TriggerAddCondition(P2,Condition(ref_function_RQX))
 	call TriggerAddAction(P2,ref_function_RFX)
-	set Q2=CreateTrigger()
-	call TriggerAddCondition(Q2,Condition(ref_function_RQX))
-	call TriggerAddAction(Q2,ref_function_RPX)
 	set U2=CreateTrigger()
 	call TriggerAddCondition(U2,Condition(ref_function_RQX))
 	call TriggerAddAction(U2,ref_function_RHX)
