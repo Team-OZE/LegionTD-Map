@@ -1132,7 +1132,7 @@ Name=King's Taunt!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIco\CrownOfCmndTarget.mdl
 Tip=King's Taunt - [|cffFFcc00F|r]
-Ubertip=Cast this ability to taunt wave creeps to attack King or Player units to attack in Arena.|nCooldown: 10sec|n
+Ubertip=Cast this ability to taunt stuck creeps or use it to speed them up or to divert them.|nCooldown: 10sec
 
 [A051]
 Art=ReplaceableTextures\CommandButtons\BTNSpellBookBLS.blp
@@ -5642,7 +5642,7 @@ Name=Command Attack!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIem\AIemTarget.mdl
 Tip=Command Attack - [|cffFFcc00D|r]
-Ubertip=Cast this to order your units to Attack!|nCooldown: 40sec|n
+Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 40sec
 
 [A982]
 Animnames=attack,slam
