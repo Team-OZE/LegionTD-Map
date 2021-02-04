@@ -1932,12 +1932,14 @@ timer getTimertempReturn=null
 trigger triggerFromIndextempReturn=null
 trigger dispatch_Table_Table_Table_loadTriggertempReturn=null
 endglobals
+
 function A9E takes nothing returns nothing
 local player RSE=Player(12)
 set F7=CreateUnit(RSE,$68304437,0.,-1663.6,270.)
 call SetUnitColor(F7,ConvertPlayerColor(12))
 set RSE=null
 endfunction
+
 function A9V takes nothing returns nothing
 local integer i=0
 set VCV=0
@@ -1952,6 +1954,7 @@ set i=i+1
 exitwhen i==241
 endloop
 endfunction
+
 function B4V takes integer B3V returns nothing
 local integer i
 if 16==VUV[B3V] then
@@ -1978,6 +1981,7 @@ endif
 set VSV[B3V]=VSV[B3V]+LoadStr(VKV,B3V,VUV[B3V])
 set VUV[B3V]=VUV[B3V]+1
 endfunction
+
 function B5V takes integer B3V returns string
 local string CVV=""
 local integer B6V
@@ -2008,9 +2012,11 @@ endif
 endloop
 return null
 endfunction
+
 function BLV takes nothing returns nothing
 call TimerStart(CreateTimer(),0.,false,ref_function_BKV)
 endfunction
+
 function BSV takes string BTV,string BUV,integer B2V returns integer
 local integer B3V=VMV[0]
 if 0==B3V then
@@ -2029,6 +2035,7 @@ set VUV[B3V]=16
 endif
 return B3V
 endfunction
+
 function CEV takes integer B3V returns nothing
 if VWV[B3V]==1 then
 call FlushChildHashtable(VKV,B3V)
@@ -2042,12 +2049,15 @@ set VMV[0]=B3V
 set VUV[B3V]=0
 set VSV[B3V]=""
 endfunction
+
 function COV takes nothing returns nothing
 set VKV=InitHashtable()
 endfunction
+
 function CRV takes nothing returns nothing
 call COV()
 endfunction
+
 function EBX takes nothing returns nothing
 local trigger A6E=CreateTrigger()
 set DE=CreateRegion()
@@ -2061,6 +2071,7 @@ call TriggerAddAction(A6E,ref_function_ENX)
 set A6E=null
 set A6E=null
 endfunction
+
 function EFX takes nothing returns nothing
 local trigger A6E=CreateTrigger()
 set DE=CreateRegion()
@@ -2074,6 +2085,7 @@ call TriggerAddAction(A6E,ref_function_EDX)
 set A6E=null
 set A6E=null
 endfunction
+
 function GFE takes nothing returns nothing
 local integer i=1
 loop
@@ -2082,6 +2094,7 @@ set fbact[i]=false
 set i=i+1
 endloop
 endfunction
+
 function GWE takes nothing returns nothing
 local integer i=1
 loop
@@ -2090,6 +2103,7 @@ set Q[i]=0
 set i=i+1
 endloop
 endfunction
+
 function GYE takes nothing returns nothing
 local integer i=1
 loop
@@ -2100,6 +2114,7 @@ set BV[i]=false
 set i=i+1
 endloop
 endfunction
+
 function NEE takes nothing returns nothing
 local player RSE=Player(15)
 local unit NVE=CreateUnit(RSE,$68304156,4550.,2403.,220.)
@@ -2449,6 +2464,7 @@ set NVE=null
 set RSE=null
 set NVE=null
 endfunction
+
 function NNE takes nothing returns nothing
 local player RSE=Player(0)
 set Y6=CreateUnit(RSE,$65303033,-5888.,4222.,300.)
@@ -2473,6 +2489,7 @@ set U6=CreateUnit(RSE,$6830304B,4545.,-3260.,270.)
 call CreateUnit(RSE,$75303133,-295.,-1445.,300.)
 set RSE=null
 endfunction
+
 function NXE takes nothing returns nothing
 local integer i=1
 local player RSE=Player(0)
@@ -2530,6 +2547,7 @@ set i=i+1
 endloop
 set RSE=null
 endfunction
+
 function UGV takes integer C7V,string C9V returns nothing
 local integer C8V=0
 loop
@@ -2538,14 +2556,17 @@ exitwhen C8V>StringLength(C9V)
 set C8V=C8V+1
 endloop
 endfunction
+
 function UJV takes boolean DHV,string C9V returns nothing
 call SaveBoolean(C6[0],0,1,DHV)
 call SaveStr(C6[0],0,1,C9V)
 endfunction
+
 function UKV takes boolean DHV,string C9V returns nothing
 call SaveBoolean(C6[0],0,2,DHV)
 call SaveStr(C6[0],0,2,C9V)
 endfunction
+
 function W3V takes integer C7V,string C9V returns nothing
 local integer C8V=0
 loop
@@ -2554,6 +2575,7 @@ set C8V=C8V+1
 exitwhen C8V>=StringLength(C9V)
 endloop
 endfunction
+
 function Loglevel_getTag takes integer this returns string
 local integer temp=this
 if temp==0 then
@@ -2569,6 +2591,7 @@ return "|cffFB2700error|r"
 endif
 return "?"
 endfunction
+
 function printLog takes player showTo,integer loglvl,string msg returns nothing
 local string compositeMsg
 if Printing_DEBUG_LEVEL<=loglvl then
@@ -2576,35 +2599,46 @@ set compositeMsg=Loglevel_getTag(loglvl)+" - "+msg
 call DisplayTimedTextToPlayer(showTo,0.,0.,Printing_DEBUG_MSG_DURATION,compositeMsg)
 endif
 endfunction
+
 function Log_error takes string msg returns nothing
 call printLog(Player_localPlayer,4,msg)
 endfunction
+
 function compileError takes string message returns nothing
 endfunction
+
 function hashtable_hasBoolean takes hashtable this,integer parentKey,integer childKey returns boolean
 return HaveSavedBoolean(this,parentKey,childKey)
 endfunction
+
 function hashtable_hasInt takes hashtable this,integer parentKey,integer childKey returns boolean
 return HaveSavedInteger(this,parentKey,childKey)
 endfunction
+
 function hashtable_loadBoolean takes hashtable this,integer parentKey,integer childKey returns boolean
 return LoadBoolean(this,parentKey,childKey)
 endfunction
+
 function hashtable_loadInt takes hashtable this,integer parentKey,integer childKey returns integer
 return LoadInteger(this,parentKey,childKey)
 endfunction
+
 function hashtable_saveBoolean takes hashtable this,integer parentKey,integer childKey,boolean value returns nothing
 call SaveBoolean(this,parentKey,childKey,value)
 endfunction
+
 function hashtable_saveInt takes hashtable this,integer parentKey,integer childKey,integer value returns nothing
 call SaveInteger(this,parentKey,childKey,value)
 endfunction
+
 function real_toInt takes real this returns integer
 return R2I(this)
 endfunction
+
 function string_getHash takes string this returns integer
 return StringHash(this)
 endfunction
+
 function error takes string msg,string w__wurst_stackPos returns nothing
 local integer hash
 local string stacktraceStr
@@ -2837,9 +2871,11 @@ call SetPlayerTechResearchedSwap($52303044,4,GetEnumPlayer())
 endif
 endif
 endfunction
+
 function ABX takes nothing returns boolean
 return GetSpellAbilityId()==$41303834 and VB==false
 endfunction
+
 function ACX takes nothing returns nothing
 local player OX_1=GetTriggerPlayer()
 local unit NVE=GetSpellAbilityUnit()
@@ -2861,6 +2897,7 @@ set NVE=null
 set OX_1=null
 set NVE=null
 endfunction
+
 function A4V takes group g returns nothing
 local integer h=GetHandleId(g)-VBV
 if h<0 or h>240 then
@@ -2870,6 +2907,7 @@ set VNV[h]=false
 set VCV=h
 endif
 endfunction
+
 function A5V takes nothing returns group
 local integer i=VCV
 loop
@@ -2890,6 +2928,7 @@ endloop
 call BJDebugMsg("|c00ff0303CRITICAL ERROR: FOUND NO AVAILABLE GROUPS|r")
 return A5V()
 endfunction
+
 function I7E takes itemtype AIE,integer IQE returns nothing
 local group AAE
 set bj_stockPickedItemType=AIE
@@ -2901,6 +2940,7 @@ call A4V(AAE)
 set AAE=null
 set AAE=null
 endfunction
+
 function ADE takes nothing returns nothing
 local integer AHE=0
 local integer AKE=0
@@ -2940,14 +2980,17 @@ call I7E(AIE,AHE)
 set AIE=null
 set AIE=null
 endfunction
+
 function ADX takes nothing returns boolean
 return GetUnitTypeId(GetTrainedUnit())==$65303033
 endfunction
+
 function RJE takes player RSE returns force
 set S8=CreateForce()
 call ForceEnumAllies(S8,RSE,T8)
 return S8
 endfunction
+
 function AEX takes nothing returns nothing
 call ReRollNah(GetTriggerPlayer())
 call ReplaceUnitBJ(GetTriggerUnit(),GetUnitTypeId(GetTriggerUnit()),3)
@@ -2965,35 +3008,43 @@ call DestroyForce(S8)
 set S8=null
 call TriggerExecute(AT)
 endfunction
+
 function AFX takes nothing returns nothing
 set CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]=CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]+1
 call TriggerExecute(RT)
 set EE=CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]
 set EE=0
 endfunction
+
 function AGX takes nothing returns boolean
 return GetResearched()==$52303033 or GetResearched()==$52303048
 endfunction
+
 function AHX takes nothing returns nothing
 call TriggerExecute(RT)
 if GetPlayerTechCountSimple($52303033,GetTriggerPlayer())==8 then
 call SetPlayerTechMaxAllowedSwap($52303048,8,GetTriggerPlayer())
 endif
 endfunction
+
 function ARX takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303031 or GetUnitTypeId(GetTriggerUnit())==$75303043 or GetUnitTypeId(GetTriggerUnit())==$75303030 or GetUnitTypeId(GetTriggerUnit())==$75303033 or GetUnitTypeId(GetTriggerUnit())==$75303032 or GetUnitTypeId(GetTriggerUnit())==$75303047 or GetUnitTypeId(GetTriggerUnit())==$75303048 or GetUnitTypeId(GetTriggerUnit())==$75303049 or GetUnitTypeId(GetTriggerUnit())==$7530304A or GetUnitTypeId(GetTriggerUnit())==$7530304C or GetUnitTypeId(GetTriggerUnit())==$7530304F or GetUnitTypeId(GetTriggerUnit())==$7530304D or GetUnitTypeId(GetTriggerUnit())==$7530304B or GetUnitTypeId(GetTriggerUnit())==$75303054 or GetUnitTypeId(GetTriggerUnit())==$75303045 or GetUnitTypeId(GetTriggerUnit())==$75303050 or GetUnitTypeId(GetTriggerUnit())==$75303055 or GetUnitTypeId(GetTriggerUnit())==$7530305A
 endfunction
+
 function AIX takes nothing returns boolean
 return RD and GetOwningPlayer(GetTriggerUnit())==Player(0) and ARX()
 endfunction
+
 function AJX takes nothing returns boolean
 return GetResearched()==$52303047
 endfunction
+
 function ANX takes nothing returns nothing
 call ForForce(ZI,ref_function_AAX)
 call TriggerExecute(AT)
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function AOX takes nothing returns nothing
 set EE=GetRandomInt(1,ER)
 call ReplaceUnitBJ(GetTriggerUnit(),OC[EE],3)
@@ -3110,13 +3161,16 @@ call DestroyForce(S8)
 set S8=null
 call TriggerExecute(AT)
 endfunction
+
 function APE takes nothing returns nothing
 call ADE()
 call TimerStart(bj_stockUpdateTimer,bj_STOCK_RESTOCK_INTERVAL,true,ref_function_ADE)
 endfunction
+
 function ASE takes nothing returns boolean
 return true
 endfunction
+
 function ATX takes nothing returns nothing
 set KH[1+GetPlayerId(GetTriggerPlayer())]=KH[1+GetPlayerId(GetTriggerPlayer())]+1
 set MN=false
@@ -3126,12 +3180,15 @@ call DestroyForce(S8)
 set S8=null
 call ReRollNah(GetTriggerPlayer())
 endfunction
+
 function AXX takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303045
 endfunction
+
 function FBE takes nothing returns nothing
 call ForForce(ZI,ref_function_FNE)
 endfunction
+
 function B0X takes nothing returns nothing
 local integer i=0
 if CV>DV and OE>9 then
@@ -3174,6 +3231,7 @@ endloop
 endif
 call FBE()
 endfunction
+
 function BZX takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(RJE(Player(8)))==1 then
@@ -3183,6 +3241,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function B_X takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(RJE(Player(9)))==1 then
@@ -3192,11 +3251,13 @@ set S8=null
 endif
 return b
 endfunction
+
 function ITE takes player RSE returns group
 set G8=A5V()
 call GroupEnumUnitsOfPlayer(G8,RSE,T8)
 return G8
 endfunction
+
 function B1X takes nothing returns nothing
 local integer ii=0
 local integer B2X=0
@@ -3360,21 +3421,25 @@ endif
 call FBE()
 endif
 endfunction
+
 function B3E takes nothing returns nothing
 if QH then
 call TriggerExecute(OS)
 endif
 endfunction
+
 function IZE takes player RSE returns force
 set S8=CreateForce()
 call ForceAddPlayer(S8,RSE)
 return S8
 endfunction
+
 function I_E takes player RSE returns force
 set S8=CreateForce()
 call ForceEnumEnemies(S8,RSE,T8)
 return S8
 endfunction
+
 function BXE takes location IVE,string ATE,real IEE,real IXE,real N1E,player RSE returns texttag
 local texttag N2E=CreateTextTagLocBJ(ATE,IVE,0.,10.,IEE,IXE,N1E,0.)
 local force N3E=IZE(RSE)
@@ -3395,6 +3460,7 @@ set N3E=null
 set BOE=null
 return BXEtempReturn
 endfunction
+
 function B4X takes nothing returns nothing
 set EE=EE+1
 set FE=GetUnitLoc(GetEnumUnit())
@@ -3407,11 +3473,13 @@ endif
 set DB[EE]=BXE(FE,BE,255.,255.,255.,OX)
 call RemoveLocation(FE)
 endfunction
+
 function IPE takes integer IQE returns group
 set G8=A5V()
 call GroupEnumUnitsOfType(G8,UnitId2String(IQE),T8)
 return G8
 endfunction
+
 function B5X takes nothing returns nothing
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=8
@@ -3432,6 +3500,7 @@ if AE then
 call DisableTrigger(GetTriggeringTrigger())
 endif
 endfunction
+
 function A4E takes string ATE returns nothing
 local string A0E=I2S(GV)
 set GV=GV+1
@@ -3442,6 +3511,7 @@ call SyncStoredInteger(K,"chk:"+A0E,A0E)
 call FlushStoredInteger(K,"val:"+A0E,ATE)
 call FlushStoredInteger(K,"chk:"+A0E,A0E)
 endfunction
+
 function B8E takes nothing returns nothing
 local string ATE="\""
 local string A0E="Race_Picker"
@@ -3453,6 +3523,7 @@ call A4E("VarP "+I2S(GetPlayerId(GetEnumPlayer()))+" level = 0")
 call A4E("VarP "+I2S(GetPlayerId(GetEnumPlayer()))+" score = 0")
 call A4E("VarP "+I2S(GetPlayerId(GetEnumPlayer()))+" seconds = 0")
 endfunction
+
 function BAX takes nothing returns nothing
 set QO=OD[1+GetPlayerId(GetEnumPlayer())]
 if QO<.5 then
@@ -3464,14 +3535,17 @@ call CreateNUnitsAtLoc(1,$75303132,GetEnumPlayer(),CX,bj_UNIT_FACING)
 call GroupAddUnit(FF,bj_lastCreatedUnit)
 endif
 endfunction
+
 function BBE takes nothing returns nothing
 call TriggerRegisterUnitEvent(IH,GetEnumUnit(),EVENT_UNIT_ACQUIRED_TARGET)
 call GroupAddUnit(FG,GetEnumUnit())
 set AH=AH+1
 endfunction
+
 function BBX takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function BCX takes nothing returns nothing
 if GB[1+GetPlayerId(GetEnumPlayer())]>=2500 then
 call CreateNUnitsAtLoc(1,$75303144,GetEnumPlayer(),CX,bj_UNIT_FACING)
@@ -3506,12 +3580,15 @@ call GroupAddUnit(MC,bj_lastCreatedUnit)
 endif
 endif
 endfunction
+
 function BDE takes nothing returns nothing
 set mapVersion="v5.0b Release"
 endfunction
+
 function BDX takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
 endfunction
+
 function BAE takes integer IQE,integer AHE,integer AKE returns integer
 local integer ALE=AKE
 loop
@@ -3520,6 +3597,7 @@ set ALE=GetRandomInt(IQE,AHE)
 endloop
 return ALE
 endfunction
+
 function BEX takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetTriggerPlayer())
 local real y=GetPlayerStartLocationY(GetTriggerPlayer())
@@ -3551,18 +3629,21 @@ call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PV[1+GetPlayerId(GetTri
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function BFE takes nothing returns boolean
 if GetUnitTypeId(GetFilterUnit())<1 or IsUnitType(GetFilterUnit(),UNIT_TYPE_DEAD) or GetWidgetLife(GetFilterUnit())<.405 then
 return false
 endif
 return (IsUnitType(GetFilterUnit(),UNIT_TYPE_SAPPER) and IsUnitType(GetFilterUnit(),UNIT_TYPE_SUMMONED)==false)!=false!=false
 endfunction
+
 function BFX takes nothing returns nothing
 call ForGroup(MC,ref_function_BBX)
 call GroupClear(MC)
 call ForForce(ZI,ref_function_BCX)
 call ForGroup(JI,ref_function_BDX)
 endfunction
+
 function BGX takes nothing returns nothing
 call IssueTargetOrderById(Y6,852018,M7)
 call IssueTargetOrderById(Q6,852018,U7)
@@ -3582,12 +3663,15 @@ call SetUnitRallyDestructable(L6,K7)
 call SetUnitRallyDestructable(B7,Y7)
 call CreateDestructable($4C546C74,5696.,5504.,256.,.873,1)
 endfunction
+
 function BHX takes nothing returns boolean
 return AE==false
 endfunction
+
 function BIX takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function BJX takes nothing returns nothing
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=8
@@ -3599,12 +3683,14 @@ endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function BGV takes nothing returns nothing
 local string BHV=GetPlayerName(GetLocalPlayer())
 call Preloader("Flag"+"\\"+"flag")
 call GetPlayerName(GetLocalPlayer())
 call SetPlayerName(GetLocalPlayer(),BHV)
 endfunction
+
 function BJV takes nothing returns nothing
 call PreloadGenClear()
 call PreloadGenStart()
@@ -3612,16 +3698,19 @@ call Preload("\")\r\n\tcall SetPlayerName(GetLocalPlayer(), \"FLAG TEST LOCAL CH
 call Preload("\" )\r\nendfunction\r\nfunction AAA takes nothing returns nothing \r\n//")
 call PreloadGenEnd("Flag"+"\\"+"flag")
 endfunction
+
 function BKV takes nothing returns nothing
 call DestroyTimer(GetExpiredTimer())
 call BJV()
 call BGV()
 endfunction
+
 function BKX takes nothing returns nothing
 if QX[10]!=3 then
 call TriggerExecute(U4)
 endif
 endfunction
+
 function A_V takes real A0V returns nothing
 local real A3V=TimerGetElapsed(C8)
 local real A2V
@@ -3641,13 +3730,16 @@ endif
 endloop
 endif
 endfunction
+
 function BLX takes nothing returns nothing
 call A_V(8.)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cff33AA33Tip:|r Level 17+ is getting harder and harder. Make sure you have enough value")
 endfunction
+
 function BMX takes nothing returns nothing
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r If you finish off your creeps, your fighters will teleport to the King to catch leaks")
 endfunction
+
 function BNE takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 if IsUnitInGroup(NVE,FG) or BG then
@@ -3658,11 +3750,13 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function BNX takes nothing returns nothing
 call ForGroup(FF,ref_function_BIX)
 call GroupClear(FF)
 call ForForce(ZI,ref_function_BAX)
 endfunction
+
 function BOX takes nothing returns nothing
 call ReplaceUnitBJ(GetTriggerUnit(),$75303050,3)
 set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
@@ -3694,9 +3788,11 @@ set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
 set LH[EE]=LH[EE]+",Mercenary"
 endif
 endfunction
+
 function BPX takes nothing returns boolean
 return HC
 endfunction
+
 function BQX takes nothing returns nothing
 if MH==false then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can start votekick by type \"-vk\". It will open the votekick menu")
@@ -3704,17 +3800,21 @@ else
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r -vk is disable on this game, because of hostbot")
 endif
 endfunction
+
 function BRX takes nothing returns boolean
 return JA==false and EC
 endfunction
+
 function BSX takes nothing returns nothing
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\"")
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join https://discord.gg/dhtvnvH and get the latest updates for this mod")
 endfunction
+
 function BTX takes nothing returns nothing
 //call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Sending extra creeps at levels 1, 10, 20, 30 is a viable option.")
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Challenging Boss Levels gives extra gold to you AND your team mates")
 endfunction
+
 function BUX takes nothing returns nothing
 local real x
 local real y
@@ -3740,9 +3840,11 @@ call PingMinimapForForceEx(RJE(Player(9)),x,y,6.,0,100.,100.,100.)
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function BVX takes nothing returns boolean
 return GetResearched()==$52303044
 endfunction
+
 function BWX takes nothing returns nothing
 set IN=true
 set HO=true
@@ -3756,20 +3858,24 @@ call UnitAddItemByIdSwapped($49303030,U6)
 set HO=false
 endif
 endfunction
+
 function BXX takes nothing returns boolean
 return GetResearched()==$52303049
 endfunction
+
 function BYX takes nothing returns nothing
 if GetUnitTypeId(GetEnumUnit())!=$6830304B and GetUnitTypeId(GetEnumUnit())!=$68303648 then
 call ExplodeUnitBJ(GetEnumUnit())
 call GroupRemoveUnit(SE,GetEnumUnit())
 endif
 endfunction
+
 function IHE takes real IEE,real x,real y,boolexpr IDE returns group
 set G8=A5V()
 call GroupEnumUnitsInRange(G8,x,y,IEE,IDE)
 return G8
 endfunction
+
 function C0X takes nothing returns nothing
 local group g=null
 local group gg=null
@@ -3788,6 +3894,7 @@ call A4V(g)
 set g=null
 set gg=null
 endfunction
+
 function C1X takes nothing returns nothing
 local group g=null
 local group gg=null
@@ -3806,24 +3913,30 @@ call A4V(g)
 set g=null
 set gg=null
 endfunction
+
 function C2X takes nothing returns boolean
 return PA and CG
 endfunction
+
 function C3X takes nothing returns boolean
 return UnitHasBuffBJ(GetFilterUnit(),$42303351) or UnitHasBuffBJ(GetFilterUnit(),$42393936)
 endfunction
+
 function C4E takes nothing returns boolean
 return GetBooleanAnd(GetPlayerController(GetFilterPlayer())==MAP_CONTROL_USER,GetPlayerSlotState(GetFilterPlayer())==PLAYER_SLOT_STATE_PLAYING)
 endfunction
+
 function C4X takes nothing returns nothing
 if IsUnitType(GetEnumUnit(),UNIT_TYPE_SAPPER)==false then
 call UnitAddAbility(GetEnumUnit(),$41393534)
 endif
 call UnitRemoveAbility(GetEnumUnit(),$42393837)
 endfunction
+
 function C5X takes nothing returns boolean
 return UnitHasBuffBJ(GetFilterUnit(),$42393837)
 endfunction
+
 function C6X takes nothing returns nothing
 if GetUnitLifePercent(GetEnumUnit())>2. then
 set QO=GetUnitLifePercent(GetEnumUnit())-2.
@@ -3833,13 +3946,16 @@ endif
 call SetUnitLifePercentBJ(GetEnumUnit(),QO)
 endif
 endfunction
+
 function C7X takes nothing returns nothing
 call IssueImmediateOrderById(GetTriggerUnit(),852055)
 call IssueImmediateOrderById(GetTriggerUnit(),852520)
 endfunction
+
 function C8X takes nothing returns boolean
 return (GetUnitAbilityLevel(GetTriggerUnit(),$41393433)>0 and IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER))!=false!=false
 endfunction
+
 function C9X takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local unit uu=GetAttacker()
@@ -3902,6 +4018,7 @@ set uu=null
 set u=null
 set uu=null
 endfunction
+
 function CAX takes nothing returns nothing
 set BE=GetObjectName(WV[OE+1])
 	if HC and OE<35 then
@@ -3927,9 +4044,11 @@ set BE=GetObjectName(WV[OE+1])
 		endif
 	endif
 endfunction
+
 function CBE takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function CBX takes nothing returns nothing
 set BE=GetObjectName(WV[OE+1])
 	if HC and OE<35 then
@@ -3955,25 +4074,30 @@ set BE=GetObjectName(WV[OE+1])
 		endif
 	endif
 endfunction
+
 function IFE takes rect IIE returns group
 set G8=A5V()
 call GroupEnumUnitsInRect(G8,IIE,T8)
 return G8
 endfunction
+
 function CCE takes nothing returns nothing
 set QE=IFE(LJ)
 call ForGroup(QE,ref_function_CBE)
 call A4V(QE)
 endfunction
+
 function CCX takes nothing returns boolean
 return SubStringBJ(GetEventPlayerChatString(),1,5)=="-info"
 endfunction
+
 function I3E takes boolexpr IDE returns force
 set S8=CreateForce()
 call ForceEnumPlayers(S8,IDE)
 call DestroyBoolExpr(IDE)
 return S8
 endfunction
+
 function CDX takes nothing returns nothing
 set EE=S2I(SubStringBJ(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
 if EE>0 and EE<=35 then
@@ -3992,6 +4116,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function CEE takes nothing returns nothing
 local player RSE=GetEnumPlayer()
 local integer IQE=GetPlayerId(RSE)+1
@@ -4016,6 +4141,7 @@ call A4E("VarP "+A2E+" "+"gold_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_
 call A4E("VarP "+A2E+" "+"lumber_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_LUMBER_GATHERED)))
 set RSE=null
 endfunction
+
 function CEX takes nothing returns nothing
 if HH<=-10 and HH!=0 then
 call TriggerExecute(DS)
@@ -4023,6 +4149,7 @@ elseif HH!=0 then
 call TriggerExecute(WS)
 endif
 endfunction
+
 function CFX takes nothing returns nothing
 call StartTimerBJ(NE,false,1.)
 if RN then
@@ -4031,9 +4158,11 @@ else
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"[|cffFF0000Single Team]|r Level started.")
 endif
 endfunction
+
 function CGX takes nothing returns boolean
 return SubStringBJ(GetEventPlayerChatString(),1,5)=="-zoom"
 endfunction
+
 function CHX takes nothing returns nothing
 set QO=S2R(SubStringBJ(GetEventPlayerChatString(),7,StringLength(GetEventPlayerChatString())))
 if QO<=450. and QO>=50. then
@@ -4046,6 +4175,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function CIE takes nothing returns nothing
 local integer i=0
 loop
@@ -4092,9 +4222,11 @@ call CreateTimerDialogBJ(KA,"Game starts in")
 set LA=bj_lastCreatedTimerDialog
 call TriggerExecute(G3)
 endfunction
+
 function CIX takes nothing returns boolean
 return OE<=35
 endfunction
+
 function CJX takes nothing returns nothing
 local integer i=0
 local player p=GetTriggerPlayer()
@@ -4192,15 +4324,18 @@ endif
 set IV=0
 set p=null
 endfunction
+
 function CMX takes nothing returns nothing
 set EE=0
 call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),7.,"Total Kill: |cffFFcc00"+I2S(XE[1+GetPlayerId(GetTriggerPlayer())])+"|r")
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function CNX takes nothing returns boolean
 return OE<=35
 endfunction
+
 function COE takes nothing returns nothing
 local player RSE=GetEnumPlayer()
 local integer IQE=GetPlayerId(RSE)+1
@@ -4235,6 +4370,7 @@ call A4E("VarP "+A2E+" "+"gold_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_
 call A4E("VarP "+A2E+" "+"lumber_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_LUMBER_GATHERED)))
 set RSE=null
 endfunction
+
 function BIE takes string ATE returns string
 local integer IQE=1
 local integer AHE=StringLength(ATE)
@@ -4252,6 +4388,7 @@ set IQE=IQE+1
 endloop
 return A0E
 endfunction
+
 function COX takes nothing returns nothing
 if GetEventPlayerChatString()=="-fortified" then
 set BE=YX
@@ -4282,6 +4419,7 @@ call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),11.,UO+" levels: |cffFF8700
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 
 function CPE takes nothing returns nothing
 	local real timerRound
@@ -4317,16 +4455,19 @@ function CPE takes nothing returns nothing
 	endif
 endfunction
 
+
 function CPX takes nothing returns nothing
 call ClearTextMessagesBJ(I3E(Condition(ref_function_Q4E)))
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function CRE takes nothing returns nothing
 if QH then
 call ForForce(YI,ref_function_COE)
 endif
 endfunction
+
 function CRX takes nothing returns nothing
 if GetEventPlayerChatString()=="-air" then
 set BE=WO
@@ -4345,14 +4486,17 @@ call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),11.,UO+" levels: |cffFF8700
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function CTX takes nothing returns boolean
 return ZH==false
 endfunction
+
 function CUX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set ZH=true
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANO Saving|r: Put limit on how much lumber player can save.")
 endfunction
+
 function CVE takes nothing returns nothing
 if QH==false then
 return
@@ -4372,12 +4516,15 @@ call A4E("DefVarP gold_income int high leaderboard")
 call A4E("DefVarP race string high leaderboard")
 call ForForce(ZI,ref_function_B8E)
 endfunction
+
 function CVX takes nothing returns boolean
 return RN==false
 endfunction
+
 function CBV takes nothing returns nothing
 call ForceAddPlayer(EGV,GetTriggerPlayer())
 endfunction
+
 function CLV takes nothing returns nothing
 call DialogClear(V2V[2])
 call DialogSetMessage(V2V[2],"|c0000FFFFEXCELLENT")
@@ -4390,6 +4537,7 @@ set V7V[13]=DialogAddButton(V2V[2],"|c00FF00FF5",0)
 set V7V[14]=DialogAddButton(V2V[2],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[2],true)
 endfunction
+
 function CMV takes nothing returns nothing
 call DialogClear(V2V[3])
 call DialogSetMessage(V2V[3],"|c0000FFFFEXCELLENT")
@@ -4402,9 +4550,11 @@ set V7V[20]=DialogAddButton(V2V[3],"|c00FF00FF5",0)
 set V7V[21]=DialogAddButton(V2V[3],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[3],true)
 endfunction
+
 function CNV takes nothing returns nothing
 call ForceAddPlayer(EJV,GetTriggerPlayer())
 endfunction
+
 function CPV takes nothing returns nothing
 call DialogClear(V2V[4])
 call DialogSetMessage(V2V[4],"|c0000FFFFEXCELLENT")
@@ -4417,6 +4567,7 @@ set V7V[27]=DialogAddButton(V2V[4],"|c00FF00FF5",0)
 set V7V[28]=DialogAddButton(V2V[4],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[4],true)
 endfunction
+
 function CQV takes nothing returns nothing
 call DialogClear(V2V[5])
 call DialogSetMessage(V2V[5],"|c0000FFFFEXCELLENT")
@@ -4429,6 +4580,7 @@ set V7V[34]=DialogAddButton(V2V[5],"|c00FF00FF5",0)
 set V7V[35]=DialogAddButton(V2V[5],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[5],true)
 endfunction
+
 function CTV takes nothing returns nothing
 call DialogClear(V2V[6])
 call DialogSetMessage(V2V[6],"|c0000FFFFEXCELLENT")
@@ -4441,6 +4593,7 @@ set V7V[41]=DialogAddButton(V2V[6],"|c00FF00FF5",0)
 set V7V[42]=DialogAddButton(V2V[6],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[6],true)
 endfunction
+
 function CWV takes nothing returns boolean
 local button CYV=GetClickedButton()
 if CYV==V7V[1] then
@@ -4566,15 +4719,19 @@ endif
 set CYV=null
 return false
 endfunction
+
 function NVV takes unit u returns boolean
 return GetUnitTypeId(u)<1 or IsUnitType(u,UNIT_TYPE_DEAD) or GetWidgetLife(u)<.405
 endfunction
+
 function CWX takes nothing returns boolean
 return (IsUnitType(GetFilterUnit(),UNIT_TYPE_GIANT) and NVV(GetFilterUnit())==false)!=false!=false
 endfunction
+
 function CXE takes nothing returns nothing
 call ForForce(ZI,ref_function_CEE)
 endfunction
+
 function CXX takes nothing returns nothing
 if GetEventPlayerChatString()=="-pierce" then
 set BE=GX
@@ -4601,15 +4758,19 @@ call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),11.,UO+" levels: |cffFF8700
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function CYX takes nothing returns boolean
 return (IsUnitType(GetFilterUnit(),UNIT_TYPE_SAPPER) and NVV(GetFilterUnit())==false)!=false!=false
 endfunction
+
 function CZX takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,CI)
 endfunction
+
 function C_X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,DI)
 endfunction
+
 function D0E takes nothing returns nothing
 set TI=GetRandomInt(12,19)
 set QV[1]="|cffEEBC86Light|r armor"
@@ -4657,9 +4818,11 @@ call R2I(QN)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function D0X takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303152)==false,UnitHasBuffBJ(GetFilterUnit(),$42303153)==false))
 endfunction
+
 function D1E takes nothing returns nothing
 set IR="Mode:"
 set AR="|cffFFcc00Player Name|r"
@@ -4688,12 +4851,15 @@ set HR[10]="|c007dbef1"
 set HR[11]="|c000f6145"
 set HR[12]="|c004d2903"
 endfunction
+
 function D1X takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303152)==false,UnitHasBuffBJ(GetFilterUnit(),$42303153)==false))
 endfunction
+
 function D2E takes nothing returns boolean
 return GetBooleanAnd(GetPlayerController(GetFilterPlayer())==MAP_CONTROL_USER,GetPlayerSlotState(GetFilterPlayer())==PLAYER_SLOT_STATE_PLAYING)
 endfunction
+
 function D2X takes nothing returns nothing
 local real x
 local real y
@@ -4706,9 +4872,11 @@ call IssueTargetOrderById(GetEnumUnit(),852075,PE)
 call A4V(PP)
 endif
 endfunction
+
 function D3E takes nothing returns nothing
 call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
 endfunction
+
 function D3X takes nothing returns nothing
 local real x
 local real y
@@ -4721,6 +4889,7 @@ call IssueTargetOrderById(GetEnumUnit(),852075,PE)
 call A4V(PP)
 endif
 endfunction
+
 function D4E takes nothing returns nothing
 call MultiboardClear(JR)
 call DestroyMultiboard(JR)
@@ -4795,9 +4964,11 @@ call TriggerExecute(RT)
 call TriggerExecute(XT)
 call TriggerExecute(IT)
 endfunction
+
 function NOV takes group g returns boolean
 return CountUnitsInGroup(g)>0
 endfunction
+
 function D4X takes nothing returns nothing
 local group g=A5V()
 local integer i=0
@@ -4857,9 +5028,11 @@ set u2=null
 set g=null
 set u2=null
 endfunction
+
 function D6E takes nothing returns boolean
 return PA and YD==false
 endfunction
+
 function D8E takes nothing returns nothing
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=2
@@ -4876,9 +5049,11 @@ if CountUnitsInGroup(MA[1])==0 and CountUnitsInGroup(MA[2])==0 and RX and PA and
 call TriggerExecute(JT)
 endif
 endfunction
+
 function D9E takes nothing returns boolean
 return PA and YD
 endfunction
+
 function DAE takes nothing returns nothing
 set EE=1
 set WV[EE]=$68303032
@@ -4952,15 +5127,18 @@ set EE=EE+1
 set WV[EE]=$48303855
 set EE=EE+1
 endfunction
+
 function DAX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit()),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303044)==false,GetFilterUnit()!=GetEnumUnit()))
 endfunction
+
 function IUE takes player RSE,integer IQE returns group
 set G8=A5V()
 set bj_groupEnumTypeId=IQE
 call GroupEnumUnitsOfPlayer(G8,RSE,filterGetUnitsOfPlayerAndTypeId)
 return G8
 endfunction
+
 function DBE takes nothing returns nothing
 set PP=IUE(GetEnumPlayer(),$68303235)
 set FE=GetUnitLoc(GroupPickRandomUnit(PP))
@@ -4969,6 +5147,7 @@ call RemoveLocation(FE)
 set FE=null
 call A4V(PP)
 endfunction
+
 function DBX takes nothing returns nothing
 local real x
 local real y
@@ -4983,6 +5162,7 @@ call IssueImmediateOrderById(UE,852526)
 call UnitApplyTimedLifeBJ(2.,$42544C46,UE)
 endif
 endfunction
+
 function DCE takes nothing returns nothing
 set HE=GetRectCenter(BJ)
 set JE=GetRectCenter(FJ)
@@ -5059,6 +5239,7 @@ set DO[8]=CreateRegion()
 call RegionAddRect(DO[8],KK)
 call ForForce(ZI,ref_function_DBE)
 endfunction
+
 function DCX takes nothing returns nothing
 local real x
 local real y
@@ -5073,6 +5254,7 @@ call IssueImmediateOrderById(UE,852526)
 call UnitApplyTimedLifeBJ(3.,$42544C46,UE)
 endif
 endfunction
+
 function DDE takes nothing returns nothing
 set OC[0]=$75303049
 set OC[1]=$75303031
@@ -5091,12 +5273,15 @@ set OC[13]=$75303054
 set OC[14]=$75303055
 set OC[15]=$7530305A
 endfunction
+
 function DDX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),UnitHasBuffBJ(GetFilterUnit(),$42303237)==false)
 endfunction
+
 function DEX takes nothing returns nothing
 call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Undead\\UndeadDissipate\\UndeadDissipate.mdl",GetUnitX(GetTriggerUnit()),GetUnitY(GetTriggerUnit())))
 endfunction
+
 function DFE takes nothing returns nothing
 set EE=0
 set EE=EE+1
@@ -5678,6 +5863,7 @@ set WE[EE]=$68303749
 set BX=EE
 call TriggerExecute(LS)
 endfunction
+
 function DFX takes nothing returns nothing
 local real x
 local real y
@@ -5696,6 +5882,7 @@ elseif GetUnitAbilityLevelSwapped($41303536,GetEnumUnit())==1 then
 call UnitRemoveAbility(GetEnumUnit(),$41303536)
 endif
 endfunction
+
 function DGE takes nothing returns nothing
 set EE=BX
 set EE=EE+1
@@ -6030,9 +6217,11 @@ set YE[EE]=$68304A35
 set WE[EE]=$68304A33
 set BX=EE
 endfunction
+
 function DGX takes nothing returns boolean
 return GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit())
 endfunction
+
 function DHE takes nothing returns nothing
 call A_V(2.)
 call CreateLeaderboardBJ(bj_FORCE_ALL_PLAYERS,"King HP")
@@ -6044,9 +6233,11 @@ elseif GetPlayerTeam(localPlayer)==1 then
 endif
 call LeaderboardDisplayBJ(true,VX)
 endfunction
+
 function DHX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit()),GetBooleanOr(GetUnitStateSwap(UNIT_STATE_MAX_LIFE,GetFilterUnit())-GetUnitStateSwap(UNIT_STATE_LIFE,GetFilterUnit())>=100.,GetUnitLifePercent(GetFilterUnit())<=75.))
 endfunction
+
 function DIE takes nothing returns nothing
 set TI=45
 set QV[1]="|cffEEBC86Light|r armor"
@@ -6094,9 +6285,11 @@ call R2I(QN)
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function DIX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit()),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303044)==false,GetFilterUnit()!=GetEnumUnit())) and GetUnitTypeId(GetFilterUnit())!=$68303344
 endfunction
+
 function DJE takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_VISIBLE,JL)
@@ -6106,6 +6299,7 @@ set DF[EE]=bj_lastCreatedFogModifier
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_VISIBLE,KL)
 set CF[EE]=bj_lastCreatedFogModifier
 endfunction
+
 function DJX takes nothing returns nothing
 local real x
 local real y
@@ -6130,24 +6324,31 @@ elseif GetUnitAbilityLevelSwapped($41303539,GetEnumUnit())==1 then
 call UnitRemoveAbility(GetEnumUnit(),$41303539)
 endif
 endfunction
+
 function DKE takes nothing returns nothing
 call ForForce(ZI,ref_function_DJE)
 endfunction
+
 function DKX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),UnitHasBuffBJ(GetFilterUnit(),$42303242)==false)
 endfunction
+
 function DLE takes nothing returns nothing
 call UnitRemoveAbility(GetEnumUnit(),$4152616C)
 endfunction
+
 function DLX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),UnitHasBuffBJ(GetFilterUnit(),$42303242)==false)
 endfunction
+
 function DME takes nothing returns nothing
 call UnitRemoveAbility(GetEnumUnit(),$4152616C)
 endfunction
+
 function DMX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),UnitHasBuffBJ(GetFilterUnit(),$42303242)==false)
 endfunction
+
 function DNE takes nothing returns nothing
 set EE=0
 set bj_forLoopAIndex=1
@@ -6261,6 +6462,7 @@ endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function DNX takes nothing returns nothing
 local real x=GetUnitX(GetEnumUnit())
 local real y=GetUnitY(GetEnumUnit())
@@ -6290,6 +6492,7 @@ call UnitRemoveAbility(GetEnumUnit(),$41303058)
 endif
 call A4V(IB)
 endfunction
+
 function DOE takes nothing returns nothing
 call ForForce(I3E(Condition(ref_function_C4E)),ref_function_DXE)
 if GRR>GII then
@@ -6350,15 +6553,19 @@ endloop
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function DOX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit()),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303044)==false,GetFilterUnit()!=GetEnumUnit())) and GetUnitTypeId(GetFilterUnit())!=$68303344
 endfunction
+
 function DPE takes nothing returns nothing
 call SetUnitUserData(GetEnumUnit(),1+GetPlayerId(GetOwningPlayer(GetEnumUnit())))
 endfunction
+
 function DPX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),UnitHasBuffBJ(GetFilterUnit(),$42303242)==false)
 endfunction
+
 function DQE takes nothing returns nothing
 local group g1=null
 local group g2=null
@@ -6397,6 +6604,7 @@ set g1=null
 set g2=null
 set g3=null
 endfunction
+
 function DQX takes nothing returns nothing
 local real x
 local real y
@@ -6425,6 +6633,7 @@ call A4V(NA)
 call A4V(IB)
 endif
 endfunction
+
 function DRE takes nothing returns nothing
 set QC[1]="700"
 set QC[2]="1150"
@@ -6535,18 +6744,22 @@ set OO[34]=0
 set OO[35]=0
 endif
 endfunction
+
 function DRX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetEnumUnit()),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303044)==false,GetFilterUnit()!=GetEnumUnit())) and GetUnitTypeId(GetFilterUnit())!=$68303344
 endfunction
+
 function DSE takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function DSX takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetEnumUnit())>=30. and UnitHasBuffBJ(GetEnumUnit(),$4230304F)==false and UnitHasBuffBJ(GetEnumUnit(),$4230315A)==false then
 call UnitResetCooldown(GetEnumUnit())
 call IssueImmediateOrderById(GetEnumUnit(),852589)
 endif
 endfunction
+
 function DTE takes nothing returns nothing
 set bj_forLoopAIndex=1
 set bj_forLoopAIndexEnd=8
@@ -6560,6 +6773,7 @@ endif
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function DTX takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetEnumUnit())>=50. and UnitHasBuffBJ(GetEnumUnit(),$4230304F)==false and UnitHasBuffBJ(GetEnumUnit(),$4230315A)==false then
 call UnitResetCooldown(GetEnumUnit())
@@ -6611,12 +6825,15 @@ call UnitResetCooldown(GetEnumUnit())
 call IssueImmediateOrderById(GetEnumUnit(),852589)
 endif
 endfunction
+
 function DVX takes nothing returns boolean
 return (GetUnitAbilityLevel(GetAttacker(),$41393433)>0 and IsUnitType(GetAttacker(),UNIT_TYPE_SAPPER))!=false!=false
 endfunction
+
 function DWE takes nothing returns boolean
 return ZF[10] and CH>1600
 endfunction
+
 function DWX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303158)==false,UnitHasBuffBJ(GetFilterUnit(),$42303159)==false))
 endfunction
@@ -6656,8 +6873,10 @@ endfunction
 function DXX takes nothing returns boolean
 return IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit()))
 endfunction
+
 function DYE takes nothing returns nothing
 endfunction
+
 function DYX takes nothing returns nothing
 local real x
 local real y
@@ -6670,15 +6889,18 @@ call IssueTargetOrderById(GetEnumUnit(),852209,PE)
 call A4V(PP)
 endif
 endfunction
+
 function DZX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),GetBooleanAnd(UnitHasBuffBJ(GetFilterUnit(),$42303158)==false,UnitHasBuffBJ(GetFilterUnit(),$42303159)==false))
 endfunction
+
 function D_E takes nothing returns nothing
 call A4V(QE)
 set QE=IFE(bj_mapInitialPlayableArea)
 call ForGroup(QE,ref_function_DYE)
 call A4V(QE)
 endfunction
+
 function D_X takes nothing returns nothing
 local real x
 local real y
@@ -6691,15 +6913,18 @@ call IssueTargetOrderById(GetEnumUnit(),852209,PE)
 call A4V(PP)
 endif
 endfunction
+
 function E0X takes nothing returns nothing
 call IssueImmediateOrderById(GetTriggerUnit(),851972)
 if IsUnitInGroup(GetTriggerUnit(),VF)==false then
 call GroupAddUnit(VF,GetTriggerUnit())
 endif
 endfunction
+
 function E1X takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9)
 endfunction
+
 function E2X takes nothing returns nothing
 call GroupAddUnit(NG,GetTriggerUnit())
 call GroupRemoveUnit(RG[GetUnitUserData(GetTriggerUnit())],GetTriggerUnit())
@@ -6707,24 +6932,30 @@ if IsUnitInGroup(GetTriggerUnit(),ZD)==false then
 call GroupAddUnit(ZD,GetTriggerUnit())
 endif
 endfunction
+
 function E3X takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9)
 endfunction
+
 function E4X takes nothing returns nothing
 call GroupRemoveUnit(NG,GetTriggerUnit())
 endfunction
+
 function E5X takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9)
 endfunction
+
 function E6X takes nothing returns nothing
 call IssueImmediateOrderById(GetTriggerUnit(),851972)
 if IsUnitInGroup(GetTriggerUnit(),ZD)==false then
 call GroupAddUnit(ZD,GetTriggerUnit())
 endif
 endfunction
+
 function E7X takes nothing returns boolean
 return GetTriggerUnit()==H6
 endfunction
+
 function ETE takes string ws,integer EUE returns nothing
 local player WOV=GetTriggerPlayer()
 local integer i=GetPlayerId(WOV)
@@ -6749,9 +6980,11 @@ endif
 set WOV=null
 set WOV=null
 endfunction
+
 function E8E takes nothing returns nothing
 call ETE("L",1)
 endfunction
+
 function E8X takes nothing returns nothing
 local real x=GetUnitX(GetTriggerUnit())
 local real y=GetUnitY(GetTriggerUnit())
@@ -6761,18 +6994,23 @@ set y=GetRectCenterY(CJ)
 call SetUnitPosition(GetTriggerUnit(),x,y)
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
 endfunction
+
 function E9X takes nothing returns boolean
 return GetTriggerUnit()==U6
 endfunction
+
 function EAX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
+
 function ECE takes nothing returns boolean
 return IsPlayerInForce(GetTriggerPlayer(),L5)
 endfunction
+
 function ECX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9)
 endfunction
+
 function EDX takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 local integer IQE=GetUnitUserData(NVE)
@@ -6784,12 +7022,15 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function EVX takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SUMMONED) or IsUnitType(GetTriggerUnit(),UNIT_TYPE_GIANT))!=false!=false!=false
 endfunction
+
 function EEX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8) and EVX()
 endfunction
+
 function U7V takes player WOV,string WIV,boolean WFV returns nothing
 local trigger WGV=CreateTrigger()
 if WFV then
@@ -6806,6 +7047,7 @@ set WOV=null
 set WIV=""
 set WGV=null
 endfunction
+
 function V7E takes player WOV,string WIV,string V9E,playerevent EOE returns nothing
 local trigger WGV=CreateTrigger()
 local triggeraction EIE
@@ -6833,11 +7075,13 @@ set EOE=null
 set WGV=null
 set EIE=null
 endfunction
+
 function ILV takes player IMV returns group
 set XHV=CreateGroup()
 call GroupEnumUnitsOfPlayer(XHV,IMV,XSV)
 return XHV
 endfunction
+
 function W0V takes string WIV returns player
 if WIV=="red" then
 return Player(0)
@@ -6867,6 +7111,7 @@ endif
 set WIV=""
 return null
 endfunction
+
 function WPV takes string WIV,player WOV returns playercolor
 if WIV=="red" then
 return PLAYER_COLOR_RED
@@ -6897,6 +7142,7 @@ set WOV=null
 set WIV=""
 return GetPlayerColor(WOV)
 endfunction
+
 function Y2V takes string WIV,integer Y4V returns real
 local integer Y6V=6
 local integer Y8V=1
@@ -6927,9 +7173,11 @@ set ZVV=""
 set WIV=""
 return ZYV
 endfunction
+
 function YEV takes integer YOV,player WOV returns nothing
 call DisplayTextToPlayer(WOV,0.,0.,R6[YOV/$1000000]+R6[(YOV-$1000000*(YOV/$1000000))/65536]+R6[(YOV-$1000000*(YOV/$1000000)-65536*((YOV-$1000000*(YOV/$1000000))/65536))/256]+R6[YOV-$1000000*(YOV/$1000000)-65536*((YOV-$1000000*(YOV/$1000000))/65536)-256*((YOV-$1000000*(YOV/$1000000)-65536*((YOV-$1000000*(YOV/$1000000))/65536))/256)])
 endfunction
+
 function YLV takes string WIV returns string
 local integer YWV=0
 local string YZV=""
@@ -6948,6 +7196,7 @@ endloop
 set WIV=""
 return YZV
 endfunction
+
 function W6V takes string WIV returns integer
 local integer W7V=48
 loop
@@ -6959,12 +7208,15 @@ set W7V=W7V+1
 endloop
 return 0
 endfunction
+
 function YVV takes string WIV returns integer
 return W6V(SubString(WIV,0,1))*$1000000+W6V(SubString(WIV,1,2))*65536+W6V(SubString(WIV,2,3))*256+W6V(SubString(WIV,3,4))
 endfunction
+
 function Z0V takes player WOV,string WIV returns nothing
 
 endfunction
+
 function VYE takes player DLV,string C9V returns nothing
 local integer C7V=StringLength(C9V)
 local integer C8V=0
@@ -6989,6 +7241,7 @@ set C8V=C8V+1
 exitwhen C8V>C7V
 endloop
 endfunction
+
 function EFE takes nothing returns nothing
 local player WOV=GetTriggerPlayer()
 local string WIV=GetEventPlayerChatString()
@@ -7013,24 +7266,30 @@ set WOV=null
 set WIV=""
 set WOV=null
 endfunction
+
 function EGX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
+
 function EHX takes nothing returns nothing
 call GroupAddUnit(OA[20],GetTriggerUnit())
 endfunction
+
 function EIX takes nothing returns nothing
 call GroupAddUnit(ZE,GetTriggerUnit())
 if GetUnitUserData(GetTriggerUnit())>0 then
 call GroupAddUnit(RG[GetUnitUserData(GetTriggerUnit())],GetTriggerUnit())
 endif
 endfunction
+
 function EJX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9)
 endfunction
+
 function EKX takes nothing returns nothing
 call GroupAddUnit(OA[21],GetTriggerUnit())
 endfunction
+
 function ELE takes nothing returns nothing
 local integer i1=11
 call DialogClear(EH[2])
@@ -7041,6 +7300,7 @@ exitwhen i1==23
 endloop
 call DialogDisplay(GetTriggerPlayer(),EH[2],true)
 endfunction
+
 function EME takes nothing returns nothing
 local button CYV=GetClickedButton()
 if CYV==WH[0] then
@@ -7114,12 +7374,15 @@ call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerNa
 endif
 set CYV=null
 endfunction
+
 function ELX takes nothing returns boolean
 return CountUnitsInGroup(OA[20])>0 or CountUnitsInGroup(OA[21])>0
 endfunction
+
 function EMX takes nothing returns boolean
 return RX and ELX()
 endfunction
+
 function ENX takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 local integer IQE=GetUnitUserData(NVE)
@@ -7131,18 +7394,23 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function EPX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==Player(10),IsUnitAliveBJ(GetFilterUnit()))
 endfunction
+
 function EQX takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==Player(11),IsUnitAliveBJ(GetFilterUnit()))
 endfunction
+
 function EOX takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SUMMONED) or IsUnitType(GetTriggerUnit(),UNIT_TYPE_GIANT))!=false!=false!=false
 endfunction
+
 function ERX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(9) and EOX()
 endfunction
+
 function ESX takes nothing returns nothing
 local real x
 local real y
@@ -7163,12 +7431,14 @@ call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\Mas
 endif
 call GroupRemoveUnit(OA[bj_forLoopAIndex],GetEnumUnit())
 endfunction
+
 function IRE takes rect IIE,boolexpr IDE returns group
 set G8=A5V()
 call GroupEnumUnitsInRect(G8,IIE,IDE)
 call DestroyBoolExpr(IDE)
 return G8
 endfunction
+
 function ETX takes nothing returns nothing
 set BA[20]=IRE(XL,Condition(ref_function_EPX))
 set BA[21]=IRE(OL,Condition(ref_function_EQX))
@@ -7191,9 +7461,11 @@ endloop
 call A4V(BA[20])
 call A4V(BA[21])
 endfunction
+
 function EUX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
+
 function EWX takes nothing returns nothing
 call GroupAddUnit(AG,GetTriggerUnit())
 call GroupRemoveUnit(RG[GetUnitUserData(GetTriggerUnit())],GetTriggerUnit())
@@ -7201,21 +7473,26 @@ if IsUnitInGroup(GetTriggerUnit(),VF)==false then
 call GroupAddUnit(VF,GetTriggerUnit())
 endif
 endfunction
+
 function EXX takes nothing returns nothing
 call GroupAddUnit(ZE,GetTriggerUnit())
 if GetUnitUserData(GetTriggerUnit())>0 then
 call GroupAddUnit(RG[GetUnitUserData(GetTriggerUnit())],GetTriggerUnit())
 endif
 endfunction
+
 function EYX takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
+
 function EZX takes nothing returns nothing
 call GroupRemoveUnit(AG,GetTriggerUnit())
 endfunction
+
 function E_X takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
+
 function DEV takes integer C7V,integer C8V,integer DDV,integer DFV,integer DGV,boolean DHV,boolean DJV returns nothing
 if DJV then
 set A6[C7V+C8V]=Player(C7V)
@@ -7230,6 +7507,7 @@ call DestroyTrigger(B6[C7V+C8V])
 endif
 endif
 endfunction
+
 function DKV takes integer C7V,integer C8V,integer DDV,integer DFV,integer DGV,boolean DHV returns nothing
 call Player(C7V)
 if DFV!=0 and C8V==DFV and null!=A6[C7V+C8V] and DGV==0 then
@@ -7242,9 +7520,11 @@ else
 call DEV(C7V,C8V,DDV,DFV,DGV,DHV,N6[1])
 endif
 endfunction
+
 function FRV takes integer C7V,integer C8V,integer DDV,code FNV returns nothing
 call SaveTriggerActionHandle(C6[2],C7V,C8V,TriggerAddAction(B6[C8V+DDV],FNV))
 endfunction
+
 function FFV takes integer C7V,integer C8V,integer DDV,string C9V,code FNV returns nothing
 if N6[1]!=N6[C7V+C8V] then
 set VIV[C7V+C8V]=DialogCreate()
@@ -7256,6 +7536,7 @@ endif
 call DialogClear(VIV[C7V+C8V])
 call DialogSetMessage(VIV[C7V+C8V],C9V)
 endfunction
+
 function FEV takes integer C7V returns string
 if C7V<12 then
 set C7V=C7V*6
@@ -7263,6 +7544,7 @@ return SubString("FF00000000FF00FFFFA020F0FFFF00FFA50000FF00FF14936969699AC0CD00
 endif
 return "FFFFFF"
 endfunction
+
 function FKV takes integer C7V returns integer
 if LoadBoolean(C6[1],255,C7V) then
 call DisplayTimedTextToPlayer(Player(C7V),0.,0.,10.,"|cffffcc00Share Option:|r |cff"+FEV(LoadInteger(C6[1],255,C7V))+GetPlayerName(Player(LoadInteger(C6[1],255,C7V)))+"|r")
@@ -7270,12 +7552,15 @@ set C7V=LoadInteger(C6[1],255,C7V)
 endif
 return C7V
 endfunction
+
 function FVV takes integer C7V returns integer
 return C7V*20
 endfunction
+
 function FOV takes integer C7V,integer C8V,integer DDV,string C9V returns nothing
 set VAV[FVV(C7V)+C8V]=DialogAddButton(VIV[C7V+DDV],C9V,0)
 endfunction
+
 function F1V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -7295,6 +7580,7 @@ call FOV(C7V,10,10,"|cffffcc00Exit|r")
 call DialogDisplay(DLV,VIV[C7V+10],N6[1])
 set DLV=null
 endfunction
+
 function FJV takes integer C7V,integer C8V,integer DDV,string C9V,code FNV returns nothing
 call DisplayTimedTextToPlayer(Player(C7V),0.,0.,15.,C9V)
 if N6[1]!=N6[C7V+C8V] then
@@ -7304,6 +7590,7 @@ call FRV(DDV,C7V,C8V,FNV)
 call DKV(C7V,C8V,DDV,0,0,N6[1])
 endif
 endfunction
+
 function FTV takes integer C7V,integer C8V,integer DDV,integer DFV returns nothing
 local player DLV=Player(C7V)
 if N6[1]!=N6[C7V+C8V] then
@@ -7314,6 +7601,7 @@ endif
 call DKV(C7V,C8V,DFV,C8V,DDV,N6[1])
 set DLV=null
 endfunction
+
 function FWV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -7331,6 +7619,7 @@ call FOV(C7V,5,30,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+30],N6[1])
 set DLV=null
 endfunction
+
 function F0V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -7367,6 +7656,7 @@ set DLV=null
 set DHV=null
 endfunction
 
+
 function getFarestUnit takes nothing returns nothing
     if udg_farestUnitY <= RAbsBJ(GetLocationY(GetUnitLoc(GetEnumUnit())) - 2000) then
         set udg_farestUnitY = RAbsBJ(GetLocationY(GetUnitLoc(GetEnumUnit())) - 2000)
@@ -7375,6 +7665,7 @@ function getFarestUnit takes nothing returns nothing
     else
     endif
 endfunction
+
 
 // idk what BGE is used at ? (r-mach)
 function BGE takes nothing returns nothing
@@ -7466,6 +7757,7 @@ set u=null
 set uu=null
 set g=null
 endfunction
+
 
 function BME takes nothing returns nothing
 local group g=null
@@ -7562,6 +7854,7 @@ set uu=null
 set g=null
 endfunction
 
+
 // This is the function used in PRACAH to elect & spawn champs (r-mach)
 function BPE takes nothing returns nothing
 local group g=null
@@ -7652,6 +7945,7 @@ set u=null
 set uu=null
 set g=null
 endfunction
+
 function F_E takes nothing returns nothing
 local integer k=0
 if OE>9 and G==false then
@@ -7672,6 +7966,7 @@ set Y=Y+10
 endif
 endif
 endfunction
+
 function N_E takes nothing returns nothing
 if OE==6 then
 call TimerStart(OG,.27,true,ref_function_NYE)
@@ -7679,6 +7974,7 @@ else
 call TimerStart(OG,.18,true,ref_function_NYE)
 endif
 endfunction
+
 function OCE takes nothing returns nothing
 local integer i=1
 loop
@@ -7688,6 +7984,7 @@ call UnitAddAbility(JV[i],$41393038)
 set i=i+1
 endloop
 endfunction
+
 function F1E takes nothing returns nothing
 local integer j=0
 set OE=OE+1
@@ -7749,21 +8046,27 @@ exitwhen j>=8
 endloop
 endif
 endfunction
+
 function F3E takes nothing returns boolean
 return UI==false
 endfunction
+
 function F4E takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function F5E takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function F7E takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function F8E takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function N0V takes string s0 returns boolean
 local string s1="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 local integer N4V=StringLength(s0)
@@ -7790,6 +8093,7 @@ set N3V=N3V+1
 endloop
 return true
 endfunction
+
 function N6V takes string s0 returns integer
 local string s1="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 local integer N4V=StringLength(s0)
@@ -7811,12 +8115,14 @@ set N3V=N3V+1
 endloop
 return 0
 endfunction
+
 function N7V takes integer x1,integer x2 returns integer
 if x1<x2 then
 return x1
 endif
 return x2
 endfunction
+
 function NZV takes integer x,integer i returns integer
 local integer N_V=x-i
 if N_V<0 then
@@ -7825,6 +8131,7 @@ else
 return N_V
 endif
 endfunction
+
 function BVV takes string x returns string
 local string BEV="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstu"
 local string BXV="31234567899876543212312345678998765432134123456789987654321941234567899876543214"
@@ -7911,6 +8218,7 @@ set i=i+1
 endloop
 return BFV
 endfunction
+
 function CZV takes string ws,integer wm returns integer
 local string wh="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 local integer wl=StringLength(wh)
@@ -7928,6 +8236,7 @@ set wi=wi+1
 endloop
 return -1
 endfunction
+
 function C_V takes string ws,boolean wb returns string
 local integer wl=StringLength(ws)
 local integer wi=0
@@ -7947,18 +8256,21 @@ set wi=wi+1
 endloop
 return ws
 endfunction
+
 function C0V takes player C1V returns boolean
 local string C2V=GetPlayerName(C1V)
 call StringLength(C2V)
 call C_V(C2V,true)
 return false
 endfunction
+
 function C3V takes nothing returns boolean
 local string ws=GetEventPlayerChatString()
 set ws=SubString(ws,0,StringLength(ws))
 call C_V(ws,false)
 return true
 endfunction
+
 function C5V takes player C1V returns boolean
 local integer wi=0
 loop
@@ -7978,6 +8290,7 @@ set wi=wi+1
 endloop
 return true
 endfunction
+
 function CJV takes nothing returns nothing
 call DialogClear(V2V[1])
 call DialogSetMessage(V2V[1],"|c0000FFFFEXCELLENT")
@@ -7990,6 +8303,7 @@ set V7V[6]=DialogAddButton(V2V[1],"|c00FF00FF5",0)
 set V7V[7]=DialogAddButton(V2V[1],"|c0000FF006",0)
 call DialogDisplay(GetTriggerPlayer(),V2V[1],true)
 endfunction
+
 function C6V takes integer C7V returns string
 local integer C8V=1
 local string C9V=""
@@ -8000,9 +8314,11 @@ set C8V=C8V+1
 endloop
 return C9V
 endfunction
+
 function DVV takes string C9V returns string
 return C6V(O6)+C9V+C6V(H5)
 endfunction
+
 function NLV takes string NQV,integer NSV,integer NTV returns boolean
 local integer i=0
 local integer i1=0
@@ -8016,6 +8332,7 @@ set i=i+1
 endloop
 return i1==NSV and i2==NTV
 endfunction
+
 function F8V takes nothing returns nothing
 local string F9V=GetEventPlayerChatString()
 local player GVV=GetTriggerPlayer()
@@ -8060,11 +8377,13 @@ endif
 set F9V=""
 set GVV=null
 endfunction
+
 function FAE takes nothing returns nothing
 call ForForce(ZI,ref_function_FIE)
 call TriggerExecute(C4)
 call TriggerExecute(N4)
 endfunction
+
 function FCE takes nothing returns nothing
 if OE>0 then
 set EE=JH[1+GetPlayerId(GetEnumPlayer())]/OE-HB[1+GetPlayerId(GetEnumPlayer())]
@@ -8091,9 +8410,11 @@ else
 call MultiboardSetItemValueBJ(JR,5,DC[1+GetPlayerId(GetEnumPlayer())],UO)
 endif
 endfunction
+
 function FDE takes nothing returns nothing
 call ForForce(ZI,ref_function_FCE)
 endfunction
+
 function FFE takes nothing returns nothing
 if KH[1+GetPlayerId(GetEnumPlayer())]==0 then
 set LH[1+GetPlayerId(GetEnumPlayer())]=GetUnitName(KV[1+GetPlayerId(GetEnumPlayer())])
@@ -8121,10 +8442,12 @@ else
 call MultiboardSetItemValueBJ(JR,3,DC[1+GetPlayerId(GetEnumPlayer())],"Off")
 endif
 endfunction
+
 function FGE takes nothing returns nothing
 call TriggerExecute(NT)
 call ForForce(ZI,ref_function_FFE)
 endfunction
+
 function FHE takes nothing returns nothing
 set PE=KV[1+GetPlayerId(GetEnumPlayer())]
 set JN[1+GetPlayerId(GetEnumPlayer())]="ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp"
@@ -8197,6 +8520,7 @@ set BE="ReplaceableTextures\\CommandButtons\\BTNLichVersion2.blp"
 set JN[1+GetPlayerId(GetEnumPlayer())]=BE
 endif
 endfunction
+
 function FIE takes nothing returns nothing
 if ZN and YD==false then
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
@@ -8217,9 +8541,11 @@ else
 call MultiboardSetItemValueBJ(JR,2,DC[1+GetPlayerId(GetEnumPlayer())],I2S(GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]+SV[1+GetPlayerId(GetEnumPlayer())]))
 endif
 endfunction
+
 function FJE takes nothing returns nothing
 call ForForce(ZI,ref_function_FHE)
 endfunction
+
 function FKE takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303034,15,Player(10))
 call SetPlayerTechResearchedSwap($52303034,15,Player(11))
@@ -8228,6 +8554,7 @@ call SetUnitVertexColorBJ(PE,100.,100.,100.,35.)
 call TriggerRegisterUnitStateEvent(U4,PE,UNIT_STATE_LIFE,LESS_THAN,1000.)
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function FLE takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 set QO=I2R(GB[EE])/S2R(QC[OE])
@@ -8243,6 +8570,7 @@ else
 set OD[EE]=0.
 endif
 endfunction
+
 function FLV takes nothing returns nothing
 local playerstate FMV=ConvertPlayerState(1)
 local player DLV
@@ -8272,9 +8600,11 @@ call EnableTrigger(B6[50+C7V])
 set FMV=null
 set DLV=null
 endfunction
+
 function FME takes nothing returns nothing
 call ForForce(ZI,ref_function_FLE)
 endfunction
+
 function FNE takes nothing returns nothing
 set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
 set UO=I2S(CN[1+GetPlayerId(GetEnumPlayer())])+"/"+I2S(EE)
@@ -8297,6 +8627,7 @@ else
 call MultiboardSetItemValueBJ(JR,4,DC[1+GetPlayerId(GetEnumPlayer())],UO)
 endif
 endfunction
+
 function FOE takes nothing returns nothing
 if ZN and YD==false then
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
@@ -8317,6 +8648,7 @@ else
 call MultiboardSetItemValueBJ(JR,3,DC[1+GetPlayerId(GetEnumPlayer())],I2S(BI[1+GetPlayerId(GetEnumPlayer())]))
 endif
 endfunction
+
 function FOX takes nothing returns nothing
 if RJ[18] then
 call A4V(QE)
@@ -8415,15 +8747,19 @@ if RJ[13] then
 call ForGroup(IJ[13],ref_function_D3X)
 endif
 endfunction
+
 function FQE takes nothing returns boolean
 return GetOwningPlayer(GetTriggerUnit())==Player(10) or GetOwningPlayer(GetTriggerUnit())==Player(11)
 endfunction
+
 function FRE takes nothing returns nothing
 call ForForce(ZI,ref_function_FOE)
 endfunction
+
 function FDV takes player DLV,string C9V returns nothing
 call DisplayTimedTextToPlayer(DLV,0.,0.,LoadReal(C6[0],0,0),C9V)
 endfunction
+
 function FUV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -8439,6 +8775,7 @@ call DKV(C7V,70,4,0,0,N6[1])
 call ExecuteFunc("FWV")
 set DLV=null
 endfunction
+
 function N0E takes unit NVE,string ATE,real IEE,real IXE,real N1E,player RSE returns nothing
 local texttag N2E
 local force N3E
@@ -8467,6 +8804,7 @@ set N2E=null
 set N3E=null
 set IVE=null
 endfunction
+
 function FWE takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 local unit FYE=GetKillingUnit()
@@ -8531,6 +8869,7 @@ endif
 set NVE=null
 set FYE=null
 endfunction
+
 function FXE takes nothing returns nothing
 if CountUnitsInGroup(VF)==0 then
 call MultiboardSetItemValueBJ(JR,2,CountPlayersInForceBJ(YI)+3,FR+"None")
@@ -8547,12 +8886,15 @@ call TriggerExecute(IU)
 set PA=false
 endif
 endfunction
+
 function FZE takes nothing returns boolean
 return AE==false and YD==false and UI==false
 endfunction
+
 function G1V takes nothing returns nothing
 call ForGroup(I6[6],ref_function_GPV)
 endfunction
+
 function F6E takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(I3E(Condition(ref_function_F5E)))>0 then
@@ -8562,6 +8904,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function F9E takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(I3E(Condition(ref_function_F8E)))>0 then
@@ -8571,6 +8914,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function G1E takes nothing returns nothing
 local integer i=1
 loop
@@ -8579,11 +8923,13 @@ set TV[i]=0
 set i=i+1
 endloop
 endfunction
+
 function GDE takes nothing returns nothing
 if OE<=30 then
 call ForGroup(XA,ref_function_GCE)
 endif
 endfunction
+
 function ODE takes nothing returns nothing
 local integer i=1
 loop
@@ -8593,6 +8939,7 @@ call UnitAddAbility(JV[i],$41393131)
 set i=i+1
 endloop
 endfunction
+
 function G2E takes nothing returns nothing
 local integer i=0
 call DisableTrigger(GetTriggeringTrigger())
@@ -8747,9 +9094,11 @@ call A_V(2.)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,17.,"The |cffFFcc00Champions|r are coming!!!")
 endif
 endfunction
+
 function G3E takes nothing returns nothing
 call TriggerExecute(AZ)
 endfunction
+
 function G3V takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local integer C7V=GetHandleId(GQV)
@@ -8761,6 +9110,7 @@ call SaveUnitHandle(C6[0],3,C7V,null)
 endif
 set GQV=null
 endfunction
+
 function G4E takes nothing returns nothing
 if OE>=30 or UI then
 if true then
@@ -8777,16 +9127,20 @@ call TriggerExecute(GT)
 call ConditionalTriggerExecute(YU)
 endif
 endfunction
+
 function G5E takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function G6E takes nothing returns nothing
 set bj_lastCreatedUnit=CreateUnit(GetEnumPlayer(),$75303034,GetLocationX(CX),GetLocationY(CX),bj_UNIT_FACING)
 call GroupAddUnit(FO,bj_lastCreatedUnit)
 endfunction
+
 function G7E takes nothing returns nothing
 call ShowUnitHide(GetEnumUnit())
 endfunction
+
 function G8E takes nothing returns nothing
 call ForGroup(FO,ref_function_G5E)
 call GroupClear(FO)
@@ -8794,9 +9148,11 @@ call ForForce(ZI,ref_function_G6E)
 call ForGroup(JI,ref_function_G7E)
 call GroupClear(RB)
 endfunction
+
 function G9E takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function GFV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -8814,6 +9170,7 @@ call FOV(C7V,5,90,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+90],N6[1])
 set DLV=null
 endfunction
+
 function GIV takes integer C7V,integer C8V,integer DDV,integer DFV returns nothing
 local player DLV=Player(C7V)
 if N6[1]!=N6[C7V+C8V] then
@@ -8824,6 +9181,7 @@ endif
 call DKV(C7V,C8V,DFV,C8V,DDV,N6[1])
 set DLV=null
 endfunction
+
 function GBV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -8839,9 +9197,11 @@ call DKV(C7V,130,4,0,0,N6[1])
 call ExecuteFunc("GFV")
 set DLV=null
 endfunction
+
 function GCE takes nothing returns nothing
 call KillUnit(GetEnumUnit())
 endfunction
+
 function GEE takes nothing returns nothing
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 set AX=EE
@@ -8863,6 +9223,7 @@ call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"::: You receiv
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function GMV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -8898,6 +9259,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function GNE takes nothing returns nothing
 set EE=0
 set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
@@ -8915,6 +9277,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function GPV takes nothing returns nothing
 local unit GQV=GetEnumUnit()
 local integer C8V=GetHeroXP(GQV)
@@ -8937,6 +9300,7 @@ endif
 set GQV=null
 set DGV=null
 endfunction
+
 function GRE takes nothing returns nothing
 call AdjustPlayerStateBJ(BI[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
 set BN[1+GetPlayerId(GetEnumPlayer())]=BN[1+GetPlayerId(GetEnumPlayer())]+BI[1+GetPlayerId(GetEnumPlayer())]
@@ -8948,6 +9312,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function GRV takes nothing returns nothing
 local playerstate FMV=ConvertPlayerState(2)
 local player DLV=GetTriggerPlayer()
@@ -8971,12 +9336,15 @@ call EnableTrigger(B6[C7V+110])
 set FMV=null
 set DLV=null
 endfunction
+
 function GSE takes nothing returns boolean
 return IsUnitType(GetConstructingStructure(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
+
 function GVE takes nothing returns boolean
 return GetFilterPlayer()==GetEnumPlayer()
 endfunction
+
 function H0E takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
 call UnitResetCooldown(GetEnumUnit())
@@ -8991,27 +9359,34 @@ call SetUnitTimeScalePercent(PE,0.)
 call ResetUnitAnimation(PE)
 endif
 endfunction
+
 function H1E takes nothing returns nothing
 call GroupClear(AI)
 call ForGroup(SE,ref_function_H0E)
 endfunction
+
 function H5E takes nothing returns nothing
 call SetUnitMoveSpeed(GetEnumUnit(),GetUnitDefaultMoveSpeed(GetEnumUnit()))
 endfunction
+
 function H6E takes nothing returns nothing
 set QE=IPE(WV[OE])
 call ForGroup(QE,ref_function_H5E)
 call A4V(QE)
 endfunction
+
 function HBE takes nothing returns nothing
 call UnitSetConstructionProgress(GetEnumUnit(),99)
 endfunction
+
 function HDE takes nothing returns nothing
 call UnitSetUpgradeProgress(GetEnumUnit(),99)
 endfunction
+
 function HEE takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
 endfunction
+
 function D5V takes integer C7V,integer C8V,integer DDV,boolean DHV returns nothing
 local integer DFV=LoadInteger(C6[1],C8V,DDV+1)
 if DHV then
@@ -9028,9 +9403,11 @@ call SaveInteger(C6[1],C8V+1,DDV,0)
 endif
 endif
 endfunction
+
 function FBV takes integer C7V,integer C8V,integer DDV,code FNV returns nothing
 call SaveTriggerActionHandle(C6[2],C7V,C8V,TriggerAddAction(B6[DDV],FNV))
 endfunction
+
 function HFV takes integer C7V,integer C8V,integer DDV returns nothing
 if LoadInteger(C6[1],9,16)!=1 then
 call SaveInteger(C6[1],9,16,1)
@@ -9059,6 +9436,7 @@ call FlushChildHashtable(C6[0],3)
 call DestroyGroup(I6[6])
 endif
 endfunction
+
 function HLV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -9076,6 +9454,7 @@ call FOV(C7V,5,150,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+150],N6[1])
 set DLV=null
 endfunction
+
 function HHV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -9091,6 +9470,7 @@ call DKV(C7V,170,10,0,0,N6[1])
 call ExecuteFunc("HLV")
 set DLV=null
 endfunction
+
 function HOV takes unit GQV,integer C7V,trigger FQV returns nothing
 if not IsUnitInGroup(GQV,I6[6]) and IsUnitType(GQV,ConvertUnitType(0)) then
 set FQV=CreateTrigger()
@@ -9100,6 +9480,7 @@ call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
 endif
 call TriggerAddAction(FQV,ref_function_G3V)
 endfunction
+
 function HIV takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local unit HNV=GetAttacker()
@@ -9118,6 +9499,7 @@ set GQV=null
 set HNV=null
 set HCV=null
 endfunction
+
 function HTE takes nothing returns nothing
 call ForGroup(FO,ref_function_G9E)
 call GroupClear(FO)
@@ -9126,6 +9508,7 @@ call ForGroup(JI,ref_function_HEE)
 call ForGroup(SN,ref_function_HBE)
 call ForGroup(TN,ref_function_HDE)
 endfunction
+
 function HTV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -9161,23 +9544,28 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function HUE takes nothing returns boolean
 return IsUnitType(GetFilterUnit(),UNIT_TYPE_GIANT)!=false!=false!=false
 endfunction
+
 function HVE takes nothing returns nothing
 set bj_lastCreatedUnit=CreateUnit(GetEnumPlayer(),$75303044,GetLocationX(CX),GetLocationY(CX),bj_UNIT_FACING)
 call GroupAddUnit(FO,bj_lastCreatedUnit)
 endfunction
+
 function HZE takes nothing returns nothing
 if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
 call RemoveUnit(GetEnumUnit())
 endif
 endfunction
+
 function H_E takes nothing returns nothing
 set QE=IRE(bj_mapInitialPlayableArea,Condition(ref_function_HUE))
 call ForGroup(QE,ref_function_HZE)
 call A4V(QE)
 endfunction
+
 function I0X takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($68304442,0,GetTriggerPlayer())
 call SetPlayerTechMaxAllowedSwap($52303044,0,GetTriggerPlayer())
@@ -9187,6 +9575,7 @@ call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),12.,"|cff33AA33Tip
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function I1X takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($68393936,0,GetTriggerPlayer())
 set SV[1+GetPlayerId(GetTriggerPlayer())]=500
@@ -9194,9 +9583,11 @@ call FAE()
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function I2X takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303031 or GetUnitTypeId(GetTriggerUnit())==$75303043 or GetUnitTypeId(GetTriggerUnit())==$75303030 or GetUnitTypeId(GetTriggerUnit())==$75303033 or GetUnitTypeId(GetTriggerUnit())==$75303032 or GetUnitTypeId(GetTriggerUnit())==$75303047 or GetUnitTypeId(GetTriggerUnit())==$75303048 or GetUnitTypeId(GetTriggerUnit())==$75303049 or GetUnitTypeId(GetTriggerUnit())==$7530304A or GetUnitTypeId(GetTriggerUnit())==$7530304C or GetUnitTypeId(GetTriggerUnit())==$7530304F or GetUnitTypeId(GetTriggerUnit())==$7530304D or GetUnitTypeId(GetTriggerUnit())==$7530304B or GetUnitTypeId(GetTriggerUnit())==$75303050 or GetUnitTypeId(GetTriggerUnit())==$75303055 or GetUnitTypeId(GetTriggerUnit())==$7530305A
 endfunction
+
 function I3X takes nothing returns nothing
 call ReplaceUnitBJ(GetTriggerUnit(),GetUnitTypeId(GetTriggerUnit()),3)
 call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
@@ -9258,18 +9649,22 @@ call DestroyForce(S8)
 set S8=null
 call TriggerExecute(AT)
 endfunction
+
 function I4X takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303054
 endfunction
+
 function IAX takes nothing returns boolean
 return OJ==false
 endfunction
+
 function IBX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set PC=true
 call ForForce(ZI,ref_function_INX)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAChange Builder|r: Player can change builder.")
 endfunction
+
 function OIE takes nothing returns nothing
 local integer i=1
 loop
@@ -9279,31 +9674,38 @@ call UnitAddAbility(JV[i],$41393131)
 set i=i+1
 endloop
 endfunction
+
 function ICX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EJ=true
 call OIE()
 endfunction
+
 function IDX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set XJ=true
 endfunction
+
 function IEX takes nothing returns boolean
 return AC==false
 endfunction
+
 function IFX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set OJ=true
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Champions|r: Champions won't spawn at all")
 endfunction
+
 function IGX takes nothing returns boolean
 return HC==false
 endfunction
+
 function IHX takes nothing returns nothing
 set HC=true
 //call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEQ mode|r: 10 time on creep spawn.")
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function IIX takes nothing returns boolean
 return XJ==false
 endfunction
@@ -9484,6 +9886,7 @@ endfunction
 function ILX takes nothing returns boolean
 return RN or GetTriggerPlayer()==Player(0)
 endfunction
+
 function IMX takes nothing returns nothing
 set BE=GetEventPlayerChatString()
 if SD then
@@ -9494,6 +9897,7 @@ else
 call DisplayTextToForce(bj_FORCE_PLAYER[0],"Cannot type mode untill game start.")
 endif
 endfunction
+
 function INX takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($52303044,5,GetEnumPlayer())
 call SetPlayerTechMaxAllowedSwap($52303047,6,GetEnumPlayer())
@@ -9501,14 +9905,17 @@ if JA==false then
 call SetPlayerTechMaxAllowedSwap($52303049,1,GetEnumPlayer())
 endif
 endfunction
+
 function IOE takes nothing returns boolean
 local real IEE=GetDestructableX(GetFilterDestructable())-D8
 local real IXE=GetDestructableY(GetFilterDestructable())-F8
 return IEE*IEE+IXE*IXE<=bj_enumDestructableRadius
 endfunction
+
 function IOX takes nothing returns boolean
 return PC==false
 endfunction
+
 function IPX takes nothing returns nothing
 if NF=="" then
 return
@@ -9529,6 +9936,7 @@ call ResumeTimer(KA)
 call StartTimerBJ(KA,false,1.)
 endif
 endfunction
+
 function IQX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set LN=""
@@ -9602,17 +10010,21 @@ call MultiboardSetTitleText(JR,IR+"|cffFF0000 ("+LN+")|r")
 endif
 call ForForce(ZI,ref_function_DNE)
 endfunction
+
 function IRX takes nothing returns boolean
 return EJ==false
 endfunction
+
 function ISX takes nothing returns nothing
 local real x=GetRectCenterX(ZK)
 local real y=GetRectCenterY(ZK)
 call CreateUnit(GetEnumPlayer(),$75303046,x,y,bj_UNIT_FACING)
 endfunction
+
 function RQX takes nothing returns boolean
 return EC==false
 endfunction
+
 function ITX takes nothing returns nothing
 call DestroyTextTag(texttagGameMode1)
 call DestroyTextTag(texttagGameMode2)
@@ -9646,6 +10058,7 @@ call TriggerExecute(H3)
 call ForForce(ZI,ref_function_ISX)
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function IUX takes nothing returns nothing
 call TriggerExecute(J3)
 call TriggerExecute(NS)
@@ -9654,11 +10067,13 @@ call PauseTimer(KA)
 call DestroyTimer(KA)
 call TriggerExecute(N4)
 endfunction
+
 function IVX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set FC=true
 //call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAGood Game|r: You receive gold for ally leaks.")
 endfunction
+
 function IWX takes nothing returns nothing
 if CountPlayersInForceBJ(ZI)==1 then
 	set RN=true
@@ -9678,27 +10093,34 @@ if IN==false or HO==false or isTestVersion then
 	call EnableTrigger(I5)
 endif
 endfunction
+
 function IXX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set AC=true
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Middle|r: Enemies that reach the middle (Dark Grass) give no gold when killed")
 endfunction
+
 function IYX takes nothing returns nothing
 call DisableTrigger(I5)
 call DisableTrigger(L3)
 endfunction
+
 function IZX takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68304442
 endfunction
+
 function I_X takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68393936
 endfunction
+
 function J0E takes nothing returns boolean
 return IsUnitInGroup(GetFilterUnit(),ZE)
 endfunction
+
 function HZV takes unit GQV,unit HNV,real HYV returns nothing
 call UnitDamageTarget(GQV,HNV,HYV,N6[2],N6[2],ConvertAttackType(5),ConvertDamageType(0),ConvertWeaponType(0))
 endfunction
+
 function H_V takes unit GQV,unit HNV,real HYV returns nothing
 local integer C7V=GetUnitTypeId(HNV)
 local real H0V=GetWidgetLife(HNV)
@@ -9727,6 +10149,7 @@ endif
 endif
 endif
 endfunction
+
 function J0V takes nothing returns nothing
 local timer FQV=GetExpiredTimer()
 local integer C7V=GetHandleId(FQV)
@@ -9737,12 +10160,14 @@ call FlushChildHashtable(C6[1],43)
 call DestroyTimer(FQV)
 set FQV=null
 endfunction
+
 function J2E takes nothing returns nothing
 call SetUnitPosition(GetEnumUnit(),GetLocationX(CI),GetLocationY(CI))
 call IssueImmediateOrderById(GetEnumUnit(),851972)
 call GroupRemoveUnit(OA[GetUnitUserData(GetEnumUnit())],GetEnumUnit())
 call GroupRemoveUnit(RG[GetUnitUserData(GetEnumUnit())],GetEnumUnit())
 endfunction
+
 function J2V takes nothing returns nothing
 local timer FQV=GetExpiredTimer()
 local integer C7V=GetHandleId(FQV)
@@ -9753,9 +10178,11 @@ call FlushChildHashtable(C6[1],46)
 call DestroyTimer(FQV)
 set FQV=null
 endfunction
+
 function J3E takes nothing returns boolean
 return IsUnitInGroup(GetFilterUnit(),ZE)
 endfunction
+
 function J3V takes nothing returns nothing
 local unit HNV=GetTriggerUnit()
 local real DFV=GetEventDamage()
@@ -9782,18 +10209,21 @@ set DLV=null
 set J4V=null
 set FQV=null
 endfunction
+
 function J4E takes nothing returns nothing
 call SetUnitPosition(GetEnumUnit(),GetLocationX(DI),GetLocationY(DI))
 call IssueImmediateOrderById(GetEnumUnit(),851972)
 call GroupRemoveUnit(OA[GetUnitUserData(GetEnumUnit())],GetEnumUnit())
 call GroupRemoveUnit(RG[GetUnitUserData(GetEnumUnit())],GetEnumUnit())
 endfunction
+
 function ISE takes player RSE,boolexpr IDE returns group
 set G8=A5V()
 call GroupEnumUnitsOfPlayer(G8,RSE,IDE)
 call DestroyBoolExpr(IDE)
 return G8
 endfunction
+
 function J5E takes nothing returns nothing
 local group g1=null
 local group g2=null
@@ -9809,6 +10239,7 @@ call A4V(g2)
 set g1=null
 set g2=null
 endfunction
+
 function J5V takes nothing returns nothing
 local unit GQV=GetEventDamageSource()
 local unit HNV=GetTriggerUnit()
@@ -9838,6 +10269,7 @@ set DLV=null
 set J4V=null
 set FQV=null
 endfunction
+
 function J6E takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if GetUnitTypeId(KV[EE])==$75303050 then
@@ -9870,6 +10302,7 @@ call UnitAddAbility(KV[EE],$41303945)
 endif
 endif
 endfunction
+
 function J7E takes nothing returns nothing
 set IX=S2I(QC[OE+1])+OE*OE
 if YD then
@@ -9880,6 +10313,7 @@ set IX=16000
 endif
 call ForForce(ZI,ref_function_J6E)
 endfunction
+
 function J8E takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if GetUnitTypeId(KV[EE])==$75303050 then
@@ -9893,6 +10327,7 @@ call UnitAddAbility(KV[EE],$41303955)
 call UnitAddAbility(KV[EE],$41303950)
 endif
 endfunction
+
 function HWV takes unit GQV,real HYV returns nothing
 local texttag FQV=CreateTextTagUnitBJ(I2S(R2I(HYV))+"!",GQV,0.,10.,255.,0.,0.,0.)
 call SetTextTagPermanent(FQV,N6[2])
@@ -9901,6 +10336,7 @@ call SetTextTagFadepoint(FQV,3.)
 call SetTextTagVelocity(FQV,0.,.05)
 set FQV=null
 endfunction
+
 function J8V takes nothing returns nothing
 local unit GQV=GetEventDamageSource()
 local unit HNV=GetTriggerUnit()
@@ -9952,12 +10388,15 @@ set DLV=null
 set J4V=null
 set KEV=null
 endfunction
+
 function J9E takes nothing returns nothing
 call ForForce(ZI,ref_function_J8E)
 endfunction
+
 function JEE takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function JFE takes nothing returns nothing
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 set AX=EE
@@ -9979,6 +10418,7 @@ call FogModifierStart(CF[1+GetPlayerId(GetEnumPlayer())])
 call FogModifierStart(DF[1+GetPlayerId(GetEnumPlayer())])
 call FogModifierStart(BF[1+GetPlayerId(GetEnumPlayer())])
 endfunction
+
 function JGV takes nothing returns nothing
 local timer FQV=GetExpiredTimer()
 local integer C7V=GetHandleId(FQV)
@@ -9987,6 +10427,7 @@ call FlushChildHashtable(C6[1],40)
 call DestroyTimer(FQV)
 set FQV=null
 endfunction
+
 function JHE takes nothing returns nothing
 set BN[1+GetPlayerId(GetEnumPlayer())]=BN[1+GetPlayerId(GetEnumPlayer())]+BI[1+GetPlayerId(GetEnumPlayer())]
 call AdjustPlayerStateBJ(BI[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
@@ -9994,9 +10435,11 @@ call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You earned |cf
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function JOE takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function JPE takes nothing returns nothing
 if GetUnitTypeId(KV[EE])==$75303050 then
 if true then
@@ -10011,12 +10454,15 @@ call UnitAddAbility(KV[EE],$41303948)
 endif
 endif
 endfunction
+
 function JRE takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function JVE takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function JIE takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(I3E(Condition(ref_function_JRE)))>0 then
@@ -10026,6 +10472,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function JXE takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(I3E(Condition(ref_function_JEE)))>0 then
@@ -10035,6 +10482,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function JWE takes nothing returns nothing
 set ZN=false
 call TriggerExecute(OT)
@@ -10078,9 +10526,11 @@ call EnableTrigger(TT)
 call EnableTrigger(UT)
 call DestroyTrigger(FT)
 endfunction
+
 function JYE takes nothing returns boolean
 return UI and AE==false
 endfunction
+
 function J_E takes nothing returns nothing
 call ConditionalTriggerExecute(YU)
 call DisableTrigger(YU)
@@ -10109,6 +10559,7 @@ call PauseTimerBJ(true,NE)
 call TimerDialogSetTitle(EX,"This is the final round!")
 endif
 endfunction
+
 function K0E takes nothing returns nothing
 local unit u=GetEnumUnit()
 local real x=GetUnitX(u)
@@ -10133,6 +10584,7 @@ call IssueImmediateOrderById(u,851993)
 set u=null
 set u=null
 endfunction
+
 function K1E takes nothing returns nothing
 local unit u=GetEnumUnit()
 local real x=GetUnitX(u)
@@ -10157,6 +10609,7 @@ call IssueImmediateOrderById(u,851993)
 set u=null
 set u=null
 endfunction
+
 function K2E takes nothing returns nothing
 call ForForce(ZI,ref_function_KPE)
 call ForForce(ZI,ref_function_KSE)
@@ -10167,6 +10620,7 @@ call ForGroup(VF,ref_function_K0E)
 call A_V(.5)
 call ForGroup(ZD,ref_function_K1E)
 endfunction
+
 function K3E takes nothing returns nothing
 local real x=GetRandomReal(GetRectMinX(OM),GetRectMaxX(OM))
 local real y=GetRandomReal(GetRectMinY(OM),GetRectMaxY(OM))
@@ -10175,9 +10629,11 @@ call SetUnitOwner(GetEnumUnit(),Player(8),false)
 call SetUnitPosition(GetEnumUnit(),x,y)
 call IssueImmediateOrderById(GetEnumUnit(),851993)
 endfunction
+
 function K3V takes nothing returns boolean
 return not IsUnitInGroup(GetFilterUnit(),I6[5])
 endfunction
+
 function K4E takes nothing returns nothing
 local real x=GetRandomReal(GetRectMinX(RM),GetRectMaxX(RM))
 local real y=GetRandomReal(GetRectMinY(RM),GetRectMaxY(RM))
@@ -10186,6 +10642,7 @@ call SetUnitOwner(GetEnumUnit(),Player(9),false)
 call SetUnitPosition(GetEnumUnit(),x,y)
 call IssueImmediateOrderById(GetEnumUnit(),851993)
 endfunction
+
 function J6V takes unit GQV,integer C7V,trigger FQV returns nothing
 if IsUnitOwnedByPlayer(GQV,A6[C7V+250]) then
 if not IsUnitInGroup(GQV,I6[0]) then
@@ -10209,9 +10666,11 @@ if IsUnitOwnedByPlayer(GQV,A6[C7V+1450]) then
 call UnitRemoveBuffs(GQV,N6[2],N6[1])
 endif
 endfunction
+
 function J7V takes integer C7V returns boolean
 return N6[250+C7V] or N6[310+C7V] or N6[1450+C7V]
 endfunction
+
 function K4V takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local unit HNV=GetAttacker()
@@ -10279,12 +10738,14 @@ set J4V=null
 set FQV=null
 set K5V=null
 endfunction
+
 function IGE takes rect IIE,player RSE returns group
 set G8=A5V()
 set bj_groupEnumOwningPlayer=RSE
 call GroupEnumUnitsInRect(G8,IIE,filterGetUnitsInRectOfPlayer)
 return G8
 endfunction
+
 function K5E takes nothing returns nothing
 set QE=IGE(RK,Player(11))
 call ForGroup(QE,ref_function_K3E)
@@ -10293,21 +10754,25 @@ set QE=IGE(IK,Player(10))
 call ForGroup(QE,ref_function_K4E)
 call A4V(QE)
 endfunction
+
 function K6E takes nothing returns boolean
 return PA
 endfunction
+
 function K7E takes nothing returns nothing
 local real x=GetRectCenterX(KM)
 local real y=GetRectCenterY(KM)
 call SetUnitMoveSpeed(GetEnumUnit(),GetUnitDefaultMoveSpeed(GetEnumUnit()))
 call IssuePointOrderById(GetEnumUnit(),851983,x,y)
 endfunction
+
 function K8E takes nothing returns nothing
 local real x=GetRectCenterX(JM)
 local real y=GetRectCenterY(JM)
 call SetUnitMoveSpeed(GetEnumUnit(),GetUnitDefaultMoveSpeed(GetEnumUnit()))
 call IssuePointOrderById(GetEnumUnit(),851983,x,y)
 endfunction
+
 function K9E takes nothing returns nothing
 call A_V(.5)
 call ClearTextMessagesBJ(bj_FORCE_ALL_PLAYERS)
@@ -10329,6 +10794,7 @@ call ForGroup(VF,ref_function_K8E)
 call A_V(1.)
 call EnableTrigger(AU)
 endfunction
+
 function K8V takes integer C7V,integer C8V,integer DDV returns nothing
 call Player(C7V)
 if LoadInteger(C6[1],13,16)!=1 then
@@ -10349,6 +10815,7 @@ if LoadInteger(C6[1],13,17)==0 then
 call FlushChildHashtable(C6[1],50)
 endif
 endfunction
+
 function LXV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10366,6 +10833,7 @@ call FOV(C7V,5,210,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+210],N6[1])
 set DLV=null
 endfunction
+
 function K9V takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -10381,6 +10849,7 @@ call DKV(C7V,230,12,0,0,N6[1])
 call ExecuteFunc("LXV")
 set DLV=null
 endfunction
+
 function KFV takes nothing returns nothing
 local unit GQV=GetEnumUnit()
 local trigger FQV=null
@@ -10394,6 +10863,7 @@ endif
 set GQV=null
 set FQV=null
 endfunction
+
 function KHE takes nothing returns nothing
 call TriggerExecute(AT)
 call TriggerExecute(OT)
@@ -10417,11 +10887,13 @@ call ConditionalTriggerExecute(ET)
 call ConditionalTriggerExecute(RU)
 call ConditionalTriggerExecute(W4)
 endfunction
+
 function KIE takes nothing returns nothing
 call FogModifierStart(CF[1+GetPlayerId(GetEnumPlayer())])
 call FogModifierStart(DF[1+GetPlayerId(GetEnumPlayer())])
 call FogModifierStart(BF[1+GetPlayerId(GetEnumPlayer())])
 endfunction
+
 function KJE takes nothing returns nothing
 local real x
 local real y
@@ -10460,14 +10932,17 @@ call SetUnitMoveSpeed(UE,0.)
 call SetUnitPathing(UE,true)
 call IssuePointOrderById(UE,851986,tx,ty)
 endfunction
+
 function KME takes nothing returns nothing
 call TriggerSleepAction(.5)
 call ForGroup(SE,ref_function_KJE)
 call TriggerExecute(VZ)
 endfunction
+
 function KOE takes nothing returns nothing
 call ForForce(ZI,ref_function_KVE)
 endfunction
+
 function KOV takes nothing returns nothing
 local unit GQV=GetEventDamageSource()
 local unit HNV=GetTriggerUnit()
@@ -10492,6 +10967,7 @@ set HNV=null
 set DLV=null
 set J4V=null
 endfunction
+
 function KPE takes nothing returns nothing
 local integer KQE=GetPlayerId(GetEnumPlayer())+1
 local real x=GetLocationX(EF[KQE])
@@ -10501,9 +10977,11 @@ call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\Mas
 call SetUnitPosition(KV[KQE],x,y)
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
 endfunction
+
 function KRE takes nothing returns boolean
 return YD
 endfunction
+
 function KRV takes nothing returns nothing
 local trigger FQV=GetTriggeringTrigger()
 local unit HNV=GetTriggerUnit()
@@ -10549,9 +11027,11 @@ set KBV=null
 set KCV=null
 set J4V=null
 endfunction
+
 function KSE takes nothing returns nothing
 call PanCameraToTimedForPlayer(GetEnumPlayer(),GetUnitX(KV[1+GetPlayerId(GetEnumPlayer())]),GetUnitY(KV[1+GetPlayerId(GetEnumPlayer())]),1.)
 endfunction
+
 function KVE takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if GetUnitTypeId(KV[EE])==$75303050 then
@@ -10565,6 +11045,7 @@ call UnitAddAbility(KV[EE],$41303947)
 call UnitAddAbility(KV[EE],$41303948)
 endif
 endfunction
+
 function KXV takes nothing returns nothing
 local unit GQV=GetEventDamageSource()
 local unit HNV=GetTriggerUnit()
@@ -10591,9 +11072,11 @@ set HNV=null
 set DLV=null
 set J4V=null
 endfunction
+
 function KTE takes real IEE,real IXE,real N1E,real N7E returns real
 return bj_RADTODEG*Atan2(N7E-IXE,N1E-IEE)
 endfunction
+
 function KYE takes nothing returns nothing
 local unit u=GetEnumUnit()
 local real x=GetUnitX(u)
@@ -10623,9 +11106,11 @@ call IssueImmediateOrderById(u,851993)
 set u=null
 set u=null
 endfunction
+
 function L1E takes nothing returns boolean
 return IsUnitInGroup(GetTriggerUnit(),AF) and YD
 endfunction
+
 function L4E takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetEnteringUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetEnteringUnit()))
@@ -10639,6 +11124,7 @@ call PanCameraToTimedForPlayer(GetOwningPlayer(GetEnteringUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endif
 endfunction
+
 function L5E takes nothing returns nothing
 local real x=GetRectCenterX(JM)
 local real y=GetRectCenterY(JM)
@@ -10646,9 +11132,11 @@ call IssuePointOrderById(GetTriggerUnit(),851986,x,y)
 call GroupRemoveUnit(AF,GetTriggerUnit())
 call GroupAddUnit(IF,GetTriggerUnit())
 endfunction
+
 function L7E takes nothing returns boolean
 return IsUnitInGroup(GetTriggerUnit(),IF) and YD
 endfunction
+
 function L8V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10666,6 +11154,7 @@ call FOV(C7V,5,530,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+530],N6[1])
 set DLV=null
 endfunction
+
 function L7V takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -10682,6 +11171,7 @@ call DKV(C7V,550,19,0,0,N6[1])
 call ExecuteFunc("L8V")
 set DLV=null
 endfunction
+
 function LBE takes nothing returns nothing
 local real x=GetRectCenterX(JM)
 local real y=GetRectCenterY(JM)
@@ -10689,6 +11179,7 @@ call SetUnitMoveSpeed(GetEnumUnit(),500.)
 call IssuePointOrderById(GetEnumUnit(),851986,x,y)
 call GroupAddUnit(IF,GetEnumUnit())
 endfunction
+
 function LCE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetEnumPlayer())
 local real y=GetPlayerStartLocationY(GetEnumPlayer())
@@ -10700,6 +11191,7 @@ else
 call SetUnitPosition(KV[1+GetPlayerId(GetEnumPlayer())],x,y)
 endif
 endfunction
+
 function LDE takes nothing returns nothing
 call FogModifierStop(CF[1+GetPlayerId(GetEnumPlayer())])
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,KL)
@@ -10708,6 +11200,7 @@ call FogModifierStop(DF[1+GetPlayerId(GetEnumPlayer())])
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_FOGGED,XM)
 endfunction
+
 function LFV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10733,6 +11226,7 @@ call FOV(C7V,7,330,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+330],N6[1])
 set DLV=null
 endfunction
+
 function LDV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -10748,6 +11242,7 @@ call DKV(C7V,350,17,0,0,N6[1])
 call ExecuteFunc("LFV")
 set DLV=null
 endfunction
+
 function LFE takes nothing returns nothing
 call FogModifierStop(BF[1+GetPlayerId(GetEnumPlayer())])
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,JL)
@@ -10756,6 +11251,7 @@ call FogModifierStop(DF[1+GetPlayerId(GetEnumPlayer())])
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_FOGGED,XM)
 endfunction
+
 function LHV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10774,6 +11270,7 @@ call FOV(C7V,5,1190,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1190],N6[1])
 set DLV=null
 endfunction
+
 function LLV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10792,6 +11289,7 @@ call FOV(C7V,5,1250,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1250],N6[1])
 set DLV=null
 endfunction
+
 function LGV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10841,6 +11339,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function LHE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetEnumPlayer())
 local real y=GetPlayerStartLocationY(GetEnumPlayer())
@@ -10856,6 +11355,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function LAV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10873,6 +11373,7 @@ call FOV(C7V,5,270,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+270],N6[1])
 set DLV=null
 endfunction
+
 function LIV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -10888,6 +11389,7 @@ call DKV(C7V,290,15,0,0,N6[1])
 call ExecuteFunc("LAV")
 set DLV=null
 endfunction
+
 function LJE takes nothing returns nothing
 call A_V(2.)
 if CountUnitsInGroup(ZD)==0 and CountUnitsInGroup(VF)!=0 then
@@ -10950,15 +11452,18 @@ call A_V(3.)
 call TriggerExecute(O5)
 call ConditionalTriggerExecute(Y4)
 endfunction
+
 function LKE takes nothing returns boolean
 return YD and CG==false
 endfunction
+
 function LLE takes nothing returns nothing
 local real x=GetRectCenterX(IM)
 local real y=GetRectCenterY(IM)
 call GroupPointOrderById(ZD,851983,x,y)
 call GroupPointOrderById(VF,851983,x,y)
 endfunction
+
 function LME takes nothing returns nothing
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 set OF=OF+1
@@ -10966,6 +11471,7 @@ else
 set RF=RF+1
 endif
 endfunction
+
 function LPV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -10991,6 +11497,7 @@ call FOV(C7V,7,390,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+390],N6[1])
 set DLV=null
 endfunction
+
 function LMV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -11006,6 +11513,7 @@ call DKV(C7V,410,19,0,0,N6[1])
 call ExecuteFunc("LPV")
 set DLV=null
 endfunction
+
 function LNE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetEnumPlayer())
 local real y=GetPlayerStartLocationY(GetEnumPlayer())
@@ -11017,6 +11525,7 @@ else
 call SetUnitPosition(KV[1+GetPlayerId(GetEnumPlayer())],x,y)
 endif
 endfunction
+
 function LNV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11052,6 +11561,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function LOE takes nothing returns nothing
 call SetUnitMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())]))
 if true then
@@ -11059,6 +11569,7 @@ call AdjustPlayerStateBJ(OE*15,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
 call IssuePointOrderByIdLoc(KV[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())-4])
 endif
 endfunction
+
 function LPE takes nothing returns nothing
 local real x
 local real y
@@ -11224,6 +11735,7 @@ endloop
 endif
 endif
 endfunction
+
 function L2V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11242,6 +11754,7 @@ call FOV(C7V,5,1370,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1370],N6[1])
 set DLV=null
 endfunction
+
 function LTV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11260,6 +11773,7 @@ call FOV(C7V,5,1310,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1310],N6[1])
 set DLV=null
 endfunction
+
 function LQV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11309,6 +11823,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function LRE takes nothing returns nothing
 local real x=GetRectCenterX(KM)
 local real y=GetRectCenterY(KM)
@@ -11316,6 +11831,7 @@ call SetUnitMoveSpeed(GetEnumUnit(),500.)
 call IssuePointOrderById(GetEnumUnit(),851983,x,y)
 call GroupAddUnit(AF,GetEnumUnit())
 endfunction
+
 function LRV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11351,15 +11867,19 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function LSE takes nothing returns boolean
 return YD and PA==false
 endfunction
+
 function LTE takes nothing returns nothing
 call IssuePointOrderById(GetEnumUnit(),851983,xg,yg)
 endfunction
+
 function LUE takes nothing returns nothing
 call IssuePointOrderById(GetEnumUnit(),851983,xg,yg)
 endfunction
+
 function LZE takes nothing returns nothing
 set xg=GetRectCenterX(JM)
 set yg=GetRectCenterY(JM)
@@ -11368,17 +11888,20 @@ set xg=GetRectCenterX(KM)
 set yg=GetRectCenterY(KM)
 call ForGroup(AF,ref_function_LUE)
 endfunction
+
 function M0E takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
 call SetUnitAnimation(H6,"Stand Victory")
 call CameraSetupApplyForPlayer(true,SP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,UP,GetEnumPlayer(),11.)
 endfunction
+
 function M1E takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DiagonalSlash_mask.blp",0.,0.,0.,0.)
 call CameraSetupApplyForPlayer(true,TP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,WP,GetEnumPlayer(),11.)
 endfunction
+
 function M2E takes nothing returns nothing
 set HN=Player(8)
 call TriggerEvaluate(onGameFinished)
@@ -11410,6 +11933,7 @@ call A_V(1.)
 call TriggerExecute(TU)
 call A4V(PP)
 endfunction
+
 function MRV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11442,6 +11966,7 @@ call FOV(C7V,6,450,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+450],N6[1])
 set DLV=null
 endfunction
+
 function M2V takes nothing returns nothing
 local string C9V=GetEventPlayerChatString()
 local player DLV=GetTriggerPlayer()
@@ -11452,6 +11977,7 @@ call DKV(C7V,1550,104,0,0,N6[1])
 call ExecuteFunc("MRV")
 set DLV=null
 endfunction
+
 function M3E takes nothing returns nothing
 if GetPlayerState(GetEnumPlayer(),PLAYER_STATE_LUMBER_GATHERED)>GetPlayerState(LI,PLAYER_STATE_LUMBER_GATHERED) then
 set LI=GetEnumPlayer()
@@ -11475,6 +12001,7 @@ if Q[1+GetPlayerId(GetEnumPlayer())]>Q[1+GetPlayerId(LD)] then
 set LD=GetEnumPlayer()
 endif
 endfunction
+
 function M4E takes nothing returns nothing
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.," ")
 set JD=Player(0)
@@ -11496,6 +12023,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.," ")
 call A_V(2.)
 call TriggerExecute(PU)
 endfunction
+
 function M5E takes nothing returns nothing
 set AN=CountPlayersInForceBJ(YI)+1
 call CreateMultiboardBJ(AN,20,MultiboardGetTitleText(JR))
@@ -11610,6 +12138,7 @@ call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA),QR+" (Level "+I2S(O
 call MultiboardDisplay(VA,true)
 call MultiboardMinimize(VA,false)
 endfunction
+
 function M6E takes nothing returns nothing
 set EA=HR[1+GetPlayerId(Player(8))]+GetPlayerName(Player(8))
 set bj_forLoopAIndex=1
@@ -11621,9 +12150,11 @@ set JN[bj_forLoopAIndex]="ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.b
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function M7E takes nothing returns boolean
 return AE==false
 endfunction
+
 function M8E takes nothing returns nothing
 set GN=GN+1
 if GN<10 then
@@ -11650,9 +12181,11 @@ set LR="00"
 endif
 set QR=I2S(PR)+":"+MR+":"+LR
 endfunction
+
 function M9E takes nothing returns boolean
 return AE
 endfunction
+
 function MCE takes nothing returns nothing
 if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
 if IsUnitType(GetEnumUnit(),UNIT_TYPE_GIANT) or IsUnitType(GetEnumUnit(),UNIT_TYPE_SUMMONED) then
@@ -11660,31 +12193,38 @@ call RemoveUnit(GetEnumUnit())
 endif
 endif
 endfunction
+
 function MFE takes nothing returns nothing
 call ForGroup(VF,ref_function_MCE)
 call GroupClear(VF)
 call ForGroup(ZD,ref_function_MCE)
 call GroupClear(ZD)
 endfunction
+
 function MHE takes nothing returns nothing
 call ShowUnitShow(GetEnumUnit())
 endfunction
+
 function MJE takes nothing returns nothing
 call ConditionalTriggerExecute(WT)
 call ForGroup(MD,ref_function_MHE)
 endfunction
+
 function MKE takes nothing returns boolean
 return AE==false
 endfunction
+
 function MLE takes nothing returns nothing
 call SetUnitTimeScalePercent(GetEnumUnit(),20.)
 endfunction
+
 function MME takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
 call SetUnitAnimation(H6,"Stand Victory")
 call CameraSetupApplyForPlayer(true,SP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,UP,GetEnumPlayer(),10.)
 endfunction
+
 function MNE takes nothing returns nothing
 call GroupAddUnit(ZE,GetTriggerUnit())
 if GetUnitTypeId(GetTriggerUnit())==$6E303037 then
@@ -11697,6 +12237,7 @@ if GetOwningPlayer(GetTriggerUnit())==Player(9) then
 call GroupAddUnit(ZD,GetTriggerUnit())
 endif
 endfunction
+
 function MIV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11721,6 +12262,7 @@ call FOV(C7V,10,1030,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1030],N6[1])
 set DLV=null
 endfunction
+
 function MOV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11761,12 +12303,14 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function MPE takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
 call SetUnitAnimation(U6,"Stand Victory")
 call CameraSetupApplyForPlayer(true,TP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,WP,GetEnumPlayer(),10.)
 endfunction
+
 function MQE takes nothing returns nothing
 call DestroyTimerDialog(EX)
 call MultiboardDisplay(JR,false)
@@ -11800,17 +12344,21 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"|cff00FF00YOU WIN!|r")
 call TriggerExecute(TU)
 call A4V(PP)
 endfunction
+
 function MSE takes nothing returns boolean
 return AE==false
 endfunction
+
 function MTE takes nothing returns nothing
 call SetUnitTimeScalePercent(GetEnumUnit(),20.)
 endfunction
+
 function MUE takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DiagonalSlash_mask.blp",0.,0.,0.,0.)
 call CameraSetupApplyForPlayer(true,SP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,UP,GetEnumPlayer(),10.)
 endfunction
+
 function MVE takes nothing returns nothing
 local real x=GetRectCenterX(KM)
 local real y=GetRectCenterY(KM)
@@ -11818,6 +12366,7 @@ call IssuePointOrderById(GetTriggerUnit(),851986,x,y)
 call GroupRemoveUnit(IF,GetTriggerUnit())
 call GroupAddUnit(AF,GetTriggerUnit())
 endfunction
+
 function MVV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -11857,18 +12406,22 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function MWE takes nothing returns nothing
 call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
 call SetUnitAnimation(U6,"Stand Victory")
 call CameraSetupApplyForPlayer(true,TP,GetEnumPlayer(),0.)
 call CameraSetupApplyForPlayer(true,WP,GetEnumPlayer(),10.)
 endfunction
+
 function MEE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SUMMONED) or IsUnitType(GetTriggerUnit(),UNIT_TYPE_GIANT))!=false!=false!=false
 endfunction
+
 function MXE takes nothing returns boolean
 return not (YD==false) and MEE()
 endfunction
+
 function MYE takes nothing returns nothing
 set HN=Player(9)
 call TriggerEvaluate(onGameFinished)
@@ -11901,30 +12454,39 @@ call A_V(1.)
 call TriggerExecute(TU)
 call A4V(PP)
 endfunction
+
 function MZE takes nothing returns boolean
 return AE==false
 endfunction
+
 function M_E takes nothing returns nothing
 call SetUnitTimeScalePercent(GetEnumUnit(),20.)
 endfunction
+
 function AKX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function ALX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function AMX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function APX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function AQX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function ASX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function EKE takes nothing returns nothing
 local integer i1=1
 call DialogClear(EH[1])
@@ -11937,10 +12499,12 @@ endloop
 set WH[10]=DialogAddButton(EH[1],"NEXT PAGE >>>>>",0)
 call DialogDisplay(GetTriggerPlayer(),EH[1],true)
 endfunction
+
 function N9X takes nothing returns nothing
 
 
 endfunction
+
 function NBV takes nothing returns boolean
 local trigger t=GetTriggeringTrigger()
 local integer h=GetHandleId(t)
@@ -11967,6 +12531,7 @@ set u=null
 set tt=null
 return false
 endfunction
+
 function NBE takes rect r,integer id,integer NCE returns nothing
 local integer h=GetHandleId(r)
 local real NDE=LoadReal(HY,h,0)
@@ -12007,6 +12572,7 @@ set u=null
 set u=null
 set p=null
 endfunction
+
 function NYE takes nothing returns nothing
 local timer t=GetExpiredTimer()
 local integer c=QX[OE]
@@ -12047,17 +12613,21 @@ endif
 set XG=XG+AHE
 set t=null
 endfunction
+
 function O0X takes nothing returns nothing
 call UnitAddAbility(H6,$41303531)
 call UnitAddAbility(U6,$41303531)
 call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_O_X)
 endfunction
+
 function XME takes rect r,unit u returns boolean
 return GetUnitX(u)>GetRectMinX(r)-32. and GetUnitX(u)<GetRectMaxX(r)+32. and GetUnitY(u)>GetRectMinY(r)-32. and GetUnitY(u)<GetRectMaxY(r)+32.
 endfunction
+
 function O1E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303646 or GetUnitTypeId(GetAttacker())==$68303647 and XME(ZM,GetAttacker())
 endfunction
+
 function O1X takes nothing returns nothing
 if not IsPlayerInForce(GetEnumPlayer(),BD) then
 set EE=1+GetPlayerId(GetEnumPlayer())
@@ -12065,6 +12635,7 @@ call DialogAddButtonBJ(JF,HR[EE]+GetPlayerName(GetEnumPlayer())+"|r")
 set KF[EE]=bj_lastCreatedButton
 endif
 endfunction
+
 function O2X takes nothing returns nothing
 if YF then
 call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),5.,"Someone is open vote menu or vote already start, please try again later.")
@@ -12102,15 +12673,19 @@ endif
 endif
 call MultiboardDisplay(JR,true)
 endfunction
+
 function O4E takes nothing returns boolean
 return GetUnitAbilityLevel(GetAttacker(),$41304137)>0
 endfunction
+
 function O3X takes nothing returns boolean
 return GetClickedButton()==KF[1] or GetClickedButton()==KF[2] or GetClickedButton()==KF[3] or GetClickedButton()==KF[4] or GetClickedButton()==KF[5] or GetClickedButton()==KF[6] or GetClickedButton()==KF[7] or GetClickedButton()==KF[8]
 endfunction
+
 function O4X takes nothing returns boolean
 return YF and O3X()
 endfunction
+
 function O5X takes nothing returns nothing
 call DialogDisplayBJ(false,JF,GetEnumPlayer())
 set EE=1+GetPlayerId(GetEnumPlayer())
@@ -12118,6 +12693,7 @@ if GetClickedButton()==KF[EE] then
 set SF=EE
 endif
 endfunction
+
 function O6E takes nothing returns nothing
 local unit u=GetAttacker()
 local real x
@@ -12148,9 +12724,11 @@ endif
 set u=null
 set u=null
 endfunction
+
 function O6X takes nothing returns nothing
 call DialogDisplayBJ(true,LF,GetEnumPlayer())
 endfunction
+
 function O7X takes nothing returns nothing
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r start a vote kick ! (vote will expired in 20 seconds)")
 call ForForce(ZI,ref_function_O5X)
@@ -12171,36 +12749,46 @@ call PauseTimerBJ(true,PH)
 call StartTimerBJ(WF,false,20.)
 call MultiboardDisplay(JR,true)
 endfunction
+
 function O8E takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(1) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function O8X takes nothing returns boolean
 return GetClickedButton()==GH
 endfunction
+
 function O9X takes nothing returns nothing
 set YF=false
 call MultiboardDisplay(JR,true)
 endfunction
+
 function OIX takes nothing returns boolean
 return IsUnitSelected(H6,GetOwningPlayer(H6))==false or IsPlayerInForce(GetOwningPlayer(H6),ZI)==false
 endfunction
+
 function OAX takes nothing returns boolean
 return GetTriggerUnit()==H6 and UA==0 and OIX()
 endfunction
+
 function OBX takes nothing returns boolean
 return IsUnitSelected(U6,GetOwningPlayer(U6))==false or IsPlayerInForce(GetOwningPlayer(U6),ZI)==false
 endfunction
+
 function OCX takes nothing returns boolean
 return GetTriggerUnit()==U6 and WA==0 and OBX()
 endfunction
+
 function ODX takes nothing returns nothing
 set WA=5
 call SetUnitOwner(U6,GetTriggerPlayer(),false)
 call SetUnitColor(U6,GetPlayerColor(GetTriggerPlayer()))
 endfunction
+
 function Q8E takes nothing returns boolean
 return CountUnitsInGroup(QE)>0
 endfunction
+
 function OEX takes nothing returns nothing
 set QE=IRE(CJ,Condition(ref_function_OVX))
 if Q8E() then
@@ -12208,6 +12796,7 @@ call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,HI)
 endif
 call A4V(QE)
 endfunction
+
 function OFX takes nothing returns nothing
 if UA>0 then
 set UA=UA-1
@@ -12216,6 +12805,7 @@ if WA>0 then
 set WA=WA-1
 endif
 endfunction
+
 function OGE takes nothing returns nothing
 local timer t=GetExpiredTimer()
 call IssueImmediateOrderById(GetTriggerUnit(),851972)
@@ -12224,57 +12814,73 @@ call DestroyTimer(t)
 set t=null
 set t=null
 endfunction
+
 function OGX takes nothing returns nothing
 set UA=5
 endfunction
+
 function OHX takes nothing returns nothing
 set WA=5
 endfunction
+
 function OJE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)==false and GetUnitAbilityLevel(GetTriggerUnit(),$416C6F63)==0)!=false!=false
 endfunction
+
 function OJX takes nothing returns boolean
 return GetSpellAbilityId()==$41303445 or GetSpellAbilityId()==$41303446
 endfunction
+
 function OKE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)==false and GetUnitAbilityLevel(GetTriggerUnit(),$416C6F63)==0 and IsUnitInGroup(GetTriggerUnit(),M8)==false)!=false!=false
 endfunction
+
 function OKX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303445,GetEnumPlayer())
 call SetPlayerAbilityAvailableBJ(true,$41303446,GetEnumPlayer())
 endfunction
+
 function OLE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)==false and GetUnitAbilityLevel(GetTriggerUnit(),$416C6F63)==0 and IsUnitInGroup(GetTriggerUnit(),P8)==false)!=false!=false
 endfunction
+
 function OLX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303446,GetEnumPlayer())
 call SetPlayerAbilityAvailableBJ(true,$41303445,GetEnumPlayer())
 endfunction
+
 function OME takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68304137 or GetUnitTypeId(GetTriggerUnit())==$68304156 or GetUnitTypeId(GetTriggerUnit())==$68304157
 endfunction
+
 function OMX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303445,GetEnumPlayer())
 call SetPlayerAbilityAvailableBJ(true,$41303446,GetEnumPlayer())
 endfunction
+
 function ONX takes nothing returns nothing
 set UA=5
 call SetUnitOwner(H6,GetTriggerPlayer(),false)
 call SetUnitColor(H6,GetPlayerColor(GetTriggerPlayer()))
 endfunction
+
 function OOX takes nothing returns boolean
 return IsUnitInGroup(GetFilterUnit(),XA)
 endfunction
+
 function OPE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_MELEE_ATTACKER) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)==false and GetUnitTypeId(GetTriggerUnit())==$68304137==false and GetUnitTypeId(GetTriggerUnit())==$68304156==false and GetUnitTypeId(GetTriggerUnit())==$68304157==false)!=false!=false
 endfunction
+
 function OPX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303446,GetEnumPlayer())
 call SetPlayerAbilityAvailableBJ(true,$41303445,GetEnumPlayer())
 endfunction
+
 function OQE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_RANGED_ATTACKER) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)==false and GetUnitTypeId(GetTriggerUnit())==$68304137==false and GetUnitTypeId(GetTriggerUnit())==$68304156==false and GetUnitTypeId(GetTriggerUnit())==$68304157==false)!=false!=false
 endfunction
+
 function OQX takes nothing returns nothing
 set PE=GetSpellAbilityUnit()
 if IsPlayerAlly(GetOwningPlayer(GetSpellAbilityUnit()),Player(8)) then
@@ -12306,6 +12912,7 @@ set S8=null
 endif
 endif
 endfunction
+
 function ORX takes nothing returns nothing
 set QE=IRE(MJ,Condition(ref_function_OOX))
 if Q8E() then
@@ -12313,40 +12920,51 @@ call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,GO)
 endif
 call A4V(QE)
 endfunction
+
 function OSE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_PEON)==false and OME()==false and GetUnitTypeId(GetTriggerUnit())==$68303854==false and IsUnitIllusion(GetTriggerUnit())==false and GetUnitTypeId(GetFilterUnit())==$6E303039==false and GetUnitTypeId(GetFilterUnit())==$68303832==false and GetUnitTypeId(GetFilterUnit())==$68303833==false)!=false!=false
 endfunction
+
 function OSX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303445,GetEnumPlayer())
 endfunction
+
 function OTX takes nothing returns nothing
 call ForForce(RJE(Player(8)),ref_function_OSX)
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function OUE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303733 and XME(ZM,GetAttacker())
 endfunction
+
 function OUX takes nothing returns nothing
 call ForForce(RJE(Player(9)),ref_function_OSX)
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function OVX takes nothing returns boolean
 return IsUnitInGroup(GetFilterUnit(),XA)
 endfunction
+
 function OWX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function OXX takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(9)
 endfunction
+
 function OYX takes nothing returns boolean
 return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
 endfunction
+
 function OZE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303338 or GetUnitTypeId(GetAttacker())==$68303337 and XME(ZM,GetAttacker())
 endfunction
+
 function OZX takes nothing returns nothing
 set PE=U6
 set EE=CountPlayersInForceBJ(I3E(Condition(ref_function_OWX)))
@@ -12417,12 +13035,15 @@ set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
 endfunction
+
 function O_X takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41303531,GetEnumPlayer())
 endfunction
+
 function P3V takes integer C7V returns boolean
 return GetPlayerController(Player(C7V))==ConvertMapControl(0) and GetPlayerSlotState(Player(C7V))==ConvertPlayerSlotState(1)
 endfunction
+
 function P2V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12450,6 +13071,7 @@ call FOV(C7V,12,790,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+790],N6[1])
 set DLV=null
 endfunction
+
 function PHV takes nothing returns nothing
 local player DLV
 local integer C7V
@@ -12505,6 +13127,7 @@ call FOV(C7V,10,590,"|cffffcc00Exit|r")
 call DialogDisplay(DLV,VIV[C7V+590],N6[1])
 set DLV=null
 endfunction
+
 function P1V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local button DHV=GetClickedButton()
@@ -12527,6 +13150,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function P2E takes nothing returns nothing
 call SetUnitPositionLoc(GetEnumUnit(),EN[1+GetPlayerId(VN[SO])])
 call GroupAddUnit(XA,GetEnumUnit())
@@ -12539,6 +13163,7 @@ else
 set SO=SO+1
 endif
 endfunction
+
 function P3E takes nothing returns nothing
 if XN then
 set ZA[1]=Player(4)
@@ -12585,9 +13210,11 @@ call ForGroup(QE,ref_function_P2E)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,5.,"|cffff0000Wave Summons|r have been sent")
 call A4V(QE)
 endfunction
+
 function P4E takes nothing returns boolean
 return VB and IN and HO==false
 endfunction
+
 function QCV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12652,6 +13279,7 @@ call FOV(C7V,10,830,"|cffffcc00Exit|r")
 call DialogDisplay(DLV,VIV[C7V+830],N6[1])
 set DLV=null
 endfunction
+
 function QNV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12670,6 +13298,7 @@ call FOV(C7V,12,850,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+850],N6[1])
 set DLV=null
 endfunction
+
 function P4V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local button DHV=GetClickedButton()
@@ -12692,22 +13321,27 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function P5E takes nothing returns nothing
 local real x=GetRandomReal(GetRectMinX(IK),GetRectMaxX(IK))
 local real y=GetRandomReal(GetRectMinY(IK),GetRectMaxY(IK))
 call CreateUnit(Player(10),GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
 endfunction
+
 function P6E takes nothing returns boolean
 return VB and IN==false and HO
 endfunction
+
 function P7E takes nothing returns nothing
 local real x=GetRandomReal(GetRectMinX(RK),GetRectMaxX(RK))
 local real y=GetRandomReal(GetRectMinY(RK),GetRectMaxY(RK))
 call CreateUnit(Player(11),GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
 endfunction
+
 function P8E takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_UNDEAD)==false)!=false!=false!=false
 endfunction
+
 function P9E takes nothing returns nothing
 if GetUnitTypeId(KV[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))])!=$75303049 then
 call GroupAddUnit(AI,GetTriggerUnit())
@@ -12715,9 +13349,11 @@ endif
 call GroupRemoveUnit(SN,GetTriggerUnit())
 call TriggerExecute(WU)
 endfunction
+
 function PAE takes nothing returns nothing
 set PD[GetUnitUserData(GetEnumUnit())]=PD[GetUnitUserData(GetEnumUnit())]+GetUnitPointValue(GetEnumUnit())
 endfunction
+
 function PNV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12733,6 +13369,7 @@ call FOV(C7V,7,470,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+470],N6[1])
 set DLV=null
 endfunction
+
 function PAV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12765,6 +13402,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PBE takes nothing returns nothing
 local integer IQE=GetPlayerId(GetEnumPlayer())+1
 local integer AHE=0
@@ -12787,12 +13425,14 @@ set IXE=I2R(BI[IQE])/I2R(OO[AKE])
 set IXE=IXE*100.
 set JH[IQE]=JH[IQE]+R2I(IEE)+R2I(IXE)
 endfunction
+
 function MEV takes integer C7V,integer C8V,integer DDV returns nothing
 if N6[C7V+C8V] then
 call DialogDestroy(VIV[C7V+C8V])
 call DKV(C7V,C8V,DDV,0,0,N6[1])
 endif
 endfunction
+
 function MXV takes integer C7V returns nothing
 call MEV(C7V,10,1)
 call MEV(C7V,90,5)
@@ -12826,6 +13466,7 @@ call SaveBoolean(C6[1],255,C7V,N6[2])
 call RemoveSavedInteger(C6[1],255,C7V)
 endif
 endfunction
+
 function PIV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12841,6 +13482,7 @@ call FOV(C7V,7,490,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+490],N6[1])
 set DLV=null
 endfunction
+
 function POV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12865,6 +13507,7 @@ call FOV(C7V,C8V,510,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+510],N6[1])
 set DLV=null
 endfunction
+
 function PBV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12899,10 +13542,12 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PCE takes nothing returns nothing
 call ForForce(ZI,ref_function_PBE)
 call TriggerExecute(IT)
 endfunction
+
 function PFV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -12920,6 +13565,7 @@ call FOV(C7V,5,670,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+670],N6[1])
 set DLV=null
 endfunction
+
 function PCV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -12935,6 +13581,7 @@ call DKV(C7V,690,31,0,0,N6[1])
 call ExecuteFunc("PFV")
 set DLV=null
 endfunction
+
 function PDE takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 local integer IQE=GetUnitUserData(NVE)
@@ -12950,6 +13597,7 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function PEE takes nothing returns nothing
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,5.," ")
 call A_V(5.)
@@ -12969,6 +13617,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"Game will end in |cffff000
 call A_V(1.)
 call ForForce(ZI,ref_function_PVE)
 endfunction
+
 function PEV takes nothing returns nothing
 local string C9V=GetEventPlayerChatString()
 local player DLV=GetTriggerPlayer()
@@ -12979,6 +13628,7 @@ call DKV(C7V,1530,103,0,0,N6[1])
 call ExecuteFunc("MRV")
 set DLV=null
 endfunction
+
 function PFE takes nothing returns nothing
 if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
 if IsUnitType(GetEnumUnit(),UNIT_TYPE_GIANT) or IsUnitType(GetEnumUnit(),UNIT_TYPE_SUMMONED) then
@@ -12986,9 +13636,11 @@ call RemoveUnit(GetEnumUnit())
 endif
 endif
 endfunction
+
 function PGE takes nothing returns nothing
 call RemoveUnit(GetEnumUnit())
 endfunction
+
 function PGV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13024,12 +13676,15 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PHE takes nothing returns boolean
 return GetUnitTypeId(GetFilterUnit())==$75303036
 endfunction
+
 function PIE takes nothing returns nothing
 set GB[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=GB[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]+GetUnitPointValue(GetEnumUnit())
 endfunction
+
 function PJE takes nothing returns nothing
 call ForGroup(ZE,ref_function_PFE)
 call GroupClear(ZE)
@@ -13051,6 +13706,7 @@ call GroupEnumUnitsInRect(QE,bj_mapInitialPlayableArea,Condition(ref_function_PH
 call ForGroup(QE,ref_function_PGE)
 call A4V(QE)
 endfunction
+
 function PKV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13068,6 +13724,7 @@ call FOV(C7V,5,610,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+610],N6[1])
 set DLV=null
 endfunction
+
 function PJV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -13083,9 +13740,11 @@ call DKV(C7V,630,31,0,0,N6[1])
 call ExecuteFunc("PKV")
 set DLV=null
 endfunction
+
 function PKE takes nothing returns boolean
 return IsUnitType(GetFilterUnit(),UNIT_TYPE_GIANT)!=false!=false!=false
 endfunction
+
 function PLE takes nothing returns nothing
 if GetUnitTypeId(GetEnumUnit())==$68303636 or GetUnitTypeId(GetEnumUnit())==$68303637 or GetUnitTypeId(GetEnumUnit())==$68303638 or GetUnitTypeId(GetEnumUnit())==$68304433 then
 call SetUnitVertexColorBJ(GetEnumUnit(),100.,100.,100.,35.)
@@ -13094,6 +13753,7 @@ if GetUnitTypeId(GetEnumUnit())==$68303647 then
 call SetUnitVertexColorBJ(GetEnumUnit(),100.,100.,100.,35.)
 endif
 endfunction
+
 function PLV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13129,11 +13789,13 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PME takes nothing returns nothing
 set QE=IRE(bj_mapInitialPlayableArea,Condition(ref_function_PKE))
 call ForGroup(QE,ref_function_PLE)
 call A4V(QE)
 endfunction
+
 function PMV takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local location PPV=GetOrderPointLoc()
@@ -13143,12 +13805,14 @@ endif
 set GQV=null
 set PPV=null
 endfunction
+
 function PNE takes nothing returns nothing
 call ForForce(ZI,ref_function_PRE)
 call ForGroup(SE,ref_function_PIE)
 call ForGroup(MD,ref_function_PAE)
 call TriggerExecute(OT)
 endfunction
+
 function BCE takes nothing returns nothing
 call DestroyTrigger(IH)
 set IH=CreateTrigger()
@@ -13156,10 +13820,12 @@ set AH=0
 call ForGroup(ZE,ref_function_BBE)
 call TriggerAddAction(IH,ref_function_BNE)
 endfunction
+
 function POE takes nothing returns nothing
 call ForGroup(SE,ref_function_PXE)
 call BCE()
 endfunction
+
 function PPE takes nothing returns nothing
 if OE==6 then
 set bj_forLoopAIndex=1
@@ -13296,13 +13962,16 @@ set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
 endfunction
+
 function PQE takes nothing returns boolean
 return (IsUnitType(GetEnteringUnit(),UNIT_TYPE_SUMMONED) and IsUnitType(GetEnteringUnit(),UNIT_TYPE_GIANT)==false and IsUnitType(GetEnteringUnit(),UNIT_TYPE_UNDEAD)==false and GetOwningPlayer(GetEnteringUnit())!=Player(8) and GetOwningPlayer(GetEnteringUnit())!=Player(9) and GetOwningPlayer(GetEnteringUnit())!=Player(10) and GetOwningPlayer(GetEnteringUnit())!=Player(11))!=false!=false!=false
 endfunction
+
 function PRE takes nothing returns nothing
 set GB[1+GetPlayerId(GetEnumPlayer())]=0
 set PD[1+GetPlayerId(GetEnumPlayer())]=0
 endfunction
+
 function PRV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13341,6 +14010,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PSE takes nothing returns nothing
 local player RSE=GetOwningPlayer(GetEnteringUnit())
 local integer IQE=GetPlayerId(RSE)+1
@@ -13380,6 +14050,7 @@ set u=null
 set RSE=null
 set u=null
 endfunction
+
 function PSV takes nothing returns nothing
 local boolean DHV=GetIssuedOrderId()==851993
 local unit GQV=GetTriggerUnit()
@@ -13393,9 +14064,11 @@ endif
 set GQV=null
 set DLV=null
 endfunction
+
 function PTE takes nothing returns boolean
 return GetBooleanAnd(GetPlayerSlotState(GetFilterPlayer())==PLAYER_SLOT_STATE_PLAYING,GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),GetFilterPlayer()!=Player(9)))
 endfunction
+
 function PTV takes nothing returns nothing
 local boolean DHV=GetIssuedOrderId()==851993
 local unit GQV=GetTriggerUnit()
@@ -13409,16 +14082,20 @@ endif
 set GQV=null
 set DLV=null
 endfunction
+
 function PUE takes nothing returns nothing
 set AX=AX+1
 set ZA[AX]=GetEnumPlayer()
 endfunction
+
 function PVE takes nothing returns nothing
 call EndGame(true)
 endfunction
+
 function PWE takes nothing returns boolean
 return GetBooleanAnd(GetPlayerSlotState(GetFilterPlayer())==PLAYER_SLOT_STATE_PLAYING,GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(8)),GetFilterPlayer()!=Player(8)))
 endfunction
+
 function PXE takes nothing returns nothing
 local unit NVE=GetEnumUnit()
 local real x=GetUnitX(NVE)
@@ -13457,6 +14134,7 @@ set NVE=null
 set FYE=null
 set RSE=null
 endfunction
+
 function PXV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13485,10 +14163,12 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function PYE takes nothing returns nothing
 set EO=EO+1
 set VN[EO]=GetEnumPlayer()
 endfunction
+
 function PZE takes nothing returns nothing
 call SetUnitPositionLoc(GetEnumUnit(),EN[1+GetPlayerId(ZA[YA])])
 call GroupAddUnit(XA,GetEnumUnit())
@@ -13501,6 +14181,7 @@ else
 set YA=YA+1
 endif
 endfunction
+
 function PZV takes nothing returns nothing
 local string C9V=GetEventPlayerChatString()
 local player DLV=GetTriggerPlayer()
@@ -13516,6 +14197,7 @@ exitwhen C8V>11
 endloop
 set DLV=null
 endfunction
+
 function Q0E takes nothing returns nothing
 local unit NVE=GetTriggerUnit()
 local real x=GetUnitX(NVE)
@@ -13573,12 +14255,15 @@ set NVE=null
 call TriggerExecute(WU)
 set NVE=null
 endfunction
+
 function Q1E takes nothing returns nothing
 call SetUnitVertexColorBJ(GetTriggerUnit(),100.,100.,100.,100.)
 endfunction
+
 function Q2E takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303049
 endfunction
+
 function Q2V takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -13594,6 +14279,7 @@ call K8V(DDV,1270,C8V)
 call ExecuteFunc("LLV")
 set DLV=null
 endfunction
+
 function Q3V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13639,9 +14325,11 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function Q4E takes nothing returns boolean
 return GetFilterPlayer()==GetTriggerPlayer()
 endfunction
+
 function Q4V takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -13657,9 +14345,11 @@ call K8V(DDV,1210,C8V)
 call ExecuteFunc("LHV")
 set DLV=null
 endfunction
+
 function Q5E takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$75303049
 endfunction
+
 function Q5V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13705,9 +14395,11 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function Q6E takes nothing returns boolean
 return RX
 endfunction
+
 function Q6V takes nothing returns nothing
 local unit GQV=GetEnumUnit()
 local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
@@ -13722,12 +14414,14 @@ endif
 set GQV=null
 set FQV=null
 endfunction
+
 function Q7E takes nothing returns nothing
 call SetUnitFlyHeight(GetTriggerUnit(),GetUnitDefaultFlyHeight(GetTriggerUnit()),0.)
 call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),11.,"|cffBB3333Hybrid|r towers always sell for 50%, even if newly built.")
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function Q8V takes nothing returns nothing
 local unit GQV=GetEnumUnit()
 local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
@@ -13742,25 +14436,32 @@ endif
 set GQV=null
 set FQV=null
 endfunction
+
 function Q9E takes nothing returns boolean
 return GetBooleanOr(GetUnitTypeId(GetFilterUnit())==$68303656,GetUnitTypeId(GetFilterUnit())==$6830365A)
 endfunction
+
 function QAE takes nothing returns boolean
 return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_STRUCTURE) and GetOwningPlayer(GetTriggerUnit())==GetTriggerPlayer())!=false!=false!=false
 endfunction
+
 function QBE takes nothing returns boolean
 return IsUnitInGroup(GetTriggerUnit(),RE[1+GetPlayerId(GetTriggerPlayer())])
 endfunction
+
 function QCE takes nothing returns nothing
 call GroupRemoveUnit(RE[1+GetPlayerId(GetTriggerPlayer())],GetTriggerUnit())
 endfunction
+
 function QDE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(0) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QEE takes nothing returns nothing
 call GroupRemoveUnit(TN,GetTriggerUnit())
 call TriggerExecute(WU)
 endfunction
+
 function QFE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13772,6 +14473,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QGE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13783,6 +14485,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QGV takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local player DLV=GetTriggerPlayer()
@@ -13807,15 +14510,18 @@ set DLV=null
 set KCV=null
 set QHV=null
 endfunction
+
 function QHE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(2) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QIE takes nothing returns nothing
 set PE=GetCancelledStructure()
 call GroupRemoveUnit(SE,PE)
 call GroupRemoveUnit(SN,PE)
 call TriggerExecute(WU)
 endfunction
+
 function QJE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13827,9 +14533,11 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QKE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(3) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QLE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13841,9 +14549,11 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QME takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(4) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QMV takes nothing returns nothing
 local timer FQV=GetExpiredTimer()
 call SetPlayerState(Player(LoadInteger(C6[0],85,GetHandleId(FQV))),ConvertPlayerState(5),1)
@@ -13851,9 +14561,11 @@ call FlushChildHashtable(C6[0],85)
 call DestroyTimer(FQV)
 set FQV=null
 endfunction
+
 function QNE takes nothing returns nothing
 call GroupAddUnit(RE[1+GetPlayerId(GetTriggerPlayer())],GetTriggerUnit())
 endfunction
+
 function QOE takes nothing returns nothing
 set PE=GetTriggerUnit()
 call SetUnitVertexColorBJ(PE,100.,100.,100.,50.)
@@ -13875,6 +14587,7 @@ if GetUnitTypeId(GetTriggerUnit())==$68303630 then
 call SetUnitVertexColorBJ(PE,100.,100.,100.,65.)
 endif
 endfunction
+
 function QPE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13886,6 +14599,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QPV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13899,12 +14613,15 @@ call EnableTrigger(GetTriggeringTrigger())
 set DLV=null
 set FQV=null
 endfunction
+
 function QQE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(5) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QRE takes nothing returns boolean
 return IsUnitType(GetCancelledStructure(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
+
 function QSE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13916,6 +14633,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QTV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -13937,6 +14655,7 @@ call FOV(C7V,5,990,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+990],N6[1])
 set DLV=null
 endfunction
+
 function QSV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -13952,9 +14671,11 @@ call DKV(DDV,1010,80,0,0,N6[1])
 call ExecuteFunc("QTV")
 set DLV=null
 endfunction
+
 function QTE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(6) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QUE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -13966,6 +14687,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QUV takes nothing returns nothing
 local camerafield FNV=ConvertCameraField(6)
 local player DLV=GetTriggerPlayer()
@@ -14003,12 +14725,15 @@ set FNV=null
 set DLV=null
 set DHV=null
 endfunction
+
 function QVE takes nothing returns boolean
 return IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
+
 function QWE takes nothing returns boolean
 return (GetOwningPlayer(GetLeavingUnit())==Player(7) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
+
 function QWV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -14024,6 +14749,7 @@ call K8V(DDV,1390,C8V)
 call ExecuteFunc("L2V")
 set DLV=null
 endfunction
+
 function QXE takes nothing returns nothing
 set PE=GetConstructingStructure()
 call GroupAddUnit(SE,PE)
@@ -14037,6 +14763,7 @@ endif
 call ResetUnitAnimation(PE)
 call TriggerExecute(WU)
 endfunction
+
 function QYE takes nothing returns nothing
 local real x=GetPlayerStartLocationX(GetOwningPlayer(GetLeavingUnit()))
 local real y=GetPlayerStartLocationY(GetOwningPlayer(GetLeavingUnit()))
@@ -14048,6 +14775,7 @@ set S8=null
 call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 call TriggerSleepAction(4.)
 endfunction
+
 function QYV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -14093,6 +14821,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function QZE takes nothing returns nothing
 local integer i
 set EE=0
@@ -14280,6 +15009,7 @@ loop
 	exitwhen i>47 // 8 Players * 6 Units
 endloop
 endfunction
+
 function QZV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -14295,9 +15025,11 @@ call K8V(DDV,1330,C8V)
 call ExecuteFunc("LTV")
 set DLV=null
 endfunction
+
 function Q_E takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68303744 or GetUnitTypeId(GetTriggerUnit())==$68303745 or GetUnitTypeId(GetTriggerUnit())==$68303747 or GetUnitTypeId(GetTriggerUnit())==$68303746 or GetUnitTypeId(GetTriggerUnit())==$68303748 or GetUnitTypeId(GetTriggerUnit())==$68303749
 endfunction
+
 function Q_V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -14343,27 +15075,33 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function RBE takes nothing returns boolean
 return GetUnitTypeId(GetFilterUnit())==$68304157 or GetUnitTypeId(GetFilterUnit())==$68304137 or GetUnitTypeId(GetFilterUnit())==$68304156 and NVV(GetFilterUnit())==false
 endfunction
+
 function R0E takes nothing returns nothing
 if RBE()==false and OME()==false then
 call GroupAddUnit(P8,GetTriggerUnit())
 endif
 endfunction
+
 function R0X takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
 call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
 endfunction
+
 function R1X takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set JA=true
 call ForForce(ZI,ref_function_R0X)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AALimited Income|r: put value restrict on wisp & lumber upgrade.")
 endfunction
+
 function R2X takes nothing returns boolean
 return YN==false
 endfunction
+
 function R3X takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set YN=true
@@ -14386,9 +15124,11 @@ exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function R4X takes nothing returns boolean
 return ZN==false
 endfunction
+
 function R5X takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
@@ -14403,6 +15143,7 @@ call FogModifierStop(DF[EE])
 call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
 endif
 endfunction
+
 function R6X takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set ZN=true
@@ -14411,39 +15152,47 @@ call FogMaskEnableOn()
 call ForForce(ZI,ref_function_R5X)
 //call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAMastermind|r: Restricted vision and limited scoreboard information.")
 endfunction
+
 function R7X takes nothing returns boolean
 return ZB==false
 endfunction
+
 function OHE takes nothing returns nothing
 local timer t=CreateTimer()
 call TimerStart(t,1.,false,ref_function_OGE)
 set t=null
 endfunction
+
 function R8E takes nothing returns nothing
 call PauseUnit(GetTriggerUnit(),true)
 call IssueImmediateOrderById(GetTriggerUnit(),851972)
 call PauseUnit(GetTriggerUnit(),false)
 call OHE()
 endfunction
+
 function R8X takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set ZB=true
 //call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAHourglass|r: You receive gold for enemy leaks.")
 endfunction
+
 function R9X takes nothing returns boolean
 return FC==false
 endfunction
+
 function RAX takes nothing returns nothing
 if GetUnitTypeId(GetEnumUnit())!=$6830304B and GetUnitTypeId(GetEnumUnit())!=$68303648 then
 call ExplodeUnitBJ(GetEnumUnit())
 call GroupRemoveUnit(SE,GetEnumUnit())
 endif
 endfunction
+
 function RCE takes nothing returns nothing
 if RBE()==false and GetUnitTypeId(GetFilterUnit())==$68303854==false and IsUnitIllusion(GetFilterUnit())==false and IsUnitIllusion(GetSummonedUnit())==false and GetUnitTypeId(GetFilterUnit())==$6E303039==false and GetUnitTypeId(GetFilterUnit())==$68303832==false and GetUnitTypeId(GetFilterUnit())==$68303833==false then
 call UnitApplyTimedLifeBJ(150.,$42544C46,GetTriggerUnit())
 endif
 endfunction
+
 function RBX takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(RJE(Player(9)))==1 then
@@ -14453,6 +15202,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function RNX takes nothing returns boolean
 local boolean b=false
 if CountPlayersInForceBJ(RJE(Player(8)))==1 then
@@ -14462,6 +15212,7 @@ set S8=null
 endif
 return b
 endfunction
+
 function RCX takes nothing returns nothing
 set OX=Player(-1+SF)
 call MultiboardSetItemValueBJ(JR,1,DC[1+GetPlayerId(OX)],"|cff888888"+GetPlayerName(Player(-1+1+GetPlayerId(OX)))+"|r")
@@ -14524,12 +15275,15 @@ set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endif
 endfunction
+
 function RDE takes nothing returns boolean
 return IsUnitType(GetTriggerUnit(),UNIT_TYPE_SAPPER)!=false!=false
 endfunction
+
 function R9E takes location IVE,real IEE,real IXE returns location
 return Location(GetLocationX(IVE)+IEE*Cos(IXE*bj_DEGTORAD),GetLocationY(IVE)+IEE*Sin(IXE*bj_DEGTORAD))
 endfunction
+
 
 function RDX takes nothing returns nothing
 	local string printGameModes
@@ -14580,6 +15334,7 @@ function RDX takes nothing returns nothing
 	call ShowTextTagForceBJ(true,BC,bj_FORCE_ALL_PLAYERS)
 endfunction
 
+
 function REE takes nothing returns nothing
 local unit RXE=GetAttacker()
 local unit ROE=GetTriggerUnit()
@@ -14595,6 +15350,7 @@ set ROE=null
 set RXE=null
 set ROE=null
 endfunction
+
 function REX takes nothing returns nothing
 set EE=CountPlayersInForceBJ(ZI)
 if GetClickedButton()==MF then
@@ -14634,6 +15390,7 @@ set ZF[EG]=false
 endif
 call MultiboardDisplay(JR,true)
 endfunction
+
 function RFE takes nothing returns nothing
 local integer i=1
 call UnitAddAbility(GetTriggerUnit(),$41657468)
@@ -14648,14 +15405,17 @@ set i=i+1
 endloop
 endif
 endfunction
+
 function RFX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
 set GA=true
 endfunction
+
 function RGE takes nothing returns nothing
 call UnitRemoveAbility(GetTriggerUnit(),$41657468)
 endfunction
+
 function RGX takes nothing returns nothing
 local player p=GetEnumPlayer()
 call SetPlayerTechMaxAllowedSwap($52303047,6,p)
@@ -14671,6 +15431,7 @@ call ReRollNah(p)
 set MN=true
 set p=null
 endfunction
+
 function RHX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
@@ -14679,6 +15440,7 @@ set SH=true
 call A_V(1.)
 call ForForce(ZI,ref_function_RGX)
 endfunction
+
 function RIE takes nothing returns nothing
 local unit u=GetAttacker()
 local unit uu=GetTriggerUnit()
@@ -14698,11 +15460,13 @@ set uu=null
 set u=null
 set uu=null
 endfunction
+
 function RIX takes nothing returns nothing
 set YF=false
 call ForForce(ZI,ref_function_RRX)
 call MultiboardDisplay(JR,true)
 endfunction
+
 function RJX takes nothing returns nothing
 local player p=GetEnumPlayer()
 call SetPlayerTechMaxAllowedSwap($52303047,0,p)
@@ -14719,6 +15483,7 @@ set MN=true
 set G=true
 set p=null
 endfunction
+
 function RKX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
@@ -14761,6 +15526,7 @@ set OO[34]=0
 set OO[35]=0
 call ForForce(ZI,ref_function_RJX)
 endfunction
+
 function RLX takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($75303045,0,GetEnumPlayer())
 call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
@@ -14772,6 +15538,7 @@ call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetEnumPlayer())
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function RMX takes nothing returns nothing
 set EE=GetRandomInt(0,ER)
 set IX=BAE(0,ER,EE)
@@ -14787,6 +15554,7 @@ call ReplaceUnitBJ(KV[1+GetPlayerId(GetEnumPlayer())],$65303036,1)
 endif
 call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 endfunction
+
 function ROX takes nothing returns nothing
 set EE=CountPlayersInForceBJ(ZI)
 set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(EE)*.5,1,1)+")"
@@ -14813,6 +15581,7 @@ call PauseTimerBJ(true,WF)
 set YF=false
 call MultiboardDisplay(JR,true)
 endfunction
+
 function RPX takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set EC=true
@@ -14822,6 +15591,7 @@ call ForForce(ZI,ref_function_RLX)
 call A_V(1.)
 call ForForce(ZI,ref_function_RMX)
 endfunction
+
 function RRE takes nothing returns nothing
 local unit u=GetAttacker()
 local unit uu=GetTriggerUnit()
@@ -14836,9 +15606,11 @@ set uu=null
 set u=null
 set uu=null
 endfunction
+
 function RRX takes nothing returns nothing
 call DialogDisplayBJ(false,JF,GetEnumPlayer())
 endfunction
+
 function RSX takes nothing returns nothing
 call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
 set bj_forLoopAIndex=0
@@ -14849,6 +15621,7 @@ call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetEnumPlayer())
 set bj_forLoopAIndex=bj_forLoopAIndex+1
 endloop
 endfunction
+
 function RTE takes nothing returns nothing
 local unit u=GetEnumUnit()
 local real tx
@@ -14864,6 +15637,7 @@ call PauseUnit(u,false)
 set u=null
 set u=null
 endfunction
+
 function RUE takes nothing returns nothing
 local unit u=GetEnumUnit()
 local real tx
@@ -14879,9 +15653,11 @@ call PauseUnit(u,false)
 set u=null
 set u=null
 endfunction
+
 function RTX takes nothing returns boolean
 return bj_forLoopAIndex==EE
 endfunction
+
 function RUX takes nothing returns nothing
 local real x
 local real y
@@ -14974,9 +15750,11 @@ endloop
 endif
 set MN=true
 endfunction
+
 function RVX takes nothing returns boolean
 return GetClickedButton()==PF or GetClickedButton()==QF or GetClickedButton()==MF
 endfunction
+
 function RWX takes nothing returns nothing
 set EC=true
 set HA=true
@@ -14987,9 +15765,11 @@ call ForForce(ZI,ref_function_RUX)
 call TriggerExecute(AT)
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function RXX takes nothing returns nothing
 call DialogDisplayBJ(false,LF,GetEnumPlayer())
 endfunction
+
 function AXV takes string AOV returns nothing
 local sound APV=CreateSound(AOV,false,false,true,12700,12700,"")
 call StartSound(APV)
@@ -14997,6 +15777,7 @@ call KillSoundWhenDone(APV)
 set APV=null
 set APV=null
 endfunction
+
 function RWE takes real x,real y returns nothing
 local unit u=CreateUnit(Player(15),$75303036,x,y,0.)
 call SetUnitScale(u,4.,4.,4.)
@@ -15005,6 +15786,7 @@ call UnitApplyTimedLife(u,$42544C46,3.)
 set u=null
 set u=null
 endfunction
+
 function RYE takes nothing returns nothing
 if EV==Z then
 if Z>=5 then
@@ -15045,6 +15827,7 @@ endif
 set EV=Z
 endif
 endfunction
+
 function RYX takes nothing returns nothing
 if GetEnumPlayer()!=Player(0) then
 set bj_forLoopAIndex=0
@@ -15059,6 +15842,7 @@ call SetPlayerTechMaxAllowedSwap($75303045,0,GetEnumPlayer())
 call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
 endif
 endfunction
+
 function RZE takes nothing returns nothing
 if XV==VV then
 if VV>=5 then
@@ -15099,6 +15883,7 @@ endif
 set XV=VV
 endif
 endfunction
+
 function RZX takes nothing returns nothing
 set EC=true
 set RD=true
@@ -15107,29 +15892,36 @@ call A_V(1.)
 call ForForce(ZI,ref_function_RYX)
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function R_E takes nothing returns nothing
 if RBE()==false and OME()==false then
 call GroupAddUnit(M8,GetTriggerUnit())
 endif
 endfunction
+
 function R_X takes nothing returns boolean
 return JA==false
 endfunction
+
 function S1E takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852164)
 endfunction
+
 function S2E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6830344D or GetUnitTypeId(GetAttacker())==$6830344E or GetUnitTypeId(GetAttacker())==$68303647
 endfunction
+
 function S3E takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())>=50. and UnitHasBuffBJ(GetAttacker(),$4230304F)==false and UnitHasBuffBJ(GetAttacker(),$4230315A)==false then
 call UnitResetCooldown(GetAttacker())
 call IssueImmediateOrderById(GetAttacker(),852589)
 endif
 endfunction
+
 function S8E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68304344 and GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())>=3.
 endfunction
+
 function SDV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15148,6 +15940,7 @@ call FOV(C7V,5,1130,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1130],N6[1])
 set DLV=null
 endfunction
+
 function SRV takes integer C7V,integer C8V,integer DDV returns nothing
 if LoadInteger(C6[1],84,16)!=1 then
 call SaveInteger(C6[1],84,16,1)
@@ -15164,6 +15957,7 @@ endif
 call DKV(C7V,C8V,0,C8V,DDV,N6[2])
 call D5V(1090,84,16,N6[C7V+C8V])
 endfunction
+
 function SCV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -15179,9 +15973,11 @@ call SRV(DDV,1150,C8V)
 call ExecuteFunc("SDV")
 set DLV=null
 endfunction
+
 function SEE takes nothing returns boolean
 return GetSpellAbilityId()==$41303038
 endfunction
+
 function Q7V takes nothing returns nothing
 loop
 exitwhen FirstOfGroup(I6[9])==null
@@ -15190,6 +15986,7 @@ call TriggerSleepAction(1.)
 endloop
 call SaveBoolean(C6[0],4,4,N6[2])
 endfunction
+
 function Q9V takes nothing returns nothing
 loop
 exitwhen FirstOfGroup(I6[10])==null
@@ -15198,6 +15995,7 @@ call TriggerSleepAction(1.)
 endloop
 call SaveBoolean(C6[0],5,5,N6[2])
 endfunction
+
 function SVV takes unit GQV,integer C7V returns nothing
 if N6[1090+C7V] and not IsUnitInGroup(GQV,I6[9]) then
 call GroupAddUnit(I6[9],GQV)
@@ -15214,6 +16012,7 @@ call ExecuteFunc("Q9V")
 endif
 endif
 endfunction
+
 function SEV takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local unit HNV=GetAttacker()
@@ -15232,6 +16031,7 @@ set GQV=null
 set HNV=null
 set HCV=null
 endfunction
+
 function SBV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15276,6 +16076,7 @@ call FOV(C7V,10,1050,"|cffffcc00Exit|r")
 call DialogDisplay(DLV,VIV[C7V+1050],N6[1])
 set DLV=null
 endfunction
+
 function SFV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15311,6 +16112,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function SGV takes nothing returns nothing
 local unit GQV=GetTriggerUnit()
 local unit HNV=GetAttacker()
@@ -15345,6 +16147,7 @@ set KCV=null
 set KBV=null
 set SLV=null
 endfunction
+
 function SIE takes nothing returns nothing
 if GetUnitAbilityLevel(GetAttacker(),$41303845)>0 and GetUnitAbilityLevel(GetAttacker(),$42303333)==0 then
 call IssueImmediateOrderById(GetAttacker(),852101)
@@ -15353,6 +16156,7 @@ call IssueImmediateOrderById(GetAttacker(),852164)
 endif
 endif
 endfunction
+
 function SAV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15371,6 +16175,7 @@ call FOV(C7V,5,1070,"|cffffcc00Back|r")
 call DialogDisplay(DLV,VIV[C7V+1070],N6[1])
 set DLV=null
 endfunction
+
 function SIV takes nothing returns nothing
 local integer C8V=S2I(GetEventPlayerChatString())
 local player DLV=GetTriggerPlayer()
@@ -15386,16 +16191,19 @@ call SRV(DDV,1090,C8V)
 call ExecuteFunc("SAV")
 set DLV=null
 endfunction
+
 function NRV takes unit u,integer i returns nothing
 call UnitAddAbility(u,i)
 call UnitMakeAbilityPermanent(u,true,i)
 endfunction
+
 function NIV takes unit u,integer id,integer NAV returns nothing
 if GetUnitAbilityLevel(u,id)==0 then
 call NRV(u,id)
 endif
 call SetUnitAbilityLevel(u,id,NAV)
 endfunction
+
 function NFV takes unit u,integer NCV,integer NAV,real NJV,integer NDV returns nothing
 local trigger t
 local integer h
@@ -15436,11 +16244,13 @@ call NIV(u,NCV,NAV)
 set t=null
 set tt=null
 endfunction
+
 function SKE takes nothing returns nothing
 if GetUnitAbilityLevel(GetTriggerUnit(),$41393633)>0 and GetUnitTypeId(GetAttacker())==$68303958 then
 call NFV(GetAttacker(),$41393736,1,2.,0)
 endif
 endfunction
+
 function SLE takes nothing returns nothing
 local timer t=GetExpiredTimer()
 call UnitRemoveAbility(GetEnumUnit(),$41393736)
@@ -15450,6 +16260,7 @@ call DestroyTimer(t)
 set t=null
 set t=null
 endfunction
+
 function SNV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15485,12 +16296,15 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function SOE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303255 and GetUnitManaPercent(GetAttacker())==100.
 endfunction
+
 function SRE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6830414E
 endfunction
+
 function SVE takes nothing returns nothing
 call A4V(QE)
 set QE=IPE($68304355)
@@ -15642,6 +16456,7 @@ set RJ[12]=false
 endif
 call A4V(QE)
 endfunction
+
 function SXE takes nothing returns nothing
 local real x
 local real y
@@ -15692,6 +16507,7 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function SWV takes unit GQV,item FQV returns boolean
 local integer C7V=0
 loop
@@ -15703,6 +16519,7 @@ set C7V=C7V+1
 endloop
 return N6[2]
 endfunction
+
 function SYV takes nothing returns nothing
 local unit GQV=GetManipulatingUnit()
 local item FQV=GetManipulatedItem()
@@ -15721,12 +16538,15 @@ set GQV=null
 set FQV=null
 set DLV=null
 endfunction
+
 function T1E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303841
 endfunction
+
 function T2E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68323243
 endfunction
+
 function T3E takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())<GetUnitStateSwap(UNIT_STATE_MAX_MANA,GetAttacker()) then
 call SetUnitManaBJ(GetAttacker(),GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())+1.)
@@ -15736,6 +16556,7 @@ call SetUnitManaBJ(GetAttacker(),0.)
 call UnitAddAbility(GetAttacker(),$41303733)
 endif
 endfunction
+
 function SUV takes integer C7V,integer C8V,integer DDV returns nothing
 call Player(C7V)
 if LoadInteger(C6[1],8,80)!=1 then
@@ -15755,6 +16576,7 @@ endif
 call DKV(C7V,C8V,0,C8V,DDV,N6[2])
 call D5V(1470,8,80,N6[C7V+C8V])
 endfunction
+
 function SZV takes integer C7V,integer C8V,integer DDV returns nothing
 if LoadInteger(C6[1],8,70)!=1 then
 call SaveInteger(C6[1],8,70,1)
@@ -15765,6 +16587,7 @@ endif
 call DKV(C7V,C8V,0,C8V,DDV,N6[2])
 call D5V(1490,8,70,N6[C7V+C8V])
 endfunction
+
 function T6V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15777,6 +16600,7 @@ call FOV(C7V,4,810,"|cffffcc00Exit|r")
 call DialogDisplay(DLV,VIV[C7V+810],N6[1])
 set DLV=null
 endfunction
+
 function T3V takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -15840,6 +16664,7 @@ set DLV=null
 set DHV=null
 set T4V=null
 endfunction
+
 function T4E takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())<GetUnitStateSwap(UNIT_STATE_MAX_MANA,GetAttacker()) then
 call SetUnitManaBJ(GetAttacker(),GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())+1.)
@@ -15849,24 +16674,30 @@ call SetUnitManaBJ(GetAttacker(),0.)
 call UnitAddAbility(GetAttacker(),$41323733)
 endif
 endfunction
+
 function T6E takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68303832 or GetUnitTypeId(GetTriggerUnit())==$68303833 or GetUnitTypeId(GetTriggerUnit())==$68303246
 endfunction
+
 function T7E takes nothing returns nothing
 if GetUnitLifePercent(GetTriggerUnit())<=15. then
 call UnitAddAbility(GetTriggerUnit(),$41303650)
 call IssueImmediateOrderById(GetTriggerUnit(),852100)
 endif
 endfunction
+
 function T9E takes nothing returns boolean
 return GetSpellAbilityId()==$41303650
 endfunction
+
 function TAE takes nothing returns boolean
 return GetSpellAbilityId()==$41303947
 endfunction
+
 function TBE takes nothing returns boolean
 return GetSpellAbilityId()==$41303948
 endfunction
+
 function S8V takes string C9V returns integer
 local integer C7V=48
 loop
@@ -15878,9 +16709,11 @@ set C7V=C7V+1
 endloop
 return 0
 endfunction
+
 function TOV takes string C9V returns integer
 return S8V(SubString(C9V,0,1))*$1000000+S8V(SubString(C9V,1,2))*65536+S8V(SubString(C9V,2,3))*256+S8V(SubString(C9V,3,4))
 endfunction
+
 function TBV takes nothing returns nothing
 local player DLV=Player(LoadInteger(C6[0],256,0))
 local integer C8V=LoadInteger(C6[1],0,18)
@@ -15903,6 +16736,7 @@ set DLV=null
 set GQV=null
 set QHV=null
 endfunction
+
 function TCE takes nothing returns nothing
 local real x
 local real y
@@ -15968,6 +16802,7 @@ call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 call UnitAddAbility(GetTriggerUnit(),$41303950)
 endif
 endfunction
+
 function TCV takes nothing returns nothing
 local player DLV=Player(LoadInteger(C6[0],256,0))
 local integer C7V=LoadInteger(C6[1],0,18)
@@ -15977,12 +16812,15 @@ call RemoveLocation(QHV)
 set DLV=null
 set QHV=null
 endfunction
+
 function TEE takes nothing returns boolean
 return GetSpellAbilityId()==$41303945
 endfunction
+
 function TFE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303342
 endfunction
+
 function TGE takes nothing returns nothing
 local real x
 local real y
@@ -15996,9 +16834,11 @@ call IssueTargetOrderById(PE,852066,GetAttacker())
 call UnitApplyTimedLifeBJ(4.,$42544C46,PE)
 endif
 endfunction
+
 function THE takes nothing returns boolean
 return GetUnitTypeId(GetKillingUnit())==$68303342
 endfunction
+
 function S1V takes string C9V returns integer
 local integer C7V=0
 if S2I(C9V)==0 then
@@ -16014,6 +16854,7 @@ return S2I(C9V)
 endif
 return 0
 endfunction
+
 function THV takes nothing returns nothing
 local string C9V=GetEventPlayerChatString()
 local integer G_V=LoadInteger(C6[1],0,18)
@@ -16075,6 +16916,7 @@ set DLV=null
 set K5V=null
 set HYV=null
 endfunction
+
 function TJE takes nothing returns nothing
 local real x=GetUnitX(GetKillingUnit())
 local real y=GetUnitY(GetKillingUnit())
@@ -16084,9 +16926,11 @@ call UnitAddAbility(PE,$41303256)
 call IssueTargetOrderById(PE,852066,GetKillingUnit())
 call UnitApplyTimedLifeBJ(4.,$42544C46,PE)
 endfunction
+
 function TME takes nothing returns boolean
 return GetSpellAbilityId()==$41303658
 endfunction
+
 function TNE takes nothing returns nothing
 local real x
 local real y
@@ -16152,9 +16996,11 @@ call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 call UnitAddAbility(GetTriggerUnit(),$41303950)
 endif
 endfunction
+
 function TOE takes nothing returns boolean
 return GetSpellAbilityId()==$41303946
 endfunction
+
 function TPE takes nothing returns nothing
 local real x=GetUnitX(GetSpellAbilityUnit())
 local real y=GetUnitY(GetSpellAbilityUnit())
@@ -16164,9 +17010,11 @@ call UnitAddAbility(PE,$4130365A)
 call IssueTargetOrderById(PE,852101,GetSpellAbilityUnit())
 call UnitApplyTimedLifeBJ(4.,$42544C46,PE)
 endfunction
+
 function TQE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303831
 endfunction
+
 function TRE takes nothing returns nothing
 local real x
 local real y
@@ -16232,6 +17080,7 @@ call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 call UnitAddAbility(GetTriggerUnit(),$41303950)
 endif
 endfunction
+
 function TRV takes nothing returns nothing
 local player DLV=Player(LoadInteger(C6[0],256,0))
 local integer C8V=LoadInteger(C6[1],0,18)
@@ -16254,6 +17103,7 @@ set DLV=null
 set FQV=null
 set QHV=null
 endfunction
+
 function TTE takes nothing returns nothing
 local real x
 local real y
@@ -16267,9 +17117,11 @@ else
 call SetUnitManaBJ(GetAttacker(),GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())+1.)
 endif
 endfunction
+
 function TUE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68303841
 endfunction
+
 function TVE takes nothing returns nothing
 local real x=GetUnitX(GetAttacker())
 local real y=GetUnitY(GetAttacker())
@@ -16296,6 +17148,7 @@ call SetUnitManaBJ(GetAttacker(),0.)
 endif
 call UnitApplyTimedLife(PE,$42544C46,2.)
 endfunction
+
 function TXE takes nothing returns nothing
 local real x
 local real y
@@ -16362,6 +17215,7 @@ call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 call UnitAddAbility(GetTriggerUnit(),$41303950)
 endif
 endfunction
+
 function TYE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -16385,9 +17239,11 @@ call GroupAddUnit(RG[EE],PE)
 call SetUnitUserData(PE,EE)
 call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
+
 function TZE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303830
 endfunction
+
 function T_E takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())<4. then
 call UnitRemoveAbility(GetAttacker(),$41303736)
@@ -16397,15 +17253,19 @@ else
 call SetUnitManaBJ(GetAttacker(),GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())-5.)
 endif
 endfunction
+
 function U0E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303735 and GetUnitManaPercent(GetAttacker())==100.
 endfunction
+
 function U2E takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852127)
 endfunction
+
 function U3E takes nothing returns boolean
 return GetSpellAbilityId()==$41303533
 endfunction
+
 function U4E takes nothing returns nothing
 local real x
 local real y
@@ -16430,12 +17290,15 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function U5E takes nothing returns boolean
 return GetBooleanAnd(GetUnitUserData(GetFilterUnit())==1+GetPlayerId(GetEnumPlayer()),GetBooleanAnd(IsUnitAliveBJ(GetFilterUnit()),GetUnitTypeId(GetFilterUnit())==$68303659))
 endfunction
+
 function U7E takes nothing returns boolean
 return GetBooleanAnd(GetUnitUserData(GetFilterUnit())==1+GetPlayerId(GetEnumPlayer()),GetBooleanAnd(IsUnitAliveBJ(GetFilterUnit()),GetUnitTypeId(GetFilterUnit())==$68303658))
 endfunction
+
 function U8E takes nothing returns nothing
 set QE=ISE(CA[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U5E))
 set NA=ISE(CA[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U7E))
@@ -16454,6 +17317,7 @@ endif
 call A4V(QE)
 call A4V(NA)
 endfunction
+
 function UBE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -16463,14 +17327,17 @@ call UnitAddAbility(UE,$41303138)
 call IssueImmediateOrderById(UE,852526)
 call UnitApplyTimedLifeBJ(3.,$42544C46,UE)
 endfunction
+
 function UCE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68303339
 endfunction
+
 function IQV takes player IMV returns force
 set XQV=CreateForce()
 call ForceAddPlayer(XQV,IMV)
 return XQV
 endfunction
+
 function P0V takes nothing returns nothing
 local trigger FQV
 local integer C7V
@@ -16489,6 +17356,7 @@ call TriggerAddAction(FQV,ref_function_PZV)
 call ExecuteFunc("PHV")
 set FQV=null
 endfunction
+
 function PQV takes nothing returns nothing
 local integer C7V=FKV(GetPlayerId(GetTriggerPlayer()))
 if N6[C7V+730]!=N6[1] then
@@ -16499,6 +17367,7 @@ endif
 call DKV(C7V,730,34,0,0,N6[1])
 call ExecuteFunc("PHV")
 endfunction
+
 function PYV takes integer C7V,integer C8V,integer DDV returns nothing
 local player DLV=Player(C7V)
 if N6[C7V+C8V]!=N6[1] then
@@ -16521,6 +17390,7 @@ call DKV(C7V,C8V,C8V,0,0,N6[1])
 call ExecuteFunc("PHV")
 set DLV=null
 endfunction
+
 function UCV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -16604,6 +17474,7 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function UDE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -16614,6 +17485,7 @@ call UnitAddAbility(UE,$41303245)
 call IssueImmediateOrderById(UE,852526)
 call UnitApplyTimedLifeBJ(3.,$42544C46,UE)
 endfunction
+
 function UDV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -16645,9 +17517,11 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function UFE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303330 and GetUnitAbilityLevelSwapped($41303555,GetAttacker())==0
 endfunction
+
 function UFV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local unit GQV=GetTriggerUnit()
@@ -16682,10 +17556,12 @@ set DLV=null
 set GQV=null
 set QHV=null
 endfunction
+
 function UHE takes nothing returns nothing
 call UnitAddAbility(GetTriggerUnit(),$41303555)
 call UnitAddAbility(GetTriggerUnit(),$41303556)
 endfunction
+
 function UIE takes nothing returns nothing
 local real x=GetUnitX(GetAttacker())
 local real y=GetUnitY(GetAttacker())
@@ -16700,25 +17576,31 @@ call UnitApplyTimedLifeBJ(3.,$42544C46,NVE)
 set NVE=null
 set NVE=null
 endfunction
+
 function UJE takes nothing returns nothing
 call UnitResetCooldown(GetEnumUnit())
 call IssueImmediateOrderById(GetEnumUnit(),852526)
 call IssueImmediateOrderById(GetEnumUnit(),851972)
 endfunction
+
 function UKE takes nothing returns nothing
 set QE=IPE($68303731)
 call ForGroup(QE,ref_function_UJE)
 call A4V(QE)
 endfunction
+
 function ULE takes nothing returns boolean
 return GetSpellAbilityId()==$41303631
 endfunction
+
 function UME takes nothing returns boolean
 return GetBooleanAnd(GetOwningPlayer(GetFilterUnit())==GetOwningPlayer(GetSpellAbilityUnit()),GetFilterUnit()!=GetSpellAbilityUnit())
 endfunction
+
 function UNE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68303338
 endfunction
+
 function UNV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -16738,9 +17620,11 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function UOE takes nothing returns nothing
 call IssueTargetOrderById(GetAttacker(),852587,GetTriggerUnit())
 endfunction
+
 function UQE takes nothing returns nothing
 if GetUnitAbilityLevelSwapped($41303630,GetEnumUnit())==0 then
 call UnitAddAbility(GetEnumUnit(),$41303630)
@@ -16748,9 +17632,11 @@ call UnitAddAbility(GetEnumUnit(),$41303635)
 call UnitAddAbility(GetEnumUnit(),$41303633)
 endif
 endfunction
+
 function ULV takes integer C7V returns boolean
 return LoadBoolean(C6[0],0,C7V+10) or LoadBoolean(C6[0],0,C7V+30)
 endfunction
+
 function UPV takes eventid J4V returns string
 local string C9V=""
 if J4V==ConvertPlayerEvent(17) then
@@ -16766,6 +17652,7 @@ set C9V=LoadStr(C6[0],0,7)
 endif
 return C9V
 endfunction
+
 function UQV takes nothing returns nothing
 local gamecache UYV=InitGameCache("FukKiCP.w3v")
 local string P_V=GetEventPlayerChatString()
@@ -16817,9 +17704,11 @@ set UYV=null
 set DLV=null
 set J4V=null
 endfunction
+
 function URE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303332
 endfunction
+
 function USE takes nothing returns nothing
 local real x=GetUnitX(GetSpellAbilityUnit())
 local real y=GetUnitY(GetSpellAbilityUnit())
@@ -16828,9 +17717,11 @@ call ForGroup(NA,ref_function_UQE)
 call A4V(NA)
 call A4V(QE)
 endfunction
+
 function UUE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6830365A or GetUnitTypeId(GetAttacker())==$68303336
 endfunction
+
 function UVE takes nothing returns nothing
 local unit u=GetSpellAbilityUnit()
 local real x=GetUnitX(u)
@@ -16848,6 +17739,7 @@ set uu=null
 set u=null
 set uu=null
 endfunction
+
 function QJV takes integer C7V,integer C8V,integer DDV returns nothing
 local player DLV=Player(C7V)
 if N6[C7V+C8V]!=N6[1] then
@@ -16866,6 +17758,7 @@ endif
 call DKV(C7V,C8V,DDV,0,0,N6[1])
 set DLV=null
 endfunction
+
 function QQV takes integer C7V,integer C8V,integer DDV returns nothing
 local player DLV=Player(C7V)
 if N6[1]!=N6[C7V+C8V] then
@@ -16876,6 +17769,7 @@ endif
 call DKV(C7V,C8V,DDV,0,0,N6[1])
 set DLV=null
 endfunction
+
 function UVV takes nothing returns nothing
 local player DLV=GetTriggerPlayer()
 local integer C7V=GetPlayerId(DLV)
@@ -16919,68 +17813,88 @@ endif
 set DLV=null
 set DHV=null
 endfunction
+
 function UWE takes nothing returns nothing
 if GetRandomInt(1,100)<=20 and UnitHasBuffBJ(GetAttacker(),$42303239)==false then
 call IssueImmediateOrderById(GetAttacker(),852100)
 endif
 endfunction
+
 function UXE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6E303037
 endfunction
+
 function UYE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303734 and GetUnitManaPercent(GetAttacker())==100.
 endfunction
+
 function U_E takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852096)
 endfunction
+
 function V0X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,HI)
 endfunction
+
 function V1X takes nothing returns nothing
 set EE=GetUnitUserData(GetEnteringUnit())
 call GroupRemoveUnit(IG[EE],GetEnteringUnit())
 endfunction
+
 function V2E takes nothing returns nothing
 call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"right"))
 endfunction
+
 function V2X takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(11)
 endfunction
+
 function V3X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,UD)
 endfunction
+
 function V4E takes nothing returns nothing
 call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"left"))
 endfunction
+
 function V4X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,GO)
 endfunction
+
 function V5E takes nothing returns nothing
 call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"down"))
 endfunction
+
 function V5X takes nothing returns nothing
 set EE=GetUnitUserData(GetEnteringUnit())
 call GroupRemoveUnit(IG[EE],GetEnteringUnit())
 endfunction
+
 function V6X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,TD)
 endfunction
+
 function V7X takes nothing returns nothing
 call IssueTargetOrderById(GetTriggerUnit(),851983,H6)
 endfunction
+
 function V8X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,UD)
 endfunction
+
 function V9X takes nothing returns nothing
 call IssueTargetOrderById(GetTriggerUnit(),851983,U6)
 endfunction
+
 function VAX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41393634,GetEnumPlayer())
 endfunction
+
 function VBX takes nothing returns nothing
 call TriggerRegisterAnyUnitEventBJ(PG,EVENT_PLAYER_UNIT_ATTACKED)
 call TriggerAddAction(PG,ref_function_VNX)
 endfunction
+
 function VCX takes nothing returns nothing
 local unit u=GetTriggerUnit()
 local real x=GetUnitX(u)
@@ -17022,12 +17936,15 @@ set u=null
 set d=null
 set u=null
 endfunction
+
 function Z6E takes nothing returns boolean
 return IsUnitInGroup(GetEnumUnit(),ZD) or IsUnitInGroup(GetEnumUnit(),VF)
 endfunction
+
 function Z7E takes nothing returns boolean
 return YD==false and Z6E()
 endfunction
+
 function VDX takes nothing returns nothing
 local real x=GetRectCenterX(IM)
 local real y=GetRectCenterY(IM)
@@ -17054,17 +17971,20 @@ set U8=U8+GetUnitName(PE)+", "
 endif
 endif
 endfunction
+
 function IJE takes real IEE,location IVE returns group
 set G8=A5V()
 call GroupEnumUnitsInRangeOfLoc(G8,IVE,IEE,T8)
 return G8
 endfunction
+
 function VVX takes nothing returns nothing
 if U8!=null then
 endif
 call ForGroup(W8,ref_function_Z8E)
 set U8=null
 endfunction
+
 function VFX takes nothing returns nothing
 set FE=GetSpellTargetLoc()
 set QE=IJE(250.,FE)
@@ -17081,6 +18001,7 @@ call VVX()
 call A4V(QE)
 call RemoveLocation(FE)
 endfunction
+
 function VGX takes nothing returns nothing
 local group g=null
 local unit u
@@ -17106,9 +18027,11 @@ call RemoveLocation(FE)
 set g=null
 set u=null
 endfunction
+
 function VHX takes nothing returns boolean
 return PA and YD==false
 endfunction
+
 function VIX takes nothing returns nothing
 call UnitAddAbility(GetTriggerUnit(),$41393635)
 call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_VRX)
@@ -17117,6 +18040,7 @@ call A_V(15.)
 call UnitRemoveAbility(GetTriggerUnit(),$41393635)
 set RJ[18]=false
 endfunction
+
 function VJX takes nothing returns nothing
 local real x
 local real y
@@ -17146,22 +18070,26 @@ call GroupAddUnit(ZD,GetEnumUnit())
 call GroupAddUnit(FG,GetEnumUnit())
 endif
 endfunction
+
 function VKX takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if CountUnitsInGroup(OA[EE])>0 and CountUnitsInGroup(IG[EE])==0 then
 call ForGroup(OA[EE],ref_function_VJX)
 endif
 endfunction
+
 function VLX takes nothing returns nothing
 if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
 call IssueTargetOrderById(GetEnumUnit(),851983,H6)
 endif
 endfunction
+
 function VMX takes nothing returns nothing
 if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
 call IssueTargetOrderById(GetEnumUnit(),851983,U6)
 endif
 endfunction
+
 function VNX takes nothing returns nothing
 if GetAttacker()==H6 and NVV(GetTriggerUnit())==false then
 set LE=GetTriggerUnit()
@@ -17169,12 +18097,15 @@ elseif GetAttacker()==U6 and NVV(GetTriggerUnit())==false then
 set ME=GetTriggerUnit()
 endif
 endfunction
+
 function VEX takes nothing returns boolean
 return XME(RP,GetEnumUnit())==false
 endfunction
+
 function VXX takes nothing returns boolean
 return XME(IP,GetEnumUnit())==false
 endfunction
+
 function VOX takes nothing returns nothing
 set EE=1+GetPlayerId(GetTriggerPlayer())
 set PE=GetEnumUnit()
@@ -17184,27 +18115,33 @@ call IssuePointOrderByIdLoc(PE,851983,XF[EE])
 endif
 endif
 endfunction
+
 function VPX takes nothing returns nothing
 if true then
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,CI)
 endif
 endfunction
+
 function VQX takes nothing returns nothing
 if true then
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,DI)
 endif
 endfunction
+
 function VRX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41393635,GetEnumPlayer())
 endfunction
+
 function VSX takes nothing returns boolean
 return GetUnitCurrentOrder(GetEnumUnit())!=851983 and XME(RP,GetEnumUnit())==false and XME(IP,GetEnumUnit())==false
 endfunction
+
 function VTX takes nothing returns nothing
 if VSX() and VEX() and VXX() then
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,EN[EE])
 endif
 endfunction
+
 function VUX takes nothing returns nothing
 if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
 if EE<=4 then
@@ -17214,6 +18151,7 @@ call IssuePointOrderByIdLoc(GetEnumUnit(),851983,GO)
 endif
 endif
 endfunction
+
 function VWX takes nothing returns nothing
 set EE=1+GetPlayerId(GetEnumPlayer())
 if CountUnitsInGroup(IG[EE])==0 then
@@ -17223,6 +18161,7 @@ if BG==false and CountUnitsInGroup(RG[EE])==0 then
 call ForGroup(IG[EE],ref_function_VUX)
 endif
 endfunction
+
 function VYX takes nothing returns nothing
 if BG then
 call ForForce(YI,ref_function_VKX)
@@ -17235,42 +18174,53 @@ if CG then
 call ForForce(YI,ref_function_VWX)
 endif
 endfunction
+
 function VZX takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(10)
 endfunction
+
 function V_E takes nothing returns nothing
 call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"up"))
 endfunction
+
 function V_X takes nothing returns nothing
 call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,TD)
 endfunction
+
 function W0E takes nothing returns boolean
 return RX
 endfunction
+
 function W2E takes nothing returns boolean
 return GetBooleanAnd(IsUnitInGroup(GetFilterUnit(),XA),UnitHasBuffBJ(GetFilterUnit(),$42303159))
 endfunction
+
 function W3E takes nothing returns nothing
 call A4V(ON)
 set ON=IRE(bj_mapInitialPlayableArea,Condition(ref_function_W2E))
 endfunction
+
 function W4E takes nothing returns boolean
 return GetSpellAbilityId()==$41303439
 endfunction
+
 function W5E takes nothing returns nothing
 local real x=GetUnitX(GetSpellAbilityUnit())
 local real y=GetUnitY(GetSpellAbilityUnit())
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIam\\AIamTarget.mdl",x,y))
 call SetUnitVertexColorBJ(GetSpellAbilityUnit(),100.,100.,100.,65.)
 endfunction
+
 function W6E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303854
 endfunction
+
 function W8E takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())>=30. then
 call IssueImmediateOrderById(GetAttacker(),852123)
 endif
 endfunction
+
 function WAE takes nothing returns nothing
 local real x=GetRandomReal(GetRectMinX(IM),GetRectMaxX(IM))
 local real y=GetRandomReal(GetRectMinY(IM),GetRectMaxY(IM))
@@ -17279,9 +18229,11 @@ call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\Mas
 call SetUnitPosition(GetTriggerUnit(),x,y)
 endif
 endfunction
+
 function WBE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68304150
 endfunction
+
 function WCE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -17293,12 +18245,15 @@ call GroupAddUnit(RG[EE],PE)
 call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
+
 function WEE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303950
 endfunction
+
 function WFE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68304153
 endfunction
+
 function WHE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -17310,9 +18265,11 @@ call GroupAddUnit(RG[EE],PE)
 call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
+
 function WJE takes nothing returns boolean
 return GetUnitTypeId(GetTriggerUnit())==$68304435 and false
 endfunction
+
 function WKE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -17323,9 +18280,11 @@ call GroupAddUnit(ZE,PE)
 call GroupAddUnit(RG[EE],PE)
 call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 endfunction
+
 function WLE takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$68304158
 endfunction
+
 function WME takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -17336,6 +18295,7 @@ call GroupAddUnit(ZE,PE)
 call GroupAddUnit(RG[EE],PE)
 call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 endfunction
+
 function WNE takes nothing returns nothing
 if GetUnitTypeId(GetTriggerUnit())==$68304137 then
 call UnitApplyTimedLifeBJ(4.,$42544C46,GetTriggerUnit())
@@ -17347,12 +18307,15 @@ endif
 call IssueImmediateOrderById(GetTriggerUnit(),852055)
 call IssueImmediateOrderById(GetTriggerUnit(),852520)
 endfunction
+
 function WOE takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852055)
 endfunction
+
 function WQE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303643
 endfunction
+
 function WTE takes nothing returns nothing
 local real x
 local real y
@@ -17366,18 +18329,23 @@ call IssueTargetOrderById(PE,852066,GetAttacker())
 call UnitApplyTimedLifeBJ(4.,$42544C46,PE)
 endif
 endfunction
+
 function WUE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303639 or GetUnitTypeId(GetAttacker())==$68303641 or GetUnitTypeId(GetAttacker())==$68393937
 endfunction
+
 function WVE takes nothing returns nothing
 call ForForce(ZI,ref_function_U8E)
 endfunction
+
 function WWE takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852526)
 endfunction
+
 function WYE takes nothing returns boolean
 return IsUnitInGroup(GetDyingUnit(),ON)
 endfunction
+
 function WZE takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -17388,6 +18356,7 @@ call UnitAddAbility(UE,$41303456)
 call IssueImmediateOrderById(UE,852526)
 call UnitApplyTimedLifeBJ(3.,$42544C46,UE)
 endfunction
+
 function X0X takes nothing returns nothing
 set QD=true
 if (QA and GetOwningPlayer(GetAttacker())==Player(8)) or (SA and GetOwningPlayer(GetAttacker())==Player(9)) then
@@ -17410,14 +18379,17 @@ call RemoveLocation(FE)
 call RemoveLocation(NX)
 endif
 endfunction
+
 function X1X takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303036,GetPlayerTechCountSimple($52303036,GetEnumPlayer())+2,GetEnumPlayer())
 call SetPlayerTechResearchedSwap($52303037,GetPlayerTechCountSimple($52303037,GetEnumPlayer())+2,GetEnumPlayer())
 endfunction
+
 function X2X takes nothing returns nothing
 call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_X1X)
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Your King received +2 armor and +10% increased attack speed.")
 endfunction
+
 function X3X takes nothing returns nothing
 set PE=H6
 set EE=kingSpell
@@ -17453,6 +18425,7 @@ call DestroyForce(S8)
 set S8=null
 set EB=EB+1
 endfunction
+
 function X4X takes nothing returns nothing
 local image img
 set PE=H6
@@ -17486,6 +18459,7 @@ set img=null
 endif
 set img=null
 endfunction
+
 function X5X takes nothing returns nothing
 set PE=U6
 set EE=kingSpell
@@ -17522,6 +18496,7 @@ call DestroyForce(S8)
 set S8=null
 set EB=EB+1
 endfunction
+
 function X6X takes nothing returns nothing
 local image img
 set PE=U6
@@ -17555,9 +18530,11 @@ set img=null
 endif
 set img=null
 endfunction
+
 function X7X takes nothing returns boolean
 return AE==false
 endfunction
+
 function X8X takes nothing returns nothing
 call LeaderboardSetPlayerItemValueBJ(Player(8),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,H6)))
 call LeaderboardSetPlayerItemValueBJ(Player(9),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,U6)))
@@ -17572,9 +18549,11 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"|cffFF0000Right King has l
 set GI=120
 endif
 endfunction
+
 function X9X takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(8)
 endfunction
+
 function XAX takes nothing returns nothing
 set BG=true
 set HB[GetUnitUserData(GetTriggerUnit())]=HB[GetUnitUserData(GetTriggerUnit())]+1
@@ -17610,12 +18589,15 @@ else
 call UnitAddAbility(GetTriggerUnit(),$41303852)
 endif
 endfunction
+
 function XBE takes nothing returns nothing
 call ETE("U",1)
 endfunction
+
 function XBX takes nothing returns nothing
 call UnitShareVisionBJ(true,GetEnteringUnit(),GetEnumPlayer())
 endfunction
+
 function XCX takes nothing returns nothing
 if ZN then
 call ForForce(RJE(GetOwningPlayer(GetEnteringUnit())),ref_function_XBX)
@@ -17623,18 +18605,23 @@ call DestroyForce(S8)
 set S8=null
 endif
 endfunction
+
 function XDE takes nothing returns nothing
 call ETE("D",1)
 endfunction
+
 function XDX takes nothing returns boolean
 return GetUnitTypeId(GetEnteringUnit())==WV[OE] and QX[OE]!=1
 endfunction
+
 function XEX takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(10) or GetOwningPlayer(GetEnteringUnit())==Player(11)
 endfunction
+
 function XFE takes nothing returns nothing
 call ETE("E",1)
 endfunction
+
 function XFX takes nothing returns nothing
 local real x=GetRectCenterX(PL)
 local real y=GetRectCenterY(PL)
@@ -17649,9 +18636,11 @@ set S8=null
 call PlaySoundOnUnitBJ(RQ,100.,GetEnteringUnit())
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function XGX takes nothing returns boolean
 return GetUnitTypeId(GetEnteringUnit())==WV[OE] and QX[OE]!=1
 endfunction
+
 function XHE takes nothing returns nothing
 local string XJE=GetEventPlayerChatString()
 local integer XKE=0
@@ -17664,6 +18653,7 @@ set XKE=XKE+1
 endloop
 call ETE(XJE,StringLength(XJE))
 endfunction
+
 function XHX takes nothing returns nothing
 local real x=GetRectCenterX(LK)
 local real y=GetRectCenterY(LK)
@@ -17678,38 +18668,50 @@ set S8=null
 call PlaySoundOnUnitBJ(RQ,100.,GetEnteringUnit())
 call DisableTrigger(GetTriggeringTrigger())
 endfunction
+
 function XIX takes nothing returns boolean
 return GetUnitTypeId(GetEnteringUnit())==WV[OE] and QX[OE]!=1 and OE!=10 and OE!=20 and OE!=30 and OE<30
 endfunction
+
 function XJX takes nothing returns boolean
 return GetUnitTypeId(GetSoldUnit())==$75303038 or GetUnitTypeId(GetSoldUnit())==$75303039 or GetUnitTypeId(GetSoldUnit())==$75303041 or GetUnitTypeId(GetSoldUnit())==$75393938 or GetUnitTypeId(GetSoldUnit())==$75393939 or GetUnitTypeId(GetSoldUnit())==$75393941 or GetUnitTypeId(GetSoldUnit())==$75393964 or GetUnitTypeId(GetSoldUnit())==$75393972 or GetUnitTypeId(GetSoldUnit())==$75393937 or GetUnitTypeId(GetSoldUnit())=='u01K'
 endfunction
+
 function XKX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303030,GetPlayerTechCountSimple($52303030,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XLX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303031,GetPlayerTechCountSimple($52303031,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XMX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303031,GetPlayerTechCountSimple($52303031,GetEnumPlayer())+5,GetEnumPlayer())
 endfunction
+
 function XNE takes nothing returns nothing
 call ETE("R",1)
 endfunction
+
 function XNX takes nothing returns boolean
 return GetOwningPlayer(GetEnteringUnit())==Player(10) or GetOwningPlayer(GetEnteringUnit())==Player(11)
 endfunction
+
 function XOX takes nothing returns boolean
 return GetOwningPlayer(GetLeavingUnit())==Player(10) or GetOwningPlayer(GetLeavingUnit())==Player(11)
 endfunction
+
 function XPX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303032,GetPlayerTechCountSimple($52303032,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XQX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52303032,GetPlayerTechCountSimple($52303032,GetEnumPlayer())+5,GetEnumPlayer())
 endfunction
+
 function XRX takes nothing returns nothing
 endfunction
+
 function XSE takes nothing returns nothing
 local integer i=0
 local real XZE=.6
@@ -17803,15 +18805,19 @@ endif
 set OXE=0
 endif
 endfunction
+
 function XSX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52393939,GetPlayerTechCountSimple($52393939,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XTX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52393938,GetPlayerTechCountSimple($52393938,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XUX takes nothing returns nothing
 call SetPlayerTechResearchedSwap($52393935,GetPlayerTechCountSimple($52393935,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
+
 function XVX takes nothing returns nothing
 local real x=GetUnitX(GetTriggerUnit())
 local real y=GetUnitY(GetTriggerUnit())
@@ -17821,13 +18827,16 @@ set y=GetRectCenterY(MJ)
 call SetUnitPosition(GetTriggerUnit(),x,y)
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
 endfunction
+
 function XWX takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41393636,GetEnumPlayer())
 endfunction
+
 function XXX takes nothing returns nothing
 call UnitAddAbility(GetEnteringUnit(),$41303637)
 call UnitAddAbility(GetEnteringUnit(),$41303638)
 endfunction
+
 function XYX takes nothing returns nothing
 if IsPlayerAlly(GetOwningPlayer(GetSellingUnit()),Player(8)) then
 set OX=Player(8)
@@ -18058,6 +19067,7 @@ else
 call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GO))
 endif
 endfunction
+
 function XZX takes nothing returns nothing
 set EE=0
 set EE=EE+1
@@ -18078,9 +19088,11 @@ set EE=EE+1
 set OR[EE]=$4130315A
 set XR=EE
 endfunction
+
 function X_X takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6830304B or GetUnitTypeId(GetAttacker())==$68303648
 endfunction
+
 function Y0E takes nothing returns nothing
 if IsPlayerAlly(GetOwningPlayer(GetEnumUnit()),Player(8)) and GetUnitCurrentOrder(GetEnumUnit())==0 then
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,NX)
@@ -18088,6 +19100,7 @@ elseif IsPlayerAlly(GetOwningPlayer(GetEnumUnit()),Player(9)) and GetUnitCurrent
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,NX)
 endif
 endfunction
+
 function Y1E takes nothing returns nothing
 call ForGroup(IG[1],ref_function_Y_E)
 call ForGroup(IG[2],ref_function_Y_E)
@@ -18098,13 +19111,16 @@ call ForGroup(IG[6],ref_function_Y_E)
 call ForGroup(IG[7],ref_function_Y_E)
 call ForGroup(IG[8],ref_function_Y_E)
 endfunction
+
 function Y2E takes nothing returns nothing
 call ForGroup(VF,ref_function_Y0E)
 call ForGroup(IF,ref_function_Y0E)
 endfunction
+
 function Y3E takes nothing returns boolean
 return IsUnitType(GetSummonedUnit(),UNIT_TYPE_SUMMONED)!=false!=false!=false
 endfunction
+
 function Y4E takes nothing returns nothing
 local real x
 local real y
@@ -18118,18 +19134,23 @@ set x=GetUnitX(PE)
 set y=GetUnitY(PE)
 call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
 endfunction
+
 function Y5E takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68304352 or GetUnitTypeId(GetAttacker())==$68304354 or GetUnitTypeId(GetAttacker())==$68303347 or GetUnitTypeId(GetAttacker())==$68303348 or GetUnitTypeId(GetAttacker())==$6830334D or GetUnitTypeId(GetAttacker())==$6830334E or GetUnitTypeId(GetAttacker())==$68303837 or GetUnitTypeId(GetAttacker())==$68304259 or GetUnitTypeId(GetAttacker())==$6830425A or GetUnitTypeId(GetAttacker())==$75303035
 endfunction
+
 function Y6E takes nothing returns boolean
 return GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())==GetUnitStateSwap(UNIT_STATE_MAX_MANA,GetAttacker()) and Y5E()
 endfunction
+
 function Y7E takes nothing returns nothing
 call IssueImmediateOrderById(GetAttacker(),852097)
 endfunction
+
 function Y8E takes nothing returns boolean
 return GetUnitTypeId(GetDyingUnit())==$48303855
 endfunction
+
 function Y9E takes nothing returns nothing
 local real x=GetUnitX(GetDyingUnit())
 local real y=GetUnitY(GetDyingUnit())
@@ -18146,12 +19167,15 @@ else
 call GroupAddUnit(MA[2],PE)
 endif
 endfunction
+
 function YFE takes nothing returns nothing
 call IssueTargetOrderById(GetAttacker(),852119,GetTriggerUnit())
 endfunction
+
 function YHE takes nothing returns boolean
 return IsUnitIllusion(GetSummonedUnit())
 endfunction
+
 function YJE takes nothing returns nothing
 set PE=GetSummonedUnit()
 set EE=GetUnitUserData(GetSummoningUnit())
@@ -18159,9 +19183,11 @@ call SetUnitUserData(PE,EE)
 call GroupAddUnit(RG[EE],PE)
 call GroupAddUnit(ZE,PE)
 endfunction
+
 function YKE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6830344E
 endfunction
+
 function N4E takes unit NVE,string ATE,real IEE,real IXE,real N1E,real N7E,real N8E,player RSE returns nothing
 local texttag N2E
 local force N3E
@@ -18192,6 +19218,7 @@ set N2E=null
 set N3E=null
 set IVE=null
 endfunction
+
 function YLE takes nothing returns nothing
 local unit NVE=GetAttacker()
 local unit FYE=GetTriggerUnit()
@@ -18213,17 +19240,21 @@ set NVE=null
 set FYE=null
 set RSE=null
 endfunction
+
 function YME takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303244
 endfunction
+
 function YPE takes nothing returns nothing
 if GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())<10. then
 call SetUnitManaBJ(GetAttacker(),GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())+1.)
 endif
 endfunction
+
 function YQE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303248
 endfunction
+
 function YSE takes nothing returns nothing
 local unit NVE
 local real x
@@ -18242,9 +19273,11 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function YTE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$6E303044
 endfunction
+
 function YUE takes nothing returns nothing
 if GetUnitLifePercent(GetAttacker())>=51. then
 call UnitRemoveAbility(GetAttacker(),$41303941)
@@ -18252,12 +19285,15 @@ elseif GetUnitLifePercent(GetAttacker())<=50. then
 call UnitAddAbility(GetAttacker(),$41303941)
 endif
 endfunction
+
 function YVE takes nothing returns boolean
 return GetUnitTypeId(GetAttacker())==$68303932 and GetUnitManaPercent(GetAttacker())==100.
 endfunction
+
 function YWE takes nothing returns boolean
 return GetBooleanAnd(IsPlayerEnemy(GetOwningPlayer(GetFilterUnit()),GetOwningPlayer(GetEnumUnit())),IsUnitType(GetFilterUnit(),UNIT_TYPE_GIANT))!=false!=false!=false
 endfunction
+
 function YYE takes nothing returns nothing
 local real x=GetUnitX(GetEnumUnit())
 local real y=GetUnitY(GetEnumUnit())
@@ -18279,11 +19315,13 @@ call IssuePointOrderByIdLoc(GetEnumUnit(),851983,GO)
 endif
 call A4V(NA)
 endfunction
+
 function YZE takes nothing returns nothing
 set QE=IPE($4830354B)
 call ForGroup(QE,ref_function_YYE)
 call A4V(QE)
 endfunction
+
 function Y_E takes nothing returns nothing
 if IsPlayerAlly(GetOwningPlayer(GetEnumUnit()),Player(10)) and GetUnitCurrentOrder(GetEnumUnit())==0 then
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,HI)
@@ -18291,6 +19329,7 @@ elseif IsPlayerAlly(GetOwningPlayer(GetEnumUnit()),Player(11)) and GetUnitCurren
 call IssuePointOrderByIdLoc(GetEnumUnit(),851983,GO)
 endif
 endfunction
+
 function Z0E takes nothing returns nothing
 local group g=null
 local integer i=0
@@ -18328,6 +19367,7 @@ set u=null
 set g=null
 set u=null
 endfunction
+
 function Z1E takes nothing returns nothing
 local group g=null
 local real x=GetUnitX(GetTriggerUnit())
@@ -18381,9 +19421,11 @@ set g=null
 set u=null
 set uu=null
 endfunction
+
 function Z2E takes nothing returns boolean
 return GetSpellAbilityId()==$41393535
 endfunction
+
 function Z3E takes nothing returns boolean
 local boolean b=false
 local integer i=1
@@ -18468,9 +19510,11 @@ return b
 call DestroyForce(S8)
 set S8=null
 endfunction
+
 function Y_10 takes nothing returns boolean
 return HCC==false
 endfunction
+
 function Y_11 takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set HCC=true
@@ -18491,15 +19535,18 @@ set QX[33]=7
 set QX[34]=11
 set QX[35]=2
 endfunction
+
 function Y_9 takes nothing returns boolean
 return GL==false
 endfunction
+
 function Y19 takes nothing returns nothing
 call DisableTrigger(GetTriggeringTrigger())
 set GL=true
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEconomic Growth|r: Use Food to Increase Your Income")
 call ForForce(ZI,ref_function_Y0X)
 endfunction
+
 function Y0X takes nothing returns nothing
 local player RSE=Player(0)
 set Y66=CreateUnit(RSE,'e031',-5888.,4252.,300.)
@@ -18522,9 +19569,11 @@ set TLL1[1+GetPlayerId(GetEnumPlayer())]=TLL[5]
 endif
 set RSE=null
 endfunction
+
 function G9 takes nothing returns boolean
 return(GetUnitTypeId(GetSoldUnit())=='u01K')
 endfunction
+
 function J9 takes nothing returns nothing
 if GL then
 set BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+10
@@ -18535,9 +19584,11 @@ if GL==false then
 call DisplayTimedTextToPlayer(GetTriggerPlayer(),0.,0.,5.,"You can use |cffB0C4DEEconomic Growth|r only in EG mode.")
 endif
 endfunction
+
 function F99 takes nothing returns boolean
 return(GetUnitTypeId(GetConstructingStructure())==$68303234)
 endfunction
+
 function F88 takes nothing returns nothing
 //set IX=T88[1+GetPlayerId(GetTriggerPlayer())]
 if GL then
@@ -18547,6 +19598,7 @@ call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffB0C4DEEconomic Growth
 //call ForForce(call ForForce(bj_FORCE_ALL_PLAYER,ref_function_TRL1)
 endif
 endfunction
+
 function TRL takes nothing returns nothing
 set TLL[1]="I"
 set TLL[2]="II"
@@ -18554,9 +19606,11 @@ set TLL[3]="III"
 set TLL[4]="IV"
 set TLL[5]="V"
 endfunction
+
 function TRL1 takes nothing returns nothing
 //call ForForce(ZI,ref_function_TRL2)
 endfunction
+
 function TRL2 takes nothing returns nothing
 if T88[1+GetPlayerId(GetTriggerPlayer())]<=15 then
 set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[1]
@@ -18570,9 +19624,11 @@ elseif T88[1+GetPlayerId(GetTriggerPlayer())]>45 then
 set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[5]
 endif
 endfunction
+
 function F100 takes nothing returns boolean
 return(GetUnitTypeId(GetCancelledStructure())==$68303234)
 endfunction
+
 function F101 takes nothing returns nothing
 if GL then
 call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffB0C4DEEconomic Growth|r: -10")
@@ -18580,9 +19636,11 @@ set T88[1+GetPlayerId(GetTriggerPlayer())]=T88[1+GetPlayerId(GetTriggerPlayer())
 call ForForce(ZI,ref_function_TRL2)
 endif
 endfunction
+
 function F111 takes nothing returns boolean
 return (GetUnitTypeId(GetFilterUnit())==$68303234)
 endfunction
+
 function F112 takes nothing returns nothing
 set FTP=GetUnitLoc(GetEnumUnit())
 set T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]+1
@@ -18604,48 +19662,62 @@ call SetTextTagLifespanBJ(GetLastCreatedTextTag(), 2.00)
 call SetTextTagFadepointBJ(GetLastCreatedTextTag(), 1.00)
 call RemoveLocation(FTP)
 endfunction
+
 function FTA takes nothing returns nothing
 call DestroyGroup(FGG)
 set FGG=GetUnitsInRectMatching(GetPlayableMapRect(),Condition(ref_function_F111))
 call ForGroupBJ(FGG,ref_function_F112)
 endfunction
 
+
 function Z4E takes nothing returns boolean
 return GetSpellAbilityId()==$41393639
 endfunction
+
 function Z8E takes nothing returns nothing
 call GroupRemoveUnit(W8,GetEnumUnit())
 endfunction
+
 function ZAE takes nothing returns boolean
 return GetPlayerSlotState(Player(1))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(1))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZBE takes nothing returns boolean
 return GetPlayerSlotState(Player(3))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(3))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZCE takes nothing returns boolean
 return GetPlayerSlotState(Player(4))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(4))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZDE takes nothing returns boolean
 return GetPlayerSlotState(Player(5))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(5))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZFE takes nothing returns boolean
 return GetPlayerSlotState(Player(6))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(6))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZGE takes nothing returns boolean
 return GetPlayerSlotState(Player(7))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(7))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZHE takes nothing returns boolean
 return JO==false and KO==false and LO==false and MO==false and IN
 endfunction
+
 function ZIE takes nothing returns boolean
 return GetPlayerSlotState(Player(0))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(0))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZJE takes nothing returns boolean
 return SR==false and TR==false and UR==false and WR==false and HO
 endfunction
+
 function ZNE takes nothing returns boolean
 return GetPlayerSlotState(Player(2))==PLAYER_SLOT_STATE_EMPTY or GetPlayerSlotState(Player(2))==PLAYER_SLOT_STATE_LEFT
 endfunction
+
 function ZKE takes nothing returns nothing
 if ZIE() then
 set JO=false
@@ -18682,44 +19754,57 @@ call UnitAddItemByIdSwapped($49303030,U6)
 set HO=false
 endif
 endfunction
+
 function ZLE takes nothing returns boolean
 return GetSpellAbilityId()==$41303530
 endfunction
+
 function ZME takes nothing returns boolean
 return GetSpellAbilityId()==$41393831 and IsUnitInRegion(DO[1+GetPlayerId(GetTriggerPlayer())],GetTriggerUnit())
 endfunction
+
 function ZOE takes nothing returns boolean
 return (IsUnitType(GetEnteringUnit(),UNIT_TYPE_GROUND) and GetUnitDefaultFlyHeight(GetEnteringUnit())>25.)!=false!=false!=false
 endfunction
+
 function ZPE takes nothing returns boolean
 return GetSpellAbilityId()==$41393731
 endfunction
+
 function ZQE takes nothing returns nothing
 call SetPlayerAbilityAvailableBJ(false,$41393533,GetEnumPlayer())
 endfunction
+
 function ZRE takes nothing returns nothing
 call UnitAddAbility(GetEnteringUnit(),$41726176)
 call SetUnitFlyHeight(GetEnteringUnit(),GetUnitDefaultFlyHeight(GetEnteringUnit()),0.)
 call UnitRemoveAbility(GetEnteringUnit(),$41726176)
 endfunction
+
 function ZSE takes nothing returns boolean
 return GetUnitTypeId(GetFilterUnit())==$75303035 and IsPlayerAlly(GetOwningPlayer(GetTriggerUnit()),GetOwningPlayer(GetFilterUnit()))
 endfunction
+
 function ZTE takes nothing returns boolean
 return GetUnitTypeId(GetFilterUnit())==$75303131 and IsPlayerAlly(GetOwningPlayer(GetTriggerUnit()),GetOwningPlayer(GetFilterUnit()))
 endfunction
+
 function ZUE takes nothing returns boolean
 return GetSpellAbilityId()==$41303135 and T>0
 endfunction
+
 function ZVE takes nothing returns boolean
 return IsUnitType(GetSpellAbilityUnit(),UNIT_TYPE_GIANT)!=false!=false!=false
 endfunction
+
 function ZWE takes nothing returns boolean
 return GetSpellAbilityId()==$41304242 and U>0
 endfunction
+
 function ZEE takes unit NVE returns boolean
 return GetUnitAbilityLevelSwapped($41303137,NVE)>0 and RectContainsUnit(RL,NVE)==false and RectContainsUnit(IL,NVE)==false
 endfunction
+
 function ZXE takes nothing returns nothing
 local unit NVE=GetSpellAbilityUnit()
 call A_V(1.)
@@ -18729,9 +19814,11 @@ endif
 set NVE=null
 set NVE=null
 endfunction
+
 function ZYE takes nothing returns boolean
 return GetSpellAbilityId()==$41304243 and W>0
 endfunction
+
 function ZZE takes nothing returns nothing
 local group g=null
 local unit u
@@ -18754,6 +19841,7 @@ set u=null
 set g=null
 set u=null
 endfunction
+
 function Z_E takes nothing returns nothing
 local group g=null
 local unit u
@@ -18776,9 +19864,11 @@ set u=null
 set g=null
 set u=null
 endfunction
+
 function currentCallback takes nothing returns integer
 return ClosureForGroups_tempCallbacks[ClosureForGroups_tempCallbacksCount-1]
 endfunction
+
 function alloc_LLEntry takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18798,14 +19888,17 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function LLEntry_init takes integer this returns nothing
 endfunction
+
 function construct_LLEntry takes integer this,integer elem,integer prev,integer next returns nothing
 call LLEntry_init(this)
 set LLEntry_elem[this]=elem
 set LLEntry_prev[this]=prev
 set LLEntry_next[this]=next
 endfunction
+
 function new_LLEntry takes integer elem,integer prev,integer next,string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18815,6 +19908,7 @@ call construct_LLEntry(this,elem,prev,next)
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function LinkedList_add_1 takes integer this,integer elems_0,string w__wurst_stackPos returns nothing
 local integer entry
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18825,6 +19919,7 @@ set LLEntry_prev[LinkedList_dummy[this]]=entry
 set LinkedList_size[this]=LinkedList_size[this]+1
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dispatch_LinkedList_LinkedList_LinkedList_add_1 takes integer this,integer elems_0,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -18838,18 +19933,22 @@ endif
 call LinkedList_add_1(this,elems_0,"when calling add in LinkedList, line 37")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function handle_getHandleId takes handle this returns integer
 return GetHandleId(this)
 endfunction
+
 function unitToIndex takes unit object returns integer
 return handle_getHandleId(object)
 endfunction
+
 function callback_forEachFrom_LinkedList takes integer this,unit u,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call dispatch_LinkedList_LinkedList_LinkedList_add_1(result[this],unitToIndex(u),"when calling add in LinkedList, line 515")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dispatch_ForGroupCallback_ClosureForGroups_ForGroupCallback_callback takes integer this,unit u,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -18863,6 +19962,7 @@ endif
 call callback_forEachFrom_LinkedList(this,u,"when calling callback_forEachFrom_LinkedList in ClosureForGroups, line 4")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function filterCallback takes unit filter,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -18872,19 +19972,23 @@ endif
 set ClosureForGroups_iterCount=ClosureForGroups_iterCount+1
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function code__Filter_ClosureForGroups takes string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call filterCallback(GetFilterUnit(),"when calling filterCallback in ClosureForGroups, line 14")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function bridge_code__Filter_ClosureForGroups takes nothing returns nothing
 set wurst_stack_depth=0
 call code__Filter_ClosureForGroups("via function reference ClosureForGroups, line 14")
 endfunction
+
 function Table_loadInt takes integer this,integer parentKey returns integer
 return hashtable_loadInt(Table_ht,this,parentKey)
 endfunction
+
 function dispatch_Table_Table_Table_loadInt takes integer this,integer parentKey,string w__wurst_stackPos returns integer
 local integer Table_Table_loadInt_result
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18900,6 +20004,7 @@ set Table_Table_loadInt_result=Table_loadInt(this,parentKey)
 set wurst_stack_depth=wurst_stack_depth-1
 return Table_Table_loadInt_result
 endfunction
+
 function HashMap_get takes integer this,integer key,string w__wurst_stackPos returns integer
 local integer stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18908,6 +20013,7 @@ set stackTrace_tempReturn=dispatch_Table_Table_Table_loadInt(this,key,"when call
 set wurst_stack_depth=wurst_stack_depth-1
 return stackTrace_tempReturn
 endfunction
+
 function dispatch_HashMap_HashMap_HashMap_get takes integer this,integer key,string w__wurst_stackPos returns integer
 local integer HashMap_HashMap_get_result
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18923,12 +20029,15 @@ set HashMap_HashMap_get_result=HashMap_get(this,key,"when calling get in HashMap
 set wurst_stack_depth=wurst_stack_depth-1
 return HashMap_HashMap_get_result
 endfunction
+
 function hashtable_loadTriggerHandle takes hashtable this,integer parentKey,integer childKey returns trigger
 return LoadTriggerHandle(this,parentKey,childKey)
 endfunction
+
 function Table_loadTrigger takes integer this,integer parentKey returns trigger
 return hashtable_loadTriggerHandle(Table_ht,this,parentKey)
 endfunction
+
 function dispatch_Table_Table_Table_loadTrigger takes integer this,integer parentKey,string w__wurst_stackPos returns trigger
 local trigger Table_Table_loadTrigger_result
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18946,12 +20055,15 @@ set dispatch_Table_Table_Table_loadTriggertempReturn=Table_Table_loadTrigger_res
 set Table_Table_loadTrigger_result=null
 return dispatch_Table_Table_Table_loadTriggertempReturn
 endfunction
+
 function hashtable_saveFogStateHandle takes hashtable this,integer parentKey,integer childKey,fogstate value returns nothing
 call SaveFogStateHandle(this,parentKey,childKey,value)
 endfunction
+
 function Table_saveFogState takes integer this,integer parentKey,fogstate value returns nothing
 call hashtable_saveFogStateHandle(Table_ht,this,parentKey,value)
 endfunction
+
 function dispatch_Table_Table_Table_saveFogState takes integer this,integer parentKey,fogstate value,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -18965,6 +20077,7 @@ endif
 call Table_saveFogState(this,parentKey,value)
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function triggerFromIndex takes integer index,string w__wurst_stackPos returns trigger
 local trigger stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18976,9 +20089,11 @@ set triggerFromIndextempReturn=stackTrace_tempReturn
 set stackTrace_tempReturn=null
 return triggerFromIndextempReturn
 endfunction
+
 function trigger_evaluate takes trigger this returns boolean
 return TriggerEvaluate(this)
 endfunction
+
 function code__registerPlayerUnitEvent_RegisterEvents takes string w__wurst_stackPos returns boolean
 local boolean stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -18987,30 +20102,38 @@ set stackTrace_tempReturn=trigger_evaluate(triggerFromIndex(dispatch_HashMap_Has
 set wurst_stack_depth=wurst_stack_depth-1
 return stackTrace_tempReturn
 endfunction
+
 function bridge_code__registerPlayerUnitEvent_RegisterEvents takes nothing returns boolean
 set wurst_stack_depth=0
 return code__registerPlayerUnitEvent_RegisterEvents("via function reference RegisterEvents, line 58")
 endfunction
+
 function call_doAfter_ClosureTimers takes integer this returns nothing
 set ClosureTimers_x=ClosureTimers_x+50
 endfunction
+
 function call_doAfter_ClosureTimers_1801 takes integer this returns nothing
 set ClosureTimers_x=ClosureTimers_x*2
 endfunction
+
 function int_toString takes integer this returns string
 return I2S(this)
 endfunction
+
 function testFail takes string msg returns nothing
 endfunction
+
 function int_assertEquals takes integer this,integer expected returns nothing
 if this!=expected then
 call testFail("Expected <"+int_toString(expected)+">, Actual <"+int_toString(this)+">")
 endif
 endfunction
+
 function call_doAfter_ClosureTimers_1802 takes integer this returns nothing
 set ClosureTimers_x=ClosureTimers_x/2
 call int_assertEquals(ClosureTimers_x,250)
 endfunction
+
 function FastFinish_reset takes integer team_1 returns nothing
 local integer teamVariable
 local integer cond_result
@@ -19030,15 +20153,19 @@ set FastFinish_voted[i+teamVariable]=false
 set i=i+1
 endloop
 endfunction
+
 function printTimed takes string msg,real duration returns nothing
 call DisplayTimedTextToPlayer(Player_localPlayer,0.,0.,duration,msg)
 endfunction
+
 function string_length takes string this returns integer
 return StringLength(this)
 endfunction
+
 function string_substring takes string this,integer start,integer stop returns string
 return SubString(this,start,stop)
 endfunction
+
 function string_indexOf takes string this,string s returns integer
 local integer i=0
 local integer temp=string_length(this)-string_length(s)
@@ -19051,6 +20178,7 @@ set i=i+1
 endloop
 return -1
 endfunction
+
 function string_indexOf_1926 takes string this,string s,integer startpos returns integer
 local integer i=startpos
 local integer temp=string_length(this)-string_length(s)
@@ -19063,6 +20191,7 @@ set i=i+1
 endloop
 return -1
 endfunction
+
 function string_replace takes string this,string oldSubstring,string newSubstring returns string
 local string s=this
 local integer i
@@ -19076,6 +20205,7 @@ endloop
 endif
 return s
 endfunction
+
 function string_format_1 takes string this,string replacements_0 returns string
 local string result_1=this
 local integer i=0
@@ -19083,21 +20213,26 @@ set result_1=string_replace(result_1,"{"+int_toString(i)+"}",replacements_0)
 set i=i+1
 return result_1
 endfunction
+
 function call_doAfter_FastFinish_FastFinish takes integer this returns nothing
 if FastFinish_voteActive[team[this]] then
 call FastFinish_reset(team[this])
 call printTimed(string_format_1("Some players in {0} team wanna continue to play. Voting has closed",teamName[this]),7.)
 endif
 endfunction
+
 function unit_kill takes unit this returns nothing
 call KillUnit(this)
 endfunction
+
 function call_doAfter_FastFinish_FastFinish_1804 takes integer this returns nothing
 call unit_kill(H6)
 endfunction
+
 function call_doAfter_FastFinish_FastFinish_1805 takes integer this returns nothing
 call unit_kill(U6)
 endfunction
+
 function dispatch_CallbackSingle_ClosureTimers_CallbackSingle_call takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19129,9 +20264,11 @@ call call_doAfter_FastFinish_FastFinish_1805(this)
 endif
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function timer_getHandleId takes timer this returns integer
 return GetHandleId(this)
 endfunction
+
 function timer_getData takes timer this,string w__wurst_stackPos returns integer
 local integer stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19140,12 +20277,15 @@ set stackTrace_tempReturn=dispatch_Table_Table_Table_loadInt(TimerUtils_timerDat
 set wurst_stack_depth=wurst_stack_depth-1
 return stackTrace_tempReturn
 endfunction
+
 function timer_pause takes timer this returns nothing
 call PauseTimer(this)
 endfunction
+
 function Table_saveInt takes integer this,integer parentKey,integer value returns nothing
 call hashtable_saveInt(Table_ht,this,parentKey,value)
 endfunction
+
 function dispatch_Table_Table_Table_saveInt takes integer this,integer parentKey,integer value,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19159,12 +20299,14 @@ endif
 call Table_saveInt(this,parentKey,value)
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function timer_setData takes timer this,integer data,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call dispatch_Table_Table_Table_saveInt(TimerUtils_timerData,timer_getHandleId(this),data,"when calling saveInt in TimerUtils, line 17")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function timer_release takes timer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19184,12 +20326,14 @@ set TimerUtils_freeTimers[TimerUtils_freeTimersCount]=this
 set TimerUtils_freeTimersCount=TimerUtils_freeTimersCount+1
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function CallbackSingle_onDestroy takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call timer_release(CallbackSingle_t[this],"when calling release in ClosureTimers, line 124")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dealloc_CallbackSingle takes integer obj,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19202,6 +20346,7 @@ set CallbackSingle_typeId[obj]=0
 endif
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function destroyCallbackSingle takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19209,6 +20354,7 @@ call CallbackSingle_onDestroy(this,"when calling CallbackSingle_onDestroy in Clo
 call dealloc_CallbackSingle(this,"when calling dealloc_CallbackSingle in ClosureTimers, line 123")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dispatch_CallbackSingle_destroyCallbackSingle takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19222,6 +20368,7 @@ endif
 call destroyCallbackSingle(this,"when calling destroyCallbackSingle in ClosureTimers, line 107")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function CallbackSingle_staticCallback takes string w__wurst_stackPos returns nothing
 local timer t
 local integer cb
@@ -19234,16 +20381,19 @@ call dispatch_CallbackSingle_destroyCallbackSingle(cb,"when calling dispatch_Cal
 set wurst_stack_depth=wurst_stack_depth-1
 set t=null
 endfunction
+
 function code__start_CallbackSingle_ClosureTimers takes string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call CallbackSingle_staticCallback("when calling staticCallback in ClosureTimers, line 114")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function bridge_code__start_CallbackSingle_ClosureTimers takes nothing returns nothing
 set wurst_stack_depth=0
 call code__start_CallbackSingle_ClosureTimers("via function reference ClosureTimers, line 114")
 endfunction
+
 function initializeTable takes string w__wurst_stackPos returns nothing
 local integer i
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19256,6 +20406,7 @@ set i=i+1
 endloop
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function alloc_Table takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19277,11 +20428,14 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function Table_init takes integer this returns nothing
 endfunction
+
 function construct_Table takes integer this returns nothing
 call Table_init(this)
 endfunction
+
 function new_Table takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19291,6 +20445,7 @@ call construct_Table(this)
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function init_Colors takes string w__wurst_stackPos returns boolean
 local integer tuple_temp
 local integer tuple_temp_1
@@ -19531,10 +20686,12 @@ call initializeTable("when calling initializeTable in Colors, line 209")
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_Colors takes nothing returns boolean
 set wurst_stack_depth=0
 return init_Colors("via function reference Colors, line 1")
 endfunction
+
 function HCLDecoder_getCharFromHandicap takes integer handicap returns string
 local integer h=handicap
 local string res=""
@@ -19546,6 +20703,7 @@ set res=res+SubString(HCLDecoder_chars,v,v+1)
 endif
 return res
 endfunction
+
 function HCLDecoder_presetBlocking takes nothing returns nothing
 local integer i
 set HCLDecoder_blocked[0]=true
@@ -19556,6 +20714,7 @@ set HCLDecoder_blocked[i]=true
 set i=i+10
 endloop
 endfunction
+
 function HCLDecoder_resolveEncodingMap takes nothing returns nothing
 local integer i=0
 local integer j=0
@@ -19569,6 +20728,7 @@ set i=i+1
 set j=j+1
 endloop
 endfunction
+
 function HCLDecoder_initialize takes nothing returns nothing
 if not HCLDecoder_initialized then
 call HCLDecoder_presetBlocking()
@@ -19576,8 +20736,10 @@ call HCLDecoder_resolveEncodingMap()
 set HCLDecoder_initialized=true
 endif
 endfunction
+
 function LLIterator_onDestroy takes integer this returns nothing
 endfunction
+
 function dealloc_LLIterator takes integer obj,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19590,6 +20752,7 @@ set LLIterator_typeId[obj]=0
 endif
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function destroyLLIterator takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19597,6 +20760,7 @@ call LLIterator_onDestroy(this)
 call dealloc_LLIterator(this,"when calling dealloc_LLIterator in LinkedList, line 406")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dispatch_LLIterator_destroyLLIterator takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19610,6 +20774,7 @@ endif
 call destroyLLIterator(this,"when calling destroyLLIterator in LinkedList, line 406")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function LLIterator_close takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19618,13 +20783,16 @@ call dispatch_LLIterator_destroyLLIterator(this,"when calling dispatch_LLIterato
 endif
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function LLIterator_hasNext takes integer this returns boolean
 return LLEntry_next[LLIterator_current[this]]!=LLIterator_dummy[this]
 endfunction
+
 function LLIterator_next takes integer this returns integer
 set LLIterator_current[this]=LLEntry_next[LLIterator_current[this]]
 return LLEntry_elem[LLIterator_current[this]]
 endfunction
+
 function alloc_LLIterator takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19646,12 +20814,15 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function LLIterator_init takes integer this returns nothing
 set LLIterator_destroyOnClose[this]=true
 endfunction
+
 function LinkedList_getDummy takes integer this returns integer
 return LinkedList_dummy[this]
 endfunction
+
 function dispatch_LinkedList_LinkedList_LinkedList_getDummy takes integer this,string w__wurst_stackPos returns integer
 local integer LinkedList_LinkedList_getDummy_result
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19667,6 +20838,7 @@ set LinkedList_LinkedList_getDummy_result=LinkedList_getDummy(this)
 set wurst_stack_depth=wurst_stack_depth-1
 return LinkedList_LinkedList_getDummy_result
 endfunction
+
 function LLIterator_reset takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19674,6 +20846,7 @@ set LLIterator_dummy[this]=dispatch_LinkedList_LinkedList_LinkedList_getDummy(LL
 set LLIterator_current[this]=LLIterator_dummy[this]
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function dispatch_LLIterator_LinkedList_LLIterator_reset takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19687,6 +20860,7 @@ endif
 call LLIterator_reset(this,"when calling reset in LinkedList, line 421")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function construct_LLIterator takes integer this,integer parent,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19695,6 +20869,7 @@ set LLIterator_parent[this]=parent
 call dispatch_LLIterator_LinkedList_LLIterator_reset(this,"when calling reset in LinkedList, line 414")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function new_LLIterator takes integer parent,string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19704,6 +20879,7 @@ call construct_LLIterator(this,parent,"when calling construct_LLIterator in Link
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function LinkedList_iterator takes integer this,string w__wurst_stackPos returns integer
 local integer stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19712,6 +20888,7 @@ set stackTrace_tempReturn=new_LLIterator(this,"when calling new_LLIterator in Li
 set wurst_stack_depth=wurst_stack_depth-1
 return stackTrace_tempReturn
 endfunction
+
 function HCLDecoder_getStringFromHandicaps takes integer handicaps,string w__wurst_stackPos returns string
 local string res
 local integer iterator
@@ -19730,6 +20907,7 @@ call LLIterator_close(iterator,"when calling close in HCLDecoder, line 21")
 set wurst_stack_depth=wurst_stack_depth-1
 return res
 endfunction
+
 function alloc_LinkedList takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19751,6 +20929,7 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function LinkedList_init takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19758,6 +20937,7 @@ set LinkedList_dummy[this]=new_LLEntry(0,0,0,"when calling new_LLEntry in Linked
 set LinkedList_size[this]=0
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function construct_LinkedList2 takes integer this,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19766,6 +20946,7 @@ set LLEntry_next[LinkedList_dummy[this]]=LinkedList_dummy[this]
 set LLEntry_prev[LinkedList_dummy[this]]=LinkedList_dummy[this]
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function new_LinkedList takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19775,9 +20956,11 @@ call construct_LinkedList2(this,"when calling construct_LinkedList2 in LinkedLis
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function player_getSlotState takes player this returns playerslotstate
 return GetPlayerSlotState(this)
 endfunction
+
 function Handicaps_get takes string w__wurst_stackPos returns integer
 local integer handicaps
 local integer i
@@ -19801,6 +20984,7 @@ endloop
 set wurst_stack_depth=wurst_stack_depth-1
 return handicaps
 endfunction
+
 function Handicaps_restore takes nothing returns nothing
 local integer i=0
 local integer temp=bj_MAX_PLAYERS-1
@@ -19810,6 +20994,7 @@ call SetPlayerHandicap(Player_players[i],1.)
 set i=i+1
 endloop
 endfunction
+
 function Handicaps_getWithRestore takes string w__wurst_stackPos returns integer
 local integer handicaps
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19819,6 +21004,7 @@ call Handicaps_restore()
 set wurst_stack_depth=wurst_stack_depth-1
 return handicaps
 endfunction
+
 function getModeStringFromHcl takes string hclStr returns string
 if hclStr=="0" then
 return "phgmcbah"
@@ -19828,6 +21014,7 @@ return "prgmcbah"
 endif
 return ""
 endfunction
+
 function init_HCL_connector takes string w__wurst_stackPos returns boolean
 local string hclStr
 local string mode
@@ -19839,10 +21026,12 @@ set NF=mode
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_HCL_connector takes nothing returns boolean
 set wurst_stack_depth=0
 return init_HCL_connector("via function reference HCL_connector, line 1")
 endfunction
+
 function alloc_Comparator_LinkedList takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19862,6 +21051,7 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function alloc_Comparator_LinkedList_1784 takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19881,9 +21071,11 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function realToIndex takes real r returns integer
 return real_toInt(r*TypeCasting_R2I_PRECISION)
 endfunction
+
 function init_LinkedList takes string w__wurst_stackPos returns boolean
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19893,10 +21085,12 @@ call realToIndex(0.)
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_LinkedList takes nothing returns boolean
 set wurst_stack_depth=0
 return init_LinkedList("via function reference LinkedList, line 1")
 endfunction
+
 function alloc_HashMap takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19918,12 +21112,15 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function HashMap_init takes integer this returns nothing
 endfunction
+
 function construct_HashMap takes integer this returns nothing
 call construct_Table(this)
 call HashMap_init(this)
 endfunction
+
 function new_HashMap takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -19933,15 +21130,19 @@ call construct_HashMap(this)
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function trigger_addAction takes trigger this,code actionFunc returns triggeraction
 return TriggerAddAction(this,actionFunc)
 endfunction
+
 function trigger_addCondition takes trigger this,boolexpr condition returns triggercondition
 return TriggerAddCondition(this,condition)
 endfunction
+
 function trigger_registerPlayerUnitEvent takes trigger this,player whichPlayer,playerunitevent whichPlayerUnitEvent,boolexpr filter returns event
 return TriggerRegisterPlayerUnitEvent(this,whichPlayer,whichPlayerUnitEvent,filter)
 endfunction
+
 function registerPlayerUnitEvent_1919 takes playerunitevent p,code filter,code condition,code action returns nothing
 local integer hid=handle_getHandleId(p)
 local integer k
@@ -19977,9 +21178,11 @@ set temp=null
 set temp_1=null
 set temp_2=null
 endfunction
+
 function registerPlayerUnitEvent takes playerunitevent p,code c returns nothing
 call registerPlayerUnitEvent_1919(p,null,c,null)
 endfunction
+
 function init_RegisterEvents takes string w__wurst_stackPos returns boolean
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -19988,10 +21191,12 @@ call registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT,ref_function_bridge_
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_RegisterEvents takes nothing returns boolean
 set wurst_stack_depth=0
 return init_RegisterEvents("via function reference RegisterEvents, line 1")
 endfunction
+
 function init_TimerUtils takes string w__wurst_stackPos returns boolean
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20003,16 +21208,20 @@ call CreateTrigger()
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_TimerUtils takes nothing returns boolean
 set wurst_stack_depth=0
 return init_TimerUtils("via function reference TimerUtils, line 1")
 endfunction
+
 function hashtable_saveString takes hashtable this,integer parentKey,integer childKey,string value returns nothing
 call SaveStr(this,parentKey,childKey,value)
 endfunction
+
 function Table_saveString takes integer this,integer parentKey,string value returns nothing
 call hashtable_saveString(Table_ht,this,parentKey,value)
 endfunction
+
 function dispatch_Table_Table_Table_saveString takes integer this,integer parentKey,string value,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20026,12 +21235,14 @@ endif
 call Table_saveString(this,parentKey,value)
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function initTypecastData takes string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
 call dispatch_Table_Table_Table_saveString(TypeCasting_typecastdata,0,"","when calling saveString in TypeCasting, line 11")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function init_TypeCasting takes string w__wurst_stackPos returns boolean
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20041,16 +21252,20 @@ call initTypecastData("when calling initTypecastData in TypeCasting, line 14")
 set wurst_stack_depth=wurst_stack_depth-1
 return true
 endfunction
+
 function bridge_init_TypeCasting takes nothing returns boolean
 set wurst_stack_depth=0
 return init_TypeCasting("via function reference TypeCasting, line 1")
 endfunction
+
 function player_getController takes player this returns mapcontrol
 return GetPlayerController(this)
 endfunction
+
 function player_isIngame takes player this returns boolean
 return player_getSlotState(this)==PLAYER_SLOT_STATE_PLAYING and player_getController(this)==MAP_CONTROL_USER
 endfunction
+
 function FastFinish_countPlayers takes nothing returns nothing
 local integer i
 set FastFinish_playersCount[0]=0
@@ -20064,6 +21279,7 @@ endif
 set i=i+1
 endloop
 endfunction
+
 function Colorizer_colorize takes string str,integer color returns string
 local integer temp=color
 if temp==0 then
@@ -20096,9 +21312,11 @@ else
 return str
 endif
 endfunction
+
 function Colorizer_colorizeByPlayerId takes string str,integer pid returns string
 return Colorizer_colorize(str,Colorizer_playerColors[pid])
 endfunction
+
 function alloc_CallbackSingle_doAfter_FastFinish_FastFinish takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -20120,6 +21338,7 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1781 takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -20141,6 +21360,7 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1782 takes string w__wurst_stackPos returns integer
 local integer this
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -20162,11 +21382,14 @@ endif
 set wurst_stack_depth=wurst_stack_depth-1
 return this
 endfunction
+
 function CallbackSingle_init takes integer this returns nothing
 endfunction
+
 function construct_CallbackSingle takes integer this returns nothing
 call CallbackSingle_init(this)
 endfunction
+
 function getTimer takes string w__wurst_stackPos returns timer
 local timer receiver
 local timer stackTrace_tempReturn
@@ -20190,9 +21413,11 @@ set stackTrace_tempReturn=null
 return getTimertempReturn
 endif
 endfunction
+
 function timer_start takes timer this,real time,code timerCallBack returns nothing
 call TimerStart(this,time,false,timerCallBack)
 endfunction
+
 function CallbackSingle_start takes integer this,timer whichTimer,real time,string w__wurst_stackPos returns nothing
 local timer receiver
 local timer receiver_1
@@ -20207,6 +21432,7 @@ set wurst_stack_depth=wurst_stack_depth-1
 set receiver=null
 set receiver_1=null
 endfunction
+
 function dispatch_CallbackSingle_ClosureTimers_CallbackSingle_start takes integer this,timer whichTimer,real time,string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20220,6 +21446,7 @@ endif
 call CallbackSingle_start(this,whichTimer,time,"when calling start in ClosureTimers, line 111")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function timer_doAfter takes timer this,real timeToWait,integer cb,string w__wurst_stackPos returns integer
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20227,6 +21454,7 @@ call dispatch_CallbackSingle_ClosureTimers_CallbackSingle_start(cb,this,timeToWa
 set wurst_stack_depth=wurst_stack_depth-1
 return cb
 endfunction
+
 function doAfter takes real timeToWait,integer cb,string w__wurst_stackPos returns integer
 local integer stackTrace_tempReturn
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
@@ -20235,12 +21463,15 @@ set stackTrace_tempReturn=timer_doAfter(getTimer("when calling getTimer in Closu
 set wurst_stack_depth=wurst_stack_depth-1
 return stackTrace_tempReturn
 endfunction
+
 function player_getId takes player this returns integer
 return GetPlayerId(this)
 endfunction
+
 function player_getName takes player this returns string
 return GetPlayerName(this)
 endfunction
+
 function string_format_2 takes string this,string replacements_0,string replacements_1 returns string
 local string result_1=this
 local integer i=0
@@ -20250,6 +21481,7 @@ set result_1=string_replace(result_1,"{"+int_toString(i)+"}",replacements_1)
 set i=i+1
 return result_1
 endfunction
+
 function FastFinish_vote takes player p,string w__wurst_stackPos returns nothing
 local integer pid
 local integer team_1
@@ -20295,6 +21527,7 @@ call doAfter(3.,clVar_2,"when calling doAfter in FastFinish, line 40")
 endif
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function voteFF takes string w__wurst_stackPos returns nothing
 set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
 set wurst_stack_depth=wurst_stack_depth+1
@@ -20302,19 +21535,24 @@ call FastFinish_countPlayers()
 call FastFinish_vote(GetTriggerPlayer(),"when calling vote in FastFinish_event, line 8")
 set wurst_stack_depth=wurst_stack_depth-1
 endfunction
+
 function bridge_voteFF takes nothing returns nothing
 set wurst_stack_depth=0
 call voteFF("via function reference FastFinish_event, line 21")
 endfunction
+
 function player_isAllyOf takes player this,player p returns boolean
 return IsPlayerAlly(this,p)
 endfunction
+
 function texttag_setText takes texttag this,string text,real size returns nothing
 call SetTextTagText(this,text,size*.0023)
 endfunction
+
 function unit_getTypeId takes unit this returns integer
 return GetUnitTypeId(this)
 endfunction
+
 function code__registerPlayerUnitEvent_ShowKingInfoForObs takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer u=unit_getTypeId(GetSoldUnit())
@@ -20369,9 +21607,11 @@ set cond_result_2=null
 set tag_2=null
 set cond_result_3=null
 endfunction
+
 function code__startPeriodic_GameTimer takes nothing returns nothing
 set GameTimer_currentTime=GameTimer_currentTime+Basics_ANIMATION_PERIOD
 endfunction
+
 function eK takes nothing returns nothing
 local real wk
 if GetEventDamage()+1.>=GetUnitState(H6,UNIT_STATE_LIFE) then
@@ -20387,6 +21627,7 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,GetLocalizedString("|cff8f8f88West|
 endif
 endif
 endfunction
+
 function iK takes nothing returns nothing
 local real wk
 if GetEventDamage()+1.>=GetUnitState(U6,UNIT_STATE_LIFE) then
@@ -20402,13 +21643,16 @@ call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,GetLocalizedString("|cff8bbedbEast|
 endif
 endif
 endfunction
+
 function init_Angle takes nothing returns boolean
 return true
 endfunction
+
 function init_Basics takes nothing returns boolean
 set Basics_ANIMATION_PERIOD=.03
 return true
 endfunction
+
 function init_ClosureForGroups takes nothing returns boolean
 local real tuple_temp
 local real tuple_temp_1
@@ -20421,10 +21665,12 @@ set tuple_temp=Vectors_ZERO2_x
 set tuple_temp_1=Vectors_ZERO2_y
 return true
 endfunction
+
 function init_ClosureTimers takes nothing returns boolean
 set ClosureTimers_x=200
 return true
 endfunction
+
 function init_Colorizer takes nothing returns boolean
 set Colorizer_playerColors[0]=0
 set Colorizer_playerColors[1]=1
@@ -20440,6 +21686,7 @@ set Colorizer_playerColors[10]=10
 set Colorizer_playerColors[11]=11
 return true
 endfunction
+
 function init_ErrorHandling takes nothing returns boolean
 set ErrorHandling_MUTE_ERROR_DURATION=60
 set ErrorHandling_PRIMARY_ERROR_KEY=-1
@@ -20447,6 +21694,7 @@ set ErrorHandling_HT=InitHashtable()
 set ErrorHandling_suppressErrorMessages=false
 return true
 endfunction
+
 function init_FastFinish takes nothing returns boolean
 set FastFinish_voted[0]=false
 set FastFinish_voted[1]=false
@@ -20464,9 +21712,11 @@ set FastFinish_voteActive[0]=false
 set FastFinish_voteActive[1]=false
 return true
 endfunction
+
 function trigger_registerPlayerChatEvent takes trigger this,player whichPlayer,string chatMessageToDetect,boolean exactMatchOnly returns event
 return TriggerRegisterPlayerChatEvent(this,whichPlayer,chatMessageToDetect,exactMatchOnly)
 endfunction
+
 function init_FastFinish_event takes nothing returns boolean
 local trigger t=CreateTrigger()
 local integer i=0
@@ -20493,42 +21743,52 @@ set receiver=null
 set t2=null
 return true
 endfunction
+
 function timer_startPeriodic takes timer this,real time,code timerCallBack returns nothing
 call TimerStart(this,time,true,timerCallBack)
 endfunction
+
 function init_GameTimer takes nothing returns boolean
 set GameTimer_gameTimer=CreateTimer()
 call timer_start(GameTimer_gameTimer,100000.,null)
 call timer_startPeriodic(CreateTimer(),Basics_ANIMATION_PERIOD,ref_function_code__startPeriodic_GameTimer)
 return true
 endfunction
+
 function init_Group takes nothing returns boolean
 call CreateGroup()
 return true
 endfunction
+
 function init_HCLDecoder takes nothing returns boolean
 set HCLDecoder_chars="abcdefghijklmnopqrstuvwxyz0123456789 -=,."
 set HCLDecoder_initialized=false
 return true
 endfunction
+
 function init_HashList takes nothing returns boolean
 call InitHashtable()
 call InitHashtable()
 return true
 endfunction
+
 function init_Integer takes nothing returns boolean
 set Integer_INT_MAX=$7FFFFFFF
 return true
 endfunction
+
 function Results_setCache takes gamecache gc returns nothing
 set Results_cache=gc
 endfunction
+
 function gamecache_flush takes gamecache this returns nothing
 call FlushGameCache(this)
 endfunction
+
 function trigger_registerTimerEvent takes trigger this,real timeout,boolean periodic returns event
 return TriggerRegisterTimerEvent(this,timeout,periodic)
 endfunction
+
 function init_Ladder_events takes nothing returns boolean
 local trigger t
 call gamecache_flush(InitGameCache("dr.x"))
@@ -20540,19 +21800,24 @@ call trigger_addCondition(t,Condition(ref_function_updateInGameTimeAct))
 set t=null
 return true
 endfunction
+
 function init_Lightning takes nothing returns boolean
 return true
 endfunction
+
 function init_MagicFunctions takes nothing returns boolean
 set MagicFunctions_compiletime=false
 return true
 endfunction
+
 function init_Maths takes nothing returns boolean
 return true
 endfunction
+
 function init_Matrices takes nothing returns boolean
 return true
 endfunction
+
 function initPlayerArray takes nothing returns nothing
 local integer i=0
 local integer temp=bj_MAX_PLAYER_SLOTS-1
@@ -20562,11 +21827,13 @@ set Player_players[i]=Player(i)
 set i=i+1
 endloop
 endfunction
+
 function init_Player takes nothing returns boolean
 set Player_localPlayer=GetLocalPlayer()
 call initPlayerArray()
 return true
 endfunction
+
 function init_Playercolor takes nothing returns boolean
 call ConvertPlayerColor(24)
 call ConvertPlayerColor(25)
@@ -20574,15 +21841,19 @@ call ConvertPlayerColor(26)
 call ConvertPlayerColor(27)
 return true
 endfunction
+
 function unit_addAbility takes unit this,integer abil returns boolean
 return UnitAddAbility(this,abil)
 endfunction
+
 function unit_remove takes unit this returns nothing
 call RemoveUnit(this)
 endfunction
+
 function unit_removeAbility takes unit this,integer abil returns boolean
 return UnitRemoveAbility(this,abil)
 endfunction
+
 function init_PreloadAbilities takes nothing returns boolean
 local unit u=CreateUnit(Player(12),$75303036,0.,0.,180.)
 call unit_addAbility(u,$4130354F)
@@ -20593,18 +21864,22 @@ call unit_remove(u)
 set u=null
 return true
 endfunction
+
 function init_Printing takes nothing returns boolean
 set Printing_DEBUG_LEVEL=2
 set Printing_DEBUG_MSG_DURATION=45.
 return true
 endfunction
+
 function init_Quaternion takes nothing returns boolean
 return true
 endfunction
+
 function init_Real takes nothing returns boolean
 set Real_REAL_MAX=340282366920938000000000000000000000000.
 return true
 endfunction
+
 function init_Results takes nothing returns boolean
 set Results_data=0
 set Results_cache=null
@@ -20612,29 +21887,36 @@ set Results_senderOne=null
 set Results_senderTwo=null
 return true
 endfunction
+
 function texttag_setColor takes texttag this,integer col_red,integer col_green,integer col_blue,integer col_alpha returns nothing
 call SetTextTagColor(this,col_red,col_green,col_blue,col_alpha)
 endfunction
+
 function texttag_setPermanent takes texttag this,boolean flag returns nothing
 call SetTextTagPermanent(this,flag)
 endfunction
+
 function texttag_setPos takes texttag this,real pos_x,real pos_y,real pos_z returns nothing
 call SetTextTagPos(this,pos_x,pos_y,pos_z)
 endfunction
+
 function texttag_setVisibility takes texttag this,boolean flag returns nothing
 call SetTextTagVisibility(this,flag)
 endfunction
+
 function vec2_withZ takes real this_x,real this_y,real z returns real
 set vec2_withZ_return_x=this_x
 set vec2_withZ_return_y=this_y
 set vec2_withZ_return_z=z
 return vec2_withZ_return_x
 endfunction
+
 function vec3_toVec2 takes real this_x,real this_y,real this_z returns real
 set vec3_toVec2_return_x=this_x
 set vec3_toVec2_return_y=this_y
 return vec3_toVec2_return_x
 endfunction
+
 function createTT takes real pos_x,real pos_y,real pos_z,string message,real size,integer col_red,integer col_green,integer col_blue,integer col_alpha returns texttag
 local texttag receiver=CreateTextTag()
 local texttag receiver_1
@@ -20658,33 +21940,40 @@ set receiver_3=null
 set receiver_4=null
 return createTTtempReturn
 endfunction
+
 function texttag_showToAllyAndObs takes texttag this,player p returns nothing
 local texttag receiver=this
 call texttag_setVisibility(receiver,player_isAllyOf(Player_localPlayer,p) or IsPlayerObserver(p))
 set receiver=null
 endfunction
+
 function unit_getX takes unit this returns real
 return GetUnitX(this)
 endfunction
+
 function unit_getY takes unit this returns real
 return GetUnitY(this)
 endfunction
+
 function unit_getPos takes unit this returns real
 set unit_getPos_return_x=unit_getX(this)
 set unit_getPos_return_y=unit_getY(this)
 return unit_getPos_return_x
 endfunction
+
 function vec2_add takes real this_x,real this_y,real x,real y returns real
 set vec2_add_return_x=this_x+x
 set vec2_add_return_y=this_y+y
 return vec2_add_return_x
 endfunction
+
 function vec2_toVec3 takes real this_x,real this_y returns real
 set vec2_toVec3_return_x=this_x
 set vec2_toVec3_return_y=this_y
 set vec2_toVec3_return_z=0.
 return vec2_toVec3_return_x
 endfunction
+
 function init_ShowKingInfoForObs takes nothing returns boolean
 local texttag receiver
 local texttag receiver_1
@@ -20722,6 +22011,7 @@ set receiver_4=null
 set receiver_5=null
 return true
 endfunction
+
 function init_String takes nothing returns boolean
 set String_charset="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
 set String_numberset="0123456789"
@@ -20729,10 +22019,12 @@ call string_length(String_numberset)
 call string_length(String_charset)
 return true
 endfunction
+
 function init_Table takes nothing returns boolean
 set Table_ht=InitHashtable()
 return true
 endfunction
+
 function init_Vectors takes nothing returns boolean
 local real tuple_temp=0.
 local real tuple_temp_1=0.
@@ -20741,9 +22033,11 @@ set Vectors_ZERO2_y=tuple_temp_1
 call Location(0.,0.)
 return true
 endfunction
+
 function init_WeatherEffects takes nothing returns boolean
 return true
 endfunction
+
 function resetFFWhenLeave takes nothing returns nothing
 local player p=GetTriggerPlayer()
 local integer pid=player_getId(p)
@@ -20754,6 +22048,7 @@ call printTimed(string_format_1("{0} leave. Voting has closed",Colorizer_coloriz
 endif
 set p=null
 endfunction
+
 function Results_findSenders takes nothing returns nothing
 local integer totalPlayers=0
 local integer i=0
@@ -20786,12 +22081,15 @@ set Results_senderTwo=potentialSenders[pidx]
 endif
 set p=null
 endfunction
+
 function gamecache_saveInt takes gamecache this,string missionKey,string key,integer value returns nothing
 call StoreInteger(this,missionKey,key,value)
 endfunction
+
 function gamecache_syncInt takes gamecache this,string missionKey,string key returns nothing
 call SyncStoredInteger(this,missionKey,key)
 endfunction
+
 function Results_send takes nothing returns nothing
 call gamecache_saveInt(Results_cache,"EOG","Win1",Results_data)
 call gamecache_saveInt(Results_cache,"EOG","Win2",Results_data)
@@ -20805,6 +22103,7 @@ if Results_senderTwo==GetLocalPlayer() then
 call gamecache_syncInt(Results_cache,"EOG","Win1")
 endif
 endfunction
+
 function Results_set takes integer pid returns nothing
 local integer rez=1
 local integer i=pid
@@ -20815,6 +22114,7 @@ set i=i-1
 endloop
 set Results_data=Results_data+rez
 endfunction
+
 function sendResults takes nothing returns nothing
 local integer i=0
 local player p
@@ -20835,15 +22135,18 @@ endloop
 call Results_send()
 set p=null
 endfunction
+
 function updateInGameTime takes nothing returns nothing
 local player p=GetEnumPlayer()
 local integer pid=player_getId(p)
 set Ladder_events_udg_PlayerTime[pid+1]=PR*3600+FN*60+GN
 set p=null
 endfunction
+
 function updateInGameTimeAct takes nothing returns nothing
 call ForForce(ZI,ref_function_updateInGameTime)
 endfunction
+
 function initGlobals takes nothing returns nothing
 set BO=InitGameCache("KeyBindings.w3v")
 set V=null
@@ -22537,6 +23840,7 @@ set ref_function_bridge_code__registerPlayerUnitEvent_RegisterEvents=function br
 set ref_function_code__registerPlayerUnitEvent_ShowKingInfoForObs=function code__registerPlayerUnitEvent_ShowKingInfoForObs
 set ref_function_bridge_code__start_CallbackSingle_ClosureTimers=function bridge_code__start_CallbackSingle_ClosureTimers
 endfunction
+
 function main takes nothing returns nothing
 local trigger A6E
 local integer IQE
@@ -24711,6 +26015,7 @@ set UYV=null
 set DLV=null
 set initTrig=null
 endfunction
+
 function InitCustomPlayerSlots takes nothing returns nothing
 call SetPlayerStartLocation(Player(0),0)
 call ForcePlayerStartLocation(Player(0),0)
@@ -24773,6 +26078,7 @@ call SetPlayerRacePreference(Player(9),RACE_PREF_HUMAN)
 call SetPlayerRaceSelectable(Player(9),false)
 call SetPlayerController(Player(9),MAP_CONTROL_COMPUTER)
 endfunction
+
 function InitCustomTeams takes nothing returns nothing
 call SetPlayerTeam(Player(0),0)
 call SetPlayerTeam(Player(1),0)
@@ -24825,6 +26131,7 @@ call SetPlayerAllianceStateAllyBJ(Player(9),Player(5),true)
 call SetPlayerAllianceStateAllyBJ(Player(9),Player(6),true)
 call SetPlayerAllianceStateAllyBJ(Player(9),Player(7),true)
 endfunction
+
 function InitAllyPriorities takes nothing returns nothing
 call SetStartLocPrioCount(0,1)
 call SetStartLocPrio(0,0,1,MAP_LOC_PRIO_HIGH)
@@ -24849,6 +26156,7 @@ call SetStartLocPrio(7,6,6,MAP_LOC_PRIO_HIGH)
 call SetStartLocPrioCount(8,0)
 call SetStartLocPrioCount(9,0)
 endfunction
+
 function config takes nothing returns nothing
 call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
 call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies. Edited by Team OZE")
@@ -24870,3 +26178,4 @@ call InitCustomTeams()
 call InitAllyPriorities()
 set kingSpell=GetRandomInt(1,3)
 endfunction
+
