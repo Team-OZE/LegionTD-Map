@@ -193,7 +193,6 @@ globals
 	player array CA
 	boolean DA=false
 	boolean GA=false
-	boolean HA=false
 	boolean HCC=false
 	boolean mirrorMode=false
 	timer KA=null
@@ -727,7 +726,6 @@ globals
 	trigger M2=null
 	trigger P2=null
 	trigger Q2=null
-	trigger S2=null
 	trigger U2=null
 	trigger W2=null
 	trigger Y10=null
@@ -1284,8 +1282,6 @@ globals
 	code ref_function_RJX=null
 	code ref_function_RLX=null
 	code ref_function_RMX=null
-	code ref_function_RSX=null
-	code ref_function_RUX=null
 	code ref_function_R5X=null
 	code ref_function_INX=null
 	code ref_function_eK=null
@@ -1725,7 +1721,6 @@ globals
 	code ref_function_RQX=null
 	code ref_function_RFX=null
 	code ref_function_RPX=null
-	code ref_function_RWX=null
 	code ref_function_RHX=null
 	code ref_function_RKX=null
 	code ref_function_R2X=null
@@ -9979,19 +9974,15 @@ function ProcessGameMode takes nothing returns nothing
 			set additionalModes=true
 			call ConditionalTriggerExecute(P2)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
-			
-		//elseif parameter=="ar" then
-			//	set additionalModes=true
-			//	call ConditionalTriggerExecute(S2)
-			
+		
 		//elseif parameter=="sd" then
 			//	set additionalModes=true
 			//	call ConditionalTriggerExecute(Q2)
-			
+		
 		//elseif parameter=="ah" then
 			//	set MN=false
 			//	set yn=true
-			
+		
 		elseif parameter=="qg" then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
 			call ConditionalTriggerExecute(Y10)
@@ -10170,9 +10161,6 @@ function IQX takes nothing returns nothing
 	if TH then
 		set LN="-pr"
 	endif
-	if HA then
-		//set LN="-ar"
-	endif
 	if JB then
 		//set LN="-sd"
 	endif
@@ -10250,7 +10238,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(U2)
 	call DisableTrigger(W2)
 	call DisableTrigger(P2)
-	call DisableTrigger(S2)
 	call DisableTrigger(Q2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(V3)
@@ -16004,17 +15991,6 @@ function RRX takes nothing returns nothing
 	call DialogDisplayBJ(false,JF,GetEnumPlayer())
 endfunction
 
-function RSX takes nothing returns nothing
-	call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
-	set bj_forLoopAIndex=0
-	set bj_forLoopAIndexEnd=ER
-	loop
-		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetEnumPlayer())
-		set bj_forLoopAIndex=bj_forLoopAIndex+1
-	endloop
-endfunction
-
 function RTE takes nothing returns nothing
 	local unit u=GetEnumUnit()
 	local real tx
@@ -16051,119 +16027,8 @@ function RTX takes nothing returns boolean
 	return bj_forLoopAIndex==EE
 endfunction
 
-function RUX takes nothing returns nothing
-	local real x
-	local real y
-	set EE=GetRandomInt(1,ER)
-	call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],OC[EE],3)
-	set x=GetUnitX(bj_lastReplacedUnit)
-	set y=GetUnitY(bj_lastReplacedUnit)
-	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIil\\AIilTarget.mdl",x,y))
-	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
-	set PE=bj_lastReplacedUnit
-	if SC[1+GetPlayerId(GetEnumPlayer())]==false then
-		call UnitAddAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
-	
-	else
-		call UnitRemoveAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
-	endif
-	if EE==13 then
-		set EE=GetRandomInt(1,PB[1])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[1]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(MB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(MB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		set EE=GetRandomInt(1,PB[2])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[2]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(QB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(QB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		set EE=GetRandomInt(1,PB[3])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[3]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(SB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(SB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		set EE=GetRandomInt(1,PB[4])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[4]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(TB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(TB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		set EE=GetRandomInt(1,PB[5])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[5]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(UB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(UB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-		set EE=GetRandomInt(1,PB[6])
-		set bj_forLoopAIndex=1
-		set bj_forLoopAIndexEnd=PB[6]
-		loop
-			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-			if RTX() then
-				call SetPlayerTechMaxAllowedSwap(WB[bj_forLoopAIndex],-1,GetEnumPlayer())
-			
-			else
-				call SetPlayerTechMaxAllowedSwap(WB[bj_forLoopAIndex],0,GetEnumPlayer())
-			endif
-			set bj_forLoopAIndex=bj_forLoopAIndex+1
-		endloop
-	endif
-	set MN=true
-endfunction
-
 function RVX takes nothing returns boolean
 	return GetClickedButton()==PF or GetClickedButton()==QF or GetClickedButton()==MF
-endfunction
-
-function RWX takes nothing returns nothing
-	set EC=true
-	set HA=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00All Random|r: you will be given a random builder in a moment.")
-	call ForForce(ZI,ref_function_RSX)
-	call A_V(1.)
-	call ForForce(ZI,ref_function_RUX)
-	call TriggerExecute(AT)
-	call DisableTrigger(GetTriggeringTrigger())
 endfunction
 
 function RXX takes nothing returns nothing
@@ -22890,7 +22755,6 @@ function initGlobals takes nothing returns nothing
 	set NA=null
 	set DA=false
 	set GA=false
-	set HA=false
 	set KA=null
 	set LA=null
 	set PA=false
@@ -23368,7 +23232,6 @@ function initGlobals takes nothing returns nothing
 	set M2=null
 	set P2=null
 	set Q2=null
-	set S2=null
 	set U2=null
 	set W2=null
 	set Y10=null
@@ -23797,8 +23660,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RJX=function RJX
 	set ref_function_RLX=function RLX
 	set ref_function_RMX=function RMX
-	set ref_function_RSX=function RSX
-	set ref_function_RUX=function RUX
 	set ref_function_R5X=function R5X
 	set ref_function_INX=function INX
 	set ref_function_eK=function eK
@@ -24238,7 +24099,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RQX=function RQX
 	set ref_function_RFX=function RFX
 	set ref_function_RPX=function RPX
-	set ref_function_RWX=function RWX
 	set ref_function_RHX=function RHX
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
@@ -25889,9 +25749,6 @@ function main takes nothing returns nothing
 	set Q2=CreateTrigger()
 	call TriggerAddCondition(Q2,Condition(ref_function_RQX))
 	call TriggerAddAction(Q2,ref_function_RPX)
-	set S2=CreateTrigger()
-	call TriggerAddCondition(S2,Condition(ref_function_RQX))
-	call TriggerAddAction(S2,ref_function_RWX)
 	set U2=CreateTrigger()
 	call TriggerAddCondition(U2,Condition(ref_function_RQX))
 	call TriggerAddAction(U2,ref_function_RHX)
