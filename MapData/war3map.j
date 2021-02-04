@@ -226,7 +226,6 @@ globals
 	group SN=null
 	group TN=null
 	boolean YN=false
-	boolean VB=false
 	integer EB=0
 	integer XB=0
 	boolean OB=false
@@ -2827,7 +2826,7 @@ function AAX takes nothing returns nothing
 endfunction
 
 function ABX takes nothing returns boolean
-	return GetSpellAbilityId()==$41303834 and VB==false
+	return GetSpellAbilityId()==$41303834
 endfunction
 
 function ACX takes nothing returns nothing
@@ -10044,12 +10043,8 @@ function IQX takes nothing returns nothing
 	if x3Mode then
 		set LN=LN+"x3"
 	endif
-	if VB then
-		call MultiboardSetTitleText(JR,IR+"|cffFF0000 ("+LN+"*)|r")
+	call MultiboardSetTitleText(JR,IR+"|cffFF0000 "+LN+"|r")
 	
-	else
-		call MultiboardSetTitleText(JR,IR+"|cffFF0000 ("+LN+")|r")
-	endif
 	call ForForce(ZI,ref_function_DNE)
 endfunction
 
@@ -13328,7 +13323,7 @@ function P3E takes nothing returns nothing
 endfunction
 
 function P4E takes nothing returns boolean
-	return VB and IN and HO==false
+	return IN and HO==false
 endfunction
 
 function QCV takes nothing returns nothing
@@ -13452,7 +13447,7 @@ function P5E takes nothing returns nothing
 endfunction
 
 function P6E takes nothing returns boolean
-	return VB and IN==false and HO
+	return IN==false and HO
 endfunction
 
 function P7E takes nothing returns nothing
@@ -22497,7 +22492,6 @@ function initGlobals takes nothing returns nothing
 	set SN=null
 	set TN=null
 	set YN=false
-	set VB=false
 	set EB=0
 	set XB=0
 	set OB=false
