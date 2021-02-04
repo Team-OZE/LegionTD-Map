@@ -10036,27 +10036,27 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(P2)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
 			
-			//elseif parameter=="hp" then
+		//elseif parameter=="hp" then
 			//	set additionalModes=true
 			//	call ConditionalTriggerExecute(T2)
 			
-			//elseif parameter=="ar" then
+		//elseif parameter=="ar" then
 			//	set additionalModes=true
 			//	call ConditionalTriggerExecute(S2)
 			
-			//elseif parameter=="sd" then
+		//elseif parameter=="sd" then
 			//	set additionalModes=true
 			//	call ConditionalTriggerExecute(Q2)
 			
-			//elseif parameter=="ah" then
+		//elseif parameter=="ah" then
 			//	set MN=false
 			//	set yn=true
 			
-			//elseif parameter=="li" then
+		//elseif parameter=="li" then
 			//	call ConditionalTriggerExecute(Y2)
 		
-		elseif parameter=="eg" then
-			call ConditionalTriggerExecute(Y9)
+		//elseif parameter=="eg" then
+			//call ConditionalTriggerExecute(Y9)
 		
 		elseif parameter=="qg" then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
@@ -10093,7 +10093,7 @@ function ProcessGameMode takes nothing returns nothing
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_LUMBER,100000)
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_FOOD_CAP,1000)
 			
-			//elseif parameter=="nc" then
+		//elseif parameter=="nc" then
 			//	call ConditionalTriggerExecute(N3)
 			//	call ConditionalTriggerExecute(V3)
 			//	call ConditionalTriggerExecute(X3)
@@ -10101,19 +10101,19 @@ function ProcessGameMode takes nothing returns nothing
 			//	call DestroyTrigger(I3)
 			//	call DestroyTrigger(A3)
 			
-			//elseif parameter=="mm" then
+		//elseif parameter=="mm" then
 			//	call ConditionalTriggerExecute(V3)
 			
-			//elseif parameter=="nm" then
+		//elseif parameter=="nm" then
 			//	call ConditionalTriggerExecute(O3)
 			
-			//elseif parameter=="gg" then
+		//elseif parameter=="gg" then
 			//	call ConditionalTriggerExecute(X3)
 			
-			//elseif parameter=="cb" then
+		//elseif parameter=="cb" then
 			//	call ConditionalTriggerExecute(R3)
 			
-			//elseif parameter=="gm" then
+		//elseif parameter=="gm" then
 			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(I3)
 			//	call ConditionalTriggerExecute(V3)
@@ -10121,19 +10121,19 @@ function ProcessGameMode takes nothing returns nothing
 			//	call DestroyTrigger(A3)
 			//	call DestroyTrigger(N3)
 			
-			//elseif parameter=="gc" then
+		//elseif parameter=="gc" then
 			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(R3)
 			
-			//elseif parameter=="gl" then
+		//elseif parameter=="gl" then
 			//	call ConditionalTriggerExecute(X3)
 			//	call ConditionalTriggerExecute(Y2)
 			
-			//elseif parameter=="lc" or parameter=="cl" then
+		//elseif parameter=="lc" or parameter=="cl" then
 			//	call ConditionalTriggerExecute(R3)
 			//	call ConditionalTriggerExecute(Y2)
 			
-			//else
+		//else
 			//	set MN=false
 		endif
 		
@@ -10184,7 +10184,7 @@ function IMX takes nothing returns nothing
 		call StartTimerBJ(KA,false,1.)
 	
 	else
-		call DisplayTextToForce(bj_FORCE_PLAYER[0],"Cannot type mode untill game start.")
+		call DisplayTextToForce(bj_FORCE_PLAYER[0],"Cannot type mode until game start.")
 	endif
 endfunction
 
