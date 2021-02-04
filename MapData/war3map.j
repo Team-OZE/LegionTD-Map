@@ -356,7 +356,6 @@ globals
 	boolean VJ=false
 	boolean EJ=false
 	boolean XJ=false
-	boolean OJ=false
 	boolean array RJ
 	group array IJ
 	rect AJ=null
@@ -723,7 +722,6 @@ globals
 	trigger Z2=null
 	trigger I3=null
 	trigger A3=null
-	trigger N3=null
 	trigger C3=null
 	trigger F3=null
 	trigger G3=null
@@ -1709,8 +1707,6 @@ globals
 	code ref_function_ICX=null
 	code ref_function_IIX=null
 	code ref_function_IDX=null
-	code ref_function_IAX=null
-	code ref_function_IFX=null
 	code ref_ProcessGameMode=null
 	code ref_function_ILX=null
 	code ref_function_IMX=null
@@ -8152,19 +8148,19 @@ function F1E takes nothing returns nothing
 	call TriggerExecute(VY)
 	call A_V(8.)
 	call TriggerExecute(RW)
-	if numberLvl==11 and XJ==false and EJ==false and OJ==false then
+	if numberLvl==11 and XJ==false and EJ==false then
 		call A_V(3.)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 	
-	elseif numberLvl==6 and XJ or EJ and OJ==false then
+	elseif numberLvl==6 and XJ or EJ then
 		call A_V(3.)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 	endif
 	set PA=true
-	if EJ==false and XJ==false and OJ==false then
+	if EJ==false and XJ==false then
 		call F_E()
 	
-	elseif OJ==false and XJ and numberLvl>5 and numberLvl<30 then
+	elseif XJ and numberLvl>5 and numberLvl<30 then
 		if G==false then
 			call BGE()
 		
@@ -8172,7 +8168,7 @@ function F1E takes nothing returns nothing
 			call BPE()
 		endif
 	
-	elseif OJ==false and EJ and numberLvl<30 then
+	elseif EJ and numberLvl<30 then
 		call BME()
 	endif
 	set j=0
@@ -9224,7 +9220,7 @@ function G2E takes nothing returns nothing
 		call A_V(2.)
 		call TriggerExecute(O5)
 	endif
-	if EJ==false and XJ==false and OJ==false then
+	if EJ==false and XJ==false then
 		if numberLvl>9 and numberLvl!=19 and numberLvl<29 and G==false then
 			call A_V(1.)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"Chance for a |cffFFcc00Champion|r to be created next wave: |CFFFF0000"+I2S(Y+30)+"%|r")
@@ -9817,10 +9813,6 @@ function I4X takes nothing returns boolean
 	return GetUnitTypeId(GetTriggerUnit())==$75303054
 endfunction
 
-function IAX takes nothing returns boolean
-	return OJ==false
-endfunction
-
 function OIE takes nothing returns nothing
 	local integer i=1
 	loop
@@ -9840,12 +9832,6 @@ endfunction
 function IDX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set XJ=true
-endfunction
-
-function IFX takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set OJ=true
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Champions|r: Champions won't spawn at all")
 endfunction
 
 function IIX takes nothing returns boolean
@@ -9926,13 +9912,11 @@ function ProcessGameMode takes nothing returns nothing
 		elseif parameter=="cc" then
 			call ConditionalTriggerExecute(I3)
 			call DestroyTrigger(A3)
-			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
 		
 		elseif parameter=="ac" then
 			call ConditionalTriggerExecute(A3)
 			call DestroyTrigger(I3)
-			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
 		
 		elseif parameter=="x3" then
@@ -9945,9 +9929,6 @@ function ProcessGameMode takes nothing returns nothing
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_GOLD,100000)
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_LUMBER,100000)
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_FOOD_CAP,1000)
-			
-		//elseif parameter=="nc" then
-			//	call ConditionalTriggerExecute(N3)
 		endif
 		set stringPosition=stringPosition+1
 	endloop
@@ -10024,9 +10005,6 @@ function IQX takes nothing returns nothing
 	endif
 	if HCC then
 		set LN=LN+"qg"
-	endif
-	if OJ then
-		//set LN=LN+"nc"
 	endif
 	if x3Mode then
 		set LN=LN+"x3"
@@ -22572,7 +22550,6 @@ function initGlobals takes nothing returns nothing
 	set VJ=false
 	set EJ=false
 	set XJ=false
-	set OJ=false
 	set AJ=null
 	set NJ=null
 	set BJ=null
@@ -22936,7 +22913,6 @@ function initGlobals takes nothing returns nothing
 	set Z2=null
 	set I3=null
 	set A3=null
-	set N3=null
 	set C3=null
 	set F3=null
 	set G3=null
@@ -23794,8 +23770,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_ICX=function ICX
 	set ref_function_IIX=function IIX
 	set ref_function_IDX=function IDX
-	set ref_function_IAX=function IAX
-	set ref_function_IFX=function IFX
 	set ref_ProcessGameMode=function ProcessGameMode
 	set ref_function_ILX=function ILX
 	set ref_function_IMX=function IMX
@@ -25439,9 +25413,6 @@ function main takes nothing returns nothing
 	set A3=CreateTrigger()
 	call TriggerAddCondition(A3,Condition(ref_function_IIX))
 	call TriggerAddAction(A3,ref_function_IDX)
-	set N3=CreateTrigger()
-	call TriggerAddCondition(N3,Condition(ref_function_IAX))
-	call TriggerAddAction(N3,ref_function_IFX)
 	set C3=CreateTrigger()
 	call TriggerAddAction(C3,ref_ProcessGameMode)
 	set F3=CreateTrigger()
