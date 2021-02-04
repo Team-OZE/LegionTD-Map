@@ -257,7 +257,6 @@ globals
 	texttag texttagGameMode1=null
 	texttag texttagGameMode2=null
 	integer array DC
-	boolean HC=false
 	boolean PC=false
 	string array QC
 	boolean array SC
@@ -729,7 +728,6 @@ globals
 	trigger I3=null
 	trigger A3=null
 	trigger N3=null
-	trigger B3=null
 	trigger C3=null
 	trigger F3=null
 	trigger G3=null
@@ -1722,8 +1720,6 @@ globals
 	code ref_function_IDX=null
 	code ref_function_IAX=null
 	code ref_function_IFX=null
-	code ref_function_IGX=null
-	code ref_function_IHX=null
 	code ref_ProcessGameMode=null
 	code ref_function_ILX=null
 	code ref_function_IMX=null
@@ -3766,7 +3762,7 @@ function BOX takes nothing returns nothing
 endfunction
 
 function BPX takes nothing returns boolean
-	return HC
+	return true
 endfunction
 
 function BQX takes nothing returns nothing
@@ -4008,7 +4004,7 @@ endfunction
 
 function CAX takes nothing returns nothing
 	set BE=GetObjectName(WV[numberLvl+1])
-	if HC and numberLvl<35 then
+	if numberLvl<35 then
 		if numberLvl==20 and HCC then
 			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[numberLvl+10])
 			call DestroyForce(S8)
@@ -4041,7 +4037,7 @@ endfunction
 
 function CBX takes nothing returns nothing
 	set BE=GetObjectName(WV[numberLvl+1])
-	if HC and numberLvl<35 then
+	if numberLvl<35 then
 		if numberLvl==20 and HCC then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,YV[numberLvl+10])
 			call DestroyForce(S8)
@@ -9875,16 +9871,6 @@ function IFX takes nothing returns nothing
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANo Champions|r: Champions won't spawn at all")
 endfunction
 
-function IGX takes nothing returns boolean
-	return HC==false
-endfunction
-
-function IHX takes nothing returns nothing
-	set HC=true
-	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AAEQ mode|r: 10 time on creep spawn.")
-	call DisableTrigger(GetTriggeringTrigger())
-endfunction
-
 function IIX takes nothing returns boolean
 	return XJ==false
 endfunction
@@ -10011,8 +9997,6 @@ function ProcessGameMode takes nothing returns nothing
 		endif
 		set stringPosition=stringPosition+1
 	endloop
-	
-	call ConditionalTriggerExecute(B3) // "eq"
 		
 	call DisableTrigger(GetTriggeringTrigger())
 	set myTrigger=null
@@ -10108,9 +10092,6 @@ function IQX takes nothing returns nothing
 	if ZH then
 		//set LN=LN+"ns"
 	endif
-	if HC then
-		//set LN=LN+"eq"
-	endif
 	if x3Mode then
 		set LN=LN+"x3"
 	endif
@@ -10151,7 +10132,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(P2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(Z2)
-	call DisableTrigger(B3)
 	call DisableTrigger(I8)
 	call DisableTrigger(O3)
 	call DisableTrigger(R3)
@@ -22588,7 +22568,6 @@ function initGlobals takes nothing returns nothing
 	set CC=null
 	set texttagGameMode1=null
 	set texttagGameMode2=null
-	set HC=false
 	set PC=false
 	set JD=null
 	set KD=null
@@ -23034,7 +23013,6 @@ function initGlobals takes nothing returns nothing
 	set I3=null
 	set A3=null
 	set N3=null
-	set B3=null
 	set C3=null
 	set F3=null
 	set G3=null
@@ -23899,8 +23877,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_IDX=function IDX
 	set ref_function_IAX=function IAX
 	set ref_function_IFX=function IFX
-	set ref_function_IGX=function IGX
-	set ref_function_IHX=function IHX
 	set ref_ProcessGameMode=function ProcessGameMode
 	set ref_function_ILX=function ILX
 	set ref_function_IMX=function IMX
@@ -25553,9 +25529,6 @@ function main takes nothing returns nothing
 	set N3=CreateTrigger()
 	call TriggerAddCondition(N3,Condition(ref_function_IAX))
 	call TriggerAddAction(N3,ref_function_IFX)
-	set B3=CreateTrigger()
-	call TriggerAddCondition(B3,Condition(ref_function_IGX))
-	call TriggerAddAction(B3,ref_function_IHX)
 	set C3=CreateTrigger()
 	call TriggerAddAction(C3,ref_ProcessGameMode)
 	set F3=CreateTrigger()
