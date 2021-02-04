@@ -4,6 +4,7 @@ globals
 	boolean ggMode=false
 	integer array RolledUnits
 	integer kingSpell=0
+	unit array Unit
 	
 	gamecache BO=null
 	trigger V=null
@@ -49,7 +50,6 @@ globals
 	integer DV=0
 	integer GV=0
 	unit array JV
-	unit array KV
 	string array PV
 	string array QV
 	integer array SV
@@ -2863,29 +2863,29 @@ function AAX takes nothing returns nothing
 		call SetPlayerTechMaxAllowedSwap(GetUnitTypeId(GetTriggerUnit()),1,GetEnumPlayer())
 		if GetUnitTypeId(GetTriggerUnit())==$75303054 then
 			call ReRollNah(GetEnumPlayer())
-			set UE=KV[1+GetPlayerId(GetEnumPlayer())]
+			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
 			call ReplaceUnitBJ(UE,GetUnitTypeId(GetTriggerUnit()),3)
 			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set KV[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
+			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
 		
 		elseif GetUnitTypeId(GetTriggerUnit())==$75303045 then
-			set UE=KV[1+GetPlayerId(GetEnumPlayer())]
+			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
 			set EE=GetRandomInt(1,ER)
 			call ReplaceUnitBJ(UE,OC[EE],3)
 			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set KV[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
+			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
 		
 		else
-			set UE=KV[1+GetPlayerId(GetEnumPlayer())]
+			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
 			call ReplaceUnitBJ(UE,GetUnitTypeId(GetTriggerUnit()),3)
 			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set KV[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
+			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
 		endif
 		if SC[1+GetPlayerId(GetEnumPlayer())]==false then
-			call UnitAddAbility(KV[1+GetPlayerId(GetEnumPlayer())],$41303834)
+			call UnitAddAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
 		
 		else
-			call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+			call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 		endif
 		if GetUnitTypeId(GetTriggerUnit())==$75303049 then
 			call SetPlayerTechResearchedSwap($52303044,4,GetEnumPlayer())
@@ -2909,11 +2909,11 @@ function ACX takes nothing returns nothing
 		endif
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(OX_1)],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(OX_1)],$41303834)
 		set SC[1+GetPlayerId(OX_1)]=true
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,PV[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r used Holy Light on King !")
 		call TriggerSleepAction(1.)
-		call IssueImmediateOrderById(KV[1+GetPlayerId(OX_1)],851993)
+		call IssueImmediateOrderById(Unit[1+GetPlayerId(OX_1)],851993)
 	endif
 	set NVE=null
 	set OX_1=null
@@ -3018,12 +3018,12 @@ function AEX takes nothing returns nothing
 	call ReRollNah(GetTriggerPlayer())
 	call ReplaceUnitBJ(GetTriggerUnit(),GetUnitTypeId(GetTriggerUnit()),3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	if SC[1+GetPlayerId(GetTriggerPlayer())]==false then
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	endif
 	set PE=GetTriggerUnit()
 	set MN=false
@@ -3073,7 +3073,7 @@ function AOX takes nothing returns nothing
 	set EE=GetRandomInt(1,ER)
 	call ReplaceUnitBJ(GetTriggerUnit(),OC[EE],3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	set PE=bj_lastReplacedUnit
 	if OC[EE]==$75303054 then
 		set EE=GetRandomInt(1,PB[1])
@@ -3176,10 +3176,10 @@ function AOX takes nothing returns nothing
 		endloop
 	endif
 	if SC[1+GetPlayerId(GetTriggerPlayer())]==false then
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	endif
 	set MN=true
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PV[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r randomed "+GetUnitName(PE)+".")
@@ -3200,7 +3200,7 @@ endfunction
 function ATX takes nothing returns nothing
 	set KH[1+GetPlayerId(GetTriggerPlayer())]=KH[1+GetPlayerId(GetTriggerPlayer())]+1
 	set MN=false
-	call SelectUnitForPlayerSingle(KV[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
+	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
 	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r use Re-Roll.")
 	call DestroyForce(S8)
 	set S8=null
@@ -3652,9 +3652,9 @@ function BEX takes nothing returns nothing
 	call SetPlayerTechMaxAllowedSwap(OC[EE],1,GetTriggerPlayer())
 	call SetPlayerTechMaxAllowedSwap(OC[IX],1,GetTriggerPlayer())
 	set MN=false
-	call SelectUnitForPlayerSingle(KV[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
+	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
 	call ForceUICancelBJ(GetTriggerPlayer())
-	call RemoveUnit(KV[1+GetPlayerId(GetTriggerPlayer())])
+	call RemoveUnit(Unit[1+GetPlayerId(GetTriggerPlayer())])
 	if EE<12 and IX<12 then
 		set bj_lastCreatedUnit=CreateUnit(GetTriggerPlayer(),$65303035,x,y,bj_UNIT_FACING)
 	
@@ -3800,10 +3800,10 @@ endfunction
 
 function BOX takes nothing returns nothing
 	call ReplaceUnitBJ(GetTriggerUnit(),$75303050,3)
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 	if SC[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]==false then
-		call UnitAddAbility(KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))],$41303834)
 	endif
 	call SetPlayerTechResearchedSwap($52303044,5,GetOwningPlayer(GetTriggerUnit()))
 	call SetPlayerTechResearchedSwap($52303049,1,GetOwningPlayer(GetTriggerUnit()))
@@ -3811,18 +3811,18 @@ function BOX takes nothing returns nothing
 	set MN=false
 	call TriggerExecute(AT)
 	if RX then
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303945)
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303946)
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303947)
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303948)
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303956)
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303957)
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303955)
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303950)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303945)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303946)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303947)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303948)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303956)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303957)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303955)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303950)
 	endif
 	if GetPlayerTechCountSimple($52303048,GetTriggerPlayer())<7 and RX==false then
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303948)
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303950)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303948)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303950)
 	endif
 	if true then
 		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
@@ -4345,7 +4345,7 @@ function CJX takes nothing returns nothing
 	loop
 		exitwhen i>3
 		set i=i+1
-		if GetUnitAbilityLevel(KV[i],$41303834)>0 then
+		if GetUnitAbilityLevel(Unit[i],$41303834)>0 then
 			set IV=IV+1
 		endif
 	endloop
@@ -4369,7 +4369,7 @@ function CJX takes nothing returns nothing
 	loop
 		exitwhen i>7
 		set i=i+1
-		if GetUnitAbilityLevel(KV[i],$41303834)>0 then
+		if GetUnitAbilityLevel(Unit[i],$41303834)>0 then
 			set IV=IV+1
 		endif
 	endloop
@@ -6975,7 +6975,7 @@ function DXE takes nothing returns nothing
 	call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER,lumber)
 	call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_FOOD_CAP_CEILING,250)
 	set bj_lastCreatedUnit=CreateUnit(GetEnumPlayer(),$65303030,x,y,bj_UNIT_FACING)
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastCreatedUnit))]=bj_lastCreatedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastCreatedUnit))]=bj_lastCreatedUnit
 	call SelectUnitForPlayerSingle(bj_lastCreatedUnit,GetEnumPlayer())
 	call ForceAddPlayer(ZI,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($68304442,1,GetEnumPlayer())
@@ -8662,7 +8662,7 @@ endfunction
 
 function FFE takes nothing returns nothing
 	if KH[1+GetPlayerId(GetEnumPlayer())]==0 then
-		set LH[1+GetPlayerId(GetEnumPlayer())]=GetUnitName(KV[1+GetPlayerId(GetEnumPlayer())])
+		set LH[1+GetPlayerId(GetEnumPlayer())]=GetUnitName(Unit[1+GetPlayerId(GetEnumPlayer())])
 	endif
 	if true then
 		if ZN and YD==false then
@@ -8698,7 +8698,7 @@ function FGE takes nothing returns nothing
 endfunction
 
 function FHE takes nothing returns nothing
-	set PE=KV[1+GetPlayerId(GetEnumPlayer())]
+	set PE=Unit[1+GetPlayerId(GetEnumPlayer())]
 	set JN[1+GetPlayerId(GetEnumPlayer())]="ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp"
 	if GetUnitTypeId(PE)==$75303031 then
 		set BE="ReplaceableTextures\\CommandButtons\\BTNHeroTaurenChieftain.blp"
@@ -9879,7 +9879,7 @@ endfunction
 function I3X takes nothing returns nothing
 	call ReplaceUnitBJ(GetTriggerUnit(),GetUnitTypeId(GetTriggerUnit()),3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=PB[1]
 	loop
@@ -9926,10 +9926,10 @@ function I3X takes nothing returns nothing
 		call SetPlayerTechResearchedSwap($52303044,4,GetTriggerPlayer())
 	endif
 	if SC[1+GetPlayerId(GetTriggerPlayer())]==false then
-		call UnitAddAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetTriggerPlayer())],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	endif
 	set PE=GetTriggerUnit()
 	set MN=false
@@ -10572,36 +10572,36 @@ endfunction
 
 function J6E takes nothing returns nothing
 	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(KV[EE])==$75303050 then
+	if GetUnitTypeId(Unit[EE])==$75303050 then
 		if GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-500 then
-			call UnitRemoveAbility(KV[EE],$41303956)
-			call UnitRemoveAbility(KV[EE],$41303957)
-			call UnitRemoveAbility(KV[EE],$41303955)
-			call UnitAddAbility(KV[EE],$41303945)
-			call UnitAddAbility(KV[EE],$41303946)
-			call UnitAddAbility(KV[EE],$41303947)
+			call UnitRemoveAbility(Unit[EE],$41303956)
+			call UnitRemoveAbility(Unit[EE],$41303957)
+			call UnitRemoveAbility(Unit[EE],$41303955)
+			call UnitAddAbility(Unit[EE],$41303945)
+			call UnitAddAbility(Unit[EE],$41303946)
+			call UnitAddAbility(Unit[EE],$41303947)
 			if true then
-				call UnitRemoveAbility(KV[EE],$41303950)
-				call UnitAddAbility(KV[EE],$41303948)
+				call UnitRemoveAbility(Unit[EE],$41303950)
+				call UnitAddAbility(Unit[EE],$41303948)
 			endif
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-300 then
-			call UnitRemoveAbility(KV[EE],$41303956)
-			call UnitRemoveAbility(KV[EE],$41303957)
-			call UnitRemoveAbility(KV[EE],$41303955)
-			call UnitAddAbility(KV[EE],$41303945)
-			call UnitAddAbility(KV[EE],$41303946)
-			call UnitAddAbility(KV[EE],$41303947)
+			call UnitRemoveAbility(Unit[EE],$41303956)
+			call UnitRemoveAbility(Unit[EE],$41303957)
+			call UnitRemoveAbility(Unit[EE],$41303955)
+			call UnitAddAbility(Unit[EE],$41303945)
+			call UnitAddAbility(Unit[EE],$41303946)
+			call UnitAddAbility(Unit[EE],$41303947)
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-100 then
-			call UnitRemoveAbility(KV[EE],$41303956)
-			call UnitRemoveAbility(KV[EE],$41303957)
-			call UnitAddAbility(KV[EE],$41303945)
-			call UnitAddAbility(KV[EE],$41303946)
+			call UnitRemoveAbility(Unit[EE],$41303956)
+			call UnitRemoveAbility(Unit[EE],$41303957)
+			call UnitAddAbility(Unit[EE],$41303945)
+			call UnitAddAbility(Unit[EE],$41303946)
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX then
-			call UnitRemoveAbility(KV[EE],$41303956)
-			call UnitAddAbility(KV[EE],$41303945)
+			call UnitRemoveAbility(Unit[EE],$41303956)
+			call UnitAddAbility(Unit[EE],$41303945)
 		endif
 	endif
 endfunction
@@ -10619,15 +10619,15 @@ endfunction
 
 function J8E takes nothing returns nothing
 	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(KV[EE])==$75303050 then
-		call UnitRemoveAbility(KV[EE],$41303945)
-		call UnitRemoveAbility(KV[EE],$41303946)
-		call UnitRemoveAbility(KV[EE],$41303947)
-		call UnitRemoveAbility(KV[EE],$41303948)
-		call UnitAddAbility(KV[EE],$41303956)
-		call UnitAddAbility(KV[EE],$41303957)
-		call UnitAddAbility(KV[EE],$41303955)
-		call UnitAddAbility(KV[EE],$41303950)
+	if GetUnitTypeId(Unit[EE])==$75303050 then
+		call UnitRemoveAbility(Unit[EE],$41303945)
+		call UnitRemoveAbility(Unit[EE],$41303946)
+		call UnitRemoveAbility(Unit[EE],$41303947)
+		call UnitRemoveAbility(Unit[EE],$41303948)
+		call UnitAddAbility(Unit[EE],$41303956)
+		call UnitAddAbility(Unit[EE],$41303957)
+		call UnitAddAbility(Unit[EE],$41303955)
+		call UnitAddAbility(Unit[EE],$41303950)
 	endif
 endfunction
 
@@ -10749,16 +10749,16 @@ function JOE takes nothing returns boolean
 endfunction
 
 function JPE takes nothing returns nothing
-	if GetUnitTypeId(KV[EE])==$75303050 then
+	if GetUnitTypeId(Unit[EE])==$75303050 then
 		if true then
-			call UnitRemoveAbility(KV[EE],$41303956)
-			call UnitRemoveAbility(KV[EE],$41303957)
-			call UnitRemoveAbility(KV[EE],$41303955)
-			call UnitRemoveAbility(KV[EE],$41303950)
-			call UnitAddAbility(KV[EE],$41303945)
-			call UnitAddAbility(KV[EE],$41303946)
-			call UnitAddAbility(KV[EE],$41303947)
-			call UnitAddAbility(KV[EE],$41303948)
+			call UnitRemoveAbility(Unit[EE],$41303956)
+			call UnitRemoveAbility(Unit[EE],$41303957)
+			call UnitRemoveAbility(Unit[EE],$41303955)
+			call UnitRemoveAbility(Unit[EE],$41303950)
+			call UnitAddAbility(Unit[EE],$41303945)
+			call UnitAddAbility(Unit[EE],$41303946)
+			call UnitAddAbility(Unit[EE],$41303947)
+			call UnitAddAbility(Unit[EE],$41303948)
 		endif
 	endif
 endfunction
@@ -11104,7 +11104,7 @@ function K9E takes nothing returns nothing
 	call A_V(1.)
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cffFF00001|r")
 	call A_V(1.)
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cff00FF00FIGHT START!|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,1.,"|cff00FF00FIGHT STARTING!|r")
 	set CG=true
 	call ForGroup(ZD,ref_function_K7E)
 	call ForGroup(VF,ref_function_K8E)
@@ -11293,9 +11293,9 @@ function KPE takes nothing returns nothing
 	local integer KQE=GetPlayerId(GetEnumPlayer())+1
 	local real x=GetLocationX(EF[KQE])
 	local real y=GetLocationY(EF[KQE])
-	call SetUnitMoveSpeed(KV[KQE],0.)
-	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",GetUnitX(KV[KQE]),GetUnitY(KV[KQE])))
-	call SetUnitPosition(KV[KQE],x,y)
+	call SetUnitMoveSpeed(Unit[KQE],0.)
+	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",GetUnitX(Unit[KQE]),GetUnitY(Unit[KQE])))
+	call SetUnitPosition(Unit[KQE],x,y)
 	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
 endfunction
 
@@ -11354,20 +11354,20 @@ function KRV takes nothing returns nothing
 endfunction
 
 function KSE takes nothing returns nothing
-	call PanCameraToTimedForPlayer(GetEnumPlayer(),GetUnitX(KV[1+GetPlayerId(GetEnumPlayer())]),GetUnitY(KV[1+GetPlayerId(GetEnumPlayer())]),1.)
+	call PanCameraToTimedForPlayer(GetEnumPlayer(),GetUnitX(Unit[1+GetPlayerId(GetEnumPlayer())]),GetUnitY(Unit[1+GetPlayerId(GetEnumPlayer())]),1.)
 endfunction
 
 function KVE takes nothing returns nothing
 	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(KV[EE])==$75303050 then
-		call UnitRemoveAbility(KV[EE],$41303956)
-		call UnitRemoveAbility(KV[EE],$41303957)
-		call UnitRemoveAbility(KV[EE],$41303955)
-		call UnitRemoveAbility(KV[EE],$41303950)
-		call UnitAddAbility(KV[EE],$41303945)
-		call UnitAddAbility(KV[EE],$41303946)
-		call UnitAddAbility(KV[EE],$41303947)
-		call UnitAddAbility(KV[EE],$41303948)
+	if GetUnitTypeId(Unit[EE])==$75303050 then
+		call UnitRemoveAbility(Unit[EE],$41303956)
+		call UnitRemoveAbility(Unit[EE],$41303957)
+		call UnitRemoveAbility(Unit[EE],$41303955)
+		call UnitRemoveAbility(Unit[EE],$41303950)
+		call UnitAddAbility(Unit[EE],$41303945)
+		call UnitAddAbility(Unit[EE],$41303946)
+		call UnitAddAbility(Unit[EE],$41303947)
+		call UnitAddAbility(Unit[EE],$41303948)
 	endif
 endfunction
 
@@ -11511,13 +11511,13 @@ endfunction
 function LCE takes nothing returns nothing
 	local real x=GetPlayerStartLocationX(GetEnumPlayer())
 	local real y=GetPlayerStartLocationY(GetEnumPlayer())
-	call SetUnitMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())]))
+	call SetUnitMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())]))
 	if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 		call AdjustPlayerStateBJ(numberLvl*30,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-		call IssuePointOrderByIdLoc(KV[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())+4])
+		call IssuePointOrderByIdLoc(Unit[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())+4])
 	
 	else
-		call SetUnitPosition(KV[1+GetPlayerId(GetEnumPlayer())],x,y)
+		call SetUnitPosition(Unit[1+GetPlayerId(GetEnumPlayer())],x,y)
 	endif
 endfunction
 
@@ -11680,8 +11680,8 @@ endfunction
 function LHE takes nothing returns nothing
 	local real x=GetPlayerStartLocationX(GetEnumPlayer())
 	local real y=GetPlayerStartLocationY(GetEnumPlayer())
-	call SetUnitPosition(KV[1+GetPlayerId(GetEnumPlayer())],x,y)
-	call SetUnitMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())]))
+	call SetUnitPosition(Unit[1+GetPlayerId(GetEnumPlayer())],x,y)
+	call SetUnitMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())]))
 	call PanCameraToTimedForPlayer(GetEnumPlayer(),x,y,0.)
 	if ZN then
 		call ForForce(RJE(Player(8)),ref_function_LDE)
@@ -11860,13 +11860,13 @@ endfunction
 function LNE takes nothing returns nothing
 	local real x=GetPlayerStartLocationX(GetEnumPlayer())
 	local real y=GetPlayerStartLocationY(GetEnumPlayer())
-	call SetUnitMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())]))
+	call SetUnitMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())]))
 	if IsPlayerAlly(GetEnumPlayer(),Player(9)) then
 		call AdjustPlayerStateBJ(numberLvl*30,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-		call IssuePointOrderByIdLoc(KV[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())-4])
+		call IssuePointOrderByIdLoc(Unit[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())-4])
 	
 	else
-		call SetUnitPosition(KV[1+GetPlayerId(GetEnumPlayer())],x,y)
+		call SetUnitPosition(Unit[1+GetPlayerId(GetEnumPlayer())],x,y)
 	endif
 endfunction
 
@@ -11912,10 +11912,10 @@ function LNV takes nothing returns nothing
 endfunction
 
 function LOE takes nothing returns nothing
-	call SetUnitMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(KV[1+GetPlayerId(GetEnumPlayer())]))
+	call SetUnitMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())]))
 	if true then
 		call AdjustPlayerStateBJ(numberLvl*15,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-		call IssuePointOrderByIdLoc(KV[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())-4])
+		call IssuePointOrderByIdLoc(Unit[1+GetPlayerId(GetEnumPlayer())],851986,EF[1+GetPlayerId(GetEnumPlayer())-4])
 	endif
 endfunction
 
@@ -13743,7 +13743,7 @@ function P8E takes nothing returns boolean
 endfunction
 
 function P9E takes nothing returns nothing
-	if GetUnitTypeId(KV[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))])!=$75303049 then
+	if GetUnitTypeId(Unit[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))])!=$75303049 then
 		call GroupAddUnit(AI,GetTriggerUnit())
 	endif
 	call GroupRemoveUnit(SN,GetTriggerUnit())
@@ -15762,7 +15762,6 @@ function R9E takes location IVE,real IEE,real IXE returns location
 	return Location(GetLocationX(IVE)+IEE*Cos(IXE*bj_DEGTORAD),GetLocationY(IVE)+IEE*Sin(IXE*bj_DEGTORAD))
 endfunction
 
-
 function RDX takes nothing returns nothing
 	local string printGameModes
 	
@@ -15806,14 +15805,13 @@ function RDX takes nothing returns nothing
 	
 	call CreateTextTagLocBJ(printGameModes,Location(-7050,4150),0.,10.,100.,100.,100.,0.)
 	
-	call SetUnitPosition(KV[1+GetPlayerId(Player(0))],-7080,4000)
+	call SetUnitPosition(Unit[1+GetPlayerId(Player(0))],-7080,4000)
 	
 	set BC=bj_lastCreatedTextTag
 	call SetTextTagLifespanBJ(BC,15.)
 	call ShowTextTagForceBJ(true,CC,bj_FORCE_ALL_PLAYERS)
 	call ShowTextTagForceBJ(true,BC,bj_FORCE_ALL_PLAYERS)
 endfunction
-
 
 function REE takes nothing returns nothing
 	local unit RXE=GetAttacker()
@@ -15903,14 +15901,14 @@ endfunction
 function RGX takes nothing returns nothing
 	local player p=GetEnumPlayer()
 	call SetPlayerTechMaxAllowedSwap($52303047,6,p)
-	call ReplaceUnitBJ(KV[1+GetPlayerId(p)],$75303054,3)
+	call ReplaceUnitBJ(Unit[1+GetPlayerId(p)],$75303054,3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	if SC[1+GetPlayerId(p)]==false and yn==false then
-		call UnitAddAbility(KV[1+GetPlayerId(p)],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(p)],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(p)],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
 	endif
 	call ReRollNah(p)
 	set MN=true
@@ -15956,14 +15954,14 @@ endfunction
 function RJX takes nothing returns nothing
 	local player p=GetEnumPlayer()
 	call SetPlayerTechMaxAllowedSwap($52303047,0,p)
-	call ReplaceUnitBJ(KV[1+GetPlayerId(p)],$75303054,3)
+	call ReplaceUnitBJ(Unit[1+GetPlayerId(p)],$75303054,3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	if SC[1+GetPlayerId(p)]==false and yn==false then
-		call UnitAddAbility(KV[1+GetPlayerId(p)],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(p)],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(p)],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
 	endif
 	call ReRollNah(p)
 	set MN=true
@@ -16031,15 +16029,15 @@ function RMX takes nothing returns nothing
 	set IX=BAE(0,ER,EE)
 	call SetPlayerTechMaxAllowedSwap(OC[EE],1,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap(OC[IX],1,GetEnumPlayer())
-	call SelectUnitForPlayerSingle(KV[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer())
+	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer())
 	if EE<12 and IX<12 then
-		call ReplaceUnitBJ(KV[1+GetPlayerId(GetEnumPlayer())],$65303035,1)
+		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303035,1)
 	
 	elseif EE>=6 and IX>=6 then
-		call ReplaceUnitBJ(KV[1+GetPlayerId(GetEnumPlayer())],$65303037,1)
+		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303037,1)
 	
 	else
-		call ReplaceUnitBJ(KV[1+GetPlayerId(GetEnumPlayer())],$65303036,1)
+		call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],$65303036,1)
 	endif
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 endfunction
@@ -16152,18 +16150,18 @@ function RUX takes nothing returns nothing
 	local real x
 	local real y
 	set EE=GetRandomInt(1,ER)
-	call ReplaceUnitBJ(KV[1+GetPlayerId(GetEnumPlayer())],OC[EE],3)
+	call ReplaceUnitBJ(Unit[1+GetPlayerId(GetEnumPlayer())],OC[EE],3)
 	set x=GetUnitX(bj_lastReplacedUnit)
 	set y=GetUnitY(bj_lastReplacedUnit)
 	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Items\\AIil\\AIilTarget.mdl",x,y))
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-	set KV[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
+	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	set PE=bj_lastReplacedUnit
 	if SC[1+GetPlayerId(GetEnumPlayer())]==false then
-		call UnitAddAbility(KV[1+GetPlayerId(GetEnumPlayer())],$41303834)
+		call UnitAddAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
 	
 	else
-		call UnitRemoveAbility(KV[1+GetPlayerId(GetEnumPlayer())],$41303834)
+		call UnitRemoveAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
 	endif
 	if EE==13 then
 		set EE=GetRandomInt(1,PB[1])
@@ -17900,7 +17898,7 @@ function U8E takes nothing returns nothing
 	set NA=ISE(CA[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U7E))
 	if Q8E() then
 		set EE=CountUnitsInGroup(QE)*6+CountUnitsInGroup(NA)*3
-		set PE=KV[1+GetPlayerId(GetEnumPlayer())]
+		set PE=Unit[1+GetPlayerId(GetEnumPlayer())]
 		set OX=GetEnumPlayer()
 		call N0E(PE,"+"+I2S(EE),100.,77.,0.,OX)
 		call DestroyForce(S8)
@@ -19394,7 +19392,7 @@ function XSE takes nothing returns nothing
 		loop
 			exitwhen i>3
 			set i=i+1
-			if GetUnitAbilityLevel(KV[i],$41303834)>0 then
+			if GetUnitAbilityLevel(Unit[i],$41303834)>0 then
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(H6),GetUnitY(H6)))
 				if GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
 					call SetWidgetLife(H6,GetWidgetLife(H6)+GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE)
@@ -19406,7 +19404,7 @@ function XSE takes nothing returns nothing
 					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i]+GetPlayerName(Player(i-1))+"|r activates |c00FFFF00Holy Light|r, healing the King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 					set X6E=1
 				endif
-				call UnitRemoveAbility(KV[i],$41303834)
+				call UnitRemoveAbility(Unit[i],$41303834)
 				set SC[i]=true
 				set i=4
 			endif
@@ -19438,7 +19436,7 @@ function XSE takes nothing returns nothing
 		loop
 			exitwhen i>3
 			set i=i+1
-			if GetUnitAbilityLevel(KV[i+4],$41303834)>0 then
+			if GetUnitAbilityLevel(Unit[i+4],$41303834)>0 then
 				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(U6),GetUnitY(U6)))
 				if GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
 					call SetWidgetLife(U6,GetWidgetLife(U6)+GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE)
@@ -19450,7 +19448,7 @@ function XSE takes nothing returns nothing
 					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i+4]+GetPlayerName(Player(i+3))+"|r activates |c00FFFF00Holy Light|r, healing the King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 					set OXE=1
 				endif
-				call UnitRemoveAbility(KV[i+4],$41303834)
+				call UnitRemoveAbility(Unit[i+4],$41303834)
 				set SC[i+4]=true
 				set i=4
 			endif
@@ -26967,6 +26965,7 @@ function config takes nothing returns nothing
 	call DefineStartLocation(7,7090.,1408.)
 	call DefineStartLocation(8,-4545.,-3260.)
 	call DefineStartLocation(9,4545.,-3260.)
+	
 	call InitCustomPlayerSlots()
 	call InitCustomTeams()
 	call InitAllyPriorities()
