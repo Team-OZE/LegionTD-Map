@@ -194,7 +194,6 @@ globals
 	boolean DA=false
 	boolean GA=false
 	boolean HA=false
-	boolean JA=false
 	boolean HCC=false
 	boolean mirrorMode=false
 	timer KA=null
@@ -733,7 +732,6 @@ globals
 	trigger T2=null
 	trigger U2=null
 	trigger W2=null
-	trigger Y2=null
 	trigger Y10=null
 	trigger Z2=null
 	trigger V3=null
@@ -1292,7 +1290,6 @@ globals
 	code ref_function_RSX=null
 	code ref_function_RUX=null
 	code ref_function_RYX=null
-	code ref_function_R0X=null
 	code ref_function_R5X=null
 	code ref_function_INX=null
 	code ref_function_eK=null
@@ -1736,8 +1733,6 @@ globals
 	code ref_function_RZX=null
 	code ref_function_RHX=null
 	code ref_function_RKX=null
-	code ref_function_R_X=null
-	code ref_function_R1X=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
 	code ref_function_R4X=null
@@ -3569,7 +3564,7 @@ function BCX takes nothing returns nothing
 		call CreateNUnitsAtLoc(1,$75303144,GetEnumPlayer(),CX,bj_UNIT_FACING)
 		call GroupAddUnit(MC,bj_lastCreatedUnit)
 	endif
-	if JA==false and EC then
+	if EC then
 		call CreateNUnitsAtLoc(1,$75303053,GetEnumPlayer(),CX,bj_UNIT_FACING)
 		call GroupAddUnit(MC,bj_lastCreatedUnit)
 		call CreateNUnitsAtLoc(1,$75303052,GetEnumPlayer(),CX,bj_UNIT_FACING)
@@ -3825,7 +3820,7 @@ function BQX takes nothing returns nothing
 endfunction
 
 function BRX takes nothing returns boolean
-	return JA==false and EC
+	return EC
 endfunction
 
 function BSX takes nothing returns nothing
@@ -10018,9 +10013,6 @@ function ProcessGameMode takes nothing returns nothing
 			//	set MN=false
 			//	set yn=true
 			
-		//elseif parameter=="li" then
-			//	call ConditionalTriggerExecute(Y2)
-		
 		elseif parameter=="qg" then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
 			call ConditionalTriggerExecute(Y10)
@@ -10090,11 +10082,9 @@ function ProcessGameMode takes nothing returns nothing
 			
 		//elseif parameter=="gl" then
 			//	call ConditionalTriggerExecute(X3)
-			//	call ConditionalTriggerExecute(Y2)
 			
 		//elseif parameter=="lc" or parameter=="cl" then
 			//	call ConditionalTriggerExecute(R3)
-			//	call ConditionalTriggerExecute(Y2)
 			
 		//else
 			//	set MN=false
@@ -10154,9 +10144,6 @@ endfunction
 function INX takes nothing returns nothing
 	call SetPlayerTechMaxAllowedSwap($52303044,5,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($52303047,6,GetEnumPlayer())
-	if JA==false then
-		call SetPlayerTechMaxAllowedSwap($52303049,1,GetEnumPlayer())
-	endif
 endfunction
 
 function IOE takes nothing returns boolean
@@ -10212,9 +10199,6 @@ function IQX takes nothing returns nothing
 	endif
 	if JB then
 		//set LN="-sd"
-	endif
-	if JA then
-		//set LN=LN+"li"
 	endif
 	if EJ then
 		set LN=LN+"cc"
@@ -10293,7 +10277,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(S2)
 	call DisableTrigger(Q2)
 	call DisableTrigger(T2)
-	call DisableTrigger(Y2)
 	call DisableTrigger(Y10)
 	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
@@ -15514,18 +15497,6 @@ function R0E takes nothing returns nothing
 	endif
 endfunction
 
-function R0X takes nothing returns nothing
-	call SetPlayerTechMaxAllowedSwap($75303050,0,GetEnumPlayer())
-	call SetPlayerTechMaxAllowedSwap($52303049,0,GetEnumPlayer())
-endfunction
-
-function R1X takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set JA=true
-	call ForForce(ZI,ref_function_R0X)
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AALimited Income|r: put value restrict on wisp & lumber upgrade.")
-endfunction
-
 function R2X takes nothing returns boolean
 	return YN==false
 endfunction
@@ -16359,10 +16330,6 @@ function R_E takes nothing returns nothing
 	if RBE()==false and OME()==false then
 		call GroupAddUnit(M8,GetTriggerUnit())
 	endif
-endfunction
-
-function R_X takes nothing returns boolean
-	return JA==false
 endfunction
 
 function S1E takes nothing returns nothing
@@ -22973,7 +22940,6 @@ function initGlobals takes nothing returns nothing
 	set DA=false
 	set GA=false
 	set HA=false
-	set JA=false
 	set KA=null
 	set LA=null
 	set PA=false
@@ -23456,7 +23422,6 @@ function initGlobals takes nothing returns nothing
 	set T2=null
 	set U2=null
 	set W2=null
-	set Y2=null
 	set Y10=null
 	set Z2=null
 	set V3=null
@@ -23887,7 +23852,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RSX=function RSX
 	set ref_function_RUX=function RUX
 	set ref_function_RYX=function RYX
-	set ref_function_R0X=function R0X
 	set ref_function_R5X=function R5X
 	set ref_function_INX=function INX
 	set ref_function_eK=function eK
@@ -24331,8 +24295,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RZX=function RZX
 	set ref_function_RHX=function RHX
 	set ref_function_RKX=function RKX
-	set ref_function_R_X=function R_X
-	set ref_function_R1X=function R1X
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
 	set ref_function_R4X=function R4X
@@ -25995,9 +25957,6 @@ function main takes nothing returns nothing
 	set W2=CreateTrigger()
 	call TriggerAddCondition(W2,Condition(ref_function_RQX))
 	call TriggerAddAction(W2,ref_function_RKX)
-	set Y2=CreateTrigger()
-	call TriggerAddCondition(Y2,Condition(ref_function_R_X))
-	call TriggerAddAction(Y2,ref_function_R1X)
 	set Y10=CreateTrigger()
 	call TriggerAddCondition(Y10,Condition(ref_function_Y_10))
 	call TriggerAddAction(Y10,ref_function_Y_11)
