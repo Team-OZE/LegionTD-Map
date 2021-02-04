@@ -14,7 +14,6 @@ globals
 	force YC=null
 	force BD=null
 	string array TG
-	boolean yn=false
 	dialog array EH
 	button array WH
 	force P3=null
@@ -227,7 +226,6 @@ globals
 	group SN=null
 	group TN=null
 	boolean YN=false
-	boolean ZN=false
 	boolean VB=false
 	integer EB=0
 	integer XB=0
@@ -727,7 +725,6 @@ globals
 	trigger W2=null
 	trigger Y10=null
 	trigger Z2=null
-	trigger V3=null
 	trigger E3=null
 	trigger O3=null
 	trigger R3=null
@@ -1276,7 +1273,6 @@ globals
 	code ref_function_RAX=null
 	code ref_function_RGX=null
 	code ref_function_RJX=null
-	code ref_function_R5X=null
 	code ref_function_INX=null
 	code ref_function_eK=null
 	code ref_function_iK=null
@@ -1718,8 +1714,6 @@ globals
 	code ref_function_RKX=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
-	code ref_function_R4X=null
-	code ref_function_R6X=null
 	code ref_function_R7X=null
 	code ref_function_R8X=null
 	code ref_function_IEX=null
@@ -4246,17 +4240,15 @@ function CJX takes nothing returns nothing
 	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Regen: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,GetTriggerPlayer())))
 	call DestroyForce(S8)
 	set S8=null
-	if yn then
-		if GetPlayerTeam(p)==0 then
-			set KK_1=GRR
-		
-		else
-			set KK_1=GII
-		endif
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Heals: |cffFFcc00"+I2S(KK_1))
-		call DestroyForce(S8)
-		set S8=null
+	if GetPlayerTeam(p)==0 then
+		set KK_1=GRR
+	
+	else
+		set KK_1=GII
 	endif
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Heals: |cffFFcc00"+I2S(KK_1))
+	call DestroyForce(S8)
+	set S8=null
 	if GetPlayerTechCountSimple($52393939,GetTriggerPlayer())>GetPlayerTechCountSimple($52393938,GetTriggerPlayer()) then
 		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Dark Presence: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,GetTriggerPlayer())))
 		call DestroyForce(S8)
@@ -4294,16 +4286,9 @@ function CJX takes nothing returns nothing
 			set IV=IV+1
 		endif
 	endloop
-	if yn then
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"West King Heals: |cffFFcc00"+I2S(GRR))
-		call DestroyForce(S8)
-		set S8=null
-	
-	else
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"West King Heals: |cffFFcc00"+I2S(IV))
-		call DestroyForce(S8)
-		set S8=null
-	endif
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"West King Heals: |cffFFcc00"+I2S(GRR))
+	call DestroyForce(S8)
+	set S8=null
 	if AV>NV then
 		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"West King Bonus Heals: |cffFFcc00"+I2S(AV-NV))
 		call DestroyForce(S8)
@@ -4318,16 +4303,9 @@ function CJX takes nothing returns nothing
 			set IV=IV+1
 		endif
 	endloop
-	if yn then
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"East King Heals: |cffFFcc00"+I2S(GII))
-		call DestroyForce(S8)
-		set S8=null
-	
-	else
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"East King Heals: |cffFFcc00"+I2S(IV))
-		call DestroyForce(S8)
-		set S8=null
-	endif
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"East King Heals: |cffFFcc00"+I2S(GII))
+	call DestroyForce(S8)
+	set S8=null
 	if NV>AV then
 		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"East King Bonus Heals: |cffFFcc00"+I2S(NV-AV))
 		call DestroyForce(S8)
@@ -4964,7 +4942,7 @@ function D4E takes nothing returns nothing
 			set KR=KR+1
 			set DC[bj_forLoopAIndex]=KR+1
 			call MultiboardSetItemValueBJ(JR,1,DC[bj_forLoopAIndex],HR[bj_forLoopAIndex]+GetPlayerName(Player(-1+bj_forLoopAIndex))+"|r")
-			if IsPlayerAlly(Player(-1+bj_forLoopAIndex),Player(8)) and ZN then
+			if IsPlayerAlly(Player(-1+bj_forLoopAIndex),Player(8)) then
 				if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 					call MultiboardSetItemValueBJ(JR,2,DC[bj_forLoopAIndex],I2S(XE[bj_forLoopAIndex]))
 				
@@ -4972,16 +4950,13 @@ function D4E takes nothing returns nothing
 					call MultiboardSetItemValueBJ(JR,2,DC[bj_forLoopAIndex],"?")
 				endif
 			endif
-			if IsPlayerAlly(Player(-1+bj_forLoopAIndex),Player(9)) and ZN then
+			if IsPlayerAlly(Player(-1+bj_forLoopAIndex),Player(9)) then
 				if IsPlayerAlly(GetLocalPlayer(),Player(9)) or IsPlayerObserver(GetLocalPlayer()) then
 					call MultiboardSetItemValueBJ(JR,2,DC[bj_forLoopAIndex],I2S(XE[bj_forLoopAIndex]))
 				
 				else
 					call MultiboardSetItemValueBJ(JR,2,DC[bj_forLoopAIndex],"?")
 				endif
-			endif
-			if ZN==false then
-				call MultiboardSetItemValueBJ(JR,2,DC[bj_forLoopAIndex],I2S(XE[bj_forLoopAIndex]))
 			endif
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
@@ -8578,7 +8553,7 @@ function FCE takes nothing returns nothing
 		set EE=JH[1+GetPlayerId(GetEnumPlayer())]/1
 	endif
 	set UO=I2S(EE)
-	if ZN and YD==false then
+	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 				call MultiboardSetItemValueBJ(JR,5,DC[1+GetPlayerId(GetEnumPlayer())],UO)
@@ -8609,31 +8584,26 @@ function FFE takes nothing returns nothing
 	if KH[1+GetPlayerId(GetEnumPlayer())]==0 then
 		set LH[1+GetPlayerId(GetEnumPlayer())]=GetUnitName(Unit[1+GetPlayerId(GetEnumPlayer())])
 	endif
-	if true then
-		if ZN and YD==false then
-			if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
-				if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
-					call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
-				
-				else
-					call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],"ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
-				endif
+	if YD==false then
+		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
+			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
+				call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
+			
+			else
+				call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],"ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
 			endif
-			if IsPlayerAlly(GetEnumPlayer(),Player(9)) then
-				if IsPlayerAlly(GetLocalPlayer(),Player(9)) or IsPlayerObserver(GetLocalPlayer()) then
-					call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
-				
-				else
-					call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],"ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
-				endif
+		endif
+		if IsPlayerAlly(GetEnumPlayer(),Player(9)) then
+			if IsPlayerAlly(GetLocalPlayer(),Player(9)) or IsPlayerObserver(GetLocalPlayer()) then
+				call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
+			
+			else
+				call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],"ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
 			endif
-		
-		else
-			call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
 		endif
 	
 	else
-		call MultiboardSetItemValueBJ(JR,3,DC[1+GetPlayerId(GetEnumPlayer())],"Off")
+		call MultiboardSetItemIconBJ(JR,1,DC[1+GetPlayerId(GetEnumPlayer())],JN[1+GetPlayerId(GetEnumPlayer())])
 	endif
 endfunction
 
@@ -8716,7 +8686,7 @@ function FHE takes nothing returns nothing
 endfunction
 
 function FIE takes nothing returns nothing
-	if ZN and YD==false then
+	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 				call MultiboardSetItemValueBJ(JR,2,DC[1+GetPlayerId(GetEnumPlayer())],I2S(GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]+SV[1+GetPlayerId(GetEnumPlayer())]))
@@ -8806,7 +8776,7 @@ endfunction
 function FNE takes nothing returns nothing
 	set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
 	set UO=I2S(CN[1+GetPlayerId(GetEnumPlayer())])+"/"+I2S(EE)
-	if ZN and YD==false then
+	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 				call MultiboardSetItemValueBJ(JR,4,DC[1+GetPlayerId(GetEnumPlayer())],UO)
@@ -8830,7 +8800,7 @@ function FNE takes nothing returns nothing
 endfunction
 
 function FOE takes nothing returns nothing
-	if ZN and YD==false then
+	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 				call MultiboardSetItemValueBJ(JR,3,DC[1+GetPlayerId(GetEnumPlayer())],I2S(BI[1+GetPlayerId(GetEnumPlayer())]))
@@ -9933,6 +9903,32 @@ function ProcessGameMode takes nothing returns nothing
 	local string parameter=""
 	local boolean additionalModes=false
 	
+	// Mastermind
+	call FogEnableOn()
+	call FogMaskEnableOn()
+	
+	set EE=1+GetPlayerId(localPlayer)
+	if IsPlayerAlly(localPlayer,Player(8)) then
+		call FogModifierStop(CF[EE])
+		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,KL)
+		call FogModifierStop(DF[EE])
+		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,XM)
+	
+	else
+		call FogModifierStop(BF[EE])
+		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,JL)
+		call FogModifierStop(DF[EE])
+		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,XM)
+	endif
+	
+	// Auto-heal
+	set myTrigger=CreateTrigger()
+	call TriggerRegisterUnitEvent(myTrigger,H6,EVENT_UNIT_DAMAGED)
+	call TriggerAddAction(myTrigger,ref_function_eK)
+	set myTrigger=CreateTrigger()
+	call TriggerRegisterUnitEvent(myTrigger,U6,EVENT_UNIT_DAMAGED)
+	call TriggerAddAction(myTrigger,ref_function_iK)	
+	
 	// Covert input-string to lower case
 	set BE=StringCase(BE,false)
 	
@@ -9964,9 +9960,6 @@ function ProcessGameMode takes nothing returns nothing
 			call ConditionalTriggerExecute(P2)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
 		
-		//elseif parameter=="ah" then
-			//	set yn=true
-		
 		elseif parameter=="qg" then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
 			call ConditionalTriggerExecute(Y10)
@@ -9977,14 +9970,12 @@ function ProcessGameMode takes nothing returns nothing
 		
 		elseif parameter=="cc" then
 			call ConditionalTriggerExecute(I3)
-			call ConditionalTriggerExecute(V3)
 			call DestroyTrigger(A3)
 			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
 		
 		elseif parameter=="ac" then
 			call ConditionalTriggerExecute(A3)
-			call ConditionalTriggerExecute(V3)
 			call DestroyTrigger(I3)
 			call DestroyTrigger(N3)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
@@ -10002,7 +9993,6 @@ function ProcessGameMode takes nothing returns nothing
 			
 		//elseif parameter=="nc" then
 			//	call ConditionalTriggerExecute(N3)
-			//	call ConditionalTriggerExecute(V3)
 			//	call ConditionalTriggerExecute(R3)
 			//	call DestroyTrigger(I3)
 			//	call DestroyTrigger(A3)
@@ -10015,7 +10005,6 @@ function ProcessGameMode takes nothing returns nothing
 			
 		//elseif parameter=="gm" then
 			//	call ConditionalTriggerExecute(I3)
-			//	call ConditionalTriggerExecute(V3)
 			//	call DestroyTrigger(A3)
 			//	call DestroyTrigger(N3)
 			
@@ -10033,20 +10022,8 @@ function ProcessGameMode takes nothing returns nothing
 	
 	call ConditionalTriggerExecute(E3) // "hg"
 	call ConditionalTriggerExecute(B3) // "eq"
-	call ConditionalTriggerExecute(V3) // "mm"
-	
+		
 	call DisableTrigger(GetTriggeringTrigger())
-	
-	if(true) then // "ah"
-		set yn=true
-		set myTrigger=CreateTrigger()
-		call TriggerRegisterUnitEvent(myTrigger,H6,EVENT_UNIT_DAMAGED)
-		call TriggerAddAction(myTrigger,ref_function_eK)
-		set myTrigger=CreateTrigger()
-		call TriggerRegisterUnitEvent(myTrigger,U6,EVENT_UNIT_DAMAGED)
-		call TriggerAddAction(myTrigger,ref_function_iK)
-	endif
-	
 	set myTrigger=null
 endfunction
 
@@ -10185,7 +10162,6 @@ function ITX takes nothing returns nothing
 	call DisableTrigger(W2)
 	call DisableTrigger(P2)
 	call DisableTrigger(Y10)
-	call DisableTrigger(V3)
 	call DisableTrigger(Z2)
 	call DisableTrigger(E3)
 	call DisableTrigger(B3)
@@ -10634,7 +10610,6 @@ function JXE takes nothing returns boolean
 endfunction
 
 function JWE takes nothing returns nothing
-	set ZN=false
 	call TriggerExecute(OT)
 	call TriggerExecute(XT)
 	call TriggerExecute(RT)
@@ -11525,14 +11500,12 @@ function LHE takes nothing returns nothing
 	call SetUnitPosition(Unit[1+GetPlayerId(GetEnumPlayer())],x,y)
 	call SetUnitMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())],GetUnitDefaultMoveSpeed(Unit[1+GetPlayerId(GetEnumPlayer())]))
 	call PanCameraToTimedForPlayer(GetEnumPlayer(),x,y,0.)
-	if ZN then
-		call ForForce(RJE(Player(8)),ref_function_LDE)
-		call DestroyForce(S8)
-		set S8=null
-		call ForForce(RJE(Player(9)),ref_function_LFE)
-		call DestroyForce(S8)
-		set S8=null
-	endif
+	call ForForce(RJE(Player(8)),ref_function_LDE)
+	call DestroyForce(S8)
+	set S8=null
+	call ForForce(RJE(Player(9)),ref_function_LFE)
+	call DestroyForce(S8)
+	set S8=null
 endfunction
 
 function LAV takes nothing returns nothing
@@ -15424,35 +15397,6 @@ function R3X takes nothing returns nothing
 	endloop
 endfunction
 
-function R4X takes nothing returns boolean
-	return ZN==false
-endfunction
-
-function R5X takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
-		call FogModifierStop(CF[EE])
-		call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,KL)
-		call FogModifierStop(DF[EE])
-		call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
-	
-	else
-		call FogModifierStop(BF[EE])
-		call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,JL)
-		call FogModifierStop(DF[EE])
-		call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
-	endif
-endfunction
-
-// -mm
-function R6X takes nothing returns nothing
-	call DisableTrigger(GetTriggeringTrigger())
-	set ZN=true
-	call FogEnableOn()
-	call FogMaskEnableOn()
-	call ForForce(ZI,ref_function_R5X)
-endfunction
-
 function R7X takes nothing returns boolean
 	return ZB==false
 endfunction
@@ -15730,12 +15674,7 @@ function RGX takes nothing returns nothing
 	call ReplaceUnitBJ(Unit[1+GetPlayerId(p)],$75303054,3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
-	if SC[1+GetPlayerId(p)]==false and yn==false then
-		call UnitAddAbility(Unit[1+GetPlayerId(p)],$41303834)
-	
-	else
-		call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
-	endif
+	call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
 	call ReRollNah(p)
 	set MN=true
 	set p=null
@@ -15783,12 +15722,7 @@ function RJX takes nothing returns nothing
 	call ReplaceUnitBJ(Unit[1+GetPlayerId(p)],$75303054,3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
-	if SC[1+GetPlayerId(p)]==false and yn==false then
-		call UnitAddAbility(Unit[1+GetPlayerId(p)],$41303834)
-	
-	else
-		call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
-	endif
+	call UnitRemoveAbility(Unit[1+GetPlayerId(p)],$41303834)
 	call ReRollNah(p)
 	set MN=true
 	set G=true
@@ -18900,11 +18834,9 @@ function XBX takes nothing returns nothing
 endfunction
 
 function XCX takes nothing returns nothing
-	if ZN then
-		call ForForce(RJE(GetOwningPlayer(GetEnteringUnit())),ref_function_XBX)
-		call DestroyForce(S8)
-		set S8=null
-	endif
+	call ForForce(RJE(GetOwningPlayer(GetEnteringUnit())),ref_function_XBX)
+	call DestroyForce(S8)
+	set S8=null
 endfunction
 
 function XDE takes nothing returns nothing
@@ -22505,7 +22437,6 @@ function initGlobals takes nothing returns nothing
 	set onGameFinished=CreateTrigger()
 	set YC=CreateForce()
 	set BD=CreateForce()
-	set yn=false
 	set P3=CreateForce()
 	set GRR=0
 	set GII=0
@@ -22668,7 +22599,6 @@ function initGlobals takes nothing returns nothing
 	set SN=null
 	set TN=null
 	set YN=false
-	set ZN=false
 	set VB=false
 	set EB=0
 	set XB=0
@@ -23123,7 +23053,6 @@ function initGlobals takes nothing returns nothing
 	set W2=null
 	set Y10=null
 	set Z2=null
-	set V3=null
 	set E3=null
 	set O3=null
 	set R3=null
@@ -23544,7 +23473,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RAX=function RAX
 	set ref_function_RGX=function RGX
 	set ref_function_RJX=function RJX
-	set ref_function_R5X=function R5X
 	set ref_function_INX=function INX
 	set ref_function_eK=function eK
 	set ref_function_iK=function iK
@@ -23986,8 +23914,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RKX=function RKX
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
-	set ref_function_R4X=function R4X
-	set ref_function_R6X=function R6X
 	set ref_function_R7X=function R7X
 	set ref_function_R8X=function R8X
 	set ref_function_IEX=function IEX
@@ -25639,9 +25565,6 @@ function main takes nothing returns nothing
 	set Z2=CreateTrigger()
 	call TriggerAddCondition(Z2,Condition(ref_function_R2X))
 	call TriggerAddAction(Z2,ref_function_R3X)
-	set V3=CreateTrigger()
-	call TriggerAddCondition(V3,Condition(ref_function_R4X))
-	call TriggerAddAction(V3,ref_function_R6X)
 	set E3=CreateTrigger()
 	call TriggerAddCondition(E3,Condition(ref_function_R7X))
 	call TriggerAddAction(E3,ref_function_R8X)
