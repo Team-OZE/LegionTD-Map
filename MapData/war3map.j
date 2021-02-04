@@ -9661,17 +9661,21 @@ set FC=true
 endfunction
 function IWX takes nothing returns nothing
 if CountPlayersInForceBJ(ZI)==1 then
-set RN=true
-//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"|cffFFcc00Single Player Mode Enabled|r
-//You can now use the -start command to start the next level.")
-call EnableTrigger(I5)
+	set RN=true
+	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"|cffFFcc00Single Player Mode Enabled|r
+	//You can now use the -start command to start the next level.")
+	call EnableTrigger(I5)
 else
-call TriggerExecute(M3)
+	call TriggerExecute(M3)
 endif
-if IN==false or HO==false then
-call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Single Team Mode Enabled|r
-You can now use the -start command to start the next level.")
-call EnableTrigger(I5)
+
+if IN==false or HO==false or isTestVersion then
+	if isTestVersion then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Test Version|r\nYou can always use the -start command to start the next level\n")
+	else
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Single Team Mode Enabled|r\nYou can now use the -start command to start the next level\n")
+	endif
+	call EnableTrigger(I5)
 endif
 endfunction
 function IXX takes nothing returns nothing
