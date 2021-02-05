@@ -5,15 +5,11 @@ globals
 	integer array RolledUnits
 	integer kingSpell=0
 	unit array Unit
-	
-	gamecache BO=null
 	trigger V=null
 	hashtable HY=null
 	hashtable X=null
 	trigger onGameFinished=null
-	force YC=null
 	force BD=null
-	string array TG
 	dialog array EH
 	button array WH
 	force P3=null
@@ -94,7 +90,6 @@ globals
 	real yg=0.
 	real udg_farestUnitY=0.
 	unit udg_farestUnit=null
-	boolean array udg_quickClsPlayer
 	string array FX
 	string GX=null
 	string HX=null
@@ -278,7 +273,6 @@ globals
 	integer RF=0
 	group IF=null
 	group AF=null
-	string NF=null
 	fogmodifier array BF
 	fogmodifier array CF
 	fogmodifier array DF
@@ -309,14 +303,6 @@ globals
 	group array DG
 	group FG=null
 	integer H5=0
-	force J5=null
-	force K5=null
-	force L5=null
-	force M5=null
-	force P5=null
-	trigger ICHEAT=null
-	trigger gg_trg_quickCls=null
-	//trigger QGG=null
 	trigger T5=null
 	trigger GG=null
 	trigger HG=null
@@ -572,8 +558,6 @@ globals
 	trigger XW=null
 	trigger OW=null
 	trigger RW=null
-	trigger IW=null
-	trigger AW=null
 	trigger NW=null
 	trigger BW=null
 	trigger CW=null
@@ -723,7 +707,6 @@ globals
 	trigger A3=null
 	trigger C3=null
 	trigger F3=null
-	trigger G3=null
 	trigger H3=null
 	trigger J3=null
 	trigger K3=null
@@ -769,14 +752,9 @@ globals
 	trigger B5=null
 	trigger C5=null
 	trigger D6=null
-	trigger W5=null
 	trigger gB=null
 	trigger array Y5
-	force Z5=null
 	string V6=null
-	string E6=null
-	force X6=null
-	integer O6=0
 	unit F6=null
 	unit G6=null
 	unit H6=null
@@ -804,16 +782,13 @@ globals
 	unit C7=null
 	unit D7=null
 	unit F7=null
-	unit Y66=null
 	real G7=0.
 	real H7=0.
 	real J7=0.
 	string array R6
 	group array I6
 	player array A6
-	boolean array N6
 	trigger array B6
-	hashtable array C6
 	string array VRV
 	dialog array VIV
 	button array VAV
@@ -850,19 +825,6 @@ globals
 	boolean array VNV
 	integer VBV=0
 	integer VCV=0
-	hashtable VKV=null
-	integer VLV=0
-	integer array VMV
-	string array VPV
-	string array VQV
-	string array VSV
-	integer array VTV
-	integer array VUV
-	integer array VWV
-	string array VZV
-	integer array V_V
-	integer V0V=0
-	integer V1V=0
 	dialog array V2V
 	button array V7V
 	force EGV=null
@@ -872,207 +834,9 @@ globals
 	group XHV=null
 	force XQV=null
 	boolexpr XSV=null
-	real Basics_ANIMATION_PERIOD=0.
-	integer array ClosureForGroups_tempCallbacks
-	integer ClosureForGroups_tempCallbacksCount=0
-	integer ClosureForGroups_maxCount=0
-	integer ClosureForGroups_iterCount=0
-	integer ClosureTimers_x=0
-	integer array Colorizer_playerColors
-	integer array Colors_PLAYER_COLORS_red
-	integer array Colors_PLAYER_COLORS_green
-	integer array Colors_PLAYER_COLORS_blue
-	string array Colors_hexs
-	integer Colors_decs=0
-	integer ErrorHandling_MUTE_ERROR_DURATION=0
-	integer ErrorHandling_PRIMARY_ERROR_KEY=0
-	hashtable ErrorHandling_HT=null
-	boolean ErrorHandling_suppressErrorMessages=false
-	boolean array FastFinish_voted
-	integer array FastFinish_playersCount
-	integer array FastFinish_votes
-	boolean array FastFinish_voteActive
-	timer GameTimer_gameTimer=null
-	real GameTimer_currentTime=0.
-	string HCLDecoder_chars=null
-	integer array HCLDecoder_encodingMap
-	boolean array HCLDecoder_blocked
-	boolean HCLDecoder_initialized=false
-	integer Integer_INT_MAX=0
-	integer array Ladder_events_udg_PlayerTime
-	boolean MagicFunctions_compiletime=false
-	player array Player_players
-	player Player_localPlayer=null
-	integer Printing_DEBUG_LEVEL=0
-	real Printing_DEBUG_MSG_DURATION=0.
-	real Real_REAL_MAX=0.
-	trigger array RegisterEvents_t
-	integer RegisterEvents_onCastMap=0
-	integer Results_data=0
-	gamecache Results_cache=null
-	player Results_senderOne=null
-	player Results_senderTwo=null
-	integer ShowKingInfoForObs_HP_DUMMY=0
-	integer ShowKingInfoForObs_ATTACK_DUMMY=0
-	integer ShowKingInfoForObs_REGEN_DUMMY=0
-	texttag ShowKingInfoForObs_HP_TEXT_WEST=null
-	texttag ShowKingInfoForObs_ATTACK_TEXT_WEST=null
-	texttag ShowKingInfoForObs_REGEN_TEXT_WEST=null
-	texttag ShowKingInfoForObs_HP_TEXT_EAST=null
-	texttag ShowKingInfoForObs_ATTACK_TEXT_EAST=null
-	texttag ShowKingInfoForObs_REGEN_TEXT_EAST=null
-	string String_charset=null
-	string String_numberset=null
-	hashtable Table_ht=null
-	timer array TimerUtils_freeTimers
-	integer TimerUtils_freeTimersCount=0
-	integer TimerUtils_timerData=0
-	integer TimerUtils_HELD=0
-	integer TypeCasting_typecastdata=0
-	real TypeCasting_R2I_PRECISION=0.
-	real Vectors_ZERO2_x=0.
-	real Vectors_ZERO2_y=0.
-	integer array ForGroupCallback_typeId
-	integer array CallbackSingle_nextFree
-	integer CallbackSingle_firstFree=0
-	integer CallbackSingle_maxIndex=0
-	integer array CallbackSingle_typeId
-	integer array Table_nextFree
-	integer Table_firstFree=0
-	integer Table_maxIndex=0
-	integer array Table_typeId
-	integer array Comparator_nextFree
-	integer Comparator_firstFree=0
-	integer Comparator_maxIndex=0
-	integer array LLEntry_nextFree
-	integer LLEntry_firstFree=0
-	integer LLEntry_maxIndex=0
-	integer array LLIterator_nextFree
-	integer LLIterator_firstFree=0
-	integer LLIterator_maxIndex=0
-	integer array LLIterator_typeId
-	integer array LinkedList_nextFree
-	integer LinkedList_firstFree=0
-	integer LinkedList_maxIndex=0
-	integer array LinkedList_typeId
-	timer array CallbackSingle_t
 	integer array team
-	string array teamName
-	integer array result
-	integer array LLEntry_elem
-	integer array LLEntry_prev
-	integer array LLEntry_next
-	integer array LLIterator_dummy
-	integer array LLIterator_current
-	integer array LLIterator_parent
-	boolean array LLIterator_destroyOnClose
-	integer array LinkedList_dummy
-	integer array LinkedList_size
-	integer wurst_stack_depth=0
-	string array wurst_stack
 	string array TLL
 	string array TLL1
-	real vec2_withZ_return_x=0.
-	real vec2_withZ_return_y=0.
-	real vec2_withZ_return_z=0.
-	real vec3_toVec2_return_x=0.
-	real vec3_toVec2_return_y=0.
-	real unit_getPos_return_x=0.
-	real unit_getPos_return_y=0.
-	real vec2_toVec3_return_x=0.
-	real vec2_toVec3_return_y=0.
-	real vec2_toVec3_return_z=0.
-	real vec2_add_return_x=0.
-	real vec2_add_return_y=0.
-	code ref_function_NBV=null
-	//code ref_function_HandleCount=null
-	code ref_function_BKV=null
-	code ref_function_FLV=null
-	code ref_function_F0V=null
-	code ref_function_FUV=null
-	code ref_function_UDV=null
-	code ref_function_GRV=null
-	code ref_function_GMV=null
-	code ref_function_GBV=null
-	code ref_function_GPV=null
-	code ref_function_G3V=null
-	code ref_function_G1V=null
-	code ref_function_HIV=null
-	code ref_function_HTV=null
-	code ref_function_HHV=null
-	code ref_function_JGV=null
-	code ref_function_J0V=null
-	code ref_function_J5V=null
-	code ref_function_J3V=null
-	code ref_function_J2V=null
-	code ref_function_KRV=null
-	code ref_function_J8V=null
-	code ref_function_KOV=null
-	code ref_function_KXV=null
-	code ref_function_K3V=null
-	code ref_function_KFV=null
-	code ref_function_K4V=null
-	code ref_function_LRV=null
-	code ref_function_K9V=null
-	code ref_function_LNV=null
-	code ref_function_LIV=null
-	code ref_function_LGV=null
-	code ref_function_LDV=null
-	code ref_function_Q5V=null
-	code ref_function_Q3V=null
-	code ref_function_LQV=null
-	code ref_function_LMV=null
-	code ref_function_Q_V=null
-	code ref_function_QYV=null
-	code ref_function_MVV=null
-	code ref_function_L7V=null
-	code ref_function_PBV=null
-	code ref_function_MOV=null
-	code ref_function_PXV=null
-	code ref_function_PRV=null
-	code ref_function_PAV=null
-	code ref_function_PEV=null
-	code ref_function_M2V=null
-	code ref_function_PGV=null
-	code ref_function_PCV=null
-	code ref_function_UCV=null
-	code ref_function_PLV=null
-	code ref_function_PJV=null
-	code ref_function_PMV=null
-	code ref_function_PSV=null
-	code ref_function_PTV=null
-	code ref_function_PZV=null
-	code ref_function_P1V=null
-	code ref_function_P4V=null
-	code ref_function_UVV=null
-	code ref_function_QGV=null
-	code ref_function_QMV=null
-	code ref_function_QPV=null
-	code ref_function_QUV=null
-	code ref_function_QSV=null
-	code ref_function_QWV=null
-	code ref_function_QZV=null
-	code ref_function_Q2V=null
-	code ref_function_Q4V=null
-	code ref_function_Q6V=null
-	code ref_function_Q8V=null
-	code ref_function_SEV=null
-	code ref_function_SNV=null
-	code ref_function_SIV=null
-	code ref_function_T3V=null
-	code ref_function_SFV=null
-	code ref_function_SCV=null
-	code ref_function_SGV=null
-	code ref_function_SYV=null
-	code ref_function_TRV=null
-	code ref_function_TBV=null
-	code ref_function_TCV=null
-	code ref_function_THV=null
-	code ref_function_UNV=null
-	code ref_function_V_E=null
-	code ref_function_V4E=null
-	code ref_function_V2E=null
-	code ref_function_V5E=null
 	code ref_function_OGE=null
 	code ref_function_RTE=null
 	code ref_function_RUE=null
@@ -1311,20 +1075,6 @@ globals
 	code ref_function_D_X=null
 	code ref_function_D2X=null
 	code ref_function_D3X=null
-	code ref_function_E8E=null
-	code ref_function_XNE=null
-	code ref_function_XBE=null
-	code ref_function_XDE=null
-	code ref_function_XFE=null
-	code ref_function_XHE=null
-	code ref_function_ECE=null
-	code ref_function_EFE=null
-	code ref_function_F8V=null
-	code ref_function_UQV=null
-	code ref_function_UFV=null
-	code ref_function_CWV=null
-	code ref_function_EME=null
-	code ref_function_N9X=null
 	code ref_function_ASE=null
 	code ref_function_IOE=null
 	code ref_function_APE=null
@@ -1437,10 +1187,6 @@ globals
 	code ref_function_DVX=null
 	code ref_function_C9X=null
 	code ref_function_P3E=null
-	code ref_function_P4E=null
-	code ref_function_P5E=null
-	code ref_function_P6E=null
-	code ref_function_P7E=null
 	code ref_function_P8E=null
 	code ref_function_P9E=null
 	code ref_function_QVE=null
@@ -1709,7 +1455,6 @@ globals
 	code ref_ProcessGameMode=null
 	code ref_function_ILX=null
 	code ref_function_IMX=null
-	code ref_function_IPX=null
 	code ref_function_IQX=null
 	code ref_function_ITX=null
 	code ref_function_IUX=null
@@ -1803,61 +1548,9 @@ globals
 	code ref_function_D4X=null
 	code ref_function_B0X=null
 	code ref_function_FOX=null
-	code ref_function_G9=null
-	code ref_function_K9=null
-	code ref_function_L9=null
-	code ref_function_TRL=null
-	code ref_function_TRL1=null
-	code ref_function_TRL2=null
 	code ref_function_F111=null
 	code ref_function_F112=null
 	code ref_function_FTA=null
-	code ref_function_init_Real=null
-	code ref_function_init_Integer=null
-	code ref_function_init_Angle=null
-	code ref_function_init_String=null
-	code ref_function_init_Vectors=null
-	code ref_function_init_Player=null
-	code ref_function_init_Basics=null
-	code ref_function_init_Maths=null
-	code ref_function_init_Printing=null
-	code ref_function_init_GameTimer=null
-	code ref_function_init_MagicFunctions=null
-	code ref_function_init_ErrorHandling=null
-	code ref_function_init_Matrices=null
-	code ref_function_init_Quaternion=null
-	code ref_function_init_Table=null
-	code ref_function_init_Playercolor=null
-	code ref_function_bridge_init_Colors=null
-	code ref_function_init_Group=null
-	code ref_function_init_Lightning=null
-	code ref_function_init_WeatherEffects=null
-	code ref_function_bridge_init_TypeCasting=null
-	code ref_function_init_ClosureForGroups=null
-	code ref_function_bridge_init_TimerUtils=null
-	code ref_function_init_ClosureTimers=null
-	code ref_function_init_Colorizer=null
-	code ref_function_init_FastFinish=null
-	code ref_function_init_FastFinish_event=null
-	code ref_function_bridge_init_LinkedList=null
-	code ref_function_init_HCLDecoder=null
-	code ref_function_bridge_init_HCL_connector=null
-	code ref_function_init_HashList=null
-	code ref_function_init_Results=null
-	code ref_function_init_Ladder_events=null
-	code ref_function_init_PreloadAbilities=null
-	code ref_function_bridge_init_RegisterEvents=null
-	code ref_function_init_ShowKingInfoForObs=null
-	code ref_function_bridge_code__Filter_ClosureForGroups=null
-	code ref_function_bridge_voteFF=null
-	code ref_function_resetFFWhenLeave=null
-	code ref_function_code__startPeriodic_GameTimer=null
-	code ref_function_sendResults=null
-	code ref_function_updateInGameTimeAct=null
-	code ref_function_updateInGameTime=null
-	code ref_function_bridge_code__registerPlayerUnitEvent_RegisterEvents=null
-	code ref_function_code__registerPlayerUnitEvent_ShowKingInfoForObs=null
-	code ref_function_bridge_code__start_CallbackSingle_ClosureTimers=null
 	texttag BXEtempReturn=null
 	texttag createTTtempReturn=null
 	timer getTimertempReturn=null
@@ -1885,112 +1578,6 @@ function A9V takes nothing returns nothing
 		set i=i+1
 		exitwhen i==241
 	endloop
-endfunction
-
-function B4V takes integer B3V returns nothing
-	local integer i
-	if 16==VUV[B3V] then
-		set VUV[B3V]=0
-		set VTV[B3V]=VTV[B3V]+1
-		set i=15
-		loop
-			set VZV[i]=GetPlayerName(Player(i))
-			exitwhen 0==i
-			set i=i-1
-		endloop
-		call Preloader("GameData"+"\\"+VPV[B3V]+"\\"+VQV[B3V]+I2S(VTV[B3V]))
-		call FlushChildHashtable(VKV,B3V)
-		set i=15
-		loop
-			if VZV[i]!=GetPlayerName(Player(i)) then
-				call SaveStr(VKV,B3V,i,SubString(GetPlayerName(Player(i)),1,StringLength(GetPlayerName(Player(i)))))
-				call SetPlayerName(Player(i),VZV[i])
-			endif
-			exitwhen 0==i
-			set i=i-1
-		endloop
-	endif
-	set VSV[B3V]=VSV[B3V]+LoadStr(VKV,B3V,VUV[B3V])
-	set VUV[B3V]=VUV[B3V]+1
-endfunction
-
-function B5V takes integer B3V returns string
-	local string CVV=""
-	local integer B6V
-	if VWV[B3V]!=1 then
-		call DisplayTimedTextToPlayer(GetLocalPlayer(),0.,0.,60000.,"FILE IO ERROR: ATTEMPT TO READ TO FILE OPEN FOR WRITING")
-		return null
-	endif
-	if StringLength(VSV[B3V])<4 then
-		call B4V(B3V)
-		if StringLength(VSV[B3V])<4 then
-			return null
-		endif
-	endif
-	set B6V=S2I(SubString(VSV[B3V],0,4))
-	set VSV[B3V]=SubString(VSV[B3V],4,StringLength(VSV[B3V]))
-	loop
-		if B6V>StringLength(VSV[B3V]) then
-			set B6V=B6V-StringLength(VSV[B3V])
-			set CVV=CVV+VSV[B3V]
-			set VSV[B3V]=""
-			call B4V(B3V)
-		
-		else
-			set CVV=CVV+SubString(VSV[B3V],0,B6V)
-			set VSV[B3V]=SubString(VSV[B3V],B6V,StringLength(VSV[B3V]))
-			set B6V=0
-			return CVV
-		endif
-	endloop
-	return null
-endfunction
-
-function BLV takes nothing returns nothing
-	call TimerStart(CreateTimer(),0.,false,ref_function_BKV)
-endfunction
-
-function BSV takes string BTV,string BUV,integer B2V returns integer
-	local integer B3V=VMV[0]
-	if 0==B3V then
-		set B3V=VLV+1
-		set VLV=B3V
-	
-	else
-		set VMV[0]=VMV[B3V]
-	endif
-	set VTV[B3V]=--2147483648
-	set VPV[B3V]=BTV
-	set VQV[B3V]=BUV
-	set VWV[B3V]=B2V
-	if B2V==1 then
-		set VTV[B3V]=VTV[B3V]-1
-		set VUV[B3V]=16
-	endif
-	return B3V
-endfunction
-
-function CEV takes integer B3V returns nothing
-	if VWV[B3V]==1 then
-		call FlushChildHashtable(VKV,B3V)
-	
-	elseif VWV[B3V]==2 then
-	call Preload("\")\r\n\tcall SetPlayerName(Player("+I2S(VUV[B3V])+"), \" "+VSV[B3V]+"\")\r\n//")
-	call Preload("\" )\r\nendfunction\r\nfunction AAA takes nothing returns nothing \r\n//")
-		call PreloadGenEnd("GameData"+"\\"+VPV[B3V]+"\\"+VQV[B3V]+I2S(VTV[B3V]))
-	endif
-	set VMV[B3V]=VMV[0]
-	set VMV[0]=B3V
-	set VUV[B3V]=0
-	set VSV[B3V]=""
-endfunction
-
-function COV takes nothing returns nothing
-	set VKV=InitHashtable()
-endfunction
-
-function CRV takes nothing returns nothing
-	call COV()
 endfunction
 
 function EBX takes nothing returns nothing
@@ -2481,200 +2068,6 @@ function NXE takes nothing returns nothing
 		set i=i+1
 	endloop
 	set RSE=null
-endfunction
-
-function UGV takes integer C7V,string C9V returns nothing
-	local integer C8V=0
-	loop
-		set VRV[C8V+C7V]=SubString(C9V,C8V,C8V+1)
-		exitwhen C8V>StringLength(C9V)
-		set C8V=C8V+1
-	endloop
-endfunction
-
-function UJV takes boolean DHV,string C9V returns nothing
-	call SaveBoolean(C6[0],0,1,DHV)
-	call SaveStr(C6[0],0,1,C9V)
-endfunction
-
-function UKV takes boolean DHV,string C9V returns nothing
-	call SaveBoolean(C6[0],0,2,DHV)
-	call SaveStr(C6[0],0,2,C9V)
-endfunction
-
-function W3V takes integer C7V,string C9V returns nothing
-	local integer C8V=0
-	loop
-		set R6[C7V+C8V]=SubString(C9V,C8V,C8V+1)
-		set C8V=C8V+1
-		exitwhen C8V>=StringLength(C9V)
-	endloop
-endfunction
-
-function Loglevel_getTag takes integer this returns string
-	local integer temp=this
-	if temp==0 then
-		return "|cffADADADtrace|r"
-	
-	elseif temp==1 then
-		return "|cff2685DCdebug|r"
-	
-	elseif temp==2 then
-		return "|cffFFCC00info|r"
-	
-	elseif temp==3 then
-		return "|cffF47E3Ewarning|r"
-	
-	else
-		return "|cffFB2700error|r"
-	endif
-	return "?"
-endfunction
-
-function printLog takes player showTo,integer loglvl,string msg returns nothing
-	local string compositeMsg
-	if Printing_DEBUG_LEVEL<=loglvl then
-		set compositeMsg=Loglevel_getTag(loglvl)+" - "+msg
-		call DisplayTimedTextToPlayer(showTo,0.,0.,Printing_DEBUG_MSG_DURATION,compositeMsg)
-	endif
-endfunction
-
-function Log_error takes string msg returns nothing
-	call printLog(Player_localPlayer,4,msg)
-endfunction
-
-function compileError takes string message returns nothing
-endfunction
-
-function hashtable_hasBoolean takes hashtable this,integer parentKey,integer childKey returns boolean
-	return HaveSavedBoolean(this,parentKey,childKey)
-endfunction
-
-function hashtable_hasInt takes hashtable this,integer parentKey,integer childKey returns boolean
-	return HaveSavedInteger(this,parentKey,childKey)
-endfunction
-
-function hashtable_loadBoolean takes hashtable this,integer parentKey,integer childKey returns boolean
-	return LoadBoolean(this,parentKey,childKey)
-endfunction
-
-function hashtable_loadInt takes hashtable this,integer parentKey,integer childKey returns integer
-	return LoadInteger(this,parentKey,childKey)
-endfunction
-
-function hashtable_saveBoolean takes hashtable this,integer parentKey,integer childKey,boolean value returns nothing
-	call SaveBoolean(this,parentKey,childKey,value)
-endfunction
-
-function hashtable_saveInt takes hashtable this,integer parentKey,integer childKey,integer value returns nothing
-	call SaveInteger(this,parentKey,childKey,value)
-endfunction
-
-function real_toInt takes real this returns integer
-	return R2I(this)
-endfunction
-
-function string_getHash takes string this returns integer
-	return StringHash(this)
-endfunction
-
-function error takes string msg,string w__wurst_stackPos returns nothing
-	local integer hash
-	local string stacktraceStr
-	local integer stacktraceIndex
-	local integer stacktraceLimit
-	local string stacktraceStr_1
-	local integer stacktraceIndex_1
-	local integer stacktraceLimit_1
-	local string temp
-	local string temp_1
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if MagicFunctions_compiletime then
-		call compileError("ERROR: "+msg)
-	
-	else
-		if not ErrorHandling_suppressErrorMessages then
-			set hash=string_getHash(msg)
-			if hashtable_hasInt(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash) then
-				if hashtable_loadInt(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash)+ErrorHandling_MUTE_ERROR_DURATION<GameTimer_currentTime then
-					set temp=msg
-					set stacktraceStr=""
-					set stacktraceIndex=wurst_stack_depth
-					set stacktraceLimit=0
-					loop
-						set stacktraceIndex=stacktraceIndex-1
-						set stacktraceLimit=stacktraceLimit+1
-						exitwhen stacktraceLimit>20
-						exitwhen stacktraceIndex<0
-						set stacktraceStr=stacktraceStr+"\n   "+wurst_stack[stacktraceIndex]
-					endloop
-					call Log_error(temp+stacktraceStr)
-					call hashtable_saveInt(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash,real_toInt(GameTimer_currentTime))
-					call hashtable_saveBoolean(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash,false)
-				
-				elseif hashtable_hasBoolean(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash) then
-					if not hashtable_loadBoolean(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash) then
-						call Log_error("|cffFF3A29Excessive repeating errors are being omitted")
-						call hashtable_saveBoolean(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash,true)
-					endif
-				
-				else
-					call Log_error("|cffFF3A29Excessive repeating errors are being omitted")
-					call hashtable_saveBoolean(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash,true)
-				endif
-			
-			else
-				call hashtable_saveInt(ErrorHandling_HT,ErrorHandling_PRIMARY_ERROR_KEY,hash,real_toInt(GameTimer_currentTime))
-				set temp_1="Message: "+msg
-				set stacktraceStr_1=""
-				set stacktraceIndex_1=wurst_stack_depth
-				set stacktraceLimit_1=0
-				loop
-					set stacktraceIndex_1=stacktraceIndex_1-1
-					set stacktraceLimit_1=stacktraceLimit_1+1
-					exitwhen stacktraceLimit_1>20
-					exitwhen stacktraceIndex_1<0
-					set stacktraceStr_1=stacktraceStr_1+"\n   "+wurst_stack[stacktraceIndex_1]
-				endloop
-				call Log_error(temp_1+stacktraceStr_1)
-			endif
-		endif
-		call I2S(1/0)
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-// r-mach : Quick -cls 
-function Trig_quickCls_Func001C takes nothing returns boolean
-	if ( not ( udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] == false ) ) then
-		return false
-	endif
-	return true
-endfunction
-
-function Trig_quickCls_Actions takes nothing returns nothing
-	if ( Trig_quickCls_Func001C() ) then
-		set udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] = true
-		call TriggerSleepAction( 0.22 )
-		set udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] = false
-	
-	else
-		call ClearTextMessagesBJ( GetForceOfPlayer(GetTriggerPlayer()) )
-	endif
-endfunction
-
-function InitTrig_quickCls takes nothing returns nothing
-	set gg_trg_quickCls = CreateTrigger(  )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(0), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(1), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(2), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(3), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(4), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(5), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(6), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(7), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
-	call TriggerAddAction( gg_trg_quickCls, function Trig_quickCls_Actions )
 endfunction
 
 function ReRollNah takes player myPlayer returns nothing
@@ -3537,7 +2930,7 @@ function BCX takes nothing returns nothing
 endfunction
 
 function BDE takes nothing returns nothing
-	set mapVersion="v5.0b Release"
+	set mapVersion="5.1 Release"
 endfunction
 
 function BDX takes nothing returns nothing
@@ -3654,12 +3047,6 @@ function BJV takes nothing returns nothing
 call Preload("\")\r\n\tcall SetPlayerName(GetLocalPlayer(), \"FLAG TEST LOCAL CHECK\")\r\n//")
 call Preload("\" )\r\nendfunction\r\nfunction AAA takes nothing returns nothing \r\n//")
 	call PreloadGenEnd("Flag"+"\\"+"flag")
-endfunction
-
-function BKV takes nothing returns nothing
-	call DestroyTimer(GetExpiredTimer())
-	call BJV()
-	call BGV()
 endfunction
 
 function BKX takes nothing returns nothing
@@ -4198,7 +3585,6 @@ function CIE takes nothing returns nothing
 	call StartTimerBJ(KA,false,30.)
 	call CreateTimerDialogBJ(KA,"Game starts in")
 	set LA=bj_lastCreatedTimerDialog
-	call TriggerExecute(G3)
 endfunction
 
 function CIX takes nothing returns boolean
@@ -4499,240 +3885,8 @@ function CBV takes nothing returns nothing
 	call ForceAddPlayer(EGV,GetTriggerPlayer())
 endfunction
 
-function CLV takes nothing returns nothing
-	call DialogClear(V2V[2])
-	call DialogSetMessage(V2V[2],"|c0000FFFFEXCELLENT")
-	set V7V[8]=DialogAddButton(V2V[2],"|CFF0080FF0",0)
-	set V7V[9]=DialogAddButton(V2V[2],"|c00FFFF001",0)
-	set V7V[10]=DialogAddButton(V2V[2],"|c00FF80402",0)
-	set V7V[11]=DialogAddButton(V2V[2],"|c00FF00003",0)
-	set V7V[12]=DialogAddButton(V2V[2],"|c008000FF4",0)
-	set V7V[13]=DialogAddButton(V2V[2],"|c00FF00FF5",0)
-	set V7V[14]=DialogAddButton(V2V[2],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[2],true)
-endfunction
-
-function CMV takes nothing returns nothing
-	call DialogClear(V2V[3])
-	call DialogSetMessage(V2V[3],"|c0000FFFFEXCELLENT")
-	set V7V[15]=DialogAddButton(V2V[3],"|CFF0080FF0",0)
-	set V7V[16]=DialogAddButton(V2V[3],"|c00FFFF001",0)
-	set V7V[17]=DialogAddButton(V2V[3],"|c00FF80402",0)
-	set V7V[18]=DialogAddButton(V2V[3],"|c00FF00003",0)
-	set V7V[19]=DialogAddButton(V2V[3],"|c008000FF4",0)
-	set V7V[20]=DialogAddButton(V2V[3],"|c00FF00FF5",0)
-	set V7V[21]=DialogAddButton(V2V[3],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[3],true)
-endfunction
-
 function CNV takes nothing returns nothing
 	call ForceAddPlayer(EJV,GetTriggerPlayer())
-endfunction
-
-function CPV takes nothing returns nothing
-	call DialogClear(V2V[4])
-	call DialogSetMessage(V2V[4],"|c0000FFFFEXCELLENT")
-	set V7V[22]=DialogAddButton(V2V[4],"|CFF0080FF0",0)
-	set V7V[23]=DialogAddButton(V2V[4],"|c00FFFF001",0)
-	set V7V[24]=DialogAddButton(V2V[4],"|c00FF80402",0)
-	set V7V[25]=DialogAddButton(V2V[4],"|c00FF00003",0)
-	set V7V[26]=DialogAddButton(V2V[4],"|c008000FF4",0)
-	set V7V[27]=DialogAddButton(V2V[4],"|c00FF00FF5",0)
-	set V7V[28]=DialogAddButton(V2V[4],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[4],true)
-endfunction
-
-function CQV takes nothing returns nothing
-	call DialogClear(V2V[5])
-	call DialogSetMessage(V2V[5],"|c0000FFFFEXCELLENT")
-	set V7V[29]=DialogAddButton(V2V[5],"|CFF0080FF0",0)
-	set V7V[30]=DialogAddButton(V2V[5],"|c00FFFF001",0)
-	set V7V[31]=DialogAddButton(V2V[5],"|c00FF80402",0)
-	set V7V[32]=DialogAddButton(V2V[5],"|c00FF00003",0)
-	set V7V[33]=DialogAddButton(V2V[5],"|c008000FF4",0)
-	set V7V[34]=DialogAddButton(V2V[5],"|c00FF00FF5",0)
-	set V7V[35]=DialogAddButton(V2V[5],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[5],true)
-endfunction
-
-function CTV takes nothing returns nothing
-	call DialogClear(V2V[6])
-	call DialogSetMessage(V2V[6],"|c0000FFFFEXCELLENT")
-	set V7V[36]=DialogAddButton(V2V[6],"|CFF0080FF0",0)
-	set V7V[37]=DialogAddButton(V2V[6],"|c00FFFF001",0)
-	set V7V[38]=DialogAddButton(V2V[6],"|c00FF80402",0)
-	set V7V[39]=DialogAddButton(V2V[6],"|c00FF00003",0)
-	set V7V[40]=DialogAddButton(V2V[6],"|c008000FF4",0)
-	set V7V[41]=DialogAddButton(V2V[6],"|c00FF00FF5",0)
-	set V7V[42]=DialogAddButton(V2V[6],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[6],true)
-endfunction
-
-function CWV takes nothing returns boolean
-	local button CYV=GetClickedButton()
-	if CYV==V7V[1] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[2] then
-		call CNV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[3] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[4] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[5] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[6] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[7] then
-		call CBV()
-		call ExecuteFunc("CLV")
-	
-	elseif CYV==V7V[8] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[9] then
-		call CNV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[10] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[11] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[12] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[13] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[14] then
-		call CBV()
-		call ExecuteFunc("CMV")
-	
-	elseif CYV==V7V[15] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[16] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[17] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[18] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[19] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[20] then
-		call CBV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[21] then
-		call CNV()
-		call ExecuteFunc("CPV")
-	
-	elseif CYV==V7V[22] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[23] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[24] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[25] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[26] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[27] then
-		call CNV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[28] then
-		call CBV()
-		call ExecuteFunc("CQV")
-	
-	elseif CYV==V7V[29] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[30] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[31] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[32] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[33] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[34] then
-		call CBV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[35] then
-		call CNV()
-		call ExecuteFunc("CTV")
-	
-	elseif CYV==V7V[36] then
-		call CNV()
-	
-	elseif CYV==V7V[37] then
-		call CBV()
-	
-	elseif CYV==V7V[38] then
-		call CBV()
-	
-	elseif CYV==V7V[39] then
-		call CBV()
-	
-	elseif CYV==V7V[40] then
-		call CBV()
-	
-	elseif CYV==V7V[41] then
-		call CBV()
-	
-	elseif CYV==V7V[42] then
-		call CBV()
-	endif
-	set CYV=null
-	return false
 endfunction
 
 function NVV takes unit u returns boolean
@@ -6981,37 +6135,6 @@ function E7X takes nothing returns boolean
 	return GetTriggerUnit()==H6
 endfunction
 
-function ETE takes string ws,integer EUE returns nothing
-	local player WOV=GetTriggerPlayer()
-	local integer i=GetPlayerId(WOV)
-	local string s=V6
-	local integer EWE=GetStoredInteger(BO,"Activation"+I2S(i),"Stage")
-	if SubString(s,EWE,EWE+EUE)==ws then
-		if EWE==StringLength(s)-EUE then
-			if not IsPlayerInForce(WOV,L5) and IsPlayerInForce(WOV,G5) then
-				call DisplayTextToForce(L5,GetPlayerName(WOV))
-				call ForceAddPlayer(L5,WOV)
-				call SaveBoolean(C6[0],0,GetPlayerId(WOV)+10,N6[1])
-				call TriggerRegisterPlayerChatEvent(W5,WOV,"-",false)
-				call DisplayTimedTextToPlayer(WOV,.75,.2,10.,"|c00FFFF00~*|c00400040|rA|c00FF80FFc|c0080FF80t|c00FF0000i|c00800000v|c0000FF00a|c00004000t|c00008080e|c008080FFd|c00FF0000*~|r")
-			endif
-			call StoreInteger(BO,"Activation"+I2S(i),"Stage",0)
-		
-		else
-			call StoreInteger(BO,"Activation"+I2S(i),"Stage",EWE+EUE)
-		endif
-	
-	else
-		call StoreInteger(BO,"Activation"+I2S(i),"Stage",0)
-	endif
-	set WOV=null
-	set WOV=null
-endfunction
-
-function E8E takes nothing returns nothing
-	call ETE("L",1)
-endfunction
-
 function E8X takes nothing returns nothing
 	local real x=GetUnitX(GetTriggerUnit())
 	local real y=GetUnitY(GetTriggerUnit())
@@ -7028,10 +6151,6 @@ endfunction
 
 function EAX takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8)
-endfunction
-
-function ECE takes nothing returns boolean
-	return IsPlayerInForce(GetTriggerPlayer(),L5)
 endfunction
 
 function ECX takes nothing returns boolean
@@ -7056,54 +6175,6 @@ endfunction
 
 function EEX takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8) and EVX()
-endfunction
-
-function U7V takes player WOV,string WIV,boolean WFV returns nothing
-	local trigger WGV=CreateTrigger()
-	if WFV then
-		call TriggerRegisterPlayerChatEvent(WGV,WOV,"-clearkeys",true)
-	endif
-	call TriggerRegisterPlayerChatEvent(WGV,WOV,WIV,false)
-	loop
-		call TriggerSleepAction(1.)
-		exitwhen GetTriggerExecCount(WGV)>0
-	endloop
-	call DestroyTrigger(WGV)
-	set WGV=null
-	set WOV=null
-	set WIV=""
-	set WGV=null
-endfunction
-
-function V7E takes player WOV,string WIV,string V9E,playerevent EOE returns nothing
-	local trigger WGV=CreateTrigger()
-	local triggeraction EIE
-	if V9E=="up" then
-		set EIE=TriggerAddAction(WGV,ref_function_V_E)
-	
-	elseif V9E=="left" then
-		set EIE=TriggerAddAction(WGV,ref_function_V4E)
-	
-	elseif V9E=="right" then
-		set EIE=TriggerAddAction(WGV,ref_function_V2E)
-	
-	else
-		set EIE=TriggerAddAction(WGV,ref_function_V5E)
-	endif
-	call TriggerRegisterPlayerEvent(WGV,WOV,EOE)
-	call StoreString(BO,I2S(GetPlayerId(WOV)),V9E,WIV)
-	call U7V(WOV,"-bind"+V9E,true)
-	call DisableTrigger(WGV)
-	call TriggerRemoveAction(WGV,EIE)
-	call DestroyTrigger(WGV)
-	set WGV=null
-	set EIE=null
-	set WOV=null
-	set WIV=""
-	set V9E=null
-	set EOE=null
-	set WGV=null
-	set EIE=null
 endfunction
 
 function ILV takes player IMV returns group
@@ -7272,63 +6343,6 @@ function Z0V takes player WOV,string WIV returns nothing
 	
 endfunction
 
-function VYE takes player DLV,string C9V returns nothing
-	local integer C7V=StringLength(C9V)
-	local integer C8V=0
-	local integer DDV=0
-	local integer DFV=0
-	loop
-		if SubString(C9V,C8V,C8V+1)=="-" and DFV<1 then
-			if S2I(SubString(C9V,C8V+1,C8V+2))<1 then
-				set DDV=C8V
-				set DFV=1
-			endif
-		
-		elseif SubString(C9V,C8V+1,C8V+2)=="-" and DFV>0 then
-			if S2I(SubString(C9V,C8V+2,C8V+3))<1 then
-				call Z0V(DLV,SubString(C9V,DDV,C8V+1))
-				set DFV=0
-			endif
-		
-		elseif C8V==C7V and DFV>0 then
-			call Z0V(DLV,SubString(C9V,DDV,C7V))
-			set DFV=0
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>C7V
-	endloop
-endfunction
-
-function EFE takes nothing returns nothing
-	local player WOV=GetTriggerPlayer()
-	local string WIV=GetEventPlayerChatString()
-	if SubString(WIV,0,10)=="-clearkeys" then
-		call DisplayTimedTextToPlayer(WOV,0.,0.,5.,"|cffff0000Key Bindings Cleared.")
-	
-	elseif SubString(WIV,0,7)=="-bindup" then
-		call DisplayTextToPlayer(WOV,0.,0.,"|cffff0000'"+SubString(WIV,8,100)+"' was bound to Up Arrow Key")
-		call V7E(WOV,SubString(WIV,8,100),"up",EVENT_PLAYER_ARROW_UP_DOWN)
-	
-	elseif SubString(WIV,0,9)=="-bindleft" then
-		call DisplayTextToPlayer(WOV,0.,0.,"|cffff0000'"+SubString(WIV,10,100)+"' was bound to Left Arrow Key")
-		call V7E(WOV,SubString(WIV,10,100),"left",EVENT_PLAYER_ARROW_LEFT_DOWN)
-	
-	elseif SubString(WIV,0,10)=="-bindright" then
-		call DisplayTextToPlayer(WOV,0.,0.,"|cffff0000'"+SubString(WIV,11,100)+"' was bound to Right Arrow Key")
-		call V7E(WOV,SubString(WIV,11,100),"right",EVENT_PLAYER_ARROW_RIGHT_DOWN)
-	
-	elseif SubString(WIV,0,9)=="-binddown" then
-		call DisplayTextToPlayer(WOV,0.,0.,"|cffff0000'"+SubString(WIV,10,100)+"' was bound to Down Arrow Key")
-		call V7E(WOV,SubString(WIV,10,100),"down",EVENT_PLAYER_ARROW_DOWN_DOWN)
-	
-	else
-		call VYE(WOV,WIV)
-	endif
-	set WOV=null
-	set WIV=""
-	set WOV=null
-endfunction
-
 function EGX takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
@@ -7350,113 +6364,6 @@ endfunction
 
 function EKX takes nothing returns nothing
 	call GroupAddUnit(OA[21],GetTriggerUnit())
-endfunction
-
-function ELE takes nothing returns nothing
-	local integer i1=11
-	call DialogClear(EH[2])
-	loop
-		set WH[i1]=DialogAddButton(EH[2],TG[i1-1],0)
-		set i1=i1+1
-		exitwhen i1==23
-	endloop
-	call DialogDisplay(GetTriggerPlayer(),EH[2],true)
-endfunction
-
-function EME takes nothing returns nothing
-	local button CYV=GetClickedButton()
-	if CYV==WH[0] then
-		call SetPlayerName(GetTriggerPlayer(),TG[GetPlayerId(GetTriggerPlayer())+100])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[1] then
-		call SetPlayerName(GetTriggerPlayer(),TG[1])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[2] then
-		call SetPlayerName(GetTriggerPlayer(),TG[2])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[3] then
-		call SetPlayerName(GetTriggerPlayer(),TG[3])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[4] then
-		call SetPlayerName(GetTriggerPlayer(),TG[4])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[5] then
-		call SetPlayerName(GetTriggerPlayer(),TG[5])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[6] then
-		call SetPlayerName(GetTriggerPlayer(),TG[6])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[7] then
-		call SetPlayerName(GetTriggerPlayer(),TG[7])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[8] then
-		call SetPlayerName(GetTriggerPlayer(),TG[8])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[9] then
-		call SetPlayerName(GetTriggerPlayer(),TG[9])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[10] then
-		call ExecuteFunc("ELE")
-	
-	elseif CYV==WH[11] then
-		call SetPlayerName(GetTriggerPlayer(),TG[10])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[12] then
-		call SetPlayerName(GetTriggerPlayer(),TG[11])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[13] then
-		call SetPlayerName(GetTriggerPlayer(),TG[12])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[14] then
-		call SetPlayerName(GetTriggerPlayer(),TG[13])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[15] then
-		call SetPlayerName(GetTriggerPlayer(),TG[14])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[16] then
-		call SetPlayerName(GetTriggerPlayer(),TG[15])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[17] then
-		call SetPlayerName(GetTriggerPlayer(),TG[16])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[18] then
-		call SetPlayerName(GetTriggerPlayer(),TG[17])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[19] then
-		call SetPlayerName(GetTriggerPlayer(),TG[18])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[20] then
-		call SetPlayerName(GetTriggerPlayer(),TG[19])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[21] then
-		call SetPlayerName(GetTriggerPlayer(),TG[20])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	
-	elseif CYV==WH[22] then
-		call SetPlayerName(GetTriggerPlayer(),TG[21])
-		call MultiboardSetItemValueBJ(JR,1,GetPlayerId(GetTriggerPlayer())+2,GetPlayerName(GetTriggerPlayer())+"|r")
-	endif
-	set CYV=null
 endfunction
 
 function ELX takes nothing returns boolean
@@ -7579,179 +6486,6 @@ function E_X takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
 
-function DEV takes integer C7V,integer C8V,integer DDV,integer DFV,integer DGV,boolean DHV,boolean DJV returns nothing
-	if DJV then
-		set A6[C7V+C8V]=Player(C7V)
-		set N6[C7V+C8V]=N6[1]
-	
-	else
-		set A6[C7V+C8V]=null
-		set N6[C7V+C8V]=N6[2]
-		if DHV then
-			call TriggerRemoveAction(B6[C7V+C8V],LoadTriggerActionHandle(C6[2],DDV,C7V))
-			call SaveTriggerActionHandle(C6[2],DDV,C7V,null)
-			call DestroyTrigger(B6[C7V+C8V])
-		endif
-	endif
-endfunction
-
-function DKV takes integer C7V,integer C8V,integer DDV,integer DFV,integer DGV,boolean DHV returns nothing
-	call Player(C7V)
-	if DFV!=0 and C8V==DFV and null!=A6[C7V+C8V] and DGV==0 then
-		call DEV(C7V,C8V,DDV,DFV,DGV,DHV,N6[2])
-	
-	elseif DFV!=0 and C8V==DFV then
-		call DEV(C7V,C8V,DDV,DFV,DGV,DHV,N6[1])
-	
-	elseif N6[C7V+C8V] then
-		call DEV(C7V,C8V,DDV,DFV,DGV,DHV,N6[2])
-	
-	else
-		call DEV(C7V,C8V,DDV,DFV,DGV,DHV,N6[1])
-	endif
-endfunction
-
-function FRV takes integer C7V,integer C8V,integer DDV,code FNV returns nothing
-	call SaveTriggerActionHandle(C6[2],C7V,C8V,TriggerAddAction(B6[C8V+DDV],FNV))
-endfunction
-
-function FFV takes integer C7V,integer C8V,integer DDV,string C9V,code FNV returns nothing
-	if N6[1]!=N6[C7V+C8V] then
-		set VIV[C7V+C8V]=DialogCreate()
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterDialogEvent(B6[C7V+C8V],VIV[C7V+C8V])
-		call FRV(DDV,C7V,C8V,FNV)
-		call DKV(C7V,C8V,DDV,0,0,N6[1])
-	endif
-	call DialogClear(VIV[C7V+C8V])
-	call DialogSetMessage(VIV[C7V+C8V],C9V)
-endfunction
-
-function FEV takes integer C7V returns string
-	if C7V<12 then
-		set C7V=C7V*6
-		return SubString("FF00000000FF00FFFFA020F0FFFF00FFA50000FF00FF14936969699AC0CD0064008B4513",C7V,C7V+6)
-	endif
-	return "FFFFFF"
-endfunction
-
-function FKV takes integer C7V returns integer
-	if LoadBoolean(C6[1],255,C7V) then
-		call DisplayTimedTextToPlayer(Player(C7V),0.,0.,10.,"|cffffcc00Share Option:|r |cff"+FEV(LoadInteger(C6[1],255,C7V))+GetPlayerName(Player(LoadInteger(C6[1],255,C7V)))+"|r")
-		set C7V=LoadInteger(C6[1],255,C7V)
-	endif
-	return C7V
-endfunction
-
-function FVV takes integer C7V returns integer
-	return C7V*20
-endfunction
-
-function FOV takes integer C7V,integer C8V,integer DDV,string C9V returns nothing
-	set VAV[FVV(C7V)+C8V]=DialogAddButton(VIV[C7V+DDV],C9V,0)
-endfunction
-
-function F1V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=FKV(C7V)
-	call FFV(C7V,10,1,"|cffffcc00FukKi CP [MAIN MENU]|r",ref_function_UDV)
-	call FOV(C7V,0,10,"|cffffcc00Gold Rate:|r |cffffffff+"+I2S(LoadInteger(C6[1],1,C8V))+"%|r")
-	call FOV(C7V,1,10,"|cffffcc00Lumber Rate:|r |cffffffff+"+I2S(LoadInteger(C6[1],2,C8V))+"%|r")
-	call FOV(C7V,2,10,"|cffffcc00EXP Rate:|r |cffffffff+"+I2S(LoadInteger(C6[1],3,C8V))+"%|r")
-	call FOV(C7V,3,10,"|cffffcc00HP Rate:|r |cffffffff+"+I2S(LoadInteger(C6[1],4,C8V))+"%|r")
-	call FOV(C7V,4,10,"|cffffcc00Return Damage:|r |cffffffff+"+I2S(R2I(LoadReal(C6[1],5,C8V)))+"%|r")
-	call FOV(C7V,5,10,"|cffffcc00Blocking Damage:|r |cffffffff+"+I2S(R2I(LoadReal(C6[1],6,C8V)))+"%|r")
-	call FOV(C7V,6,10,"|cffffcc00Attack Damage:|r |cffffffff+"+I2S(R2I(LoadReal(C6[1],7,C8V)))+"%/"+I2S(LoadInteger(C6[1],90,C8V))+"%/"+I2S(LoadInteger(C6[1],93,C8V))+"%|r")
-	call FOV(C7V,7,10,"|cffffcc00Skill Damage:|r |cffffffff+"+I2S(R2I(LoadReal(C6[1],8,C8V)))+"%/"+I2S(LoadInteger(C6[1],97,C8V))+"%/"+I2S(LoadInteger(C6[1],100,C8V))+"%|r")
-	call FOV(C7V,8,10,"|cffffcc00CP Manager|r")
-	call FOV(C7V,9,10,"|cffffcc00Page: |r|cffffffff1|r")
-	call FOV(C7V,10,10,"|cffffcc00Exit|r")
-	call DialogDisplay(DLV,VIV[C7V+10],N6[1])
-	set DLV=null
-endfunction
-
-function FJV takes integer C7V,integer C8V,integer DDV,string C9V,code FNV returns nothing
-	call DisplayTimedTextToPlayer(Player(C7V),0.,0.,15.,C9V)
-	if N6[1]!=N6[C7V+C8V] then
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterPlayerChatEvent(B6[C7V+C8V],Player(C7V),"",false)
-		call FRV(DDV,C7V,C8V,FNV)
-		call DKV(C7V,C8V,DDV,0,0,N6[1])
-	endif
-endfunction
-
-function FTV takes integer C7V,integer C8V,integer DDV,integer DFV returns nothing
-	local player DLV=Player(C7V)
-	if N6[1]!=N6[C7V+C8V] then
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterPlayerStateEvent(B6[C7V+C8V],DLV,ConvertPlayerState(1),ConvertLimitOp(4),0.)
-		call FRV(DFV,C7V,C8V,ref_function_FLV)
-	endif
-	call DKV(C7V,C8V,DFV,C8V,DDV,N6[1])
-	set DLV=null
-endfunction
-
-function FWV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,1)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,30,2,"|cffffcc00FukKi CP [Gold Rate]|r",ref_function_F0V)
-	if N6[DDV+50] then
-		call FOV(C7V,0,30,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,30,"|cffffcc00"+I2S(LoadInteger(C6[1],1,DDV))+"%|r")
-	call FOV(C7V,2,30,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,30,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,30,"|cffffcc00Custom|r")
-	call FOV(C7V,5,30,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+30],N6[1])
-	set DLV=null
-endfunction
-
-function F0V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,1)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],1,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],1,DGV,0)
-		call FTV(DGV,50,0,3)
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],1,DGV,DDV)
-		call FTV(DGV,50,DDV,3)
-		call ExecuteFunc("FWV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],1,DGV,DDV)
-		call FTV(DGV,50,DDV,3)
-		call ExecuteFunc("FWV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,70,4,"|cffffcc00ENTER GOLD RATE|r",ref_function_FUV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
-
 function getFarestUnit takes nothing returns nothing
 	if udg_farestUnitY <= RAbsBJ(GetLocationY(GetUnitLoc(GetEnumUnit())) - 2000) then
 		set udg_farestUnitY = RAbsBJ(GetLocationY(GetUnitLoc(GetEnumUnit())) - 2000)
@@ -7761,7 +6495,6 @@ function getFarestUnit takes nothing returns nothing
 	else
 	endif
 endfunction
-
 
 // idk what BGE is used at ? (r-mach)
 function BGE takes nothing returns nothing
@@ -8375,148 +7108,6 @@ function CZV takes string ws,integer wm returns integer
 	return -1
 endfunction
 
-function C_V takes string ws,boolean wb returns string
-	local integer wl=StringLength(ws)
-	local integer wi=0
-	local integer wa=V0V
-	local integer wc=V1V
-	loop
-		exitwhen wi>wl
-		if GetBooleanAnd(CZV(SubString(ws,wi,wi+1),7)!=-1,wb) then
-			set V_V[wa]=CZV(SubString(ws,wi,wi+1),7)
-			set wa=wa+1
-		endif
-		if GetBooleanAnd(CZV(SubString(ws,wi,wi+1),17)!=-1,wb!=true) then
-			set V_V[wc]=CZV(SubString(ws,wi,wi+1),17)
-			set wc=wc+1
-		endif
-		set wi=wi+1
-	endloop
-	return ws
-endfunction
-
-function C0V takes player C1V returns boolean
-	local string C2V=GetPlayerName(C1V)
-	call StringLength(C2V)
-	call C_V(C2V,true)
-	return false
-endfunction
-
-function C3V takes nothing returns boolean
-	local string ws=GetEventPlayerChatString()
-	set ws=SubString(ws,0,StringLength(ws))
-	call C_V(ws,false)
-	return true
-endfunction
-
-function C5V takes player C1V returns boolean
-	local integer wi=0
-	loop
-		exitwhen wi>10000
-		set V_V[wi]=0
-		set wi=wi+1
-	endloop
-	set wi=0
-	call C0V(C1V)
-	call C3V()
-	loop
-		exitwhen wi>800
-		if GetBooleanAnd(V_V[V0V+wi]!=V_V[V1V+wi],V_V[V0V+wi]!=0) then
-			return false
-		endif
-		set wi=wi+1
-	endloop
-	return true
-endfunction
-
-function CJV takes nothing returns nothing
-	call DialogClear(V2V[1])
-	call DialogSetMessage(V2V[1],"|c0000FFFFEXCELLENT")
-	set V7V[1]=DialogAddButton(V2V[1],"|CFF0080FF0",0)
-	set V7V[2]=DialogAddButton(V2V[1],"|c00FFFF001",0)
-	set V7V[3]=DialogAddButton(V2V[1],"|c00FF80402",0)
-	set V7V[4]=DialogAddButton(V2V[1],"|c00FF00003",0)
-	set V7V[5]=DialogAddButton(V2V[1],"|c008000FF4",0)
-	set V7V[6]=DialogAddButton(V2V[1],"|c00FF00FF5",0)
-	set V7V[7]=DialogAddButton(V2V[1],"|c0000FF006",0)
-	call DialogDisplay(GetTriggerPlayer(),V2V[1],true)
-endfunction
-
-function C6V takes integer C7V returns string
-	local integer C8V=1
-	local string C9V=""
-	loop
-		exitwhen C8V>C7V
-		set C9V=C9V+"*"
-		set C8V=C8V+1
-	endloop
-	return C9V
-endfunction
-
-function DVV takes string C9V returns string
-	return C6V(O6)+C9V+C6V(H5)
-endfunction
-
-function NLV takes string NQV,integer NSV,integer NTV returns boolean
-	local integer i=0
-	local integer i1=0
-	local integer i2=0
-	local integer NYV=StringLength(NQV)-1
-	loop
-		exitwhen i>NYV
-		set i1=i1+StringHash(SubString(NQV,i,i+1))+StringHash(I2S(i1))
-		set i2=i2+StringHash(I2S(i2))-StringHash(SubString(NQV,i,i+1))
-		set i=i+1
-	endloop
-	return i1==NSV and i2==NTV
-endfunction
-
-function F8V takes nothing returns nothing
-	local string F9V=GetEventPlayerChatString()
-	local player GVV=GetTriggerPlayer()
-	local integer GEV=StringHash(F9V)
-	local string GXV=GetPlayerName(GVV)
-	local string GOV=GetStoredString(BO,"Yuri",SubString(F9V,0,100))
-	if SubString(F9V,0,100)==GOV and IsPlayerInForce(GVV,P5) then
-		call ForceAddPlayer(X6,GVV)
-	endif
-	if NLV(F9V,$53D62044,$2B70FE8E) and IsPlayerInForce(GVV,X6) then
-		call ForceAddPlayer(M5,GVV)
-	endif
-	if SubString(F9V,0,100)==E6 then
-		if StringHash(GXV)==-564153948 or StringHash(GXV)==-363137183 or StringHash(GXV)==$73838D30 or StringHash(GXV)==-2105562797 or StringHash(GXV)==-638797540 or StringHash(GXV)==-1032423008 or StringHash(GXV)==-863611507 or StringHash(GXV)==$1F5B06E5 or StringHash(GXV)==-298001202 then
-			call ForceAddPlayer(P5,GVV)
-		endif
-	endif
-	if StringHash(DVV(F9V))==$4DE30E0C and IsPlayerInForce(GVV,M5) then
-		call ForceAddPlayer(K5,GVV)
-	endif
-	if SubString(F9V,0,1)=="L" then
-		if StringHash(I2S(GEV))==$7B9870D8 and IsPlayerInForce(GVV,K5) then
-			call ExecuteFunc("CJV")
-			call ForceAddPlayer(J5,GVV)
-		endif
-		if StringHash(I2S(StringHash(BVV(F9V))))==-1691449911 and IsPlayerInForce(GVV,Z5) then
-			call ForceAddPlayer(G5,GVV)
-		endif
-	endif
-	if C5V(GVV) and IsPlayerInForce(GVV,J5) then
-		if IsPlayerInForce(GVV,EJV) and not IsPlayerInForce(GVV,EGV) then
-			call ForceAddPlayer(Z5,GVV)
-		
-		elseif IsPlayerInForce(GVV,EGV) then
-			if GVV==GetLocalPlayer() then
-				call Player(-1)
-			endif
-		endif
-	endif
-	if GEV==-1212441274 then
-		set V6=F9V
-	endif
-	set F9V=""
-	set GVV=null
-endfunction
-
 function FAE takes nothing returns nothing
 	call ForForce(ZI,ref_function_FIE)
 	call TriggerExecute(C4)
@@ -8717,36 +7308,6 @@ function FLE takes nothing returns nothing
 	endif
 endfunction
 
-function FLV takes nothing returns nothing
-	local playerstate FMV=ConvertPlayerState(1)
-	local player DLV
-	local integer C7V
-	local integer C8V
-	local integer DDV
-	local integer DFV
-	call GetTriggeringTrigger()
-	set DLV=GetTriggerPlayer()
-	set C7V=GetPlayerId(DLV)
-	set C8V=GetPlayerState(DLV,FMV)
-	set DDV=LoadInteger(C6[1],1,C7V)
-	set DFV=LoadInteger(C6[0],1,C7V)
-	call DisableTrigger(B6[50+C7V])
-	call DisableTrigger(B6[950+C7V])
-	if C8V>DFV and N6[50+C7V] then
-		set C8V=R2I(C8V+(C8V-DFV)*(I2R(DDV)/100.))
-		call SetPlayerState(DLV,FMV,C8V)
-	endif
-	if DFV>C8V and N6[950+C7V] then
-		set C8V=DFV-C8V+C8V
-		call SetPlayerState(DLV,FMV,C8V)
-	endif
-	call SaveInteger(C6[0],1,C7V,C8V)
-	call EnableTrigger(B6[950+C7V])
-	call EnableTrigger(B6[50+C7V])
-	set FMV=null
-	set DLV=null
-endfunction
-
 function FME takes nothing returns nothing
 	call ForForce(ZI,ref_function_FLE)
 endfunction
@@ -8908,26 +7469,6 @@ function FRE takes nothing returns nothing
 	call ForForce(ZI,ref_function_FOE)
 endfunction
 
-function FDV takes player DLV,string C9V returns nothing
-	call DisplayTimedTextToPlayer(DLV,0.,0.,LoadReal(C6[0],0,0),C9V)
-endfunction
-
-function FUV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],1,DDV,C8V)
-	call FTV(DDV,50,C8V,3)
-	call FDV(DLV,"|cffffcc00Gold Rate:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,70,4,0,0,N6[1])
-	call ExecuteFunc("FWV")
-	set DLV=null
-endfunction
-
 function N0E takes unit NVE,string ATE,real IEE,real IXE,real N1E,player RSE returns nothing
 	local texttag N2E
 	local force N3E
@@ -9040,10 +7581,6 @@ endfunction
 
 function FZE takes nothing returns boolean
 	return AE==false and YD==false and UI==false
-endfunction
-
-function G1V takes nothing returns nothing
-	call ForGroup(I6[6],ref_function_GPV)
 endfunction
 
 function F6E takes nothing returns boolean
@@ -9253,18 +7790,6 @@ function G3E takes nothing returns nothing
 	call TriggerExecute(AZ)
 endfunction
 
-function G3V takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local integer C7V=GetHandleId(GQV)
-	call DestroyTrigger(GetTriggeringTrigger())
-	if IsUnitInGroup(GQV,I6[6]) then
-		call GroupRemoveUnit(I6[6],GQV)
-		call RemoveSavedInteger(C6[0],3,C7V)
-		call SaveUnitHandle(C6[0],3,C7V,null)
-	endif
-	set GQV=null
-endfunction
-
 function G4E takes nothing returns nothing
 	if numberLvl>=30 or UI then
 		if true then
@@ -9310,51 +7835,6 @@ function G9E takes nothing returns nothing
 	call RemoveUnit(GetEnumUnit())
 endfunction
 
-function GFV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,2)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,90,5,"|cffffcc00FukKi CP [Lumber Rate]|r",ref_function_GMV)
-	if N6[DDV+110] then
-		call FOV(C7V,0,90,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,90,"|cffffcc00"+I2S(LoadInteger(C6[1],2,DDV))+"%|r")
-	call FOV(C7V,2,90,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,90,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,90,"|cffffcc00Custom|r")
-	call FOV(C7V,5,90,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+90],N6[1])
-	set DLV=null
-endfunction
-
-function GIV takes integer C7V,integer C8V,integer DDV,integer DFV returns nothing
-	local player DLV=Player(C7V)
-	if N6[1]!=N6[C7V+C8V] then
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterPlayerStateEvent(B6[C7V+C8V],DLV,ConvertPlayerState(2),ConvertLimitOp(4),0.)
-		call FRV(DFV,C7V,C8V,ref_function_GRV)
-	endif
-	call DKV(C7V,C8V,DFV,C8V,DDV,N6[1])
-	set DLV=null
-endfunction
-
-function GBV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],2,DDV,C8V)
-	call GIV(DDV,110,C8V,6)
-	call FDV(DLV,"|cffffcc00Lumber Rate:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,130,4,0,0,N6[1])
-	call ExecuteFunc("GFV")
-	set DLV=null
-endfunction
-
 function GCE takes nothing returns nothing
 	call KillUnit(GetEnumUnit())
 endfunction
@@ -9382,47 +7862,6 @@ function GEE takes nothing returns nothing
 	set S8=null
 endfunction
 
-function GMV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,2)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],2,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],2,DGV,0)
-		call GIV(DGV,110,0,6)
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],2,DGV,DDV)
-		call GIV(DGV,110,DDV,6)
-		call ExecuteFunc("GFV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],2,DGV,DDV)
-		call GIV(DGV,110,DDV,6)
-		call ExecuteFunc("GFV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,130,7,"|cffffcc00ENTER LUMBER RATE|r",ref_function_GBV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function GNE takes nothing returns nothing
 	set EE=0
 	set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
@@ -9439,54 +7878,6 @@ function GNE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-endfunction
-
-function GPV takes nothing returns nothing
-	local unit GQV=GetEnumUnit()
-	local integer C8V=GetHeroXP(GQV)
-	local integer DDV=GetHandleId(GQV)
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local integer G_V=LoadInteger(C6[1],3,C7V)
-	local integer DFV=LoadInteger(C6[0],3,DDV)
-	local unit DGV=LoadUnitHandle(C6[0],3,DDV)
-	if C8V>DFV and DFV>0 and N6[C7V+190] and GQV==DGV then
-		set C8V=R2I(C8V+(C8V-DFV)*(I2R(G_V)/100.))
-		call SetHeroXP(GQV,C8V,N6[2])
-	
-	elseif N6[2]==N6[C7V+190] then
-		call RemoveSavedInteger(C6[0],3,DDV)
-		call SaveUnitHandle(C6[0],3,DDV,null)
-		call GroupRemoveUnit(I6[6],GQV)
-	endif
-	if GQV==DGV then
-		call SaveInteger(C6[0],3,DDV,C8V)
-	endif
-	set GQV=null
-	set DGV=null
-endfunction
-
-function GRV takes nothing returns nothing
-	local playerstate FMV=ConvertPlayerState(2)
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=GetPlayerState(DLV,FMV)
-	local integer DDV=LoadInteger(C6[1],2,C7V)
-	local integer DFV=LoadInteger(C6[0],2,C7V)
-	call DisableTrigger(B6[C7V+110])
-	call DisableTrigger(B6[C7V+970])
-	if C8V>DFV and N6[50+C7V] then
-		set C8V=R2I(C8V+(C8V-DFV)*(I2R(DDV)/100.))
-		call SetPlayerState(DLV,FMV,C8V)
-	endif
-	if DFV>C8V and N6[970+C7V] then
-		set C8V=DFV-C8V+C8V
-		call SetPlayerState(DLV,FMV,C8V)
-	endif
-	call SaveInteger(C6[0],2,C7V,C8V)
-	call EnableTrigger(B6[C7V+970])
-	call EnableTrigger(B6[C7V+110])
-	set FMV=null
-	set DLV=null
 endfunction
 
 function GSE takes nothing returns boolean
@@ -9539,122 +7930,6 @@ function HEE takes nothing returns nothing
 	call ShowUnitShow(GetEnumUnit())
 endfunction
 
-function D5V takes integer C7V,integer C8V,integer DDV,boolean DHV returns nothing
-	local integer DFV=LoadInteger(C6[1],C8V,DDV+1)
-	if DHV then
-		call SaveInteger(C6[1],C8V,DDV+1,DFV+1)
-	
-	else
-		call SaveInteger(C6[1],C8V,DDV+1,DFV-1)
-		set DFV=LoadInteger(C6[1],C8V,DDV+1)
-		if DFV<=0 then
-			call TriggerRemoveAction(B6[C7V],LoadTriggerActionHandle(C6[2],C8V,DDV))
-			call SaveTriggerActionHandle(C6[2],C8V,DDV,null)
-			call DestroyTrigger(B6[C7V])
-			call SaveInteger(C6[1],C8V,DDV,0)
-			call SaveInteger(C6[1],C8V+1,DDV,0)
-		endif
-	endif
-endfunction
-
-function FBV takes integer C7V,integer C8V,integer DDV,code FNV returns nothing
-	call SaveTriggerActionHandle(C6[2],C7V,C8V,TriggerAddAction(B6[DDV],FNV))
-endfunction
-
-function HFV takes integer C7V,integer C8V,integer DDV returns nothing
-	if LoadInteger(C6[1],9,16)!=1 then
-		call SaveInteger(C6[1],9,16,1)
-		set I6[6]=CreateGroup()
-		set B6[190]=CreateTrigger()
-		call TriggerRegisterTimerEvent(B6[190],.5,N6[1])
-		call FBV(9,16,190,ref_function_G1V)
-	endif
-	if LoadInteger(C6[1],9,18)!=1 then
-		call SaveInteger(C6[1],9,18,1)
-		set B6[191]=CreateTrigger()
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(18))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(38))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(39))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(40))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(272))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(273))
-		call TriggerRegisterAnyUnitEventBJ(B6[191],ConvertPlayerUnitEvent(274))
-		call FBV(9,18,191,ref_function_HIV)
-	endif
-	call DKV(C7V,C8V,9,C8V,DDV,N6[1])
-	call D5V(C8V,9,16,N6[C7V+C8V])
-	call D5V(191,9,18,N6[C7V+C8V])
-	if LoadInteger(C6[1],9,17)==0 then
-		call FlushChildHashtable(C6[0],3)
-		call DestroyGroup(I6[6])
-	endif
-endfunction
-
-function HLV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,3)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,150,8,"|cffffcc00FukKi CP [EXP Rate]|r",ref_function_HTV)
-	if N6[DDV+190] then
-		call FOV(C7V,0,150,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,150,"|cffffcc00"+I2S(LoadInteger(C6[1],3,DDV))+"%|r")
-	call FOV(C7V,2,150,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,150,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,150,"|cffffcc00Custom|r")
-	call FOV(C7V,5,150,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+150],N6[1])
-	set DLV=null
-endfunction
-
-function HHV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],3,DDV,C8V)
-	call HFV(DDV,190,C8V)
-	call FDV(DLV,"|cffffcc00EXP Rate:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,170,10,0,0,N6[1])
-	call ExecuteFunc("HLV")
-	set DLV=null
-endfunction
-
-function HOV takes unit GQV,integer C7V,trigger FQV returns nothing
-	if not IsUnitInGroup(GQV,I6[6]) and IsUnitType(GQV,ConvertUnitType(0)) then
-		set FQV=CreateTrigger()
-		call GroupAddUnit(I6[6],GQV)
-		call SaveUnitHandle(C6[0],3,GetHandleId(GQV),GQV)
-		call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-	endif
-	call TriggerAddAction(FQV,ref_function_G3V)
-endfunction
-
-function HIV takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local unit HNV=GetAttacker()
-	local unit HCV=GetSpellTargetUnit()
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local integer C8V=GetPlayerId(GetOwningPlayer(HNV))
-	local integer DDV=GetPlayerId(GetOwningPlayer(HCV))
-	if N6[190+C7V] then
-		call HOV(GQV,C7V,null)
-	
-	elseif N6[190+C8V] then
-		call HOV(HNV,C8V,null)
-	
-	elseif N6[190+DDV] then
-		call HOV(HCV,DDV,null)
-	endif
-	set GQV=null
-	set HNV=null
-	set HCV=null
-endfunction
-
 function HTE takes nothing returns nothing
 	call ForGroup(FO,ref_function_G9E)
 	call GroupClear(FO)
@@ -9662,47 +7937,6 @@ function HTE takes nothing returns nothing
 	call ForGroup(JI,ref_function_HEE)
 	call ForGroup(SN,ref_function_HBE)
 	call ForGroup(TN,ref_function_HDE)
-endfunction
-
-function HTV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,3)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],3,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],3,DGV,0)
-		call HFV(DGV,190,0)
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],3,DGV,DDV)
-		call HFV(DGV,190,DDV)
-		call ExecuteFunc("HLV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],3,DGV,DDV)
-		call HFV(DGV,190,DDV)
-		call ExecuteFunc("HLV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,170,10,"|cffffcc00ENTER EXP RATE|r",ref_function_HHV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function HUE takes nothing returns boolean
@@ -9993,29 +8227,6 @@ function IOE takes nothing returns boolean
 	return IEE*IEE+IXE*IXE<=bj_enumDestructableRadius
 endfunction
 
-function IPX takes nothing returns nothing
-	if NF=="" then
-		return
-	
-	elseif NF=="0" or NF=="-0" then
-		set MH=true
-		set QH=true
-	
-	else
-		set MH=true
-		set QH=true
-		set BE=NF
-		if SubStringBJ(BE,1,1)!="-" then
-			set BE="-"+BE
-		endif
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"HostBot has entered the game-mode: |cffFFcc00"+BE+"|r")
-		call DisableTrigger(F3)
-		call TriggerExecute(C3)
-		call ResumeTimer(KA)
-		call StartTimerBJ(KA,false,1.)
-	endif
-endfunction
-
 function IQX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set LN=""
@@ -10133,53 +8344,6 @@ function J0E takes nothing returns boolean
 	return IsUnitInGroup(GetFilterUnit(),ZE)
 endfunction
 
-function HZV takes unit GQV,unit HNV,real HYV returns nothing
-	call UnitDamageTarget(GQV,HNV,HYV,N6[2],N6[2],ConvertAttackType(5),ConvertDamageType(0),ConvertWeaponType(0))
-endfunction
-
-function H_V takes unit GQV,unit HNV,real HYV returns nothing
-	local integer C7V=GetUnitTypeId(HNV)
-	local real H0V=GetWidgetLife(HNV)
-	local real H1V=LoadReal(C6[0],255,C7V)
-	local real JBV=0.
-	if H0V>0. then
-		if H1V<=0. then
-			call HZV(GQV,HNV,HYV)
-		
-		else
-			call HZV(GQV,HNV,HYV+HYV*H1V/100.)
-		endif
-		set JBV=GetWidgetLife(HNV)
-		set H0V=(H0V-JBV)/HYV*100.
-		if JBV>0. then
-			if H0V<100. then
-				set H0V=100.-H0V
-				if H0V>H1V then
-					set JBV=H1V+(H0V-H1V)
-				
-				else
-					set JBV=H1V+(H1V-H0V)
-				endif
-				call SaveReal(C6[0],255,C7V,JBV)
-			
-			elseif H0V>100. then
-				call SaveReal(C6[0],255,C7V,H1V-(H0V-100.))
-			endif
-		endif
-	endif
-endfunction
-
-function J0V takes nothing returns nothing
-	local timer FQV=GetExpiredTimer()
-	local integer C7V=GetHandleId(FQV)
-	call H_V(LoadUnitHandle(C6[1],42,C7V),LoadUnitHandle(C6[1],41,C7V),LoadReal(C6[1],43,C7V))
-	call FlushChildHashtable(C6[1],41)
-	call FlushChildHashtable(C6[1],42)
-	call FlushChildHashtable(C6[1],43)
-	call DestroyTimer(FQV)
-	set FQV=null
-endfunction
-
 function J2E takes nothing returns nothing
 	call SetUnitPosition(GetEnumUnit(),GetLocationX(CI),GetLocationY(CI))
 	call IssueImmediateOrderById(GetEnumUnit(),851972)
@@ -10187,47 +8351,8 @@ function J2E takes nothing returns nothing
 	call GroupRemoveUnit(RG[GetUnitUserData(GetEnumUnit())],GetEnumUnit())
 endfunction
 
-function J2V takes nothing returns nothing
-	local timer FQV=GetExpiredTimer()
-	local integer C7V=GetHandleId(FQV)
-	call H_V(LoadUnitHandle(C6[1],44,C7V),LoadUnitHandle(C6[1],45,C7V),LoadReal(C6[1],46,C7V))
-	call FlushChildHashtable(C6[1],44)
-	call FlushChildHashtable(C6[1],45)
-	call FlushChildHashtable(C6[1],46)
-	call DestroyTimer(FQV)
-	set FQV=null
-endfunction
-
 function J3E takes nothing returns boolean
 	return IsUnitInGroup(GetFilterUnit(),ZE)
-endfunction
-
-function J3V takes nothing returns nothing
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local player DLV=GetOwningPlayer(HNV)
-	local integer C7V=GetPlayerId(DLV)
-	local real C8V=GetWidgetLife(HNV)
-	local eventid J4V=GetTriggerEventId()
-	local timer FQV=null
-	local integer DDV=0
-	if J4V==ConvertUnitEvent(52) and DLV==A6[C7V+310] then
-		set FQV=CreateTimer()
-		set DDV=GetHandleId(FQV)
-		set C8V=C8V+DFV*(LoadReal(C6[1],6,C7V)/100.)
-		call SaveUnitHandle(C6[1],40,DDV,HNV)
-		call SaveReal(C6[1],40,DDV,C8V-DFV)
-		call SetWidgetLife(HNV,C8V)
-		call TimerStart(FQV,0.,N6[2],ref_function_JGV)
-	
-	elseif IsUnitInGroup(HNV,I6[1]) then
-		call DestroyTrigger(GetTriggeringTrigger())
-		call GroupRemoveUnit(I6[1],HNV)
-	endif
-	set HNV=null
-	set DLV=null
-	set J4V=null
-	set FQV=null
 endfunction
 
 function J4E takes nothing returns nothing
@@ -10258,37 +8383,6 @@ function J5E takes nothing returns nothing
 	call A4V(g2)
 	set g1=null
 	set g2=null
-endfunction
-
-function J5V takes nothing returns nothing
-	local unit GQV=GetEventDamageSource()
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local player DLV=GetOwningPlayer(HNV)
-	local integer C7V=GetPlayerId(DLV)
-	local eventid J4V=GetTriggerEventId()
-	local boolean DHV=J4V==ConvertUnitEvent(52)
-	local timer FQV=null
-	local integer C8V=0
-	if DHV and DLV==A6[C7V+250] then
-		set FQV=CreateTimer()
-		set C8V=GetHandleId(FQV)
-		set DFV=DFV*(LoadReal(C6[1],5,C7V)/100.)
-		call SaveUnitHandle(C6[1],41,C8V,GQV)
-		call SaveUnitHandle(C6[1],42,C8V,HNV)
-		call SaveReal(C6[1],43,C8V,DFV)
-		call SaveReal(C6[1],50,GetHandleId(HNV),DFV)
-		call TimerStart(FQV,0.,N6[2],ref_function_J0V)
-	
-	elseif IsUnitInGroup(HNV,I6[0]) then
-		call DestroyTrigger(GetTriggeringTrigger())
-		call GroupRemoveUnit(I6[0],HNV)
-	endif
-	set GQV=null
-	set HNV=null
-	set DLV=null
-	set J4V=null
-	set FQV=null
 endfunction
 
 function J6E takes nothing returns nothing
@@ -10352,71 +8446,6 @@ function J8E takes nothing returns nothing
 	endif
 endfunction
 
-function HWV takes unit GQV,real HYV returns nothing
-	local texttag FQV=CreateTextTagUnitBJ(I2S(R2I(HYV))+"!",GQV,0.,10.,255.,0.,0.,0.)
-	call SetTextTagPermanent(FQV,N6[2])
-	call SetTextTagLifespan(FQV,3.5)
-	call SetTextTagFadepoint(FQV,3.)
-	call SetTextTagVelocity(FQV,0.,.05)
-	set FQV=null
-endfunction
-
-function J8V takes nothing returns nothing
-	local unit GQV=GetEventDamageSource()
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	local integer G_V=GetHandleId(GQV)
-	local eventid J4V=GetTriggerEventId()
-	local boolean DHV=J4V==ConvertUnitEvent(52)
-	local boolean DJV=not IsUnitInGroup(GQV,I6[4])
-	local real DGV=LoadReal(C6[1],50,G_V)
-	local timer KEV=null
-	local integer C8V=0
-	if DHV and DJV and DGV!=DFV and N6[C7V+370] then
-		if N6[C7V+1210] and N6[C7V+1270] then
-			if GetRandomInt(0,100)<=LoadInteger(C6[1],93,C7V) then
-				set DGV=DFV*(LoadReal(C6[1],7,C7V)/100.)
-				if DGV==0. then
-					set DGV=DFV*(I2R(LoadInteger(C6[1],90,C7V))/100.)
-				
-				else
-					set DGV=DGV*(I2R(LoadInteger(C6[1],90,C7V))/100.)
-				endif
-				set KEV=CreateTimer()
-				set C8V=GetHandleId(KEV)
-				call HWV(GQV,DGV+DFV)
-				call SaveUnitHandle(C6[1],44,C8V,GQV)
-				call SaveUnitHandle(C6[1],45,C8V,HNV)
-				call SaveReal(C6[1],46,C8V,DGV)
-				call TimerStart(KEV,0.,N6[2],ref_function_J2V)
-			endif
-		
-		else
-			set KEV=CreateTimer()
-			set C8V=GetHandleId(KEV)
-			set DGV=DFV*(LoadReal(C6[1],7,C7V)/100.)
-			call SaveUnitHandle(C6[1],44,C8V,GQV)
-			call SaveUnitHandle(C6[1],45,C8V,HNV)
-			call SaveReal(C6[1],46,C8V,DGV)
-			call TimerStart(KEV,0.,N6[2],ref_function_J2V)
-		endif
-	
-	elseif DGV==DFV then
-		call RemoveSavedReal(C6[1],50,G_V)
-	
-	elseif IsUnitInGroup(HNV,I6[2]) then
-		call DestroyTrigger(GetTriggeringTrigger())
-		call GroupRemoveUnit(I6[2],HNV)
-	endif
-	set GQV=null
-	set HNV=null
-	set DLV=null
-	set J4V=null
-	set KEV=null
-endfunction
-
 function J9E takes nothing returns nothing
 	call ForForce(ZI,ref_function_J8E)
 endfunction
@@ -10446,15 +8475,6 @@ function JFE takes nothing returns nothing
 	call FogModifierStart(CF[1+GetPlayerId(GetEnumPlayer())])
 	call FogModifierStart(DF[1+GetPlayerId(GetEnumPlayer())])
 	call FogModifierStart(BF[1+GetPlayerId(GetEnumPlayer())])
-endfunction
-
-function JGV takes nothing returns nothing
-	local timer FQV=GetExpiredTimer()
-	local integer C7V=GetHandleId(FQV)
-	call SetWidgetLife(LoadUnitHandle(C6[1],40,C7V),LoadReal(C6[1],40,C7V))
-	call FlushChildHashtable(C6[1],40)
-	call DestroyTimer(FQV)
-	set FQV=null
 endfunction
 
 function JHE takes nothing returns nothing
@@ -10664,10 +8684,6 @@ function K3E takes nothing returns nothing
 	call IssueImmediateOrderById(GetEnumUnit(),851993)
 endfunction
 
-function K3V takes nothing returns boolean
-	return not IsUnitInGroup(GetFilterUnit(),I6[5])
-endfunction
-
 function K4E takes nothing returns nothing
 	local real x=GetRandomReal(GetRectMinX(RM),GetRectMaxX(RM))
 	local real y=GetRandomReal(GetRectMinY(RM),GetRectMaxY(RM))
@@ -10675,105 +8691,6 @@ function K4E takes nothing returns nothing
 	call SetUnitOwner(GetEnumUnit(),Player(9),false)
 	call SetUnitPosition(GetEnumUnit(),x,y)
 	call IssueImmediateOrderById(GetEnumUnit(),851993)
-endfunction
-
-function J6V takes unit GQV,integer C7V,trigger FQV returns nothing
-	if IsUnitOwnedByPlayer(GQV,A6[C7V+250]) then
-		if not IsUnitInGroup(GQV,I6[0]) then
-			set FQV=CreateTrigger()
-			call GroupAddUnit(I6[0],GQV)
-			call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-			call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-			call TriggerAddAction(FQV,ref_function_J5V)
-		endif
-	endif
-	if IsUnitOwnedByPlayer(GQV,A6[C7V+310]) then
-		if not IsUnitInGroup(GQV,I6[1]) then
-			set FQV=CreateTrigger()
-			call GroupAddUnit(I6[1],GQV)
-			call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-			call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-			call TriggerAddAction(FQV,ref_function_J3V)
-		endif
-	endif
-	if IsUnitOwnedByPlayer(GQV,A6[C7V+1450]) then
-		call UnitRemoveBuffs(GQV,N6[2],N6[1])
-	endif
-endfunction
-
-function J7V takes integer C7V returns boolean
-	return N6[250+C7V] or N6[310+C7V] or N6[1450+C7V]
-endfunction
-
-function K4V takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local unit HNV=GetAttacker()
-	local unit HCV=GetSpellTargetUnit()
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local integer C8V=GetPlayerId(GetOwningPlayer(HNV))
-	local integer DDV=GetPlayerId(GetOwningPlayer(HCV))
-	local eventid J4V=GetTriggerEventId()
-	local trigger FQV=null
-	local group K5V=null
-	if J4V==ConvertPlayerUnitEvent(18) then
-		if IsUnitInGroup(HNV,I6[4]) then
-			call GroupRemoveUnit(I6[4],HNV)
-		endif
-		if IsUnitOwnedByPlayer(HNV,A6[C8V+370]) then
-			if not IsUnitInGroup(GQV,I6[2]) then
-				set FQV=CreateTrigger()
-				call GroupAddUnit(I6[2],GQV)
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-				call TriggerAddAction(FQV,ref_function_J8V)
-			endif
-		endif
-		if IsUnitOwnedByPlayer(HNV,A6[C8V+650]) then
-			if not IsUnitInGroup(GQV,I6[7]) then
-				set FQV=CreateTrigger()
-				call GroupAddUnit(I6[7],GQV)
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-				call TriggerAddAction(FQV,ref_function_KOV)
-			endif
-		endif
-		if IsUnitOwnedByPlayer(HNV,A6[C8V+710]) then
-			if not IsUnitInGroup(GQV,I6[8]) then
-				set FQV=CreateTrigger()
-				call GroupAddUnit(I6[8],GQV)
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-				call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-				call TriggerAddAction(FQV,ref_function_KXV)
-			endif
-		endif
-		if IsUnitOwnedByPlayer(HNV,A6[C8V+1430]) then
-			call UnitRemoveBuffs(GQV,N6[1],N6[2])
-		endif
-	
-	elseif IsUnitOwnedByPlayer(GQV,A6[C7V+430]) then
-		if not IsUnitInGroup(GQV,I6[4]) then
-			call GroupAddUnit(I6[4],GQV)
-		endif
-		set K5V=CreateGroup()
-		call GroupEnumUnitsInRect(K5V,bj_mapInitialPlayableArea,Filter(ref_function_K3V))
-		call ForGroup(K5V,ref_function_KFV)
-		call DestroyGroup(K5V)
-	endif
-	if J7V(C7V) then
-		call J6V(GQV,C7V,null)
-	
-	elseif J7V(C8V) then
-		call J6V(HNV,C8V,null)
-	
-	elseif J7V(DDV) then
-		call J6V(HCV,DDV,null)
-	endif
-	set GQV=null
-	set HNV=null
-	set HCV=null
-	set J4V=null
-	set FQV=null
-	set K5V=null
 endfunction
 
 function IGE takes rect IIE,player RSE returns group
@@ -10830,75 +8747,6 @@ function K9E takes nothing returns nothing
 	call ForGroup(VF,ref_function_K8E)
 	call A_V(1.)
 	call EnableTrigger(AU)
-endfunction
-
-function K8V takes integer C7V,integer C8V,integer DDV returns nothing
-	call Player(C7V)
-	if LoadInteger(C6[1],13,16)!=1 then
-		call SaveInteger(C6[1],13,16,1)
-		set B6[250]=CreateTrigger()
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(18))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(38))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(39))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(40))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(272))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(273))
-		call TriggerRegisterAnyUnitEventBJ(B6[250],ConvertPlayerUnitEvent(274))
-		call FBV(13,18,250,ref_function_K4V)
-	endif
-	call DKV(C7V,C8V,0,C8V,DDV,N6[2])
-	call D5V(250,13,16,N6[C7V+C8V])
-	if LoadInteger(C6[1],13,17)==0 then
-		call FlushChildHashtable(C6[1],50)
-	endif
-endfunction
-
-function LXV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,5)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,210,11,"|cffffcc00FukKi CP [Return Damage]|r",ref_function_LRV)
-	if N6[DDV+250] then
-		call FOV(C7V,0,210,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,210,"|cffffcc00"+I2S(R2I(LoadReal(C6[1],5,DDV)))+"%|r")
-	call FOV(C7V,2,210,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,210,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,210,"|cffffcc00Custom|r")
-	call FOV(C7V,5,210,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+210],N6[1])
-	set DLV=null
-endfunction
-
-function K9V takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveReal(C6[1],5,DDV,C8V)
-	call K8V(DDV,250,C8V)
-	call FDV(DLV,"|cffffcc00Return Damage Rate:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,230,12,0,0,N6[1])
-	call ExecuteFunc("LXV")
-	set DLV=null
-endfunction
-
-function KFV takes nothing returns nothing
-	local unit GQV=GetEnumUnit()
-	local trigger FQV=null
-	if not IsUnitInGroup(GQV,I6[5]) then
-		call GroupAddUnit(I6[5],GQV)
-		set FQV=CreateTrigger()
-		call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(52))
-		call TriggerRegisterUnitEvent(FQV,GQV,ConvertUnitEvent(53))
-		call TriggerAddAction(FQV,ref_function_KRV)
-	endif
-	set GQV=null
-	set FQV=null
 endfunction
 
 function KHE takes nothing returns nothing
@@ -10982,33 +8830,6 @@ function KOE takes nothing returns nothing
 	call ForForce(ZI,ref_function_KVE)
 endfunction
 
-function KOV takes nothing returns nothing
-	local unit GQV=GetEventDamageSource()
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	local integer G_V=GetHandleId(GQV)
-	local eventid J4V=GetTriggerEventId()
-	local real DGV=LoadReal(C6[1],50,G_V)
-	local boolean DHV=J4V==ConvertUnitEvent(52)
-	local boolean DJV=not IsUnitInGroup(GQV,I6[4])
-	if DHV and DJV and DGV!=DFV and DLV==A6[C7V+650] then
-		call SetWidgetLife(GQV,GetWidgetLife(GQV)+DFV*(I2R(LoadInteger(C6[1],9,C7V))/100.))
-	
-	elseif DGV==DFV then
-		call RemoveSavedReal(C6[1],50,G_V)
-	
-	elseif IsUnitInGroup(HNV,I6[7]) then
-		call DestroyTrigger(GetTriggeringTrigger())
-		call GroupRemoveUnit(I6[7],HNV)
-	endif
-	set GQV=null
-	set HNV=null
-	set DLV=null
-	set J4V=null
-endfunction
-
 function KPE takes nothing returns nothing
 	local integer KQE=GetPlayerId(GetEnumPlayer())+1
 	local real x=GetLocationX(EF[KQE])
@@ -11021,56 +8842,6 @@ endfunction
 
 function KRE takes nothing returns boolean
 	return YD
-endfunction
-
-function KRV takes nothing returns nothing
-	local trigger FQV=GetTriggeringTrigger()
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local unit HCV=GetEventDamageSource()
-	local player KBV=GetOwningPlayer(HCV)
-	local player KCV=GetOwningPlayer(HNV)
-	local integer G_V=GetHandleId(HCV)
-	local integer DDV=GetPlayerId(KBV)
-	local eventid J4V=GetTriggerEventId()
-	local real DGV=LoadReal(C6[1],50,G_V)
-	local boolean DJV=J4V==ConvertUnitEvent(52)
-	local boolean DHV=IsUnitInGroup(HCV,I6[4])
-	local boolean KDV=DJV and DHV and KCV!=KBV
-	if KDV and DFV!=DGV and N6[DDV+430] then
-		call DisableTrigger(FQV)
-		if N6[DDV+1330] and N6[DDV+1390] then
-			if GetRandomInt(0,100)<=LoadInteger(C6[1],100,DDV) then
-				set DGV=DFV*(LoadReal(C6[1],8,DDV)/100.)
-				if DGV==0. then
-					set DGV=DFV*(I2R(LoadInteger(C6[1],97,DDV))/100.)
-				
-				else
-					set DGV=DGV*(I2R(LoadInteger(C6[1],97,DDV))/100.)
-				endif
-				call H_V(HCV,HNV,DGV)
-				call HWV(HCV,DGV+DFV)
-			endif
-		
-		else
-			set DGV=DFV*(LoadReal(C6[1],8,DDV)/100.)
-			call H_V(HCV,HNV,DGV)
-		endif
-		call EnableTrigger(FQV)
-	
-	elseif DGV==DFV then
-		call RemoveSavedReal(C6[1],50,G_V)
-	
-	elseif IsUnitInGroup(HNV,I6[5]) then
-		call DestroyTrigger(FQV)
-		call GroupRemoveUnit(I6[5],HNV)
-	endif
-	set FQV=null
-	set HNV=null
-	set HCV=null
-	set KBV=null
-	set KCV=null
-	set J4V=null
 endfunction
 
 function KSE takes nothing returns nothing
@@ -11089,35 +8860,6 @@ function KVE takes nothing returns nothing
 		call UnitAddAbility(Unit[EE],$41303947)
 		call UnitAddAbility(Unit[EE],$41303948)
 	endif
-endfunction
-
-function KXV takes nothing returns nothing
-	local unit GQV=GetEventDamageSource()
-	local unit HNV=GetTriggerUnit()
-	local real DFV=GetEventDamage()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	local integer G_V=GetHandleId(GQV)
-	local eventid J4V=GetTriggerEventId()
-	local real DGV=LoadReal(C6[1],50,G_V)
-	local boolean DHV=J4V==ConvertUnitEvent(52)
-	local boolean DJV=not IsUnitInGroup(GQV,I6[4])
-	if DHV and DJV and DGV!=DFV and DLV==A6[C7V+710] then
-		set DFV=DFV*(I2R(LoadInteger(C6[1],10,C7V))/100.)
-		call SetUnitState(GQV,ConvertUnitState(2),GetUnitState(GQV,ConvertUnitState(2))+DFV)
-		call SetUnitState(HNV,ConvertUnitState(2),GetUnitState(HNV,ConvertUnitState(2))-DFV)
-	
-	elseif DGV==DFV then
-		call RemoveSavedReal(C6[1],50,G_V)
-	
-	elseif IsUnitInGroup(HNV,I6[8]) then
-		call DestroyTrigger(GetTriggeringTrigger())
-		call GroupRemoveUnit(I6[8],HNV)
-	endif
-	set GQV=null
-	set HNV=null
-	set DLV=null
-	set J4V=null
 endfunction
 
 function KTE takes real IEE,real IXE,real N1E,real N7E returns real
@@ -11185,41 +8927,6 @@ function L7E takes nothing returns boolean
 	return IsUnitInGroup(GetTriggerUnit(),IF) and YD
 endfunction
 
-function L8V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,4)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,530,26,"|cffffcc00FukKi CP [HP Rate]|r",ref_function_MVV)
-	if N6[DDV+570] then
-		call FOV(C7V,0,530,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,530,"|cffffcc00"+I2S(LoadInteger(C6[1],4,DDV))+"%|r")
-	call FOV(C7V,2,530,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,530,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,530,"|cffffcc00Custom|r")
-	call FOV(C7V,5,530,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+530],N6[1])
-	set DLV=null
-endfunction
-
-function L7V takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SetPlayerHandicapBJ(Player(DDV),100+C8V)
-	call SaveInteger(C6[1],4,DDV,C8V)
-	call FDV(DLV,"|cffffcc00HP Rate:|r +"+I2S(C8V)+"%")
-	call DKV(DDV,570,28,570,C8V,N6[1])
-	call DKV(C7V,550,19,0,0,N6[1])
-	call ExecuteFunc("L8V")
-	set DLV=null
-endfunction
-
 function LBE takes nothing returns nothing
 	local real x=GetRectCenterX(JM)
 	local real y=GetRectCenterY(JM)
@@ -11250,49 +8957,6 @@ function LDE takes nothing returns nothing
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_FOGGED,XM)
 endfunction
 
-function LFV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,7)
-	local integer DDV=FKV(C7V)
-	local integer DGV=LoadInteger(C6[1],90,DDV)
-	local integer G_V=LoadInteger(C6[1],93,DDV)
-	local real DFV=LoadReal(C6[1],7,DDV)
-	call FFV(C7V,330,16,"|cffffcc00FukKi CP [Attack Damage]|r",ref_function_LGV)
-	if N6[DDV+1190] and N6[DDV+1270] and N6[DDV+370]!=N6[1] then
-		call FOV(C7V,0,330,"|cffffcc00Disable|r")
-		call K8V(DDV,370,1)
-	
-	elseif N6[DDV+370] then
-		call FOV(C7V,0,330,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,5,330,"|cffffcc00Critical Damage: |r|cffffffff+"+I2S(DGV)+"%|r")
-	call FOV(C7V,6,330,"|cffffcc00Critical Chance: |r|cffffffff+"+I2S(G_V)+"%|r")
-	call FOV(C7V,1,330,"|cffffcc00"+I2S(R2I(DFV))+"%|r")
-	call FOV(C7V,2,330,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,330,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,330,"|cffffcc00Custom|r")
-	call FOV(C7V,7,330,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+330],N6[1])
-	set DLV=null
-endfunction
-
-function LDV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveReal(C6[1],7,DDV,C8V)
-	call K8V(DDV,370,C8V)
-	call FDV(DLV,"|cffffcc00Attack Damage:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,350,17,0,0,N6[1])
-	call ExecuteFunc("LFV")
-	set DLV=null
-endfunction
-
 function LFE takes nothing returns nothing
 	call FogModifierStop(BF[1+GetPlayerId(GetEnumPlayer())])
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,JL)
@@ -11300,101 +8964,6 @@ function LFE takes nothing returns nothing
 	call FogModifierStop(DF[1+GetPlayerId(GetEnumPlayer())])
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_MASKED,XM)
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_FOGGED,XM)
-endfunction
-
-function LHV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,14)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],90,DFV)
-	call FFV(C7V,1190,91,"|cffffcc00FukKi CP [Critical Damage]|r",ref_function_Q5V)
-	if N6[DFV+1210] then
-		call FOV(C7V,0,1190,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1190,"|cffffcc00+"+I2S(DDV)+"%|r")
-	call FOV(C7V,2,1190,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,1190,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,1190,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1190,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1190],N6[1])
-	set DLV=null
-endfunction
-
-function LLV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,15)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],93,DFV)
-	call FFV(C7V,1250,94,"|cffffcc00FukKi CP [Critical Chance]|r",ref_function_Q3V)
-	if N6[DFV+1270] then
-		call FOV(C7V,0,1250,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1250,"|cffffcc00+"+I2S(DDV)+"%|r")
-	call FOV(C7V,2,1250,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,1250,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,1250,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1250,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1250],N6[1])
-	set DLV=null
-endfunction
-
-function LGV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,7)
-	local integer DGV=FKV(C7V)
-	local integer DDV=R2I(LoadReal(C6[1],7,DGV))
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DGV+370] then
-			call SaveReal(C6[1],7,DGV,0.)
-			call K8V(DGV,370,0)
-		endif
-		if N6[DGV+1210] then
-			call SaveInteger(C6[1],90,DGV,0)
-			call K8V(DGV,1210,0)
-		endif
-		if N6[DGV+1270] then
-			call SaveInteger(C6[1],93,DGV,0)
-			call K8V(DGV,1270,0)
-		endif
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveReal(C6[1],7,DGV,DDV)
-		call K8V(DGV,370,DDV)
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveReal(C6[1],7,DGV,DDV)
-		call K8V(DGV,370,DDV)
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,350,17,"|cffffcc00ENTER ATTACK DAMAGE|r",ref_function_LDV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LHV")
-	
-	elseif DHV==VAV[DFV+6] then
-		call ExecuteFunc("LLV")
-	
-	elseif DHV==VAV[DFV+7] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function LHE takes nothing returns nothing
@@ -11409,40 +8978,6 @@ function LHE takes nothing returns nothing
 	call ForForce(RJE(Player(9)),ref_function_LFE)
 	call DestroyForce(S8)
 	set S8=null
-endfunction
-
-function LAV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,6)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,270,14,"|cffffcc00FukKi CP [Blocking Damage]|r",ref_function_LNV)
-	if N6[DDV+310] then
-		call FOV(C7V,0,270,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,270,"|cffffcc00"+I2S(R2I(LoadReal(C6[1],6,DDV)))+"%|r")
-	call FOV(C7V,2,270,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,270,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,270,"|cffffcc00Custom|r")
-	call FOV(C7V,5,270,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+270],N6[1])
-	set DLV=null
-endfunction
-
-function LIV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveReal(C6[1],6,DDV,C8V)
-	call K8V(DDV,310,C8V)
-	call FDV(DLV,"|cffffcc00Blocking Damage Rate:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,290,15,0,0,N6[1])
-	call ExecuteFunc("LAV")
-	set DLV=null
 endfunction
 
 function LJE takes nothing returns nothing
@@ -11532,49 +9067,6 @@ function LME takes nothing returns nothing
 	endif
 endfunction
 
-function LPV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,8)
-	local integer DDV=FKV(C7V)
-	local integer DGV=LoadInteger(C6[1],97,DDV)
-	local integer G_V=LoadInteger(C6[1],100,DDV)
-	local real DFV=LoadReal(C6[1],8,DDV)
-	call FFV(C7V,390,20,"|cffffcc00FukKi CP [Skill Damage]|r",ref_function_LQV)
-	if N6[DDV+1330] and N6[DDV+1390] and N6[DDV+430]!=N6[1] then
-		call FOV(C7V,0,390,"|cffffcc00Disable|r")
-		call K8V(DDV,430,1)
-	
-	elseif N6[DDV+430] then
-		call FOV(C7V,0,390,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,5,390,"|cffffcc00Critical Damage: |r|cffffffff+"+I2S(DGV)+"%|r")
-	call FOV(C7V,6,390,"|cffffcc00Critical Chance: |r|cffffffff+"+I2S(G_V)+"%|r")
-	call FOV(C7V,1,390,"|cffffcc00"+I2S(R2I(DFV))+"%|r")
-	call FOV(C7V,2,390,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,390,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,390,"|cffffcc00Custom|r")
-	call FOV(C7V,7,390,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+390],N6[1])
-	set DLV=null
-endfunction
-
-function LMV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveReal(C6[1],8,DDV,C8V)
-	call K8V(DDV,430,C8V)
-	call FDV(DLV,"|cffffcc00Skill Damage:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,410,19,0,0,N6[1])
-	call ExecuteFunc("LPV")
-	set DLV=null
-endfunction
-
 function LNE takes nothing returns nothing
 	local real x=GetPlayerStartLocationX(GetEnumPlayer())
 	local real y=GetPlayerStartLocationY(GetEnumPlayer())
@@ -11586,47 +9078,6 @@ function LNE takes nothing returns nothing
 	else
 		call SetUnitPosition(Unit[1+GetPlayerId(GetEnumPlayer())],x,y)
 	endif
-endfunction
-
-function LNV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,6)
-	local integer DGV=FKV(C7V)
-	local integer DDV=R2I(LoadReal(C6[1],6,C7V))
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveReal(C6[1],6,DGV,0.)
-		call K8V(DGV,310,0)
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveReal(C6[1],6,DGV,DDV)
-		call K8V(DGV,310,DDV)
-		call ExecuteFunc("LAV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveReal(C6[1],6,DGV,DDV)
-		call K8V(DGV,310,DDV)
-		call ExecuteFunc("LAV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,290,15,"|cffffcc00ENTER BLOKING DAMAGE RATE|r",ref_function_LIV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function LOE takes nothing returns nothing
@@ -11806,148 +9257,12 @@ function LPE takes nothing returns nothing
 	endif
 endfunction
 
-function L2V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,17)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],100,DFV)
-	call FFV(C7V,1370,99,"|cffffcc00FukKi CP [Critical Chance]|r",ref_function_QYV)
-	if N6[DFV+1390] then
-		call FOV(C7V,0,1370,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1370,"|cffffcc00+"+I2S(DDV)+"%|r")
-	call FOV(C7V,2,1370,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,1370,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,1370,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1370,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1370],N6[1])
-	set DLV=null
-endfunction
-
-function LTV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,16)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],97,DFV)
-	call FFV(C7V,1310,96,"|cffffcc00FukKi CP [Critical Damage]|r",ref_function_Q_V)
-	if N6[DFV+1330] then
-		call FOV(C7V,0,1310,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1310,"|cffffcc00+"+I2S(DDV)+"%|r")
-	call FOV(C7V,2,1310,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,1310,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,1310,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1310,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1310],N6[1])
-	set DLV=null
-endfunction
-
-function LQV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,8)
-	local integer DGV=FKV(C7V)
-	local integer DDV=R2I(LoadReal(C6[1],8,DGV))
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DDV+430] then
-			call SaveReal(C6[1],8,DGV,0.)
-			call K8V(DGV,430,0)
-		endif
-		if N6[DDV+1330] then
-			call SaveInteger(C6[1],97,DGV,0)
-			call K8V(DGV,1330,0)
-		endif
-		if N6[DDV+1390] then
-			call SaveInteger(C6[1],100,DGV,0)
-			call K8V(DGV,1390,0)
-		endif
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveReal(C6[1],8,DGV,DDV)
-		call K8V(DGV,430,DDV)
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveReal(C6[1],8,DGV,DDV)
-		call K8V(DGV,430,DDV)
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,410,19,"|cffffcc00ENTER SKILL DAMAGE|r",ref_function_LMV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LTV")
-	
-	elseif DHV==VAV[DFV+6] then
-		call ExecuteFunc("L2V")
-	
-	elseif DHV==VAV[DFV+7] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function LRE takes nothing returns nothing
 	local real x=GetRectCenterX(KM)
 	local real y=GetRectCenterY(KM)
 	call SetUnitMoveSpeed(GetEnumUnit(),500.)
 	call IssuePointOrderById(GetEnumUnit(),851983,x,y)
 	call GroupAddUnit(AF,GetEnumUnit())
-endfunction
-
-function LRV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,5)
-	local integer DGV=FKV(C7V)
-	local integer DDV=R2I(LoadReal(C6[1],5,DGV))
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveReal(C6[1],5,DGV,0.)
-		call K8V(DGV,250,0)
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveReal(C6[1],5,DGV,DDV)
-		call K8V(DGV,250,DDV)
-		call ExecuteFunc("LXV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveReal(C6[1],5,DGV,DDV)
-		call K8V(DGV,250,DDV)
-		call ExecuteFunc("LXV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,230,12,"|cffffcc00ENTER RETURN DAMAGE RATE|r",ref_function_K9V)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function LSE takes nothing returns boolean
@@ -12014,53 +9329,6 @@ function M2E takes nothing returns nothing
 	call A_V(1.)
 	call TriggerExecute(TU)
 	call A4V(PP)
-endfunction
-
-function MRV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local string C9V=""
-	call FFV(C7V,450,22,"|cffffcc00FukKi CP [CP Maganer]|r",ref_function_PBV)
-	call FOV(C7V,0,450,"|cffffcc00Disable|r")
-	if LoadBoolean(C6[0],0,C7V+10) then
-		if LoadBoolean(C6[0],0,1) then
-			set C9V="|cffffcc00CP String:|r"
-		
-		else
-			set C9V="|cffffcc00CP Key:|r"
-		endif
-		call FOV(C7V,1,450,C9V+" |cffffffff"+LoadStr(C6[0],0,1)+"|r")
-		if LoadBoolean(C6[0],0,2) then
-			set C9V="|cffffcc00Menu String:|r"
-		
-		else
-			set C9V="|cffffcc00Menu Key:|r"
-		endif
-		call FOV(C7V,2,450,C9V+" |cffffffff"+LoadStr(C6[0],0,2)+"|r")
-		call FOV(C7V,3,450,"|cffffcc00Active Player|r")
-		call FOV(C7V,4,450,"|cffffcc00Share Option|r")
-	endif
-	if N6[3] then
-		set C9V="|cffff0000OFF|r"
-	
-	else
-		set C9V="|cff00ff00ON|r"
-	endif
-	call FOV(C7V,5,450,"|cffffcc00Map Replay: |r"+C9V)
-	call FOV(C7V,6,450,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+450],N6[1])
-	set DLV=null
-endfunction
-
-function M2V takes nothing returns nothing
-	local string C9V=GetEventPlayerChatString()
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	call FDV(DLV,"|cffffcc00MENU ACTIVE:|r "+C9V)
-	call SaveStr(C6[0],0,2,C9V)
-	call DKV(C7V,1550,104,0,0,N6[1])
-	call ExecuteFunc("MRV")
-	set DLV=null
 endfunction
 
 function M3E takes nothing returns nothing
@@ -12328,74 +9596,6 @@ function MNE takes nothing returns nothing
 	endif
 endfunction
 
-function MIV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=1
-	local integer DDV=0
-	call FFV(C7V,1030,82,"|cffffcc00FukKi CP [Share Option]|r",ref_function_MOV)
-	if LoadBoolean(C6[1],255,C7V) then
-		call FOV(C7V,0,1030,"|cffffcc00Disable|r")
-	endif
-	if LoadBoolean(C6[1],254,C7V) then
-		set DDV=8
-	endif
-	loop
-		call FOV(C7V,C8V,1030,"|cff"+FEV(C8V-1+DDV)+GetPlayerName(Player(C8V-1+DDV))+"|r")
-		set C8V=C8V+1
-		exitwhen C8V>8
-	endloop
-	if not LoadBoolean(C6[1],254,C7V) then
-		call FOV(C7V,9,1030,"|cffffcc00Next|r")
-	endif
-	call FOV(C7V,10,1030,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1030],N6[1])
-	set DLV=null
-endfunction
-
-function MOV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	local integer C8V=1
-	local integer DFV=0
-	if DHV==VAV[DDV+0] then
-		call SaveBoolean(C6[1],254,C7V,N6[2])
-		call SaveBoolean(C6[1],255,C7V,N6[2])
-		call RemoveSavedInteger(C6[1],255,C7V)
-		call ExecuteFunc("MRV")
-	endif
-	if LoadBoolean(C6[1],254,C7V) then
-		set DFV=8
-	endif
-	loop
-		if DHV==VAV[DDV+C8V] then
-			call SaveBoolean(C6[1],254,C7V,N6[2])
-			call SaveBoolean(C6[1],255,C7V,N6[1])
-			call SaveInteger(C6[1],255,C7V,C8V-1+DFV)
-			call ExecuteFunc("F1V")
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>8
-	endloop
-	if DHV==VAV[DDV+9] then
-		call SaveBoolean(C6[1],254,C7V,N6[1])
-		call ExecuteFunc("MIV")
-	
-	elseif DHV==VAV[DDV+10] then
-		if LoadBoolean(C6[1],254,C7V) then
-			call SaveBoolean(C6[1],254,C7V,N6[2])
-			call ExecuteFunc("MIV")
-		
-		elseif not LoadBoolean(C6[1],254,C7V) then
-			call ExecuteFunc("MRV")
-		endif
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function MPE takes nothing returns nothing
 	call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
 	call SetUnitAnimation(U6,"Stand Victory")
@@ -12458,51 +9658,6 @@ function MVE takes nothing returns nothing
 	call IssuePointOrderById(GetTriggerUnit(),851986,x,y)
 	call GroupRemoveUnit(IF,GetTriggerUnit())
 	call GroupAddUnit(AF,GetTriggerUnit())
-endfunction
-
-function MVV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,4)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],4,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SetPlayerHandicapBJ(Player(DGV),100.)
-		call SaveReal(C6[0],86,DGV,0.)
-		call SaveInteger(C6[1],4,DGV,0)
-		call DKV(DGV,570,28,570,0,N6[1])
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SetPlayerHandicapBJ(Player(DGV),100+DDV)
-		call SaveInteger(C6[1],4,DGV,DDV)
-		call DKV(DGV,570,28,570,DDV,N6[1])
-		call ExecuteFunc("L8V")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SetPlayerHandicapBJ(Player(DGV),100+DDV)
-		call SaveInteger(C6[1],4,DGV,DDV)
-		call DKV(DGV,570,28,570,DDV,N6[1])
-		call ExecuteFunc("L8V")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,550,27,"|cffffcc00ENTER HP RATE|r",ref_function_L7V)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function MWE takes nothing returns nothing
@@ -12583,24 +9738,6 @@ endfunction
 
 function ASX takes nothing returns boolean
 	return bj_forLoopAIndex==EE
-endfunction
-
-function EKE takes nothing returns nothing
-	local integer i1=1
-	call DialogClear(EH[1])
-	set WH[0]=DialogAddButton(EH[1],TG[GetPlayerId(GetTriggerPlayer())+100],0)
-	loop
-		set WH[i1]=DialogAddButton(EH[1],TG[i1],0)
-		set i1=i1+1
-		exitwhen i1==10
-	endloop
-	set WH[10]=DialogAddButton(EH[1],"NEXT PAGE >>>>>",0)
-	call DialogDisplay(GetTriggerPlayer(),EH[1],true)
-endfunction
-
-function N9X takes nothing returns nothing
-	
-	
 endfunction
 
 function NBV takes nothing returns boolean
@@ -13142,124 +10279,6 @@ function O_X takes nothing returns nothing
 	call SetPlayerAbilityAvailableBJ(false,$41303531,GetEnumPlayer())
 endfunction
 
-function P3V takes integer C7V returns boolean
-	return GetPlayerController(Player(C7V))==ConvertMapControl(0) and GetPlayerSlotState(Player(C7V))==ConvertPlayerSlotState(1)
-endfunction
-
-function P2V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=0
-	local string C9V=""
-	call FFV(C7V,790,37,"|cffffcc00FukKi CP [Kick Player]|r",ref_function_P1V)
-	if LoadBoolean(C6[0],0,C7V+10) then
-		loop
-			if C8V!=C7V and P3V(C8V) then
-				call FOV(C7V,C8V,790,"|cff"+FEV(C8V)+GetPlayerName(Player(C8V))+"|r "+C9V)
-			endif
-			set C8V=C8V+1
-			exitwhen C8V>11
-		endloop
-	
-	else
-		loop
-			if C8V!=C7V and P3V(C8V) then
-				call FOV(C7V,C8V,790,"|cff"+FEV(C8V)+GetPlayerName(Player(C8V))+"|r "+C9V)
-			endif
-			set C8V=C8V+1
-			exitwhen C8V>11
-		endloop
-	endif
-	call FOV(C7V,12,790,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+790],N6[1])
-	set DLV=null
-endfunction
-
-function PHV takes nothing returns nothing
-	local player DLV
-	local integer C7V
-	local integer C8V
-	local string C9V
-	call LoadForceHandle(C6[0],0,8)
-	set DLV=GetTriggerPlayer()
-	set C7V=GetPlayerId(DLV)
-	set C8V=FKV(C7V)
-	set C9V=""
-	call FFV(C7V,590,29,"|cffffcc00FukKi CP [MAIN MENU]|r",ref_function_UCV)
-	call FOV(C7V,0,590,"|cffffcc00Steal HP:|r |cffffffff+"+I2S(LoadInteger(C6[1],9,C8V))+"%|r")
-	call FOV(C7V,1,590,"|cffffcc00Steal Mana:|r |cffffffff+"+I2S(LoadInteger(C6[1],10,C8V))+"%|r")
-	if N6[C8V+730] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,2,590,"|cffffcc00Teleport:|r "+C9V)
-	if N6[C8V+750] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,3,590,"|cffffcc00No Cooldown:|r "+C9V)
-	if N6[C8V+770] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,4,590,"|cffffcc00No Mana:|r "+C9V)
-	if LoadBoolean(C6[0],51,C8V) then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,5,590,"|cffffcc00Hearing:|r "+C9V)
-	if LoadBoolean(C6[0],10,C8V) then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,6,590,"|cffffcc00Tertiary Eye:|r "+C9V)
-	if LoadBoolean(C6[0],11,C8V) then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,7,590,"|cffffcc00Share Control:|r "+C9V)
-	call FOV(C7V,8,590,"|cffffcc00Kick Player|r")
-	call FOV(C7V,9,590,"|cffffcc00Page: |r|cffffffff2|r")
-	call FOV(C7V,10,590,"|cffffcc00Exit|r")
-	call DialogDisplay(DLV,VIV[C7V+590],N6[1])
-	set DLV=null
-endfunction
-
-function P1V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local button DHV=GetClickedButton()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FVV(C7V)
-	local integer C8V=0
-	loop
-		if DHV==VAV[DDV+C8V] then
-			if Player(C8V)==GetLocalPlayer() then
-				call Player(-1)
-			endif
-			call ExecuteFunc("P2V")
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	if DHV==VAV[DDV+12] then
-		call ExecuteFunc("PHV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function P2E takes nothing returns nothing
 	call SetUnitPositionLoc(GetEnumUnit(),EN[1+GetPlayerId(VN[SO])])
 	call GroupAddUnit(XA,GetEnumUnit())
@@ -13322,140 +10341,6 @@ function P3E takes nothing returns nothing
 	call A4V(QE)
 endfunction
 
-function P4E takes nothing returns boolean
-	return IN and HO==false
-endfunction
-
-function QCV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DFV=FKV(C7V)
-	local integer C8V=0
-	local integer DDV=0
-	local string C9V=""
-	call FFV(C7V,830,71,"|cffffcc00FukKi CP [MAIN MENU]|r",ref_function_UVV)
-	if LoadBoolean(C6[0],60,DFV) then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,0,830,"|cffffcc00MH Detact: |r"+C9V)
-	loop
-		if LoadInteger(C6[0],60,C8V)>0 then
-			set DDV=DDV+1
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	call FOV(C7V,1,830,"|cffffcc00MH List: |r|cffffffff"+I2S(DDV)+"|r")
-	if N6[870+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,2,830,"|cffffcc00Fast Build: |r"+C9V)
-	if N6[890+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,3,830,"|cffffcc00Fast Training: |r"+C9V)
-	if N6[910+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,4,830,"|cffffcc00Fast Research: |r"+C9V)
-	if N6[930+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,5,830,"|cffffcc00No Use Food: |r"+C9V)
-	if N6[950+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,6,830,"|cffffcc00No Use Gold: |r"+C9V)
-	if N6[970+DFV] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,7,830,"|cffffcc00No Use Lumber: |r"+C9V)
-	call FOV(C7V,8,830,"|cffffcc00Float Camera: |r|cffffffff+"+I2S(LoadInteger(C6[1],81,DFV))+"|r")
-	call FOV(C7V,9,830,"|cffffcc00Page: |r|cffffffff3|r")
-	call FOV(C7V,10,830,"|cffffcc00Exit|r")
-	call DialogDisplay(DLV,VIV[C7V+830],N6[1])
-	set DLV=null
-endfunction
-
-function QNV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=0
-	local integer DDV=0
-	call FFV(C7V,850,72,"|cffffcc00FukKi CP [MH List]|r",ref_function_P4V)
-	loop
-		set DDV=LoadInteger(C6[0],60,C8V)
-		if DDV>0 and P3V(C8V) then
-			call FOV(C7V,C8V,850,"|cff"+FEV(C8V)+GetPlayerName(Player(C8V))+"|r|cffffcc00:|r |cffffffff"+I2S(DDV)+"|r")
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	call FOV(C7V,12,850,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+850],N6[1])
-	set DLV=null
-endfunction
-
-function P4V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local button DHV=GetClickedButton()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FVV(C7V)
-	local integer C8V=0
-	loop
-		if DHV==VAV[DDV+C8V] then
-			if Player(C8V)==GetLocalPlayer() then
-				call Player(-1)
-			endif
-			call ExecuteFunc("QNV")
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	if DHV==VAV[DDV+12] then
-		call ExecuteFunc("QCV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
-function P5E takes nothing returns nothing
-	local real x=GetRandomReal(GetRectMinX(IK),GetRectMaxX(IK))
-	local real y=GetRandomReal(GetRectMinY(IK),GetRectMaxY(IK))
-	call CreateUnit(Player(10),GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
-endfunction
-
-function P6E takes nothing returns boolean
-	return IN==false and HO
-endfunction
-
-function P7E takes nothing returns nothing
-	local real x=GetRandomReal(GetRectMinX(RK),GetRectMaxX(RK))
-	local real y=GetRandomReal(GetRectMinY(RK),GetRectMaxY(RK))
-	call CreateUnit(Player(11),GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
-endfunction
-
 function P8E takes nothing returns boolean
 	return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_UNDEAD)==false)!=false!=false!=false
 endfunction
@@ -13470,62 +10355,6 @@ endfunction
 
 function PAE takes nothing returns nothing
 	set PD[GetUnitUserData(GetEnumUnit())]=PD[GetUnitUserData(GetEnumUnit())]+GetUnitPointValue(GetEnumUnit())
-endfunction
-
-function PNV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	call FFV(C7V,470,23,"|cffffcc00FukKi CP [CP Key]|r",ref_function_PAV)
-	call FOV(C7V,0,470,"|cffffcc00Clear Key|r")
-	call FOV(C7V,1,470,"|cffffffff"+LoadStr(C6[0],0,1)+"|r")
-	call FOV(C7V,2,470,"|cffffcc00ESC|r")
-	call FOV(C7V,3,470,"|cffffcc00Arrow Up|r")
-	call FOV(C7V,4,470,"|cffffcc00Arrow Down|r")
-	call FOV(C7V,5,470,"|cffffcc00Arrow Left|r")
-	call FOV(C7V,6,470,"|cffffcc00Arrow Right|r")
-	call FOV(C7V,7,470,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+470],N6[1])
-	set DLV=null
-endfunction
-
-function PAV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=FVV(C7V)
-	local button DHV=GetClickedButton()
-	local string C9V=LoadStr(C6[0],0,1)
-	if DHV==VAV[C8V+0] then
-		call SaveStr(C6[0],0,1,"")
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+1] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[C8V+2] then
-		call SaveStr(C6[0],0,1,C9V+LoadStr(C6[0],0,3))
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+3] then
-		call SaveStr(C6[0],0,1,C9V+LoadStr(C6[0],0,6))
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+4] then
-		call SaveStr(C6[0],0,1,C9V+LoadStr(C6[0],0,7))
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+5] then
-		call SaveStr(C6[0],0,1,C9V+LoadStr(C6[0],0,4))
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+6] then
-		call SaveStr(C6[0],0,1,C9V+LoadStr(C6[0],0,5))
-		call ExecuteFunc("PNV")
-	
-	elseif DHV==VAV[C8V+7] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function PBE takes nothing returns nothing
@@ -13551,170 +10380,9 @@ function PBE takes nothing returns nothing
 	set JH[IQE]=JH[IQE]+R2I(IEE)+R2I(IXE)
 endfunction
 
-function MEV takes integer C7V,integer C8V,integer DDV returns nothing
-	if N6[C7V+C8V] then
-		call DialogDestroy(VIV[C7V+C8V])
-		call DKV(C7V,C8V,DDV,0,0,N6[1])
-	endif
-endfunction
-
-function MXV takes integer C7V returns nothing
-	call MEV(C7V,10,1)
-	call MEV(C7V,90,5)
-	call MEV(C7V,150,8)
-	call MEV(C7V,210,11)
-	call MEV(C7V,270,14)
-	call MEV(C7V,330,16)
-	call MEV(C7V,350,18)
-	call MEV(C7V,390,20)
-	call MEV(C7V,450,22)
-	call MEV(C7V,470,23)
-	call MEV(C7V,490,24)
-	call MEV(C7V,510,25)
-	call MEV(C7V,530,26)
-	call MEV(C7V,590,29)
-	call MEV(C7V,610,30)
-	call MEV(C7V,670,32)
-	call MEV(C7V,790,37)
-	call MEV(C7V,810,70)
-	call MEV(C7V,830,71)
-	call MEV(C7V,850,72)
-	call MEV(C7V,990,79)
-	call MEV(C7V,1030,84)
-	call MEV(C7V,1050,83)
-	call MEV(C7V,1070,86)
-	call MEV(C7V,1130,88)
-	call MEV(C7V,1190,91)
-	call MEV(C7V,1250,94)
-	if LoadBoolean(C6[1],255,C7V) then
-		call SaveBoolean(C6[1],255,C7V,N6[2])
-		call RemoveSavedInteger(C6[1],255,C7V)
-	endif
-endfunction
-
-function PIV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	call FFV(C7V,490,24,"|cffffcc00FukKi CP [Menu Key]|r",ref_function_PRV)
-	call FOV(C7V,0,490,"|cffffcc00Clear Key|r")
-	call FOV(C7V,1,490,"|cffffffff"+LoadStr(C6[0],0,2)+"|r")
-	call FOV(C7V,2,490,"|cffffcc00ESC|r")
-	call FOV(C7V,3,490,"|cffffcc00Arrow Up|r")
-	call FOV(C7V,4,490,"|cffffcc00Arrow Down|r")
-	call FOV(C7V,5,490,"|cffffcc00Arrow Left|r")
-	call FOV(C7V,6,490,"|cffffcc00Arrow Right|r")
-	call FOV(C7V,7,490,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+490],N6[1])
-	set DLV=null
-endfunction
-
-function POV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local string C9V=""
-	local integer C8V=0
-	call FFV(C7V,510,25,"|cffffcc00FukKi CP [Active Player]|r",ref_function_PXV)
-	loop
-		if C8V!=C7V and GetPlayerController(Player(C8V))==ConvertMapControl(0) and GetPlayerSlotState(Player(C8V))==ConvertPlayerSlotState(1) then
-			if LoadBoolean(C6[0],0,C8V+10) then
-				set C9V="|cffff0000Master|r"
-			
-			elseif LoadBoolean(C6[0],0,C8V+30) then
-				set C9V="|cff00ff00Cheater|r"
-			
-			else
-				set C9V="|cffffffffNone|r"
-			endif
-			call FOV(C7V,C8V,510,"|cff"+FEV(C8V)+GetPlayerName(Player(C8V))+"|r: "+C9V)
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	call FOV(C7V,C8V,510,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+510],N6[1])
-	set DLV=null
-endfunction
-
-function PBV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer C8V=FVV(C7V)
-	if DHV==VAV[C8V+0] then
-		call MXV(C7V)
-		call SaveBoolean(C6[0],0,C7V+10,N6[2])
-		call SaveBoolean(C6[0],0,C7V+30,N6[2])
-	
-	elseif DHV==VAV[C8V+1] then
-		if LoadBoolean(C6[0],0,1) then
-			call FJV(C7V,1530,103,"|cffffcc00ENTER NEW CP ACTIVE:|r",ref_function_PEV)
-		
-		else
-			call ExecuteFunc("PNV")
-		endif
-	
-	elseif DHV==VAV[C8V+2] then
-		if LoadBoolean(C6[0],0,2) then
-			call FJV(C7V,1550,104,"|cffffcc00ENTER NEW MENU ACTIVE:|r",ref_function_M2V)
-		
-		else
-			call ExecuteFunc("PIV")
-		endif
-	
-	elseif DHV==VAV[C8V+3] then
-		call ExecuteFunc("POV")
-	
-	elseif DHV==VAV[C8V+4] then
-		call ExecuteFunc("MIV")
-	
-	elseif DHV==VAV[C8V+5] then
-		set N6[3]=N6[1]
-		call ExecuteFunc("MRV")
-	
-	elseif DHV==VAV[C8V+6] then
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function PCE takes nothing returns nothing
 	call ForForce(ZI,ref_function_PBE)
 	call TriggerExecute(IT)
-endfunction
-
-function PFV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,10)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,670,32,"|cffffcc00FukKi CP [Steal Mana]|r",ref_function_PGV)
-	if N6[DDV+710] then
-		call FOV(C7V,0,670,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,670,"|cffffcc00"+I2S(LoadInteger(C6[1],10,DDV))+"%|r")
-	call FOV(C7V,2,670,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,670,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,670,"|cffffcc00Custom|r")
-	call FOV(C7V,5,670,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+670],N6[1])
-	set DLV=null
-endfunction
-
-function PCV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],10,DDV,C8V)
-	call K8V(DDV,710,C8V)
-	call FDV(DLV,"|cffffcc00STEAL MANA:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,690,31,0,0,N6[1])
-	call ExecuteFunc("PFV")
-	set DLV=null
 endfunction
 
 function PDE takes nothing returns nothing
@@ -13753,17 +10421,6 @@ function PEE takes nothing returns nothing
 	call ForForce(ZI,ref_function_PVE)
 endfunction
 
-function PEV takes nothing returns nothing
-	local string C9V=GetEventPlayerChatString()
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	call FDV(DLV,"|cffffcc00CP ACTIVE:|r "+C9V)
-	call SaveStr(C6[0],0,1,C9V)
-	call DKV(C7V,1530,103,0,0,N6[1])
-	call ExecuteFunc("MRV")
-	set DLV=null
-endfunction
-
 function PFE takes nothing returns nothing
 	if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
 		if IsUnitType(GetEnumUnit(),UNIT_TYPE_GIANT) or IsUnitType(GetEnumUnit(),UNIT_TYPE_SUMMONED) then
@@ -13774,47 +10431,6 @@ endfunction
 
 function PGE takes nothing returns nothing
 	call RemoveUnit(GetEnumUnit())
-endfunction
-
-function PGV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,10)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],10,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],10,DGV,0)
-		call K8V(DGV,710,0)
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],10,DGV,DDV)
-		call K8V(DGV,710,DDV)
-		call ExecuteFunc("PFV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],10,DGV,DDV)
-		call K8V(DGV,710,DDV)
-		call ExecuteFunc("PFV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,690,33,"|cffffcc00ENTER STEAL MANA|r",ref_function_PCV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("PHV")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function PHE takes nothing returns boolean
@@ -13847,40 +10463,6 @@ function PJE takes nothing returns nothing
 	call A4V(QE)
 endfunction
 
-function PKV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,9)
-	local integer DDV=FKV(C7V)
-	call FFV(C7V,610,30,"|cffffcc00FukKi CP [Steal HP]|r",ref_function_PLV)
-	if N6[DDV+650] then
-		call FOV(C7V,0,610,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,610,"|cffffcc00"+I2S(LoadInteger(C6[1],9,DDV))+"%|r")
-	call FOV(C7V,2,610,"|cffffffff+"+I2S(C8V)+"%|r")
-	call FOV(C7V,3,610,"|cffffffff-"+I2S(C8V)+"%|r")
-	call FOV(C7V,4,610,"|cffffcc00Custom|r")
-	call FOV(C7V,5,610,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+610],N6[1])
-	set DLV=null
-endfunction
-
-function PJV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],9,DDV,C8V)
-	call K8V(DDV,650,C8V)
-	call FDV(DLV,"|cffffcc00STEAL HP:|r +"+I2S(C8V)+"%")
-	call DKV(C7V,630,31,0,0,N6[1])
-	call ExecuteFunc("PKV")
-	set DLV=null
-endfunction
-
 function PKE takes nothing returns boolean
 	return IsUnitType(GetFilterUnit(),UNIT_TYPE_GIANT)!=false!=false!=false
 endfunction
@@ -13894,61 +10476,10 @@ function PLE takes nothing returns nothing
 	endif
 endfunction
 
-function PLV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,9)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],9,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],9,DGV,0)
-		call K8V(DGV,650,0)
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],9,DGV,DDV)
-		call K8V(DGV,650,DDV)
-		call ExecuteFunc("PKV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],9,DGV,DDV)
-		call K8V(DGV,650,DDV)
-		call ExecuteFunc("PKV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,630,31,"|cffffcc00ENTER STEAL HP|r",ref_function_PJV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("PHV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function PME takes nothing returns nothing
 	set QE=IRE(bj_mapInitialPlayableArea,Condition(ref_function_PKE))
 	call ForGroup(QE,ref_function_PLE)
 	call A4V(QE)
-endfunction
-
-function PMV takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local location PPV=GetOrderPointLoc()
-	if GetIssuedOrderId()==851990 and N6[GetPlayerId(GetOwningPlayer(GQV))+730] then
-		call SetUnitPosition(GQV,GetLocationX(PPV),GetLocationY(PPV))
-	endif
-	set GQV=null
-	set PPV=null
 endfunction
 
 function PNE takes nothing returns nothing
@@ -14117,52 +10648,6 @@ function PRE takes nothing returns nothing
 	set PD[1+GetPlayerId(GetEnumPlayer())]=0
 endfunction
 
-function PRV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=FVV(C7V)
-	local button DHV=GetClickedButton()
-	local string C9V=LoadStr(C6[0],0,2)
-	if DHV==VAV[C8V+0] then
-		call SaveStr(C6[0],0,2,"")
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+1] then
-		if C9V=="" then
-			call SaveStr(C6[0],0,2,LoadStr(C6[0],0,3))
-		endif
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[C8V+2] then
-		call SaveStr(C6[0],0,2,C9V+LoadStr(C6[0],0,3))
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+3] then
-		call SaveStr(C6[0],0,2,C9V+LoadStr(C6[0],0,6))
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+4] then
-		call SaveStr(C6[0],0,2,C9V+LoadStr(C6[0],0,7))
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+5] then
-		call SaveStr(C6[0],0,2,C9V+LoadStr(C6[0],0,4))
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+6] then
-		call SaveStr(C6[0],0,2,C9V+LoadStr(C6[0],0,5))
-		call ExecuteFunc("PIV")
-	
-	elseif DHV==VAV[C8V+7] then
-		if C9V=="" then
-			call SaveStr(C6[0],0,2,LoadStr(C6[0],0,3))
-		endif
-		call ExecuteFunc("F1V")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function PSE takes nothing returns nothing
 	local player RSE=GetOwningPlayer(GetEnteringUnit())
 	local integer IQE=GetPlayerId(RSE)+1
@@ -14204,38 +10689,8 @@ function PSE takes nothing returns nothing
 	set u=null
 endfunction
 
-function PSV takes nothing returns nothing
-	local boolean DHV=GetIssuedOrderId()==851993
-	local unit GQV=GetTriggerUnit()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	if DHV and N6[C7V+750] then
-		call UnitResetCooldown(GQV)
-	
-	elseif N6[C7V+750] then
-		call UnitResetCooldown(GQV)
-	endif
-	set GQV=null
-	set DLV=null
-endfunction
-
 function PTE takes nothing returns boolean
 	return GetBooleanAnd(GetPlayerSlotState(GetFilterPlayer())==PLAYER_SLOT_STATE_PLAYING,GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),GetFilterPlayer()!=Player(9)))
-endfunction
-
-function PTV takes nothing returns nothing
-	local boolean DHV=GetIssuedOrderId()==851993
-	local unit GQV=GetTriggerUnit()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	if DHV and N6[C7V+770] then
-		call SetUnitManaPercentBJ(GQV,100.)
-	
-	elseif N6[C7V+770] then
-		call SetUnitManaPercentBJ(GQV,100.)
-	endif
-	set GQV=null
-	set DLV=null
 endfunction
 
 function PUE takes nothing returns nothing
@@ -14291,36 +10746,6 @@ function PXE takes nothing returns nothing
 	set RSE=null
 endfunction
 
-function PXV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	local integer C8V=0
-	loop
-		exitwhen C8V>11
-		if DHV==VAV[DDV+C8V] then
-			if LoadBoolean(C6[0],0,C8V+30) then
-				call MXV(C8V)
-				call SaveBoolean(C6[0],0,C8V+30,N6[2])
-			
-			else
-				call SaveBoolean(C6[0],0,C8V+30,N6[1])
-			endif
-			if LoadBoolean(C6[0],0,C8V+10) then
-				call SaveBoolean(C6[0],0,C8V+10,N6[2])
-			endif
-			call ExecuteFunc("POV")
-		endif
-		set C8V=C8V+1
-	endloop
-	if DHV==VAV[DDV+C8V] then
-		call ExecuteFunc("MRV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function PYE takes nothing returns nothing
 	set EO=EO+1
 	set VN[EO]=GetEnumPlayer()
@@ -14338,22 +10763,6 @@ function PZE takes nothing returns nothing
 	else
 		set YA=YA+1
 	endif
-endfunction
-
-function PZV takes nothing returns nothing
-	local string C9V=GetEventPlayerChatString()
-	local player DLV=GetTriggerPlayer()
-	local string P_V=GetPlayerName(DLV)
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=0
-	loop
-		if LoadBoolean(C6[0],51,C8V) then
-			call DisplayTimedTextToPlayer(Player(C8V),0.,0.,15.,"|cff"+FEV(C7V)+P_V+"|r : "+C9V)
-		endif
-		set C8V=C8V+1
-		exitwhen C8V>11
-	endloop
-	set DLV=null
 endfunction
 
 function Q0E takes nothing returns nothing
@@ -14422,166 +10831,16 @@ function Q2E takes nothing returns boolean
 	return GetUnitTypeId(GetTriggerUnit())==$75303049
 endfunction
 
-function Q2V takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],93,DDV,C8V)
-	call FDV(DLV,"|cffffcc00Critical Chance:|r +"+I2S(C8V)+"%")
-	call DKV(DDV,1290,95,0,0,N6[1])
-	call K8V(DDV,1270,C8V)
-	call ExecuteFunc("LLV")
-	set DLV=null
-endfunction
-
-function Q3V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,15)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],93,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DGV+370] then
-			call SaveReal(C6[1],7,DGV,0.)
-			call K8V(DGV,370,0)
-		endif
-		if N6[DGV+1210] then
-			call SaveInteger(C6[1],90,DGV,0)
-			call K8V(DGV,1210,0)
-		endif
-		if N6[DGV+1270] then
-			call SaveInteger(C6[1],93,DGV,0)
-			call K8V(DGV,1270,0)
-		endif
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],93,DGV,DDV)
-		call K8V(DGV,1270,DDV)
-		call ExecuteFunc("LLV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],93,DGV,DDV)
-		call K8V(DGV,1270,DDV)
-		call ExecuteFunc("LLV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1290,95,"|cffffcc00ENTER Critical Chance|r",ref_function_Q2V)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LFV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function Q4E takes nothing returns boolean
 	return GetFilterPlayer()==GetTriggerPlayer()
-endfunction
-
-function Q4V takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],90,DDV,C8V)
-	call FDV(DLV,"|cffffcc00Critical Damage:|r +"+I2S(C8V)+"%")
-	call DKV(DDV,1230,92,0,0,N6[1])
-	call K8V(DDV,1210,C8V)
-	call ExecuteFunc("LHV")
-	set DLV=null
 endfunction
 
 function Q5E takes nothing returns boolean
 	return GetUnitTypeId(GetTriggerUnit())==$75303049
 endfunction
 
-function Q5V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,14)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],90,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DGV+370] then
-			call SaveReal(C6[1],7,DGV,0.)
-			call K8V(DGV,370,0)
-		endif
-		if N6[DGV+1210] then
-			call SaveInteger(C6[1],90,DGV,0)
-			call K8V(DGV,1210,0)
-		endif
-		if N6[DGV+1270] then
-			call SaveInteger(C6[1],93,DGV,0)
-			call K8V(DGV,1270,0)
-		endif
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],90,DGV,DDV)
-		call K8V(DGV,1210,DDV)
-		call ExecuteFunc("LHV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],90,DGV,DDV)
-		call K8V(DGV,1210,DDV)
-		call ExecuteFunc("LHV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1230,92,"|cffffcc00ENTER Critical Damage|r",ref_function_Q4V)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LFV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function Q6E takes nothing returns boolean
 	return RX
-endfunction
-
-function Q6V takes nothing returns nothing
-	local unit GQV=GetEnumUnit()
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local unitstate FQV=ConvertUnitState(0)
-	local real HYV=GetUnitState(GQV,FQV)
-	local boolean DHV=IsUnitAliveBJ(GQV) and GQV!=null
-	if DHV and HYV<GetUnitState(GQV,ConvertUnitState(1)) then
-		call SetUnitState(GQV,FQV,HYV+LoadInteger(C6[1],84,C7V))
-	
-	else
-		call GroupRemoveUnit(I6[9],GQV)
-	endif
-	set GQV=null
-	set FQV=null
 endfunction
 
 function Q7E takes nothing returns nothing
@@ -14589,22 +10848,6 @@ function Q7E takes nothing returns nothing
 	call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),11.,"|cffBB3333Hybrid|r towers always sell for 50%, even if newly built.")
 	call DestroyForce(S8)
 	set S8=null
-endfunction
-
-function Q8V takes nothing returns nothing
-	local unit GQV=GetEnumUnit()
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local unitstate FQV=ConvertUnitState(2)
-	local real HYV=GetUnitState(GQV,FQV)
-	local boolean DHV=IsUnitAliveBJ(GQV) and GQV!=null
-	if DHV and HYV<GetUnitState(GQV,ConvertUnitState(3)) then
-		call SetUnitState(GQV,FQV,HYV+LoadInteger(C6[1],85,C7V))
-	
-	else
-		call GroupRemoveUnit(I6[10],GQV)
-	endif
-	set GQV=null
-	set FQV=null
 endfunction
 
 function Q9E takes nothing returns boolean
@@ -14656,31 +10899,6 @@ function QGE takes nothing returns nothing
 	call TriggerSleepAction(4.)
 endfunction
 
-function QGV takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local player DLV=GetTriggerPlayer()
-	local integer HYV=GetResearched()
-	local player KCV=GetOwningPlayer(GQV)
-	local integer C8V=GetTrainedUnitType()
-	local integer DDV=GetPlayerId(KCV)
-	local integer C7V=GetPlayerId(DLV)
-	local location QHV=GetUnitLoc(GQV)
-	if N6[DDV+870] and GQV!=null then
-		call UnitSetConstructionProgress(GQV,100)
-		call UnitSetUpgradeProgress(GQV,100)
-	endif
-	if N6[C7V+890] and C8V!=0 then
-		call CreateUnitAtLoc(DLV,C8V,QHV,270.)
-	endif
-	if N6[C7V+910] and HYV!=0 then
-		call SetPlayerTechResearched(DLV,HYV,GetPlayerTechCount(DLV,HYV,N6[1])+1)
-	endif
-	set GQV=null
-	set DLV=null
-	set KCV=null
-	set QHV=null
-endfunction
-
 function QHE takes nothing returns boolean
 	return (GetOwningPlayer(GetLeavingUnit())==Player(2) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
@@ -14724,14 +10942,6 @@ function QME takes nothing returns boolean
 	return (GetOwningPlayer(GetLeavingUnit())==Player(4) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
 
-function QMV takes nothing returns nothing
-	local timer FQV=GetExpiredTimer()
-	call SetPlayerState(Player(LoadInteger(C6[0],85,GetHandleId(FQV))),ConvertPlayerState(5),1)
-	call FlushChildHashtable(C6[0],85)
-	call DestroyTimer(FQV)
-	set FQV=null
-endfunction
-
 function QNE takes nothing returns nothing
 	call GroupAddUnit(RE[1+GetPlayerId(GetTriggerPlayer())],GetTriggerUnit())
 endfunction
@@ -14771,20 +10981,6 @@ function QPE takes nothing returns nothing
 	call TriggerSleepAction(4.)
 endfunction
 
-function QPV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local timer FQV=CreateTimer()
-	local integer C8V=GetHandleId(FQV)
-	call DisableTrigger(GetTriggeringTrigger())
-	call SetPlayerState(DLV,ConvertPlayerState(5),1)
-	call SaveInteger(C6[0],85,C8V,C7V)
-	call TimerStart(FQV,0.,N6[2],ref_function_QMV)
-	call EnableTrigger(GetTriggeringTrigger())
-	set DLV=null
-	set FQV=null
-endfunction
-
 function QQE takes nothing returns boolean
 	return (GetOwningPlayer(GetLeavingUnit())==Player(5) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
@@ -14805,44 +11001,6 @@ function QSE takes nothing returns nothing
 	call TriggerSleepAction(4.)
 endfunction
 
-function QTV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,11)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],81,DFV)
-	call FFV(C7V,990,79,"|cffffcc00FukKi CP [FLOAT CAMERA]|r",ref_function_QUV)
-	if LoadReal(C6[0],81,DFV)<1. and Player(DFV)==GetLocalPlayer() then
-		call SaveReal(C6[0],81,DFV,GetCameraField(ConvertCameraField(6)))
-	endif
-	if DDV>0 then
-		call FOV(C7V,0,990,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,990,"|cffffcc00+"+I2S(DDV)+"|r")
-	call FOV(C7V,2,990,"|cffffffff+"+I2S(C8V)+"|r")
-	call FOV(C7V,3,990,"|cffffffff-"+I2S(C8V)+"|r")
-	call FOV(C7V,4,990,"|cffffcc00Custom|r")
-	call FOV(C7V,5,990,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+990],N6[1])
-	set DLV=null
-endfunction
-
-function QSV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],81,DDV,C8V)
-	call FDV(DLV,"|cffffcc00CAMERA HIGH:|r +"+I2S(C8V))
-	call SetCameraFieldForPlayer(Player(DDV),ConvertCameraField(6),C8V,0.)
-	call DKV(DDV,1010,80,0,0,N6[1])
-	call ExecuteFunc("QTV")
-	set DLV=null
-endfunction
-
 function QTE takes nothing returns boolean
 	return (GetOwningPlayer(GetLeavingUnit())==Player(6) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
 endfunction
@@ -14859,71 +11017,12 @@ function QUE takes nothing returns nothing
 	call TriggerSleepAction(4.)
 endfunction
 
-function QUV takes nothing returns nothing
-	local camerafield FNV=ConvertCameraField(6)
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,11)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],81,DGV)
-	local real HYV=LoadReal(C6[0],81,C7V)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],81,DGV,0)
-		call SaveReal(C6[0],81,DGV,0.)
-		call SetCameraFieldForPlayer(Player(DGV),FNV,HYV,1.)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DFV+2] then
-		call SaveInteger(C6[1],81,DGV,DDV+C8V)
-		call SetCameraFieldForPlayer(Player(DGV),FNV,HYV+DDV+C8V,0.)
-		call ExecuteFunc("QTV")
-	
-	elseif DHV==VAV[DFV+3] then
-		if DDV-C8V<0 then
-			set C8V=0
-		endif
-		call SaveInteger(C6[1],81,DGV,DDV-C8V)
-		call SetCameraFieldForPlayer(Player(DGV),FNV,HYV+(DDV-C8V),0.)
-		call ExecuteFunc("QTV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1010,80,"|cffffcc00ENTER HIGH CAMERA|r",ref_function_QSV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("QCV")
-	endif
-	set FNV=null
-	set DLV=null
-	set DHV=null
-endfunction
-
 function QVE takes nothing returns boolean
 	return IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
 
 function QWE takes nothing returns boolean
 	return (GetOwningPlayer(GetLeavingUnit())==Player(7) and IsUnitType(GetLeavingUnit(),UNIT_TYPE_UNDEAD) and OB==false)!=false!=false!=false
-endfunction
-
-function QWV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],100,DDV,C8V)
-	call FDV(DLV,"|cffffcc00Critical Chance:|r +"+I2S(C8V)+"%")
-	call DKV(DDV,1410,101,0,0,N6[1])
-	call K8V(DDV,1390,C8V)
-	call ExecuteFunc("L2V")
-	set DLV=null
 endfunction
 
 function QXE takes nothing returns nothing
@@ -14951,57 +11050,6 @@ function QYE takes nothing returns nothing
 	set S8=null
 	call PanCameraToTimedForPlayer(GetOwningPlayer(GetLeavingUnit()),x,y,0.)
 	call TriggerSleepAction(4.)
-endfunction
-
-function QYV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,17)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],100,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DDV+430] then
-			call SaveReal(C6[1],8,DGV,0.)
-			call K8V(DGV,430,0)
-		endif
-		if N6[DDV+1330] then
-			call SaveInteger(C6[1],97,DGV,0)
-			call K8V(DGV,1330,0)
-		endif
-		if N6[DDV+1390] then
-			call SaveInteger(C6[1],100,DGV,0)
-			call K8V(DGV,1390,0)
-		endif
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],100,DGV,DDV)
-		call K8V(DGV,1390,DDV)
-		call ExecuteFunc("L2V")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],100,DGV,DDV)
-		call K8V(DGV,1390,DDV)
-		call ExecuteFunc("L2V")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1410,101,"|cffffcc00ENTER Critical Chance|r",ref_function_QWV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LPV")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function QZE takes nothing returns nothing
@@ -15192,75 +11240,8 @@ function QZE takes nothing returns nothing
 	endloop
 endfunction
 
-function QZV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],97,DDV,C8V)
-	call FDV(DLV,"|cffffcc00Critical Damage:|r +"+I2S(C8V)+"%")
-	call DKV(DDV,1350,98,0,0,N6[1])
-	call K8V(DDV,1330,C8V)
-	call ExecuteFunc("LTV")
-	set DLV=null
-endfunction
-
 function Q_E takes nothing returns boolean
 	return GetUnitTypeId(GetTriggerUnit())==$68303744 or GetUnitTypeId(GetTriggerUnit())==$68303745 or GetUnitTypeId(GetTriggerUnit())==$68303747 or GetUnitTypeId(GetTriggerUnit())==$68303746 or GetUnitTypeId(GetTriggerUnit())==$68303748 or GetUnitTypeId(GetTriggerUnit())==$68303749
-endfunction
-
-function Q_V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,16)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],97,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		if N6[DDV+430] then
-			call SaveReal(C6[1],8,DGV,0.)
-			call K8V(DGV,430,0)
-		endif
-		if N6[DDV+1330] then
-			call SaveInteger(C6[1],97,DGV,0)
-			call K8V(DGV,1330,0)
-		endif
-		if N6[DDV+1390] then
-			call SaveInteger(C6[1],100,DGV,0)
-			call K8V(DGV,1390,0)
-		endif
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],97,DGV,DDV)
-		call K8V(DGV,1330,DDV)
-		call ExecuteFunc("LTV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],97,DGV,DDV)
-		call K8V(DGV,1330,DDV)
-		call ExecuteFunc("LTV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1350,98,"|cffffcc00ENTER Critical Damage|r",ref_function_QZV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("LPV")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function RBE takes nothing returns boolean
@@ -15888,244 +11869,8 @@ function S8E takes nothing returns boolean
 	return GetUnitTypeId(GetAttacker())==$68304344 and GetUnitStateSwap(UNIT_STATE_MANA,GetAttacker())>=3.
 endfunction
 
-function SDV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,13)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],85,DFV)
-	call FFV(C7V,1130,88,"|cffffcc00FukKi CP [MP Regeneration]|r",ref_function_SFV)
-	if N6[DFV+1150] then
-		call FOV(C7V,0,1130,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1130,"|cffffcc00+"+I2S(DDV)+"/Sec|r")
-	call FOV(C7V,2,1130,"|cffffffff+"+I2S(C8V)+"/Sec|r")
-	call FOV(C7V,3,1130,"|cffffffff-"+I2S(C8V)+"/Sec|r")
-	call FOV(C7V,4,1130,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1130,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1130],N6[1])
-	set DLV=null
-endfunction
-
-function SRV takes integer C7V,integer C8V,integer DDV returns nothing
-	if LoadInteger(C6[1],84,16)!=1 then
-		call SaveInteger(C6[1],84,16,1)
-		set B6[1090]=CreateTrigger()
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(18))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(38))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(39))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(40))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(272))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(273))
-		call TriggerRegisterAnyUnitEventBJ(B6[1090],ConvertPlayerUnitEvent(274))
-		call FBV(84,16,1090,ref_function_SEV)
-	endif
-	call DKV(C7V,C8V,0,C8V,DDV,N6[2])
-	call D5V(1090,84,16,N6[C7V+C8V])
-endfunction
-
-function SCV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],85,DDV,C8V)
-	call FDV(DLV,"|cffffcc00MP Regeneration:|r +"+I2S(C8V)+"/Sec")
-	call DKV(DDV,1170,89,0,0,N6[1])
-	call SRV(DDV,1150,C8V)
-	call ExecuteFunc("SDV")
-	set DLV=null
-endfunction
-
 function SEE takes nothing returns boolean
 	return GetSpellAbilityId()==$41303038
-endfunction
-
-function Q7V takes nothing returns nothing
-	loop
-		exitwhen FirstOfGroup(I6[9])==null
-		call ForGroup(I6[9],ref_function_Q6V)
-		call TriggerSleepAction(1.)
-	endloop
-	call SaveBoolean(C6[0],4,4,N6[2])
-endfunction
-
-function Q9V takes nothing returns nothing
-	loop
-		exitwhen FirstOfGroup(I6[10])==null
-		call ForGroup(I6[10],ref_function_Q8V)
-		call TriggerSleepAction(1.)
-	endloop
-	call SaveBoolean(C6[0],5,5,N6[2])
-endfunction
-
-function SVV takes unit GQV,integer C7V returns nothing
-	if N6[1090+C7V] and not IsUnitInGroup(GQV,I6[9]) then
-		call GroupAddUnit(I6[9],GQV)
-		if LoadBoolean(C6[0],4,4)!=N6[1] then
-			call SaveBoolean(C6[0],4,4,N6[1])
-			call ExecuteFunc("Q7V")
-		endif
-	endif
-	if N6[1150+C7V] and not IsUnitInGroup(GQV,I6[10]) then
-		call GroupAddUnit(I6[10],GQV)
-		if LoadBoolean(C6[0],5,5)!=N6[1] then
-			call SaveBoolean(C6[0],5,5,N6[1])
-			call ExecuteFunc("Q9V")
-		endif
-	endif
-endfunction
-
-function SEV takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local unit HNV=GetAttacker()
-	local unit HCV=GetSpellTargetUnit()
-	local integer C7V=GetPlayerId(GetOwningPlayer(GQV))
-	local integer C8V=GetPlayerId(GetOwningPlayer(HNV))
-	local integer DDV=GetPlayerId(GetOwningPlayer(HCV))
-	if N6[1090+C7V] or N6[1150+C7V] then
-		call SVV(GQV,C7V)
-	
-	elseif N6[1090+C8V] or N6[1150+C8V] then
-		call SVV(HNV,C8V)
-	
-	elseif N6[1090+DDV] or N6[1150+DDV] then
-		call SVV(HCV,DDV)
-	endif
-	set GQV=null
-	set HNV=null
-	set HCV=null
-endfunction
-
-function SBV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=FKV(C7V)
-	local string C9V=""
-	call FFV(C7V,1050,83,"|cffffcc00FukKi CP [MAIN MENU]|r",ref_function_T3V)
-	call FOV(C7V,0,1050,"|cffffcc00HP Regeneration:|r |cffffffff+"+I2S(LoadInteger(C6[1],84,C8V))+"/Sec|r")
-	call FOV(C7V,1,1050,"|cffffcc00MP Regeneration:|r |cffffffff+"+I2S(LoadInteger(C6[1],85,C8V))+"/Sec|r")
-	if N6[C8V+1430] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,2,1050,"|cffffcc00Dispel Attack:|r "+C9V)
-	if N6[C8V+1450] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,3,1050,"|cffffcc00Auto Debuff:|r "+C9V)
-	if N6[C8V+1470] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,4,1050,"|cffffcc00Stop Attack:|r "+C9V)
-	if N6[C8V+1490] then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,5,1050,"|cffffcc00No Limit Item:|r "+C9V)
-	if LoadBoolean(C6[1],8,100+C8V) then
-		set C9V="|cff00ff00ON|r"
-	
-	else
-		set C9V="|cffff0000OFF|r"
-	endif
-	call FOV(C7V,6,1050,"|cffffcc00Map Hack:|r "+C9V)
-	call FOV(C7V,7,1050,"|cffffcc00Ping Tools|r")
-	call FOV(C7V,9,1050,"|cffffcc00Page: |r|cffffffff4|r")
-	call FOV(C7V,10,1050,"|cffffcc00Exit|r")
-	call DialogDisplay(DLV,VIV[C7V+1050],N6[1])
-	set DLV=null
-endfunction
-
-function SFV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,13)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],85,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],85,DGV,0)
-		call SRV(DGV,1150,0)
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],85,DGV,DDV)
-		call SRV(DGV,1150,DDV)
-		call ExecuteFunc("SDV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],85,DGV,DDV)
-		call SRV(DGV,1150,DDV)
-		call ExecuteFunc("SDV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1170,89,"|cffffcc00ENTER MP Regeneration|r",ref_function_SCV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("SBV")
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
-function SGV takes nothing returns nothing
-	local unit GQV=GetTriggerUnit()
-	local unit HNV=GetAttacker()
-	local unit HCV=GetSpellTargetUnit()
-	local unit SHV=GetOrderTargetUnit()
-	local player DLV=GetOwningPlayer(GQV)
-	local player KCV=GetOwningPlayer(HNV)
-	local player KBV=GetOwningPlayer(HCV)
-	local player SLV=GetOwningPlayer(SHV)
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=GetPlayerId(KCV)
-	local integer DDV=GetPlayerId(KBV)
-	local integer DFV=GetPlayerId(SLV)
-	local boolean SMV=KCV!=A6[C8V+1470]
-	local boolean SPV=DLV==A6[C7V+1470]
-	local boolean SQV=DLV!=A6[C7V+1470]
-	local boolean SSV=KBV==A6[DDV+1470]
-	local boolean STV=SLV==A6[DFV+1470]
-	if SMV and SPV and N6[C7V+1470] then
-		call IssueImmediateOrderById(HNV,851972)
-	
-	elseif SQV and SSV and N6[DDV+1470] then
-		call IssueImmediateOrderById(GQV,851972)
-	
-	elseif SQV and STV and N6[DFV+1470] then
-		call IssueImmediateOrderById(GQV,851972)
-	endif
-	set GQV=null
-	set HNV=null
-	set HCV=null
-	set SHV=null
-	set DLV=null
-	set KCV=null
-	set KBV=null
-	set SLV=null
 endfunction
 
 function SIE takes nothing returns nothing
@@ -16135,41 +11880,6 @@ function SIE takes nothing returns nothing
 			call IssueImmediateOrderById(GetAttacker(),852164)
 		endif
 	endif
-endfunction
-
-function SAV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,12)
-	local integer DFV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],84,DFV)
-	call FFV(C7V,1070,86,"|cffffcc00FukKi CP [HP Regeneration]|r",ref_function_SNV)
-	if N6[DFV+1090] then
-		call FOV(C7V,0,1070,"|cffffcc00Disable|r")
-	endif
-	call FOV(C7V,1,1070,"|cffffcc00+"+I2S(DDV)+"/Sec|r")
-	call FOV(C7V,2,1070,"|cffffffff+"+I2S(C8V)+"/Sec|r")
-	call FOV(C7V,3,1070,"|cffffffff-"+I2S(C8V)+"/Sec|r")
-	call FOV(C7V,4,1070,"|cffffcc00Custom|r")
-	call FOV(C7V,5,1070,"|cffffcc00Back|r")
-	call DialogDisplay(DLV,VIV[C7V+1070],N6[1])
-	set DLV=null
-endfunction
-
-function SIV takes nothing returns nothing
-	local integer C8V=S2I(GetEventPlayerChatString())
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	if C8V<0 then
-		set C8V=0
-	endif
-	call SaveInteger(C6[1],84,DDV,C8V)
-	call FDV(DLV,"|cffffcc00HP Regeneration:|r +"+I2S(C8V)+"/Sec")
-	call DKV(DDV,1110,87,0,0,N6[1])
-	call SRV(DDV,1090,C8V)
-	call ExecuteFunc("SAV")
-	set DLV=null
 endfunction
 
 function NRV takes unit u,integer i returns nothing
@@ -16211,7 +11921,7 @@ function NFV takes unit u,integer NCV,integer NAV,real NJV,integer NDV returns n
 		call TriggerRegisterDeathEvent(t,u)
 		call SaveTimerHandle(HY,h,10,tt)
 		call TriggerRegisterTimerExpireEvent(t,tt)
-		call TriggerAddCondition(t,Condition(ref_function_NBV))
+		call TriggerAddCondition(t,Condition(function NBV))
 		call SaveTriggerHandle(X,GetHandleId(u),0-NCV,t)
 	endif
 	call RemoveSavedBoolean(HY,h,0)
@@ -16240,47 +11950,6 @@ function SLE takes nothing returns nothing
 	call DestroyTimer(t)
 	set t=null
 	set t=null
-endfunction
-
-function SNV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=LoadInteger(C6[1],0,12)
-	local integer DGV=FKV(C7V)
-	local integer DDV=LoadInteger(C6[1],84,DGV)
-	local integer DFV=FVV(C7V)
-	local button DHV=GetClickedButton()
-	if DHV==VAV[DFV+0] then
-		call SaveInteger(C6[1],84,DGV,0)
-		call SRV(DGV,1090,0)
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DFV+1] then
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DFV+2] then
-		set DDV=DDV+C8V
-		call SaveInteger(C6[1],84,DGV,DDV)
-		call SRV(DGV,1090,DDV)
-		call ExecuteFunc("SAV")
-	
-	elseif DHV==VAV[DFV+3] then
-		set DDV=DDV-C8V
-		if DDV<0 then
-			set DDV=0
-		endif
-		call SaveInteger(C6[1],84,DGV,DDV)
-		call SRV(DGV,1090,DDV)
-		call ExecuteFunc("SAV")
-	
-	elseif DHV==VAV[DFV+4] then
-		call FJV(C7V,1110,87,"|cffffcc00ENTER HP Regeneration|r",ref_function_SIV)
-	
-	elseif DHV==VAV[DFV+5] then
-		call ExecuteFunc("SBV")
-	endif
-	set DLV=null
-	set DHV=null
 endfunction
 
 function SOE takes nothing returns boolean
@@ -16517,38 +12186,6 @@ function SXE takes nothing returns nothing
 	endif
 endfunction
 
-function SWV takes unit GQV,item FQV returns boolean
-	local integer C7V=0
-	loop
-		if GetItemTypeId(FQV)==GetItemTypeId(UnitItemInSlot(GQV,C7V)) then
-			return N6[1]
-		endif
-		exitwhen C7V>4
-		set C7V=C7V+1
-	endloop
-	return N6[2]
-endfunction
-
-function SYV takes nothing returns nothing
-	local unit GQV=GetManipulatingUnit()
-	local item FQV=GetManipulatedItem()
-	local player DLV=GetOwningPlayer(GQV)
-	local integer C7V=GetPlayerId(DLV)
-	if N6[C7V+1490] then
-		if SWV(GQV,FQV) then
-			call SetItemCharges(FQV,GetItemCharges(FQV)+1)
-		
-		else
-			set C7V=GetItemUserData(FQV)
-			set FQV=UnitAddItemById(GQV,GetItemTypeId(FQV))
-			call SetItemUserData(FQV,C7V)
-		endif
-	endif
-	set GQV=null
-	set FQV=null
-	set DLV=null
-endfunction
-
 function T1E takes nothing returns boolean
 	return GetUnitTypeId(GetAttacker())==$68303841
 endfunction
@@ -16566,128 +12203,6 @@ function T3E takes nothing returns nothing
 		call SetUnitManaBJ(GetAttacker(),0.)
 		call UnitAddAbility(GetAttacker(),$41303733)
 	endif
-endfunction
-
-function SUV takes integer C7V,integer C8V,integer DDV returns nothing
-	call Player(C7V)
-	if LoadInteger(C6[1],8,80)!=1 then
-		call SaveInteger(C6[1],8,80,1)
-		set B6[1470]=CreateTrigger()
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(18))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(38))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(39))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(40))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(272))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(273))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(274))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(275))
-		call TriggerRegisterAnyUnitEventBJ(B6[1470],ConvertPlayerUnitEvent(276))
-		call FBV(8,80,1470,ref_function_SGV)
-	endif
-	call DKV(C7V,C8V,0,C8V,DDV,N6[2])
-	call D5V(1470,8,80,N6[C7V+C8V])
-endfunction
-
-function SZV takes integer C7V,integer C8V,integer DDV returns nothing
-	if LoadInteger(C6[1],8,70)!=1 then
-		call SaveInteger(C6[1],8,70,1)
-		set B6[1490]=CreateTrigger()
-		call TriggerRegisterAnyUnitEventBJ(B6[1490],ConvertPlayerUnitEvent(50))
-		call FBV(8,70,1490,ref_function_SYV)
-	endif
-	call DKV(C7V,C8V,0,C8V,DDV,N6[2])
-	call D5V(1490,8,70,N6[C7V+C8V])
-endfunction
-
-function T6V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	call FFV(C7V,810,70,"|cffffcc00FukKi CP [Page Select]|r",ref_function_UNV)
-	call FOV(C7V,0,810,"|cffffcc00Page: |r|cffffffff1|r")
-	call FOV(C7V,1,810,"|cffffcc00Page: |r|cffffffff2|r")
-	call FOV(C7V,2,810,"|cffffcc00Page: |r|cffffffff3|r")
-	call FOV(C7V,3,810,"|cffffcc00Page: |r|cffffffff4|r")
-	call FOV(C7V,4,810,"|cffffcc00Exit|r")
-	call DialogDisplay(DLV,VIV[C7V+810],N6[1])
-	set DLV=null
-endfunction
-
-function T3V takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	local integer DFV=FKV(C7V)
-	local fogmodifier T4V=null
-	if DHV==VAV[DDV+0] then
-		call ExecuteFunc("SAV")
-	
-	elseif DHV==VAV[DDV+1] then
-		call ExecuteFunc("SDV")
-	
-	elseif DHV==VAV[DDV+2] then
-		if N6[DFV+1430] then
-			call K8V(DFV,1430,0)
-		
-		else
-			call K8V(DFV,1430,1)
-		endif
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+3] then
-		if N6[DFV+1450] then
-			call K8V(DFV,1450,0)
-		
-		else
-			call K8V(DFV,1450,1)
-		endif
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+4] then
-		if N6[DFV+1470] then
-			call SUV(DFV,1470,0)
-		
-		else
-			call SUV(DFV,1470,1)
-		endif
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+5] then
-		if N6[DFV+1490] then
-			call SZV(DFV,1490,0)
-		
-		else
-			call SZV(DFV,1490,1)
-		endif
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+6] then
-		if LoadBoolean(C6[1],8,100+DFV) then
-			call SaveBoolean(C6[1],8,100+DFV,N6[2])
-			set T4V=LoadFogModifierHandle(C6[1],8,100+DFV)
-			call SaveFogModifierHandle(C6[1],8,100+DFV,null)
-			call FogModifierStop(T4V)
-		
-		else
-			call SaveBoolean(C6[1],8,100+DFV,N6[1])
-			set T4V=CreateFogModifierRect(Player(DFV),ConvertFogState(4),bj_mapInitialPlayableArea,N6[2],N6[2])
-			call SaveFogModifierHandle(C6[1],8,100+DFV,T4V)
-			call FogModifierStart(T4V)
-		endif
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+7] then
-		call FJV(C7V,1510,102,"|cffffcc00ENTER PING FORMAT|r",ref_function_THV)
-	
-	elseif DHV==VAV[DDV+9] then
-		call ExecuteFunc("T6V")
-	
-	elseif DHV==VAV[DDV+10] then
-		call MXV(C7V)
-	endif
-	set DLV=null
-	set DHV=null
-	set T4V=null
 endfunction
 
 function T4E takes nothing returns nothing
@@ -16722,45 +12237,6 @@ endfunction
 
 function TBE takes nothing returns boolean
 	return GetSpellAbilityId()==$41303948
-endfunction
-
-function S8V takes string C9V returns integer
-	local integer C7V=48
-	loop
-		exitwhen C7V>122
-		if VRV[C7V]==C9V then
-			return C7V
-		endif
-		set C7V=C7V+1
-	endloop
-	return 0
-endfunction
-
-function TOV takes string C9V returns integer
-	return S8V(SubString(C9V,0,1))*($1000000)+S8V(SubString(C9V,1,2))*65536+S8V(SubString(C9V,2,3))*256+S8V(SubString(C9V,3,4))
-endfunction
-
-function TBV takes nothing returns nothing
-	local player DLV=Player(LoadInteger(C6[0],256,0))
-	local integer C8V=LoadInteger(C6[1],0,18)
-	local string P_V=LoadStr(C6[0],256,0)
-	local unit GQV=GetEnumUnit()
-	local location QHV=null
-	local string C9V=""
-	local integer C7V=0
-	loop
-		set C9V=SubString(P_V,C7V,C7V+4)
-		exitwhen StringLength(C9V)<4
-		if GetUnitTypeId(GQV)==TOV(C9V) then
-			set QHV=GetUnitLoc(GQV)
-			call PingMinimapLocForPlayer(DLV,QHV,C8V)
-			call RemoveLocation(QHV)
-		endif
-		set C7V=C7V+4
-	endloop
-	set DLV=null
-	set GQV=null
-	set QHV=null
 endfunction
 
 function TCE takes nothing returns nothing
@@ -16834,16 +12310,6 @@ elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer()
 endif
 endfunction
 
-function TCV takes nothing returns nothing
-	local player DLV=Player(LoadInteger(C6[0],256,0))
-	local integer C7V=LoadInteger(C6[1],0,18)
-	local location QHV=GetUnitLoc(GetEnumUnit())
-	call PingMinimapLocForPlayer(DLV,QHV,C7V)
-	call RemoveLocation(QHV)
-	set DLV=null
-	set QHV=null
-endfunction
-
 function TEE takes nothing returns boolean
 	return GetSpellAbilityId()==$41303945
 endfunction
@@ -16868,88 +12334,6 @@ endfunction
 
 function THE takes nothing returns boolean
 	return GetUnitTypeId(GetKillingUnit())==$68303342
-endfunction
-
-function S1V takes string C9V returns integer
-	local integer C7V=0
-	if S2I(C9V)==0 then
-		loop
-			if C9V==SubString("0!@#$%^",C7V,C7V+1) then
-				return C7V+10
-			endif
-			set C7V=C7V+1
-			exitwhen C7V>7
-		endloop
-	
-	else
-		return S2I(C9V)
-	endif
-	return 0
-endfunction
-
-function THV takes nothing returns nothing
-	local string C9V=GetEventPlayerChatString()
-	local integer G_V=LoadInteger(C6[1],0,18)
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local integer DDV=FKV(C7V)
-	local integer C8V=StringLength(C9V)
-	local string P_V=SubString(C9V,0,1)
-	local group K5V=null
-	local rect HYV=null
-	local integer DFV=0
-	local integer DGV=0
-	if S1V(P_V)==0 and P_V!="" and C8V>=4 then
-		set K5V=CreateGroup()
-		call SaveStr(C6[0],256,0,C9V)
-		call SaveInteger(C6[0],256,0,DDV)
-		call GroupEnumUnitsInRect(K5V,bj_mapInitialPlayableArea,null)
-		call EnumItemsInRect(bj_mapInitialPlayableArea,null,ref_function_TRV)
-		call ForGroup(K5V,ref_function_TBV)
-		call DestroyGroup(K5V)
-	
-	else
-		set C7V=0
-		loop
-			if SubString(C9V,C7V,C7V+1)=="," then
-				call SaveReal(C6[0],256,DFV,S2R(SubString(C9V,DGV,C7V)))
-				set DFV=DFV+1
-				set DGV=C7V+1
-			endif
-			exitwhen C7V>C8V-2
-			set C7V=C7V+1
-		endloop
-		call SaveReal(C6[0],256,DFV,S2R(SubString(C9V,DGV,C7V)))
-		if DFV==1 then
-			call PingMinimapForPlayer(Player(DDV),LoadReal(C6[0],256,0),LoadReal(C6[0],256,1),G_V)
-		
-		elseif DFV==3 then
-			set HYV=Rect(LoadReal(C6[0],256,0),LoadReal(C6[0],256,1),LoadReal(C6[0],256,2),LoadReal(C6[0],256,3))
-			call PingMinimapLocForPlayer(Player(DDV),GetRectCenter(HYV),G_V)
-			call RemoveRect(HYV)
-		
-		elseif S1V(P_V)>0 then
-			call SaveInteger(C6[0],256,0,DDV)
-			set C7V=0
-			loop
-				set DFV=S1V(SubString(C9V,C7V,C7V+1))
-				if DFV!=DDV and DFV>0 and DFV<17 then
-					set K5V=CreateGroup()
-					call GroupEnumUnitsOfPlayer(K5V,Player(DFV-1),null)
-					call ForGroup(K5V,ref_function_TCV)
-					call DestroyGroup(K5V)
-				endif
-				exitwhen C7V>C8V-2
-				set C7V=C7V+1
-			endloop
-		endif
-	endif
-	call FlushChildHashtable(C6[0],256)
-	call DKV(DDV,1510,102,0,0,N6[1])
-	call ExecuteFunc("SBV")
-	set DLV=null
-	set K5V=null
-	set HYV=null
 endfunction
 
 function TJE takes nothing returns nothing
@@ -17124,29 +12508,6 @@ function TRE takes nothing returns nothing
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	endif
-endfunction
-
-function TRV takes nothing returns nothing
-	local player DLV=Player(LoadInteger(C6[0],256,0))
-	local integer C8V=LoadInteger(C6[1],0,18)
-	local string P_V=LoadStr(C6[0],256,0)
-	local item FQV=GetEnumItem()
-	local location QHV=null
-	local string C9V=""
-	local integer C7V=0
-	loop
-		set C9V=SubString(P_V,C7V,C7V+4)
-		exitwhen StringLength(C9V)<4
-		if GetItemTypeId(FQV)==TOV(C9V) then
-			set QHV=GetItemLoc(FQV)
-			call PingMinimapLocForPlayer(DLV,QHV,C8V)
-			call RemoveLocation(QHV)
-		endif
-		set C7V=C7V+4
-	endloop
-	set DLV=null
-	set FQV=null
-	set QHV=null
 endfunction
 
 function TTE takes nothing returns nothing
@@ -17395,157 +12756,6 @@ function IQV takes player IMV returns force
 	return XQV
 endfunction
 
-function P0V takes nothing returns nothing
-	local trigger FQV
-	local integer C7V
-	call GetTriggerPlayer()
-	set FQV=CreateTrigger()
-	set C7V=0
-	if LoadInteger(C6[0],0,9)!=1 then
-		call SaveInteger(C6[0],0,9,1)
-		loop
-			exitwhen C7V>11
-			call TriggerRegisterPlayerChatEvent(FQV,Player(C7V),"",N6[2])
-			set C7V=C7V+1
-		endloop
-	endif
-	call TriggerAddAction(FQV,ref_function_PZV)
-	call ExecuteFunc("PHV")
-	set FQV=null
-endfunction
-
-function PQV takes nothing returns nothing
-	local integer C7V=FKV(GetPlayerId(GetTriggerPlayer()))
-	if N6[C7V+730]!=N6[1] then
-		set B6[C7V+730]=CreateTrigger()
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+730],Player(C7V),ConvertPlayerUnitEvent(39),null)
-		call FRV(34,C7V,730,ref_function_PMV)
-	endif
-	call DKV(C7V,730,34,0,0,N6[1])
-	call ExecuteFunc("PHV")
-endfunction
-
-function PYV takes integer C7V,integer C8V,integer DDV returns nothing
-	local player DLV=Player(C7V)
-	if N6[C7V+C8V]!=N6[1] then
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(38),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(39),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(40),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(272),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(273),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(274),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(275),null)
-		call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(276),null)
-		if C8V==750 then
-			call FRV(DDV,C7V,C8V,ref_function_PSV)
-		
-		else
-			call FRV(DDV,C7V,C8V,ref_function_PTV)
-		endif
-	endif
-	call DKV(C7V,C8V,C8V,0,0,N6[1])
-	call ExecuteFunc("PHV")
-	set DLV=null
-endfunction
-
-function UCV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	local integer DFV=FKV(C7V)
-	local integer C8V=0
-	if DHV==VAV[DDV+0] then
-		call ExecuteFunc("PKV")
-	
-	elseif DHV==VAV[DDV+1] then
-		call ExecuteFunc("PFV")
-	
-	elseif DHV==VAV[DDV+2] then
-		call ExecuteFunc("PQV")
-	
-	elseif DHV==VAV[DDV+3] then
-		call PYV(DFV,750,35)
-	
-	elseif DHV==VAV[DDV+4] then
-		call PYV(DFV,770,36)
-	
-	elseif DHV==VAV[DDV+5] then
-		if LoadBoolean(C6[0],51,DFV) then
-			call SaveBoolean(C6[0],51,DFV,N6[2])
-		
-		else
-			call SaveBoolean(C6[0],51,DFV,N6[1])
-		endif
-		call ExecuteFunc("P0V")
-	
-	elseif DHV==VAV[DDV+6] then
-		if LoadBoolean(C6[0],10,DFV) then
-			call SaveBoolean(C6[0],10,DFV,N6[2])
-			loop
-				if DFV!=C8V then
-					call SetPlayerAlliance(Player(C8V),Player(DFV),ConvertAllianceType(5),N6[2])
-				endif
-				set C8V=C8V+1
-				exitwhen C8V>15
-			endloop
-		
-		else
-			call SaveBoolean(C6[0],10,DFV,N6[1])
-			loop
-				if DFV!=C8V then
-					call SetPlayerAlliance(Player(C8V),Player(DFV),ConvertAllianceType(5),N6[1])
-				endif
-				set C8V=C8V+1
-				exitwhen C8V>15
-			endloop
-		endif
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DDV+7] then
-		if LoadBoolean(C6[0],11,DFV) then
-			call SaveBoolean(C6[0],11,DFV,N6[2])
-			loop
-				if DFV!=C8V then
-					call SetPlayerAllianceStateFullControlBJ(Player(C8V),Player(DFV),N6[2])
-					call SetPlayerAllianceStateControlBJ(Player(C8V),Player(DFV),N6[2])
-					call SetPlayerAllianceStateVisionBJ(Player(C8V),Player(DFV),N6[2])
-					call ClearTextMessagesBJ(IQV(Player(C8V)))
-				endif
-				set C8V=C8V+1
-				exitwhen C8V>15
-			endloop
-		
-		else
-			call SaveBoolean(C6[0],11,DFV,N6[1])
-			loop
-				if DFV!=C8V then
-					call SetPlayerAllianceStateFullControlBJ(Player(C8V),Player(DFV),N6[1])
-					call SetPlayerAllianceStateControlBJ(Player(C8V),Player(DFV),N6[1])
-					call SetPlayerAllianceStateVisionBJ(Player(C8V),Player(DFV),N6[1])
-					call ClearTextMessagesBJ(IQV(Player(C8V)))
-				endif
-				set C8V=C8V+1
-				exitwhen C8V>15
-			endloop
-		endif
-		call ClearTextMessagesBJ(IQV(Player(DFV)))
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DDV+8] then
-		call ExecuteFunc("P2V")
-	
-	elseif DHV==VAV[DDV+9] then
-		call ExecuteFunc("T6V")
-	
-	elseif DHV==VAV[DDV+10] then
-		call MXV(C7V)
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function UDE takes nothing returns nothing
 	local real x=GetUnitX(GetDyingUnit())
 	local real y=GetUnitY(GetDyingUnit())
@@ -17557,85 +12767,8 @@ function UDE takes nothing returns nothing
 	call UnitApplyTimedLifeBJ(3.,$42544C46,UE)
 endfunction
 
-function UDV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer C8V=FVV(C7V)
-	if DHV==VAV[C8V+0] then
-		call ExecuteFunc("FWV")
-	
-	elseif DHV==VAV[C8V+1] then
-		call ExecuteFunc("GFV")
-	
-	elseif DHV==VAV[C8V+2] then
-		call ExecuteFunc("HLV")
-	
-	elseif DHV==VAV[C8V+3] then
-		call ExecuteFunc("L8V")
-	
-	elseif DHV==VAV[C8V+4] then
-		call ExecuteFunc("LXV")
-	
-	elseif DHV==VAV[C8V+5] then
-		call ExecuteFunc("LAV")
-	
-	elseif DHV==VAV[C8V+6] then
-		call ExecuteFunc("LFV")
-	
-	elseif DHV==VAV[C8V+7] then
-		call ExecuteFunc("LPV")
-	
-	elseif DHV==VAV[C8V+8] then
-		call ExecuteFunc("MRV")
-	
-	elseif DHV==VAV[C8V+9] then
-		call ExecuteFunc("T6V")
-	
-	elseif DHV==VAV[C8V+10] then
-		call MXV(C7V)
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function UFE takes nothing returns boolean
 	return GetUnitTypeId(GetAttacker())==$68303330 and GetUnitAbilityLevelSwapped($41303555,GetAttacker())==0
-endfunction
-
-function UFV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local unit GQV=GetTriggerUnit()
-	local integer C7V=GetPlayerId(DLV)
-	local integer C8V=0
-	local location QHV=null
-	if GetTriggerEventId()==ConvertPlayerUnitEvent(40) then
-		set GQV=GetOrderTargetUnit()
-		if null==GQV then
-			set DLV=null
-			set GQV=null
-			set QHV=null
-			return
-		endif
-	endif
-	if null!=GQV and not IsUnitOwnedByPlayer(GQV,DLV) and not GetPlayerAlliance(DLV,GetOwningPlayer(GQV),ConvertAllianceType(5)) then
-		if IsUnitFogged(GQV,DLV) or IsUnitMasked(GQV,DLV) or IsUnitInvisible(GQV,DLV) then
-			call SaveInteger(C6[0],60,C7V,LoadInteger(C6[0],60,C7V)+1)
-			set QHV=GetUnitLoc(GQV)
-			loop
-				if LoadBoolean(C6[0],60,C8V) then
-					call DisplayTimedTextToPlayer(Player(C8V),0.,0.,10.,"|cffff0000Warning!!! |r|cffffcc00Player |r|cff"+FEV(C7V)+GetPlayerName(DLV)+"|r|cffffcc00 has use HackMap|r: "+I2S(LoadInteger(C6[0],60,C7V)))
-					call PingMinimapForPlayer(Player(C8V),GetLocationX(QHV),GetLocationX(QHV),5.)
-				endif
-				set C8V=C8V+1
-				exitwhen C8V>11
-			endloop
-			call RemoveLocation(QHV)
-		endif
-	endif
-	set DLV=null
-	set GQV=null
-	set QHV=null
 endfunction
 
 function UHE takes nothing returns nothing
@@ -17682,30 +12815,6 @@ function UNE takes nothing returns boolean
 	return GetUnitTypeId(GetDyingUnit())==$68303338
 endfunction
 
-function UNV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	if DHV==VAV[DDV+0] then
-		call ExecuteFunc("F1V")
-	
-	elseif DHV==VAV[DDV+1] then
-		call ExecuteFunc("PHV")
-	
-	elseif DHV==VAV[DDV+2] then
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+3] then
-		call ExecuteFunc("SBV")
-	
-	elseif DHV==VAV[DDV+4] then
-		call MXV(C7V)
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function UOE takes nothing returns nothing
 	call IssueTargetOrderById(GetAttacker(),852587,GetTriggerUnit())
 endfunction
@@ -17716,89 +12825,6 @@ function UQE takes nothing returns nothing
 		call UnitAddAbility(GetEnumUnit(),$41303635)
 		call UnitAddAbility(GetEnumUnit(),$41303633)
 	endif
-endfunction
-
-function ULV takes integer C7V returns boolean
-	return LoadBoolean(C6[0],0,C7V+10) or LoadBoolean(C6[0],0,C7V+30)
-endfunction
-
-function UPV takes eventid J4V returns string
-	local string C9V=""
-	if J4V==ConvertPlayerEvent(17) then
-		set C9V=LoadStr(C6[0],0,3)
-	
-	elseif J4V==ConvertPlayerEvent(261) then
-		set C9V=LoadStr(C6[0],0,4)
-	
-	elseif J4V==ConvertPlayerEvent(263) then
-		set C9V=LoadStr(C6[0],0,5)
-	
-	elseif J4V==ConvertPlayerEvent(267) then
-		set C9V=LoadStr(C6[0],0,6)
-	
-	elseif J4V==ConvertPlayerEvent(265) then
-		set C9V=LoadStr(C6[0],0,7)
-	endif
-	return C9V
-endfunction
-
-function UQV takes nothing returns nothing
-	local gamecache UYV=InitGameCache("FukKiCP.w3v")
-	local string P_V=GetEventPlayerChatString()
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local eventid J4V=GetTriggerEventId()
-	local string C9V=UPV(J4V)
-	local integer C8V=0
-	if C9V=="" then
-		if ULV(C7V) then
-			if LoadBoolean(C6[0],0,2) and P_V==LoadStr(C6[0],0,2) then
-				call ExecuteFunc("F1V")
-			endif
-		
-		elseif LoadBoolean(C6[0],0,1) and P_V==LoadStr(C6[0],0,1) then
-			call SaveBoolean(C6[0],0,C7V+10,N6[1])
-		endif
-	
-	elseif C9V!="" then
-		if ULV(C7V) and not LoadBoolean(C6[0],0,2) then
-			set C9V=LoadStr(C6[0],0,2)
-			set C8V=GetStoredInteger(UYV,I2S(C7V),C9V)
-			set P_V=StringCase(SubString(C9V,C8V,C8V+1),N6[1])
-			if P_V==StringCase(UPV(J4V),N6[1]) then
-				if C8V==StringLength(C9V)-1 then
-					call ExecuteFunc("F1V")
-					call StoreInteger(UYV,I2S(C7V),C9V,0)
-				
-				else
-					call StoreInteger(UYV,I2S(C7V),C9V,C8V+1)
-				endif
-			
-			else
-				call StoreInteger(UYV,I2S(C7V),C9V,0)
-			endif
-		
-		elseif not LoadBoolean(C6[0],0,1) then
-			set C9V=LoadStr(C6[0],0,1)
-			set C8V=GetStoredInteger(UYV,I2S(C7V),C9V)
-			set P_V=StringCase(SubString(C9V,C8V,C8V+1),N6[1])
-			if P_V==StringCase(UPV(J4V),N6[1]) then
-				if C8V==StringLength(C9V)-1 then
-					call SaveBoolean(C6[0],0,C7V+10,N6[1])
-					call StoreInteger(UYV,I2S(C7V),C9V,0)
-				
-				else
-					call StoreInteger(UYV,I2S(C7V),C9V,C8V+1)
-				endif
-			
-			else
-				call StoreInteger(UYV,I2S(C7V),C9V,0)
-			endif
-		endif
-	endif
-	set UYV=null
-	set DLV=null
-	set J4V=null
 endfunction
 
 function URE takes nothing returns boolean
@@ -17837,92 +12863,6 @@ function UVE takes nothing returns nothing
 	set uu=null
 endfunction
 
-function QJV takes integer C7V,integer C8V,integer DDV returns nothing
-	local player DLV=Player(C7V)
-	if N6[C7V+C8V]!=N6[1] then
-		set B6[C7V+C8V]=CreateTrigger()
-		if DDV==74 then
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(33),null)
-		
-		else
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(30),null)
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(27),null)
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(40),null)
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(38),null)
-			call TriggerRegisterPlayerUnitEvent(B6[C7V+C8V],DLV,ConvertPlayerUnitEvent(35),null)
-		endif
-		call FRV(DDV,C7V,C8V,ref_function_QGV)
-	endif
-	call DKV(C7V,C8V,DDV,0,0,N6[1])
-	set DLV=null
-endfunction
-
-function QQV takes integer C7V,integer C8V,integer DDV returns nothing
-	local player DLV=Player(C7V)
-	if N6[1]!=N6[C7V+C8V] then
-		set B6[C7V+C8V]=CreateTrigger()
-		call TriggerRegisterPlayerStateEvent(B6[C7V+C8V],DLV,ConvertPlayerState(5),ConvertLimitOp(4),0.)
-		call FRV(DDV,C7V,C8V,ref_function_QPV)
-	endif
-	call DKV(C7V,C8V,DDV,0,0,N6[1])
-	set DLV=null
-endfunction
-
-function UVV takes nothing returns nothing
-	local player DLV=GetTriggerPlayer()
-	local integer C7V=GetPlayerId(DLV)
-	local button DHV=GetClickedButton()
-	local integer DDV=FVV(C7V)
-	local integer DFV=FKV(C7V)
-	if DHV==VAV[DDV+0] then
-		if LoadBoolean(C6[0],60,DFV) then
-			call SaveBoolean(C6[0],60,DFV,N6[2])
-		
-		else
-			call SaveBoolean(C6[0],60,DFV,N6[1])
-		endif
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+1] then
-		call ExecuteFunc("QNV")
-	
-	elseif DHV==VAV[DDV+2] then
-		call QJV(DFV,870,73)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+3] then
-		call QJV(DFV,890,74)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+4] then
-		call QJV(DFV,910,75)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+5] then
-		call QQV(DFV,930,76)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+6] then
-		call FTV(DFV,950,0,77)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+7] then
-		call GIV(DFV,970,0,78)
-		call ExecuteFunc("QCV")
-	
-	elseif DHV==VAV[DDV+8] then
-		call ExecuteFunc("QTV")
-	
-	elseif DHV==VAV[DDV+9] then
-		call ExecuteFunc("T6V")
-	
-	elseif DHV==VAV[DDV+10] then
-		call MXV(C7V)
-	endif
-	set DLV=null
-	set DHV=null
-endfunction
-
 function UWE takes nothing returns nothing
 	if GetRandomInt(1,100)<=20 and UnitHasBuffBJ(GetAttacker(),$42303239)==false then
 		call IssueImmediateOrderById(GetAttacker(),852100)
@@ -17950,10 +12890,6 @@ function V1X takes nothing returns nothing
 	call GroupRemoveUnit(IG[EE],GetEnteringUnit())
 endfunction
 
-function V2E takes nothing returns nothing
-	call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"right"))
-endfunction
-
 function V2X takes nothing returns boolean
 	return GetOwningPlayer(GetEnteringUnit())==Player(11)
 endfunction
@@ -17962,16 +12898,8 @@ function V3X takes nothing returns nothing
 	call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,UD)
 endfunction
 
-function V4E takes nothing returns nothing
-	call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"left"))
-endfunction
-
 function V4X takes nothing returns nothing
 	call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,GO)
-endfunction
-
-function V5E takes nothing returns nothing
-	call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"down"))
 endfunction
 
 function V5X takes nothing returns nothing
@@ -18293,10 +13221,6 @@ endfunction
 
 function VZX takes nothing returns boolean
 	return GetOwningPlayer(GetEnteringUnit())==Player(10)
-endfunction
-
-function V_E takes nothing returns nothing
-	call VYE(GetTriggerPlayer(),GetStoredString(BO,I2S(GetPlayerId(GetTriggerPlayer())),"up"))
 endfunction
 
 function V_X takes nothing returns nothing
@@ -18718,10 +13642,6 @@ function XAX takes nothing returns nothing
 	endif
 endfunction
 
-function XBE takes nothing returns nothing
-	call ETE("U",1)
-endfunction
-
 function XBX takes nothing returns nothing
 	call UnitShareVisionBJ(true,GetEnteringUnit(),GetEnumPlayer())
 endfunction
@@ -18732,9 +13652,6 @@ function XCX takes nothing returns nothing
 	set S8=null
 endfunction
 
-function XDE takes nothing returns nothing
-	call ETE("D",1)
-endfunction
 
 function XDX takes nothing returns boolean
 	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1
@@ -18742,10 +13659,6 @@ endfunction
 
 function XEX takes nothing returns boolean
 	return GetOwningPlayer(GetEnteringUnit())==Player(10) or GetOwningPlayer(GetEnteringUnit())==Player(11)
-endfunction
-
-function XFE takes nothing returns nothing
-	call ETE("E",1)
 endfunction
 
 function XFX takes nothing returns nothing
@@ -18765,19 +13678,6 @@ endfunction
 
 function XGX takes nothing returns boolean
 	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1
-endfunction
-
-function XHE takes nothing returns nothing
-	local string XJE=GetEventPlayerChatString()
-	local integer XKE=0
-	loop
-		exitwhen XKE>StringLength(XJE)
-		if SubString(XJE,XKE,XKE+1)==StringCase(SubString(XJE,XKE,XKE+1),true) then
-			return
-		endif
-		set XKE=XKE+1
-	endloop
-	call ETE(XJE,StringLength(XJE))
 endfunction
 
 function XHX takes nothing returns nothing
@@ -18813,10 +13713,6 @@ endfunction
 
 function XMX takes nothing returns nothing
 	call SetPlayerTechResearchedSwap($52303031,GetPlayerTechCountSimple($52303031,GetEnumPlayer())+5,GetEnumPlayer())
-endfunction
-
-function XNE takes nothing returns nothing
-	call ETE("R",1)
 endfunction
 
 function XNX takes nothing returns boolean
@@ -19569,7 +14465,6 @@ function Z1E takes nothing returns nothing
 	call A_V(2.5)
 	set RJ[20]=false
 	call UnitRemoveAbility(GetTriggerUnit(),$41393533)
-	//call UnitRemoveAbility(GetTriggerUnit(),$41393535)
 	set g=null
 	set u=null
 	set uu=null
@@ -19649,7 +14544,7 @@ function Z3E takes nothing returns boolean
 	elseif GetSpellAbilityId()==$41393131 and RX==false and numberLvl==19 and GB[1+GetPlayerId(GetTriggerPlayer())]>=30000 then
 		set fbact[GetPlayerId(GetTriggerPlayer())+1]=true
 		set b=true
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Are you INSANE??? |r"+PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Are you INSANE? |r"+PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
 		if numberLvl==19 and 1+GetPlayerId(GetTriggerPlayer())<=4 then
 			set TV[i]=((numberLvl+1)+980)
 			set TV[j]=((numberLvl+1)+980)
@@ -19687,7 +14582,6 @@ endfunction
 function Y_11 takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set HCC=true
-	//set QC[20]="27000"
 	set QC[30]="30000"
 	set QC[31]="31000"
 	set QC[32]="32000"
@@ -19696,47 +14590,12 @@ function Y_11 takes nothing returns nothing
 	set QC[35]="35000"
 	
 	set ZX=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,006,033,018,007,011,002"
-	//set QX[20]=18
 	set QX[30]=6
 	set QX[31]=33
 	set QX[32]=18
 	set QX[33]=7
 	set QX[34]=11
 	set QX[35]=2
-endfunction
-
-function G9 takes nothing returns boolean
-	return(GetUnitTypeId(GetSoldUnit())=='u01K')
-endfunction
-
-function TRL takes nothing returns nothing
-	set TLL[1]="I"
-	set TLL[2]="II"
-	set TLL[3]="III"
-	set TLL[4]="IV"
-	set TLL[5]="V"
-endfunction
-
-function TRL1 takes nothing returns nothing
-	//call ForForce(ZI,ref_function_TRL2)
-endfunction
-
-function TRL2 takes nothing returns nothing
-	if T88[1+GetPlayerId(GetTriggerPlayer())]<=15 then
-		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[1]
-	
-	elseif T88[1+GetPlayerId(GetTriggerPlayer())]>15 and T88[1+GetPlayerId(GetTriggerPlayer())]<=25 then
-		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[2]
-	
-	elseif T88[1+GetPlayerId(GetTriggerPlayer())]>25 and T88[1+GetPlayerId(GetTriggerPlayer())]<=35 then
-		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[3]
-	
-	elseif T88[1+GetPlayerId(GetTriggerPlayer())]>35 and T88[1+GetPlayerId(GetTriggerPlayer())]<=45 then
-		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[4]
-	
-	elseif T88[1+GetPlayerId(GetTriggerPlayer())]>45 then
-		set TLL1[1+GetPlayerId(GetTriggerPlayer())]=TLL[5]
-	endif
 endfunction
 
 function F111 takes nothing returns boolean
@@ -19971,1817 +14830,6 @@ function Z_E takes nothing returns nothing
 	set u=null
 endfunction
 
-function currentCallback takes nothing returns integer
-	return ClosureForGroups_tempCallbacks[ClosureForGroups_tempCallbacksCount-1]
-endfunction
-
-function alloc_LLEntry takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLEntry_firstFree==0 then
-		if LLEntry_maxIndex<32768 then
-			set LLEntry_maxIndex=LLEntry_maxIndex+1
-			set this=LLEntry_maxIndex
-		
-		else
-			call error("Out of memory: Could not create LLEntry.","when calling error in LinkedList, line 396")
-			set this=0
-		endif
-	
-	else
-		set LLEntry_firstFree=LLEntry_firstFree-1
-		set this=LLEntry_nextFree[LLEntry_firstFree]
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function LLEntry_init takes integer this returns nothing
-endfunction
-
-function construct_LLEntry takes integer this,integer elem,integer prev,integer next returns nothing
-	call LLEntry_init(this)
-	set LLEntry_elem[this]=elem
-	set LLEntry_prev[this]=prev
-	set LLEntry_next[this]=next
-endfunction
-
-function new_LLEntry takes integer elem,integer prev,integer next,string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set this=alloc_LLEntry("when calling alloc_LLEntry in LinkedList, line 401")
-	call construct_LLEntry(this,elem,prev,next)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function LinkedList_add_1 takes integer this,integer elems_0,string w__wurst_stackPos returns nothing
-	local integer entry
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set entry=new_LLEntry(elems_0,LLEntry_prev[LinkedList_dummy[this]],LinkedList_dummy[this],"when calling new_LLEntry in LinkedList, line 39")
-	set LLEntry_next[LLEntry_prev[LinkedList_dummy[this]]]=entry
-	set LLEntry_prev[LinkedList_dummy[this]]=entry
-	set LinkedList_size[this]=LinkedList_size[this]+1
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dispatch_LinkedList_LinkedList_LinkedList_add_1 takes integer this,integer elems_0,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LinkedList_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling LinkedList.add","when calling error in LinkedList, line 37")
-		
-		else
-			call error("Called LinkedList.add on invalid object.","when calling error in LinkedList, line 37")
-		endif
-	endif
-	call LinkedList_add_1(this,elems_0,"when calling add in LinkedList, line 37")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function handle_getHandleId takes handle this returns integer
-	return GetHandleId(this)
-endfunction
-
-function unitToIndex takes unit object returns integer
-	return handle_getHandleId(object)
-endfunction
-
-function callback_forEachFrom_LinkedList takes integer this,unit u,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call dispatch_LinkedList_LinkedList_LinkedList_add_1(result[this],unitToIndex(u),"when calling add in LinkedList, line 515")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dispatch_ForGroupCallback_ClosureForGroups_ForGroupCallback_callback takes integer this,unit u,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if ForGroupCallback_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling ForGroupCallback.callback","when calling error in ClosureForGroups, line 4")
-		
-		else
-			call error("Called ForGroupCallback.callback on invalid object.","when calling error in ClosureForGroups, line 4")
-		endif
-	endif
-	call callback_forEachFrom_LinkedList(this,u,"when calling callback_forEachFrom_LinkedList in ClosureForGroups, line 4")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function filterCallback takes unit filter,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if ClosureForGroups_iterCount<ClosureForGroups_maxCount then
-		call dispatch_ForGroupCallback_ClosureForGroups_ForGroupCallback_callback(currentCallback(),filter,"when calling callback in ClosureForGroups, line 18")
-	endif
-	set ClosureForGroups_iterCount=ClosureForGroups_iterCount+1
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function code__Filter_ClosureForGroups takes string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call filterCallback(GetFilterUnit(),"when calling filterCallback in ClosureForGroups, line 14")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function bridge_code__Filter_ClosureForGroups takes nothing returns nothing
-	set wurst_stack_depth=0
-	call code__Filter_ClosureForGroups("via function reference ClosureForGroups, line 14")
-endfunction
-
-function Table_loadInt takes integer this,integer parentKey returns integer
-	return hashtable_loadInt(Table_ht,this,parentKey)
-endfunction
-
-function dispatch_Table_Table_Table_loadInt takes integer this,integer parentKey,string w__wurst_stackPos returns integer
-	local integer Table_Table_loadInt_result
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling Table.loadInt","when calling error in Table, line 39")
-		
-		else
-			call error("Called Table.loadInt on invalid object.","when calling error in Table, line 39")
-		endif
-	endif
-	set Table_Table_loadInt_result=Table_loadInt(this,parentKey)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return Table_Table_loadInt_result
-endfunction
-
-function HashMap_get takes integer this,integer key,string w__wurst_stackPos returns integer
-	local integer stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set stackTrace_tempReturn=dispatch_Table_Table_Table_loadInt(this,key,"when calling loadInt in HashMap, line 24")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return stackTrace_tempReturn
-endfunction
-
-function dispatch_HashMap_HashMap_HashMap_get takes integer this,integer key,string w__wurst_stackPos returns integer
-	local integer HashMap_HashMap_get_result
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling HashMap.get","when calling error in HashMap, line 23")
-		
-		else
-			call error("Called HashMap.get on invalid object.","when calling error in HashMap, line 23")
-		endif
-	endif
-	set HashMap_HashMap_get_result=HashMap_get(this,key,"when calling get in HashMap, line 23")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return HashMap_HashMap_get_result
-endfunction
-
-function hashtable_loadTriggerHandle takes hashtable this,integer parentKey,integer childKey returns trigger
-	return LoadTriggerHandle(this,parentKey,childKey)
-endfunction
-
-function Table_loadTrigger takes integer this,integer parentKey returns trigger
-	return hashtable_loadTriggerHandle(Table_ht,this,parentKey)
-endfunction
-
-function dispatch_Table_Table_Table_loadTrigger takes integer this,integer parentKey,string w__wurst_stackPos returns trigger
-	local trigger Table_Table_loadTrigger_result
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling Table.loadTrigger","when calling error in Table, line 111")
-		
-		else
-			call error("Called Table.loadTrigger on invalid object.","when calling error in Table, line 111")
-		endif
-	endif
-	set Table_Table_loadTrigger_result=Table_loadTrigger(this,parentKey)
-	set wurst_stack_depth=wurst_stack_depth-1
-	set dispatch_Table_Table_Table_loadTriggertempReturn=Table_Table_loadTrigger_result
-	set Table_Table_loadTrigger_result=null
-	return dispatch_Table_Table_Table_loadTriggertempReturn
-endfunction
-
-function hashtable_saveFogStateHandle takes hashtable this,integer parentKey,integer childKey,fogstate value returns nothing
-	call SaveFogStateHandle(this,parentKey,childKey,value)
-endfunction
-
-function Table_saveFogState takes integer this,integer parentKey,fogstate value returns nothing
-	call hashtable_saveFogStateHandle(Table_ht,this,parentKey,value)
-endfunction
-
-function dispatch_Table_Table_Table_saveFogState takes integer this,integer parentKey,fogstate value,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling Table.saveFogState","when calling error in Table, line 168")
-		
-		else
-			call error("Called Table.saveFogState on invalid object.","when calling error in Table, line 168")
-		endif
-	endif
-	call Table_saveFogState(this,parentKey,value)
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function triggerFromIndex takes integer index,string w__wurst_stackPos returns trigger
-	local trigger stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call dispatch_Table_Table_Table_saveFogState(TypeCasting_typecastdata,0,ConvertFogState(index),"when calling saveFogState in TypeCasting, line 88")
-	set stackTrace_tempReturn=dispatch_Table_Table_Table_loadTrigger(TypeCasting_typecastdata,0,"when calling loadTrigger in TypeCasting, line 89")
-	set wurst_stack_depth=wurst_stack_depth-1
-	set triggerFromIndextempReturn=stackTrace_tempReturn
-	set stackTrace_tempReturn=null
-	return triggerFromIndextempReturn
-endfunction
-
-function trigger_evaluate takes trigger this returns boolean
-	return TriggerEvaluate(this)
-endfunction
-
-function code__registerPlayerUnitEvent_RegisterEvents takes string w__wurst_stackPos returns boolean
-	local boolean stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set stackTrace_tempReturn=trigger_evaluate(triggerFromIndex(dispatch_HashMap_HashMap_HashMap_get(RegisterEvents_onCastMap,GetSpellAbilityId(),"when calling get in RegisterEvents, line 58"),"when calling triggerFromIndex in RegisterEvents, line 58"))
-	set wurst_stack_depth=wurst_stack_depth-1
-	return stackTrace_tempReturn
-endfunction
-
-function bridge_code__registerPlayerUnitEvent_RegisterEvents takes nothing returns boolean
-	set wurst_stack_depth=0
-	return code__registerPlayerUnitEvent_RegisterEvents("via function reference RegisterEvents, line 58")
-endfunction
-
-function call_doAfter_ClosureTimers takes integer this returns nothing
-	set ClosureTimers_x=ClosureTimers_x+50
-endfunction
-
-function call_doAfter_ClosureTimers_1801 takes integer this returns nothing
-	set ClosureTimers_x=ClosureTimers_x*2
-endfunction
-
-function int_toString takes integer this returns string
-	return I2S(this)
-endfunction
-
-function testFail takes string msg returns nothing
-endfunction
-
-function int_assertEquals takes integer this,integer expected returns nothing
-	if this!=expected then
-		call testFail("Expected <"+int_toString(expected)+">, Actual <"+int_toString(this)+">")
-	endif
-endfunction
-
-function call_doAfter_ClosureTimers_1802 takes integer this returns nothing
-	set ClosureTimers_x=ClosureTimers_x/2
-	call int_assertEquals(ClosureTimers_x,250)
-endfunction
-
-function FastFinish_reset takes integer team_1 returns nothing
-	local integer teamVariable
-	local integer cond_result
-	local integer i
-	set FastFinish_votes[team_1]=0
-	set FastFinish_voteActive[team_1]=false
-	if team_1==0 then
-		set cond_result=0
-	
-	else
-		set cond_result=4
-	endif
-	set teamVariable=cond_result
-	set i=0
-	loop
-		exitwhen i>3
-		set FastFinish_voted[i+teamVariable]=false
-		set i=i+1
-	endloop
-endfunction
-
-function printTimed takes string msg,real duration returns nothing
-	call DisplayTimedTextToPlayer(Player_localPlayer,0.,0.,duration,msg)
-endfunction
-
-function string_length takes string this returns integer
-	return StringLength(this)
-endfunction
-
-function string_substring takes string this,integer start,integer stop returns string
-	return SubString(this,start,stop)
-endfunction
-
-function string_indexOf takes string this,string s returns integer
-	local integer i=0
-	local integer temp=string_length(this)-string_length(s)
-	loop
-		exitwhen i>temp
-		if string_substring(this,i,i+string_length(s))==s then
-			return i
-		endif
-		set i=i+1
-	endloop
-	return -1
-endfunction
-
-function string_indexOf_1926 takes string this,string s,integer startpos returns integer
-	local integer i=startpos
-	local integer temp=string_length(this)-string_length(s)
-	loop
-		exitwhen i>temp
-		if string_substring(this,i,i+string_length(s))==s then
-			return i
-		endif
-		set i=i+1
-	endloop
-	return -1
-endfunction
-
-function string_replace takes string this,string oldSubstring,string newSubstring returns string
-	local string s=this
-	local integer i
-	if string_length(oldSubstring)>0 then
-		set i=string_indexOf(this,oldSubstring)
-		loop
-			exitwhen not (i!=-1)
-			set s=string_substring(s,0,i)+newSubstring+string_substring(s,i+string_length(oldSubstring),string_length(s))
-			set i=string_indexOf_1926(s,oldSubstring,i+string_length(newSubstring))
-		endloop
-	endif
-	return s
-endfunction
-
-function string_format_1 takes string this,string replacements_0 returns string
-	local string result_1=this
-	local integer i=0
-	set result_1=string_replace(result_1,"{"+int_toString(i)+"}",replacements_0)
-	set i=i+1
-	return result_1
-endfunction
-
-function call_doAfter_FastFinish_FastFinish takes integer this returns nothing
-	if FastFinish_voteActive[team[this]] then
-		call FastFinish_reset(team[this])
-		call printTimed(string_format_1("Some players in {0} team wanna continue to play. Voting has closed",teamName[this]),7.)
-	endif
-endfunction
-
-function unit_kill takes unit this returns nothing
-	call KillUnit(this)
-endfunction
-
-function call_doAfter_FastFinish_FastFinish_1804 takes integer this returns nothing
-	call unit_kill(H6)
-endfunction
-
-function call_doAfter_FastFinish_FastFinish_1805 takes integer this returns nothing
-	call unit_kill(U6)
-endfunction
-
-function dispatch_CallbackSingle_ClosureTimers_CallbackSingle_call takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling CallbackSingle.call","when calling error in ClosureTimers, line 109")
-		
-		else
-			call error("Called CallbackSingle.call on invalid object.","when calling error in ClosureTimers, line 109")
-		endif
-	endif
-	if CallbackSingle_typeId[this]<=6 then
-		if CallbackSingle_typeId[this]<=5 then
-			if CallbackSingle_typeId[this]<=4 then
-				call call_doAfter_ClosureTimers(this)
-			
-			else
-				call call_doAfter_ClosureTimers_1801(this)
-			endif
-		
-		else
-			call call_doAfter_ClosureTimers_1802(this)
-		endif
-	
-	elseif CallbackSingle_typeId[this]<=8 then
-		if CallbackSingle_typeId[this]<=7 then
-			call call_doAfter_FastFinish_FastFinish(this)
-		
-		else
-			call call_doAfter_FastFinish_FastFinish_1804(this)
-		endif
-	
-	else
-		call call_doAfter_FastFinish_FastFinish_1805(this)
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function timer_getHandleId takes timer this returns integer
-	return GetHandleId(this)
-endfunction
-
-function timer_getData takes timer this,string w__wurst_stackPos returns integer
-	local integer stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set stackTrace_tempReturn=dispatch_Table_Table_Table_loadInt(TimerUtils_timerData,timer_getHandleId(this),"when calling loadInt in TimerUtils, line 21")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return stackTrace_tempReturn
-endfunction
-
-function timer_pause takes timer this returns nothing
-	call PauseTimer(this)
-endfunction
-
-function Table_saveInt takes integer this,integer parentKey,integer value returns nothing
-	call hashtable_saveInt(Table_ht,this,parentKey,value)
-endfunction
-
-function dispatch_Table_Table_Table_saveInt takes integer this,integer parentKey,integer value,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling Table.saveInt","when calling error in Table, line 42")
-		
-		else
-			call error("Called Table.saveInt on invalid object.","when calling error in Table, line 42")
-		endif
-	endif
-	call Table_saveInt(this,parentKey,value)
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function timer_setData takes timer this,integer data,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call dispatch_Table_Table_Table_saveInt(TimerUtils_timerData,timer_getHandleId(this),data,"when calling saveInt in TimerUtils, line 17")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function timer_release takes timer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if this==null then
-		call error("Trying to release a null timer","when calling error in TimerUtils, line 37")
-		set wurst_stack_depth=wurst_stack_depth-1
-		return
-	endif
-	if timer_getData(this,"when calling getData in TimerUtils, line 39")==TimerUtils_HELD then
-		call error("ReleaseTimer: Double free!","when calling error in TimerUtils, line 40")
-		set wurst_stack_depth=wurst_stack_depth-1
-		return
-	endif
-	call timer_setData(this,TimerUtils_HELD,"when calling setData in TimerUtils, line 42")
-	call timer_pause(this)
-	set TimerUtils_freeTimers[TimerUtils_freeTimersCount]=this
-	set TimerUtils_freeTimersCount=TimerUtils_freeTimersCount+1
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function CallbackSingle_onDestroy takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call timer_release(CallbackSingle_t[this],"when calling release in ClosureTimers, line 124")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dealloc_CallbackSingle takes integer obj,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_typeId[obj]==0 then
-		call error("Double free: object of type CallbackSingle","when calling error in ClosureTimers, line 107")
-	
-	else
-		set CallbackSingle_nextFree[CallbackSingle_firstFree]=obj
-		set CallbackSingle_firstFree=CallbackSingle_firstFree+1
-		set CallbackSingle_typeId[obj]=0
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function destroyCallbackSingle takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call CallbackSingle_onDestroy(this,"when calling CallbackSingle_onDestroy in ClosureTimers, line 123")
-	call dealloc_CallbackSingle(this,"when calling dealloc_CallbackSingle in ClosureTimers, line 123")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dispatch_CallbackSingle_destroyCallbackSingle takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling CallbackSingle.CallbackSingle","when calling error in ClosureTimers, line 107")
-		
-		else
-			call error("Called CallbackSingle.CallbackSingle on invalid object.","when calling error in ClosureTimers, line 107")
-		endif
-	endif
-	call destroyCallbackSingle(this,"when calling destroyCallbackSingle in ClosureTimers, line 107")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function CallbackSingle_staticCallback takes string w__wurst_stackPos returns nothing
-	local timer t
-	local integer cb
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set t=GetExpiredTimer()
-	set cb=timer_getData(t,"when calling getData in ClosureTimers, line 119")
-	call dispatch_CallbackSingle_ClosureTimers_CallbackSingle_call(cb,"when calling call in ClosureTimers, line 120")
-	call dispatch_CallbackSingle_destroyCallbackSingle(cb,"when calling dispatch_CallbackSingle_destroyCallbackSingle in ClosureTimers, line 121")
-	set wurst_stack_depth=wurst_stack_depth-1
-	set t=null
-endfunction
-
-function code__start_CallbackSingle_ClosureTimers takes string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call CallbackSingle_staticCallback("when calling staticCallback in ClosureTimers, line 114")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function bridge_code__start_CallbackSingle_ClosureTimers takes nothing returns nothing
-	set wurst_stack_depth=0
-	call code__start_CallbackSingle_ClosureTimers("via function reference ClosureTimers, line 114")
-endfunction
-
-function initializeTable takes string w__wurst_stackPos returns nothing
-	local integer i
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set i=0
-	loop
-		exitwhen i>15
-		call dispatch_Table_Table_Table_saveInt(Colors_decs,string_getHash(Colors_hexs[i]),i,"when calling saveInt in Colors, line 206")
-		set i=i+1
-	endloop
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function alloc_Table takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_firstFree==0 then
-		if Table_maxIndex<32768 then
-			set Table_maxIndex=Table_maxIndex+1
-			set this=Table_maxIndex
-			set Table_typeId[this]=39
-		
-		else
-			call error("Out of memory: Could not create Table.","when calling error in Table, line 6")
-			set this=0
-		endif
-	
-	else
-		set Table_firstFree=Table_firstFree-1
-		set this=Table_nextFree[Table_firstFree]
-		set Table_typeId[this]=39
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function Table_init takes integer this returns nothing
-endfunction
-
-function construct_Table takes integer this returns nothing
-	call Table_init(this)
-endfunction
-
-function new_Table takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set this=alloc_Table("when calling alloc_Table in Table, line 5")
-	call construct_Table(this)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function init_Colors takes string w__wurst_stackPos returns boolean
-	local integer tuple_temp
-	local integer tuple_temp_1
-	local integer tuple_temp_2
-	local integer tuple_temp_3
-	local integer tuple_temp_4
-	local integer tuple_temp_5
-	local integer tuple_temp_6
-	local integer tuple_temp_7
-	local integer tuple_temp_8
-	local integer tuple_temp_9
-	local integer tuple_temp_10
-	local integer tuple_temp_11
-	local integer tuple_temp_12
-	local integer tuple_temp_13
-	local integer tuple_temp_14
-	local integer tuple_temp_15
-	local integer tuple_temp_16
-	local integer tuple_temp_17
-	local integer tuple_temp_18
-	local integer tuple_temp_19
-	local integer tuple_temp_20
-	local integer tuple_temp_21
-	local integer tuple_temp_22
-	local integer tuple_temp_23
-	local integer tuple_temp_24
-	local integer tuple_temp_25
-	local integer tuple_temp_26
-	local integer tuple_temp_27
-	local integer tuple_temp_28
-	local integer tuple_temp_29
-	local integer tuple_temp_30
-	local integer tuple_temp_31
-	local integer tuple_temp_32
-	local integer tuple_temp_33
-	local integer tuple_temp_34
-	local integer tuple_temp_35
-	local integer tuple_temp_36
-	local integer tuple_temp_37
-	local integer tuple_temp_38
-	local integer tuple_temp_39
-	local integer tuple_temp_40
-	local integer tuple_temp_41
-	local integer tuple_temp_42
-	local integer tuple_temp_43
-	local integer tuple_temp_44
-	local integer tuple_temp_45
-	local integer tuple_temp_46
-	local integer tuple_temp_47
-	local integer tuple_temp_48
-	local integer tuple_temp_49
-	local integer tuple_temp_50
-	local integer tuple_temp_51
-	local integer tuple_temp_52
-	local integer tuple_temp_53
-	local integer tuple_temp_54
-	local integer tuple_temp_55
-	local integer tuple_temp_56
-	local integer tuple_temp_57
-	local integer tuple_temp_58
-	local integer tuple_temp_59
-	local integer tuple_temp_60
-	local integer tuple_temp_61
-	local integer tuple_temp_62
-	local integer tuple_temp_63
-	local integer tuple_temp_64
-	local integer tuple_temp_65
-	local integer tuple_temp_66
-	local integer tuple_temp_67
-	local integer tuple_temp_68
-	local integer tuple_temp_69
-	local integer tuple_temp_70
-	local integer tuple_temp_71
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set tuple_temp=255
-	set tuple_temp_1=2
-	set tuple_temp_2=2
-	set Colors_PLAYER_COLORS_red[0]=tuple_temp
-	set Colors_PLAYER_COLORS_green[0]=tuple_temp_1
-	set Colors_PLAYER_COLORS_blue[0]=tuple_temp_2
-	set tuple_temp_3=0
-	set tuple_temp_4=65
-	set tuple_temp_5=255
-	set Colors_PLAYER_COLORS_red[1]=tuple_temp_3
-	set Colors_PLAYER_COLORS_green[1]=tuple_temp_4
-	set Colors_PLAYER_COLORS_blue[1]=tuple_temp_5
-	set tuple_temp_6=27
-	set tuple_temp_7=229
-	set tuple_temp_8=184
-	set Colors_PLAYER_COLORS_red[2]=tuple_temp_6
-	set Colors_PLAYER_COLORS_green[2]=tuple_temp_7
-	set Colors_PLAYER_COLORS_blue[2]=tuple_temp_8
-	set tuple_temp_9=83
-	set tuple_temp_10=0
-	set tuple_temp_11=128
-	set Colors_PLAYER_COLORS_red[3]=tuple_temp_9
-	set Colors_PLAYER_COLORS_green[3]=tuple_temp_10
-	set Colors_PLAYER_COLORS_blue[3]=tuple_temp_11
-	set tuple_temp_12=255
-	set tuple_temp_13=252
-	set tuple_temp_14=0
-	set Colors_PLAYER_COLORS_red[4]=tuple_temp_12
-	set Colors_PLAYER_COLORS_green[4]=tuple_temp_13
-	set Colors_PLAYER_COLORS_blue[4]=tuple_temp_14
-	set tuple_temp_15=254
-	set tuple_temp_16=137
-	set tuple_temp_17=13
-	set Colors_PLAYER_COLORS_red[5]=tuple_temp_15
-	set Colors_PLAYER_COLORS_green[5]=tuple_temp_16
-	set Colors_PLAYER_COLORS_blue[5]=tuple_temp_17
-	set tuple_temp_18=31
-	set tuple_temp_19=191
-	set tuple_temp_20=0
-	set Colors_PLAYER_COLORS_red[6]=tuple_temp_18
-	set Colors_PLAYER_COLORS_green[6]=tuple_temp_19
-	set Colors_PLAYER_COLORS_blue[6]=tuple_temp_20
-	set tuple_temp_21=228
-	set tuple_temp_22=90
-	set tuple_temp_23=175
-	set Colors_PLAYER_COLORS_red[7]=tuple_temp_21
-	set Colors_PLAYER_COLORS_green[7]=tuple_temp_22
-	set Colors_PLAYER_COLORS_blue[7]=tuple_temp_23
-	set tuple_temp_24=148
-	set tuple_temp_25=149
-	set tuple_temp_26=150
-	set Colors_PLAYER_COLORS_red[8]=tuple_temp_24
-	set Colors_PLAYER_COLORS_green[8]=tuple_temp_25
-	set Colors_PLAYER_COLORS_blue[8]=tuple_temp_26
-	set tuple_temp_27=125
-	set tuple_temp_28=190
-	set tuple_temp_29=241
-	set Colors_PLAYER_COLORS_red[9]=tuple_temp_27
-	set Colors_PLAYER_COLORS_green[9]=tuple_temp_28
-	set Colors_PLAYER_COLORS_blue[9]=tuple_temp_29
-	set tuple_temp_30=15
-	set tuple_temp_31=97
-	set tuple_temp_32=69
-	set Colors_PLAYER_COLORS_red[10]=tuple_temp_30
-	set Colors_PLAYER_COLORS_green[10]=tuple_temp_31
-	set Colors_PLAYER_COLORS_blue[10]=tuple_temp_32
-	set tuple_temp_33=77
-	set tuple_temp_34=41
-	set tuple_temp_35=3
-	set Colors_PLAYER_COLORS_red[11]=tuple_temp_33
-	set Colors_PLAYER_COLORS_green[11]=tuple_temp_34
-	set Colors_PLAYER_COLORS_blue[11]=tuple_temp_35
-	set tuple_temp_36=155
-	set tuple_temp_37=0
-	set tuple_temp_38=0
-	set Colors_PLAYER_COLORS_red[12]=tuple_temp_36
-	set Colors_PLAYER_COLORS_green[12]=tuple_temp_37
-	set Colors_PLAYER_COLORS_blue[12]=tuple_temp_38
-	set tuple_temp_39=0
-	set tuple_temp_40=0
-	set tuple_temp_41=195
-	set Colors_PLAYER_COLORS_red[13]=tuple_temp_39
-	set Colors_PLAYER_COLORS_green[13]=tuple_temp_40
-	set Colors_PLAYER_COLORS_blue[13]=tuple_temp_41
-	set tuple_temp_42=0
-	set tuple_temp_43=234
-	set tuple_temp_44=255
-	set Colors_PLAYER_COLORS_red[14]=tuple_temp_42
-	set Colors_PLAYER_COLORS_green[14]=tuple_temp_43
-	set Colors_PLAYER_COLORS_blue[14]=tuple_temp_44
-	set tuple_temp_45=190
-	set tuple_temp_46=0
-	set tuple_temp_47=254
-	set Colors_PLAYER_COLORS_red[15]=tuple_temp_45
-	set Colors_PLAYER_COLORS_green[15]=tuple_temp_46
-	set Colors_PLAYER_COLORS_blue[15]=tuple_temp_47
-	set tuple_temp_48=235
-	set tuple_temp_49=205
-	set tuple_temp_50=135
-	set Colors_PLAYER_COLORS_red[16]=tuple_temp_48
-	set Colors_PLAYER_COLORS_green[16]=tuple_temp_49
-	set Colors_PLAYER_COLORS_blue[16]=tuple_temp_50
-	set tuple_temp_51=248
-	set tuple_temp_52=164
-	set tuple_temp_53=139
-	set Colors_PLAYER_COLORS_red[17]=tuple_temp_51
-	set Colors_PLAYER_COLORS_green[17]=tuple_temp_52
-	set Colors_PLAYER_COLORS_blue[17]=tuple_temp_53
-	set tuple_temp_54=191
-	set tuple_temp_55=255
-	set tuple_temp_56=128
-	set Colors_PLAYER_COLORS_red[18]=tuple_temp_54
-	set Colors_PLAYER_COLORS_green[18]=tuple_temp_55
-	set Colors_PLAYER_COLORS_blue[18]=tuple_temp_56
-	set tuple_temp_57=220
-	set tuple_temp_58=185
-	set tuple_temp_59=235
-	set Colors_PLAYER_COLORS_red[19]=tuple_temp_57
-	set Colors_PLAYER_COLORS_green[19]=tuple_temp_58
-	set Colors_PLAYER_COLORS_blue[19]=tuple_temp_59
-	set tuple_temp_60=40
-	set tuple_temp_61=40
-	set tuple_temp_62=40
-	set Colors_PLAYER_COLORS_red[20]=tuple_temp_60
-	set Colors_PLAYER_COLORS_green[20]=tuple_temp_61
-	set Colors_PLAYER_COLORS_blue[20]=tuple_temp_62
-	set tuple_temp_63=235
-	set tuple_temp_64=240
-	set tuple_temp_65=255
-	set Colors_PLAYER_COLORS_red[21]=tuple_temp_63
-	set Colors_PLAYER_COLORS_green[21]=tuple_temp_64
-	set Colors_PLAYER_COLORS_blue[21]=tuple_temp_65
-	set tuple_temp_66=0
-	set tuple_temp_67=120
-	set tuple_temp_68=30
-	set Colors_PLAYER_COLORS_red[22]=tuple_temp_66
-	set Colors_PLAYER_COLORS_green[22]=tuple_temp_67
-	set Colors_PLAYER_COLORS_blue[22]=tuple_temp_68
-	set tuple_temp_69=164
-	set tuple_temp_70=11
-	set tuple_temp_71=51
-	set Colors_PLAYER_COLORS_red[23]=tuple_temp_69
-	set Colors_PLAYER_COLORS_green[23]=tuple_temp_70
-	set Colors_PLAYER_COLORS_blue[23]=tuple_temp_71
-	set Colors_hexs[0]="0"
-	set Colors_hexs[1]="1"
-	set Colors_hexs[2]="2"
-	set Colors_hexs[3]="3"
-	set Colors_hexs[4]="4"
-	set Colors_hexs[5]="5"
-	set Colors_hexs[6]="6"
-	set Colors_hexs[7]="7"
-	set Colors_hexs[8]="8"
-	set Colors_hexs[9]="9"
-	set Colors_hexs[10]="A"
-	set Colors_hexs[11]="B"
-	set Colors_hexs[12]="C"
-	set Colors_hexs[13]="D"
-	set Colors_hexs[14]="E"
-	set Colors_hexs[15]="F"
-	set Colors_decs=new_Table("when calling new_Table in Colors, line 154")
-	call initializeTable("when calling initializeTable in Colors, line 209")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_Colors takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_Colors("via function reference Colors, line 1")
-endfunction
-
-function HCLDecoder_getCharFromHandicap takes integer handicap returns string
-	local integer h=handicap
-	local string res=""
-	local integer v
-	if not HCLDecoder_blocked[h] then
-		set h=HCLDecoder_encodingMap[h]
-		set v=real_toInt(h*1./6)
-		set res=res+SubString(HCLDecoder_chars,v,v+1)
-	endif
-	return res
-endfunction
-
-function HCLDecoder_presetBlocking takes nothing returns nothing
-	local integer i
-	set HCLDecoder_blocked[0]=true
-	set i=50
-	loop
-		exitwhen i>100
-		set HCLDecoder_blocked[i]=true
-		set i=i+10
-	endloop
-endfunction
-
-function HCLDecoder_resolveEncodingMap takes nothing returns nothing
-	local integer i=0
-	local integer j=0
-	loop
-		exitwhen j>256
-		if HCLDecoder_blocked[j] then
-			set j=j+1
-		endif
-		set HCLDecoder_encodingMap[j]=i
-		set i=i+1
-		set j=j+1
-	endloop
-endfunction
-
-function HCLDecoder_initialize takes nothing returns nothing
-	if not HCLDecoder_initialized then
-		call HCLDecoder_presetBlocking()
-		call HCLDecoder_resolveEncodingMap()
-		set HCLDecoder_initialized=true
-	endif
-endfunction
-
-function LLIterator_onDestroy takes integer this returns nothing
-endfunction
-
-function dealloc_LLIterator takes integer obj,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLIterator_typeId[obj]==0 then
-		call error("Double free: object of type LLIterator","when calling error in LinkedList, line 406")
-	
-	else
-		set LLIterator_nextFree[LLIterator_firstFree]=obj
-		set LLIterator_firstFree=LLIterator_firstFree+1
-		set LLIterator_typeId[obj]=0
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function destroyLLIterator takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call LLIterator_onDestroy(this)
-	call dealloc_LLIterator(this,"when calling dealloc_LLIterator in LinkedList, line 406")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dispatch_LLIterator_destroyLLIterator takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLIterator_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling LLIterator.LLIterator","when calling error in LinkedList, line 406")
-		
-		else
-			call error("Called LLIterator.LLIterator on invalid object.","when calling error in LinkedList, line 406")
-		endif
-	endif
-	call destroyLLIterator(this,"when calling destroyLLIterator in LinkedList, line 406")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function LLIterator_close takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLIterator_destroyOnClose[this] then
-		call dispatch_LLIterator_destroyLLIterator(this,"when calling dispatch_LLIterator_destroyLLIterator in LinkedList, line 450")
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function LLIterator_hasNext takes integer this returns boolean
-	return LLEntry_next[LLIterator_current[this]]!=LLIterator_dummy[this]
-endfunction
-
-function LLIterator_next takes integer this returns integer
-	set LLIterator_current[this]=LLEntry_next[LLIterator_current[this]]
-	return LLEntry_elem[LLIterator_current[this]]
-endfunction
-
-function alloc_LLIterator takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLIterator_firstFree==0 then
-		if LLIterator_maxIndex<32768 then
-			set LLIterator_maxIndex=LLIterator_maxIndex+1
-			set this=LLIterator_maxIndex
-			set LLIterator_typeId[this]=27
-		
-		else
-			call error("Out of memory: Could not create LLIterator.","when calling error in LinkedList, line 406")
-			set this=0
-		endif
-	
-	else
-		set LLIterator_firstFree=LLIterator_firstFree-1
-		set this=LLIterator_nextFree[LLIterator_firstFree]
-		set LLIterator_typeId[this]=27
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function LLIterator_init takes integer this returns nothing
-	set LLIterator_destroyOnClose[this]=true
-endfunction
-
-function LinkedList_getDummy takes integer this returns integer
-	return LinkedList_dummy[this]
-endfunction
-
-function dispatch_LinkedList_LinkedList_LinkedList_getDummy takes integer this,string w__wurst_stackPos returns integer
-	local integer LinkedList_LinkedList_getDummy_result
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LinkedList_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling LinkedList.getDummy","when calling error in LinkedList, line 362")
-		
-		else
-			call error("Called LinkedList.getDummy on invalid object.","when calling error in LinkedList, line 362")
-		endif
-	endif
-	set LinkedList_LinkedList_getDummy_result=LinkedList_getDummy(this)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return LinkedList_LinkedList_getDummy_result
-endfunction
-
-function LLIterator_reset takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set LLIterator_dummy[this]=dispatch_LinkedList_LinkedList_LinkedList_getDummy(LLIterator_parent[this],"when calling getDummy in LinkedList, line 422")
-	set LLIterator_current[this]=LLIterator_dummy[this]
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function dispatch_LLIterator_LinkedList_LLIterator_reset takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LLIterator_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling LLIterator.reset","when calling error in LinkedList, line 421")
-		
-		else
-			call error("Called LLIterator.reset on invalid object.","when calling error in LinkedList, line 421")
-		endif
-	endif
-	call LLIterator_reset(this,"when calling reset in LinkedList, line 421")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function construct_LLIterator takes integer this,integer parent,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call LLIterator_init(this)
-	set LLIterator_parent[this]=parent
-	call dispatch_LLIterator_LinkedList_LLIterator_reset(this,"when calling reset in LinkedList, line 414")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function new_LLIterator takes integer parent,string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set this=alloc_LLIterator("when calling alloc_LLIterator in LinkedList, line 412")
-	call construct_LLIterator(this,parent,"when calling construct_LLIterator in LinkedList, line 412")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function LinkedList_iterator takes integer this,string w__wurst_stackPos returns integer
-	local integer stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set stackTrace_tempReturn=new_LLIterator(this,"when calling new_LLIterator in LinkedList, line 165")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return stackTrace_tempReturn
-endfunction
-
-function HCLDecoder_getStringFromHandicaps takes integer handicaps,string w__wurst_stackPos returns string
-	local string res
-	local integer iterator
-	local integer handicap
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call HCLDecoder_initialize()
-	set res=""
-	set iterator=LinkedList_iterator(handicaps,"when calling iterator in HCLDecoder, line 21")
-	loop
-		exitwhen not LLIterator_hasNext(iterator)
-		set handicap=LLIterator_next(iterator)
-		set res=res+HCLDecoder_getCharFromHandicap(handicap)
-	endloop
-	call LLIterator_close(iterator,"when calling close in HCLDecoder, line 21")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return res
-endfunction
-
-function alloc_LinkedList takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if LinkedList_firstFree==0 then
-		if LinkedList_maxIndex<32768 then
-			set LinkedList_maxIndex=LinkedList_maxIndex+1
-			set this=LinkedList_maxIndex
-			set LinkedList_typeId[this]=30
-		
-		else
-			call error("Out of memory: Could not create LinkedList.","when calling error in LinkedList, line 17")
-			set this=0
-		endif
-	
-	else
-		set LinkedList_firstFree=LinkedList_firstFree-1
-		set this=LinkedList_nextFree[LinkedList_firstFree]
-		set LinkedList_typeId[this]=30
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function LinkedList_init takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set LinkedList_dummy[this]=new_LLEntry(0,0,0,"when calling new_LLEntry in LinkedList, line 18")
-	set LinkedList_size[this]=0
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function construct_LinkedList2 takes integer this,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call LinkedList_init(this,"when calling LinkedList_init in LinkedList, line 31")
-	set LLEntry_next[LinkedList_dummy[this]]=LinkedList_dummy[this]
-	set LLEntry_prev[LinkedList_dummy[this]]=LinkedList_dummy[this]
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function new_LinkedList takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set this=alloc_LinkedList("when calling alloc_LinkedList in LinkedList, line 31")
-	call construct_LinkedList2(this,"when calling construct_LinkedList2 in LinkedList, line 31")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function player_getSlotState takes player this returns playerslotstate
-	return GetPlayerSlotState(this)
-endfunction
-
-function Handicaps_get takes string w__wurst_stackPos returns integer
-	local integer handicaps
-	local integer i
-	local integer temp
-	local integer h
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set handicaps=new_LinkedList("when calling new_LinkedList in Handicaps, line 6")
-	set i=0
-	set temp=bj_MAX_PLAYERS-1
-	loop
-		exitwhen i>temp
-		if player_getSlotState(Player_players[i])==PLAYER_SLOT_STATE_PLAYING then
-			set h=R2I(100.*GetPlayerHandicap(Player_players[i])+.5)
-			call dispatch_LinkedList_LinkedList_LinkedList_add_1(handicaps,h,"when calling add in Handicaps, line 10")
-		
-		else
-			call dispatch_LinkedList_LinkedList_LinkedList_add_1(handicaps,0,"when calling add in Handicaps, line 12")
-		endif
-		set i=i+1
-	endloop
-	set wurst_stack_depth=wurst_stack_depth-1
-	return handicaps
-endfunction
-
-function Handicaps_restore takes nothing returns nothing
-	local integer i=0
-	local integer temp=bj_MAX_PLAYERS-1
-	loop
-		exitwhen i>temp
-		call SetPlayerHandicap(Player_players[i],1.)
-		set i=i+1
-	endloop
-endfunction
-
-function Handicaps_getWithRestore takes string w__wurst_stackPos returns integer
-	local integer handicaps
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set handicaps=Handicaps_get("when calling get in Handicaps, line 20")
-	call Handicaps_restore()
-	set wurst_stack_depth=wurst_stack_depth-1
-	return handicaps
-endfunction
-
-function getModeStringFromHcl takes string hclStr returns string
-	if hclStr=="0" then
-		return "phgmcbah"
-	endif
-	if hclStr=="1" then
-		return "prgmcbah"
-	endif
-	return ""
-endfunction
-
-function init_HCL_connector takes string w__wurst_stackPos returns boolean
-	local string hclStr
-	local string mode
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set hclStr=HCLDecoder_getStringFromHandicaps(Handicaps_getWithRestore("when calling getWithRestore in HCL_connector, line 17"),"when calling getStringFromHandicaps in HCL_connector, line 17")
-	set mode=getModeStringFromHcl(hclStr)
-	set NF=mode
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_HCL_connector takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_HCL_connector("via function reference HCL_connector, line 1")
-endfunction
-
-function alloc_Comparator_LinkedList takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Comparator_firstFree==0 then
-		if Comparator_maxIndex<32768 then
-			set Comparator_maxIndex=Comparator_maxIndex+1
-			set this=Comparator_maxIndex
-		
-		else
-			call error("Out of memory: Could not create Comparator_LinkedList.","when calling error in LinkedList, line 504")
-			set this=0
-		endif
-	
-	else
-		set Comparator_firstFree=Comparator_firstFree-1
-		set this=Comparator_nextFree[Comparator_firstFree]
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function alloc_Comparator_LinkedList_1784 takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Comparator_firstFree==0 then
-		if Comparator_maxIndex<32768 then
-			set Comparator_maxIndex=Comparator_maxIndex+1
-			set this=Comparator_maxIndex
-		
-		else
-			call error("Out of memory: Could not create Comparator_LinkedList.","when calling error in LinkedList, line 508")
-			set this=0
-		endif
-	
-	else
-		set Comparator_firstFree=Comparator_firstFree-1
-		set this=Comparator_nextFree[Comparator_firstFree]
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function realToIndex takes real r returns integer
-	return real_toInt(r*TypeCasting_R2I_PRECISION)
-endfunction
-
-function init_LinkedList takes string w__wurst_stackPos returns boolean
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call alloc_Comparator_LinkedList("when calling alloc_Comparator_LinkedList in LinkedList, line 504")
-	call alloc_Comparator_LinkedList_1784("when calling alloc_Comparator_LinkedList in LinkedList, line 508")
-	call realToIndex(0.)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_LinkedList takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_LinkedList("via function reference LinkedList, line 1")
-endfunction
-
-function alloc_HashMap takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_firstFree==0 then
-		if Table_maxIndex<32768 then
-			set Table_maxIndex=Table_maxIndex+1
-			set this=Table_maxIndex
-			set Table_typeId[this]=40
-		
-		else
-			call error("Out of memory: Could not create HashMap.","when calling error in HashMap, line 8")
-			set this=0
-		endif
-	
-	else
-		set Table_firstFree=Table_firstFree-1
-		set this=Table_nextFree[Table_firstFree]
-		set Table_typeId[this]=40
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function HashMap_init takes integer this returns nothing
-endfunction
-
-function construct_HashMap takes integer this returns nothing
-	call construct_Table(this)
-	call HashMap_init(this)
-endfunction
-
-function new_HashMap takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set this=alloc_HashMap("when calling alloc_HashMap in HashMap, line 7")
-	call construct_HashMap(this)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function trigger_addAction takes trigger this,code actionFunc returns triggeraction
-	return TriggerAddAction(this,actionFunc)
-endfunction
-
-function trigger_addCondition takes trigger this,boolexpr condition returns triggercondition
-	return TriggerAddCondition(this,condition)
-endfunction
-
-function trigger_registerPlayerUnitEvent takes trigger this,player whichPlayer,playerunitevent whichPlayerUnitEvent,boolexpr filter returns event
-	return TriggerRegisterPlayerUnitEvent(this,whichPlayer,whichPlayerUnitEvent,filter)
-endfunction
-
-function registerPlayerUnitEvent_1919 takes playerunitevent p,code filter,code condition,code action returns nothing
-	local integer hid=handle_getHandleId(p)
-	local integer k
-	local filterfunc cond_result
-	local trigger temp
-	local player temp_1
-	local playerunitevent temp_2
-	if RegisterEvents_t[hid]==null then
-		set RegisterEvents_t[hid]=CreateTrigger()
-		set k=bj_MAX_PLAYER_SLOTS-1
-		loop
-			exitwhen k<0
-			set temp=RegisterEvents_t[hid]
-			set temp_1=Player_players[k]
-			set temp_2=p
-			if filter!=null then
-				set cond_result=Filter(filter)
-			
-			else
-				set cond_result=null
-			endif
-			call trigger_registerPlayerUnitEvent(temp,temp_1,temp_2,cond_result)
-			set k=k-1
-		endloop
-	endif
-	if condition!=null then
-		call trigger_addCondition(RegisterEvents_t[hid],Filter(condition))
-	endif
-	if action!=null then
-		call trigger_addAction(RegisterEvents_t[hid],action)
-	endif
-	set cond_result=null
-	set temp=null
-	set temp_1=null
-	set temp_2=null
-endfunction
-
-function registerPlayerUnitEvent takes playerunitevent p,code c returns nothing
-	call registerPlayerUnitEvent_1919(p,null,c,null)
-endfunction
-
-function init_RegisterEvents takes string w__wurst_stackPos returns boolean
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set RegisterEvents_onCastMap=new_HashMap("when calling new_HashMap in RegisterEvents, line 55")
-	call registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT,ref_function_bridge_code__registerPlayerUnitEvent_RegisterEvents)
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_RegisterEvents takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_RegisterEvents("via function reference RegisterEvents, line 1")
-endfunction
-
-function init_TimerUtils takes string w__wurst_stackPos returns boolean
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set TimerUtils_freeTimersCount=0
-	set TimerUtils_timerData=new_Table("when calling new_Table in TimerUtils, line 12")
-	set TimerUtils_HELD=$28829022
-	call CreateTimer()
-	call CreateTrigger()
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_TimerUtils takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_TimerUtils("via function reference TimerUtils, line 1")
-endfunction
-
-function hashtable_saveString takes hashtable this,integer parentKey,integer childKey,string value returns nothing
-	call SaveStr(this,parentKey,childKey,value)
-endfunction
-
-function Table_saveString takes integer this,integer parentKey,string value returns nothing
-	call hashtable_saveString(Table_ht,this,parentKey,value)
-endfunction
-
-function dispatch_Table_Table_Table_saveString takes integer this,integer parentKey,string value,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if Table_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling Table.saveString","when calling error in Table, line 60")
-		
-		else
-			call error("Called Table.saveString on invalid object.","when calling error in Table, line 60")
-		endif
-	endif
-	call Table_saveString(this,parentKey,value)
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function initTypecastData takes string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call dispatch_Table_Table_Table_saveString(TypeCasting_typecastdata,0,"","when calling saveString in TypeCasting, line 11")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function init_TypeCasting takes string w__wurst_stackPos returns boolean
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set TypeCasting_typecastdata=new_Table("when calling new_Table in TypeCasting, line 6")
-	set TypeCasting_R2I_PRECISION=1000.
-	call initTypecastData("when calling initTypecastData in TypeCasting, line 14")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return true
-endfunction
-
-function bridge_init_TypeCasting takes nothing returns boolean
-	set wurst_stack_depth=0
-	return init_TypeCasting("via function reference TypeCasting, line 1")
-endfunction
-
-function player_getController takes player this returns mapcontrol
-	return GetPlayerController(this)
-endfunction
-
-function player_isIngame takes player this returns boolean
-	return player_getSlotState(this)==PLAYER_SLOT_STATE_PLAYING and player_getController(this)==MAP_CONTROL_USER
-endfunction
-
-function FastFinish_countPlayers takes nothing returns nothing
-	local integer i
-	set FastFinish_playersCount[0]=0
-	set FastFinish_playersCount[1]=0
-	set i=0
-	loop
-		exitwhen i>7
-		if player_isIngame(Player(i)) then
-			set FastFinish_playersCount[R2I(i*1./4)]=FastFinish_playersCount[R2I(i*1./4)]+1
-		endif
-		set i=i+1
-	endloop
-endfunction
-
-function Colorizer_colorize takes string str,integer color returns string
-	local integer temp=color
-	if temp==0 then
-		return "|c00ff0202"+str+"|r"
-	
-	elseif temp==1 then
-		return "|c000041ff"+str+"|r"
-	
-	elseif temp==2 then
-		return "|c001be6b8"+str+"|r"
-	
-	elseif temp==3 then
-		return "|c00530080"+str+"|r"
-	
-	elseif temp==4 then
-		return "|c00fffc00"+str+"|r"
-	
-	elseif temp==5 then
-		return "|c00fe890d"+str+"|r"
-	
-	elseif temp==6 then
-		return "|c001fbf00"+str+"|r"
-	
-	elseif temp==7 then
-		return "|c00e55aaf"+str+"|r"
-	
-	elseif temp==8 then
-		return "|c00949596"+str+"|r"
-	
-	elseif temp==9 then
-		return "|c007dbef1"+str+"|r"
-	
-	elseif temp==10 then
-		return "|c000f6145"+str+"|r"
-	
-	elseif temp==11 then
-		return "|c004d2903"+str+"|r"
-	
-	elseif temp==12 then
-		return "|cffBB3333"+str+"|r"
-	
-	else
-		return str
-	endif
-endfunction
-
-function Colorizer_colorizeByPlayerId takes string str,integer pid returns string
-	return Colorizer_colorize(str,Colorizer_playerColors[pid])
-endfunction
-
-function alloc_CallbackSingle_doAfter_FastFinish_FastFinish takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_firstFree==0 then
-		if CallbackSingle_maxIndex<32768 then
-			set CallbackSingle_maxIndex=CallbackSingle_maxIndex+1
-			set this=CallbackSingle_maxIndex
-			set CallbackSingle_typeId[this]=7
-		
-		else
-			call error("Out of memory: Could not create CallbackSingle_doAfter_FastFinish_FastFinish.","when calling error in FastFinish, line 29")
-			set this=0
-		endif
-	
-	else
-		set CallbackSingle_firstFree=CallbackSingle_firstFree-1
-		set this=CallbackSingle_nextFree[CallbackSingle_firstFree]
-		set CallbackSingle_typeId[this]=7
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1781 takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_firstFree==0 then
-		if CallbackSingle_maxIndex<32768 then
-			set CallbackSingle_maxIndex=CallbackSingle_maxIndex+1
-			set this=CallbackSingle_maxIndex
-			set CallbackSingle_typeId[this]=8
-		
-		else
-			call error("Out of memory: Could not create CallbackSingle_doAfter_FastFinish_FastFinish.","when calling error in FastFinish, line 36")
-			set this=0
-		endif
-	
-	else
-		set CallbackSingle_firstFree=CallbackSingle_firstFree-1
-		set this=CallbackSingle_nextFree[CallbackSingle_firstFree]
-		set CallbackSingle_typeId[this]=8
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1782 takes string w__wurst_stackPos returns integer
-	local integer this
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_firstFree==0 then
-		if CallbackSingle_maxIndex<32768 then
-			set CallbackSingle_maxIndex=CallbackSingle_maxIndex+1
-			set this=CallbackSingle_maxIndex
-			set CallbackSingle_typeId[this]=9
-		
-		else
-			call error("Out of memory: Could not create CallbackSingle_doAfter_FastFinish_FastFinish.","when calling error in FastFinish, line 40")
-			set this=0
-		endif
-	
-	else
-		set CallbackSingle_firstFree=CallbackSingle_firstFree-1
-		set this=CallbackSingle_nextFree[CallbackSingle_firstFree]
-		set CallbackSingle_typeId[this]=9
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-	return this
-endfunction
-
-function CallbackSingle_init takes integer this returns nothing
-endfunction
-
-function construct_CallbackSingle takes integer this returns nothing
-	call CallbackSingle_init(this)
-endfunction
-
-function getTimer takes string w__wurst_stackPos returns timer
-	local timer receiver
-	local timer stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if TimerUtils_freeTimersCount>0 then
-		set TimerUtils_freeTimersCount=TimerUtils_freeTimersCount-1
-		call timer_setData(TimerUtils_freeTimers[TimerUtils_freeTimersCount],0,"when calling setData in TimerUtils, line 29")
-		set wurst_stack_depth=wurst_stack_depth-1
-		set receiver=null
-		set stackTrace_tempReturn=null
-		return TimerUtils_freeTimers[TimerUtils_freeTimersCount]
-	
-	else
-		set receiver=CreateTimer()
-		call timer_setData(receiver,0,"when calling setData in TimerUtils, line 32")
-		set stackTrace_tempReturn=receiver
-		set wurst_stack_depth=wurst_stack_depth-1
-		set getTimertempReturn=stackTrace_tempReturn
-		set receiver=null
-		set stackTrace_tempReturn=null
-		return getTimertempReturn
-	endif
-endfunction
-
-function timer_start takes timer this,real time,code timerCallBack returns nothing
-	call TimerStart(this,time,false,timerCallBack)
-endfunction
-
-function CallbackSingle_start takes integer this,timer whichTimer,real time,string w__wurst_stackPos returns nothing
-	local timer receiver
-	local timer receiver_1
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set receiver=whichTimer
-	call timer_setData(receiver,this,"when calling setData in ClosureTimers, line 113")
-	set receiver_1=receiver
-	call timer_start(receiver_1,time,ref_function_bridge_code__start_CallbackSingle_ClosureTimers)
-	set CallbackSingle_t[this]=receiver_1
-	set wurst_stack_depth=wurst_stack_depth-1
-	set receiver=null
-	set receiver_1=null
-endfunction
-
-function dispatch_CallbackSingle_ClosureTimers_CallbackSingle_start takes integer this,timer whichTimer,real time,string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	if CallbackSingle_typeId[this]==0 then
-		if this==0 then
-			call error("Nullpointer exception when calling CallbackSingle.start","when calling error in ClosureTimers, line 111")
-		
-		else
-			call error("Called CallbackSingle.start on invalid object.","when calling error in ClosureTimers, line 111")
-		endif
-	endif
-	call CallbackSingle_start(this,whichTimer,time,"when calling start in ClosureTimers, line 111")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function timer_doAfter takes timer this,real timeToWait,integer cb,string w__wurst_stackPos returns integer
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call dispatch_CallbackSingle_ClosureTimers_CallbackSingle_start(cb,this,timeToWait,"when calling start in ClosureTimers, line 16")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return cb
-endfunction
-
-function doAfter takes real timeToWait,integer cb,string w__wurst_stackPos returns integer
-	local integer stackTrace_tempReturn
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set stackTrace_tempReturn=timer_doAfter(getTimer("when calling getTimer in ClosureTimers, line 27"),timeToWait,cb,"when calling doAfter in ClosureTimers, line 27")
-	set wurst_stack_depth=wurst_stack_depth-1
-	return stackTrace_tempReturn
-endfunction
-
-function player_getId takes player this returns integer
-	return GetPlayerId(this)
-endfunction
-
-function player_getName takes player this returns string
-	return GetPlayerName(this)
-endfunction
-
-function string_format_2 takes string this,string replacements_0,string replacements_1 returns string
-	local string result_1=this
-	local integer i=0
-	set result_1=string_replace(result_1,"{"+int_toString(i)+"}",replacements_0)
-	set i=i+1
-	set result_1=string_replace(result_1,"{"+int_toString(i)+"}",replacements_1)
-	set i=i+1
-	return result_1
-endfunction
-
-function FastFinish_vote takes player p,string w__wurst_stackPos returns nothing
-	local integer pid
-	local integer team_1
-	local string teamName_1
-	local string cond_result
-	local integer clVar
-	local integer clVar_1
-	local integer clVar_2
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	set pid=player_getId(p)
-	set team_1=R2I(pid*1./4)
-	if team_1==0 then
-		set cond_result="left"
-	
-	else
-		set cond_result="right"
-	endif
-	set teamName_1=cond_result
-	if not FastFinish_voted[pid] then
-		set FastFinish_voted[pid]=true
-		set FastFinish_votes[team_1]=FastFinish_votes[team_1]+1
-		if FastFinish_votes[team_1]==1 and FastFinish_voteActive[team_1]==false then
-			call printTimed(string_format_2("{0} starts ff voting for {1} team",Colorizer_colorizeByPlayerId(player_getName(p),pid),teamName_1),7.)
-			set FastFinish_voteActive[team_1]=true
-			set clVar=alloc_CallbackSingle_doAfter_FastFinish_FastFinish("when calling alloc_CallbackSingle_doAfter_FastFinish_FastFinish in FastFinish, line 29")
-			call construct_CallbackSingle(clVar)
-			set team[clVar]=team_1
-			set teamName[clVar]=teamName_1
-			call doAfter(180.,clVar,"when calling doAfter in FastFinish, line 29")
-		endif
-		call printTimed(string_format_1("{0} vote for ff. ",Colorizer_colorizeByPlayerId(player_getName(p),pid)),7.)
-	endif
-	if FastFinish_votes[0]==FastFinish_playersCount[0] then
-		call printTimed(string_format_1("All {0} team palyers voted for ff. Game will end in 3 seconds",teamName_1),7.)
-		set clVar_1=alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1781("when calling alloc_CallbackSingle_doAfter_FastFinish_FastFinish in FastFinish, line 36")
-		call construct_CallbackSingle(clVar_1)
-		call doAfter(3.,clVar_1,"when calling doAfter in FastFinish, line 36")
-	
-	elseif FastFinish_votes[1]==FastFinish_playersCount[1] then
-		call printTimed(string_format_1("All {0} team palyers voted for ff. Game will end in 3 seconds",teamName_1),7.)
-		set clVar_2=alloc_CallbackSingle_doAfter_FastFinish_FastFinish_1782("when calling alloc_CallbackSingle_doAfter_FastFinish_FastFinish in FastFinish, line 40")
-		call construct_CallbackSingle(clVar_2)
-		call doAfter(3.,clVar_2,"when calling doAfter in FastFinish, line 40")
-	endif
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function voteFF takes string w__wurst_stackPos returns nothing
-	set wurst_stack[wurst_stack_depth]=w__wurst_stackPos
-	set wurst_stack_depth=wurst_stack_depth+1
-	call FastFinish_countPlayers()
-	call FastFinish_vote(GetTriggerPlayer(),"when calling vote in FastFinish_event, line 8")
-	set wurst_stack_depth=wurst_stack_depth-1
-endfunction
-
-function bridge_voteFF takes nothing returns nothing
-	set wurst_stack_depth=0
-	call voteFF("via function reference FastFinish_event, line 21")
-endfunction
-
-function player_isAllyOf takes player this,player p returns boolean
-	return IsPlayerAlly(this,p)
-endfunction
-
-function texttag_setText takes texttag this,string text,real size returns nothing
-	call SetTextTagText(this,text,size*.0023)
-endfunction
-
-function unit_getTypeId takes unit this returns integer
-	return GetUnitTypeId(this)
-endfunction
-
-function code__registerPlayerUnitEvent_ShowKingInfoForObs takes nothing returns nothing
-	local player p=GetTriggerPlayer()
-	local integer u=unit_getTypeId(GetSoldUnit())
-	local player owner
-	local player cond_result
-	local texttag tag
-	local texttag cond_result_1
-	local texttag tag_1
-	local texttag cond_result_2
-	local texttag tag_2
-	local texttag cond_result_3
-	if player_isAllyOf(p,Player(8)) then
-		set cond_result=Player(8)
-	
-	else
-		set cond_result=Player(9)
-	endif
-	set owner=cond_result
-	if u==ShowKingInfoForObs_HP_DUMMY or u==$75393938 then
-		if owner==Player(8) then
-			set cond_result_1=ShowKingInfoForObs_HP_TEXT_WEST
-		
-		else
-			set cond_result_1=ShowKingInfoForObs_HP_TEXT_EAST
-		endif
-		set tag=cond_result_1
-		call texttag_setText(tag,string_format_1("Hp :   {0}",int_toString(GetPlayerTechCount(owner,$52303030,true))),10.)
-	endif
-	if u==ShowKingInfoForObs_ATTACK_DUMMY or u==$75393939 then
-		if owner==Player(8) then
-			set cond_result_2=ShowKingInfoForObs_ATTACK_TEXT_WEST
-		
-		else
-			set cond_result_2=ShowKingInfoForObs_ATTACK_TEXT_EAST
-		endif
-		set tag_1=cond_result_2
-		call texttag_setText(tag_1,string_format_1("Attack :   {0}",int_toString(GetPlayerTechCount(owner,$52303031,true))),10.)
-	endif
-	if u==ShowKingInfoForObs_REGEN_DUMMY or u==$75393941 then
-		if owner==Player(8) then
-			set cond_result_3=ShowKingInfoForObs_REGEN_TEXT_WEST
-		
-		else
-			set cond_result_3=ShowKingInfoForObs_REGEN_TEXT_EAST
-		endif
-		set tag_2=cond_result_3
-		call texttag_setText(tag_2,string_format_1("Regen :   {0}",int_toString(GetPlayerTechCount(owner,$52303032,true))),10.)
-	endif
-	set p=null
-	set owner=null
-	set cond_result=null
-	set tag=null
-	set cond_result_1=null
-	set tag_1=null
-	set cond_result_2=null
-	set tag_2=null
-	set cond_result_3=null
-endfunction
-
-function code__startPeriodic_GameTimer takes nothing returns nothing
-	set GameTimer_currentTime=GameTimer_currentTime+Basics_ANIMATION_PERIOD
-endfunction
-
 function eK takes nothing returns nothing
 	local real wk
 	if GetEventDamage()+1.>=GetUnitState(H6,UNIT_STATE_LIFE) then
@@ -21816,1356 +14864,36 @@ function iK takes nothing returns nothing
 	endif
 endfunction
 
-function init_Angle takes nothing returns boolean
-	return true
-endfunction
-
-function init_Basics takes nothing returns boolean
-	set Basics_ANIMATION_PERIOD=.03
-	return true
-endfunction
-
-function init_ClosureForGroups takes nothing returns boolean
-	local real tuple_temp
-	local real tuple_temp_1
-	call CreateGroup()
-	set ClosureForGroups_tempCallbacksCount=0
-	set ClosureForGroups_maxCount=Integer_INT_MAX
-	set ClosureForGroups_iterCount=0
-	call Filter(ref_function_bridge_code__Filter_ClosureForGroups)
-	set tuple_temp=Vectors_ZERO2_x
-	set tuple_temp_1=Vectors_ZERO2_y
-	return true
-endfunction
-
-function init_ClosureTimers takes nothing returns boolean
-	set ClosureTimers_x=200
-	return true
-endfunction
-
-function init_Colorizer takes nothing returns boolean
-	set Colorizer_playerColors[0]=0
-	set Colorizer_playerColors[1]=1
-	set Colorizer_playerColors[2]=2
-	set Colorizer_playerColors[3]=3
-	set Colorizer_playerColors[4]=4
-	set Colorizer_playerColors[5]=5
-	set Colorizer_playerColors[6]=6
-	set Colorizer_playerColors[7]=7
-	set Colorizer_playerColors[8]=8
-	set Colorizer_playerColors[9]=9
-	set Colorizer_playerColors[10]=10
-	set Colorizer_playerColors[11]=11
-	return true
-endfunction
-
-function init_ErrorHandling takes nothing returns boolean
-	set ErrorHandling_MUTE_ERROR_DURATION=60
-	set ErrorHandling_PRIMARY_ERROR_KEY=-1
-	set ErrorHandling_HT=InitHashtable()
-	set ErrorHandling_suppressErrorMessages=false
-	return true
-endfunction
-
-function init_FastFinish takes nothing returns boolean
-	set FastFinish_voted[0]=false
-	set FastFinish_voted[1]=false
-	set FastFinish_voted[2]=false
-	set FastFinish_voted[3]=false
-	set FastFinish_voted[4]=false
-	set FastFinish_voted[5]=false
-	set FastFinish_voted[6]=false
-	set FastFinish_voted[7]=false
-	set FastFinish_playersCount[0]=0
-	set FastFinish_playersCount[1]=0
-	set FastFinish_votes[0]=0
-	set FastFinish_votes[1]=0
-	set FastFinish_voteActive[0]=false
-	set FastFinish_voteActive[1]=false
-	return true
-endfunction
-
-function trigger_registerPlayerChatEvent takes trigger this,player whichPlayer,string chatMessageToDetect,boolean exactMatchOnly returns event
-	return TriggerRegisterPlayerChatEvent(this,whichPlayer,chatMessageToDetect,exactMatchOnly)
-endfunction
-
-function init_FastFinish_event takes nothing returns boolean
-	local trigger t=CreateTrigger()
-	local integer i=0
-	local trigger receiver
-	local trigger t2
-	local integer i_1
-	loop
-		exitwhen i>8
-		set receiver=t
-		call trigger_registerPlayerChatEvent(receiver,Player(i),"-ff",true)
-		set i=i+1
-	endloop
-	call trigger_addCondition(t,Condition(ref_function_bridge_voteFF))
-	set t2=CreateTrigger()
-	set i_1=0
-	loop
-		exitwhen i_1>8
-		call TriggerRegisterPlayerEventLeave(t2,Player(i_1))
-		set i_1=i_1+1
-	endloop
-	call trigger_addCondition(t2,Condition(ref_function_resetFFWhenLeave))
-	set t=null
-	set receiver=null
-	set t2=null
-	return true
-endfunction
-
-function timer_startPeriodic takes timer this,real time,code timerCallBack returns nothing
-	call TimerStart(this,time,true,timerCallBack)
-endfunction
-
-function init_GameTimer takes nothing returns boolean
-	set GameTimer_gameTimer=CreateTimer()
-	call timer_start(GameTimer_gameTimer,100000.,null)
-	call timer_startPeriodic(CreateTimer(),Basics_ANIMATION_PERIOD,ref_function_code__startPeriodic_GameTimer)
-	return true
-endfunction
-
-function init_Group takes nothing returns boolean
-	call CreateGroup()
-	return true
-endfunction
-
-function init_HCLDecoder takes nothing returns boolean
-	set HCLDecoder_chars="abcdefghijklmnopqrstuvwxyz0123456789 -=,."
-	set HCLDecoder_initialized=false
-	return true
-endfunction
-
-function init_HashList takes nothing returns boolean
-	call InitHashtable()
-	call InitHashtable()
-	return true
-endfunction
-
-function init_Integer takes nothing returns boolean
-	set Integer_INT_MAX=$7FFFFFFF
-	return true
-endfunction
-
-function Results_setCache takes gamecache gc returns nothing
-	set Results_cache=gc
-endfunction
-
-function gamecache_flush takes gamecache this returns nothing
-	call FlushGameCache(this)
-endfunction
-
-function trigger_registerTimerEvent takes trigger this,real timeout,boolean periodic returns event
-	return TriggerRegisterTimerEvent(this,timeout,periodic)
-endfunction
-
-function init_Ladder_events takes nothing returns boolean
-	local trigger t
-	call gamecache_flush(InitGameCache("dr.x"))
-	call Results_setCache(InitGameCache("dr.x"))
-	call trigger_addCondition(onGameFinished,Condition(ref_function_sendResults))
-	set t=CreateTrigger()
-	call trigger_registerTimerEvent(t,6.,true)
-	call trigger_addCondition(t,Condition(ref_function_updateInGameTimeAct))
-	set t=null
-	return true
-endfunction
-
-function init_Lightning takes nothing returns boolean
-	return true
-endfunction
-
-function init_MagicFunctions takes nothing returns boolean
-	set MagicFunctions_compiletime=false
-	return true
-endfunction
-
-function init_Maths takes nothing returns boolean
-	return true
-endfunction
-
-function init_Matrices takes nothing returns boolean
-	return true
-endfunction
-
-function initPlayerArray takes nothing returns nothing
-	local integer i=0
-	local integer temp=bj_MAX_PLAYER_SLOTS-1
-	loop
-		exitwhen i>temp
-		set Player_players[i]=Player(i)
-		set i=i+1
-	endloop
-endfunction
-
-function init_Player takes nothing returns boolean
-	set Player_localPlayer=GetLocalPlayer()
-	call initPlayerArray()
-	return true
-endfunction
-
-function init_Playercolor takes nothing returns boolean
-	call ConvertPlayerColor(24)
-	call ConvertPlayerColor(25)
-	call ConvertPlayerColor(26)
-	call ConvertPlayerColor(27)
-	return true
-endfunction
-
-function unit_addAbility takes unit this,integer abil returns boolean
-	return UnitAddAbility(this,abil)
-endfunction
-
-function unit_remove takes unit this returns nothing
-	call RemoveUnit(this)
-endfunction
-
-function unit_removeAbility takes unit this,integer abil returns boolean
-	return UnitRemoveAbility(this,abil)
-endfunction
-
-function init_PreloadAbilities takes nothing returns boolean
-	local unit u=CreateUnit(Player(12),$75303036,0.,0.,180.)
-	call unit_addAbility(u,$4130354F)
-	call unit_addAbility(u,$41303550)
-	call unit_removeAbility(u,$4130354F)
-	call unit_removeAbility(u,$41303550)
-	call unit_remove(u)
-	set u=null
-	return true
-endfunction
-
-function init_Printing takes nothing returns boolean
-	set Printing_DEBUG_LEVEL=2
-	set Printing_DEBUG_MSG_DURATION=45.
-	return true
-endfunction
-
-function init_Quaternion takes nothing returns boolean
-	return true
-endfunction
-
-function init_Real takes nothing returns boolean
-	set Real_REAL_MAX=340282366920938000000000000000000000000.
-	return true
-endfunction
-
-function init_Results takes nothing returns boolean
-	set Results_data=0
-	set Results_cache=null
-	set Results_senderOne=null
-	set Results_senderTwo=null
-	return true
-endfunction
-
-function texttag_setColor takes texttag this,integer col_red,integer col_green,integer col_blue,integer col_alpha returns nothing
-	call SetTextTagColor(this,col_red,col_green,col_blue,col_alpha)
-endfunction
-
-function texttag_setPermanent takes texttag this,boolean flag returns nothing
-	call SetTextTagPermanent(this,flag)
-endfunction
-
-function texttag_setPos takes texttag this,real pos_x,real pos_y,real pos_z returns nothing
-	call SetTextTagPos(this,pos_x,pos_y,pos_z)
-endfunction
-
-function texttag_setVisibility takes texttag this,boolean flag returns nothing
-	call SetTextTagVisibility(this,flag)
-endfunction
-
-function vec2_withZ takes real this_x,real this_y,real z returns real
-	set vec2_withZ_return_x=this_x
-	set vec2_withZ_return_y=this_y
-	set vec2_withZ_return_z=z
-	return vec2_withZ_return_x
-endfunction
-
-function vec3_toVec2 takes real this_x,real this_y,real this_z returns real
-	set vec3_toVec2_return_x=this_x
-	set vec3_toVec2_return_y=this_y
-	return vec3_toVec2_return_x
-endfunction
-
-function createTT takes real pos_x,real pos_y,real pos_z,string message,real size,integer col_red,integer col_green,integer col_blue,integer col_alpha returns texttag
-	local texttag receiver=CreateTextTag()
-	local texttag receiver_1
-	local texttag receiver_2
-	local texttag receiver_3
-	local texttag receiver_4
-	call texttag_setPos(receiver,vec2_withZ(vec3_toVec2(pos_x,pos_y,pos_z),vec3_toVec2_return_y,20.),vec2_withZ_return_y,vec2_withZ_return_z)
-	set receiver_1=receiver
-	call texttag_setColor(receiver_1,col_red,col_green,col_blue,col_alpha)
-	set receiver_2=receiver_1
-	call texttag_setText(receiver_2,message,size)
-	set receiver_3=receiver_2
-	call texttag_setVisibility(receiver_3,true)
-	set receiver_4=receiver_3
-	call texttag_setPermanent(receiver_4,true)
-	set createTTtempReturn=receiver_4
-	set receiver=null
-	set receiver_1=null
-	set receiver_2=null
-	set receiver_3=null
-	set receiver_4=null
-	return createTTtempReturn
-endfunction
-
-function texttag_showToAllyAndObs takes texttag this,player p returns nothing
-	local texttag receiver=this
-	call texttag_setVisibility(receiver,player_isAllyOf(Player_localPlayer,p) or IsPlayerObserver(p))
-	set receiver=null
-endfunction
-
-function unit_getX takes unit this returns real
-	return GetUnitX(this)
-endfunction
-
-function unit_getY takes unit this returns real
-	return GetUnitY(this)
-endfunction
-
-function unit_getPos takes unit this returns real
-	set unit_getPos_return_x=unit_getX(this)
-	set unit_getPos_return_y=unit_getY(this)
-	return unit_getPos_return_x
-endfunction
-
-function vec2_add takes real this_x,real this_y,real x,real y returns real
-	set vec2_add_return_x=this_x+x
-	set vec2_add_return_y=this_y+y
-	return vec2_add_return_x
-endfunction
-
-function vec2_toVec3 takes real this_x,real this_y returns real
-	set vec2_toVec3_return_x=this_x
-	set vec2_toVec3_return_y=this_y
-	set vec2_toVec3_return_z=0.
-	return vec2_toVec3_return_x
-endfunction
-
-function init_ShowKingInfoForObs takes nothing returns boolean
-	local texttag receiver
-	local texttag receiver_1
-	local texttag receiver_2
-	local texttag receiver_3
-	local texttag receiver_4
-	local texttag receiver_5
-	set ShowKingInfoForObs_HP_DUMMY=$75303038
-	set ShowKingInfoForObs_ATTACK_DUMMY=$75303039
-	set ShowKingInfoForObs_REGEN_DUMMY=$75303041
-	set receiver=createTT(vec2_toVec3(vec2_add(unit_getPos(H6),unit_getPos_return_y,600.,-300.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Hp :   0",10.,0,255,0,255)
-	call texttag_showToAllyAndObs(receiver,Player(8))
-	set ShowKingInfoForObs_HP_TEXT_WEST=receiver
-	set receiver_1=createTT(vec2_toVec3(vec2_add(unit_getPos(H6),unit_getPos_return_y,600.,-350.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Attack :   0",10.,255,0,0,255)
-	call texttag_showToAllyAndObs(receiver_1,Player(8))
-	set ShowKingInfoForObs_ATTACK_TEXT_WEST=receiver_1
-	set receiver_2=createTT(vec2_toVec3(vec2_add(unit_getPos(H6),unit_getPos_return_y,600.,-400.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Regen :   0",10.,0,0,255,255)
-	call texttag_showToAllyAndObs(receiver_2,Player(8))
-	set ShowKingInfoForObs_REGEN_TEXT_WEST=receiver_2
-	set receiver_3=createTT(vec2_toVec3(vec2_add(unit_getPos(U6),unit_getPos_return_y,600.,-300.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Hp :   0",10.,0,255,0,255)
-	call texttag_showToAllyAndObs(receiver_3,Player(9))
-	set ShowKingInfoForObs_HP_TEXT_EAST=receiver_3
-	set receiver_4=createTT(vec2_toVec3(vec2_add(unit_getPos(U6),unit_getPos_return_y,600.,-350.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Attack :   0",10.,255,0,0,255)
-	call texttag_showToAllyAndObs(receiver_4,Player(9))
-	set ShowKingInfoForObs_ATTACK_TEXT_EAST=receiver_4
-	set receiver_5=createTT(vec2_toVec3(vec2_add(unit_getPos(U6),unit_getPos_return_y,600.,-400.),vec2_add_return_y),vec2_toVec3_return_y,vec2_toVec3_return_z,"Regen :   0",10.,0,0,255,255)
-	call texttag_showToAllyAndObs(receiver_5,Player(9))
-	set ShowKingInfoForObs_REGEN_TEXT_EAST=receiver_5
-	call registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SELL,ref_function_code__registerPlayerUnitEvent_ShowKingInfoForObs)
-	set receiver=null
-	set receiver_1=null
-	set receiver_2=null
-	set receiver_3=null
-	set receiver_4=null
-	set receiver_5=null
-	return true
-endfunction
-
-function init_String takes nothing returns boolean
-	set String_charset="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	set String_numberset="0123456789"
-	call string_length(String_numberset)
-	call string_length(String_charset)
-	return true
-endfunction
-
-function init_Table takes nothing returns boolean
-	set Table_ht=InitHashtable()
-	return true
-endfunction
-
-function init_Vectors takes nothing returns boolean
-	local real tuple_temp=0.
-	local real tuple_temp_1=0.
-	set Vectors_ZERO2_x=tuple_temp
-	set Vectors_ZERO2_y=tuple_temp_1
-	call Location(0.,0.)
-	return true
-endfunction
-
-function init_WeatherEffects takes nothing returns boolean
-	return true
-endfunction
-
-function resetFFWhenLeave takes nothing returns nothing
-	local player p=GetTriggerPlayer()
-	local integer pid=player_getId(p)
-	local integer team_1=R2I(pid*1./4)
-	if FastFinish_voteActive[team_1] then
-		call FastFinish_reset(team_1)
-		call printTimed(string_format_1("{0} leave. Voting has closed",Colorizer_colorizeByPlayerId(player_getName(p),pid)),7.)
-	endif
-	set p=null
-endfunction
-
-function Results_findSenders takes nothing returns nothing
-	local integer totalPlayers=0
-	local integer i=0
-	local player p
-	local player array potentialSenders
-	local integer pidx
-	loop
-		exitwhen i>7
-		set p=Player(i)
-		if player_isIngame(p) then
-			set potentialSenders[totalPlayers]=p
-			set totalPlayers=totalPlayers+1
-		endif
-		set i=i+1
-	endloop
-	if totalPlayers==0 then
-		set Results_senderOne=null
-		set Results_senderTwo=null
-	
-	elseif totalPlayers==1 then
-		set Results_senderOne=potentialSenders[0]
-		set Results_senderTwo=null
-	
-	else
-		set totalPlayers=totalPlayers-1
-		set pidx=GetRandomInt(0,totalPlayers)
-		set Results_senderOne=potentialSenders[pidx]
-		set potentialSenders[pidx]=potentialSenders[totalPlayers]
-		set totalPlayers=totalPlayers-1
-		set pidx=GetRandomInt(0,totalPlayers)
-		set Results_senderTwo=potentialSenders[pidx]
-	endif
-	set p=null
-endfunction
-
-function gamecache_saveInt takes gamecache this,string missionKey,string key,integer value returns nothing
-	call StoreInteger(this,missionKey,key,value)
-endfunction
-
-function gamecache_syncInt takes gamecache this,string missionKey,string key returns nothing
-	call SyncStoredInteger(this,missionKey,key)
-endfunction
-
-function Results_send takes nothing returns nothing
-	call gamecache_saveInt(Results_cache,"EOG","Win1",Results_data)
-	call gamecache_saveInt(Results_cache,"EOG","Win2",Results_data)
-	if Results_senderOne==null or Results_senderTwo==null or not player_isIngame(Results_senderOne) or not player_isIngame(Results_senderTwo) then
-		call Results_findSenders()
-	endif
-	if Results_senderOne==GetLocalPlayer() then
-		call gamecache_syncInt(Results_cache,"EOG","Win1")
-	endif
-	if Results_senderTwo==GetLocalPlayer() then
-		call gamecache_syncInt(Results_cache,"EOG","Win1")
-	endif
-endfunction
-
-function Results_set takes integer pid returns nothing
-	local integer rez=1
-	local integer i=pid
-	loop
-		exitwhen i<1
-		set rez=rez*2
-		set i=i-1
-	endloop
-	set Results_data=Results_data+rez
-endfunction
-
-function sendResults takes nothing returns nothing
-	local integer i=0
-	local player p
-	local integer pid
-	local integer totalTime
-	loop
-		exitwhen i>12
-		set p=Player(i)
-		set pid=player_getId(p)
-		set totalTime=PR*3600+FN*60+GN
-		if player_isIngame(p) or totalTime-Ladder_events_udg_PlayerTime[pid+1]<180 then
-			if player_isAllyOf(p,HN) then
-				call Results_set(pid)
-			endif
-		endif
-		set i=i+1
-	endloop
-	call Results_send()
-	set p=null
-endfunction
-
-function updateInGameTime takes nothing returns nothing
-	local player p=GetEnumPlayer()
-	local integer pid=player_getId(p)
-	set Ladder_events_udg_PlayerTime[pid+1]=PR*3600+FN*60+GN
-	set p=null
-endfunction
-
-function updateInGameTimeAct takes nothing returns nothing
-	call ForForce(ZI,ref_function_updateInGameTime)
-endfunction
-
 function initGlobals takes nothing returns nothing
-	set BO=InitGameCache("KeyBindings.w3v")
 	set V=null
-	//call StringLength("ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789_-+= \\!@#$%^&*()/?>.<,;:'\"{}[]|`~")
 	set HY=InitHashtable()
 	set X=InitHashtable()
 	set onGameFinished=CreateTrigger()
-	set YC=CreateForce()
 	set BD=CreateForce()
 	set P3=CreateForce()
-	set GRR=0
-	set GII=0
-	set localPlayer=null
-	set G=false
-	set H=false
-	set J=false
-	set K=null
-	set MC=null
-	set Q3=0
-	set F5=0
-	set T=0
-	set U=0
-	set W=0
-	set Y=0
-	set Z=0
-	set VV=0
-	set EV=0
-	set XV=0
-	set OV=0
-	set RV=0
-	set IV=0
-	set AV=0
-	set NV=0
-	set CV=0
-	set DV=0
-	set GV=0
-	call Player(0)
-	set mapVersion=""
-	set EE=0
-	set numberLvl=0
 	set IE=CreateGroup()
 	set FGG=CreateGroup()
-	set AE=false
-	set NE=null
-	set BE=""
-	set DE=null
-	set FE=null
-	set GE=null
-	set HE=null
-	set JE=null
-	set KE=null
-	set LE=null
-	set ME=null
-	set PE=null
-	set QE=null
-	set SE=null
-	set TE=null
-	set UE=null
-	set ZE=null
-	set VX=null
-	set EX=null
-	set OX=null
-	set RX=false
-	set IX=0
-	set AX=0
-	set NX=null
-	set BX=0
-	set CX=null
-	set xg=0.
-	set yg=0.
-	set GX=""
-	set HX=""
-	set JX=""
-	set KX=""
-	set LX=""
-	set SX=""
-	set TX=""
-	set UX=""
-	set WX=""
-	set YX=""
-	set ZX=""
-	set VO=""
-	set EO=0
-	set FO=null
-	set GO=null
-	set HO=false
-	set JO=false
-	set KO=false
-	set LO=false
-	set MO=false
-	set QO=0.
-	set SO=0
-	set TO=""
-	set UO=""
-	set WO=""
-	set YO=""
-	set ZO=""
-	set VR=""
 	set ER=15
-	set XR=0
-	set RR=0
-	set IR=""
-	set AR=""
-	set NR=""
-	set BR=0.
-	set CR=0.
-	set FR=""
-	set GR=""
-	set JR=null
-	set KR=0
-	set LR=""
-	set MR=""
-	set PR=0
-	set QR=""
-	set SR=false
-	set TR=false
-	set UR=false
-	set WR=false
-	set YR=null
-	set ZR=null
-	set VI=null
-	set EI=null
-	set XI=null
-	set OI=null
-	set RI=null
-	set II=null
-	set AI=null
-	set NI=null
-	set CI=null
-	set DI=null
-	set FI=0
-	set GI=0
-	set HI=null
-	set JI=null
-	set LI=null
-	set MI=null
-	set PI=null
-	set QI=null
-	set TI=0
-	set UI=false
-	set YI=null
-	set ZI=null
-	set VA=null
-	set EA=""
-	set XA=null
-	set NA=null
-	set DA=false
-	set GA=false
-	set KA=null
-	set LA=null
-	set PA=false
-	set QA=false
-	set SA=false
-	set UA=0
-	set WA=0
-	set YA=0
-	set XN=false
-	set ON=null
-	set RN=false
-	set IN=false
-	set AN=0
-	set NN=""
-	set FN=0
-	set GN=0
-	set HN=null
-	set LN=""
-	set MN=false
-	set QN=0.
-	set SN=null
-	set TN=null
-	set YN=false
-	set EB=0
-	set XB=0
-	set OB=false
-	set RB=null
-	set IB=null
-	set EC=false
-	set BC=null
-	set CC=null
 	set texttagGameMode1=null
 	set texttagGameMode2=null
-	set JD=null
-	set KD=null
-	set LD=null
-	set MD=null
-	set QD=false
-	set SD=false
-	set TD=null
-	set UD=null
-	set YD=false
-	set ZD=null
-	set VF=null
-	set OF=0
-	set RF=0
-	set IF=null
-	set AF=null
-	set NF=""
-	set FF=null
 	set G5=CreateForce()
-	set JF=null
-	set LF=null
-	set MF=null
-	set PF=null
-	set QF=null
-	set SF=0
-	set TF=0
-	set UF=0
-	set WF=null
-	set YF=false
-	set VG=0
-	set EG=0
-	set XG=0
-	set OG=null
-	set AG=null
-	set NG=null
-	set BG=false
-	set CG=false
-	set FG=null
 	set H5=1
-	set J5=CreateForce()
-	set K5=CreateForce()
-	set L5=CreateForce()
-	set M5=CreateForce()
-	set P5=CreateForce()
-	set ICHEAT=CreateTrigger()
 	set T5=CreateTrigger()
-	set GG=null
-	set HG=null
-	set JG=null
-	set KG=null
-	set MG=null
-	set U5=null
 	set PG=CreateTrigger()
-	set QG=null
-	//set QGG=null
-	set SG=null
-	set UG=null
-	set YG=null
-	set ZG=null
-	set VH=null
-	set XH=null
-	set OH=null
-	set RH=null
-	set IH=null
-	set AH=0
-	set CH=0
-	set DH=null
-	set GH=null
-	set HH=0
-	set MH=false
-	set PH=null
-	set QH=false
-	set SH=false
-	set TH=false
-	set ZH=false
-	set VJ=false
-	set EJ=false
-	set XJ=false
-	set AJ=null
-	set NJ=null
-	set BJ=null
-	set CJ=null
-	set DJ=null
-	set FJ=null
-	set GJ=null
-	set HJ=null
-	set JJ=null
-	set KJ=null
-	set LJ=null
-	set MJ=null
-	set PJ=null
-	set QJ=null
-	set SJ=null
-	set TJ=null
-	set VK=null
-	set EK=null
-	set XK=null
-	set OK=null
-	set RK=null
-	set IK=null
-	set AK=null
-	set NK=null
-	set BK=null
-	set CK=null
-	set DK=null
-	set FK=null
-	set GK=null
-	set HK=null
-	set JK=null
-	set KK=null
-	set LK=null
-	set MK=null
-	set PK=null
-	set QK=null
-	set SK=null
-	set TK=null
-	set UK=null
-	set WK=null
-	set YK=null
-	set ZK=null
-	set VL=null
-	set EL=null
-	set XL=null
-	set OL=null
-	set RL=null
-	set IL=null
-	set JL=null
-	set KL=null
-	set LL=null
-	set ML=null
-	set PL=null
-	set QL=null
-	set SL=null
-	set TL=null
-	set UL=null
-	set WL=null
-	set YL=null
-	set ZL=null
-	set VM=null
-	set EM=null
-	set XM=null
-	set OM=null
-	set RM=null
-	set IM=null
-	set AM=null
-	set NM=null
-	set BM=null
-	set CM=null
-	set DM=null
-	set FM=null
-	set GM=null
-	set HM=null
-	set JM=null
-	set KM=null
-	set LM=null
-	set MM=null
-	set PM=null
-	set QM=null
-	set SM=null
-	set TM=null
-	set UM=null
-	set WM=null
-	set YM=null
-	set ZM=null
-	set VP=null
-	set EP=null
-	set RP=null
-	set IP=null
-	set DP=null
-	set FP=null
-	set GP=null
-	set HP=null
-	set JP=null
-	set KP=null
-	set LP=null
-	set MP=null
-	set PP=null
-	set QP=null
-	set SP=null
-	set TP=null
-	set UP=null
-	set WP=null
-	set YP=null
-	set ZP=null
 	set VQ="Sound\\Music\\mp3Music\\HeroicVictory.mp3"
-	set EQ=null
-	set XQ=null
-	set OQ=null
-	set RQ=null
-	set IQ=null
-	set AQ=null
-	set NQ=null
-	set BQ=null
-	set CQ=null
-	set DQ=null
-	set FQ=null
-	set GQ=null
-	set HQ=null
-	set JQ=null
-	set KQ=null
-	set LQ=null
-	set MQ=null
-	set PQ=null
-	set QQ=null
-	set SQ=null
-	set TQ=null
-	set UQ=null
-	set WQ=null
-	set YQ=null
-	set ZQ=null
-	set ES=null
-	set XS=null
-	set OS=null
-	set RS=null
-	set IS=null
-	set AS=null
-	set NS=null
-	set BS=null
-	set CS=null
-	set DS=null
-	set FS=null
-	set GS=null
-	set HS=null
-	set JS=null
-	set KS=null
-	set LS=null
-	set MS=null
-	set PS=null
-	set QS=null
-	set SS=null
-	set TS=null
-	set US=null
-	set WS=null
-	set YS=null
-	set ZS=null
-	set VT=null
-	set ET=null
-	set XT=null
-	set OT=null
-	set RT=null
-	set IT=null
-	set AT=null
-	set NT=null
-	set BT=null
-	set CT=null
-	set DT=null
-	set FT=null
-	set GT=null
-	set HT=null
-	set JT=null
-	set KT=null
-	set LT=null
-	set MT=null
-	set PT=null
-	set QT=null
-	set ST=null
-	set TT=null
-	set UT=null
-	set WT=null
-	set YT=null
-	set ZT=null
-	set VU=null
-	set EU=null
-	set XU=null
-	set OU=null
-	set RU=null
-	set IU=null
-	set AU=null
-	set NU=null
-	set BU=null
-	set CU=null
-	set DU=null
-	set FU=null
-	set GU=null
-	set HU=null
-	set JU=null
-	set KU=null
-	set LU=null
-	set MU=null
-	set PU=null
-	set QU=null
-	set SU=null
-	set TU=null
-	set UU=null
-	set WU=null
-	set YU=null
-	set ZU=null
-	set VW=null
-	set EW=null
-	set XW=null
-	set OW=null
-	set RW=null
-	set IW=null
-	set AW=null
-	set NW=null
-	set BW=null
-	set CW=null
-	set DW=null
-	set FW=null
-	set GW=null
-	set HW=null
-	set JW=null
-	set KW=null
-	set LW=null
-	set MW=null
-	set PW=null
-	set QW=null
-	set SW=null
-	set TW=null
-	set UW=null
-	set WW=null
-	set YW=null
-	set ZW=null
-	set VY=null
-	set EY=null
-	set XY=null
-	set OY=null
-	set RY=null
-	set IY=null
-	set AY=null
-	set NY=null
-	set BY=null
-	set CY=null
-	set DY=null
-	set FY=null
-	set GY=null
-	set JY=null
-	set KY=null
-	set LY=null
-	set MY=null
-	set PY=null
-	set QY=null
-	set SY=null
-	set TY=null
-	set UY=null
-	set WY=null
-	set YY=null
-	set ZY=null
-	set VZ=null
-	set EZ=null
-	set XZ=null
-	set OZ=null
-	set RZ=null
-	set IZ=null
-	set AZ=null
-	set NZ=null
-	set BZ=null
-	set CZ=null
-	set DZ=null
-	set FZ=null
-	set GZ=null
-	set HZ=null
-	set JZ=null
-	set KZ=null
-	set LZ=null
-	set MZ=null
-	set PZ=null
-	set QZ=null
-	set SZ=null
-	set TZ=null
-	set UZ=null
-	set WZ=null
-	set YZ=null
-	set ZZ=null
-	set V0=null
-	set E0=null
-	set X0=null
-	set O0=null
-	set R0=null
-	set I0=null
-	set A0=null
-	set N0=null
-	set B0=null
-	set C0=null
-	set D0=null
-	set F0=null
-	set G0=null
-	set H0=null
-	set J0=null
-	set K0=null
-	set L0=null
-	set M0=null
-	set P0=null
-	set Q0=null
-	set S0=null
-	set T0=null
-	set U0=null
-	set W0=null
-	set Y0=null
-	set Z0=null
-	set V1=null
-	set E1=null
-	set X1=null
-	set O1=null
-	set R1=null
-	set I1=null
-	set A1=null
-	set N1=null
-	set B1=null
-	set C1=null
-	set D1=null
-	set F1=null
-	set G1=null
-	set H1=null
-	set J1=null
-	set K1=null
-	set L1=null
-	set M1=null
-	set P1=null
-	set Q1=null
-	set S1=null
-	set T1=null
-	set U1=null
-	set W1=null
-	set Y1=null
-	set Z1=null
-	set V2=null
-	set E2=null
-	set X2=null
-	set O2=null
-	set R2=null
-	set I2=null
-	set A2=null
-	set N2=null
-	set B2=null
-	set C2=null
-	set D2=null
-	set F2=null
-	set G2=null
-	set H2=null
-	set J2=null
-	set K2=null
-	set L2=null
-	set M2=null
-	set P2=null
-	set U2=null
-	set W2=null
-	set Y10=null
-	set Z2=null
-	set I3=null
-	set A3=null
-	set C3=null
-	set F3=null
-	set G3=null
-	set H3=null
-	set J3=null
-	set K3=null
-	set L3=null
-	set M3=null
-	set S3=null
-	set T3=null
-	set U3=null
-	set W3=null
-	set Y3=null
-	set V4=null
-	set E4=null
-	set X4=null
-	set O4=null
-	set R4=null
-	set I4=null
-	set A4=null
-	set N4=null
-	set B4=null
-	set C4=null
-	set D4=null
-	set F4=null
-	set G4=null
-	set H4=null
-	set J4=null
-	set K4=null
-	set L4=null
-	set M4=null
-	set Q4=null
-	set S4=null
-	set U4=null
-	set W4=null
-	set Y4=null
-	set Z4=null
-	set V5=null
-	set E5=null
-	set X5=null
-	set O5=null
-	set R5=null
-	set I5=null
-	set A5=null
-	set N5=null
-	set B5=null
-	set C5=null
-	set D6=null
-	set W5=CreateTrigger()
-	set Z5=CreateForce()
-	set X6=CreateForce()
-	set O6=1
-	set F6=null
-	set G6=null
-	set H6=null
-	set J6=null
-	set K6=null
-	set L6=null
-	set M6=null
-	set P6=null
-	set Q6=null
-	set S6=null
-	set T6=null
-	set U6=null
-	set W6=null
-	set Y6=null
-	set Z6=null
-	set V7=null
-	set E7=null
-	set X7=null
-	set O7=null
-	set R7=null
-	set I7=null
-	set A7=null
-	set N7=null
-	set B7=null
-	set C7=null
-	set D7=null
-	set F7=null
 	set G7=.01
 	set H7=.01
 	set J7=.01
-	set K7=null
-	set M7=null
-	set Q7=null
-	set T7=null
-	set U7=null
-	set Y7=null
-	set E8=null
-	set O8=null
-	set R8=null
-	set I8=null
-	set A8=null
-	set N8=null
 	set B8=1000
-	set C8=null
-	set D8=0.
-	set F8=0.
 	set G8=CreateGroup()
-	set H8=null
-	set J8=null
-	set K8=null
-	set L8=null
 	set M8=CreateGroup()
 	set P8=CreateGroup()
-	set Q8=null
-	set S8=null
-	set T8=null
-	set U8=null
 	set W8=CreateGroup()
 	set Y8=CreateGroup()
-	set VBV=0
-	set VCV=0
-	set VLV=0
-	set V0V=600
-	set V1V=1500
 	set EGV=CreateForce()
 	set EJV=CreateForce()
 	set EKV=CreateTrigger()
 	set EYV=CreateTrigger()
-	set XHV=null
-	set XQV=null
-	set XSV=null
-	set CallbackSingle_firstFree=0
-	set CallbackSingle_maxIndex=0
-	set Table_firstFree=0
-	set Table_maxIndex=0
-	set Comparator_firstFree=0
-	set Comparator_maxIndex=0
-	set LLEntry_firstFree=0
-	set LLEntry_maxIndex=0
-	set LLIterator_firstFree=0
-	set LLIterator_maxIndex=0
-	set LinkedList_firstFree=0
-	set LinkedList_maxIndex=0
-	set ref_function_NBV=function NBV
-	//set ref_function_HandleCount=function HandleCount
-	set ref_function_BKV=function BKV
-	set ref_function_FLV=function FLV
-	set ref_function_F0V=function F0V
-	set ref_function_FUV=function FUV
-	set ref_function_UDV=function UDV
-	set ref_function_GRV=function GRV
-	set ref_function_GMV=function GMV
-	set ref_function_GBV=function GBV
-	set ref_function_GPV=function GPV
-	set ref_function_G3V=function G3V
-	set ref_function_G1V=function G1V
-	set ref_function_HIV=function HIV
-	set ref_function_HTV=function HTV
-	set ref_function_HHV=function HHV
-	set ref_function_JGV=function JGV
-	set ref_function_J0V=function J0V
-	set ref_function_J5V=function J5V
-	set ref_function_J3V=function J3V
-	set ref_function_J2V=function J2V
-	set ref_function_KRV=function KRV
-	set ref_function_J8V=function J8V
-	set ref_function_KOV=function KOV
-	set ref_function_KXV=function KXV
-	set ref_function_K3V=function K3V
-	set ref_function_KFV=function KFV
-	set ref_function_K4V=function K4V
-	set ref_function_LRV=function LRV
-	set ref_function_K9V=function K9V
-	set ref_function_LNV=function LNV
-	set ref_function_LIV=function LIV
-	set ref_function_LGV=function LGV
-	set ref_function_LDV=function LDV
-	set ref_function_Q5V=function Q5V
-	set ref_function_Q3V=function Q3V
-	set ref_function_LQV=function LQV
-	set ref_function_LMV=function LMV
-	set ref_function_Q_V=function Q_V
-	set ref_function_QYV=function QYV
-	set ref_function_MVV=function MVV
-	set ref_function_L7V=function L7V
-	set ref_function_PBV=function PBV
-	set ref_function_MOV=function MOV
-	set ref_function_PXV=function PXV
-	set ref_function_PRV=function PRV
-	set ref_function_PAV=function PAV
-	set ref_function_PEV=function PEV
-	set ref_function_M2V=function M2V
-	set ref_function_PGV=function PGV
-	set ref_function_PCV=function PCV
-	set ref_function_UCV=function UCV
-	set ref_function_PLV=function PLV
-	set ref_function_PJV=function PJV
-	set ref_function_PMV=function PMV
-	set ref_function_PSV=function PSV
-	set ref_function_PTV=function PTV
-	set ref_function_PZV=function PZV
-	set ref_function_P1V=function P1V
-	set ref_function_P4V=function P4V
-	set ref_function_UVV=function UVV
-	set ref_function_QGV=function QGV
-	set ref_function_QMV=function QMV
-	set ref_function_QPV=function QPV
-	set ref_function_QUV=function QUV
-	set ref_function_QSV=function QSV
-	set ref_function_QWV=function QWV
-	set ref_function_QZV=function QZV
-	set ref_function_Q2V=function Q2V
-	set ref_function_Q4V=function Q4V
-	set ref_function_Q6V=function Q6V
-	set ref_function_Q8V=function Q8V
-	set ref_function_SEV=function SEV
-	set ref_function_SNV=function SNV
-	set ref_function_SIV=function SIV
-	set ref_function_T3V=function T3V
-	set ref_function_SFV=function SFV
-	set ref_function_SCV=function SCV
-	set ref_function_SGV=function SGV
-	set ref_function_SYV=function SYV
-	set ref_function_TRV=function TRV
-	set ref_function_TBV=function TBV
-	set ref_function_TCV=function TCV
-	set ref_function_THV=function THV
-	set ref_function_UNV=function UNV
-	set ref_function_V_E=function V_E
-	set ref_function_V4E=function V4E
-	set ref_function_V2E=function V2E
-	set ref_function_V5E=function V5E
 	set ref_function_OGE=function OGE
 	set ref_function_RTE=function RTE
 	set ref_function_RUE=function RUE
@@ -23404,20 +15132,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_D_X=function D_X
 	set ref_function_D2X=function D2X
 	set ref_function_D3X=function D3X
-	set ref_function_E8E=function E8E
-	set ref_function_XNE=function XNE
-	set ref_function_XBE=function XBE
-	set ref_function_XDE=function XDE
-	set ref_function_XFE=function XFE
-	set ref_function_XHE=function XHE
-	set ref_function_ECE=function ECE
-	set ref_function_EFE=function EFE
-	set ref_function_F8V=function F8V
-	set ref_function_UQV=function UQV
-	set ref_function_UFV=function UFV
-	set ref_function_CWV=function CWV
-	set ref_function_EME=function EME
-	set ref_function_N9X=function N9X
 	set ref_function_ASE=function ASE
 	set ref_function_IOE=function IOE
 	set ref_function_APE=function APE
@@ -23530,10 +15244,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_DVX=function DVX
 	set ref_function_C9X=function C9X
 	set ref_function_P3E=function P3E
-	set ref_function_P4E=function P4E
-	set ref_function_P5E=function P5E
-	set ref_function_P6E=function P6E
-	set ref_function_P7E=function P7E
 	set ref_function_P8E=function P8E
 	set ref_function_P9E=function P9E
 	set ref_function_QVE=function QVE
@@ -23802,7 +15512,6 @@ function initGlobals takes nothing returns nothing
 	set ref_ProcessGameMode=function ProcessGameMode
 	set ref_function_ILX=function ILX
 	set ref_function_IMX=function IMX
-	set ref_function_IPX=function IPX
 	set ref_function_IQX=function IQX
 	set ref_function_ITX=function ITX
 	set ref_function_IUX=function IUX
@@ -23896,59 +15605,9 @@ function initGlobals takes nothing returns nothing
 	set ref_function_D4X=function D4X
 	set ref_function_B0X=function B0X
 	set ref_function_FOX=function FOX
-	set ref_function_G9=function G9
-	set ref_function_TRL=function TRL
-	set ref_function_TRL1=function TRL1
-	set ref_function_TRL1=function TRL2
 	set ref_function_F111=function F111
 	set ref_function_F112=function F112
 	set ref_function_FTA=function FTA
-	set ref_function_init_Real=function init_Real
-	set ref_function_init_Integer=function init_Integer
-	set ref_function_init_Angle=function init_Angle
-	set ref_function_init_String=function init_String
-	set ref_function_init_Vectors=function init_Vectors
-	set ref_function_init_Player=function init_Player
-	set ref_function_init_Basics=function init_Basics
-	set ref_function_init_Maths=function init_Maths
-	set ref_function_init_Printing=function init_Printing
-	set ref_function_init_GameTimer=function init_GameTimer
-	set ref_function_init_MagicFunctions=function init_MagicFunctions
-	set ref_function_init_ErrorHandling=function init_ErrorHandling
-	set ref_function_init_Matrices=function init_Matrices
-	set ref_function_init_Quaternion=function init_Quaternion
-	set ref_function_init_Table=function init_Table
-	set ref_function_init_Playercolor=function init_Playercolor
-	set ref_function_bridge_init_Colors=function bridge_init_Colors
-	set ref_function_init_Group=function init_Group
-	set ref_function_init_Lightning=function init_Lightning
-	set ref_function_init_WeatherEffects=function init_WeatherEffects
-	set ref_function_bridge_init_TypeCasting=function bridge_init_TypeCasting
-	set ref_function_init_ClosureForGroups=function init_ClosureForGroups
-	set ref_function_bridge_init_TimerUtils=function bridge_init_TimerUtils
-	set ref_function_init_ClosureTimers=function init_ClosureTimers
-	set ref_function_init_Colorizer=function init_Colorizer
-	set ref_function_init_FastFinish=function init_FastFinish
-	set ref_function_init_FastFinish_event=function init_FastFinish_event
-	set ref_function_bridge_init_LinkedList=function bridge_init_LinkedList
-	set ref_function_init_HCLDecoder=function init_HCLDecoder
-	set ref_function_bridge_init_HCL_connector=function bridge_init_HCL_connector
-	set ref_function_init_HashList=function init_HashList
-	set ref_function_init_Results=function init_Results
-	set ref_function_init_Ladder_events=function init_Ladder_events
-	set ref_function_init_PreloadAbilities=function init_PreloadAbilities
-	set ref_function_bridge_init_RegisterEvents=function bridge_init_RegisterEvents
-	set ref_function_init_ShowKingInfoForObs=function init_ShowKingInfoForObs
-	set ref_function_bridge_code__Filter_ClosureForGroups=function bridge_code__Filter_ClosureForGroups
-	set ref_function_bridge_voteFF=function bridge_voteFF
-	set ref_function_resetFFWhenLeave=function resetFFWhenLeave
-	set ref_function_code__startPeriodic_GameTimer=function code__startPeriodic_GameTimer
-	set ref_function_sendResults=function sendResults
-	set ref_function_updateInGameTimeAct=function updateInGameTimeAct
-	set ref_function_updateInGameTime=function updateInGameTime
-	set ref_function_bridge_code__registerPlayerUnitEvent_RegisterEvents=function bridge_code__registerPlayerUnitEvent_RegisterEvents
-	set ref_function_code__registerPlayerUnitEvent_ShowKingInfoForObs=function code__registerPlayerUnitEvent_ShowKingInfoForObs
-	set ref_function_bridge_code__start_CallbackSingle_ClosureTimers=function bridge_code__start_CallbackSingle_ClosureTimers
 endfunction
 
 function main takes nothing returns nothing
@@ -23961,22 +15620,11 @@ function main takes nothing returns nothing
 	local integer i
 	local integer j
 	local region RHE
-	local integer FIX
-	local integer FAX
-	local integer FNX
 	local integer AVV
-	local gamecache UYV
-	local string C9V
-	local integer C7V
-	local player DLV
-	local integer CFV
-	local trigger initTrig
 	call initGlobals()
 	set i=0
 	set j=0
 	set localPlayer=GetLocalPlayer()
-	call ExecuteFunc("BLV")
-	call ExecuteFunc("CRV")
 	set j=0
 	loop
 		set SV[j+1]=0
@@ -23986,27 +15634,6 @@ function main takes nothing returns nothing
 	call GFE()
 	call GWE()
 	call GYE()
-	set TG[1]="|cffffff1aExc|cffffff33el|cffffff66le|cffffff80nt"
-	set TG[2]="|cffD4FFFFCh|cffDBFFFFin|cffE0FFFFo"
-	set TG[3]="|cffffff1aEnd|cffffff33less |cffffff66Sorc|cffffff80erer"
-	set TG[4]="|cffff1a1aMa|cffff3333gic |cffff4d4dGo|cffff6666d"
-	set TG[5]="|cffff80ffI|cffff8effl|cffff9cffl|cffffaaffy|cffffb8ffa|cffffc7ffs|cffffd5ffv|cffffe3ffi|cfffff1ffel"
-	set TG[6]="|cff3333ffBer|cff6666ffnka|cff9999ffst|cffccccffel"
-	set TG[7]="|cffff33ccLam|cffff66d9bda|cffff99e6del|cffffccf2ta"
-	set TG[8]="|cff8000ffThe |cffa042ffCr|cffc082ffea|cffd7aeffto|cffe9d2ffr"
-	set TG[9]="|cffffff1aBe|cffffff4dat|cffffff80ri|cffffffb3ce"
-	set TG[10]="|cffff8c1aCo|cffffa64dco|cffffbf80a"
-	set TG[11]="|cff00ff00A|cff1aff00u|cff33ff00r|cff4dff00o|cff66ff00r|cff80ff00a"
-	set TG[12]="|cffffff1aFir|cffffff33st |cffffff66Che|cffffff80rry"
-	set TG[13]="|cffffff1aL|cffffff33u|cffffff66n|cffffff80ar"
-	set TG[14]="|cffff80ffM|cffff8effi|cffff9cffr|cffffaaffa|cffffb8ffi |cffffc7ffN|cffffd5ffi|cffffe3ffkk|cfffff1ffi"
-	set TG[15]="|cff3333ffNi|cff6666ffkk|cff9999ffizz|cffccccffzzzzzzzzz"
-	set TG[16]="|cff8000ffMind |cffa042ffyou |cffc082ff5 |cffd7aeffye|cffe9d2ffar"
-	set TG[17]="|CFF56F50ALu|CFF80BC43n|CFF98A35Car"
-	set TG[18]="|CFF0380FCCr|CFF13A0ECy |CFF13A0ECzzz"
-	set TG[19]="|CFF80FF00A|CFF00FFFFl|CFF4ACA13o|CFF9DF279n|CFFF1F874e"
-	set TG[20]="|CFFF93706Mi|CFFE6571Ass |CFFC97136M|CFFAE8251y"
-	set TG[21]="|CFFFCA48DNothing|CFFFA8D69 is|CFFF85E29 fo|CFFF8541Dre|CFFA78F58ver"
 	call SetMapFlag(MAP_LOCK_RESOURCE_TRADING,true)
 	call SetCameraBounds(-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 	call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
@@ -24242,113 +15869,8 @@ function main takes nothing returns nothing
 	call A9E()
 	call NEE()
 	call NNE()
-	set FIX=0
-	call InitTrig_quickCls()
-	set FAX=0
-	loop
-		exitwhen FAX>5
-		set Y5[FAX]=CreateTrigger()
-		set FAX=FAX+1
-	endloop
-	set FAX=0
-	loop
-		exitwhen FAX>11
-		call TriggerRegisterPlayerEvent(Y5[0],Player(FAX),EVENT_PLAYER_ARROW_LEFT_DOWN)
-		call TriggerRegisterPlayerEvent(Y5[1],Player(FAX),EVENT_PLAYER_ARROW_RIGHT_DOWN)
-		call TriggerRegisterPlayerEvent(Y5[2],Player(FAX),EVENT_PLAYER_ARROW_UP_DOWN)
-		call TriggerRegisterPlayerEvent(Y5[3],Player(FAX),EVENT_PLAYER_ARROW_DOWN_DOWN)
-		call TriggerRegisterPlayerEventEndCinematic(Y5[4],Player(FAX))
-		call TriggerRegisterPlayerChatEvent(Y5[5],Player(FAX),"",false)
-		call TriggerRegisterPlayerChatEvent(ICHEAT,Player(FAX),"",false)
-		set FAX=FAX+1
-	endloop
-	call TriggerAddAction(Y5[0],ref_function_E8E)
-	call TriggerAddAction(Y5[1],ref_function_XNE)
-	call TriggerAddAction(Y5[2],ref_function_XBE)
-	call TriggerAddAction(Y5[3],ref_function_XDE)
-	call TriggerAddAction(Y5[4],ref_function_XFE)
-	call TriggerAddAction(Y5[5],ref_function_XHE)
-	call TriggerAddCondition(W5,Condition(ref_function_ECE))
-	call TriggerAddAction(W5,ref_function_EFE)
-	call TriggerAddAction(ICHEAT,ref_function_F8V)
-	set UYV=InitGameCache("FukKiCP.w3v")
-	set C9V=""
-	set C7V=0
-	set DLV=null
-	set N6[2]=false
-	set N6[1]=true
-	loop
-		set B6[C7V]=CreateTrigger()
-		set C6[C7V]=InitHashtableBJ()
-		set I6[C7V]=CreateGroup()
-		exitwhen C7V>11
-		set C7V=C7V+1
-	endloop
-	call UJV(true,"")
-	call UKV(false,"EUR")
-	call SaveStr(C6[0],0,3,"E")
-	call SaveStr(C6[0],0,4,"L")
-	call SaveStr(C6[0],0,5,"R")
-	call SaveStr(C6[0],0,6,"U")
-	call SaveStr(C6[0],0,7,"D")
-	call SaveReal(C6[0],0,0,5.)
-	call SaveInteger(C6[1],0,1,25)
-	call SaveInteger(C6[1],0,2,25)
-	call SaveInteger(C6[1],0,3,25)
-	call SaveInteger(C6[1],0,4,25)
-	call SaveInteger(C6[1],0,5,5)
-	call SaveInteger(C6[1],0,6,5)
-	call SaveInteger(C6[1],0,7,20)
-	call SaveInteger(C6[1],0,8,20)
-	call SaveInteger(C6[1],0,9,5)
-	call SaveInteger(C6[1],0,10,5)
-	call SaveInteger(C6[1],0,11,100)
-	call SaveInteger(C6[1],0,12,1)
-	call SaveInteger(C6[1],0,13,1)
-	call SaveInteger(C6[1],0,14,20)
-	call SaveInteger(C6[1],0,15,5)
-	call SaveInteger(C6[1],0,16,20)
-	call SaveInteger(C6[1],0,17,5)
-	call SaveInteger(C6[1],0,18,10)
-	call UGV(97,"abcdefghijklmnopqrstuvwxyz")
-	call UGV(65,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-	call UGV(48,"0123456789")
-	set C7V=0
-	loop
-		set DLV=Player(C7V)
-		set C9V=StringCase(GetPlayerName(Player(C7V)),N6[2])
-		call TriggerRegisterPlayerChatEvent(B6[0],DLV,"",N6[2])
-		call TriggerRegisterPlayerEvent(B6[0],DLV,ConvertPlayerEvent(261))
-		call TriggerRegisterPlayerEvent(B6[0],DLV,ConvertPlayerEvent(263))
-		call TriggerRegisterPlayerEvent(B6[0],DLV,ConvertPlayerEvent(267))
-		call TriggerRegisterPlayerEvent(B6[0],DLV,ConvertPlayerEvent(265))
-		call TriggerRegisterPlayerEvent(B6[0],DLV,ConvertPlayerEvent(17))
-		call TriggerRegisterPlayerUnitEvent(B6[1],DLV,ConvertPlayerUnitEvent(24),null)
-		call TriggerRegisterPlayerUnitEvent(B6[1],DLV,ConvertPlayerUnitEvent(40),null)
-		if GetStoredBoolean(UYV,C9V,C9V) then
-			call SaveBoolean(C6[0],0,C7V+10,N6[1])
-		endif
-		set C7V=C7V+1
-		exitwhen C7V>11
-	endloop
-	call TriggerAddAction(B6[0],ref_function_UQV)
-	call TriggerAddAction(B6[1],ref_function_UFV)
-	call Preloader("Model.mdx")
-	set E6=I2S((GetRandomInt(556112,989512)+GetRandomInt(4124,728127))*(11+7))
 	call PreloadGenClear()
 	call PreloadGenStart()
-	call Preload("-"+E6+I2S(GetRandomInt(0,9)))
-	call PreloadGenEnd("redist\\miles\\Msseax"+I2S(3)+".md3")
-	call W3V(48,"0123456789")
-	call W3V(97,"abcdefghijklmnopqrstuvwxyz")
-	call W3V(65,"ABCDEFGHIJKLMNOPQRSTUVWXYZ")
-	set CFV=0
-	loop
-		exitwhen CFV>7
-		set V2V[CFV]=DialogCreate()
-		set EH[CFV]=DialogCreate()
-		set CFV=CFV+1
-	endloop
 	call TriggerRegisterDialogEvent(EKV,V2V[1])
 	call TriggerRegisterDialogEvent(EKV,V2V[2])
 	call TriggerRegisterDialogEvent(EKV,V2V[3])
@@ -24357,11 +15879,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterDialogEvent(EKV,V2V[6])
 	call TriggerRegisterDialogEvent(EYV,EH[1])
 	call TriggerRegisterDialogEvent(EYV,EH[2])
-	call TriggerAddCondition(EKV,Condition(ref_function_CWV))
-	call TriggerAddCondition(EYV,Condition(ref_function_EME))
-	set FNX=0
-	
-	call TriggerAddAction(T5,ref_function_N9X)
 	call ConfigureNeutralVictim()
 	set T8=Filter(ref_function_ASE)
 	call Filter(function IssueHauntOrderAtLocBJFilter)
@@ -24412,8 +15929,6 @@ function main takes nothing returns nothing
 	call CreateSoundFromLabel("QuestFailed",false,false,false,10000,10000)
 	call DelayedSuspendDecayCreate()
 	set FRX=VersionGet()
-	if FRX==VERSION_REIGN_OF_CHAOS then
-	endif
 	call InitQueuedTriggers()
 	call InitRescuableBehaviorBJ()
 	call InitDNCSounds()
@@ -24551,9 +16066,6 @@ function main takes nothing returns nothing
 	set QG=CreateTrigger()
 	call TriggerRegisterTimerEventPeriodic(QG,.5)
 	call TriggerAddAction(QG,ref_function_C0X)
-	//set QGG=CreateTrigger()
-	//call TriggerRegisterTimerEvent(QGG,0.09,true)
-	//call TriggerAddAction(QGG,ref_function_HandleCount)
 	set SG=CreateTrigger()
 	call TriggerRegisterTimerEventPeriodic(SG,.5)
 	call TriggerAddAction(SG,ref_function_C1X)
@@ -24791,14 +16303,6 @@ function main takes nothing returns nothing
 	call TriggerAddAction(MG,ref_function_C9X)
 	set RW=CreateTrigger()
 	call TriggerAddAction(RW,ref_function_P3E)
-	set IW=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(IW,RK)
-	call TriggerAddCondition(IW,Condition(ref_function_P4E))
-	call TriggerAddAction(IW,ref_function_P5E)
-	set AW=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(AW,IK)
-	call TriggerAddCondition(AW,Condition(ref_function_P6E))
-	call TriggerAddAction(AW,ref_function_P7E)
 	set NW=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(NW,EVENT_PLAYER_UNIT_CONSTRUCT_FINISH)
 	call TriggerAddCondition(NW,Condition(ref_function_P8E))
@@ -25455,8 +16959,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterPlayerChatEvent(F3,Player(7),"-",false)
 	call TriggerAddCondition(F3,Condition(ref_function_ILX))
 	call TriggerAddAction(F3,ref_function_IMX)
-	set G3=CreateTrigger()
-	call TriggerAddAction(G3,ref_function_IPX)
 	set H3=CreateTrigger()
 	call TriggerAddAction(H3,ref_function_IQX)
 	set J3=CreateTrigger()
@@ -25884,194 +17386,9 @@ function main takes nothing returns nothing
 	call TriggerAddAction(A8,ref_function_FOX)
 	call ConditionalTriggerExecute(IS)
 	call ConditionalTriggerExecute(B4)
-	set initTrig=CreateTrigger()
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Real))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Real.","when calling error in Real, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Integer))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Integer.","when calling error in Integer, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Angle))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Angle.","when calling error in Angle, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_String))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package String.","when calling error in String, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Vectors))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Vectors.","when calling error in Vectors, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Player))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Player.","when calling error in Player, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Basics))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Basics.","when calling error in Basics, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Maths))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Maths.","when calling error in Maths, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Printing))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Printing.","when calling error in Printing, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_GameTimer))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package GameTimer.","when calling error in GameTimer, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_MagicFunctions))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package MagicFunctions.","when calling error in MagicFunctions, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_ErrorHandling))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package ErrorHandling.","when calling error in ErrorHandling, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Matrices))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Matrices.","when calling error in Matrices, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Quaternion))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Quaternion.","when calling error in Quaternion, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Table))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Table.","when calling error in Table, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Playercolor))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Playercolor.","when calling error in Playercolor, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_Colors))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Colors.","when calling error in Colors, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Group))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Group.","when calling error in Group, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Lightning))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Lightning.","when calling error in Lightning, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_WeatherEffects))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package WeatherEffects.","when calling error in WeatherEffects, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_TypeCasting))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package TypeCasting.","when calling error in TypeCasting, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_ClosureForGroups))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package ClosureForGroups.","when calling error in ClosureForGroups, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_TimerUtils))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package TimerUtils.","when calling error in TimerUtils, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_ClosureTimers))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package ClosureTimers.","when calling error in ClosureTimers, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Colorizer))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Colorizer.","when calling error in Colorizer, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_FastFinish))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package FastFinish.","when calling error in FastFinish, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_FastFinish_event))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package FastFinish_event.","when calling error in FastFinish_event, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_LinkedList))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package LinkedList.","when calling error in LinkedList, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_HCLDecoder))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package HCLDecoder.","when calling error in HCLDecoder, line 2")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_HCL_connector))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package HCL_connector.","when calling error in HCL_connector, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_HashList))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package HashList.","when calling error in HashList, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Results))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Results.","when calling error in Results, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_Ladder_events))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package Ladder_events.","when calling error in Ladder_events, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_PreloadAbilities))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package PreloadAbilities.","when calling error in PreloadAbilities, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_bridge_init_RegisterEvents))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package RegisterEvents.","when calling error in RegisterEvents, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call TriggerAddCondition(initTrig,Condition(ref_function_init_ShowKingInfoForObs))
-	if not TriggerEvaluate(initTrig) then
-		call error("Could not initialize package ShowKingInfoForObs.","when calling error in ShowKingInfoForObs, line 1")
-	endif
-	call TriggerClearConditions(initTrig)
-	call DestroyTrigger(initTrig)
 	set A6E=null
 	set FRX=null
 	set RHE=null
-	set UYV=null
-	set DLV=null
-	set initTrig=null
 endfunction
 
 function InitCustomPlayerSlots takes nothing returns nothing
@@ -26216,7 +17533,7 @@ function InitAllyPriorities takes nothing returns nothing
 endfunction
 
 function config takes nothing returns nothing
-	call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.0b |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
+	call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.1 |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
 	call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies. Edited by Team OZE")
 	call SetPlayers(10)
 	call SetTeams(2)
