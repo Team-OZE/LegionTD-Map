@@ -4,6 +4,8 @@ globals
 	boolean ggMode=false
 	integer array RolledUnits
 	integer kingSpell=0
+	boolean array udg_quickClsPlayer
+	trigger gg_trg_quickCls=null
 	unit array Unit
 	trigger V=null
 	hashtable HY=null
@@ -1703,6 +1705,38 @@ function NXE takes nothing returns nothing
 		set i=i+1
 	endloop
 	set RSE=null
+endfunction
+
+// r-mach : Quick -cls 
+function Trig_quickCls_Func001C takes nothing returns boolean
+	if ( not ( udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] == false ) ) then
+		return false
+	endif
+	return true
+endfunction
+
+function Trig_quickCls_Actions takes nothing returns nothing
+	if ( Trig_quickCls_Func001C() ) then
+		set udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] = true
+		call TriggerSleepAction( 0.22 )
+		set udg_quickClsPlayer[GetConvertedPlayerId(GetTriggerPlayer())] = false
+	
+	else
+		call ClearTextMessagesBJ( GetForceOfPlayer(GetTriggerPlayer()) )
+	endif
+endfunction
+
+function InitTrig_quickCls takes nothing returns nothing
+	set gg_trg_quickCls = CreateTrigger(  )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(0), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(1), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(2), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(3), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(4), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(5), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(6), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerRegisterPlayerKeyEventBJ( gg_trg_quickCls, Player(7), bj_KEYEVENTTYPE_DEPRESS, bj_KEYEVENTKEY_DOWN )
+	call TriggerAddAction( gg_trg_quickCls, function Trig_quickCls_Actions )
 endfunction
 
 function ReRollNah takes player myPlayer returns nothing
@@ -15073,6 +15107,7 @@ function main takes nothing returns nothing
 	call NXE()
 	call A9E()
 	call NNE()
+	call InitTrig_quickCls()
 	call PreloadGenClear()
 	call PreloadGenStart()
 	call TriggerRegisterDialogEvent(EKV,V2V[1])
