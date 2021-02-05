@@ -11,7 +11,6 @@ globals
 	trigger onGameFinished=null
 	force BD=null
 	dialog array EH
-	button array WH
 	force P3=null
 	integer GRR=0
 	integer GII=0
@@ -753,8 +752,6 @@ globals
 	trigger C5=null
 	trigger D6=null
 	trigger gB=null
-	trigger array Y5
-	string V6=null
 	unit F6=null
 	unit G6=null
 	unit H6=null
@@ -785,13 +782,6 @@ globals
 	real G7=0.
 	real H7=0.
 	real J7=0.
-	string array R6
-	group array I6
-	player array A6
-	trigger array B6
-	string array VRV
-	dialog array VIV
-	button array VAV
 	destructable K7=null
 	destructable M7=null
 	destructable Q7=null
@@ -1029,7 +1019,6 @@ globals
 	code ref_function_eK=null
 	code ref_function_iK=null
 	code ref_function_ISX=null
-	code ref_function_AAX=null
 	code ref_function_BIX=null
 	code ref_function_BAX=null
 	code ref_function_BBX=null
@@ -1552,10 +1541,6 @@ globals
 	code ref_function_F112=null
 	code ref_function_FTA=null
 	texttag BXEtempReturn=null
-	texttag createTTtempReturn=null
-	timer getTimertempReturn=null
-	trigger triggerFromIndextempReturn=null
-	trigger dispatch_Table_Table_Table_loadTriggertempReturn=null
 endglobals
 
 function A9E takes nothing returns nothing
@@ -1635,356 +1620,6 @@ function GYE takes nothing returns nothing
 		set BV[i]=false
 		set i=i+1
 	endloop
-endfunction
-
-function NEE takes nothing returns nothing
-	local player RSE=Player(15)
-	local unit NVE=CreateUnit(RSE,$68304156,4550.,2403.,220.)
-	set NVE=CreateUnit(RSE,$68304157,4550.,2398.,190.)
-	set NVE=CreateUnit(RSE,$68304137,4550.,2396.,266.)
-	set NVE=CreateUnit(RSE,$68303235,4550.,2405.,56.)
-	set NVE=CreateUnit(RSE,$6830394B,4550.,2365.,226.)
-	set NVE=CreateUnit(RSE,$68303241,4550.,2405.,188.)
-	set NVE=CreateUnit(RSE,$68304254,4550.,2368.,337.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304254,4550.,2320.,287.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830425A,4550.,2302.,137.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303239,4550.,2292.,44.)
-	set NVE=CreateUnit(RSE,$68304147,4550.,2302.,212.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830384B,4550.,2296.,4.)
-	set NVE=CreateUnit(RSE,$68303830,4550.,2306.,302.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830334C,4550.,2356.,151.)
-	set NVE=CreateUnit(RSE,$68303358,4550.,2400.,71.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303258,4550.,2273.,91.)
-	set NVE=CreateUnit(RSE,$68303831,4550.,2250.,276.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303956,4550.,2238.,290.)
-	set NVE=CreateUnit(RSE,$68303347,4550.,2245.,318.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304144,4550.,2229.,80.)
-	set NVE=CreateUnit(RSE,$6830324D,4550.,2199.,268.)
-	set NVE=CreateUnit(RSE,$6830324C,4550.,2195.,172.)
-	set NVE=CreateUnit(RSE,$6830344A,4550.,2212.,261.)
-	set NVE=CreateUnit(RSE,$68303255,4550.,2217.,109.)
-	set NVE=CreateUnit(RSE,$68303254,4550.,2145.,314.)
-	set NVE=CreateUnit(RSE,$68303950,4550.,2127.,169.)
-	set NVE=CreateUnit(RSE,$68303259,4550.,2141.,80.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303348,4550.,2119.,77.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303732,4550.,2158.,103.)
-	set NVE=CreateUnit(RSE,$6830374B,4550.,2150.,210.)
-	set NVE=CreateUnit(RSE,$68303842,4550.,2197.,104.)
-	set NVE=CreateUnit(RSE,$68303733,4550.,2123.,315.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303931,4550.,2046.,279.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303449,4550.,2050.,226.)
-	set NVE=CreateUnit(RSE,$68303737,4550.,2065.,265.)
-	set NVE=CreateUnit(RSE,$68303657,4550.,2051.,65.)
-	set NVE=CreateUnit(RSE,$6830334B,4550.,2045.,11.)
-	set NVE=CreateUnit(RSE,$68303847,4550.,2055.,59.)
-	set NVE=CreateUnit(RSE,$6830324E,4550.,2026.,316.)
-	set NVE=CreateUnit(RSE,$6830324F,4550.,2021.,248.)
-	set NVE=CreateUnit(RSE,$68304159,4550.,1966.,169.)
-	set NVE=CreateUnit(RSE,$68303946,4550.,1947.,183.)
-	set NVE=CreateUnit(RSE,$6830304C,4550.,1989.,141.)
-	set NVE=CreateUnit(RSE,$68304259,4550.,1980.,154.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303658,4550.,1960.,201.)
-	set NVE=CreateUnit(RSE,$68303659,4550.,1956.,317.)
-	set NVE=CreateUnit(RSE,$6830375A,4550.,1975.,116.)
-	set NVE=CreateUnit(RSE,$68303838,4550.,1975.,201.)
-	set NVE=CreateUnit(RSE,$68303238,4550.,1901.,113.)
-	set NVE=CreateUnit(RSE,$68303934,4550.,1894.,200.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830335A,4550.,1895.,230.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304344,4550.,1890.,358.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303444,4550.,1886.,217.)
-	set NVE=CreateUnit(RSE,$6830365A,4550.,1890.,127.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303445,4550.,1889.,21.)
-	set NVE=CreateUnit(RSE,$68303959,4550.,1895.,113.)
-	set NVE=CreateUnit(RSE,$68303858,4550.,1893.,26.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304150,4550.,1743.,262.)
-	set NVE=CreateUnit(RSE,$68303735,4550.,1806.,337.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303341,4550.,1814.,99.)
-	set NVE=CreateUnit(RSE,$68303834,4550.,1822.,45.)
-	set NVE=CreateUnit(RSE,$68303345,4550.,1816.,262.)
-	set NVE=CreateUnit(RSE,$68303958,4550.,1804.,.923)
-	set NVE=CreateUnit(RSE,$68303249,4550.,1803.,41.)
-	set NVE=CreateUnit(RSE,$68303344,4550.,1893.,260.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303646,4550.,1822.,93.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830344B,4550.,1728.,38.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303246,4550.,1728.,234.)
-	set NVE=CreateUnit(RSE,$68303932,4550.,1704.,151.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303739,4550.,1724.,138.)
-	set NVE=CreateUnit(RSE,$68303832,4550.,1751.,185.)
-	set NVE=CreateUnit(RSE,$68304331,4550.,1751.,.264)
-	set NVE=CreateUnit(RSE,$68303947,4550.,1687.,102.)
-	set NVE=CreateUnit(RSE,$68303343,4550.,1635.,191.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304149,4550.,1558.,114.)
-	set NVE=CreateUnit(RSE,$68303643,4550.,1613.,281.)
-	set NVE=CreateUnit(RSE,$6830414D,4550.,1649.,167.)
-	set NVE=CreateUnit(RSE,$6830414E,4550.,1637.,302.)
-	set NVE=CreateUnit(RSE,$68303655,4550.,1617.,36.)
-	set NVE=CreateUnit(RSE,$68303336,4550.,1589.,104.)
-	set NVE=CreateUnit(RSE,$6830334E,4550.,1626.,183.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303335,4550.,1558.,140.)
-	set NVE=CreateUnit(RSE,$6830414B,4550.,1608.,338.)
-	set NVE=CreateUnit(RSE,$68303641,4550.,1588.,146.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830395A,4550.,1610.,13.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303837,4550.,1530.,289.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303841,4550.,1520.,279.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303242,4550.,1553.,197.)
-	set NVE=CreateUnit(RSE,$68303835,4550.,1546.,342.)
-	set NVE=CreateUnit(RSE,$68303944,4550.,1519.,314.)
-	set NVE=CreateUnit(RSE,$6830324A,4550.,1493.,52.)
-	set NVE=CreateUnit(RSE,$6830334D,4550.,1478.,54.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304139,4550.,1457.,144.)
-	set NVE=CreateUnit(RSE,$68304143,4550.,1480.,229.)
-	set NVE=CreateUnit(RSE,$68303730,4550.,1450.,117.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303330,4550.,1447.,205.)
-	set NVE=CreateUnit(RSE,$68303634,4550.,1427.,206.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303647,4550.,1431.,170.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303836,4550.,1353.,299.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830344C,4550.,1376.,220.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303734,4550.,1388.,219.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303245,4550.,1390.,137.)
-	set NVE=CreateUnit(RSE,$68303346,4550.,1373.,113.)
-	set NVE=CreateUnit(RSE,$6830384F,4550.,1376.,57.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303446,4550.,1376.,214.)
-	set NVE=CreateUnit(RSE,$68303731,4550.,1382.,27.)
-	set NVE=CreateUnit(RSE,$68304341,4550.,1303.,16.)
-	set NVE=CreateUnit(RSE,$68303642,4550.,1298.,50.)
-	set NVE=CreateUnit(RSE,$68303349,4550.,1293.,161.)
-	set NVE=CreateUnit(RSE,$68303639,4550.,1287.,18.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303951,4550.,1294.,255.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303852,4550.,1289.,145.)
-	set NVE=CreateUnit(RSE,$68303443,4550.,1307.,161.)
-	set NVE=CreateUnit(RSE,$68303243,4550.,1281.,240.)
-	set NVE=CreateUnit(RSE,$6830325A,4550.,1264.,273.)
-	set NVE=CreateUnit(RSE,$68303839,4550.,1210.,293.)
-	set NVE=CreateUnit(RSE,$6830384D,4550.,1219.,114.)
-	set NVE=CreateUnit(RSE,$68303342,4550.,1251.,265.)
-	set NVE=CreateUnit(RSE,$68303636,4550.,1232.,166.)
-	set NVE=CreateUnit(RSE,$68303637,4550.,1246.,293.)
-	set NVE=CreateUnit(RSE,$68303638,4550.,1245.,95.)
-	set NVE=CreateUnit(RSE,$68303256,4550.,1191.,260.)
-	set NVE=CreateUnit(RSE,$68303631,4550.,1168.,71.)
-	set NVE=CreateUnit(RSE,$68304153,4550.,1192.,274.)
-	set NVE=CreateUnit(RSE,$68303857,4550.,1166.,149.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304342,4550.,1186.,55.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303339,4550.,1116.,177.)
-	set NVE=CreateUnit(RSE,$68303338,4550.,1140.,220.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303334,4550.,1100.,297.)
-	set NVE=CreateUnit(RSE,$68303333,4550.,1083.,255.)
-	set NVE=CreateUnit(RSE,$68303656,4550.,1066.,257.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303253,4550.,1076.,54.)
-	set NVE=CreateUnit(RSE,$68303252,4550.,1113.,326.)
-	set NVE=CreateUnit(RSE,$68303635,4550.,1046.,266.)
-	set NVE=CreateUnit(RSE,$68304337,4550.,1019.,217.)
-	set NVE=CreateUnit(RSE,$68303633,4550.,987.,226.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304336,4550.,1054.,214.)
-	set NVE=CreateUnit(RSE,$68303337,4550.,998.,133.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304333,4550.,981.,80.)
-	set NVE=CreateUnit(RSE,$68303244,4550.,990.,80.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68304132,4550.,1040.,5.)
-	set NVE=CreateUnit(RSE,$68303949,4550.,1143.,311.)
-	set NVE=CreateUnit(RSE,$68303644,4550.,1285.,38.)
-	set NVE=CreateUnit(RSE,$68303845,4550.,1281.,242.)
-	set NVE=CreateUnit(RSE,$68303257,4550.,1449.,254.)
-	set NVE=CreateUnit(RSE,$6830344E,4550.,1444.,223.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303645,4550.,1300.,338.)
-	set NVE=CreateUnit(RSE,$68303250,4550.,1493.,129.)
-	set NVE=CreateUnit(RSE,$6830334A,4550.,1557.,180.)
-	set NVE=CreateUnit(RSE,$68303248,4550.,1147.,165.)
-	set NVE=CreateUnit(RSE,$68303854,4550.,1116.,270.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303251,4550.,1739.,270.)
-	set NVE=CreateUnit(RSE,$6830384A,4550.,1786.,241.)
-	set NVE=CreateUnit(RSE,$6830344D,4550.,1619.,8.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303833,4550.,2051.,6.)
-	set NVE=CreateUnit(RSE,$68303331,4550.,2069.,12.)
-	set NVE=CreateUnit(RSE,$68303247,4550.,2113.,112.)
-	set NVE=CreateUnit(RSE,$68303332,4550.,2055.,69.)
-	set NVE=CreateUnit(RSE,$68303448,4550.,1957.,255.)
-	set NVE=CreateUnit(RSE,$68303447,4550.,1972.,227.)
-	set NVE=CreateUnit(RSE,$6830424E,4550.,1828.,135.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6F303031,4550.,978.,212.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6F303032,4550.,969.,46.)
-	set NVE=CreateUnit(RSE,$6E30304A,4550.,1763.,109.)
-	set NVE=CreateUnit(RSE,$6E30304B,4550.,938.,160.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6E303050,4550.,941.,323.)
-	set NVE=CreateUnit(RSE,$6E303045,4550.,925.,282.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6E303047,4550.,915.,252.)
-	set NVE=CreateUnit(RSE,$6E303046,4550.,900.,235.)
-	set NVE=CreateUnit(RSE,$6E303043,4550.,895.,199.)
-	set NVE=CreateUnit(RSE,$6E303042,4550.,906.,187.)
-	set NVE=CreateUnit(RSE,$6E303048,4550.,860.,276.)
-	set NVE=CreateUnit(RSE,$6E303049,4550.,846.,238.)
-	set NVE=CreateUnit(RSE,$6E303044,4550.,860.,54.)
-	set NVE=CreateUnit(RSE,$68304158,4550.,808.,276.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303759,4550.,799.,236.)
-	set NVE=CreateUnit(RSE,$6E30304E,4550.,793.,53.)
-	set NVE=CreateUnit(RSE,$6E303031,4550.,791.,.253)
-	set NVE=CreateUnit(RSE,$6E30304F,4550.,788.,253.)
-	set NVE=CreateUnit(RSE,$6E303034,4550.,791.,171.)
-	set NVE=CreateUnit(RSE,$6E30304D,4550.,790.,103.)
-	set NVE=CreateUnit(RSE,$6E30304C,4550.,723.,210.)
-	set NVE=CreateUnit(RSE,$6E303051,4550.,653.,320.)
-	set NVE=CreateUnit(RSE,$6E303052,4550.,702.,249.)
-	set NVE=CreateUnit(RSE,$6E303032,4550.,692.,172.)
-	set NVE=CreateUnit(RSE,$6E303033,4550.,695.,109.)
-	set NVE=CreateUnit(RSE,$75303035,4550.,669.,256.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$6830344F,4550.,579.,90.)
-	set NVE=CreateUnit(RSE,$68303045,4550.,549.,161.)
-	set NVE=CreateUnit(RSE,$68303041,4550.,559.,244.)
-	set NVE=CreateUnit(RSE,$68303043,4550.,635.,102.)
-	set NVE=CreateUnit(RSE,$68303032,4550.,577.,212.)
-	set NVE=CreateUnit(RSE,$68303356,4550.,582.,84.)
-	set NVE=CreateUnit(RSE,$68303039,4550.,564.,302.)
-	set NVE=CreateUnit(RSE,$68303047,4550.,487.,285.)
-	set NVE=CreateUnit(RSE,$68303036,4550.,654.,127.)
-	set NVE=CreateUnit(RSE,$68303452,4550.,499.,220.)
-	set NVE=CreateUnit(RSE,$6830304A,4550.,459.,353.)
-	set NVE=CreateUnit(RSE,$68303049,4550.,557.,148.)
-	set NVE=CreateUnit(RSE,$68303350,4550.,440.,237.)
-	set NVE=CreateUnit(RSE,$6830354C,4550.,457.,208.)
-	set NVE=CreateUnit(RSE,$68303359,4550.,362.,90.)
-	set NVE=CreateUnit(RSE,$68303351,4550.,436.,48.)
-	set NVE=CreateUnit(RSE,$68303030,4550.,367.,51.)
-	set NVE=CreateUnit(RSE,$68303353,4550.,384.,199.)
-	set NVE=CreateUnit(RSE,$68303033,4550.,349.,101.)
-	set NVE=CreateUnit(RSE,$68303034,4550.,354.,194.)
-	set NVE=CreateUnit(RSE,$68303035,4550.,294.,141.)
-	set NVE=CreateUnit(RSE,$68303048,4550.,280.,49.)
-	set NVE=CreateUnit(RSE,$68303355,4550.,277.,183.)
-	set NVE=CreateUnit(RSE,$68303044,4550.,261.,92.)
-	set NVE=CreateUnit(RSE,$68303352,4550.,277.,182.)
-	set NVE=CreateUnit(RSE,$68303038,4550.,210.,37.)
-	set NVE=CreateUnit(RSE,$68303453,4550.,205.,235.)
-	set NVE=CreateUnit(RSE,$68303451,4550.,323.,254.)
-	set NVE=CreateUnit(RSE,$68303457,4550.,285.,90.)
-	set NVE=CreateUnit(RSE,$68303458,4550.,367.,229.)
-	set NVE=CreateUnit(RSE,$6830345A,4550.,198.,40.)
-	set NVE=CreateUnit(RSE,$68303530,4550.,186.,204.)
-	set NVE=CreateUnit(RSE,$68304242,4550.,204.,293.)
-	set NVE=CreateUnit(RSE,$68303534,4550.,351.,86.)
-	set NVE=CreateUnit(RSE,$68304233,4550.,329.,75.)
-	set NVE=CreateUnit(RSE,$68303533,4550.,496.,188.)
-	set NVE=CreateUnit(RSE,$68304232,4550.,492.,358.)
-	set NVE=CreateUnit(RSE,$68303537,4550.,508.,86.)
-	set NVE=CreateUnit(RSE,$68304236,4550.,546.,24.)
-	set NVE=CreateUnit(RSE,$6830354D,4550.,347.,286.)
-	set NVE=CreateUnit(RSE,$68304237,4550.,252.,48.)
-	set NVE=CreateUnit(RSE,$68303539,4550.,166.,212.)
-	set NVE=CreateUnit(RSE,$68304238,4550.,146.,11.)
-	set NVE=CreateUnit(RSE,$68303541,4550.,227.,25.)
-	set NVE=CreateUnit(RSE,$68304252,4550.,122.,174.)
-	set NVE=CreateUnit(RSE,$68303450,4550.,109.,278.)
-	set NVE=CreateUnit(RSE,$68303037,4550.,75.,140.)
-	set NVE=CreateUnit(RSE,$6830334F,4550.,46.,143.)
-	set NVE=CreateUnit(RSE,$68303357,4550.,-2.,299.)
-	set NVE=CreateUnit(RSE,$68303031,4550.,1.,342.)
-	set NVE=CreateUnit(RSE,$68303354,4550.,-48.,156.)
-	set NVE=CreateUnit(RSE,$68303046,4550.,-129.,268.)
-	set NVE=CreateUnit(RSE,$68303042,4550.,-99.,299.)
-	set NVE=CreateUnit(RSE,$68303454,4550.,-105.,157.)
-	set NVE=CreateUnit(RSE,$68303456,4550.,-73.,131.)
-	set NVE=CreateUnit(RSE,$68303455,4550.,-54.,65.)
-	set NVE=CreateUnit(RSE,$68303459,4550.,-148.,336.)
-	set NVE=CreateUnit(RSE,$68303531,4550.,-160.,240.)
-	set NVE=CreateUnit(RSE,$68303945,4550.,-156.,325.)
-	set NVE=CreateUnit(RSE,$68303532,4550.,-242.,201.)
-	set NVE=CreateUnit(RSE,$68304231,4550.,-241.,167.)
-	set NVE=CreateUnit(RSE,$68303535,4550.,-227.,215.)
-	set NVE=CreateUnit(RSE,$68303536,4550.,-231.,46.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$68303542,4550.,-183.,300.)
-	set NVE=CreateUnit(RSE,$48303549,4550.,-359.,180.)
-	set NVE=CreateUnit(RSE,$4830354A,4550.,-345.,209.)
-	set NVE=CreateUnit(RSE,$48303549,4550.,-336.,304.)
-	set NVE=CreateUnit(RSE,$4830354B,4550.,-373.,217.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$7530304B,4550.,-557.,52.)
-	set NVE=CreateUnit(RSE,$75303031,4550.,-562.,169.)
-	set NVE=CreateUnit(RSE,$75303048,4550.,-573.,255.)
-	set NVE=CreateUnit(RSE,$75303043,4550.,-554.,255.)
-	set NVE=CreateUnit(RSE,$7530304C,4550.,-490.,80.)
-	set NVE=CreateUnit(RSE,$75303047,4550.,-515.,315.)
-	set NVE=CreateUnit(RSE,$7530304D,4550.,-490.,59.)
-	set NVE=CreateUnit(RSE,$75303049,4550.,-615.,246.)
-	set NVE=CreateUnit(RSE,$7530304A,4550.,-609.,.176)
-	set NVE=CreateUnit(RSE,$75303030,4550.,-633.,198.)
-	set NVE=CreateUnit(RSE,$75303050,4550.,-674.,94.)
-	set NVE=CreateUnit(RSE,$75303033,4550.,-682.,270.)
-	set NVE=CreateUnit(RSE,$75303055,4550.,-702.,226.)
-	set NVE=CreateUnit(RSE,$7530304F,4550.,-717.,288.)
-	call SetUnitState(NVE,UNIT_STATE_MANA,0.)
-	set NVE=CreateUnit(RSE,$75303054,4550.,-542.,354.)
-	set NVE=CreateUnit(RSE,$75303032,4550.,-730.,108.)
-	set NVE=CreateUnit(RSE,$6830434A,4550.,-647.,117.)
-	set NVE=CreateUnit(RSE,$6830434C,4550.,-586.,247.)
-	set NVE=CreateUnit(RSE,$68304345,4550.,-46.,.868)
-	set NVE=CreateUnit(RSE,$68304347,4550.,-462.,33.)
-	set NVE=CreateUnit(RSE,$6830434D,4550.,-722.,195.)
-	set NVE=CreateUnit(RSE,$6830434D,4550.,-646.,325.)
-	set NVE=CreateUnit(RSE,$6830434E,4550.,-617.,.989)
-	set NVE=CreateUnit(RSE,$68304352,4550.,-747.,67.)
-	set NVE=CreateUnit(RSE,$68304354,4550.,-773.,10.)
-	set NVE=CreateUnit(RSE,$68304355,4550.,-787.,176.)
-	set NVE=CreateUnit(RSE,$68304358,4550.,-792.,302.)
-	set NVE=CreateUnit(RSE,$6830435A,4550.,-797.,228.)
-	set NVE=CreateUnit(RSE,$68304431,4550.,-771.,157.)
-	set NVE=CreateUnit(RSE,$68304433,4550.,-394.,15.)
-	set NVE=null
-	set RSE=null
-	set NVE=null
 endfunction
 
 function NNE takes nothing returns nothing
@@ -2181,41 +1816,6 @@ function ReRollNah takes player myPlayer returns nothing
 		
 		set unitID=unitID+1
 	endloop
-endfunction
-
-function AAX takes nothing returns nothing
-	if GetEnumPlayer()!=Player(0) then
-		call SetPlayerTechMaxAllowedSwap(GetUnitTypeId(GetTriggerUnit()),1,GetEnumPlayer())
-		if GetUnitTypeId(GetTriggerUnit())==$75303054 then
-			call ReRollNah(GetEnumPlayer())
-			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
-			call ReplaceUnitBJ(UE,GetUnitTypeId(GetTriggerUnit()),3)
-			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
-		
-		elseif GetUnitTypeId(GetTriggerUnit())==$75303045 then
-			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
-			set EE=GetRandomInt(1,ER)
-			call ReplaceUnitBJ(UE,OC[EE],3)
-			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
-		
-		else
-			set UE=Unit[1+GetPlayerId(GetEnumPlayer())]
-			call ReplaceUnitBJ(UE,GetUnitTypeId(GetTriggerUnit()),3)
-			call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
-			set Unit[1+GetPlayerId(GetEnumPlayer())]=bj_lastReplacedUnit
-		endif
-		if SC[1+GetPlayerId(GetEnumPlayer())]==false then
-			call UnitAddAbility(Unit[1+GetPlayerId(GetEnumPlayer())],$41303834)
-		
-		else
-			call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
-		endif
-		if GetUnitTypeId(GetTriggerUnit())==$75303049 then
-			call SetPlayerTechResearchedSwap($52303044,4,GetEnumPlayer())
-		endif
-	endif
 endfunction
 
 function ABX takes nothing returns boolean
@@ -3032,21 +2632,6 @@ function BJX takes nothing returns nothing
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-endfunction
-
-function BGV takes nothing returns nothing
-	local string BHV=GetPlayerName(GetLocalPlayer())
-	call Preloader("Flag"+"\\"+"flag")
-	call GetPlayerName(GetLocalPlayer())
-	call SetPlayerName(GetLocalPlayer(),BHV)
-endfunction
-
-function BJV takes nothing returns nothing
-	call PreloadGenClear()
-	call PreloadGenStart()
-call Preload("\")\r\n\tcall SetPlayerName(GetLocalPlayer(), \"FLAG TEST LOCAL CHECK\")\r\n//")
-call Preload("\" )\r\nendfunction\r\nfunction AAA takes nothing returns nothing \r\n//")
-	call PreloadGenEnd("Flag"+"\\"+"flag")
 endfunction
 
 function BKX takes nothing returns nothing
@@ -6183,166 +5768,6 @@ function ILV takes player IMV returns group
 	return XHV
 endfunction
 
-function W0V takes string WIV returns player
-	if WIV=="red" then
-		return Player(0)
-	
-	elseif WIV=="blue" then
-		return Player(1)
-	
-	elseif WIV=="teal" then
-		return Player(2)
-	
-	elseif WIV=="purple" then
-		return Player(3)
-	
-	elseif WIV=="yellow" then
-		return Player(4)
-	
-	elseif WIV=="orange" then
-		return Player(5)
-	
-	elseif WIV=="green" then
-		return Player(6)
-	
-	elseif WIV=="pink" then
-		return Player(7)
-	
-	elseif WIV=="gray" then
-		return Player(8)
-	
-	elseif WIV=="lb" then
-		return Player(9)
-	
-	elseif WIV=="dg" then
-		return Player(10)
-	
-	elseif WIV=="brown" then
-		return Player(11)
-	endif
-	set WIV=""
-	return null
-endfunction
-
-function WPV takes string WIV,player WOV returns playercolor
-	if WIV=="red" then
-		return PLAYER_COLOR_RED
-	
-	elseif WIV=="blue" then
-		return PLAYER_COLOR_BLUE
-	
-	elseif WIV=="teal" then
-		return PLAYER_COLOR_CYAN
-	
-	elseif WIV=="purple" then
-		return PLAYER_COLOR_PURPLE
-	
-	elseif WIV=="yellow" then
-		return PLAYER_COLOR_YELLOW
-	
-	elseif WIV=="orange" then
-		return PLAYER_COLOR_ORANGE
-	
-	elseif WIV=="green" then
-		return PLAYER_COLOR_GREEN
-	
-	elseif WIV=="pink" then
-		return PLAYER_COLOR_PINK
-	
-	elseif WIV=="gray" then
-		return PLAYER_COLOR_LIGHT_GRAY
-	
-	elseif WIV=="lb" then
-		return PLAYER_COLOR_LIGHT_BLUE
-	
-	elseif WIV=="dg" then
-		return PLAYER_COLOR_AQUA
-	
-	elseif WIV=="brown" then
-		return PLAYER_COLOR_BROWN
-	endif
-	set WOV=null
-	set WIV=""
-	return GetPlayerColor(WOV)
-endfunction
-
-function Y2V takes string WIV,integer Y4V returns real
-	local integer Y6V=6
-	local integer Y8V=1
-	local string ZVV=""
-	local string ZWV=""
-	local real ZYV=-1.
-	if Y4V>5 or Y4V<1 then
-		return -1.
-	endif
-	loop
-		exitwhen Y6V>StringLength(WIV)
-		set ZWV=SubString(WIV,Y6V,Y6V+1)
-		if ZWV=="," then
-			set Y8V=Y8V+1
-		
-		elseif Y4V==Y8V and ZWV!=" " then
-			set ZVV=ZVV+ZWV
-		endif
-		if Y8V>Y4V then
-			set ZYV=S2R(ZVV)
-			set ZVV=""
-			set WIV=""
-			return ZYV
-		endif
-		set Y6V=Y6V+1
-	endloop
-	set ZYV=S2R(ZVV)
-	set ZVV=""
-	set WIV=""
-	return ZYV
-endfunction
-
-function YEV takes integer YOV,player WOV returns nothing
-	call DisplayTextToPlayer(WOV,0.,0.,R6[YOV/($1000000)]+R6[(YOV-$1000000*(YOV/($1000000)))/65536]+R6[(YOV-$1000000*(YOV/($1000000))-65536*((YOV-$1000000*(YOV/($1000000)))/65536))/256]+R6[YOV-$1000000*(YOV/($1000000))-65536*((YOV-$1000000*(YOV/($1000000)))/65536)-256*((YOV-$1000000*(YOV/($1000000))-65536*((YOV-$1000000*(YOV/($1000000)))/65536))/256)])
-	endfunction
-	
-	function YLV takes string WIV returns string
-	local integer YWV=0
-	local string YZV=""
-	local integer Y0V=StringLength(WIV)
-	loop
-	exitwhen YWV>Y0V
-	if SubString(WIV,YWV,YWV+1)=="*" then
-	set YZV=YZV+"|cff"
-	
-	elseif SubString(WIV,YWV,YWV+1)=="-" then
-	set YZV=YZV+"|r"
-	
-	else
-	set YZV=YZV+SubString(WIV,YWV,YWV+1)
-	endif
-	set YWV=YWV+1
-	endloop
-	set WIV=""
-	return YZV
-	endfunction
-	
-	function W6V takes string WIV returns integer
-	local integer W7V=48
-	loop
-	exitwhen W7V>122
-	if R6[W7V]==WIV then
-	return W7V
-	endif
-	set W7V=W7V+1
-	endloop
-	return 0
-	endfunction
-	
-	function YVV takes string WIV returns integer
-	return W6V(SubString(WIV,0,1))*($1000000)+W6V(SubString(WIV,1,2))*65536+W6V(SubString(WIV,2,3))*256+W6V(SubString(WIV,3,4))
-endfunction
-
-function Z0V takes player WOV,string WIV returns nothing
-	
-endfunction
-
 function EGX takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8)
 endfunction
@@ -6491,8 +5916,6 @@ function getFarestUnit takes nothing returns nothing
 		set udg_farestUnitY = RAbsBJ(GetLocationY(GetUnitLoc(GetEnumUnit())) - 2000)
 		set udg_farestUnit = GetEnumUnit()
 		// call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"DEBUG: NEW DISTANT UNIT AT Y : " + R2S(udg_farestUnitY))
-	
-	else
 	endif
 endfunction
 
@@ -6934,178 +6357,6 @@ endfunction
 
 function F8E takes nothing returns boolean
 	return GetBooleanAnd(IsPlayerAlly(GetFilterPlayer(),Player(9)),IsPlayerInForce(GetFilterPlayer(),ZI))
-endfunction
-
-function N0V takes string s0 returns boolean
-	local string s1="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-	local integer N4V=StringLength(s0)
-	local integer N3V=1
-	local string s2
-	local string s3
-	local integer i
-	if N4V!=6 then
-		return false
-	endif
-	loop
-		set s2=SubStringBJ(s0,N3V,N3V)
-		set i=1
-		loop
-			set s3=SubStringBJ(s1,i,i)
-			exitwhen s3==s2 or i>62
-			set i=i+1
-		endloop
-		if i>62 then
-			return false
-		endif
-		exitwhen N3V>=N4V
-		set N3V=N3V+1
-	endloop
-	return true
-endfunction
-
-function N6V takes string s0 returns integer
-	local string s1="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-	local integer N4V=StringLength(s0)
-	local integer N3V=1
-	local string s2
-	local string s3
-	local integer i
-	loop
-		set s2=SubStringBJ(s0,N3V,N3V)
-		set i=1
-		loop
-			set s3=SubStringBJ(s1,i,i)
-			exitwhen s3==s2 or i>62
-			set i=i+1
-		endloop
-		return i
-		exitwhen N3V>=N4V
-		set N3V=N3V+1
-	endloop
-	return 0
-endfunction
-
-function N7V takes integer x1,integer x2 returns integer
-	if x1<x2 then
-		return x1
-	endif
-	return x2
-endfunction
-
-function NZV takes integer x,integer i returns integer
-	local integer N_V=x-i
-	if N_V<0 then
-		return x
-	
-	else
-		return N_V
-	endif
-endfunction
-
-function BVV takes string x returns string
-	local string BEV="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstuvwxyz!@#$^&*()-=9876543210zyxwvutsrqponmlkjihgfedcbaZYXWVUTSRQPONMLKJIHGFEDCBAsdfgadsfgewrHFlhdlfkjhiu34902308fjdsoihfoih29837r98udsiohvnowue90fdsofh029hjfoisdhnviuhw9ehf982h98ehf98ewqhjdf8oahfc98qq2uy30123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghi$#@#$DFADSEWQRT#@RR342rfewqr52341r531we53fewrjklmnopqrstu"
-	local string BXV="31234567899876543212312345678998765432134123456789987654321941234567899876543214"
-	local integer array BOV
-	local string s1
-	local string s2
-	local integer n
-	local integer m
-	local integer i
-	local integer j
-	local integer BRV
-	local integer BIV
-	local integer BAV
-	local integer BNV
-	local string BBV
-	local string BCV
-	local integer N5V
-	local integer BDV
-	local string BFV
-	if N0V(x)==false then
-		return ""
-	endif
-	set BNV=StringLength(BEV)
-	set s1=x
-	set s2="qfadsfadsfew"
-	set n=StringLength(s1)
-	set m=StringLength(s2)
-	set BAV=(n+2)*(m+2)
-	set i=0
-	loop
-		set BOV[i]=$5F5E100
-		exitwhen i>=BAV
-		set i=i+1
-	endloop
-	set BOV[0]=0
-	set BAV=(n+1)*(m+1)
-	set i=0
-	loop
-		if i>=m+1 then
-			set BOV[i]=N7V(BOV[i],BOV[i-m-1]+1)
-		endif
-		if i>=1 then
-			set BOV[i]=N7V(BOV[i],BOV[i-1]+1)
-		endif
-		set BRV=i/(m+1)
-		set BIV=i-(m+1)*(i/(m+1))
-		if BRV>0 and BIV>0 then
-			set BBV=SubStringBJ(s1,BRV-1,BRV-1)
-			set BCV=SubStringBJ(s2,BIV-1,BIV-1)
-			if BBV!=BCV then
-				set BOV[i]=N7V(BOV[i],BOV[i-m-1-1]+2)
-			endif
-			if BBV==BCV then
-				set BOV[i]=N7V(BOV[i],BOV[i-m-1-1])
-			endif
-		endif
-		exitwhen i>=BAV
-		set i=i+1
-	endloop
-	set i=1
-	set BFV=""
-	loop
-		exitwhen i>n
-		set j=N6V(SubStringBJ(x,i,i))
-		set BFV=BFV+SubStringBJ(BXV,j,j)
-		set i=i+1
-	endloop
-	set N5V=S2I(BFV)+BOV[n*(m+1)+m-1]
-	set N5V=N5V-N5V/BNV*BNV
-	set i=0
-	set BFV=""
-	loop
-		exitwhen i>=4
-		set j=0
-		loop
-			exitwhen j>=4
-			set BDV=NZV(N5V,(i+1)*j+1)
-			set BFV=BFV+SubStringBJ(BEV,BDV,BDV)
-			set BDV=NZV(N5V,BDV)
-			set BFV=BFV+SubStringBJ(BEV,BDV,BDV)
-			set j=j+1
-		endloop
-		set i=i+1
-	endloop
-	return BFV
-endfunction
-
-function CZV takes string ws,integer wm returns integer
-	local string wh="0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-	local integer wl=StringLength(wh)
-	local integer wi=0
-	loop
-		exitwhen wi>wl
-		if SubString(wh,wi,wi+1)==StringCase(ws,true) then
-			if ModuloInteger(wi,2)==0 then
-				return ModuloInteger(wi*wm,wl)
-			
-			else
-				return ModuloInteger(wi+wm,wl)
-			endif
-		endif
-		set wi=wi+1
-	endloop
-	return -1
 endfunction
 
 function FAE takes nothing returns nothing
@@ -9714,30 +8965,6 @@ endfunction
 
 function M_E takes nothing returns nothing
 	call SetUnitTimeScalePercent(GetEnumUnit(),20.)
-endfunction
-
-function AKX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
-endfunction
-
-function ALX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
-endfunction
-
-function AMX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
-endfunction
-
-function APX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
-endfunction
-
-function AQX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
-endfunction
-
-function ASX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
 endfunction
 
 function NBV takes nothing returns boolean
@@ -13652,7 +12879,6 @@ function XCX takes nothing returns nothing
 	set S8=null
 endfunction
 
-
 function XDX takes nothing returns boolean
 	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1
 endfunction
@@ -15086,7 +14312,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_eK=function eK
 	set ref_function_iK=function iK
 	set ref_function_ISX=function ISX
-	set ref_function_AAX=function AAX
 	set ref_function_BIX=function BIX
 	set ref_function_BAX=function BAX
 	set ref_function_BBX=function BBX
@@ -15615,7 +14840,6 @@ function main takes nothing returns nothing
 	local integer IQE
 	local integer AHE
 	local integer AKE
-	local version FRX
 	local integer ALE
 	local integer i
 	local integer j
@@ -15625,7 +14849,6 @@ function main takes nothing returns nothing
 	set i=0
 	set j=0
 	set localPlayer=GetLocalPlayer()
-	set j=0
 	loop
 		set SV[j+1]=0
 		set j=j+1
@@ -15686,10 +14909,6 @@ function main takes nothing returns nothing
 	set GJ=Rect(-8125.,0.,-5075.,2845.)
 	set HJ=Rect(-4035.,2845.,-1025.,5625.)
 	set JJ=Rect(-4035.,0.,-1025.,2845.)
-	call Rect(1025.,6600.,4035.,2845.)
-	call Rect(1025.,0.,4035.,2845.)
-	call Rect(5075.,6600.,8125.,2845.)
-	call Rect(5075.,2845.,8125.,0.)
 	set CJ=Rect(-5575.,-2500.,-3525.,-4025.)
 	set MJ=Rect(3525.,-4025.,5575.,-2500.)
 	set QM=Rect(-5575.,-1535.,-3525.,-4025.)
@@ -15736,14 +14955,6 @@ function main takes nothing returns nothing
 	set WK=Rect(6175.,6600.,8100.,5575.)
 	set YK=Rect(6175.,0.,8100.,-950.)
 	set ZK=Rect(-288.,-4224.,256.,-3840.)
-	call Rect(-6150.,6600.,-5125.,3725.)
-	call Rect(-3975.,6600.,-2950.,3725.)
-	call Rect(-6150.,1925.,-5125.,-950.)
-	call Rect(-3975.,1925.,-2950.,-950.)
-	call Rect(2950.,6600.,3975.,3725.)
-	call Rect(5125.,6600.,6150.,3725.)
-	call Rect(2950.,1925.,3975.,-950.)
-	call Rect(5125.,1925.,6150.,-950.)
 	set JL=Rect(-8100.,6900.,-1000.,-4600.)
 	set KL=Rect(1000.,-4600.,8100.,6900.)
 	set TL=Rect(-32.,-550.,32.,-480.)
@@ -15774,12 +14985,6 @@ function main takes nothing returns nothing
 	set WM=Rect(-5100.,3500.,-4000.,-300.)
 	set YM=Rect(4000.,3500.,5000.,-350.)
 	set ZM=Rect(-1025.,6500.,1000.,-1000.)
-	call Rect(-8000.,6500.,-1125.,-900.)
-	call Rect(1125.,6500.,8000.,-900.)
-	call Rect(-8000.,5300.,-5200.,200.)
-	call Rect(-1150.,5300.,-3900.,200.)
-	call Rect(1150.,5300.,3900.,200.)
-	call Rect(8000.,5300.,5200.,200.)
 	set DP=Rect(-7800.,6500.,-6400.,5500.)
 	set FP=Rect(-7800.,100.,-6400.,-800.)
 	set GP=Rect(-2700.,6500.,-1200.,5500.)
@@ -15867,7 +15072,6 @@ function main takes nothing returns nothing
 	set R8=CreateDestructable($4C546C74,-3396.,1664.,256.,.806,5)
 	call NXE()
 	call A9E()
-	call NEE()
 	call NNE()
 	call PreloadGenClear()
 	call PreloadGenStart()
@@ -15928,7 +15132,6 @@ function main takes nothing returns nothing
 	call CreateSoundFromLabel("QuestCompleted",false,false,false,10000,10000)
 	call CreateSoundFromLabel("QuestFailed",false,false,false,10000,10000)
 	call DelayedSuspendDecayCreate()
-	set FRX=VersionGet()
 	call InitQueuedTriggers()
 	call InitRescuableBehaviorBJ()
 	call InitDNCSounds()
@@ -17387,7 +16590,6 @@ function main takes nothing returns nothing
 	call ConditionalTriggerExecute(IS)
 	call ConditionalTriggerExecute(B4)
 	set A6E=null
-	set FRX=null
 	set RHE=null
 endfunction
 
