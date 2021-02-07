@@ -1832,12 +1832,8 @@ function ReRollNah takes player myPlayer returns nothing
 					call SetImageRenderAlways(VisualPick[mirrorPlayerID*6+unitID],true)
 				endif
 				
-				// Show images for allies or observers
-				call ShowImage(VisualPick[playerID*6+unitID],IsPlayerAlly(localPlayer,myPlayer) or IsPlayerObserver(localPlayer))
-				
-				// Show images for mirror player if in morror mode
-				call ShowImage(VisualPick[mirrorPlayerID*6+unitID],mirrorMode and (IsPlayerAlly(localPlayer,mirrorPlayer) or IsPlayerObserver(localPlayer)))
-			
+				// Show images if mirrorMode or ally or observer
+				call ShowImage(VisualPick[playerID*6+unitID],mirrorMode or IsPlayerAlly(localPlayer,myPlayer) or IsPlayerObserver(localPlayer))
 			else
 				call SetPlayerTechMaxAllowedSwap(myInteger,0,myPlayer)
 				if mirrorMode then
