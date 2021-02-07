@@ -14880,6 +14880,7 @@ function main takes nothing returns nothing
 	local region RHE
 	local integer AVV
 	call initGlobals()
+	set kingSpell=GetRandomInt(1,3) // Will be moved to the correct kingSpell function later
 	set i=0
 	set j=0
 	set localPlayer=GetLocalPlayer()
@@ -16789,5 +16790,4 @@ function config takes nothing returns nothing
 	call InitCustomPlayerSlots()
 	call InitCustomTeams()
 	call InitAllyPriorities()
-	set kingSpell=GetRandomInt(1,3)
 endfunction
