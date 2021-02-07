@@ -8991,7 +8991,7 @@ Name=Destroyer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=P|cffFFcc00r|romote to Destroyer
-Ubertip=|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff80001300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Attack|r|n
+Ubertip=|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff80001550|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Attack|r|n
 
 [h22C]
 Art=ReplaceableTextures\CommandButtons\BTNChaosSpaceOrc.blp
