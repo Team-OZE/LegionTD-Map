@@ -127,7 +127,7 @@ Name=Wisp
 Requires=u00Q
 Specialart=Units\NightElf\Wisp\WispExplode.mdl
 Tip=Train Wisp - [|cffffcc00W|r]
-Ubertip="Basic worker unit. Can build farm, harvest lumber, ( You can only train 10 wisp max )"
+Ubertip="Basic worker unit. Can build farms and harvest lumber (You can only train 10 Wisps)"
 
 [e004]
 Art=ReplaceableTextures\CommandButtons\BTNPatrol.blp
@@ -2358,7 +2358,7 @@ Name=Frost Wolf
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Frost Wolf (|cffFFcc00Q|r)
-Ubertip="Ferocious melee unit with normal damage.|n|n|cffFFcc00+12 income|r|n|cffCCCCCCNormal damage, Medium armor.|r|n|cffBB3333Frost Aura|r: slows nearby enemies"
+Ubertip="Ferocious melee unit with normal damage.|n|n|cffFFcc00+12 income|r|n|cffCCCCCCNormal damage, Medium armor.|r|n|cffBB3333Frost Aura|r: Slows nearby enemies"
 
 [h051]
 Art=ReplaceableTextures\CommandButtons\BTNIceTroll.blp
@@ -2385,7 +2385,7 @@ Name=Warlock
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Warlock (|cffFFcc00E|r)
-Ubertip="A magician with the fortitude of a warrior.|n|n|cffFFcc00+14 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cffBB3333Corruption:|r reduces armor of target"
+Ubertip="A magician with the fortitude of a warrior.|n|n|cffFFcc00+14 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cffBB3333Corruption:|r Reduces armor of target"
 
 [h053]
 Art=ReplaceableTextures\CommandButtons\BTNFurbolgPanda.blp
@@ -2396,7 +2396,7 @@ Name=Pandaren
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Pandaren (|cffFFcc00R|r)
-Ubertip="Clawed, white-furred savage.|n|n|cffFFcc00+15 income|r|n|cffCCCCCCNormal damage, Heavy armor.|r|n|cff33BB33Hotblood|r: bonus regeneration(14hps)|n|cff33BBBBRush|r: Provides 30% increased ms to allies in 1000AoE"
+Ubertip="Clawed, white-furred savage.|n|n|cffFFcc00+15 income|r|n|cffCCCCCCNormal damage, Heavy armor.|r|n|cff33BB33Hotblood|r: Bonus regeneration(14hps)|n|cff33BBBBRush|r: Provides 30% increased ms to allies in 1000AoE"
 
 [h054]
 Art=ReplaceableTextures\CommandButtons\BTNDranai.blp
@@ -2434,7 +2434,7 @@ Name=Shaman
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Shaman (|cffFFcc00S|r)
-Ubertip="Orc spellweaver with great magic damage.|n|n|cffFFcc00+18 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cff33BBBBBlood Rush|r: increases attack speed & movement speed of an ally."
+Ubertip="Orc spellweaver with great magic damage.|n|n|cffFFcc00+18 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cff33BBBBBlood Rush|r: Increases attack speed & Movement speed of an ally."
 
 [h057]
 Art=ReplaceableTextures\CommandButtons\BTNAbomination.blp
@@ -2445,7 +2445,7 @@ Name=Pudge
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Pudge (|cffFFcc00D|r)
-Ubertip="Brutal abomination of flesh and bone.|n|n|cffFFcc00+17 income|r|n|cffCCCCCCNormal damage, Heavy armor.|r|n|cff33BBBBFresh Meat|r: grants nearby melee allies a life-stealing attack"
+Ubertip="Brutal abomination of flesh and bone.|n|n|cffFFcc00+17 income|r|n|cffCCCCCCNormal damage, Heavy armor.|r|n|cff33BBBBFresh Meat|r: Grants nearby melee allies a life-stealing attack"
 
 [h059]
 Art=ReplaceableTextures\CommandButtons\BTNSeaGiant.blp
@@ -2456,7 +2456,7 @@ Name=Behemoth
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Behemoth (|cffFFcc00Z|r)
-Ubertip="Extremely tough attacker. Can endure quite a lot of damage and still fight.|n|n|cffFFcc00+25 income|r|n|cffCCCCCCSiege damage, Fortified armor.|r|n|cff33BBBBResilience Aura|r: +3 bonus armor to nearby allies|n|cff33BB33Spell Immunity|r"
+Ubertip="Extremely tough attacker. Can endure quite a lot of damage and still fight.|n|n|cffFFcc00+25 income|r|n|cffCCCCCCSiege damage, Fortified armor.|r|n|cff33BBBBResilience Aura|r: +5 bonus armor to nearby allies|n|cff33BB33Spell Immunity|r"
 
 [h05A]
 Art=ReplaceableTextures\CommandButtons\BTNInfernal.blp
@@ -2467,7 +2467,7 @@ Name=Infernal
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Infernal (|cffFFcc00C|r)
-Ubertip="Fighter from the Burning Legion. with immolation flame that can burn nearby enemy.|n|n|cffFFcc00+50 income|r|n|cffCCCCCCChaos damage, Fortified.|r|n|cffBB3333Bash|r: 17% chance to deal 180 damage and stun target for 1(0.5)sec.|n|cff33BBBBImmolation|r: Burn nearby enemy units for 20 damage per second.(470 range)|n|cff33BB33Spell Immunity|r"
+Ubertip="Fighter from the Burning Legion. With immolation flame that can burn nearby enemies.|n|n|cffFFcc00+50 income|r|n|cffCCCCCCChaos damage, Fortified.|r|n|cffBB3333Bash|r: 17% chance to deal 180 damage and stun target for 1(0.5)sec.|n|cff33BBBBImmolation|r: Burn nearby enemy units for 20 damage per second (470 range)|n|cff33BB33Spell Immunity|r"
 
 [h05B]
 Art=ReplaceableTextures\CommandButtons\BTNForgottenOne.blp
@@ -2480,7 +2480,7 @@ Name=Kraken
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Kraken (|cffFFcc00X|r)
-Ubertip="A widely feared monster with no real weaknesses.|n|n|cffFFcc00+30 income|r|n|cffCCCCCCPierce damage, Heavy armor.|r|n|cffBB3333Kraken Poison|r: slows and deals damage per second to an enemy.|n|cff33BBBBHealing Aura|r: +10hp per second bonus regeneration to nearby allies.|n|cff33BB33Spell Immunity|r"
+Ubertip="A widely feared monster with no real weaknesses.|n|n|cffFFcc00+30 income|r|n|cffCCCCCCPierce damage, Heavy armor.|r|n|cffBB3333Kraken Poison|r: Slows and deals damage per second to an enemy.|n|cff33BBBBHealing Aura|r: +10hp per second bonus regeneration to nearby allies.|n|cff33BB33Spell Immunity|r"
 
 [h05C]
 Art=ReplaceableTextures\CommandButtons\BTNHumanBarracks.blp
@@ -4222,7 +4222,7 @@ Name=Ice Troll
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Ice Troll (|cffFFcc00W|r)
-Ubertip="|cffFFcc00(Require level 10)|r|n|nNative of northrend with a slowing, ranged attack.|n|n|cffFFcc00+12 income|r|n|cffCCCCCCPierce damage, Medium armor.|r|n|cffBB3333Cold Attack|r"
+Ubertip="|cffFFcc00Requires level 10|r|n|nNative of northrend with a slowing, ranged attack.|n|n|cffFFcc00+12 income|r|n|cffCCCCCCPierce damage, Medium armor.|r|n|cffBB3333Cold Attack|r"
 
 [h09F]
 Art=ReplaceableTextures\CommandButtons\BTNPeasant.blp
@@ -4950,7 +4950,7 @@ Name=Warlock
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Warlock (|cffFFcc00E|r)
-Ubertip="|cffFFcc00(Require level 10)|r|n|nA magician with the fortitude of a warrior.|n|n|cffFFcc00+14 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cffBB3333Corruption:|r reduces armor of target"
+Ubertip="|cffFFcc00Requires level 10|r|n|nA magician with the fortitude of a warrior.|n|n|cffFFcc00+14 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cffBB3333Corruption:|r reduces armor of target"
 
 [h0B2]
 Art=ReplaceableTextures\CommandButtons\BTNFurbolgPanda.blp
@@ -4971,7 +4971,7 @@ Name=Dark Draenei
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Dark Draenei (|cffFFcc00A|r)
-Ubertip="|cffFFcc00(Require level 10)|r|n|nElusive alien warrior.|n|n|cffFFcc00+15 income|r|n|cffCCCCCCNormal damage, Medium armor.|r|n|cff3333BBSwiftness Aura|r"
+Ubertip="|cffFFcc00Requires level 10|r|n|nElusive alien warrior.|n|n|cffFFcc00+15 income|r|n|cffCCCCCCNormal damage, Medium armor.|r|n|cff3333BBSwiftness Aura|r"
 
 [h0B4]
 Art=ReplaceableTextures\CommandButtons\BTNGlaiveThrower.blp
@@ -4999,7 +4999,7 @@ Name=Shaman
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Shaman (|cffFFcc00S|r)
-Ubertip="|cffFFcc00(Require level 10)|r|n|nOrc spellweaver with great magic damage.|n|n|cffFFcc00+18 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cff33BBBBBlood Rush|r: increases attack speed & movement speed of an ally."
+Ubertip="|cffFFcc00Requires level 10|r|n|nOrc spellweaver with great magic damage.|n|n|cffFFcc00+18 income|r|n|cffCCCCCCMagic damage, Light armor.|r|n|cff33BBBBBlood Rush|r: increases attack speed & movement speed of an ally."
 
 [h0B6]
 Art=ReplaceableTextures\CommandButtons\BTNAbomination.blp
@@ -5059,7 +5059,7 @@ Name=Kraken
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Kraken (|cffFFcc00X|r)
-Ubertip="A widely feared monster with no real weaknesses.|n|n|cffFFcc00+30 income|r|n|cffCCCCCCPierce damage, Heavy armor.|r|n|cffBB3333Kraken Poison|r: slows and deals damage per second to an enemy.|n|cff33BBBBHealing Aura|r: +10hp per second bonus regeneration to nearby allies.|n|cff33BB33Spell Immunity|r"
+Ubertip="A widely feared monster with no real weaknesses.|n|n|cffFFcc00+30 income|r|n|cffCCCCCCPierce damage, Heavy armor.|r|n|cffBB3333Kraken Poison|r: Slows and deals damage per second to an enemy.|n|cff33BBBBHealing Aura|r: +10hp per second bonus regeneration to nearby allies.|n|cff33BB33Spell Immunity|r"
 
 [h0BB]
 Art=ReplaceableTextures\CommandButtons\BTNTimberWolf.blp
@@ -5293,7 +5293,7 @@ Name=Demon
 Requires=u00D
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Tip=Summon Demon(|cffFFcc00V|r)
-Ubertip="|cffFFcc00(Require level 15)|r|n|nCommander of the Burning Legion, has powerful ranged attack.|n|n|cffFFcc00+70 income|r|n|cffCCCCCCChaos damage, Unarmored.|r|n|cffBB3333Swiftness Aura|r : Increases nearby allie's movement speed by 15%.|n|cff33BBBBCommand Aura|r: Increases nearby allie's damage by 10%.|n|cff33BB33Spell Immunity|r"
+Ubertip="|cffFFcc00Requires level 15|r|n|nCommander of the Burning Legion, has powerful ranged attack.|n|n|cffFFcc00+70 income|r|n|cffCCCCCCChaos damage, Unarmored.|r|n|cffBB3333Swiftness Aura|r : Increases nearby allie's movement speed by 15%.|n|cff33BBBBCommand Aura|r: Increases nearby allie's damage by 10%.|n|cff33BB33Spell Immunity|r"
 
 [h0BR]
 animProps=alternate
@@ -5746,7 +5746,7 @@ Name=Necromancer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Necromancer [|cffFFcc00R|r]|n
-Ubertip=|cffccccccDamage: |r|cffff800031-42|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff8000300|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Mass Dead|r|n
+Ubertip=|cffccccccDamage: |r|cffff800031-42|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff8000300|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Raise Dead|r|n
 Upgrade=h0CS,h0CV
 
 [h0CR]
@@ -5774,7 +5774,7 @@ Name=Necrolyte
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=|cffFFcc00F|r - Promote to Necrolyte
-Ubertip=|cffccccccDamage: |r|cffff800077-88|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Mass Dead|r|n
+Ubertip=|cffccccccDamage: |r|cffff800077-88|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Raise Dead|r|n
 
 [h0CT]
 Art=ReplaceableTextures\CommandButtons\BTNKelThuzad.blp
@@ -9755,7 +9755,7 @@ Hotkey=W
 Missilespeed=1500,1500
 Name=Provoke Anarchy Upgrade
 Tip=Provoke Anarchy Upgrade - [|cffFFcc00W|r]
-Ubertip=Teaches King the Provoke Anarchy Skill. Skill only activates when is maxed (level 10).|n(Works only in -CC mode)|n[|cffFFcc00Provoke Anarchy|r]: Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800AoE and Purges enemies in 715 AoE|n|n|cffFFcc00+2 income|r
+Ubertip=Teaches King the Provoke Anarchy Skill. Skill activates when it's maxed (level 10).|n(Works only in -CC mode)|n[|cffFFcc00Provoke Anarchy|r]: Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at (AoE 1800) and Purges enemies in 715 AoE|n|n|cffFFcc00+2 income|r
 
 [u998]
 Art=ReplaceableTextures\CommandButtons\BTNHeartOfAszune.blp
@@ -9791,7 +9791,7 @@ Hotkey=E
 Missilespeed=1500,1500
 Name=Dark Presence
 Tip=Dark Presence - [|cffFFcc00E|r]
-Ubertip=Teaches King the Dark Presence. Skill only activates when is maxed (level 10). You can activate only 1 Presence.|n[|cffFFcc00Dark Presence|r]: King summons dark forces. His base damage is increased by 350% and bounce to a second target for 50% of the damage while he gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|n|cffFFcc00+15 income|r
+Ubertip=Teaches King the Dark Presence. Skill activates when it's maxed (level 10). You can activate only 1 Presence.|n[|cffFFcc00Dark Presence|r]: King summons dark forces. His base damage is increased by 350% and bounce to a second target for 50% of the damage while he gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|n|cffFFcc00+15 income|r
 
 [u99r]
 Art=ReplaceableTextures\CommandButtons\BTNAvatar.blp
@@ -9799,5 +9799,5 @@ Buttonpos=3
 Hotkey=R
 Missilespeed=1500,1500
 Name=Royal Presence
-Tip=Royal Pressence - [|cffFFcc00R|r]
-Ubertip=Teaches King the Royal Presence. Skill only activates when is maxed (level 10). You can activate only 1 Presence.|n[|cffFFcc00Royal Presence|r]: Enemy units affected by Royal Presence (AoE 715) lose 1% of their MaxHP per second.|nPassively Increases Mana regen by 1% of max.|n|n|cffFFcc00+15 income|r
+Tip=Royal Presence - [|cffFFcc00R|r]
+Ubertip=Teaches King the Royal Presence. Skill activates when it's maxed (level 10). You can activate only 1 Presence.|n[|cffFFcc00Royal Presence|r]: Enemy units affected by Royal Presence (AoE 715) lose 1% of their MaxHP per second.|nPassively Increases Mana regen by 1% of max.|n|n|cffFFcc00+15 income|r

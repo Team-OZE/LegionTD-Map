@@ -51,14 +51,14 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
 Name=Club Smash
 Order=bash
 Tip=Club Smash
-Ubertip=Each attack has a 25% chance to deal 20 bonus damage and stun for 1.5 seconds. Duration is reduced to 0.15sec on bosses.
+Ubertip=Each attack has a 25% chance to deal 20 bonus damage and stun for 1.5 seconds. Duration is reduced to 0.15 sec on bosses.
 
 [A00E]
 Art=ReplaceableTextures\CommandButtons\BTNGrabTree.blp
 Name=Knock Out
 Order=bash
 Tip=Knock Out
-Ubertip="Each attack has a 33% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0,35 sec."
+Ubertip="Each attack has a 33% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0.35 sec."
 
 [A00F]
 Art=ReplaceableTextures\PassiveButtons\PASBTNPoisonSting.blp
@@ -117,7 +117,7 @@ Name=Forbidden Fruit
 TargetArt=Abilities\Spells\Undead\Cripple\CrippleTarget.mdl
 Targetattach=origin
 Tip=Forbidden Fruit
-Ubertip=Returns 30% of melee damage received back to attackers. Deals 270damage to nearby enemies when it dies(limited to 30 targets).
+Ubertip=Returns 30% of melee damage received back to attackers. Deals 270 damage to nearby enemies when it dies (max. 30 targets)
 
 [A00O]
 Art=ReplaceableTextures\CommandButtons\BTNBloodKey.blp
@@ -125,7 +125,7 @@ Name=Chrono Trigger
 TargetArt=Abilities\Spells\Undead\UnholyAura\UnholyAura.mdl
 Targetattach=origin
 Tip=Chrono Trigger
-Ubertip=Slows nearby enemies' movement by 50%.
+Ubertip=Slows nearby enemies' movement by 50%.|n(Does not stack with Frost Aura)
 
 [A00P]
 Art=,
@@ -156,7 +156,7 @@ Ubertip="30% chance to reduce damage taken by 50 every time this unit is attacke
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
 Name=Advanced Telescope
 Tip=Advanced Telescope
-Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. (do not stack with Telescope)
+Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks.|n(Does not stack with Telescope)
 
 [A00W]
 Animnames=attack
@@ -202,7 +202,7 @@ Researchhotkey=W
 Researchtip="Spirit of Water, [|cffffcc00Level%d|r] (|cffffcc00W|r)"
 Researchubertip="Summons a water elemental to attack the Archmage's enemies. |nLasts 60 seconds. |n|n|cffffcc00Attacks land and air units.|r |n|n|cffffcc00Level 1|r - 450 hit points, 21 - 29 damage. |n|cffffcc00Level 2|r - 675 hit points, 31 - 39 damage. |n|cffffcc00Level 3|r - 900 hit points, 41 - 49 damage."
 Tip=Conjure Fanatic
-Ubertip=Conjures a fanatic to attack its master's enemies. Lasts 60 seconds.(40 seconds cooldown)
+Ubertip=Conjures a fanatic to attack its master's enemies. Lasts 60 seconds. (40 seconds cooldown)
 
 [A010]
 Art=ReplaceableTextures\CommandButtons\BTNUndeadShrine.blp
@@ -361,7 +361,7 @@ Ubertip=Adds 1 bonus damage to every attack for every 3 points of current mana. 
 Art=ReplaceableTextures\CommandButtons\BTNTornado.blp
 Name=Blue Wind
 Tip=Blue Wind
-Ubertip="Sends currents of wind at nearby enemies, dealing 19 damage each gust (8 gusts per second)."
+Ubertip="Sends currents of wind at nearby enemies, dealing 20 damage each gust (8 gusts per second)."
 
 [A01K]
 Art=ReplaceableTextures\PassiveButtons\PASBTNDrum.blp
@@ -377,7 +377,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNFrost.blp
 Missileart=Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl
 Name=Cold Attack
 Tip=Cold Attack
-Ubertip=Adds a cold effect to this unit's attacks that slows enemy units' movement speed for 4 seconds. Duration vs King 1.4sec
+Ubertip=Adds a cold effect to this unit's attacks that slows enemy units' movement speed for 4 seconds. Duration vs King 1.4 sec
 
 [A01N]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
@@ -644,7 +644,7 @@ Unubertip="|cffc3dbffRight click, to deactivate auto-cast.|r"
 Art=ReplaceableTextures\CommandButtons\BTNGuldanSkull.blp
 Name=Killing Spree
 Tip=Killing Spree
-Ubertip="Has a 30% chance to increase damage by 33% for 4 seconds with each attack. If the attack kills a unit, chance is increased to 100%.|n|nDoes not stack with itself."
+Ubertip="Has a 30% chance to increase damage by 33% for 4 seconds with each attack. If the attack kills a unit, chance is increased to 100%.|n(Does not stack with itself)"
 
 [A02Y]
 Art=ReplaceableTextures\CommandButtons\BTNUndeadShrine.blp
@@ -754,7 +754,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
 Name=Swipe
 Order=bash
 Tip=Swipe
-Ubertip=Each attack has a 17% chance to deal 180 bonus damage and stun for 1(0.5) seconds.
+Ubertip=Each attack has a 17% chance to deal 180 bonus damage and stun for 1 (0.5) seconds.
 
 [A03E]
 Art=ReplaceableTextures\CommandButtons\BTNTentacle.blp
@@ -985,7 +985,7 @@ Unubertip="|cffc3dbffRight click, to deactivate auto-cast.|r"
 Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
 Name=Insanity
 Tip=Insanity
-Ubertip="Has a 25% chance to gain the Insanity buff for 7 seconds with each attack. Insanity increases damage by 35%, armor by 25, |nDoes not stack with itself."
+Ubertip="Has a 25% chance to gain the Insanity buff for 7 seconds with each attack. Insanity increases damage by 35%, armor by 25, |n(Does not stack with itself)"
 
 [A04D]
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
@@ -1161,7 +1161,7 @@ Art=ReplaceableTextures\CommandButtons\BTNBansheeMaster.blp
 Buttonpos=1
 Name=Slave Trade
 Tip=Slave Trade
-Ubertip="When the round ends, you will receive 3 gold for each surviving servant and 6 gold for each surviving slavemaster.|n|nHowever, if all slavemasters are dead, no gold is received.|n|nDoes not stack."
+Ubertip="When the round ends, you will receive 3 gold for each surviving servant and 6 gold for each surviving slavemaster.|n|nHowever, if all slavemasters are dead, no gold is received.|n(Does not stack)"
 
 [A056]
 Animnames=spell,entangle
@@ -1172,13 +1172,13 @@ Missilespeed=1500
 Name=Throw Net
 Order=ensnare
 Tip=Throw Net
-Ubertip="Traps an enemy, binding it to the ground so that it cannot move. If cast on an air unit, it will pull the unit into melee range.|n|nLasts 7 seconds."
+Ubertip="Traps an enemy, binding it to the ground so that it cannot move. If cast on an air unit, it will pull the unit into melee range.|nLasts 7 seconds."
 
 [A057]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
 Name=Fury
 Tip=Fury
-Ubertip=Has a 20% chance to increase attack speed by 60% for 4 seconds with each attack.|n|nDoes not stack with itself.
+Ubertip=Has a 20% chance to increase attack speed by 60% for 4 seconds with each attack.|n(Does not stack with itself)
 
 [A058]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
@@ -1321,7 +1321,7 @@ Name=Marked Target
 Art=ReplaceableTextures\CommandButtons\BTNSpy.blp
 Name=Mark Target
 Tip=Mark Target
-Ubertip="Each attack marks an enemy target, causing it to take 25% more damage from piercing attacks.|n|nDoes not stack."
+Ubertip="Each attack marks an enemy target, causing it to take 25% more damage from piercing attacks.|n(Does not stack)"
 
 [A060]
 Art=ReplaceableTextures\CommandButtons\BTNScout.blp
@@ -1355,7 +1355,7 @@ Name=Guardian Spirit
 Art=ReplaceableTextures\CommandButtons\BTNBloodKey.blp
 Name=Chrono Trigger
 Tip=Chrono Trigger
-Ubertip=Slows nearby enemies' movement by 50%.
+Ubertip=Slows nearby enemies' movement by 50%.|n(Does not stack with Frost Aura)
 
 [A065]
 Art=,
@@ -1537,7 +1537,7 @@ Tip=Storm Geyser
 Art=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
 Name=Storm Geyser
 Tip=Storm Geyser
-Ubertip="Summons a storm geyser from beneath the ground, healing nearby friendly units 10 hp/sec, and shocking up to 3 nearby enemies for 40 damage every 7 seconds. Lasts 15 seconds.|n|nHealing aura does not stack."
+Ubertip="Summons a storm geyser from beneath the ground, healing nearby friendly units 10 hp/sec, and shocking up to 3 nearby enemies for 40 damage every 7 seconds. Lasts 15 seconds.|nHealing aura does not stack"
 
 [A06X]
 Art=ReplaceableTextures\CommandButtons\BTNNagaBurrow.blp
@@ -1976,7 +1976,7 @@ Ubertip=An aura that gives nearby friendly units a 11% bonus damage to their ran
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
 Name=Advanced Telescope
 Tip=Advanced Telescope
-Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. Does not stack with Telescope
+Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks.|n(Does not stack with Telescope)
 
 [A08L]
 Art=,
@@ -2086,7 +2086,7 @@ Name=+12 damage
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=This aura will slows nearby enemies' movement speed.
+Ubertip=This aura will slow nearby enemies' movement speed.|n(Does not stack with Chrono Trigger)
 
 [A095]
 Art=ReplaceableTextures\CommandButtons\BTNBreathOfFrost.blp
@@ -2110,7 +2110,7 @@ Name=Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 Tip=Frost Aura
-Ubertip=Slows nearby enemie's movement speed by 40%.
+Ubertip=Slows nearby enemie's movement speed by 40%.|n(Does not stack with Chrono Trigger)
 
 [A098]
 Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
@@ -2167,7 +2167,7 @@ UnButtonpos=3,1
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 40%.
+Ubertip=Slows nearby enemies' movement by 40%.|n(Does not stack with Chrono Trigger)
 
 [A09E]
 Art=ReplaceableTextures\CommandButtons\BTNChaosWarlord.blp
@@ -2209,13 +2209,13 @@ Name=Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 60%.
+Ubertip=Slows nearby enemies' movement by 60%.|n(Does not stack with Chrono Trigger)
 
 [A09K]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 60%.
+Ubertip=Slows nearby enemies' movement by 60%.|n(Does not stack with Chrono Trigger)
 
 [A09N]
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
@@ -2296,13 +2296,13 @@ Ubertip=Deals 30 poison damage per second. |nLasts 5 seconds. (Stackable)
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Greater Healing Aura
 Tip=Greater Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 12. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 12.|n(Does not stack)
 
 [A0A1]
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Healing Aura
 Tip=Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 6. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 6.|n(Does not stack)
 
 [A0A2]
 Art=ReplaceableTextures\CommandButtons\BTNTimberWolf.blp
@@ -2385,13 +2385,13 @@ Ubertip=10% Life Steal
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Greater Healing Aura
 Tip=Greater Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 12. . (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 12.|n(Does not stack with Healing Aura)
 
 [A0AG]
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Healing Aura
 Tip=Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 6. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 6.|n(Does not stack with Greater Healing Aura)
 
 [A0AM]
 Art=ReplaceableTextures\CommandButtons\BTNBloodLustOn.blp
@@ -5226,7 +5226,7 @@ MissileHoming=1
 Missilespeed=1200
 Name=Triple Fire Ball
 Tip=Triple Fire Ball
-Ubertip=Every second shot hits 3 nearby enemies for 40 damage.
+Ubertip=Every shot hits 2 additional enemies for 40 damage.
 
 [A77K]
 Animnames=slam
@@ -5493,7 +5493,7 @@ Name=Provoke Anarchy
 Order=acidbomb
 Targetattach=origin
 Tip=Provoke Anarchy - [|cffFFcc00E|r]
-Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800AoE and Purges enemies in 715 AoE|n|nCooldown: 40seconds|nManacost: 60% Mana
+Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800 AoE and Purges enemies in 715 AoE|n|nCooldown: 40seconds|nManacost: 60% Mana
 
 [A956]
 Animnames=spell,slam
