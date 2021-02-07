@@ -2564,7 +2564,7 @@ function BCX takes nothing returns nothing
 endfunction
 
 function BDE takes nothing returns nothing
-	set mapVersion="5.1 Release"
+	set mapVersion="6.0 Release"
 endfunction
 
 function BDX takes nothing returns nothing
@@ -5611,7 +5611,7 @@ function CreateQuests takes nothing returns nothing
 	- You can control your King by clicking on him","ReplaceableTextures\\CommandButtons\\BTNHeroPaladin.blp")
 	
 	call CreateQuestBJ(2,"Credits","Based on Legion TD |cffe2222cMEGA|r
-	Edited by Rholor, RaVeN and Team OZE","ReplaceableTextures\\CommandButtons\\BTNHydralisk.blp")
+	Edited by Rholor, RaVeN, SchachMatt and Team OZE","ReplaceableTextures\\CommandButtons\\BTNHydralisk.blp")
 	
 	call CreateQuestBJ(2,mapVersion+" Changelog","Goto: https://discord.gg/dhtvnvH","ReplaceableTextures\\CommandButtons\\BTNBloodKey.blp")
 endfunction
@@ -16771,7 +16771,7 @@ function InitAllyPriorities takes nothing returns nothing
 endfunction
 
 function config takes nothing returns nothing
-	call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb5.1 |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
+	call SetMapName("|cff00fff7Le|r|cff14e7f8gio|r|cff31c2f9n TD |r|cff6386fb6.0 |r|cff8a55fcTe|r|cff9744faam |r|cffa018feOZE|r")
 	call SetMapDescription("Build your warriors to defend your King vs a horde of menacing enemies. Edited by Team OZE")
 	call SetPlayers(10)
 	call SetTeams(2)
