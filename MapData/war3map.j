@@ -11,24 +11,49 @@ globals
 	boolean modeGG=false
 	integer array RolledUnits
 	integer kingSpell=0
+	integer numberLvl=0
+	unit array Unit
+	trigger onGameFinished=null
+	player localPlayer=null
+	string mapVersion=null
+	string array sArmorType
+	string array sAttackType
+	string sLevelPiercing=null
+	string sLevelNormal=null
+	string sLevelMagic=null
+	string sLevelSiege=null
+	string sLevelChaos=null
+	string sLevelLight=null
+	string sLevelMedium=null
+	string sLevelHeavy=null
+	string sLevelEnchanted=null
+	string sLevelFortified=null
+	string sLevelAir=null
+	string sLevelBoss=null
+	string sLevelRange=null
+	string sLevelUnarmored=null
+	string sUnitsPerLevel=null
+	string sGoldPerUnitAndLevel=null
+	gamecache myGameCache=null
+	
+	image array VisualPick
+	integer array VisualPickXY
 	boolean array udg_quickClsPlayer
 	trigger gg_trg_quickCls=null
-	unit array Unit
+	real udg_farestUnitY=0.
+	unit udg_farestUnit=null
 	
 	trigger V=null
 	hashtable HY=null
 	hashtable X=null
-	trigger onGameFinished=null
 	force BD=null
 	dialog array EH
 	force P3=null
 	integer GRR=0
 	integer GII=0
-	player localPlayer=null
 	boolean G=false
 	boolean H=false
 	boolean J=false
-	gamecache K=null
 	group MC=null
 	boolean array L
 	boolean array M
@@ -55,16 +80,13 @@ globals
 	integer GV=0
 	unit array JV
 	string array PV
-	string array QV
 	integer array SV
 	integer array TV
 	integer array UV
 	integer array WV
 	string array YV
-	string mapVersion=null
 	integer EE=0
 	integer array XE
-	integer numberLvl=0
 	group array RE
 	group IE=null
 	boolean AE=false
@@ -97,29 +119,12 @@ globals
 	location CX=null
 	real xg=0.
 	real yg=0.
-	real udg_farestUnitY=0.
-	unit udg_farestUnit=null
-	string array FX
-	string GX=null
-	string HX=null
-	string JX=null
-	string KX=null
-	string LX=null
 	string array MX
 	string array PX
 	integer array QX
-	string SX=null
-	string TX=null
-	string UX=null
-	string WX=null
-	string YX=null
-	string ZX=null
-	string VO=null
 	integer EO=0
 	integer array XO
 	integer array OO
-	image array VisualPick
-	integer array VisualPickXY
 	location array CO
 	region array DO
 	group FO=null
@@ -133,10 +138,6 @@ globals
 	integer SO=0
 	string TO=null
 	string UO=null
-	string WO=null
-	string YO=null
-	string ZO=null
-	string VR=null
 	integer ER=0
 	integer XR=0
 	integer array OR
@@ -253,10 +254,11 @@ globals
 	integer array OC
 	texttag BC=null
 	texttag CC=null
+	texttag BXEtempReturn=null
 	texttag texttagGameMode1=null
 	texttag texttagGameMode2=null
 	integer array DC
-	string array QC
+	string array LevelValue
 	boolean array SC
 	unit array WC
 	real array OD
@@ -269,7 +271,6 @@ globals
 	boolean SD=false
 	location TD=null
 	location UD=null
-	location FTP=null
 	boolean YD=false
 	group ZD=null
 	group VF=null
@@ -335,7 +336,6 @@ globals
 	integer HH=0
 	integer array JH
 	integer array KH
-	integer array T88
 	string array LH
 	boolean MH=false
 	timer PH=null
@@ -444,7 +444,6 @@ globals
 	rect LP=null
 	rect MP=null
 	group PP=null
-	group FGG=null
 	camerasetup QP=null
 	camerasetup SP=null
 	camerasetup TP=null
@@ -754,7 +753,6 @@ globals
 	trigger B5=null
 	trigger C5=null
 	trigger D6=null
-	trigger gB=null
 	unit F6=null
 	unit G6=null
 	unit H6=null
@@ -828,8 +826,6 @@ globals
 	force XQV=null
 	boolexpr XSV=null
 	integer array team
-	string array TLL
-	string array TLL1
 	code ref_function_OGE=null
 	code ref_function_RTE=null
 	code ref_function_RUE=null
@@ -1540,10 +1536,6 @@ globals
 	code ref_function_D4X=null
 	code ref_function_B0X=null
 	code ref_function_FOX=null
-	code ref_function_F111=null
-	code ref_function_F112=null
-	code ref_function_FTA=null
-	texttag BXEtempReturn=null
 endglobals
 
 function A9E takes nothing returns nothing
@@ -2483,12 +2475,12 @@ endfunction
 function A4E takes string ATE returns nothing
 	local string A0E=I2S(GV)
 	set GV=GV+1
-	call StoreInteger(K,"val:"+A0E,ATE,GV)
-	call StoreInteger(K,"chk:"+A0E,A0E,GV)
-	call SyncStoredInteger(K,"val:"+A0E,ATE)
-	call SyncStoredInteger(K,"chk:"+A0E,A0E)
-	call FlushStoredInteger(K,"val:"+A0E,ATE)
-	call FlushStoredInteger(K,"chk:"+A0E,A0E)
+	call StoreInteger(myGameCache,"val:"+A0E,ATE,GV)
+	call StoreInteger(myGameCache,"chk:"+A0E,A0E,GV)
+	call SyncStoredInteger(myGameCache,"val:"+A0E,ATE)
+	call SyncStoredInteger(myGameCache,"chk:"+A0E,A0E)
+	call FlushStoredInteger(myGameCache,"val:"+A0E,ATE)
+	call FlushStoredInteger(myGameCache,"chk:"+A0E,A0E)
 endfunction
 
 function B8E takes nothing returns nothing
@@ -3366,27 +3358,27 @@ endfunction
 
 function COX takes nothing returns nothing
 	if GetEventPlayerChatString()=="-fortified" then
-		set BE=YX
+		set BE=sLevelFortified
 		set UO="Fortified"
 	endif
 	if GetEventPlayerChatString()=="-heavy" then
-		set BE=UX
+		set BE=sLevelHeavy
 		set UO="Heavy"
 	endif
 	if GetEventPlayerChatString()=="-enchanted" then
-		set BE=WX
+		set BE=sLevelEnchanted
 		set UO="Enchanted"
 	endif
 	if GetEventPlayerChatString()=="-light" then
-		set BE=SX
+		set BE=sLevelLight
 		set UO="Light"
 	endif
 	if GetEventPlayerChatString()=="-medium" then
-		set BE=TX
+		set BE=sLevelMedium
 		set UO="Medium"
 	endif
 	if GetEventPlayerChatString()=="-unarmored" then
-		set BE=VR
+		set BE=sLevelUnarmored
 		set UO="Unarmored"
 	endif
 	set TO=BIE(BE)
@@ -3444,15 +3436,15 @@ endfunction
 
 function CRX takes nothing returns nothing
 	if GetEventPlayerChatString()=="-air" then
-		set BE=WO
+		set BE=sLevelAir
 		set UO="Air"
 	endif
 	if GetEventPlayerChatString()=="-range" then
-		set BE=ZO
+		set BE=sLevelRange
 		set UO="Range"
 	endif
 	if GetEventPlayerChatString()=="-boss" then
-		set BE=YO
+		set BE=sLevelBoss
 		set UO="Boss"
 	endif
 	set TO=BIE(BE)
@@ -3517,23 +3509,23 @@ endfunction
 
 function CXX takes nothing returns nothing
 	if GetEventPlayerChatString()=="-pierce" then
-		set BE=GX
+		set BE=sLevelPiercing
 		set UO="Pierce"
 	endif
 	if GetEventPlayerChatString()=="-normal" then
-		set BE=HX
+		set BE=sLevelNormal
 		set UO="Normal"
 	endif
 	if GetEventPlayerChatString()=="-magic" then
-		set BE=JX
+		set BE=sLevelMagic
 		set UO="Magic"
 	endif
 	if GetEventPlayerChatString()=="-chaos" then
-		set BE=LX
+		set BE=sLevelChaos
 		set UO="Chaos"
 	endif
 	if GetEventPlayerChatString()=="-siege" then
-		set BE=KX
+		set BE=sLevelSiege
 		set UO="Siege"
 	endif
 	set TO=BIE(BE)
@@ -3556,33 +3548,33 @@ endfunction
 
 function D0E takes nothing returns nothing
 	set TI=GetRandomInt(12,19)
-	set QV[1]="|cffEEBC86Light|r armor"
-	set QV[2]="|cffFF8000Medium|r armor"
-	set QV[3]="|cff408040Heavy|r armor"
-	set QV[4]="|cff773C00Fortified|r armor"
-	set QV[5]="|cffCCCCCCUnarmored|r armor"
-	set QV[6]="|cff32CD32Enchanted|r armor"
-	set FX[1]="|cffFFFF48Piercing|r attack"
-	set FX[2]="|cff8080FFNormal|r attack"
-	set FX[3]="|cffFF80FFMagic|r attack"
-	set FX[4]="|cffA0A0A0Siege|r attack"
-	set FX[5]="|cff970000Chaos|r attack"
-	set GX=",01,04,7,12,19,21,25,32"
-	set HX=",02,03,09,14,15,23,26,27,33"
-	set JX=",05,08,13,16,18,24,29,34"
-	set KX=",06,11,17,22,28,35"
-	set LX=",10,20,30,31"
-	set SX=",05,07,10,13,16,19,21,25,32"
-	set TX=",03,08,12,14,18,24,27,34"
-	set UX=",04,09,15,20,23,26,29,33"
-	set WX=",20"
-	set YX=",06,11,17,22,28,30,35"
-	set VR=",01,02,31"
-	set WO=",05,13,21,29"
-	set YO=",10,20,30,32,33,34,35"
-	set ZO=",04,08,12,16,20,24,28,29,34"
-	set VO=",3,3,4,5,5,5,6,6,5,61,5,6,7,12,9,8,10,8,10,148,10,9,11,11,9,12,12,23,14,153,0,0.0.0.0."
-	set ZX=",120,150,133,120,120,120,100,120,150,010,180,150,150,087,120,150,115,150,120,010,120,160,120,115,150,120,120,064,100,010,050,024,010,015,002"
+	set sArmorType[1]="|cffEEBC86Light|r armor"
+	set sArmorType[2]="|cffFF8000Medium|r armor"
+	set sArmorType[3]="|cff408040Heavy|r armor"
+	set sArmorType[4]="|cff773C00Fortified|r armor"
+	set sArmorType[5]="|cffCCCCCCUnarmored|r armor"
+	set sArmorType[6]="|cff32CD32Enchanted|r armor"
+	set sAttackType[1]="|cffFFFF48Piercing|r attack"
+	set sAttackType[2]="|cff8080FFNormal|r attack"
+	set sAttackType[3]="|cffFF80FFMagic|r attack"
+	set sAttackType[4]="|cffA0A0A0Siege|r attack"
+	set sAttackType[5]="|cff970000Chaos|r attack"
+	set sLevelPiercing=",01,04,7,12,19,21,25,32"
+	set sLevelNormal=",02,03,09,14,15,23,26,27,33"
+	set sLevelMagic=",05,08,13,16,18,24,29,34"
+	set sLevelSiege=",06,11,17,22,28,35"
+	set sLevelChaos=",10,20,30,31"
+	set sLevelLight=",05,07,10,13,16,19,21,25,32"
+	set sLevelMedium=",03,08,12,14,18,24,27,34"
+	set sLevelHeavy=",04,09,15,20,23,26,29,33"
+	set sLevelEnchanted=",20"
+	set sLevelFortified=",06,11,17,22,28,30,35"
+	set sLevelUnarmored=",01,02,31"
+	set sLevelAir=",05,13,21,29"
+	set sLevelBoss=",10,20,30,32,33,34,35"
+	set sLevelRange=",04,08,12,16,20,24,28,29,34"
+	set sGoldPerUnitAndLevel=",3,3,4,5,5,5,6,6,5,61,5,6,7,12,9,8,10,8,10,148,10,9,11,11,9,12,12,23,14,153,0,0.0.0.0."
+	set sUnitsPerLevel=",120,150,133,120,120,120,100,120,150,010,180,150,150,087,120,150,115,150,120,010,120,160,120,115,150,120,120,064,100,010,050,024,010,015,002"
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=TI
 	loop
@@ -5027,33 +5019,33 @@ endfunction
 
 function DIE takes nothing returns nothing
 	set TI=45
-	set QV[1]="|cffEEBC86Light|r armor"
-	set QV[2]="|cffFF8000Medium|r armor"
-	set QV[3]="|cff408040Heavy|r armor"
-	set QV[4]="|cff773C00Fortified|r armor"
-	set QV[5]="|cffCCCCCCUnarmored|r armor"
-	set QV[6]="|cff32CD32Enchanted|r armor"
-	set FX[1]="|cffFFFF48Piercing|r attack"
-	set FX[2]="|cff8080FFNormal|r attack"
-	set FX[3]="|cffFF80FFMagic|r attack"
-	set FX[4]="|cffA0A0A0Siege|r attack"
-	set FX[5]="|cff970000Chaos|r attack"
-	set GX=",01,04,7,12,19,21,25,32"
-	set HX=",02,03,09,14,15,23,26,27,33"
-	set JX=",05,08,13,16,18,24,29,34"
-	set KX=",06,11,17,22,28,35"
-	set LX=",10,20,30,31"
-	set SX=",05,07,10,13,16,19,21,25,32"
-	set TX=",03,08,12,14,18,24,27,34"
-	set UX=",04,09,15,23,26,29,33"
-	set WX=",20"
-	set YX=",06,11,17,22,28,30,35"
-	set VR=",01,02,31"
-	set WO=",05,13,21,29"
-	set YO=",10,20,30,32,33,34,35"
-	set ZO=",04,08,12,16,20,24,28,29,34"
-	set VO=",5,5,5,5,6,6,7,4,8,30,4,5,9,9,7,5,7,10,12,50,12,11,11,7,11,14,11,18,11,102,0,0.0.0.0."
-	set ZX=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,015,075,036,001,022,003"
+	set sArmorType[1]="|cffEEBC86Light|r armor"
+	set sArmorType[2]="|cffFF8000Medium|r armor"
+	set sArmorType[3]="|cff408040Heavy|r armor"
+	set sArmorType[4]="|cff773C00Fortified|r armor"
+	set sArmorType[5]="|cffCCCCCCUnarmored|r armor"
+	set sArmorType[6]="|cff32CD32Enchanted|r armor"
+	set sAttackType[1]="|cffFFFF48Piercing|r attack"
+	set sAttackType[2]="|cff8080FFNormal|r attack"
+	set sAttackType[3]="|cffFF80FFMagic|r attack"
+	set sAttackType[4]="|cffA0A0A0Siege|r attack"
+	set sAttackType[5]="|cff970000Chaos|r attack"
+	set sLevelPiercing=",01,04,07,12,19,21,25,32"
+	set sLevelNormal=",02,03,09,14,15,23,26,27,33"
+	set sLevelMagic=",05,08,13,16,18,24,29,34"
+	set sLevelSiege=",06,11,17,22,28,35"
+	set sLevelChaos=",10,20,30,31"
+	set sLevelLight=",05,07,10,13,16,19,21,25,32"
+	set sLevelMedium=",03,08,12,14,18,24,27,34"
+	set sLevelHeavy=",04,09,15,23,26,29,33"
+	set sLevelEnchanted=",20"
+	set sLevelFortified=",06,11,17,22,28,30,35"
+	set sLevelUnarmored=",01,02,31"
+	set sLevelAir=",05,13,21,29"
+	set sLevelBoss=",10,20,30,32,33,34,35"
+	set sLevelRange=",04,08,12,16,20,24,28,29,34"
+	set sGoldPerUnitAndLevel=",5,5,5,5,6,6,7,4,8,30,4,5,9,9,7,5,7,10,12,50,12,11,11,7,11,14,11,18,11,102,0,0.0.0.0."
+	set sUnitsPerLevel=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,015,075,036,001,022,003"
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=TI
 	loop
@@ -5144,25 +5136,25 @@ function DNE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		set EE=EE+1
-		if SubStringBJ(GX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(GX,EE+1,EE+2))
-			set MX[IX]=FX[1]
+		if SubStringBJ(sLevelPiercing,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelPiercing,EE+1,EE+2))
+			set MX[IX]=sAttackType[1]
 		endif
-		if SubStringBJ(HX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(HX,EE+1,EE+2))
-			set MX[IX]=FX[2]
+		if SubStringBJ(sLevelNormal,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelNormal,EE+1,EE+2))
+			set MX[IX]=sAttackType[2]
 		endif
-		if SubStringBJ(JX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(JX,EE+1,EE+2))
-			set MX[IX]=FX[3]
+		if SubStringBJ(sLevelMagic,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelMagic,EE+1,EE+2))
+			set MX[IX]=sAttackType[3]
 		endif
-		if SubStringBJ(KX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(KX,EE+1,EE+2))
-			set MX[IX]=FX[4]
+		if SubStringBJ(sLevelSiege,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelSiege,EE+1,EE+2))
+			set MX[IX]=sAttackType[4]
 		endif
-		if SubStringBJ(LX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(LX,EE+1,EE+2))
-			set MX[IX]=FX[5]
+		if SubStringBJ(sLevelChaos,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelChaos,EE+1,EE+2))
+			set MX[IX]=sAttackType[5]
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
@@ -5172,29 +5164,29 @@ function DNE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		set EE=EE+1
-		if SubStringBJ(SX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(SX,EE+1,EE+2))
-			set PX[IX]=QV[1]
+		if SubStringBJ(sLevelLight,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelLight,EE+1,EE+2))
+			set PX[IX]=sArmorType[1]
 		endif
-		if SubStringBJ(TX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(TX,EE+1,EE+2))
-			set PX[IX]=QV[2]
+		if SubStringBJ(sLevelMedium,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelMedium,EE+1,EE+2))
+			set PX[IX]=sArmorType[2]
 		endif
-		if SubStringBJ(UX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(UX,EE+1,EE+2))
-			set PX[IX]=QV[3]
+		if SubStringBJ(sLevelHeavy,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelHeavy,EE+1,EE+2))
+			set PX[IX]=sArmorType[3]
 		endif
-		if SubStringBJ(YX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(YX,EE+1,EE+2))
-			set PX[IX]=QV[4]
+		if SubStringBJ(sLevelFortified,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelFortified,EE+1,EE+2))
+			set PX[IX]=sArmorType[4]
 		endif
-		if SubStringBJ(VR,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(VR,EE+1,EE+2))
-			set PX[IX]=QV[5]
+		if SubStringBJ(sLevelUnarmored,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelUnarmored,EE+1,EE+2))
+			set PX[IX]=sArmorType[5]
 		endif
-		if SubStringBJ(WX,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(WX,EE+1,EE+2))
-			set PX[IX]=QV[6]
+		if SubStringBJ(sLevelEnchanted,EE,EE)=="," then
+			set IX=S2I(SubStringBJ(sLevelEnchanted,EE+1,EE+2))
+			set PX[IX]=sArmorType[6]
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
@@ -5205,9 +5197,9 @@ function DNE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		set EE=EE+1
-		if SubStringBJ(ZX,EE,EE)=="," then
+		if SubStringBJ(sUnitsPerLevel,EE,EE)=="," then
 			set AX=AX+1
-			set IX=S2I(SubStringBJ(ZX,EE+1,EE+3))
+			set IX=S2I(SubStringBJ(sUnitsPerLevel,EE+1,EE+3))
 			set QX[AX]=IX
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
@@ -5215,23 +5207,23 @@ function DNE takes nothing returns nothing
 	set EE=0
 	set EO=0
 	set bj_forLoopAIndex=1
-	set bj_forLoopAIndexEnd=StringLength(VO)
+	set bj_forLoopAIndexEnd=StringLength(sGoldPerUnitAndLevel)
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		if SubStringBJ(VO,bj_forLoopAIndex,bj_forLoopAIndex)=="," then
+		if SubStringBJ(sGoldPerUnitAndLevel,bj_forLoopAIndex,bj_forLoopAIndex)=="," then
 			set EO=EO+1
 			set EE=bj_forLoopAIndex
 			set IX=0
 			set bj_forLoopBIndex=bj_forLoopAIndex+1
-			set bj_forLoopBIndexEnd=StringLength(VO)
+			set bj_forLoopBIndexEnd=StringLength(sGoldPerUnitAndLevel)
 			loop
 				exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
-				if SubStringBJ(VO,bj_forLoopBIndex,bj_forLoopBIndex)=="," and IX==0 then
+				if SubStringBJ(sGoldPerUnitAndLevel,bj_forLoopBIndex,bj_forLoopBIndex)=="," and IX==0 then
 					set IX=bj_forLoopBIndex
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
 			endloop
-			set AX=S2I(SubStringBJ(VO,EE+1,IX-1))
+			set AX=S2I(SubStringBJ(sGoldPerUnitAndLevel,EE+1,IX-1))
 			set UV[EO]=AX
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
@@ -5241,7 +5233,7 @@ function DNE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		set BE=GetObjectName(WV[bj_forLoopAIndex])
-		set TO="|cffC0C0C0 (Value: |r|cffFFcc00"+QC[bj_forLoopAIndex]+"|r|cffC0C0C0)|r"
+		set TO="|cffC0C0C0 (Value: |r|cffFFcc00"+LevelValue[bj_forLoopAIndex]+"|r|cffC0C0C0)|r"
 		if modeQG and bj_forLoopAIndex>=30 then
 			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S((bj_forLoopAIndex)-9)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(QX[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
 		
@@ -5426,41 +5418,41 @@ function DQX takes nothing returns nothing
 endfunction
 
 function DRE takes nothing returns nothing
-	set QC[1]="700"
-	set QC[2]="1150"
-	set QC[3]="1800"
-	set QC[4]="2150"
-	set QC[5]="2800"
-	set QC[6]="3400"
-	set QC[7]="4000"
-	set QC[8]="4650"
-	set QC[9]="5500"
-	set QC[10]="5950"
-	set QC[11]="6645"
-	set QC[12]="7600"
-	set QC[13]="8750"
-	set QC[14]="9750"
-	set QC[15]="10700"
-	set QC[16]="13100"
-	set QC[17]="14400"
-	set QC[18]="17800"
-	set QC[19]="20500"
-	set QC[20]="21000"
-	set QC[21]="22000"
-	set QC[22]="24500"
-	set QC[23]="27500"
-	set QC[24]="30500"
-	set QC[25]="33500"
-	set QC[26]="37000"
-	set QC[27]="40500"
-	set QC[28]="43000"
-	set QC[29]="45000"
-	set QC[30]="48000"
-	set QC[31]="63500"
-	set QC[32]="72500"
-	set QC[33]="84000"
-	set QC[34]="90000"
-	set QC[35]="99999"
+	set LevelValue[1]="700"
+	set LevelValue[2]="1150"
+	set LevelValue[3]="1800"
+	set LevelValue[4]="2150"
+	set LevelValue[5]="2800"
+	set LevelValue[6]="3400"
+	set LevelValue[7]="4000"
+	set LevelValue[8]="4650"
+	set LevelValue[9]="5500"
+	set LevelValue[10]="5950"
+	set LevelValue[11]="6645"
+	set LevelValue[12]="7600"
+	set LevelValue[13]="8750"
+	set LevelValue[14]="9750"
+	set LevelValue[15]="10700"
+	set LevelValue[16]="13100"
+	set LevelValue[17]="14400"
+	set LevelValue[18]="17800"
+	set LevelValue[19]="20500"
+	set LevelValue[20]="21000"
+	set LevelValue[21]="22000"
+	set LevelValue[22]="24500"
+	set LevelValue[23]="27500"
+	set LevelValue[24]="30500"
+	set LevelValue[25]="33500"
+	set LevelValue[26]="37000"
+	set LevelValue[27]="40500"
+	set LevelValue[28]="43000"
+	set LevelValue[29]="45000"
+	set LevelValue[30]="48000"
+	set LevelValue[31]="63500"
+	set LevelValue[32]="72500"
+	set LevelValue[33]="84000"
+	set LevelValue[34]="90000"
+	set LevelValue[35]="99999"
 	if G==false then
 		set OO[1]=11
 		set OO[2]=12
@@ -6575,7 +6567,7 @@ endfunction
 
 function FLE takes nothing returns nothing
 	set EE=1+GetPlayerId(GetEnumPlayer())
-	set QO=I2R(GB[EE])/S2R(QC[numberLvl])
+	set QO=I2R(GB[EE])/S2R(LevelValue[numberLvl])
 	set QN=I2R(HB[EE])/500.
 	set QO=QO-QN
 	
@@ -7704,9 +7696,9 @@ function J6E takes nothing returns nothing
 endfunction
 
 function J7E takes nothing returns nothing
-	set IX=S2I(QC[numberLvl+1])+numberLvl*numberLvl
+	set IX=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl
 	if YD then
-		set IX=S2I(QC[numberLvl+0])+numberLvl*numberLvl
+		set IX=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl
 	endif
 	if numberLvl>=30 then
 		set IX=16000
@@ -9624,7 +9616,7 @@ function PBE takes nothing returns nothing
 	if AKE>30 then
 		set AKE=30
 	endif
-	set IEE=I2R(GB[IQE])/S2R(QC[AKE])
+	set IEE=I2R(GB[IQE])/S2R(LevelValue[AKE])
 	set AHE=100+(5-KH[IQE])*10
 	if AHE<100 then
 		set AHE=100
@@ -11531,9 +11523,9 @@ function TCE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(QC[numberLvl+1])+numberLvl*numberLvl*2
+	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(QC[numberLvl+0])+numberLvl*numberLvl*2
+		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
 		set EE=16000
@@ -11642,9 +11634,9 @@ function TNE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(QC[numberLvl+1])+numberLvl*numberLvl*2
+	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(QC[numberLvl+0])+numberLvl*numberLvl*2
+		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
 		set EE=16000
@@ -11731,9 +11723,9 @@ function TRE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(QC[numberLvl+1])+numberLvl*numberLvl*2
+	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(QC[numberLvl+0])+numberLvl*numberLvl*2
+		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
 		set EE=16000
@@ -11852,9 +11844,9 @@ function TXE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(QC[numberLvl+1])+numberLvl*numberLvl*2
+	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(QC[numberLvl+0])+numberLvl*numberLvl*2
+		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
 		set EE=16000
@@ -13839,14 +13831,14 @@ endfunction
 function Y_11 takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set modeQG=true
-	set QC[30]="30000"
-	set QC[31]="31000"
-	set QC[32]="32000"
-	set QC[33]="33000"
-	set QC[34]="34000"
-	set QC[35]="35000"
+	set LevelValue[30]="30000"
+	set LevelValue[31]="31000"
+	set LevelValue[32]="32000"
+	set LevelValue[33]="33000"
+	set LevelValue[34]="34000"
+	set LevelValue[35]="35000"
 	
-	set ZX=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,006,033,018,007,011,002"
+	set sUnitsPerLevel=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,006,033,018,007,011,002"
 	set QX[30]=6
 	set QX[31]=33
 	set QX[32]=18
@@ -13854,43 +13846,6 @@ function Y_11 takes nothing returns nothing
 	set QX[34]=11
 	set QX[35]=2
 endfunction
-
-function F111 takes nothing returns boolean
-	return (GetUnitTypeId(GetFilterUnit())==$68303234)
-endfunction
-
-function F112 takes nothing returns nothing
-	set FTP=GetUnitLoc(GetEnumUnit())
-	set T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]+1
-	if T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]<=15 then
-		set TLL1[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=TLL[1]
-	
-	elseif T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]>15 and T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]<=25 then
-		set TLL1[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=TLL[2]
-	
-	elseif T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]>25 and T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]<=35 then
-		set TLL1[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=TLL[3]
-	
-	elseif T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]>35 and T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]<=45 then
-		set TLL1[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=TLL[4]
-	
-	elseif T88[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]>45 then
-		set TLL1[1+GetPlayerId(GetOwningPlayer(GetEnumUnit()))]=TLL[5]
-	endif
-	call CreateTextTagLocBJ("+1", FTP, 0, 12.00, 69.01, 76.8, 87.05, 0)
-	call SetTextTagPermanentBJ(GetLastCreatedTextTag(), false)
-	call SetTextTagVelocityBJ(GetLastCreatedTextTag(), 80.00, 90)
-	call SetTextTagLifespanBJ(GetLastCreatedTextTag(), 2.00)
-	call SetTextTagFadepointBJ(GetLastCreatedTextTag(), 1.00)
-	call RemoveLocation(FTP)
-endfunction
-
-function FTA takes nothing returns nothing
-	call DestroyGroup(FGG)
-	set FGG=GetUnitsInRectMatching(GetPlayableMapRect(),Condition(ref_function_F111))
-	call ForGroupBJ(FGG,ref_function_F112)
-endfunction
-
 
 function Z4E takes nothing returns boolean
 	return GetSpellAbilityId()==$41393639
@@ -14129,7 +14084,6 @@ function initGlobals takes nothing returns nothing
 	set BD=CreateForce()
 	set P3=CreateForce()
 	set IE=CreateGroup()
-	set FGG=CreateGroup()
 	set ER=15
 	set texttagGameMode1=null
 	set texttagGameMode2=null
@@ -14861,9 +14815,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_D4X=function D4X
 	set ref_function_B0X=function B0X
 	set ref_function_FOX=function FOX
-	set ref_function_F111=function F111
-	set ref_function_F112=function F112
-	set ref_function_FTA=function FTA
 endfunction
 
 function main takes nothing returns nothing
@@ -15202,9 +15153,9 @@ function main takes nothing returns nothing
 	loop
 		exitwhen IQE>1
 		set PV[IQE]=""
-		set QV[IQE]=""
+		set sArmorType[IQE]=""
 		set YV[IQE]=""
-		set FX[IQE]=""
+		set sAttackType[IQE]=""
 		set MX[IQE]=""
 		set PX[IQE]=""
 		set HR[IQE]=""
@@ -15266,7 +15217,7 @@ function main takes nothing returns nothing
 	set IQE=0
 	loop
 		exitwhen IQE>40
-		set QC[IQE]=""
+		set LevelValue[IQE]=""
 		set IQE=IQE+1
 	endloop
 	set MD=CreateGroup()
@@ -15282,7 +15233,6 @@ function main takes nothing returns nothing
 	set AG=CreateGroup()
 	set NG=CreateGroup()
 	set FG=CreateGroup()
-	set FGG=CreateGroup()
 	set IH=CreateTrigger()
 	set DH=CreateTimer()
 	call CreateTimer()
@@ -15356,10 +15306,6 @@ function main takes nothing returns nothing
 	call TriggerRegisterTimerEventPeriodic(US,1.)
 	call TriggerAddCondition(US,Condition(ref_function_DWE))
 	call TriggerAddAction(US,ref_function_D_E)
-	set gB=CreateTrigger()
-	call TriggerRegisterTimerEventPeriodic(gB,2.)
-	call TriggerAddCondition(gB,Condition(ref_function_F111))
-	call TriggerAddAction(gB,ref_function_FTA)
 	set WS=CreateTrigger()
 	call TriggerAddAction(WS,ref_function_D0E)
 	set YS=CreateTrigger()
