@@ -6362,7 +6362,9 @@ function F1E takes nothing returns nothing
 			call SetPlayerTechResearchedSwap($52303047,0,Player(j))
 			set KH[1+GetPlayerId(Player(j))]=KH[1+GetPlayerId(Player(j))]+1
 			set MN=false
-			call ReRollNah(Player(j))
+			if j<4 then
+				call ReRollNah(Player(j))
+			endif
 			set j=j+1
 			exitwhen j>=8
 		endloop
