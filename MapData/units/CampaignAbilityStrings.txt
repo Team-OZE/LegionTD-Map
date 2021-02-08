@@ -361,7 +361,7 @@ Ubertip=Adds 1 bonus damage to every attack for every 3 points of current mana. 
 Art=ReplaceableTextures\CommandButtons\BTNTornado.blp
 Name=Blue Wind
 Tip=Blue Wind
-Ubertip="Sends currents of wind at nearby enemies, dealing 20 damage each gust (8 gusts per second)."
+Ubertip="Sends currents of wind at nearby enemies, dealing 19 damage each gust (8 gusts per second)."
 
 [A01K]
 Art=ReplaceableTextures\PassiveButtons\PASBTNDrum.blp
