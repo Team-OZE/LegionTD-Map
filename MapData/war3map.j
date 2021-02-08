@@ -1,12 +1,20 @@
 globals
 	boolean isTestVersion=true // Set to false for release version
-	boolean x3Mode=false
-	boolean ggMode=false
+	boolean modePR=false
+	boolean modePH=false
+	boolean modeAP=false
+	boolean modeAC=false
+	boolean modeCC=false
+	boolean modeMI=false
+	boolean modeQG=false
+	boolean modeX3=false
+	boolean modeGG=false
 	integer array RolledUnits
 	integer kingSpell=0
 	boolean array udg_quickClsPlayer
 	trigger gg_trg_quickCls=null
 	unit array Unit
+	
 	trigger V=null
 	hashtable HY=null
 	hashtable X=null
@@ -187,9 +195,6 @@ globals
 	group array BA
 	player array CA
 	boolean DA=false
-	boolean GA=false
-	boolean HCC=false
-	boolean mirrorMode=false
 	timer KA=null
 	timerdialog LA=null
 	group array MA
@@ -335,13 +340,9 @@ globals
 	boolean MH=false
 	timer PH=null
 	boolean QH=false
-	boolean SH=false
-	boolean TH=false
 	integer array UH
 	boolean ZH=false
 	boolean VJ=false
-	boolean EJ=false
-	boolean XJ=false
 	boolean array RJ
 	group array IJ
 	rect AJ=null
@@ -1777,7 +1778,7 @@ function ReRollNah takes player myPlayer returns nothing
 		
 		// Save unit
 		set RolledUnits[unitID+playerID*6]=unitsPerTier
-		if mirrorMode then
+		if modeMI then
 			set RolledUnits[unitID+(playerID%4)*6]=unitsPerTier
 		endif
 		
@@ -1806,7 +1807,7 @@ function ReRollNah takes player myPlayer returns nothing
 			
 			if unitCounter==unitsPerTier then
 				call SetPlayerTechMaxAllowedSwap(myInteger,-1,myPlayer)
-				if mirrorMode then
+				if modeMI then
 					call SetPlayerTechMaxAllowedSwap(myInteger,-1,mirrorPlayer)
 				endif
 				
@@ -1814,7 +1815,7 @@ function ReRollNah takes player myPlayer returns nothing
 					call ShowImage(VisualPick[playerID*6+unitID],false)
 					call DestroyImage(VisualPick[playerID*6+unitID])
 				endif
-				if mirrorMode then
+				if modeMI then
 					if VisualPick[mirrorPlayerID*6+unitID]!=null then
 						call ShowImage(VisualPick[mirrorPlayerID*6+unitID],false)
 						call DestroyImage(VisualPick[mirrorPlayerID*6+unitID])
@@ -1823,20 +1824,20 @@ function ReRollNah takes player myPlayer returns nothing
 				
 				// Create visual images of the roll
 				set VisualPick[playerID*6+unitID]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(myInteger)+".blp",104.,104.,0.,VisualPickXY[playerID*2]+104*unitID,VisualPickXY[playerID*2+1],256.,0.,0.,0.,3)
-				if mirrorMode then
+				if modeMI then
 					set VisualPick[mirrorPlayerID*6+unitID]=CreateImage("war3mapImported\\UnitGroundIcons\\"+UnitId2String(myInteger)+".blp",104.,104.,0.,VisualPickXY[mirrorPlayerID*2]+104*unitID,VisualPickXY[mirrorPlayerID*2+1],256.,0.,0.,0.,3)
 				endif
 				
 				call SetImageRenderAlways(VisualPick[playerID*6+unitID],true)
-				if mirrorMode then
+				if modeMI then
 					call SetImageRenderAlways(VisualPick[mirrorPlayerID*6+unitID],true)
 				endif
 				
-				// Show images if mirrorMode or ally or observer
-				call ShowImage(VisualPick[playerID*6+unitID],mirrorMode or IsPlayerAlly(localPlayer,myPlayer) or IsPlayerObserver(localPlayer))
+				// Show images if modeMI or ally or observer
+				call ShowImage(VisualPick[playerID*6+unitID],modeMI or IsPlayerAlly(localPlayer,myPlayer) or IsPlayerObserver(localPlayer))
 			else
 				call SetPlayerTechMaxAllowedSwap(myInteger,0,myPlayer)
-				if mirrorMode then
+				if modeMI then
 					call SetPlayerTechMaxAllowedSwap(myInteger,0,mirrorPlayer)
 				endif
 			endif
@@ -2993,7 +2994,7 @@ endfunction
 function CAX takes nothing returns nothing
 	set BE=GetObjectName(WV[numberLvl+1])
 	if numberLvl<35 then
-		if numberLvl==20 and HCC then
+		if numberLvl==20 and modeQG then
 			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[numberLvl+10])
 			call DestroyForce(S8)
 			set S8=null	
@@ -3005,7 +3006,7 @@ function CAX takes nothing returns nothing
 		endif
 	
 	else
-		if numberLvl==20 and HCC then
+		if numberLvl==20 and modeQG then
 			set BE=GetObjectName(WV[numberLvl+10])
 			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,"Next wave (|cffFFcc00"+I2S(numberLvl+10)+"|r) - "+BE+" - "+"("+MX[numberLvl+10]+", "+PX[numberLvl+10]+")")
 			call DestroyForce(S8)	
@@ -3026,7 +3027,7 @@ endfunction
 function CBX takes nothing returns nothing
 	set BE=GetObjectName(WV[numberLvl+1])
 	if numberLvl<35 then
-		if numberLvl==20 and HCC then
+		if numberLvl==20 and modeQG then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,YV[numberLvl+10])
 			call DestroyForce(S8)
 			set S8=null
@@ -3038,7 +3039,7 @@ function CBX takes nothing returns nothing
 		endif
 	
 	else
-		if numberLvl==20 and HCC then
+		if numberLvl==20 and modeQG then
 			set BE=GetObjectName(WV[numberLvl+10])
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"Next wave (|cffFFcc00"+I2S(numberLvl+10)+"|r) - "+BE+" - "+"("+MX[numberLvl+10]+", "+PX[numberLvl+10]+")")
 			call DestroyForce(S8)	
@@ -3078,7 +3079,7 @@ endfunction
 function CDX takes nothing returns nothing
 	set EE=S2I(SubStringBJ(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
 	if EE>0 and EE<=35 then
-		if HCC and numberLvl>=21 then
+		if modeQG and numberLvl>=21 then
 			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[EE+9])
 			call DestroyForce(S8)
 			set S8=null
@@ -3251,7 +3252,7 @@ function CJX takes nothing returns nothing
 			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King's Active Skill: |cff7333AA"+GetObjectName(F5)+"|r")
 		endif
 	endif
-	if EJ then
+	if modeCC then
 		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Provoke Anarchy: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,GetTriggerPlayer())))
 		call DestroyForce(S8)
 		set S8=null
@@ -3394,10 +3395,9 @@ function COX takes nothing returns nothing
 	set S8=null
 endfunction
 
-
 function CPE takes nothing returns nothing
 	local real timerRound
-	if ggMode then
+	if modeGG then
 		set timerRound=300.
 	
 	else
@@ -3429,7 +3429,6 @@ function CPE takes nothing returns nothing
 		set ZF[10]=true
 	endif
 endfunction
-
 
 function CPX takes nothing returns nothing
 	call ClearTextMessagesBJ(I3E(Condition(ref_function_Q4E)))
@@ -5243,7 +5242,7 @@ function DNE takes nothing returns nothing
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		set BE=GetObjectName(WV[bj_forLoopAIndex])
 		set TO="|cffC0C0C0 (Value: |r|cffFFcc00"+QC[bj_forLoopAIndex]+"|r|cffC0C0C0)|r"
-		if HCC and bj_forLoopAIndex>=30 then
+		if modeQG and bj_forLoopAIndex>=30 then
 			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S((bj_forLoopAIndex)-9)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(QX[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
 		
 		else
@@ -6310,10 +6309,10 @@ function F1E takes nothing returns nothing
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffff0000THIS VERION IS MEANT FOR TESTING PURPOSES ONLY|r")
 	endif
 	set RX=true
-	if numberLvl==21 and HCC then
+	if numberLvl==21 and modeQG then
 		set numberLvl=numberLvl+9
 	endif
-	if EJ then
+	if modeCC then
 		call OCE()
 	endif
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,YV[numberLvl])
@@ -6333,19 +6332,19 @@ function F1E takes nothing returns nothing
 	call TriggerExecute(VY)
 	call A_V(8.)
 	call TriggerExecute(RW)
-	if numberLvl==11 and XJ==false and EJ==false then
+	if numberLvl==11 and modeAC==false and modeCC==false then
 		call A_V(3.)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 	
-	elseif numberLvl==6 and XJ or EJ then
+	elseif numberLvl==6 and modeAC or modeCC then
 		call A_V(3.)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 	endif
 	set PA=true
-	if EJ==false and XJ==false then
+	if modeCC==false and modeAC==false then
 		call F_E()
 	
-	elseif XJ and numberLvl>5 and numberLvl<30 then
+	elseif modeAC and numberLvl>5 and numberLvl<30 then
 		if G==false then
 			call BGE()
 		
@@ -6353,7 +6352,7 @@ function F1E takes nothing returns nothing
 			call BPE()
 		endif
 	
-	elseif EJ and numberLvl<30 then
+	elseif modeCC and numberLvl<30 then
 		call BME()
 	endif
 	set j=0
@@ -6914,7 +6913,7 @@ endfunction
 function G2E takes nothing returns nothing
 	local integer i=0
 	call DisableTrigger(GetTriggeringTrigger())
-	if EJ then
+	if modeCC then
 		set VJ=true
 	endif
 	set G7=.01
@@ -6970,10 +6969,10 @@ function G2E takes nothing returns nothing
 	endif
 	call ForForce(ZI,ref_function_GEE)
 	set i=1
-	if EJ then
+	if modeCC then
 		set VJ=false
 	endif
-	if EJ and VJ==false and numberLvl!=10 and numberLvl!=20 then
+	if modeCC and VJ==false and numberLvl!=10 and numberLvl!=20 then
 		loop
 			exitwhen i>8
 			call DisplayTimedTextToPlayer(Player(i-1),0.,0.,7.,"::: You received |cffFFcc00"+I2S(TV[i])+"|r gold for challenging a Champion. ")
@@ -6984,7 +6983,7 @@ function G2E takes nothing returns nothing
 		call G1E()
 		call ODE()
 	
-	elseif EJ and VJ==false and numberLvl==10 or numberLvl==20 or numberLvl==30 then
+	elseif modeCC and VJ==false and numberLvl==10 or numberLvl==20 or numberLvl==30 then
 		loop
 			exitwhen i>8
 			call DisplayTimedTextToPlayer(Player(i-1),0.,0.,7.,"|cffFF0000::: You received |cffFFcc00"+I2S(TV[i])+"|r gold for your Team killing a Boss Champion.|r")
@@ -7039,7 +7038,7 @@ function G2E takes nothing returns nothing
 		call A_V(2.)
 		call TriggerExecute(O5)
 	endif
-	if EJ==false and XJ==false then
+	if modeCC==false and modeAC==false then
 		if numberLvl>9 and numberLvl!=19 and numberLvl<29 and G==false then
 			call A_V(1.)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"Chance for a |cffFFcc00Champion|r to be created next wave: |CFFFF0000"+I2S(Y+30)+"%|r")
@@ -7058,12 +7057,12 @@ function G2E takes nothing returns nothing
 		call UnitAddAbility(U6,$41393535)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"Your team's King learned the |cff7333AAProvoke Anarchy|r"+" ability.")
 	
-	elseif numberLvl==5 and XJ then
+	elseif numberLvl==5 and modeAC then
 		call UnitAddAbility(H6,$41393535)
 		call UnitAddAbility(U6,$41393535)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"Your team's King learned the |cff7333AAProvoke Anarchy|r"+" ability.")
 	endif
-	if numberLvl==5 and XJ then
+	if numberLvl==5 and modeAC then
 		call A_V(2.)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,17.,"The |cffFFcc00Champions|r are coming!!!")
 	endif
@@ -7341,17 +7340,17 @@ endfunction
 
 function ICX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	set EJ=true
+	set modeCC=true
 	call OIE()
 endfunction
 
 function IDX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	set XJ=true
+	set modeAC=true
 endfunction
 
 function IIX takes nothing returns boolean
-	return XJ==false
+	return modeAC==false
 endfunction
 
 function ProcessGameMode takes nothing returns nothing
@@ -7413,7 +7412,7 @@ function ProcessGameMode takes nothing returns nothing
 		
 		elseif parameter=="pr" then
 			set mode_pr=true
-			
+		
 		elseif isTestVersion and parameter=="ap" then
 			set mode_ap=true
 		
@@ -7430,10 +7429,10 @@ function ProcessGameMode takes nothing returns nothing
 			set mode_ac=true
 		
 		elseif parameter=="x3" then
-			set x3Mode=true
+			set modeX3=true
 		
 		elseif isTestVersion and S2I(parameter)>0 and S2I(parameter)<36 then
-			set ggMode=true
+			set modeGG=true
 			set numberLvl=numberLvl+S2I(parameter)-1
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_GOLD,100000)
 			call SetPlayerStateBJ(localPlayer,PLAYER_STATE_RESOURCE_LUMBER,100000)
@@ -7445,7 +7444,7 @@ function ProcessGameMode takes nothing returns nothing
 	if	   mode_ph then
 		call ConditionalTriggerExecute(U2)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Handpicked|r: Everyone has random units and up to 6 manual rerolls")
-		
+	
 	elseif mode_pr then
 		call ConditionalTriggerExecute(W2)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
@@ -7462,7 +7461,7 @@ function ProcessGameMode takes nothing returns nothing
 	
 	if mode_mi then
 		if mode_pr then
-			set mirrorMode=true
+			set modeMI=true
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Mirror Mode|r: Rolls are mirrored with your opponent counterpart")
 		else
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|c00FFFFFFMirror Mode|r: Only allowed in combination with -PR")
@@ -7480,7 +7479,7 @@ function ProcessGameMode takes nothing returns nothing
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
 	endif
 	
-	if x3Mode then
+	if modeX3 then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000X3-Mode|r: Everything you send will be tripled")
 	endif
 	
@@ -7513,28 +7512,28 @@ endfunction
 function IQX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set LN=""
-	if GA then
+	if modeAP then
 		set LN="-ap"
 	endif
-	if SH then
+	if modePH then
 		set LN="-ph"
 	endif
-	if TH then
+	if modePR then
 		set LN="-pr"
 	endif
-	if EJ then
+	if modeCC then
 		set LN=LN+"cc"
 	endif
-	if XJ then
+	if modeAC then
 		set LN=LN+"ac"
 	endif
-	if mirrorMode then
+	if modeMI then
 		set LN=LN+"mi"
 	endif
-	if HCC then
+	if modeQG then
 		set LN=LN+"qg"
 	endif
-	if x3Mode then
+	if modeX3 then
 		set LN=LN+"x3"
 	endif
 	call MultiboardSetTitleText(JR,IR+"|cffFF0000 "+LN+"|r")
@@ -7543,7 +7542,7 @@ function IQX takes nothing returns nothing
 endfunction
 
 function IRX takes nothing returns boolean
-	return EJ==false
+	return modeCC==false
 endfunction
 
 function ISX takes nothing returns nothing
@@ -8304,14 +8303,14 @@ function LJE takes nothing returns nothing
 	call ForForce(ZI,ref_function_LHE)
 	call MultiboardSetItemValueBJ(JR,2,CountPlayersInForceBJ(YI)+3,FR+"None")
 	call MultiboardSetItemValueBJ(JR,2,CountPlayersInForceBJ(YI)+4,FR+"None")
-	if HCC then
+	if modeQG then
 		call StartTimerBJ(NE,false,45.)
 	
 	else
 		call StartTimerBJ(NE,false,30.)
 	endif
 	call TimerDialogSetTitle(EX,"Level "+I2S(numberLvl+1)+" in")
-	if HCC then
+	if modeQG then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"You have |CFFFF0000"+"45|r seconds to prepare for the next level.")
 	
 	else
@@ -8652,7 +8651,7 @@ function M4E takes nothing returns nothing
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Lumber Harvested: "+PV[1+GetPlayerId(LI)]+GetPlayerName(LI)+"|r with |cff33AA33"+I2S(GetPlayerState(LI,PLAYER_STATE_LUMBER_GATHERED))+"|r")
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Kills: "+PV[1+GetPlayerId(MI)]+GetPlayerName(MI)+"|r with |cff33AA33"+I2S(XE[1+GetPlayerId(MI)])+"|r")
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Leaked: "+PV[1+GetPlayerId(KD)]+GetPlayerName(KD)+"|r with |cff33AA33"+I2S(HB[1+GetPlayerId(KD)])+"|r")
-	if EJ then
+	if modeCC then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Champions Challenged: "+PV[1+GetPlayerId(LD)]+GetPlayerName(LD)+"|r with |cff33AA33"+I2S(Q[1+GetPlayerId(LD)])+"|r"+" challenged.")
 	endif
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.," ")
@@ -9931,7 +9930,7 @@ function PSE takes nothing returns nothing
 	call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnteringUnit())))
 	call SetUnitUserData(u,IQE)
 	
-	if x3Mode then
+	if modeX3 then
 		set u=CreateUnit(OX,GetUnitTypeId(GetEnteringUnit()),x,y,bj_UNIT_FACING)
 		call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnteringUnit())))
 		call SetUnitUserData(u,IQE)
@@ -10794,7 +10793,7 @@ endfunction
 function RFX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
-	set GA=true
+	set modeAP=true
 endfunction
 
 function RGE takes nothing returns nothing
@@ -10817,7 +10816,7 @@ endfunction
 function RHX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
-	set SH=true
+	set modePH=true
 	call A_V(1.)
 	call ForForce(ZI,ref_function_RGX)
 endfunction
@@ -10865,7 +10864,7 @@ endfunction
 function RKX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
-	set TH=true
+	set modePR=true
 	call A_V(1.)
 	set OO[1]=11
 	set OO[2]=12
@@ -11558,15 +11557,15 @@ function TCE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
 	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-300 then
-	call UnitRemoveAbility(GetTriggerUnit(),$41303947)
-	call UnitRemoveAbility(GetTriggerUnit(),$41303948)
-	call UnitAddAbility(GetTriggerUnit(),$41303955)
-	call UnitAddAbility(GetTriggerUnit(),$41303950)
-
-elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
-	call UnitRemoveAbility(GetTriggerUnit(),$41303948)
-	call UnitAddAbility(GetTriggerUnit(),$41303950)
-endif
+		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
+		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
+		call UnitAddAbility(GetTriggerUnit(),$41303955)
+		call UnitAddAbility(GetTriggerUnit(),$41303950)
+	
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
+		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
+		call UnitAddAbility(GetTriggerUnit(),$41303950)
+	endif
 endfunction
 
 function TEE takes nothing returns boolean
@@ -13328,7 +13327,7 @@ function XYX takes nothing returns nothing
 		endif
 	endif
 	if GetUnitTypeId(GetSoldUnit())==$75393937 then
-		if GetPlayerTechCountSimple($52393935,OX)<GetPlayerTechMaxAllowedSwap($52393935,OX) and EJ then
+		if GetPlayerTechCountSimple($52393935,OX)<GetPlayerTechMaxAllowedSwap($52393935,OX) and modeCC then
 			call ForForce(RJE(OX),ref_function_XUX)
 			call DestroyForce(S8)
 			set S8=null
@@ -13348,7 +13347,7 @@ function XYX takes nothing returns nothing
 			call AdjustPlayerStateBJ(50,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_RESOURCE_LUMBER)
 			call AdjustPlayerStateBJ(-50,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_LUMBER_GATHERED)
 			call SetPlayerUnitAvailableBJ($75393937,false,GetOwningPlayer(GetSellingUnit()))
-			if EJ==false then
+			if modeCC==false then
 				call DisplayTimedTextToPlayer(GetTriggerPlayer(),0.,0.,5.,"You can upgrade |cff7333AAProvoke Anarchy|r only in Challenge Champions mode.")
 			
 			else
@@ -13834,12 +13833,12 @@ function Z3E takes nothing returns boolean
 endfunction
 
 function Y_10 takes nothing returns boolean
-	return HCC==false
+	return modeQG==false
 endfunction
 
 function Y_11 takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	set HCC=true
+	set modeQG=true
 	set QC[30]="30000"
 	set QC[31]="31000"
 	set QC[32]="32000"
