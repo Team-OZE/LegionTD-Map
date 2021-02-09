@@ -47,7 +47,6 @@ globals
 	hashtable HY=null
 	hashtable X=null
 	force BD=null
-	dialog array EH
 	force P3=null
 	integer GRR=0
 	integer GII=0
@@ -816,12 +815,6 @@ globals
 	boolean array VNV
 	integer VBV=0
 	integer VCV=0
-	dialog array V2V
-	button array V7V
-	force EGV=null
-	force EJV=null
-	trigger EKV=null
-	trigger EYV=null
 	group XHV=null
 	force XQV=null
 	boolexpr XSV=null
@@ -3487,14 +3480,6 @@ function CVX takes nothing returns boolean
 	return RN==false
 endfunction
 
-function CBV takes nothing returns nothing
-	call ForceAddPlayer(EGV,GetTriggerPlayer())
-endfunction
-
-function CNV takes nothing returns nothing
-	call ForceAddPlayer(EJV,GetTriggerPlayer())
-endfunction
-
 function NVV takes unit u returns boolean
 	return GetUnitTypeId(u)<1 or IsUnitType(u,UNIT_TYPE_DEAD) or GetWidgetLife(u)<.405
 endfunction
@@ -5781,12 +5766,6 @@ endfunction
 
 function EEX takes nothing returns boolean
 	return GetOwningPlayer(GetTriggerUnit())==Player(8) and EVX()
-endfunction
-
-function ILV takes player IMV returns group
-	set XHV=CreateGroup()
-	call GroupEnumUnitsOfPlayer(XHV,IMV,XSV)
-	return XHV
 endfunction
 
 function EGX takes nothing returns boolean
@@ -14101,10 +14080,6 @@ function initGlobals takes nothing returns nothing
 	set P8=CreateGroup()
 	set W8=CreateGroup()
 	set Y8=CreateGroup()
-	set EGV=CreateForce()
-	set EJV=CreateForce()
-	set EKV=CreateTrigger()
-	set EYV=CreateTrigger()
 	set ref_function_OGE=function OGE
 	set ref_function_RTE=function RTE
 	set ref_function_RUE=function RUE
@@ -15059,14 +15034,6 @@ function main takes nothing returns nothing
 	call InitTrig_quickCls()
 	call PreloadGenClear()
 	call PreloadGenStart()
-	call TriggerRegisterDialogEvent(EKV,V2V[1])
-	call TriggerRegisterDialogEvent(EKV,V2V[2])
-	call TriggerRegisterDialogEvent(EKV,V2V[3])
-	call TriggerRegisterDialogEvent(EKV,V2V[4])
-	call TriggerRegisterDialogEvent(EKV,V2V[5])
-	call TriggerRegisterDialogEvent(EKV,V2V[6])
-	call TriggerRegisterDialogEvent(EYV,EH[1])
-	call TriggerRegisterDialogEvent(EYV,EH[2])
 	call ConfigureNeutralVictim()
 	set T8=Filter(ref_function_ASE)
 	call Filter(function IssueHauntOrderAtLocBJFilter)
@@ -15105,16 +15072,6 @@ function main takes nothing returns nothing
 		set AHE=AHE+1
 	endloop
 	set bj_rescueSound=CreateSoundFromLabel("Rescue",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestNew",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestUpdate",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestCompleted",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestFailed",false,false,false,10000,10000)
-	call CreateSoundFromLabel("Hint",false,false,false,10000,10000)
-	call CreateSoundFromLabel("SecretFound",false,false,false,10000,10000)
-	call CreateSoundFromLabel("ItemReward",false,false,false,10000,10000)
-	call CreateSoundFromLabel("Warning",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestCompleted",false,false,false,10000,10000)
-	call CreateSoundFromLabel("QuestFailed",false,false,false,10000,10000)
 	call DelayedSuspendDecayCreate()
 	call InitQueuedTriggers()
 	call InitRescuableBehaviorBJ()
