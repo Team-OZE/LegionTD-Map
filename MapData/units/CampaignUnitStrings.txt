@@ -5186,7 +5186,7 @@ Name=Polar Bear
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Polar Bear [|cffFFcc00R|r]
-Ubertip=|cffccccccDamage: |r|cffff800045-47|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frost Aura, Swipe
+Ubertip="|cffccccccDamage: |r|cffff800045-47|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frost Aura, Swipe"
 Upgrade=h0BK
 
 [h0BK]
@@ -5203,7 +5203,7 @@ Name=Magnataur
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=|cffFFcc00F|r - Promote to Magnataur
-Ubertip=|cffccccccDamage: |r|cffff8000115-118|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff80001330|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frost Aura, Swipe
+Ubertip="|cffccccccDamage: |r|cffff8000115-118|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff80001330|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frost Aura, Swipe"
 
 [h0BL]
 Art=ReplaceableTextures\CommandButtons\BTNWendigo.blp
