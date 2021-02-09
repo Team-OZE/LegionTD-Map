@@ -3783,8 +3783,6 @@ function D4X takes nothing returns nothing
 	call A4V(g)
 	set g=null
 	set u2=null
-	set g=null
-	set u2=null
 endfunction
 
 function D6E takes nothing returns boolean
@@ -12040,6 +12038,7 @@ function V0X takes nothing returns nothing
 	call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,HI)
 endfunction
 
+// Removes all units that entered the middle lane for Team West from Group IG
 function V1X takes nothing returns nothing
 	set EE=GetUnitUserData(GetEnteringUnit())
 	call GroupRemoveUnit(IG[EE],GetEnteringUnit())
@@ -12057,6 +12056,7 @@ function V4X takes nothing returns nothing
 	call IssuePointOrderByIdLoc(GetEnteringUnit(),851983,GO)
 endfunction
 
+// Removes all units that entered the middle lane for Team East from Group IG
 function V5X takes nothing returns nothing
 	set EE=GetUnitUserData(GetEnteringUnit())
 	call GroupRemoveUnit(IG[EE],GetEnteringUnit())
@@ -14803,6 +14803,7 @@ function main takes nothing returns nothing
 	set ML=Rect(2050.,3600.,7050.,2000.)
 	set QL=Rect(-5150.,850.,-3925.,1700.)
 	set SL=Rect(3925.,1700.,5150.,850.)
+	set UL=Rect(-3925.,-1250.,-5150.,3700.)
 	set WL=Rect(3925.,-1250.,5150.,3700.)
 	set YL=Rect(-4750.,2950.,-4350.,2500.)
 	set ZL=Rect(4350.,2950.,4750.,2500.)
