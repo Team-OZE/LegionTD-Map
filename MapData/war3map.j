@@ -63,7 +63,6 @@ globals
 	integer T=0
 	integer U=0
 	integer W=0
-	integer Y=0
 	integer Z=0
 	integer VV=0
 	integer EV=0
@@ -2970,8 +2969,6 @@ function C9X takes nothing returns nothing
 			call SetWidgetLife(u,1.)
 		endif
 	endif
-	set u=null
-	set uu=null
 	set u=null
 	set uu=null
 endfunction
@@ -6002,9 +5999,6 @@ function BGE takes nothing returns nothing
 			endloop
 			call SetWidgetLife(BHE,99999.)
 			set j=0
-			set uu=null
-			set u=null
-			set BHE=null
 		endif
 		call A4V(g)
 		set i=i+1
@@ -6015,13 +6009,10 @@ function BGE takes nothing returns nothing
 	set u=null
 	set uu=null
 	set BHE=null
-	set BHE=null
-	set u=null
-	set uu=null
 	set g=null
 endfunction
 
-
+// This is the function used in PRCC to spawn champs (r-mach)
 function BME takes nothing returns nothing
 	local group g=null
 	local integer i=1
@@ -6106,13 +6097,9 @@ function BME takes nothing returns nothing
 				endloop
 				call SetWidgetLife(BHE,99999.)
 				set j=0
-				set uu=null
-				set u=null
-				set BHE=null
 			endif
 			call A4V(g)
 			set Q[i]=Q[i]+1
-			// This is the function used in PRCC to spawn champs (r-mach)
 			call DisplayTimedTextToPlayer(Player(i-1),0.,0.,9.,"|cffFFcc00Champion:|r 'Who dares to challenge me?'")
 		endif
 		set i=i+1
@@ -6122,9 +6109,6 @@ function BME takes nothing returns nothing
 	set u=null
 	set uu=null
 	set BHE=null
-	set BHE=null
-	set u=null
-	set uu=null
 	set g=null
 endfunction
 
@@ -6211,9 +6195,6 @@ function BPE takes nothing returns nothing
 			endloop
 			call SetWidgetLife(BHE,99999.)
 			set j=0
-			set uu=null
-			set u=null
-			set BHE=null
 		endif
 		call A4V(g)
 		set i=i+1
@@ -6224,34 +6205,7 @@ function BPE takes nothing returns nothing
 	set u=null
 	set uu=null
 	set BHE=null
-	set BHE=null
-	set u=null
-	set uu=null
 	set g=null
-endfunction
-
-function F_E takes nothing returns nothing
-	local integer k=0
-	if numberLvl>9 and G==false then
-		set k=GetRandomInt(1,100)
-		if k+Y>=70 then
-			call BGE()
-			set Y=0
-		
-		else
-			set Y=Y+10
-		endif
-	
-	elseif numberLvl>9 and G then
-		set k=GetRandomInt(1,100)
-		if k+Y>=50 then
-			call BPE()
-			set Y=0
-		
-		else
-			set Y=Y+10
-		endif
-	endif
 endfunction
 
 function N_E takes nothing returns nothing
@@ -6312,10 +6266,7 @@ function F1E takes nothing returns nothing
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"|cff33AA33Tip:|r: You can use |cff7333AAProvoke Anarchy|r"+" to purge buffs from enemies including Champions")
 	endif
 	set PA=true
-	if modeCC==false and modeAC==false then
-		call F_E()
-	
-	elseif modeAC and numberLvl>5 and numberLvl<30 then
+	if modeAC and numberLvl>5 and numberLvl<30 then
 		if G==false then
 			call BGE()
 		
@@ -7008,16 +6959,6 @@ function G2E takes nothing returns nothing
 	if YD==false then
 		call A_V(2.)
 		call TriggerExecute(O5)
-	endif
-	if modeCC==false and modeAC==false then
-		if numberLvl>9 and numberLvl!=19 and numberLvl<29 and G==false then
-			call A_V(1.)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"Chance for a |cffFFcc00Champion|r to be created next wave: |CFFFF0000"+I2S(Y+30)+"%|r")
-		
-		elseif numberLvl>9 and numberLvl!=19 and numberLvl<29 and G then
-			call A_V(1.)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,20.,"Chance for a |cffFFcc00Champion|r to be created next wave: |CFFFF0000"+I2S(Y+50)+"%|r")
-		endif
 	endif
 	set T=0
 	set U=0
@@ -7888,7 +7829,6 @@ function K0E takes nothing returns nothing
 	call IssuePointOrderById(u,851980,tx,ty)
 	call IssueImmediateOrderById(u,851993)
 	set u=null
-	set u=null
 endfunction
 
 function K1E takes nothing returns nothing
@@ -7913,7 +7853,6 @@ function K1E takes nothing returns nothing
 	set ty=GetRectCenterY(KM)
 	call IssuePointOrderById(u,851980,tx,ty)
 	call IssueImmediateOrderById(u,851993)
-	set u=null
 	set u=null
 endfunction
 
@@ -8146,7 +8085,6 @@ function KYE takes nothing returns nothing
 	call SetUnitColor(u,GetPlayerColor(GetOwningPlayer(GetEnumUnit())))
 	call IssuePointOrderById(u,851980,tx,ty)
 	call IssueImmediateOrderById(u,851993)
-	set u=null
 	set u=null
 endfunction
 
@@ -8989,8 +8927,6 @@ function NBV takes nothing returns boolean
 	else
 		call TimerStart(tt,1.,true,null)
 	endif
-	set u=null
-	set t=null
 	set t=null
 	set u=null
 	set tt=null
@@ -9034,7 +8970,6 @@ function NBE takes rect r,integer id,integer NCE returns nothing
 	call GroupAddUnit(MA[NPE],u)
 	call GroupAddUnit(IG[NCE],u)
 	call IssuePointOrderByIdLoc(u,851983,CO[NCE])
-	set u=null
 	set u=null
 	set p=null
 endfunction
@@ -9189,7 +9124,6 @@ function O6E takes nothing returns nothing
 			call UnitApplyTimedLifeBJ(2.,$42544C46,UE)
 		endif
 	endif
-	set u=null
 	set u=null
 endfunction
 
@@ -9913,7 +9847,6 @@ function PSE takes nothing returns nothing
 	set NH[IQE]=NH[IQE]+GetUnitLevel(GetEnteringUnit())*20
 	call RemoveUnit(GetEnteringUnit())
 	call TriggerExecute(XT)
-	set u=null
 	set RSE=null
 	set u=null
 endfunction
@@ -10761,6 +10694,7 @@ function RFE takes nothing returns nothing
 	endif
 endfunction
 
+//-ap
 function RFX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
@@ -10783,7 +10717,7 @@ function RGX takes nothing returns nothing
 	set p=null
 endfunction
 
-//-ap
+//-ph
 function RHX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
@@ -10809,8 +10743,6 @@ function RIE takes nothing returns nothing
 	endif
 	set u=null
 	set uu=null
-	set u=null
-	set uu=null
 endfunction
 
 function RIX takes nothing returns nothing
@@ -10832,6 +10764,7 @@ function RJX takes nothing returns nothing
 	set p=null
 endfunction
 
+//-pr
 function RKX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
@@ -10914,8 +10847,6 @@ function RRE takes nothing returns nothing
 	endif
 	set u=null
 	set uu=null
-	set u=null
-	set uu=null
 endfunction
 
 function RRX takes nothing returns nothing
@@ -10935,7 +10866,6 @@ function RTE takes nothing returns nothing
 	call IssueImmediateOrderById(u,851972)
 	call PauseUnit(u,false)
 	set u=null
-	set u=null
 endfunction
 
 function RUE takes nothing returns nothing
@@ -10950,7 +10880,6 @@ function RUE takes nothing returns nothing
 	call SetUnitPosition(u,tx,ty)
 	call IssueImmediateOrderById(u,851972)
 	call PauseUnit(u,false)
-	set u=null
 	set u=null
 endfunction
 
@@ -10979,7 +10908,6 @@ function RWE takes real x,real y returns nothing
 	call SetUnitScale(u,4.,4.,4.)
 	call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",u,"origin"))
 	call UnitApplyTimedLife(u,$42544C46,3.)
-	set u=null
 	set u=null
 endfunction
 
@@ -12088,8 +12016,6 @@ function UVE takes nothing returns nothing
 	call RemoveUnit(uu)
 	set u=null
 	set uu=null
-	set u=null
-	set uu=null
 endfunction
 
 function UWE takes nothing returns nothing
@@ -12201,8 +12127,6 @@ function VCX takes nothing returns nothing
 	set ME=null
 	set d=null
 	set u=null
-	set d=null
-	set u=null
 endfunction
 
 function Z6E takes nothing returns boolean
@@ -12292,7 +12216,6 @@ function VGX takes nothing returns nothing
 	call TriggerSleepAction(.2)
 	call A4V(Y8)
 	call A4V(g)
-	set u=null
 	call RemoveLocation(FE)
 	set g=null
 	set u=null
@@ -13638,7 +13561,6 @@ function Z0E takes nothing returns nothing
 	endif
 	set W=W+1
 	call A4V(g)
-	set u=null
 	set g=null
 	set u=null
 endfunction
@@ -13676,8 +13598,6 @@ function Z1E takes nothing returns nothing
 		endloop
 	endif
 	call A4V(g)
-	set u=null
-	set uu=null
 	call UnitAddAbility(GetTriggerUnit(),$41393533)
 	set RJ[20]=true
 	call SetUnitState(GetTriggerUnit(),UNIT_STATE_MANA,GetUnitState(GetTriggerUnit(),UNIT_STATE_MANA)*.6)
@@ -13993,7 +13913,6 @@ function ZZE takes nothing returns nothing
 	endif
 	set T=T+1
 	call A4V(g)
-	set u=null
 	set g=null
 	set u=null
 endfunction
@@ -14016,7 +13935,6 @@ function Z_E takes nothing returns nothing
 	endif
 	set U=U+1
 	call A4V(g)
-	set u=null
 	set g=null
 	set u=null
 endfunction
