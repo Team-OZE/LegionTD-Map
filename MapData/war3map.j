@@ -1536,7 +1536,14 @@ globals
 	code ref_function_D4X=null
 	code ref_function_B0X=null
 	code ref_function_FOX=null
+	hashtable debug_functiontimings_table=null
+	integer debug_functiontimings_nb_functionidentifiers=0
+	timer debug_functiontimings_timer=null
+	multiboard debug_functiontimings_multiboard=null
+	hashtable debug_functiontimings_sorttable=null
+
 endglobals
+
 
 function A9E takes nothing returns nothing
 	local player RSE=Player(12)
@@ -14076,6 +14083,193 @@ function iK takes nothing returns nothing
 	endif
 endfunction
 
+function SetItem takes multiboard mboard, integer row, integer col, string text returns nothing
+	local multiboarditem mbi = MultiboardGetItem(mboard, row, col )
+	call MultiboardSetItemValue( mbi, text)
+	call MultiboardReleaseItem( mbi )
+	set mbi = null
+endfunction
+
+function SetWidth takes multiboard mboard, integer row, integer col, real width returns nothing
+	local multiboarditem mbi = MultiboardGetItem(mboard, row, col)
+	call MultiboardSetItemWidth( mbi, width )
+	call MultiboardReleaseItem(mbi)
+	set mbi = null
+endfunction
+
+function SetStyleValue takes multiboard mboard, integer row, integer col returns nothing
+	local multiboarditem mbi = MultiboardGetItem(mboard, row, col)
+	call MultiboardSetItemStyle( mbi, true, false )
+	call MultiboardReleaseItem(mbi)
+	set mbi = null
+endfunction
+
+function SetStyleIcon takes multiboard mboard, integer row, integer col returns nothing
+	local multiboarditem mbi = MultiboardGetItem(mboard, row, col)
+	call MultiboardSetItemStyle( mbi, false, true )
+	call MultiboardReleaseItem(mbi)
+	set mbi = null
+endfunction
+
+function SetStylePath takes multiboard mboard, integer row, integer col, string path returns nothing
+	local multiboarditem mbi = MultiboardGetItem(mboard, row, col)
+	call MultiboardSetItemIcon( mbi, path)
+	call MultiboardReleaseItem(mbi)
+	set mbi = null
+endfunction
+
+function DebugFunctionTimingsSort takes integer first, integer last returns nothing
+	local integer pivot = 0
+	local integer up = 0
+	local integer down = 0
+	local integer other = 0
+	local string temp = null
+	
+	//call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"DebugFunctionTimingsSort " + I2S(first) + " -> " + I2S(last))
+	
+	if first < last then
+		set up = first
+		set down = last
+		set pivot = LoadInteger(debug_functiontimings_sorttable , 0, first)
+		loop
+			loop
+				set other = LoadInteger(debug_functiontimings_sorttable , 0, up)
+				exitwhen up >= last or (pivot < other)
+				set up = up + 1
+			endloop
+			loop
+				set other = LoadInteger(debug_functiontimings_sorttable , 0, down)
+				exitwhen  not (pivot < other)
+				set down = down - 1
+			endloop
+			exitwhen up >= down
+			set other = LoadInteger(debug_functiontimings_sorttable , 0, up)
+			set temp = LoadStr(debug_functiontimings_sorttable , 1, up)
+			
+			call SaveInteger(debug_functiontimings_sorttable , 0, up, LoadInteger(debug_functiontimings_sorttable , 0, down))
+			call SaveStr(debug_functiontimings_sorttable , 1, up, LoadStr(debug_functiontimings_sorttable , 1, down))
+			call SaveInteger(debug_functiontimings_sorttable , 0, down, other)
+			call SaveStr(debug_functiontimings_sorttable , 1, down, temp)
+		endloop
+		set other = LoadInteger(debug_functiontimings_sorttable, 0, first)
+		set temp = LoadStr(debug_functiontimings_sorttable, 1, first)
+		
+		call SaveInteger(debug_functiontimings_sorttable , 0, first, LoadInteger(debug_functiontimings_sorttable , 0, down))
+		call SaveStr(debug_functiontimings_sorttable , 1, first, LoadStr(debug_functiontimings_sorttable , 1, down))
+		call SaveInteger(debug_functiontimings_sorttable , 0, down, other)
+		call SaveStr(debug_functiontimings_sorttable , 1, down, temp)
+		
+		call DebugFunctionTimingsSort(first, down - 1)
+		call DebugFunctionTimingsSort(down + 1, last)
+	endif
+	set temp = null
+endfunction
+
+function DebugFunctionTimingsCreateMultiboard takes nothing returns nothing
+	local integer row = 9
+	set debug_functiontimings_multiboard = CreateMultiboard()
+	call MultiboardSetColumnCount(debug_functiontimings_multiboard, 2)
+	call MultiboardSetRowCount(debug_functiontimings_multiboard, 10)
+	call MultiboardSetTitleText(debug_functiontimings_multiboard, "Debug")
+	
+	loop
+		call SetItem(debug_functiontimings_multiboard, row, 0, "empty")
+		call SetStyleValue(debug_functiontimings_multiboard, row, 0)
+		call SetWidth(debug_functiontimings_multiboard, row, 0, .05)
+		
+		call SetItem(debug_functiontimings_multiboard, row, 1, "0")
+		call SetStyleValue(debug_functiontimings_multiboard, row, 1)
+		call SetWidth(debug_functiontimings_multiboard, row, 1, .05)
+		
+		set row = row - 1
+		exitwhen row < 0
+	endloop
+
+	call MultiboardDisplay(debug_functiontimings_multiboard, true)
+	
+	//call TimerStart(CreateTimer(), .5, true, function DebugFunctionTimingsUpdateMultiboard)
+endfunction
+
+function DebugFunctionTimingsUpdateMultiboard takes nothing returns nothing
+	local integer current_function_identifier = 0
+	local integer row = 0
+	local integer cur_nb_calls = 0
+	local string cur_function_name = null
+	local integer length = 0
+	
+	call FlushChildHashtable(debug_functiontimings_sorttable, 0)
+	call FlushChildHashtable(debug_functiontimings_sorttable, 1)
+	
+	// Populate sorting table
+	loop
+		if HaveSavedInteger(debug_functiontimings_table, 1, current_function_identifier) then
+			// Nb_calls
+			set cur_nb_calls = LoadInteger(debug_functiontimings_table, 1, current_function_identifier)
+			call SaveInteger(debug_functiontimings_sorttable, 0, length, cur_nb_calls)
+			
+			// Function_name
+			set cur_function_name = LoadStr(debug_functiontimings_table, 3, current_function_identifier)
+			call SaveStr(debug_functiontimings_sorttable, 1, length, cur_function_name)
+			
+			
+			set length = length + 1
+		endif
+			
+		set current_function_identifier=current_function_identifier+1
+		exitwhen current_function_identifier > debug_functiontimings_nb_functionidentifiers
+	endloop
+	
+	set length = length - 1
+	
+	// Sort sorting table
+	call DebugFunctionTimingsSort(0, length)
+	
+	loop
+		set cur_nb_calls = LoadInteger(debug_functiontimings_sorttable, 0, length)
+		call SetItem(debug_functiontimings_multiboard, row, 0, I2S(cur_nb_calls))
+		
+		set cur_function_name = LoadStr(debug_functiontimings_sorttable, 1, length)
+		call SetItem(debug_functiontimings_multiboard, row, 1, cur_function_name)
+		
+		
+		set row = row + 1
+		set length = length - 1
+		exitwhen length < 0 or row >= 10
+	endloop
+endfunction
+
+
+function DebugFunctionTimingsInvokeStart takes string functionName,integer functionIdentifier returns nothing
+	local real timeStart = TimerGetElapsed(debug_functiontimings_timer)
+	local integer newNbCalls = 1
+
+	if HaveSavedInteger(debug_functiontimings_table, 1, functionIdentifier) then
+		set newNbCalls = LoadInteger(debug_functiontimings_table, 1, functionIdentifier) + 1
+	endif
+	
+	if HaveSavedString(debug_functiontimings_table, 3, functionIdentifier) == false then
+		call SaveStr(debug_functiontimings_table, 3, functionIdentifier, functionName)
+	endif
+	
+	//call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"START "+functionName + I2S(functionIdentifier) + " " + I2S(newNbCalls))
+		
+	call SaveInteger(debug_functiontimings_table, 1, functionIdentifier, newNbCalls)
+	call SaveReal(debug_functiontimings_table, 2, functionIdentifier, timeStart)
+endfunction
+
+function DebugFunctionTimingsInvokeEnd takes string functionName,integer functionIdentifier returns nothing
+	local real timeEnd = TimerGetElapsed(debug_functiontimings_timer)
+	local real timeStart = LoadReal(debug_functiontimings_table, 2, functionIdentifier)
+	local real timeDiff = timeEnd -  timeStart
+
+	
+	//call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"END "+functionName + I2S(functionIdentifier) + " " + R2S(timeDiff) + " " + R2S(timeStart) + " " + R2S(timeEnd) + " ")
+	
+endfunction
+
+
+//{POST_PROCESSOR_TEMPLATE:FUNCTION_TIMINGS}
+
 function initGlobals takes nothing returns nothing
 	set V=null
 	set HY=InitHashtable()
@@ -14815,6 +15009,12 @@ function initGlobals takes nothing returns nothing
 	set ref_function_D4X=function D4X
 	set ref_function_B0X=function B0X
 	set ref_function_FOX=function FOX
+	set debug_functiontimings_table=InitHashtable()
+	set debug_functiontimings_timer=CreateTimer()
+	set debug_functiontimings_nb_functionidentifiers=420
+	set debug_functiontimings_sorttable=InitHashtable()
+
+	
 endfunction
 
 function main takes nothing returns nothing
@@ -16570,6 +16770,11 @@ function main takes nothing returns nothing
 	call ConditionalTriggerExecute(B4)
 	set A6E=null
 	set RHE=null
+	call TimerStart(debug_functiontimings_timer,1000000.,false,null)
+	//call TimerStart(CreateTimer(), 2, false, function DebugFunctionTimingsCreateMultiboard)
+	
+	
+
 endfunction
 
 function InitCustomPlayerSlots takes nothing returns nothing
