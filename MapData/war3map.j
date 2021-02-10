@@ -16,8 +16,8 @@ globals
 	trigger onGameFinished=null
 	player localPlayer=null
 	string mapVersion=null
-	string array sArmorType
-	string array sAttackType
+	string array SArmorType
+	string array SAttackType
 	string sLevelPiercing=null
 	string sLevelNormal=null
 	string sLevelMagic=null
@@ -34,7 +34,16 @@ globals
 	string sLevelUnarmored=null
 	string sUnitsPerLevel=null
 	string sGoldPerUnitAndLevel=null
+	string array LevelValue
 	gamecache myGameCache=null
+	integer numberPlayer=0 // rename later
+	integer numberKickedPlayer=0
+	boolean array SomePlayerProperty // rename later
+	string array PlayerColor
+	player array KingFromPlayer
+	boolean gameEnd=false
+	integer levelAnarchy=0
+	integer levelAnarchyLast=0
 	
 	image array VisualPick
 	integer array VisualPickXY
@@ -64,9 +73,7 @@ globals
 	integer U=0
 	integer W=0
 	integer Z=0
-	integer VV=0
 	integer EV=0
-	integer XV=0
 	integer OV=0
 	integer RV=0
 	integer IV=0
@@ -77,17 +84,14 @@ globals
 	integer DV=0
 	integer GV=0
 	unit array JV
-	string array PV
 	integer array SV
 	integer array TV
 	integer array UV
 	integer array WV
 	string array YV
-	integer EE=0
 	integer array XE
 	group array RE
 	group IE=null
-	boolean AE=false
 	timer NE=null
 	string BE=null
 	region DE=null
@@ -128,10 +132,6 @@ globals
 	group FO=null
 	location GO=null
 	boolean HO=false
-	boolean JO=false
-	boolean KO=false
-	boolean LO=false
-	boolean MO=false
 	real QO=0.
 	integer SO=0
 	string TO=null
@@ -154,10 +154,6 @@ globals
 	string MR=null
 	integer PR=0
 	string QR=null
-	boolean SR=false
-	boolean TR=false
-	boolean UR=false
-	boolean WR=false
 	location YR=null
 	location ZR=null
 	location VI=null
@@ -192,7 +188,6 @@ globals
 	boolean array AA
 	group NA=null
 	group array BA
-	player array CA
 	boolean DA=false
 	timer KA=null
 	timerdialog LA=null
@@ -256,7 +251,6 @@ globals
 	texttag texttagGameMode1=null
 	texttag texttagGameMode2=null
 	integer array DC
-	string array LevelValue
 	boolean array SC
 	unit array WC
 	real array OD
@@ -289,7 +283,6 @@ globals
 	button MF=null
 	button PF=null
 	button QF=null
-	integer SF=0
 	integer TF=0
 	integer UF=0
 	timer WF=null
@@ -399,8 +392,8 @@ globals
 	rect QL=null
 	rect SL=null
 	rect TL=null
-	rect UL=null
-	rect WL=null
+	rect rectWestMiddleLane=null
+	rect rectEastMiddleLane=null
 	rect YL=null
 	rect ZL=null
 	rect VM=null
@@ -814,8 +807,6 @@ globals
 	boolean array VNV
 	integer VBV=0
 	integer VCV=0
-	group XHV=null
-	force XQV=null
 	boolexpr XSV=null
 	integer array team
 	code ref_function_OGE=null
@@ -1315,7 +1306,7 @@ globals
 	code ref_function_ZRE=null
 	code ref_function_ZKE=null
 	code ref_function_ZLE=null
-	code ref_function_VFX=null
+	code ref_function_OnKingsTaunt=null
 	code ref_function_Z4E=null
 	code ref_function_VCX=null
 	code ref_function_ZPE=null
@@ -1330,7 +1321,7 @@ globals
 	code ref_function_ZYE=null
 	code ref_function_Z0E=null
 	code ref_function_ZME=null
-	code ref_function_VGX=null
+	code ref_function_OnCommandAttack=null
 	code ref_function_VHX=null
 	code ref_function_VYX=null
 	code ref_function_VZX=null
@@ -1392,8 +1383,8 @@ globals
 	code ref_function_X3X=null
 	code ref_function_X5X=null
 	code ref_function_X6X=null
-	code ref_function_X7X=null
-	code ref_function_X8X=null
+	code ref_function_IsGameOngoing=null
+	code ref_function_KingIsLow=null
 	code ref_function_X9X=null
 	code ref_function_OEX=null
 	code ref_function_OXX=null
@@ -1423,9 +1414,9 @@ globals
 	code ref_function_RCX=null
 	code ref_function_RDX=null
 	code ref_function_RQX=null
-	code ref_function_RFX=null
-	code ref_function_RHX=null
-	code ref_function_RKX=null
+	code ref_function_InitApMode=null
+	code ref_function_InitPhMode=null
+	code ref_function_InitPrMode=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
 	code ref_function_IRX=null
@@ -1851,7 +1842,7 @@ function ACX takes nothing returns nothing
 	else
 		call UnitRemoveAbility(Unit[1+GetPlayerId(OX_1)],$41303834)
 		set SC[1+GetPlayerId(OX_1)]=true
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,PV[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r used Holy Light on King !")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+GetPlayerName(GetOwningPlayer(GetTriggerUnit()))+"|r used Holy Light on King !")
 		call TriggerSleepAction(1.)
 		call IssueImmediateOrderById(Unit[1+GetPlayerId(OX_1)],851993)
 	endif
@@ -1967,7 +1958,7 @@ function AEX takes nothing returns nothing
 	endif
 	set PE=GetTriggerUnit()
 	set MN=false
-	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PV[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r picked "+GetUnitName(PE)+".")
+	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r picked "+GetUnitName(PE)+".")
 	call DestroyForce(S8)
 	set S8=null
 	call TriggerExecute(AT)
@@ -1976,8 +1967,8 @@ endfunction
 function AFX takes nothing returns nothing
 	set CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]=CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]+1
 	call TriggerExecute(RT)
-	set EE=CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]
-	set EE=0
+	set numberPlayer=CN[1+GetPlayerId(GetOwningPlayer(GetTrainedUnit()))]
+	set numberPlayer=0
 endfunction
 
 function AGX takes nothing returns boolean
@@ -2000,13 +1991,13 @@ function AJX takes nothing returns boolean
 endfunction
 
 function AOX takes nothing returns nothing
-	set EE=GetRandomInt(1,ER)
-	call ReplaceUnitBJ(GetTriggerUnit(),OC[EE],3)
+	set numberPlayer=GetRandomInt(1,ER)
+	call ReplaceUnitBJ(GetTriggerUnit(),OC[numberPlayer],3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
 	set PE=bj_lastReplacedUnit
-	if OC[EE]==$75303054 then
-		set EE=GetRandomInt(1,PB[1])
+	if OC[numberPlayer]==$75303054 then
+		set numberPlayer=GetRandomInt(1,PB[1])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[1]
 		loop
@@ -2014,8 +2005,8 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(MB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(MB[EE],-1,GetTriggerPlayer())
-		set EE=GetRandomInt(1,PB[2])
+		call SetPlayerTechMaxAllowedSwap(MB[numberPlayer],-1,GetTriggerPlayer())
+		set numberPlayer=GetRandomInt(1,PB[2])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[2]
 		loop
@@ -2023,8 +2014,8 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(QB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(QB[EE],-1,GetTriggerPlayer())
-		set EE=GetRandomInt(1,PB[3])
+		call SetPlayerTechMaxAllowedSwap(QB[numberPlayer],-1,GetTriggerPlayer())
+		set numberPlayer=GetRandomInt(1,PB[3])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[3]
 		loop
@@ -2032,8 +2023,8 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(SB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(SB[EE],-1,GetTriggerPlayer())
-		set EE=GetRandomInt(1,PB[4])
+		call SetPlayerTechMaxAllowedSwap(SB[numberPlayer],-1,GetTriggerPlayer())
+		set numberPlayer=GetRandomInt(1,PB[4])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[4]
 		loop
@@ -2041,8 +2032,8 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(TB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(TB[EE],-1,GetTriggerPlayer())
-		set EE=GetRandomInt(1,PB[5])
+		call SetPlayerTechMaxAllowedSwap(TB[numberPlayer],-1,GetTriggerPlayer())
+		set numberPlayer=GetRandomInt(1,PB[5])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[5]
 		loop
@@ -2050,8 +2041,8 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(UB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(UB[EE],-1,GetTriggerPlayer())
-		set EE=GetRandomInt(1,PB[6])
+		call SetPlayerTechMaxAllowedSwap(UB[numberPlayer],-1,GetTriggerPlayer())
+		set numberPlayer=GetRandomInt(1,PB[6])
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=PB[6]
 		loop
@@ -2059,7 +2050,7 @@ function AOX takes nothing returns nothing
 			call SetPlayerTechMaxAllowedSwap(WB[bj_forLoopAIndex],0,GetTriggerPlayer())
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		call SetPlayerTechMaxAllowedSwap(WB[EE],-1,GetTriggerPlayer())
+		call SetPlayerTechMaxAllowedSwap(WB[numberPlayer],-1,GetTriggerPlayer())
 	
 	else
 		set bj_forLoopAIndex=1
@@ -2112,7 +2103,7 @@ function AOX takes nothing returns nothing
 		call UnitRemoveAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303834)
 	endif
 	set MN=true
-	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PV[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r randomed "+GetUnitName(PE)+".")
+	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r randomed "+GetUnitName(PE)+".")
 	call DestroyForce(S8)
 	set S8=null
 	call TriggerExecute(AT)
@@ -2131,7 +2122,7 @@ function ATX takes nothing returns nothing
 	set KH[1+GetPlayerId(GetTriggerPlayer())]=KH[1+GetPlayerId(GetTriggerPlayer())]+1
 	set MN=false
 	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r use Re-Roll.")
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r use Re-Roll.")
 	call DestroyForce(S8)
 	set S8=null
 	call ReRollNah(GetTriggerPlayer())
@@ -2218,7 +2209,7 @@ endfunction
 function B1X takes nothing returns nothing
 	local integer ii=0
 	local integer B2X=0
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has left the game.")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has left the game.")
 	call MultiboardSetItemValueBJ(JR,1,DC[1+GetPlayerId(GetTriggerPlayer())],"|cff888888"+GetPlayerName(Player(-1+1+GetPlayerId(GetTriggerPlayer())))+"|r")
 	call ForceRemovePlayer(ZI,GetTriggerPlayer())
 	if UI==false then
@@ -2229,28 +2220,28 @@ function B1X takes nothing returns nothing
 	call A4V(PP)
 	if UI==false then
 		if GetTriggerPlayer()==Player(0) then
-			set JO=false
+			set SomePlayerProperty[0]=false
 		
 		elseif GetTriggerPlayer()==Player(1) then
-			set KO=false
+			set SomePlayerProperty[1]=false
 		
 		elseif GetTriggerPlayer()==Player(2) then
-			set LO=false
+			set SomePlayerProperty[2]=false
 		
 		elseif GetTriggerPlayer()==Player(3) then
-			set MO=false
+			set SomePlayerProperty[3]=false
 		
 		elseif GetTriggerPlayer()==Player(4) then
-			set SR=false
+			set SomePlayerProperty[4]=false
 		
 		elseif GetTriggerPlayer()==Player(5) then
-			set TR=false
+			set SomePlayerProperty[5]=false
 		
 		elseif GetTriggerPlayer()==Player(6) then
-			set UR=false
+			set SomePlayerProperty[6]=false
 		
 		elseif GetTriggerPlayer()==Player(7) then
-			set WR=false
+			set SomePlayerProperty[7]=false
 		endif
 	endif
 	if BZX() then
@@ -2259,26 +2250,26 @@ function B1X takes nothing returns nothing
 	if B_X() then
 		set HO=false
 	endif
-	if AE==false then
+	if gameEnd==false then
 		set DN[1+GetPlayerId(GetTriggerPlayer())]="|cff999999"+QR+"|r"
 	
 	else
 		set DN[1+GetPlayerId(GetTriggerPlayer())]="|cff999999End|r"
 	endif
-	if AE then
-		set EE=1
+	if gameEnd then
+		set numberPlayer=1
 		set bj_forLoopAIndex=2
 		set bj_forLoopAIndexEnd=AN
 		loop
 			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 			set MN=false
-			set bj_forLoopBIndex=EE
+			set bj_forLoopBIndex=numberPlayer
 			set bj_forLoopBIndexEnd=8
 			loop
 				exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
 				if IsPlayerInForce(Player(-1+bj_forLoopBIndex),YI) and MN==false then
 					call MultiboardSetItemValueBJ(VA,bj_forLoopAIndex,MultiboardGetRowCount(VA)-3,DN[bj_forLoopBIndex])
-					set EE=bj_forLoopBIndex+1
+					set numberPlayer=bj_forLoopBIndex+1
 					set MN=true
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
@@ -2428,11 +2419,11 @@ function BXE takes location IVE,string ATE,real IEE,real IXE,real N1E,player RSE
 endfunction
 
 function B4X takes nothing returns nothing
-	set EE=EE+1
+	set numberPlayer=numberPlayer+1
 	set FE=GetUnitLoc(GetEnumUnit())
 	set OX=GetOwningPlayer(GetEnumUnit())
 	set BE="Gold:            |cffFFcc00"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_GOLD))+"|r|nLumber:       |cff339933"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_LUMBER))+"|r|nFood:            |cff993333"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_USED))+"/"+I2S(GetPlayerState(OX,PLAYER_STATE_RESOURCE_FOOD_CAP))+"|r|n"
-	set DB[EE]=BXE(FE,BE,255.,255.,255.,OX)
+	set DB[numberPlayer]=BXE(FE,BE,255.,255.,255.,OX)
 	call RemoveLocation(FE)
 endfunction
 
@@ -2450,8 +2441,8 @@ function B5X takes nothing returns nothing
 		call DestroyTextTag(DB[bj_forLoopAIndex])
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	if AE==false then
-		set EE=0
+	if gameEnd==false then
+		set numberPlayer=0
 		set QE=IPE($68303233)
 		call ForGroup(QE,ref_function_B4X)
 		call A4V(QE)
@@ -2459,7 +2450,7 @@ function B5X takes nothing returns nothing
 	else
 		call DisableTrigger(GetTriggeringTrigger())
 	endif
-	if AE then
+	if gameEnd then
 		call DisableTrigger(GetTriggeringTrigger())
 	endif
 endfunction
@@ -2572,25 +2563,25 @@ function BEX takes nothing returns nothing
 		call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetTriggerPlayer())
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	set EE=GetRandomInt(0,ER)
-	set IX=BAE(0,ER,EE)
-	call SetPlayerTechMaxAllowedSwap(OC[EE],1,GetTriggerPlayer())
+	set numberPlayer=GetRandomInt(0,ER)
+	set IX=BAE(0,ER,numberPlayer)
+	call SetPlayerTechMaxAllowedSwap(OC[numberPlayer],1,GetTriggerPlayer())
 	call SetPlayerTechMaxAllowedSwap(OC[IX],1,GetTriggerPlayer())
 	set MN=false
 	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
 	call ForceUICancelBJ(GetTriggerPlayer())
 	call RemoveUnit(Unit[1+GetPlayerId(GetTriggerPlayer())])
-	if EE<12 and IX<12 then
+	if numberPlayer<12 and IX<12 then
 		set bj_lastCreatedUnit=CreateUnit(GetTriggerPlayer(),$65303035,x,y,bj_UNIT_FACING)
 	
-	elseif EE>=6 and IX>=6 then
+	elseif numberPlayer>=6 and IX>=6 then
 		set bj_lastCreatedUnit=CreateUnit(GetTriggerPlayer(),$65303037,x,y,bj_UNIT_FACING)
 	
 	else
 		set bj_lastCreatedUnit=CreateUnit(GetTriggerPlayer(),$65303036,x,y,bj_UNIT_FACING)
 	endif
 	call SelectUnitForPlayerSingle(bj_lastCreatedUnit,GetTriggerPlayer())
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r Changed builder.")
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r Changed builder.")
 	call DestroyForce(S8)
 	set S8=null
 endfunction
@@ -2630,7 +2621,7 @@ function BGX takes nothing returns nothing
 endfunction
 
 function BHX takes nothing returns boolean
-	return AE==false
+	return gameEnd==false
 endfunction
 
 function BIX takes nothing returns nothing
@@ -2729,8 +2720,8 @@ function BOX takes nothing returns nothing
 		call UnitAddAbility(Unit[1+GetPlayerId(GetTriggerPlayer())],$41303950)
 	endif
 	if true then
-		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
-		set LH[EE]=LH[EE]+",Mercenary"
+		set numberPlayer=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
+		set LH[numberPlayer]=LH[numberPlayer]+",Mercenary"
 	endif
 endfunction
 
@@ -2795,11 +2786,11 @@ function BWX takes nothing returns nothing
 	set IN=true
 	set HO=true
 	call A_V(1.)
-	if JO==false and KO==false and LO==false and MO==false then
+	if SomePlayerProperty[0]==false and SomePlayerProperty[1]==false and SomePlayerProperty[2]==false and SomePlayerProperty[3]==false then
 		call UnitAddItemByIdSwapped($49303030,H6)
 		set IN=false
 	endif
-	if SR==false and TR==false and UR==false and WR==false then
+	if SomePlayerProperty[4]==false and SomePlayerProperty[5]==false and SomePlayerProperty[6]==false and SomePlayerProperty[7]==false then
 		call UnitAddItemByIdSwapped($49303030,U6)
 		set HO=false
 	endif
@@ -3059,15 +3050,15 @@ function I3E takes boolexpr IDE returns force
 endfunction
 
 function CDX takes nothing returns nothing
-	set EE=S2I(SubStringBJ(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
-	if EE>0 and EE<=35 then
+	set numberPlayer=S2I(SubStringBJ(GetEventPlayerChatString(),6,StringLength(GetEventPlayerChatString())))
+	if numberPlayer>0 and numberPlayer<=35 then
 		if modeQG and numberLvl>=21 then
-			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[EE+9])
+			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[numberPlayer+9])
 			call DestroyForce(S8)
 			set S8=null
 		
 		else
-			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[EE+0])
+			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),11.,YV[numberPlayer+0])
 			call DestroyForce(S8)
 			set S8=null
 		endif
@@ -3088,16 +3079,16 @@ function CEE takes nothing returns nothing
 	call A4E("VarP "+A2E+" "+"level"+" "+"="+" "+I2S(numberLvl))
 	call A4E("VarP "+A2E+" "+"gold_income"+" "+"="+" "+I2S(BN[IQE]))
 	call A4E("VarP "+A2E+" "+"race"+" "+"="+" "+LH[IQE])
-	set EE=JH[IQE]/numberLvl-HB[IQE]
-	call A4E("VarP "+A2E+" "+"score"+" "+"="+" "+I2S(EE))
-	set EE=HB[IQE]
-	call A4E("VarP "+A2E+" "+"leaked"+" "+"="+" "+I2S(EE))
-	set EE=PR*3600+FN*60+GN
-	call A4E("VarP "+A2E+" "+"seconds"+" "+"="+" "+I2S(EE))
-	set UH[IQE]=EE
-	set EE=GetPlayerTechCount(RSE,$52303033,true)+GetPlayerTechCount(RSE,$52303048,true)+GetPlayerTechCount(RSE,$52393937,true)-GetPlayerTechCount(RSE,$52393936,true)
-	set BE=I2S(CN[IQE])+"/"+I2S(EE)
-	call A4E("VarP "+A2E+" "+"lumberjack"+" "+"="+" "+I2S(EE))
+	set numberPlayer=JH[IQE]/numberLvl-HB[IQE]
+	call A4E("VarP "+A2E+" "+"score"+" "+"="+" "+I2S(numberPlayer))
+	set numberPlayer=HB[IQE]
+	call A4E("VarP "+A2E+" "+"leaked"+" "+"="+" "+I2S(numberPlayer))
+	set numberPlayer=PR*3600+FN*60+GN
+	call A4E("VarP "+A2E+" "+"seconds"+" "+"="+" "+I2S(numberPlayer))
+	set UH[IQE]=numberPlayer
+	set numberPlayer=GetPlayerTechCount(RSE,$52303033,true)+GetPlayerTechCount(RSE,$52303048,true)+GetPlayerTechCount(RSE,$52393937,true)-GetPlayerTechCount(RSE,$52393936,true)
+	set BE=I2S(CN[IQE])+"/"+I2S(numberPlayer)
+	call A4E("VarP "+A2E+" "+"lumberjack"+" "+"="+" "+I2S(numberPlayer))
 	call A4E("VarP "+A2E+" "+"gold_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_GOLD_GATHERED)))
 	call A4E("VarP "+A2E+" "+"lumber_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_LUMBER_GATHERED)))
 	set RSE=null
@@ -3278,7 +3269,7 @@ function CJX takes nothing returns nothing
 endfunction
 
 function CMX takes nothing returns nothing
-	set EE=0
+	set numberPlayer=0
 	call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),7.,"Total Kill: |cffFFcc00"+I2S(XE[1+GetPlayerId(GetTriggerPlayer())])+"|r")
 	call DestroyForce(S8)
 	set S8=null
@@ -3292,7 +3283,7 @@ function COE takes nothing returns nothing
 	local player RSE=GetEnumPlayer()
 	local integer IQE=GetPlayerId(RSE)+1
 	local string A2E=I2S(GetPlayerId(RSE))
-	set EE=PR*3600+FN*60+GN
+	set numberPlayer=PR*3600+FN*60+GN
 	if IsPlayerInForce(GetEnumPlayer(),ZI) then
 		if IsPlayerAlly(GetEnumPlayer(),HN) then
 			call A4E("FlagP "+A2E+" winner")
@@ -3301,11 +3292,11 @@ function COE takes nothing returns nothing
 			call A4E("FlagP "+A2E+" loser")
 		endif
 		call A4E("VarP "+A2E+" "+"level"+" "+"="+" "+I2S(numberLvl))
-		call A4E("VarP "+A2E+" "+"seconds"+" "+"="+" "+I2S(EE))
-		set EE=JH[IQE]/(numberLvl-1)-HB[IQE]
-		call A4E("VarP "+A2E+" "+"score"+" "+"="+" "+I2S(EE))
+		call A4E("VarP "+A2E+" "+"seconds"+" "+"="+" "+I2S(numberPlayer))
+		set numberPlayer=JH[IQE]/(numberLvl-1)-HB[IQE]
+		call A4E("VarP "+A2E+" "+"score"+" "+"="+" "+I2S(numberPlayer))
 	
-	elseif EE-UH[IQE]<180 then
+	elseif numberPlayer-UH[IQE]<180 then
 		if IsPlayerAlly(GetEnumPlayer(),HN) then
 			call A4E("FlagP "+A2E+" winner")
 		
@@ -3319,9 +3310,9 @@ function COE takes nothing returns nothing
 	call A4E("VarP "+A2E+" "+"value"+" "+"="+" "+I2S(GB[IQE]))
 	call A4E("VarP "+A2E+" "+"income"+" "+"="+" "+I2S(BI[IQE]))
 	call A4E("VarP "+A2E+" "+"gold_income"+" "+"="+" "+I2S(BN[IQE]))
-	set EE=GetPlayerTechCount(RSE,$52303033,true)+GetPlayerTechCount(RSE,$52303048,true)+GetPlayerTechCount(RSE,$52393937,true)-GetPlayerTechCount(RSE,$52393936,true)
-	set BE=I2S(CN[IQE])+"/"+I2S(EE)
-	call A4E("VarP "+A2E+" "+"lumberjack"+" "+"="+" "+I2S(EE))
+	set numberPlayer=GetPlayerTechCount(RSE,$52303033,true)+GetPlayerTechCount(RSE,$52303048,true)+GetPlayerTechCount(RSE,$52393937,true)-GetPlayerTechCount(RSE,$52393936,true)
+	set BE=I2S(CN[IQE])+"/"+I2S(numberPlayer)
+	call A4E("VarP "+A2E+" "+"lumberjack"+" "+"="+" "+I2S(numberPlayer))
 	call A4E("VarP "+A2E+" "+"gold_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_GOLD_GATHERED)))
 	call A4E("VarP "+A2E+" "+"lumber_total"+" "+"="+" "+I2S(GetPlayerState(RSE,PLAYER_STATE_LUMBER_GATHERED)))
 	set RSE=null
@@ -3530,17 +3521,17 @@ endfunction
 
 function D0E takes nothing returns nothing
 	set TI=GetRandomInt(12,19)
-	set sArmorType[1]="|cffEEBC86Light|r armor"
-	set sArmorType[2]="|cffFF8000Medium|r armor"
-	set sArmorType[3]="|cff408040Heavy|r armor"
-	set sArmorType[4]="|cff773C00Fortified|r armor"
-	set sArmorType[5]="|cffCCCCCCUnarmored|r armor"
-	set sArmorType[6]="|cff32CD32Enchanted|r armor"
-	set sAttackType[1]="|cffFFFF48Piercing|r attack"
-	set sAttackType[2]="|cff8080FFNormal|r attack"
-	set sAttackType[3]="|cffFF80FFMagic|r attack"
-	set sAttackType[4]="|cffA0A0A0Siege|r attack"
-	set sAttackType[5]="|cff970000Chaos|r attack"
+	set SArmorType[1]="|cffEEBC86Light|r armor"
+	set SArmorType[2]="|cffFF8000Medium|r armor"
+	set SArmorType[3]="|cff408040Heavy|r armor"
+	set SArmorType[4]="|cff773C00Fortified|r armor"
+	set SArmorType[5]="|cffCCCCCCUnarmored|r armor"
+	set SArmorType[6]="|cff32CD32Enchanted|r armor"
+	set SAttackType[1]="|cffFFFF48Piercing|r attack"
+	set SAttackType[2]="|cff8080FFNormal|r attack"
+	set SAttackType[3]="|cffFF80FFMagic|r attack"
+	set SAttackType[4]="|cffA0A0A0Siege|r attack"
+	set SAttackType[5]="|cff970000Chaos|r attack"
 	set sLevelPiercing=",01,04,7,12,19,21,25,32"
 	set sLevelNormal=",02,03,09,14,15,23,26,27,33"
 	set sLevelMagic=",05,08,13,16,18,24,29,34"
@@ -3802,7 +3793,7 @@ function D8E takes nothing returns nothing
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	if CountUnitsInGroup(MA[1])==0 and CountUnitsInGroup(MA[2])==0 and RX and PA and AE==false then
+	if CountUnitsInGroup(MA[1])==0 and CountUnitsInGroup(MA[2])==0 and RX and PA and gameEnd==false then
 		call TriggerExecute(JT)
 	endif
 endfunction
@@ -3812,77 +3803,77 @@ function D9E takes nothing returns boolean
 endfunction
 
 function DAE takes nothing returns nothing
-	set EE=1
-	set WV[EE]=$68303032
-	set EE=EE+1
-	set WV[EE]=$68303030
-	set EE=EE+1
-	set WV[EE]=$68303035
-	set EE=EE+1
-	set WV[EE]=$68303031
-	set EE=EE+1
-	set WV[EE]=$68303049
-	set EE=EE+1
-	set WV[EE]=$68303033
-	set EE=EE+1
-	set WV[EE]=$68303034
-	set EE=EE+1
-	set WV[EE]=$68303037
-	set EE=EE+1
-	set WV[EE]=$68303038
-	set EE=EE+1
-	set WV[EE]=$48303549
-	set EE=EE+1
-	set WV[EE]=$68303041
-	set EE=EE+1
-	set WV[EE]=$68303042
-	set EE=EE+1
-	set WV[EE]=$68303043
-	set EE=EE+1
-	set WV[EE]=$68303044
-	set EE=EE+1
-	set WV[EE]=$68303045
-	set EE=EE+1
-	set WV[EE]=$68303046
-	set EE=EE+1
-	set WV[EE]=$68303047
-	set EE=EE+1
-	set WV[EE]=$68303048
-	set EE=EE+1
-	set WV[EE]=$6830304A
-	set EE=EE+1
-	set WV[EE]=$4830354A
-	set EE=EE+1
-	set WV[EE]=$68303350
-	set EE=EE+1
-	set WV[EE]=$68303351
-	set EE=EE+1
-	set WV[EE]=$68303352
-	set EE=EE+1
-	set WV[EE]=$68303354
-	set EE=EE+1
-	set WV[EE]=$68303355
-	set EE=EE+1
-	set WV[EE]=$68303353
-	set EE=EE+1
-	set WV[EE]=$68303356
-	set EE=EE+1
-	set WV[EE]=$68303357
-	set EE=EE+1
-	set WV[EE]=$68303036
-	set EE=EE+1
-	set WV[EE]=$4830354B
-	set EE=EE+1
-	set WV[EE]=$6830354C
-	set EE=EE+1
-	set WV[EE]=$48303538
-	set EE=EE+1
-	set WV[EE]=$48303237
-	set EE=EE+1
-	set WV[EE]=$48303547
-	set EE=EE+1
-	set WV[EE]=$48303855
-	set EE=EE+1
+	set numberPlayer=1
+	set WV[numberPlayer]=$68303032
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303030
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303035
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303031
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303049
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303033
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303034
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303037
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303038
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$48303549
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303041
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303042
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303043
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303044
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303045
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303046
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303047
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303048
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$6830304A
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$4830354A
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303350
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303351
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303352
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303354
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303355
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303353
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303356
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303357
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$68303036
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$4830354B
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$6830354C
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$48303538
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$48303237
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$48303547
+	set numberPlayer=numberPlayer+1
+	set WV[numberPlayer]=$48303855
+	set numberPlayer=numberPlayer+1
 endfunction
 
 function DAX takes nothing returns boolean
@@ -4040,584 +4031,584 @@ function DEX takes nothing returns nothing
 endfunction
 
 function DFE takes nothing returns nothing
-	set EE=0
-	set EE=EE+1
-	set YE[EE]=$6830304C
-	set WE[EE]=$6830304D
-	set EE=EE+1
-	set YE[EE]=$68303238
-	set WE[EE]=$68303054
-	set EE=EE+1
-	set YE[EE]=$68303242
-	set WE[EE]=$6830304F
-	set EE=EE+1
-	set YE[EE]=$68303243
-	set WE[EE]=$68303059
-	set EE=EE+1
-	set YE[EE]=$68323243
-	set WE[EE]=$68313159
-	set EE=EE+1
-	set YE[EE]=$68303244
-	set WE[EE]=$68303058
-	set EE=EE+1
-	set YE[EE]=$68303239
-	set WE[EE]=$68303050
-	set EE=EE+1
-	set YE[EE]=$68303241
-	set WE[EE]=$6830305A
-	set EE=EE+1
-	set YE[EE]=$68303247
-	set WE[EE]=$6830304E
-	set EE=EE+1
-	set YE[EE]=$68303248
-	set WE[EE]=$68303055
-	set EE=EE+1
-	set YE[EE]=$68303249
-	set WE[EE]=$68303051
-	set EE=EE+1
-	set YE[EE]=$6830324A
-	set WE[EE]=$68303057
-	set EE=EE+1
-	set YE[EE]=$68303245
-	set WE[EE]=$68303053
-	set EE=EE+1
-	set YE[EE]=$68303246
-	set WE[EE]=$68303056
-	set EE=EE+1
-	set YE[EE]=$6830324C
-	set WE[EE]=$68303130
-	set EE=EE+1
-	set YE[EE]=$6830324D
-	set WE[EE]=$68303131
-	set EE=EE+1
-	set YE[EE]=$6830324E
-	set WE[EE]=$68303132
-	set EE=EE+1
-	set YE[EE]=$6830324F
-	set WE[EE]=$68303133
-	set EE=EE+1
-	set YE[EE]=$68303250
-	set WE[EE]=$68303134
-	set EE=EE+1
-	set YE[EE]=$68303251
-	set WE[EE]=$68303135
-	set EE=EE+1
-	set YE[EE]=$68303252
-	set WE[EE]=$68303136
-	set EE=EE+1
-	set YE[EE]=$68303253
-	set WE[EE]=$68303137
-	set EE=EE+1
-	set YE[EE]=$68303254
-	set WE[EE]=$68303138
-	set EE=EE+1
-	set YE[EE]=$68303255
-	set WE[EE]=$68303139
-	set EE=EE+1
-	set YE[EE]=$68303256
-	set WE[EE]=$68303141
-	set EE=EE+1
-	set YE[EE]=$68303257
-	set WE[EE]=$68303142
-	set EE=EE+1
-	set YE[EE]=$68303258
-	set WE[EE]=$68303143
-	set EE=EE+1
-	set YE[EE]=$68303259
-	set WE[EE]=$68303144
-	set EE=EE+1
-	set YE[EE]=$6830325A
-	set WE[EE]=$68303145
-	set EE=EE+1
-	set YE[EE]=$68303330
-	set WE[EE]=$68303146
-	set EE=EE+1
-	set YE[EE]=$68303331
-	set WE[EE]=$68303148
-	set EE=EE+1
-	set YE[EE]=$68303332
-	set WE[EE]=$68303147
-	set EE=EE+1
-	set YE[EE]=$68303333
-	set WE[EE]=$68303149
-	set EE=EE+1
-	set YE[EE]=$68303334
-	set WE[EE]=$6830314A
-	set EE=EE+1
-	set YE[EE]=$68303335
-	set WE[EE]=$6830314B
-	set EE=EE+1
-	set YE[EE]=$68303336
-	set WE[EE]=$6830314C
-	set EE=EE+1
-	set YE[EE]=$68303337
-	set WE[EE]=$6830314D
-	set EE=EE+1
-	set YE[EE]=$68393939
-	set WE[EE]=$6832324F
-	set EE=EE+1
-	set YE[EE]=$68303338
-	set WE[EE]=$6830314E
-	set EE=EE+1
-	set YE[EE]=$68303339
-	set WE[EE]=$6830314F
-	set EE=EE+1
-	set YE[EE]=$68303341
-	set WE[EE]=$68303150
-	set EE=EE+1
-	set YE[EE]=$68303342
-	set WE[EE]=$68303151
-	set EE=EE+1
-	set YE[EE]=$68303343
-	set WE[EE]=$68303152
-	set EE=EE+1
-	set YE[EE]=$68303344
-	set WE[EE]=$68303153
-	set EE=EE+1
-	set YE[EE]=$68303345
-	set WE[EE]=$68303154
-	set EE=EE+1
-	set YE[EE]=$68303346
-	set WE[EE]=$68303155
-	set EE=EE+1
-	set YE[EE]=$68303347
-	set WE[EE]=$68303156
-	set EE=EE+1
-	set YE[EE]=$68303348
-	set WE[EE]=$68303157
-	set EE=EE+1
-	set YE[EE]=$68303349
-	set WE[EE]=$68303158
-	set EE=EE+1
-	set YE[EE]=$6830334A
-	set WE[EE]=$68303159
-	set EE=EE+1
-	set YE[EE]=$6830334B
-	set WE[EE]=$6830315A
-	set EE=EE+1
-	set YE[EE]=$6830334C
-	set WE[EE]=$68303230
-	set EE=EE+1
-	set YE[EE]=$6830334D
-	set WE[EE]=$68303231
-	set EE=EE+1
-	set YE[EE]=$6830334E
-	set WE[EE]=$68303232
-	set EE=EE+1
-	set YE[EE]=$68303443
-	set WE[EE]=$68303430
-	set EE=EE+1
-	set YE[EE]=$68303444
-	set WE[EE]=$68303431
-	set EE=EE+1
-	set YE[EE]=$68303445
-	set WE[EE]=$68303432
-	set EE=EE+1
-	set YE[EE]=$68303446
-	set WE[EE]=$68303433
-	set EE=EE+1
-	set YE[EE]=$68303447
-	set WE[EE]=$68303434
-	set EE=EE+1
-	set YE[EE]=$68303448
-	set WE[EE]=$68303435
-	set EE=EE+1
-	set YE[EE]=$68303449
-	set WE[EE]=$68303436
-	set EE=EE+1
-	set YE[EE]=$6830344A
-	set WE[EE]=$68303437
-	set EE=EE+1
-	set YE[EE]=$6830344B
-	set WE[EE]=$68303438
-	set EE=EE+1
-	set YE[EE]=$6830344C
-	set WE[EE]=$68303439
-	set EE=EE+1
-	set YE[EE]=$6830344D
-	set WE[EE]=$68303441
-	set EE=EE+1
-	set YE[EE]=$6830344E
-	set WE[EE]=$68303442
-	set EE=EE+1
-	set YE[EE]=$68303631
-	set WE[EE]=$6830354E
-	set EE=EE+1
-	set YE[EE]=$68303633
-	set WE[EE]=$6830354F
-	set EE=EE+1
-	set YE[EE]=$68303634
-	set WE[EE]=$68303550
-	set EE=EE+1
-	set YE[EE]=$68303635
-	set WE[EE]=$68303553
-	set EE=EE+1
-	set YE[EE]=$68303637
-	set WE[EE]=$68303632
-	set EE=EE+1
-	set YE[EE]=$68303636
-	set WE[EE]=$68303551
-	set EE=EE+1
-	set YE[EE]=$68303638
-	set WE[EE]=$68303554
-	set EE=EE+1
-	set YE[EE]=$68303639
-	set WE[EE]=$68303552
-	set EE=EE+1
-	set YE[EE]=$68303641
-	set WE[EE]=$68303555
-	set EE=EE+1
-	set YE[EE]=$68393937
-	set WE[EE]=$68393938
-	set EE=EE+1
-	set YE[EE]=$68303642
-	set WE[EE]=$68303556
-	set EE=EE+1
-	set YE[EE]=$68303643
-	set WE[EE]=$68303557
-	set EE=EE+1
-	set YE[EE]=$68303644
-	set WE[EE]=$68303558
-	set EE=EE+1
-	set YE[EE]=$68303645
-	set WE[EE]=$68303559
-	set EE=EE+1
-	set YE[EE]=$68303646
-	set WE[EE]=$6830355A
-	set EE=EE+1
-	set YE[EE]=$68303647
-	set WE[EE]=$68303630
-	set EE=EE+1
-	set YE[EE]=$68303655
-	set WE[EE]=$6830364A
-	set EE=EE+1
-	set YE[EE]=$68303739
-	set WE[EE]=$68303738
-	set EE=EE+1
-	set YE[EE]=$68303657
-	set WE[EE]=$68303649
-	set EE=EE+1
-	set YE[EE]=$68303737
-	set WE[EE]=$68303736
-	set EE=EE+1
-	set YE[EE]=$68303658
-	set WE[EE]=$6830364B
-	set EE=EE+1
-	set YE[EE]=$68303659
-	set WE[EE]=$6830364C
-	set EE=EE+1
-	set YE[EE]=$68303656
-	set WE[EE]=$6830364D
-	set EE=EE+1
-	set YE[EE]=$6830365A
-	set WE[EE]=$6830364E
-	set EE=EE+1
-	set YE[EE]=$68303730
-	set WE[EE]=$6830364F
-	set EE=EE+1
-	set YE[EE]=$68303731
-	set WE[EE]=$68303650
-	set EE=EE+1
-	set YE[EE]=$68303732
-	set WE[EE]=$68303651
-	set EE=EE+1
-	set YE[EE]=$68303733
-	set WE[EE]=$68303652
-	set EE=EE+1
-	set YE[EE]=$68303734
-	set WE[EE]=$68303653
-	set EE=EE+1
-	set YE[EE]=$68303735
-	set WE[EE]=$68303654
-	set EE=EE+1
-	set YE[EE]=$6830374B
-	set WE[EE]=$6830374A
-	set EE=EE+1
-	set YE[EE]=$6830375A
-	set WE[EE]=$6830374C
-	set EE=EE+1
-	set YE[EE]=$68303830
-	set WE[EE]=$6830374D
-	set EE=EE+1
-	set YE[EE]=$68303831
-	set WE[EE]=$6830374E
-	set EE=EE+1
-	set YE[EE]=$68303832
-	set WE[EE]=$6830374F
-	set EE=EE+1
-	set YE[EE]=$68303833
-	set WE[EE]=$68303750
-	set EE=EE+1
-	set YE[EE]=$68303834
-	set WE[EE]=$68303751
-	set EE=EE+1
-	set YE[EE]=$68303835
-	set WE[EE]=$68303752
-	set EE=EE+1
-	set YE[EE]=$68303836
-	set WE[EE]=$68303753
-	set EE=EE+1
-	set YE[EE]=$68303837
-	set WE[EE]=$68303754
-	set EE=EE+1
-	set YE[EE]=$68303842
-	set WE[EE]=$68303755
-	set EE=EE+1
-	set YE[EE]=$68303838
-	set WE[EE]=$68303756
-	set EE=EE+1
-	set YE[EE]=$68303839
-	set WE[EE]=$68303757
-	set EE=EE+1
-	set YE[EE]=$68303841
-	set WE[EE]=$68303758
-	set EE=EE+1
-	set YE[EE]=$68303845
-	set WE[EE]=$68303846
-	set EE=EE+1
-	set YE[EE]=$6830384A
-	set WE[EE]=$68303849
-	set EE=EE+1
-	set YE[EE]=$68303847
-	set WE[EE]=$68303848
-	set EE=EE+1
-	set YE[EE]=$6830384B
-	set WE[EE]=$6830384C
-	set EE=EE+1
-	set YE[EE]=$6830384D
-	set WE[EE]=$6830384E
-	set EE=EE+1
-	set YE[EE]=$6830384F
-	set WE[EE]=$68303850
-	set EE=EE+1
-	set YE[EE]=$68303852
-	set WE[EE]=$68303851
-	set EE=EE+1
-	set YE[EE]=$68303854
-	set WE[EE]=$68303853
-	set EE=EE+1
-	set YE[EE]=$68303932
-	set WE[EE]=$68303856
-	set EE=EE+1
-	set YE[EE]=$68303858
-	set WE[EE]=$68303859
-	set EE=EE+1
-	set YE[EE]=$68303857
-	set WE[EE]=$6830385A
-	set EE=EE+1
-	set YE[EE]=$68303931
-	set WE[EE]=$68303930
-	set EE=EE+1
-	set YE[EE]=$68303934
-	set WE[EE]=$68303933
-	set EE=EE+1
-	set YE[EE]=$68303946
-	set WE[EE]=$6830394C
-	set EE=EE+1
-	set YE[EE]=$6830394B
-	set WE[EE]=$68303948
-	set EE=EE+1
-	set YE[EE]=$68303959
-	set WE[EE]=$68303957
-	set EE=EE+1
-	set YE[EE]=$68303947
-	set WE[EE]=$6830394D
-	set EE=EE+1
-	set YE[EE]=$68303956
-	set WE[EE]=$6830394E
-	set EE=EE+1
-	set YE[EE]=$68303950
-	set WE[EE]=$6830394F
-	set EE=EE+1
-	set YE[EE]=$68303951
-	set WE[EE]=$68303952
-	set EE=EE+1
-	set YE[EE]=$6830395A
-	set WE[EE]=$68303953
-	set EE=EE+1
-	set YE[EE]=$68303944
-	set WE[EE]=$68303954
-	set EE=EE+1
-	set YE[EE]=$68303958
-	set WE[EE]=$68303955
-	set EE=EE+1
-	set YE[EE]=$68304132
-	set WE[EE]=$68304133
-	set EE=EE+1
-	set YE[EE]=$68303949
-	set WE[EE]=$68304130
-	set EE=EE+1
-	set YE[EE]=$68304137
-	set WE[EE]=$68304138
-	set EE=EE+1
-	set YE[EE]=$68304156
-	set WE[EE]=$68304154
-	set EE=EE+1
-	set YE[EE]=$68304157
-	set WE[EE]=$68304155
-	set EE=EE+1
-	set YE[EE]=$68304144
-	set WE[EE]=$68304145
-	set EE=EE+1
-	set YE[EE]=$68304147
-	set WE[EE]=$68304146
-	set EE=EE+1
-	set YE[EE]=$68304143
-	set WE[EE]=$68304142
-	set EE=EE+1
-	set YE[EE]=$68304139
-	set WE[EE]=$68304141
-	set EE=EE+1
-	set YE[EE]=$68304149
-	set WE[EE]=$68304148
-	set EE=EE+1
-	set YE[EE]=$6830414B
-	set WE[EE]=$6830414A
-	set EE=EE+1
-	set YE[EE]=$6830414D
-	set WE[EE]=$6830414C
-	set EE=EE+1
-	set YE[EE]=$6830414E
-	set WE[EE]=$6830414F
-	set EE=EE+1
-	set YE[EE]=$68304153
-	set WE[EE]=$68304152
-	set EE=EE+1
-	set YE[EE]=$68304150
-	set WE[EE]=$68304151
-	set EE=EE+1
-	set YE[EE]=$6E303042
-	set WE[EE]=$68304243
-	set EE=EE+1
-	set YE[EE]=$6E303043
-	set WE[EE]=$68304244
-	set EE=EE+1
-	set YE[EE]=$6E303044
-	set WE[EE]=$68304245
-	set EE=EE+1
-	set YE[EE]=$6E30304B
-	set WE[EE]=$68304247
-	set EE=EE+1
-	set YE[EE]=$6F303031
-	set WE[EE]=$68304248
-	set EE=EE+1
-	set YE[EE]=$6E303045
-	set WE[EE]=$68304249
-	set EE=EE+1
-	set YE[EE]=$6E303046
-	set WE[EE]=$6830424A
-	set EE=EE+1
-	set YE[EE]=$6E303047
-	set WE[EE]=$6830424B
-	set EE=EE+1
-	set YE[EE]=$6E303049
-	set WE[EE]=$6830424D
-	set EE=EE+1
-	set YE[EE]=$6E303048
-	set WE[EE]=$6830424C
-	set EE=EE+1
-	set YE[EE]=$6830424E
-	set WE[EE]=$6830424F
-	set EE=EE+1
-	set YE[EE]=$6E30304A
-	set WE[EE]=$68304250
-	set EE=EE+1
-	set YE[EE]=$68304159
-	set WE[EE]=$68304246
-	set EE=EE+1
-	set YE[EE]=$68304254
-	set WE[EE]=$68304253
-	set EE=EE+1
-	set YE[EE]=$68304344
-	set WE[EE]=$68304255
-	set EE=EE+1
-	set YE[EE]=$6F303032
-	set WE[EE]=$68304256
-	set EE=EE+1
-	set YE[EE]=$6E303050
-	set WE[EE]=$68304257
-	set EE=EE+1
-	set YE[EE]=$68304259
-	set WE[EE]=$68304258
-	set EE=EE+1
-	set YE[EE]=$6830425A
-	set WE[EE]=$68304330
-	set EE=EE+1
-	set YE[EE]=$68304333
-	set WE[EE]=$68304334
-	set EE=EE+1
-	set YE[EE]=$68304331
-	set WE[EE]=$68304332
-	set EE=EE+1
-	set YE[EE]=$68304336
-	set WE[EE]=$68304335
-	set EE=EE+1
-	set YE[EE]=$68304337
-	set WE[EE]=$68304338
-	set EE=EE+1
-	set YE[EE]=$68304341
-	set WE[EE]=$68304339
-	set EE=EE+1
-	set YE[EE]=$68304342
-	set WE[EE]=$68304343
-	set EE=EE+1
-	set YE[EE]=$68304345
-	set WE[EE]=$68304346
-	set EE=EE+1
-	set YE[EE]=$68304347
-	set WE[EE]=$68304348
-	set EE=EE+1
-	set YE[EE]=$6830434A
-	set WE[EE]=$68304349
-	set EE=EE+1
-	set YE[EE]=$6830434C
-	set WE[EE]=$6830434B
-	set EE=EE+1
-	set YE[EE]=$6830434D
-	set WE[EE]=$6830434F
-	set EE=EE+1
-	set YE[EE]=$6830434E
-	set WE[EE]=$68304350
-	set EE=EE+1
-	set YE[EE]=$68304352
-	set WE[EE]=$68304351
-	set EE=EE+1
-	set YE[EE]=$68304354
-	set WE[EE]=$68304353
-	set EE=EE+1
-	set YE[EE]=$68304355
-	set WE[EE]=$68304356
-	set EE=EE+1
-	set YE[EE]=$68304358
-	set WE[EE]=$68304357
-	set EE=EE+1
-	set YE[EE]=$6830435A
-	set WE[EE]=$68304359
-	set EE=EE+1
-	set YE[EE]=$68304431
-	set WE[EE]=$68304430
-	set EE=EE+1
-	set YE[EE]=$68304433
-	set WE[EE]=$68304432
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303744
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303745
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303747
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303746
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303748
-	set EE=EE+1
-	set YE[EE]=0
-	set WE[EE]=$68303749
-	set BX=EE
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830304C
+	set WE[numberPlayer]=$6830304D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303238
+	set WE[numberPlayer]=$68303054
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303242
+	set WE[numberPlayer]=$6830304F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303243
+	set WE[numberPlayer]=$68303059
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68323243
+	set WE[numberPlayer]=$68313159
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303244
+	set WE[numberPlayer]=$68303058
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303239
+	set WE[numberPlayer]=$68303050
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303241
+	set WE[numberPlayer]=$6830305A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303247
+	set WE[numberPlayer]=$6830304E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303248
+	set WE[numberPlayer]=$68303055
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303249
+	set WE[numberPlayer]=$68303051
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830324A
+	set WE[numberPlayer]=$68303057
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303245
+	set WE[numberPlayer]=$68303053
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303246
+	set WE[numberPlayer]=$68303056
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830324C
+	set WE[numberPlayer]=$68303130
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830324D
+	set WE[numberPlayer]=$68303131
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830324E
+	set WE[numberPlayer]=$68303132
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830324F
+	set WE[numberPlayer]=$68303133
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303250
+	set WE[numberPlayer]=$68303134
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303251
+	set WE[numberPlayer]=$68303135
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303252
+	set WE[numberPlayer]=$68303136
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303253
+	set WE[numberPlayer]=$68303137
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303254
+	set WE[numberPlayer]=$68303138
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303255
+	set WE[numberPlayer]=$68303139
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303256
+	set WE[numberPlayer]=$68303141
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303257
+	set WE[numberPlayer]=$68303142
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303258
+	set WE[numberPlayer]=$68303143
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303259
+	set WE[numberPlayer]=$68303144
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830325A
+	set WE[numberPlayer]=$68303145
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303330
+	set WE[numberPlayer]=$68303146
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303331
+	set WE[numberPlayer]=$68303148
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303332
+	set WE[numberPlayer]=$68303147
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303333
+	set WE[numberPlayer]=$68303149
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303334
+	set WE[numberPlayer]=$6830314A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303335
+	set WE[numberPlayer]=$6830314B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303336
+	set WE[numberPlayer]=$6830314C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303337
+	set WE[numberPlayer]=$6830314D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68393939
+	set WE[numberPlayer]=$6832324F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303338
+	set WE[numberPlayer]=$6830314E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303339
+	set WE[numberPlayer]=$6830314F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303341
+	set WE[numberPlayer]=$68303150
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303342
+	set WE[numberPlayer]=$68303151
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303343
+	set WE[numberPlayer]=$68303152
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303344
+	set WE[numberPlayer]=$68303153
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303345
+	set WE[numberPlayer]=$68303154
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303346
+	set WE[numberPlayer]=$68303155
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303347
+	set WE[numberPlayer]=$68303156
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303348
+	set WE[numberPlayer]=$68303157
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303349
+	set WE[numberPlayer]=$68303158
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830334A
+	set WE[numberPlayer]=$68303159
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830334B
+	set WE[numberPlayer]=$6830315A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830334C
+	set WE[numberPlayer]=$68303230
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830334D
+	set WE[numberPlayer]=$68303231
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830334E
+	set WE[numberPlayer]=$68303232
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303443
+	set WE[numberPlayer]=$68303430
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303444
+	set WE[numberPlayer]=$68303431
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303445
+	set WE[numberPlayer]=$68303432
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303446
+	set WE[numberPlayer]=$68303433
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303447
+	set WE[numberPlayer]=$68303434
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303448
+	set WE[numberPlayer]=$68303435
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303449
+	set WE[numberPlayer]=$68303436
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830344A
+	set WE[numberPlayer]=$68303437
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830344B
+	set WE[numberPlayer]=$68303438
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830344C
+	set WE[numberPlayer]=$68303439
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830344D
+	set WE[numberPlayer]=$68303441
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830344E
+	set WE[numberPlayer]=$68303442
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303631
+	set WE[numberPlayer]=$6830354E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303633
+	set WE[numberPlayer]=$6830354F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303634
+	set WE[numberPlayer]=$68303550
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303635
+	set WE[numberPlayer]=$68303553
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303637
+	set WE[numberPlayer]=$68303632
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303636
+	set WE[numberPlayer]=$68303551
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303638
+	set WE[numberPlayer]=$68303554
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303639
+	set WE[numberPlayer]=$68303552
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303641
+	set WE[numberPlayer]=$68303555
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68393937
+	set WE[numberPlayer]=$68393938
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303642
+	set WE[numberPlayer]=$68303556
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303643
+	set WE[numberPlayer]=$68303557
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303644
+	set WE[numberPlayer]=$68303558
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303645
+	set WE[numberPlayer]=$68303559
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303646
+	set WE[numberPlayer]=$6830355A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303647
+	set WE[numberPlayer]=$68303630
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303655
+	set WE[numberPlayer]=$6830364A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303739
+	set WE[numberPlayer]=$68303738
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303657
+	set WE[numberPlayer]=$68303649
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303737
+	set WE[numberPlayer]=$68303736
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303658
+	set WE[numberPlayer]=$6830364B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303659
+	set WE[numberPlayer]=$6830364C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303656
+	set WE[numberPlayer]=$6830364D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830365A
+	set WE[numberPlayer]=$6830364E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303730
+	set WE[numberPlayer]=$6830364F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303731
+	set WE[numberPlayer]=$68303650
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303732
+	set WE[numberPlayer]=$68303651
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303733
+	set WE[numberPlayer]=$68303652
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303734
+	set WE[numberPlayer]=$68303653
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303735
+	set WE[numberPlayer]=$68303654
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830374B
+	set WE[numberPlayer]=$6830374A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830375A
+	set WE[numberPlayer]=$6830374C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303830
+	set WE[numberPlayer]=$6830374D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303831
+	set WE[numberPlayer]=$6830374E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303832
+	set WE[numberPlayer]=$6830374F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303833
+	set WE[numberPlayer]=$68303750
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303834
+	set WE[numberPlayer]=$68303751
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303835
+	set WE[numberPlayer]=$68303752
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303836
+	set WE[numberPlayer]=$68303753
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303837
+	set WE[numberPlayer]=$68303754
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303842
+	set WE[numberPlayer]=$68303755
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303838
+	set WE[numberPlayer]=$68303756
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303839
+	set WE[numberPlayer]=$68303757
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303841
+	set WE[numberPlayer]=$68303758
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303845
+	set WE[numberPlayer]=$68303846
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830384A
+	set WE[numberPlayer]=$68303849
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303847
+	set WE[numberPlayer]=$68303848
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830384B
+	set WE[numberPlayer]=$6830384C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830384D
+	set WE[numberPlayer]=$6830384E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830384F
+	set WE[numberPlayer]=$68303850
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303852
+	set WE[numberPlayer]=$68303851
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303854
+	set WE[numberPlayer]=$68303853
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303932
+	set WE[numberPlayer]=$68303856
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303858
+	set WE[numberPlayer]=$68303859
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303857
+	set WE[numberPlayer]=$6830385A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303931
+	set WE[numberPlayer]=$68303930
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303934
+	set WE[numberPlayer]=$68303933
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303946
+	set WE[numberPlayer]=$6830394C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830394B
+	set WE[numberPlayer]=$68303948
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303959
+	set WE[numberPlayer]=$68303957
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303947
+	set WE[numberPlayer]=$6830394D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303956
+	set WE[numberPlayer]=$6830394E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303950
+	set WE[numberPlayer]=$6830394F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303951
+	set WE[numberPlayer]=$68303952
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830395A
+	set WE[numberPlayer]=$68303953
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303944
+	set WE[numberPlayer]=$68303954
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303958
+	set WE[numberPlayer]=$68303955
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304132
+	set WE[numberPlayer]=$68304133
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68303949
+	set WE[numberPlayer]=$68304130
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304137
+	set WE[numberPlayer]=$68304138
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304156
+	set WE[numberPlayer]=$68304154
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304157
+	set WE[numberPlayer]=$68304155
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304144
+	set WE[numberPlayer]=$68304145
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304147
+	set WE[numberPlayer]=$68304146
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304143
+	set WE[numberPlayer]=$68304142
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304139
+	set WE[numberPlayer]=$68304141
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304149
+	set WE[numberPlayer]=$68304148
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830414B
+	set WE[numberPlayer]=$6830414A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830414D
+	set WE[numberPlayer]=$6830414C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830414E
+	set WE[numberPlayer]=$6830414F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304153
+	set WE[numberPlayer]=$68304152
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304150
+	set WE[numberPlayer]=$68304151
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303042
+	set WE[numberPlayer]=$68304243
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303043
+	set WE[numberPlayer]=$68304244
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303044
+	set WE[numberPlayer]=$68304245
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E30304B
+	set WE[numberPlayer]=$68304247
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6F303031
+	set WE[numberPlayer]=$68304248
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303045
+	set WE[numberPlayer]=$68304249
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303046
+	set WE[numberPlayer]=$6830424A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303047
+	set WE[numberPlayer]=$6830424B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303049
+	set WE[numberPlayer]=$6830424D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303048
+	set WE[numberPlayer]=$6830424C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830424E
+	set WE[numberPlayer]=$6830424F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E30304A
+	set WE[numberPlayer]=$68304250
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304159
+	set WE[numberPlayer]=$68304246
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304254
+	set WE[numberPlayer]=$68304253
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304344
+	set WE[numberPlayer]=$68304255
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6F303032
+	set WE[numberPlayer]=$68304256
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6E303050
+	set WE[numberPlayer]=$68304257
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304259
+	set WE[numberPlayer]=$68304258
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830425A
+	set WE[numberPlayer]=$68304330
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304333
+	set WE[numberPlayer]=$68304334
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304331
+	set WE[numberPlayer]=$68304332
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304336
+	set WE[numberPlayer]=$68304335
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304337
+	set WE[numberPlayer]=$68304338
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304341
+	set WE[numberPlayer]=$68304339
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304342
+	set WE[numberPlayer]=$68304343
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304345
+	set WE[numberPlayer]=$68304346
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304347
+	set WE[numberPlayer]=$68304348
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830434A
+	set WE[numberPlayer]=$68304349
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830434C
+	set WE[numberPlayer]=$6830434B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830434D
+	set WE[numberPlayer]=$6830434F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830434E
+	set WE[numberPlayer]=$68304350
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304352
+	set WE[numberPlayer]=$68304351
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304354
+	set WE[numberPlayer]=$68304353
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304355
+	set WE[numberPlayer]=$68304356
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304358
+	set WE[numberPlayer]=$68304357
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830435A
+	set WE[numberPlayer]=$68304359
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304431
+	set WE[numberPlayer]=$68304430
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304433
+	set WE[numberPlayer]=$68304432
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303744
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303745
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303747
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303746
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303748
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=0
+	set WE[numberPlayer]=$68303749
+	set BX=numberPlayer
 	call TriggerExecute(LS)
 endfunction
 
@@ -4642,338 +4633,338 @@ function DFX takes nothing returns nothing
 endfunction
 
 function DGE takes nothing returns nothing
-	set EE=BX
-	set EE=EE+1
-	set YE[EE]=$68304446
-	set WE[EE]=$68304445
-	set EE=EE+1
-	set YE[EE]=$68304447
-	set WE[EE]=$68304444
-	set EE=EE+1
-	set YE[EE]=$68304443
-	set WE[EE]=$68304441
-	set EE=EE+1
-	set YE[EE]=$68304449
-	set WE[EE]=$68304450
-	set EE=EE+1
-	set YE[EE]=$68304448
-	set WE[EE]=$6830444F
-	set EE=EE+1
-	set YE[EE]=$6830444B
-	set WE[EE]=$68304452
-	set EE=EE+1
-	set YE[EE]=$6830444A
-	set WE[EE]=$68304453
-	set EE=EE+1
-	set YE[EE]=$6830444C
-	set WE[EE]=$68304451
-	set EE=EE+1
-	set YE[EE]=$6830444D
-	set WE[EE]=$68304455
-	set EE=EE+1
-	set YE[EE]=$6830444E
-	set WE[EE]=$68304454
-	set EE=EE+1
-	set YE[EE]=$68304457
-	set WE[EE]=$68304456
-	set EE=EE+1
-	set YE[EE]=$68304548
-	set WE[EE]=$68304459
-	set EE=EE+1
-	set YE[EE]=$68304547
-	set WE[EE]=$6830445A
-	set EE=EE+1
-	set YE[EE]=$68304546
-	set WE[EE]=$68304530
-	set EE=EE+1
-	set YE[EE]=$68304545
-	set WE[EE]=$68304531
-	set EE=EE+1
-	set YE[EE]=$68304544
-	set WE[EE]=$68304532
-	set EE=EE+1
-	set YE[EE]=$68304543
-	set WE[EE]=$68304533
-	set EE=EE+1
-	set YE[EE]=$68304542
-	set WE[EE]=$68304534
-	set EE=EE+1
-	set YE[EE]=$68304541
-	set WE[EE]=$68304535
-	set EE=EE+1
-	set YE[EE]=$68304539
-	set WE[EE]=$68304536
-	set EE=EE+1
-	set YE[EE]=$68304458
-	set WE[EE]=$68304537
-	set EE=EE+1
-	set YE[EE]=$68304549
-	set WE[EE]=$68304538
-	set EE=EE+1
-	set YE[EE]=$68304553
-	set WE[EE]=$6830454A
-	set EE=EE+1
-	set YE[EE]=$68304554
-	set WE[EE]=$68304642
-	set EE=EE+1
-	set YE[EE]=$68304552
-	set WE[EE]=$68304638
-	set EE=EE+1
-	set YE[EE]=$68304555
-	set WE[EE]=$68304641
-	set EE=EE+1
-	set YE[EE]=$68304556
-	set WE[EE]=$68304639
-	set EE=EE+1
-	set YE[EE]=$68304557
-	set WE[EE]=$68304637
-	set EE=EE+1
-	set YE[EE]=$68304558
-	set WE[EE]=$68304632
-	set EE=EE+1
-	set YE[EE]=$68304559
-	set WE[EE]=$68304633
-	set EE=EE+1
-	set YE[EE]=$6830455A
-	set WE[EE]=$68304634
-	set EE=EE+1
-	set YE[EE]=$68304630
-	set WE[EE]=$68304635
-	set EE=EE+1
-	set YE[EE]=$68304631
-	set WE[EE]=$68304636
-	set EE=EE+1
-	set YE[EE]=$6830464D
-	set WE[EE]=$6830464B
-	set EE=EE+1
-	set YE[EE]=$6830464E
-	set WE[EE]=$6830454C
-	set EE=EE+1
-	set YE[EE]=$6830464F
-	set WE[EE]=$68304643
-	set EE=EE+1
-	set YE[EE]=$68304650
-	set WE[EE]=$68304644
-	set EE=EE+1
-	set YE[EE]=$68304651
-	set WE[EE]=$68304645
-	set EE=EE+1
-	set YE[EE]=$68304652
-	set WE[EE]=$68304646
-	set EE=EE+1
-	set YE[EE]=$68304653
-	set WE[EE]=$68304647
-	set EE=EE+1
-	set YE[EE]=$68304654
-	set WE[EE]=$68304648
-	set EE=EE+1
-	set YE[EE]=$68304655
-	set WE[EE]=$68304649
-	set EE=EE+1
-	set YE[EE]=$68304656
-	set WE[EE]=$6830464A
-	set EE=EE+1
-	set YE[EE]=$68304657
-	set WE[EE]=$6830464C
-	set EE=EE+1
-	set YE[EE]=$68304748
-	set WE[EE]=$68304735
-	set EE=EE+1
-	set YE[EE]=$68304746
-	set WE[EE]=$68304734
-	set EE=EE+1
-	set YE[EE]=$68304745
-	set WE[EE]=$68304733
-	set EE=EE+1
-	set YE[EE]=$68304744
-	set WE[EE]=$68304732
-	set EE=EE+1
-	set YE[EE]=$68304743
-	set WE[EE]=$68304730
-	set EE=EE+1
-	set YE[EE]=$68304741
-	set WE[EE]=$6830465A
-	set EE=EE+1
-	set YE[EE]=$68304739
-	set WE[EE]=$68304659
-	set EE=EE+1
-	set YE[EE]=$68304738
-	set WE[EE]=$68304658
-	set EE=EE+1
-	set YE[EE]=$68304737
-	set WE[EE]=$6830454D
-	set EE=EE+1
-	set YE[EE]=$68304747
-	set WE[EE]=$68304731
-	set EE=EE+1
-	set YE[EE]=$68304742
-	set WE[EE]=$68304736
-	set EE=EE+1
-	set YE[EE]=$68304830
-	set WE[EE]=$68304749
-	set EE=EE+1
-	set YE[EE]=$68304754
-	set WE[EE]=$68304753
-	set EE=EE+1
-	set YE[EE]=$6830475A
-	set WE[EE]=$6830474A
-	set EE=EE+1
-	set YE[EE]=$68304756
-	set WE[EE]=$6830474B
-	set EE=EE+1
-	set YE[EE]=$68304752
-	set WE[EE]=$6830474D
-	set EE=EE+1
-	set YE[EE]=$68304755
-	set WE[EE]=$68304750
-	set EE=EE+1
-	set YE[EE]=$68304758
-	set WE[EE]=$6830474C
-	set EE=EE+1
-	set YE[EE]=$68304757
-	set WE[EE]=$6830474E
-	set EE=EE+1
-	set YE[EE]=$68304832
-	set WE[EE]=$68304550
-	set EE=EE+1
-	set YE[EE]=$68304759
-	set WE[EE]=$68304751
-	set EE=EE+1
-	set YE[EE]=$68304831
-	set WE[EE]=$6830474F
-	set EE=EE+1
-	set YE[EE]=$6830484B
-	set WE[EE]=$68304843
-	set EE=EE+1
-	set YE[EE]=$6830484A
-	set WE[EE]=$68304836
-	set EE=EE+1
-	set YE[EE]=$68304849
-	set WE[EE]=$68304837
-	set EE=EE+1
-	set YE[EE]=$68304848
-	set WE[EE]=$68304838
-	set EE=EE+1
-	set YE[EE]=$68304845
-	set WE[EE]=$68304833
-	set EE=EE+1
-	set YE[EE]=$68304847
-	set WE[EE]=$68304839
-	set EE=EE+1
-	set YE[EE]=$68304844
-	set WE[EE]=$6830454E
-	set EE=EE+1
-	set YE[EE]=$68304846
-	set WE[EE]=$68304841
-	set EE=EE+1
-	set YE[EE]=$6830484D
-	set WE[EE]=$68304842
-	set EE=EE+1
-	set YE[EE]=$6830484E
-	set WE[EE]=$68304835
-	set EE=EE+1
-	set YE[EE]=$6830484C
-	set WE[EE]=$68304834
-	set EE=EE+1
-	set YE[EE]=$68304859
-	set WE[EE]=$68304551
-	set EE=EE+1
-	set YE[EE]=$6830485A
-	set WE[EE]=$6830484F
-	set EE=EE+1
-	set YE[EE]=$68304930
-	set WE[EE]=$68304850
-	set EE=EE+1
-	set YE[EE]=$68304931
-	set WE[EE]=$68304851
-	set EE=EE+1
-	set YE[EE]=$68304932
-	set WE[EE]=$68304852
-	set EE=EE+1
-	set YE[EE]=$68304933
-	set WE[EE]=$68304853
-	set EE=EE+1
-	set YE[EE]=$68304934
-	set WE[EE]=$68304854
-	set EE=EE+1
-	set YE[EE]=$68304935
-	set WE[EE]=$68304855
-	set EE=EE+1
-	set YE[EE]=$68304936
-	set WE[EE]=$68304856
-	set EE=EE+1
-	set YE[EE]=$68304937
-	set WE[EE]=$68304857
-	set EE=EE+1
-	set YE[EE]=$68304938
-	set WE[EE]=$68304858
-	set EE=EE+1
-	set YE[EE]=$6830494A
-	set WE[EE]=$6830454F
-	set EE=EE+1
-	set YE[EE]=$6830494D
-	set WE[EE]=$68304939
-	set EE=EE+1
-	set YE[EE]=$6830494E
-	set WE[EE]=$68304941
-	set EE=EE+1
-	set YE[EE]=$6830494F
-	set WE[EE]=$68304942
-	set EE=EE+1
-	set YE[EE]=$68304950
-	set WE[EE]=$68304943
-	set EE=EE+1
-	set YE[EE]=$68304951
-	set WE[EE]=$68304944
-	set EE=EE+1
-	set YE[EE]=$68304952
-	set WE[EE]=$68304945
-	set EE=EE+1
-	set YE[EE]=$68304953
-	set WE[EE]=$68304946
-	set EE=EE+1
-	set YE[EE]=$68304954
-	set WE[EE]=$68304947
-	set EE=EE+1
-	set YE[EE]=$6830494B
-	set WE[EE]=$68304948
-	set EE=EE+1
-	set YE[EE]=$6830494C
-	set WE[EE]=$68304949
-	set EE=EE+1
-	set YE[EE]=$68304A36
-	set WE[EE]=$6830454B
-	set EE=EE+1
-	set YE[EE]=$68304A37
-	set WE[EE]=$68304955
-	set EE=EE+1
-	set YE[EE]=$68304A38
-	set WE[EE]=$68304956
-	set EE=EE+1
-	set YE[EE]=$68304A39
-	set WE[EE]=$68304957
-	set EE=EE+1
-	set YE[EE]=$68304A41
-	set WE[EE]=$68304958
-	set EE=EE+1
-	set YE[EE]=$68304A42
-	set WE[EE]=$68304959
-	set EE=EE+1
-	set YE[EE]=$68304A43
-	set WE[EE]=$6830495A
-	set EE=EE+1
-	set YE[EE]=$68304A44
-	set WE[EE]=$68304A30
-	set EE=EE+1
-	set YE[EE]=$68304A45
-	set WE[EE]=$68304A31
-	set EE=EE+1
-	set YE[EE]=$68304A34
-	set WE[EE]=$68304A32
-	set EE=EE+1
-	set YE[EE]=$68304A35
-	set WE[EE]=$68304A33
-	set BX=EE
+	set numberPlayer=BX
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304446
+	set WE[numberPlayer]=$68304445
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304447
+	set WE[numberPlayer]=$68304444
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304443
+	set WE[numberPlayer]=$68304441
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304449
+	set WE[numberPlayer]=$68304450
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304448
+	set WE[numberPlayer]=$6830444F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830444B
+	set WE[numberPlayer]=$68304452
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830444A
+	set WE[numberPlayer]=$68304453
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830444C
+	set WE[numberPlayer]=$68304451
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830444D
+	set WE[numberPlayer]=$68304455
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830444E
+	set WE[numberPlayer]=$68304454
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304457
+	set WE[numberPlayer]=$68304456
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304548
+	set WE[numberPlayer]=$68304459
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304547
+	set WE[numberPlayer]=$6830445A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304546
+	set WE[numberPlayer]=$68304530
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304545
+	set WE[numberPlayer]=$68304531
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304544
+	set WE[numberPlayer]=$68304532
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304543
+	set WE[numberPlayer]=$68304533
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304542
+	set WE[numberPlayer]=$68304534
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304541
+	set WE[numberPlayer]=$68304535
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304539
+	set WE[numberPlayer]=$68304536
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304458
+	set WE[numberPlayer]=$68304537
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304549
+	set WE[numberPlayer]=$68304538
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304553
+	set WE[numberPlayer]=$6830454A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304554
+	set WE[numberPlayer]=$68304642
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304552
+	set WE[numberPlayer]=$68304638
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304555
+	set WE[numberPlayer]=$68304641
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304556
+	set WE[numberPlayer]=$68304639
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304557
+	set WE[numberPlayer]=$68304637
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304558
+	set WE[numberPlayer]=$68304632
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304559
+	set WE[numberPlayer]=$68304633
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830455A
+	set WE[numberPlayer]=$68304634
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304630
+	set WE[numberPlayer]=$68304635
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304631
+	set WE[numberPlayer]=$68304636
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830464D
+	set WE[numberPlayer]=$6830464B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830464E
+	set WE[numberPlayer]=$6830454C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830464F
+	set WE[numberPlayer]=$68304643
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304650
+	set WE[numberPlayer]=$68304644
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304651
+	set WE[numberPlayer]=$68304645
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304652
+	set WE[numberPlayer]=$68304646
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304653
+	set WE[numberPlayer]=$68304647
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304654
+	set WE[numberPlayer]=$68304648
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304655
+	set WE[numberPlayer]=$68304649
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304656
+	set WE[numberPlayer]=$6830464A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304657
+	set WE[numberPlayer]=$6830464C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304748
+	set WE[numberPlayer]=$68304735
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304746
+	set WE[numberPlayer]=$68304734
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304745
+	set WE[numberPlayer]=$68304733
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304744
+	set WE[numberPlayer]=$68304732
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304743
+	set WE[numberPlayer]=$68304730
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304741
+	set WE[numberPlayer]=$6830465A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304739
+	set WE[numberPlayer]=$68304659
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304738
+	set WE[numberPlayer]=$68304658
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304737
+	set WE[numberPlayer]=$6830454D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304747
+	set WE[numberPlayer]=$68304731
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304742
+	set WE[numberPlayer]=$68304736
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304830
+	set WE[numberPlayer]=$68304749
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304754
+	set WE[numberPlayer]=$68304753
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830475A
+	set WE[numberPlayer]=$6830474A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304756
+	set WE[numberPlayer]=$6830474B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304752
+	set WE[numberPlayer]=$6830474D
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304755
+	set WE[numberPlayer]=$68304750
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304758
+	set WE[numberPlayer]=$6830474C
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304757
+	set WE[numberPlayer]=$6830474E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304832
+	set WE[numberPlayer]=$68304550
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304759
+	set WE[numberPlayer]=$68304751
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304831
+	set WE[numberPlayer]=$6830474F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830484B
+	set WE[numberPlayer]=$68304843
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830484A
+	set WE[numberPlayer]=$68304836
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304849
+	set WE[numberPlayer]=$68304837
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304848
+	set WE[numberPlayer]=$68304838
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304845
+	set WE[numberPlayer]=$68304833
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304847
+	set WE[numberPlayer]=$68304839
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304844
+	set WE[numberPlayer]=$6830454E
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304846
+	set WE[numberPlayer]=$68304841
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830484D
+	set WE[numberPlayer]=$68304842
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830484E
+	set WE[numberPlayer]=$68304835
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830484C
+	set WE[numberPlayer]=$68304834
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304859
+	set WE[numberPlayer]=$68304551
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830485A
+	set WE[numberPlayer]=$6830484F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304930
+	set WE[numberPlayer]=$68304850
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304931
+	set WE[numberPlayer]=$68304851
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304932
+	set WE[numberPlayer]=$68304852
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304933
+	set WE[numberPlayer]=$68304853
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304934
+	set WE[numberPlayer]=$68304854
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304935
+	set WE[numberPlayer]=$68304855
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304936
+	set WE[numberPlayer]=$68304856
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304937
+	set WE[numberPlayer]=$68304857
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304938
+	set WE[numberPlayer]=$68304858
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494A
+	set WE[numberPlayer]=$6830454F
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494D
+	set WE[numberPlayer]=$68304939
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494E
+	set WE[numberPlayer]=$68304941
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494F
+	set WE[numberPlayer]=$68304942
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304950
+	set WE[numberPlayer]=$68304943
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304951
+	set WE[numberPlayer]=$68304944
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304952
+	set WE[numberPlayer]=$68304945
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304953
+	set WE[numberPlayer]=$68304946
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304954
+	set WE[numberPlayer]=$68304947
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494B
+	set WE[numberPlayer]=$68304948
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$6830494C
+	set WE[numberPlayer]=$68304949
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A36
+	set WE[numberPlayer]=$6830454B
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A37
+	set WE[numberPlayer]=$68304955
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A38
+	set WE[numberPlayer]=$68304956
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A39
+	set WE[numberPlayer]=$68304957
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A41
+	set WE[numberPlayer]=$68304958
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A42
+	set WE[numberPlayer]=$68304959
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A43
+	set WE[numberPlayer]=$6830495A
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A44
+	set WE[numberPlayer]=$68304A30
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A45
+	set WE[numberPlayer]=$68304A31
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A34
+	set WE[numberPlayer]=$68304A32
+	set numberPlayer=numberPlayer+1
+	set YE[numberPlayer]=$68304A35
+	set WE[numberPlayer]=$68304A33
+	set BX=numberPlayer
 endfunction
 
 function DGX takes nothing returns boolean
@@ -4999,17 +4990,17 @@ endfunction
 
 function DIE takes nothing returns nothing
 	set TI=45
-	set sArmorType[1]="|cffEEBC86Light|r armor"
-	set sArmorType[2]="|cffFF8000Medium|r armor"
-	set sArmorType[3]="|cff408040Heavy|r armor"
-	set sArmorType[4]="|cff773C00Fortified|r armor"
-	set sArmorType[5]="|cffCCCCCCUnarmored|r armor"
-	set sArmorType[6]="|cff32CD32Enchanted|r armor"
-	set sAttackType[1]="|cffFFFF48Piercing|r attack"
-	set sAttackType[2]="|cff8080FFNormal|r attack"
-	set sAttackType[3]="|cffFF80FFMagic|r attack"
-	set sAttackType[4]="|cffA0A0A0Siege|r attack"
-	set sAttackType[5]="|cff970000Chaos|r attack"
+	set SArmorType[1]="|cffEEBC86Light|r armor"
+	set SArmorType[2]="|cffFF8000Medium|r armor"
+	set SArmorType[3]="|cff408040Heavy|r armor"
+	set SArmorType[4]="|cff773C00Fortified|r armor"
+	set SArmorType[5]="|cffCCCCCCUnarmored|r armor"
+	set SArmorType[6]="|cff32CD32Enchanted|r armor"
+	set SAttackType[1]="|cffFFFF48Piercing|r attack"
+	set SAttackType[2]="|cff8080FFNormal|r attack"
+	set SAttackType[3]="|cffFF80FFMagic|r attack"
+	set SAttackType[4]="|cffA0A0A0Siege|r attack"
+	set SAttackType[5]="|cff970000Chaos|r attack"
 	set sLevelPiercing=",01,04,07,12,19,21,25,32"
 	set sLevelNormal=",02,03,09,14,15,23,26,27,33"
 	set sLevelMagic=",05,08,13,16,18,24,29,34"
@@ -5050,13 +5041,13 @@ function DIX takes nothing returns boolean
 endfunction
 
 function DJE takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_VISIBLE,JL)
-	set BF[EE]=bj_lastCreatedFogModifier
+	set BF[numberPlayer]=bj_lastCreatedFogModifier
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_VISIBLE,XM)
-	set DF[EE]=bj_lastCreatedFogModifier
+	set DF[numberPlayer]=bj_lastCreatedFogModifier
 	call CreateFogModifierRectBJ(true,GetEnumPlayer(),FOG_OF_WAR_VISIBLE,KL)
-	set CF[EE]=bj_lastCreatedFogModifier
+	set CF[numberPlayer]=bj_lastCreatedFogModifier
 endfunction
 
 function DJX takes nothing returns nothing
@@ -5110,81 +5101,81 @@ function DMX takes nothing returns boolean
 endfunction
 
 function DNE takes nothing returns nothing
-	set EE=0
+	set numberPlayer=0
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=TI*3+3
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set EE=EE+1
-		if SubStringBJ(sLevelPiercing,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelPiercing,EE+1,EE+2))
-			set MX[IX]=sAttackType[1]
+		set numberPlayer=numberPlayer+1
+		if SubStringBJ(sLevelPiercing,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelPiercing,numberPlayer+1,numberPlayer+2))
+			set MX[IX]=SAttackType[1]
 		endif
-		if SubStringBJ(sLevelNormal,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelNormal,EE+1,EE+2))
-			set MX[IX]=sAttackType[2]
+		if SubStringBJ(sLevelNormal,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelNormal,numberPlayer+1,numberPlayer+2))
+			set MX[IX]=SAttackType[2]
 		endif
-		if SubStringBJ(sLevelMagic,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelMagic,EE+1,EE+2))
-			set MX[IX]=sAttackType[3]
+		if SubStringBJ(sLevelMagic,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelMagic,numberPlayer+1,numberPlayer+2))
+			set MX[IX]=SAttackType[3]
 		endif
-		if SubStringBJ(sLevelSiege,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelSiege,EE+1,EE+2))
-			set MX[IX]=sAttackType[4]
+		if SubStringBJ(sLevelSiege,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelSiege,numberPlayer+1,numberPlayer+2))
+			set MX[IX]=SAttackType[4]
 		endif
-		if SubStringBJ(sLevelChaos,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelChaos,EE+1,EE+2))
-			set MX[IX]=sAttackType[5]
+		if SubStringBJ(sLevelChaos,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelChaos,numberPlayer+1,numberPlayer+2))
+			set MX[IX]=SAttackType[5]
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	set EE=0
+	set numberPlayer=0
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=TI*3+3
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set EE=EE+1
-		if SubStringBJ(sLevelLight,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelLight,EE+1,EE+2))
-			set PX[IX]=sArmorType[1]
+		set numberPlayer=numberPlayer+1
+		if SubStringBJ(sLevelLight,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelLight,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[1]
 		endif
-		if SubStringBJ(sLevelMedium,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelMedium,EE+1,EE+2))
-			set PX[IX]=sArmorType[2]
+		if SubStringBJ(sLevelMedium,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelMedium,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[2]
 		endif
-		if SubStringBJ(sLevelHeavy,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelHeavy,EE+1,EE+2))
-			set PX[IX]=sArmorType[3]
+		if SubStringBJ(sLevelHeavy,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelHeavy,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[3]
 		endif
-		if SubStringBJ(sLevelFortified,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelFortified,EE+1,EE+2))
-			set PX[IX]=sArmorType[4]
+		if SubStringBJ(sLevelFortified,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelFortified,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[4]
 		endif
-		if SubStringBJ(sLevelUnarmored,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelUnarmored,EE+1,EE+2))
-			set PX[IX]=sArmorType[5]
+		if SubStringBJ(sLevelUnarmored,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelUnarmored,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[5]
 		endif
-		if SubStringBJ(sLevelEnchanted,EE,EE)=="," then
-			set IX=S2I(SubStringBJ(sLevelEnchanted,EE+1,EE+2))
-			set PX[IX]=sArmorType[6]
+		if SubStringBJ(sLevelEnchanted,numberPlayer,numberPlayer)=="," then
+			set IX=S2I(SubStringBJ(sLevelEnchanted,numberPlayer+1,numberPlayer+2))
+			set PX[IX]=SArmorType[6]
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	set EE=0
+	set numberPlayer=0
 	set AX=0
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=TI*3+3
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set EE=EE+1
-		if SubStringBJ(sUnitsPerLevel,EE,EE)=="," then
+		set numberPlayer=numberPlayer+1
+		if SubStringBJ(sUnitsPerLevel,numberPlayer,numberPlayer)=="," then
 			set AX=AX+1
-			set IX=S2I(SubStringBJ(sUnitsPerLevel,EE+1,EE+3))
+			set IX=S2I(SubStringBJ(sUnitsPerLevel,numberPlayer+1,numberPlayer+3))
 			set QX[AX]=IX
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	set EE=0
+	set numberPlayer=0
 	set EO=0
 	set bj_forLoopAIndex=1
 	set bj_forLoopAIndexEnd=StringLength(sGoldPerUnitAndLevel)
@@ -5192,7 +5183,7 @@ function DNE takes nothing returns nothing
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		if SubStringBJ(sGoldPerUnitAndLevel,bj_forLoopAIndex,bj_forLoopAIndex)=="," then
 			set EO=EO+1
-			set EE=bj_forLoopAIndex
+			set numberPlayer=bj_forLoopAIndex
 			set IX=0
 			set bj_forLoopBIndex=bj_forLoopAIndex+1
 			set bj_forLoopBIndexEnd=StringLength(sGoldPerUnitAndLevel)
@@ -5203,7 +5194,7 @@ function DNE takes nothing returns nothing
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
 			endloop
-			set AX=S2I(SubStringBJ(sGoldPerUnitAndLevel,EE+1,IX-1))
+			set AX=S2I(SubStringBJ(sGoldPerUnitAndLevel,numberPlayer+1,IX-1))
 			set UV[EO]=AX
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
@@ -5263,18 +5254,18 @@ function DOE takes nothing returns nothing
 	else
 		set GRR=GII
 	endif
-	set PV[1]="|c00ff0202"
-	set PV[2]="|c000041ff"
-	set PV[3]="|c001be6b8"
-	set PV[4]="|c00530080"
-	set PV[5]="|c00fffc00"
-	set PV[6]="|c00fe890d"
-	set PV[7]="|c001fbf00"
-	set PV[8]="|c00e55aaf"
-	set PV[9]="|c00949596"
-	set PV[10]="|c007dbef1"
-	set PV[11]="|c000f6145"
-	set PV[12]="|c004d2903"
+	set PlayerColor[1]="|c00ff0202"
+	set PlayerColor[2]="|c000041ff"
+	set PlayerColor[3]="|c001be6b8"
+	set PlayerColor[4]="|c00530080"
+	set PlayerColor[5]="|c00fffc00"
+	set PlayerColor[6]="|c00fe890d"
+	set PlayerColor[7]="|c001fbf00"
+	set PlayerColor[8]="|c00e55aaf"
+	set PlayerColor[9]="|c00949596"
+	set PlayerColor[10]="|c007dbef1"
+	set PlayerColor[11]="|c000f6145"
+	set PlayerColor[12]="|c004d2903"
 	set WC[1]=M6
 	set WC[2]=K6
 	set WC[3]=S6
@@ -5283,14 +5274,14 @@ function DOE takes nothing returns nothing
 	set WC[6]=E7
 	set WC[7]=J6
 	set WC[8]=A7
-	set CA[1]=Player(8)
-	set CA[2]=Player(8)
-	set CA[3]=Player(8)
-	set CA[4]=Player(8)
-	set CA[5]=Player(9)
-	set CA[6]=Player(9)
-	set CA[7]=Player(9)
-	set CA[8]=Player(9)
+	set KingFromPlayer[1]=Player(8)
+	set KingFromPlayer[2]=Player(8)
+	set KingFromPlayer[3]=Player(8)
+	set KingFromPlayer[4]=Player(8)
+	set KingFromPlayer[5]=Player(9)
+	set KingFromPlayer[6]=Player(9)
+	set KingFromPlayer[7]=Player(9)
+	set KingFromPlayer[8]=Player(9)
 	call SetPlayerName(Player(8),"West Legion")
 	call SetPlayerName(Player(9),"East Legion")
 	set bj_forLoopAIndex=1
@@ -5333,14 +5324,14 @@ function DQE takes nothing returns nothing
 	local group g1=null
 	local group g2=null
 	local group g3=null
-	set JO=true
-	set KO=true
-	set LO=true
-	set MO=true
-	set SR=true
-	set TR=true
-	set UR=true
-	set WR=true
+	set SomePlayerProperty[0]=true
+	set SomePlayerProperty[1]=true
+	set SomePlayerProperty[2]=true
+	set SomePlayerProperty[3]=true
+	set SomePlayerProperty[4]=true
+	set SomePlayerProperty[5]=true
+	set SomePlayerProperty[6]=true
+	set SomePlayerProperty[7]=true
 	call TriggerExecute(N0)
 	call TriggerExecute(L4)
 	call SetUnitUserData(H6,9)
@@ -6318,12 +6309,12 @@ endfunction
 
 function FCE takes nothing returns nothing
 	if numberLvl>0 then
-		set EE=JH[1+GetPlayerId(GetEnumPlayer())]/numberLvl-HB[1+GetPlayerId(GetEnumPlayer())]
+		set numberPlayer=JH[1+GetPlayerId(GetEnumPlayer())]/numberLvl-HB[1+GetPlayerId(GetEnumPlayer())]
 	
 	else
-		set EE=JH[1+GetPlayerId(GetEnumPlayer())]/1
+		set numberPlayer=JH[1+GetPlayerId(GetEnumPlayer())]/1
 	endif
-	set UO=I2S(EE)
+	set UO=I2S(numberPlayer)
 	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
@@ -6494,19 +6485,19 @@ function FKE takes nothing returns nothing
 endfunction
 
 function FLE takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	set QO=I2R(GB[EE])/S2R(LevelValue[numberLvl])
-	set QN=I2R(HB[EE])/500.
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	set QO=I2R(GB[numberPlayer])/S2R(LevelValue[numberLvl])
+	set QN=I2R(HB[numberPlayer])/500.
 	set QO=QO-QN
 	
 	if QO>=1. then
-		set OD[EE]=1.
+		set OD[numberPlayer]=1.
 	
 	elseif QO>=.1 then
-		set OD[EE]=QO
+		set OD[numberPlayer]=QO
 	
 	else
-		set OD[EE]=0.
+		set OD[numberPlayer]=0.
 	endif
 endfunction
 
@@ -6515,8 +6506,8 @@ function FME takes nothing returns nothing
 endfunction
 
 function FNE takes nothing returns nothing
-	set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
-	set UO=I2S(CN[1+GetPlayerId(GetEnumPlayer())])+"/"+I2S(EE)
+	set numberPlayer=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
+	set UO=I2S(CN[1+GetPlayerId(GetEnumPlayer())])+"/"+I2S(numberPlayer)
 	if YD==false then
 		if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
 			if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
@@ -6782,7 +6773,7 @@ function FXE takes nothing returns nothing
 endfunction
 
 function FZE takes nothing returns boolean
-	return AE==false and YD==false and UI==false
+	return gameEnd==false and YD==false and UI==false
 endfunction
 
 function F6E takes nothing returns boolean
@@ -6855,9 +6846,9 @@ function G2E takes nothing returns nothing
 	call A4V(J8)
 	call A4V(K8)
 	set Z=0
-	set VV=0
+	set levelAnarchy=0
 	set EV=0
-	set XV=0
+	set levelAnarchyLast=0
 	call EnableTrigger(MQ)
 	call EnableTrigger(MQ)
 	call EnableTrigger(PQ)
@@ -6872,12 +6863,12 @@ function G2E takes nothing returns nothing
 	call PlaySoundBJ(ZP)
 	call A_V(2.)
 	if F6E() then
-		set EE=GetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_F4E)))
+		set numberPlayer=GetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_F4E)))
 		call DestroyForce(S8)
 		set S8=null
 	
 	else
-		set EE=0
+		set numberPlayer=0
 	endif
 	if F9E() then
 		set IX=GetPlayerState(Player(9),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_F7E)))
@@ -7033,7 +7024,7 @@ endfunction
 
 function GEE takes nothing returns nothing
 	if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
-		set AX=EE
+		set AX=numberPlayer
 	
 	else
 		set AX=IX
@@ -7055,18 +7046,18 @@ function GEE takes nothing returns nothing
 endfunction
 
 function GNE takes nothing returns nothing
-	set EE=0
-	set EE=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
-	set EE=EE+CN[1+GetPlayerId(GetEnumPlayer())]
-	set EE=EE*100
-	if EE<200 then
-		set EE=200
+	set numberPlayer=0
+	set numberPlayer=GetPlayerTechCountSimple($52303033,GetEnumPlayer())+GetPlayerTechCountSimple($52303048,GetEnumPlayer())+GetPlayerTechCountSimple($52393937,GetEnumPlayer())-GetPlayerTechCountSimple($52393936,GetEnumPlayer())
+	set numberPlayer=numberPlayer+CN[1+GetPlayerId(GetEnumPlayer())]
+	set numberPlayer=numberPlayer*100
+	if numberPlayer<200 then
+		set numberPlayer=200
 	endif
-	if GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)>200 and GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)>EE then
-		set IX=GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)-EE
-		call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER,EE)
+	if GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)>200 and GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)>numberPlayer then
+		set IX=GetPlayerState(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER)-numberPlayer
+		call SetPlayerStateBJ(GetEnumPlayer(),PLAYER_STATE_RESOURCE_LUMBER,numberPlayer)
 		set NH[1+GetPlayerId(GetEnumPlayer())]=NH[1+GetPlayerId(GetEnumPlayer())]+IX
-		call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),9.,"::: You have reach lumber limit (|cffFFcc00"+I2S(EE)+"|r),\t\t Lumber Limit = 100 x (Wisp + Lumberject) ")
+		call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),9.,"::: You have reach lumber limit (|cffFFcc00"+I2S(numberPlayer)+"|r),\t\t Lumber Limit = 100 x (Wisp + Lumberject) ")
 		call DestroyForce(S8)
 		set S8=null
 	endif
@@ -7228,7 +7219,7 @@ function I3X takes nothing returns nothing
 	endif
 	set PE=GetTriggerUnit()
 	set MN=false
-	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PV[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r picked "+GetUnitName(PE)+".")
+	call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(PE))]+GetPlayerName(GetOwningPlayer(PE))+"|r picked "+GetUnitName(PE)+".")
 	call DestroyForce(S8)
 	set S8=null
 	call TriggerExecute(AT)
@@ -7279,17 +7270,17 @@ function ProcessGameMode takes nothing returns nothing
 	call FogEnableOn()
 	call FogMaskEnableOn()
 	
-	set EE=1+GetPlayerId(localPlayer)
+	set numberPlayer=1+GetPlayerId(localPlayer)
 	if IsPlayerAlly(localPlayer,Player(8)) then
-		call FogModifierStop(CF[EE])
+		call FogModifierStop(CF[numberPlayer])
 		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,KL)
-		call FogModifierStop(DF[EE])
+		call FogModifierStop(DF[numberPlayer])
 		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,XM)
 	
 	else
-		call FogModifierStop(BF[EE])
+		call FogModifierStop(BF[numberPlayer])
 		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,JL)
-		call FogModifierStop(DF[EE])
+		call FogModifierStop(DF[numberPlayer])
 		call CreateFogModifierRectBJ(true,localPlayer,FOG_OF_WAR_MASKED,XM)
 	endif
 	
@@ -7578,37 +7569,37 @@ function J5E takes nothing returns nothing
 endfunction
 
 function J6E takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(Unit[EE])==$75303050 then
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if GetUnitTypeId(Unit[numberPlayer])==$75303050 then
 		if GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-500 then
-			call UnitRemoveAbility(Unit[EE],$41303956)
-			call UnitRemoveAbility(Unit[EE],$41303957)
-			call UnitRemoveAbility(Unit[EE],$41303955)
-			call UnitAddAbility(Unit[EE],$41303945)
-			call UnitAddAbility(Unit[EE],$41303946)
-			call UnitAddAbility(Unit[EE],$41303947)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303957)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303955)
+			call UnitAddAbility(Unit[numberPlayer],$41303945)
+			call UnitAddAbility(Unit[numberPlayer],$41303946)
+			call UnitAddAbility(Unit[numberPlayer],$41303947)
 			if true then
-				call UnitRemoveAbility(Unit[EE],$41303950)
-				call UnitAddAbility(Unit[EE],$41303948)
+				call UnitRemoveAbility(Unit[numberPlayer],$41303950)
+				call UnitAddAbility(Unit[numberPlayer],$41303948)
 			endif
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-300 then
-			call UnitRemoveAbility(Unit[EE],$41303956)
-			call UnitRemoveAbility(Unit[EE],$41303957)
-			call UnitRemoveAbility(Unit[EE],$41303955)
-			call UnitAddAbility(Unit[EE],$41303945)
-			call UnitAddAbility(Unit[EE],$41303946)
-			call UnitAddAbility(Unit[EE],$41303947)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303957)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303955)
+			call UnitAddAbility(Unit[numberPlayer],$41303945)
+			call UnitAddAbility(Unit[numberPlayer],$41303946)
+			call UnitAddAbility(Unit[numberPlayer],$41303947)
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX-100 then
-			call UnitRemoveAbility(Unit[EE],$41303956)
-			call UnitRemoveAbility(Unit[EE],$41303957)
-			call UnitAddAbility(Unit[EE],$41303945)
-			call UnitAddAbility(Unit[EE],$41303946)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303957)
+			call UnitAddAbility(Unit[numberPlayer],$41303945)
+			call UnitAddAbility(Unit[numberPlayer],$41303946)
 		
 		elseif GB[1+GetPlayerId(GetEnumPlayer())]+PD[1+GetPlayerId(GetEnumPlayer())]<IX then
-			call UnitRemoveAbility(Unit[EE],$41303956)
-			call UnitAddAbility(Unit[EE],$41303945)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+			call UnitAddAbility(Unit[numberPlayer],$41303945)
 		endif
 	endif
 endfunction
@@ -7625,16 +7616,16 @@ function J7E takes nothing returns nothing
 endfunction
 
 function J8E takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(Unit[EE])==$75303050 then
-		call UnitRemoveAbility(Unit[EE],$41303945)
-		call UnitRemoveAbility(Unit[EE],$41303946)
-		call UnitRemoveAbility(Unit[EE],$41303947)
-		call UnitRemoveAbility(Unit[EE],$41303948)
-		call UnitAddAbility(Unit[EE],$41303956)
-		call UnitAddAbility(Unit[EE],$41303957)
-		call UnitAddAbility(Unit[EE],$41303955)
-		call UnitAddAbility(Unit[EE],$41303950)
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if GetUnitTypeId(Unit[numberPlayer])==$75303050 then
+		call UnitRemoveAbility(Unit[numberPlayer],$41303945)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303946)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303947)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303948)
+		call UnitAddAbility(Unit[numberPlayer],$41303956)
+		call UnitAddAbility(Unit[numberPlayer],$41303957)
+		call UnitAddAbility(Unit[numberPlayer],$41303955)
+		call UnitAddAbility(Unit[numberPlayer],$41303950)
 	endif
 endfunction
 
@@ -7648,7 +7639,7 @@ endfunction
 
 function JFE takes nothing returns nothing
 	if IsPlayerAlly(GetEnumPlayer(),Player(8)) then
-		set AX=EE
+		set AX=numberPlayer
 	
 	else
 		set AX=IX
@@ -7682,16 +7673,16 @@ function JOE takes nothing returns boolean
 endfunction
 
 function JPE takes nothing returns nothing
-	if GetUnitTypeId(Unit[EE])==$75303050 then
+	if GetUnitTypeId(Unit[numberPlayer])==$75303050 then
 		if true then
-			call UnitRemoveAbility(Unit[EE],$41303956)
-			call UnitRemoveAbility(Unit[EE],$41303957)
-			call UnitRemoveAbility(Unit[EE],$41303955)
-			call UnitRemoveAbility(Unit[EE],$41303950)
-			call UnitAddAbility(Unit[EE],$41303945)
-			call UnitAddAbility(Unit[EE],$41303946)
-			call UnitAddAbility(Unit[EE],$41303947)
-			call UnitAddAbility(Unit[EE],$41303948)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303957)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303955)
+			call UnitRemoveAbility(Unit[numberPlayer],$41303950)
+			call UnitAddAbility(Unit[numberPlayer],$41303945)
+			call UnitAddAbility(Unit[numberPlayer],$41303946)
+			call UnitAddAbility(Unit[numberPlayer],$41303947)
+			call UnitAddAbility(Unit[numberPlayer],$41303948)
 		endif
 	endif
 endfunction
@@ -7739,12 +7730,12 @@ function JWE takes nothing returns nothing
 	call TriggerExecute(KT)
 	call TriggerExecute(ZT)
 	if JXE() then
-		set EE=GetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_JVE)))
+		set numberPlayer=GetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_JVE)))
 		call DestroyForce(S8)
 		set S8=null
 	
 	else
-		set EE=0
+		set numberPlayer=0
 	endif
 	if JIE() then
 		set IX=GetPlayerState(Player(9),PLAYER_STATE_RESOURCE_GOLD)/CountPlayersInForceBJ(I3E(Condition(ref_function_JOE)))
@@ -7770,7 +7761,7 @@ function JWE takes nothing returns nothing
 endfunction
 
 function JYE takes nothing returns boolean
-	return UI and AE==false
+	return UI and gameEnd==false
 endfunction
 
 function J_E takes nothing returns nothing
@@ -7991,11 +7982,11 @@ function KJE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		if GetUnitTypeId(PE)==WE[bj_forLoopAIndex] then
-			set EE=bj_forLoopAIndex
+			set numberPlayer=bj_forLoopAIndex
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	set UE=CreateUnit(OX,YE[EE],x,y,bj_UNIT_FACING)
+	set UE=CreateUnit(OX,YE[numberPlayer],x,y,bj_UNIT_FACING)
 	call SetUnitColor(UE,GetPlayerColor(GetOwningPlayer(PE)))
 	call SetUnitUserData(UE,1+GetPlayerId(GetOwningPlayer(PE)))
 	if IsPlayerAlly(GetOwningPlayer(UE),Player(8)) then
@@ -8039,16 +8030,16 @@ function KSE takes nothing returns nothing
 endfunction
 
 function KVE takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetUnitTypeId(Unit[EE])==$75303050 then
-		call UnitRemoveAbility(Unit[EE],$41303956)
-		call UnitRemoveAbility(Unit[EE],$41303957)
-		call UnitRemoveAbility(Unit[EE],$41303955)
-		call UnitRemoveAbility(Unit[EE],$41303950)
-		call UnitAddAbility(Unit[EE],$41303945)
-		call UnitAddAbility(Unit[EE],$41303946)
-		call UnitAddAbility(Unit[EE],$41303947)
-		call UnitAddAbility(Unit[EE],$41303948)
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if GetUnitTypeId(Unit[numberPlayer])==$75303050 then
+		call UnitRemoveAbility(Unit[numberPlayer],$41303956)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303957)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303955)
+		call UnitRemoveAbility(Unit[numberPlayer],$41303950)
+		call UnitAddAbility(Unit[numberPlayer],$41303945)
+		call UnitAddAbility(Unit[numberPlayer],$41303946)
+		call UnitAddAbility(Unit[numberPlayer],$41303947)
+		call UnitAddAbility(Unit[numberPlayer],$41303948)
 	endif
 endfunction
 
@@ -8286,10 +8277,10 @@ function LPE takes nothing returns nothing
 	if RF!=OF then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFF0000East vs West : "+I2S(RF)+" vs "+I2S(OF)+"|r")
 		if OF>RF then
-			set EE=OF-RF
+			set numberPlayer=OF-RF
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00EAST TEAM received FREE units to help them|r")
 			set bj_forLoopAIndex=1
-			set bj_forLoopAIndexEnd=EE
+			set bj_forLoopAIndexEnd=numberPlayer
 			loop
 				exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 				if numberLvl==10 then
@@ -8365,10 +8356,10 @@ function LPE takes nothing returns nothing
 			endloop
 		
 		else
-			set EE=RF-OF
+			set numberPlayer=RF-OF
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cffFFcc00WEST TEAM received FREE units to help them|r")
 			set bj_forLoopAIndex=1
-			set bj_forLoopAIndexEnd=EE
+			set bj_forLoopAIndexEnd=numberPlayer
 			loop
 				exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 				if numberLvl==10 then
@@ -8495,7 +8486,7 @@ function M2E takes nothing returns nothing
 	call MultiboardDisplay(JR,false)
 	call DestroyLeaderboard(VX)
 	call PlayMusicBJ(VQ)
-	set AE=true
+	set gameEnd=true
 	set RX=false
 	set UI=false
 	set EA=HR[1+GetPlayerId(Player(8))]+GetPlayerName(Player(8))
@@ -8553,13 +8544,13 @@ function M4E takes nothing returns nothing
 	set KD=Player(0)
 	set LD=Player(0)
 	call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_M3E)
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Highest Fighter Value: "+PV[1+GetPlayerId(JD)]+GetPlayerName(JD)+"|r with |cff33AA33"+I2S(GB[1+GetPlayerId(JD)]+SV[1+GetPlayerId(JD)])+"|r")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Highest Income: "+PV[1+GetPlayerId(QI)]+GetPlayerName(QI)+"|r with |cff33AA33"+I2S(BI[1+GetPlayerId(QI)])+"|r")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Lumber Harvested: "+PV[1+GetPlayerId(LI)]+GetPlayerName(LI)+"|r with |cff33AA33"+I2S(GetPlayerState(LI,PLAYER_STATE_LUMBER_GATHERED))+"|r")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Kills: "+PV[1+GetPlayerId(MI)]+GetPlayerName(MI)+"|r with |cff33AA33"+I2S(XE[1+GetPlayerId(MI)])+"|r")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Leaked: "+PV[1+GetPlayerId(KD)]+GetPlayerName(KD)+"|r with |cff33AA33"+I2S(HB[1+GetPlayerId(KD)])+"|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Highest Fighter Value: "+PlayerColor[1+GetPlayerId(JD)]+GetPlayerName(JD)+"|r with |cff33AA33"+I2S(GB[1+GetPlayerId(JD)]+SV[1+GetPlayerId(JD)])+"|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Highest Income: "+PlayerColor[1+GetPlayerId(QI)]+GetPlayerName(QI)+"|r with |cff33AA33"+I2S(BI[1+GetPlayerId(QI)])+"|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Lumber Harvested: "+PlayerColor[1+GetPlayerId(LI)]+GetPlayerName(LI)+"|r with |cff33AA33"+I2S(GetPlayerState(LI,PLAYER_STATE_LUMBER_GATHERED))+"|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Kills: "+PlayerColor[1+GetPlayerId(MI)]+GetPlayerName(MI)+"|r with |cff33AA33"+I2S(XE[1+GetPlayerId(MI)])+"|r")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Leaked: "+PlayerColor[1+GetPlayerId(KD)]+GetPlayerName(KD)+"|r with |cff33AA33"+I2S(HB[1+GetPlayerId(KD)])+"|r")
 	if modeCC then
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Champions Challenged: "+PV[1+GetPlayerId(LD)]+GetPlayerName(LD)+"|r with |cff33AA33"+I2S(Q[1+GetPlayerId(LD)])+"|r"+" challenged.")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.,"Most Champions Challenged: "+PlayerColor[1+GetPlayerId(LD)]+GetPlayerName(LD)+"|r with |cff33AA33"+I2S(Q[1+GetPlayerId(LD)])+"|r"+" challenged.")
 	endif
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,60.," ")
 	call A_V(2.)
@@ -8573,50 +8564,50 @@ function M5E takes nothing returns nothing
 	call MultiboardSetItemWidthBJ(VA,0,0,9.)
 	call MultiboardSetItemStyleBJ(VA,0,0,true,false)
 	set NN="|cff9FC8F8"
-	set EE=2
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Score|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Kills|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Gold From Kills|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Current Gold|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Current Income|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Gold From Inc.|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Current Lumber|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Total Lumber|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Fighters Value|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Leaks|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Leaks Caught|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Workers|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Summons Sent|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Upgrades|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Food Used (Max)|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Left At|r")
-	set EE=EE+1
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Winner|r")
-	set EE=EE+2
-	call MultiboardSetItemValueBJ(VA,1,EE,NN+"Game Length|r")
-	set EE=1
+	set numberPlayer=2
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Score|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Kills|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Gold From Kills|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Current Gold|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Current Income|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Gold From Inc.|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Current Lumber|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Total Lumber|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Fighters Value|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Leaks|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Leaks Caught|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Workers|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Summons Sent|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Upgrades|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Food Used (Max)|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Left At|r")
+	set numberPlayer=numberPlayer+1
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Winner|r")
+	set numberPlayer=numberPlayer+2
+	call MultiboardSetItemValueBJ(VA,1,numberPlayer,NN+"Game Length|r")
+	set numberPlayer=1
 	set bj_forLoopAIndex=2
 	set bj_forLoopAIndexEnd=AN
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		call MultiboardSetItemStyleBJ(VA,bj_forLoopAIndex,1,true,true)
 		set MN=false
-		set bj_forLoopBIndex=EE
+		set bj_forLoopBIndex=numberPlayer
 		set bj_forLoopBIndexEnd=8
 		loop
 			exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
@@ -8665,7 +8656,7 @@ function M5E takes nothing returns nothing
 				call MultiboardSetItemValueBJ(VA,bj_forLoopAIndex,IX,I2S(KN[bj_forLoopBIndex]))
 				set IX=IX+1
 				call MultiboardSetItemValueBJ(VA,bj_forLoopAIndex,IX,DN[bj_forLoopBIndex])
-				set EE=bj_forLoopBIndex+1
+				set numberPlayer=bj_forLoopBIndex+1
 				set MN=true
 			endif
 			set bj_forLoopBIndex=bj_forLoopBIndex+1
@@ -8697,7 +8688,7 @@ function M6E takes nothing returns nothing
 endfunction
 
 function M7E takes nothing returns boolean
-	return AE==false
+	return gameEnd==false
 endfunction
 
 function M8E takes nothing returns nothing
@@ -8730,7 +8721,7 @@ function M8E takes nothing returns nothing
 endfunction
 
 function M9E takes nothing returns boolean
-	return AE
+	return gameEnd
 endfunction
 
 function MCE takes nothing returns nothing
@@ -8758,7 +8749,7 @@ function MJE takes nothing returns nothing
 endfunction
 
 function MKE takes nothing returns boolean
-	return AE==false
+	return gameEnd==false
 endfunction
 
 function MLE takes nothing returns nothing
@@ -8797,7 +8788,7 @@ function MQE takes nothing returns nothing
 	call MultiboardDisplay(JR,false)
 	call DestroyLeaderboard(VX)
 	call PlayMusicBJ(VQ)
-	set AE=true
+	set gameEnd=true
 	set RX=false
 	if IN then
 		set EA=HR[1+GetPlayerId(Player(8))]+GetPlayerName(Player(8))
@@ -8828,7 +8819,7 @@ function MQE takes nothing returns nothing
 endfunction
 
 function MSE takes nothing returns boolean
-	return AE==false
+	return gameEnd==false
 endfunction
 
 function MTE takes nothing returns nothing
@@ -8871,7 +8862,7 @@ function MYE takes nothing returns nothing
 	call MultiboardDisplay(JR,false)
 	call DestroyLeaderboard(VX)
 	call PlayMusicBJ(VQ)
-	set AE=true
+	set gameEnd=true
 	set RX=false
 	set UI=false
 	set EA=HR[1+GetPlayerId(Player(9))]+GetPlayerName(Player(9))
@@ -8898,7 +8889,7 @@ function MYE takes nothing returns nothing
 endfunction
 
 function MZE takes nothing returns boolean
-	return AE==false
+	return gameEnd==false
 endfunction
 
 function M_E takes nothing returns nothing
@@ -8985,28 +8976,28 @@ function NYE takes nothing returns nothing
 		return
 	endif
 	set t=null
-	if JO then
+	if SomePlayerProperty[0] then
 		call NBE(BJ,id,1)
 	endif
-	if KO then
+	if SomePlayerProperty[1] then
 		call NBE(FJ,id,2)
 	endif
-	if LO then
+	if SomePlayerProperty[2] then
 		call NBE(DJ,id,3)
 	endif
-	if MO then
+	if SomePlayerProperty[3] then
 		call NBE(NJ,id,4)
 	endif
-	if SR then
+	if SomePlayerProperty[4] then
 		call NBE(PJ,id,5)
 	endif
-	if TR then
+	if SomePlayerProperty[5] then
 		call NBE(QJ,id,6)
 	endif
-	if UR then
+	if SomePlayerProperty[6] then
 		call NBE(SJ,id,7)
 	endif
-	if WR then
+	if SomePlayerProperty[7] then
 		call NBE(TJ,id,8)
 	endif
 	set XG=XG+AHE
@@ -9029,9 +9020,9 @@ endfunction
 
 function O1X takes nothing returns nothing
 	if not IsPlayerInForce(GetEnumPlayer(),BD) then
-		set EE=1+GetPlayerId(GetEnumPlayer())
-		call DialogAddButtonBJ(JF,HR[EE]+GetPlayerName(GetEnumPlayer())+"|r")
-		set KF[EE]=bj_lastCreatedButton
+		set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+		call DialogAddButtonBJ(JF,HR[numberPlayer]+GetPlayerName(GetEnumPlayer())+"|r")
+		set KF[numberPlayer]=bj_lastCreatedButton
 	endif
 endfunction
 
@@ -9063,7 +9054,7 @@ function O2X takes nothing returns nothing
 			set GH=bj_lastCreatedButton
 			call DialogDisplayBJ(true,JF,GetTriggerPlayer())
 			call MultiboardDisplay(JR,true)
-			set SF=0
+			set numberKickedPlayer=0
 		
 		else
 			call DisplayTimedTextToForce(IZE(GetTriggerPlayer()),5.,"You already used your vote kick ! ( Player Red have unlimit vote kick), ")
@@ -9088,9 +9079,9 @@ endfunction
 
 function O5X takes nothing returns nothing
 	call DialogDisplayBJ(false,JF,GetEnumPlayer())
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if GetClickedButton()==KF[EE] then
-		set SF=EE
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if GetClickedButton()==KF[numberPlayer] then
+		set numberKickedPlayer=numberPlayer
 	endif
 endfunction
 
@@ -9133,10 +9124,10 @@ function O7X takes nothing returns nothing
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r start a vote kick ! (vote will expired in 20 seconds)")
 	call ForForce(ZI,ref_function_O5X)
 	call DialogClear(LF)
-	call DialogSetMessage(LF,"Kick "+HR[SF]+GetPlayerName(Player(-1+SF))+"|r ?")
-	call DialogAddButtonBJ(LF,PV[1]+"Yes|r")
+	call DialogSetMessage(LF,"Kick "+HR[numberKickedPlayer]+GetPlayerName(Player(-1+numberKickedPlayer))+"|r ?")
+	call DialogAddButtonBJ(LF,PlayerColor[1]+"Yes|r")
 	set MF=bj_lastCreatedButton
-	call DialogAddButtonBJ(LF,PV[2]+"No|r")
+	call DialogAddButtonBJ(LF,PlayerColor[2]+"No|r")
 	set PF=bj_lastCreatedButton
 	call DialogAddButtonBJ(LF,"I don't care !")
 	set QF=bj_lastCreatedButton
@@ -9367,10 +9358,10 @@ endfunction
 
 function OZX takes nothing returns nothing
 	set PE=U6
-	set EE=CountPlayersInForceBJ(I3E(Condition(ref_function_OWX)))
+	set numberPlayer=CountPlayersInForceBJ(I3E(Condition(ref_function_OWX)))
 	call DestroyForce(S8)
 	set S8=null
-	if EE==2 then
+	if numberPlayer==2 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=3
 		loop
@@ -9380,7 +9371,7 @@ function OZX takes nothing returns nothing
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
 	endif
-	if EE==3 then
+	if numberPlayer==3 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=5
 		loop
@@ -9390,7 +9381,7 @@ function OZX takes nothing returns nothing
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
 	endif
-	if EE==0 or EE==4 then
+	if numberPlayer==0 or numberPlayer==4 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=6
 		loop
@@ -9401,10 +9392,10 @@ function OZX takes nothing returns nothing
 		endloop
 	endif
 	set PE=H6
-	set EE=CountPlayersInForceBJ(I3E(Condition(ref_function_OYX)))
+	set numberPlayer=CountPlayersInForceBJ(I3E(Condition(ref_function_OYX)))
 	call DestroyForce(S8)
 	set S8=null
-	if EE==2 then
+	if numberPlayer==2 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=3
 		loop
@@ -9414,7 +9405,7 @@ function OZX takes nothing returns nothing
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
 	endif
-	if EE==3 then
+	if numberPlayer==3 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=5
 		loop
@@ -9424,7 +9415,7 @@ function OZX takes nothing returns nothing
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
 	endif
-	if EE==0 or EE==4 then
+	if numberPlayer==0 or numberPlayer==4 then
 		set bj_forLoopAIndex=1
 		set bj_forLoopAIndexEnd=6
 		loop
@@ -9874,7 +9865,7 @@ function PXE takes nothing returns nothing
 	local real tx=GetLocationX(EN[GetPlayerId(RSE)+1])
 	local real ty=GetLocationY(EN[GetPlayerId(RSE)+1])
 	local unit FYE
-	set EE=0
+	set numberPlayer=0
 	call ShowUnit(NVE,false)
 	if IsPlayerAlly(RSE,Player(8)) then
 		set OX=Player(8)
@@ -9887,12 +9878,12 @@ function PXE takes nothing returns nothing
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 		if GetUnitTypeId(NVE)==WE[bj_forLoopAIndex] then
-			set EE=bj_forLoopAIndex
+			set numberPlayer=bj_forLoopAIndex
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
-	if EE>0 then
-		set FYE=CreateUnit(OX,YE[EE],x,y,KTE(x,y,tx,ty))
+	if numberPlayer>0 then
+		set FYE=CreateUnit(OX,YE[numberPlayer],x,y,KTE(x,y,tx,ty))
 		call SetUnitColor(FYE,GetPlayerColor(RSE))
 		call SetUnitUserData(FYE,GetPlayerId(RSE)+1)
 		call GroupAddUnit(ZE,FYE)
@@ -9953,18 +9944,18 @@ function Q0E takes nothing returns nothing
 	endif
 	set NVE=bj_lastReplacedUnit
 	call GroupAddUnit(SE,bj_lastReplacedUnit)
-	set EE=GetUnitPointValue(GetTriggerUnit())
-	call SetPlayerStateBJ(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED)-EE)
+	set numberPlayer=GetUnitPointValue(GetTriggerUnit())
+	call SetPlayerStateBJ(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED)-numberPlayer)
 	set IX=GetUnitPointValue(bj_lastReplacedUnit)
 	call SetPlayerStateBJ(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(GetTriggerUnit()),PLAYER_STATE_GOLD_GATHERED)+IX)
-	if EE>IX then
-		set AX=EE-IX
+	if numberPlayer>IX then
+		set AX=numberPlayer-IX
 		call N0E(GetTriggerUnit(),"- "+I2S(AX),100.,0.,0.,GetOwningPlayer(GetTriggerUnit()))
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	if EE<IX then
-		set AX=IX-EE
+	if numberPlayer<IX then
+		set AX=IX-numberPlayer
 		call N0E(GetTriggerUnit(),"+ "+I2S(AX),100.,77.,0.,GetOwningPlayer(GetTriggerUnit()))
 		call DestroyForce(S8)
 		set S8=null
@@ -10214,184 +10205,184 @@ endfunction
 
 function QZE takes nothing returns nothing
 	local integer i
-	set EE=0
-	set EE=EE+1
-	set MB[EE]=$68303130
-	set EE=EE+1
-	set MB[EE]=$68303150
-	set EE=EE+1
-	set MB[EE]=$68303143
-	set EE=EE+1
-	set MB[EE]=$6830364A
-	set EE=EE+1
-	set MB[EE]=$68303430
-	set EE=EE+1
-	set MB[EE]=$6830354E
-	set EE=EE+1
-	set MB[EE]=$6830304D
-	set EE=EE+1
-	set MB[EE]=$6830374A
-	set EE=EE+1
-	set MB[EE]=$68303846
-	set EE=EE+1
-	set MB[EE]=$6830394C
-	set EE=EE+1
-	set MB[EE]=$68304243
-	set EE=EE+1
-	set MB[EE]=$68304246
-	set EE=EE+1
-	set MB[EE]=$68304346
-	set PB[1]=EE
-	set EE=0
-	set EE=EE+1
-	set QB[EE]=$68303132
-	set EE=EE+1
-	set QB[EE]=$68303154
-	set EE=EE+1
-	set QB[EE]=$6830364B
-	set EE=EE+1
-	set QB[EE]=$68303145
-	set EE=EE+1
-	set QB[EE]=$68303432
-	set EE=EE+1
-	set QB[EE]=$68303553
-	set EE=EE+1
-	set QB[EE]=$6830304F
-	set EE=EE+1
-	set QB[EE]=$6830374F
-	set EE=EE+1
-	set QB[EE]=$68303848
-	set EE=EE+1
-	set QB[EE]=$68303957
-	set EE=EE+1
-	set QB[EE]=$68304145
-	set EE=EE+1
-	set QB[EE]=$68304245
-	set EE=EE+1
-	set QB[EE]=$68304256
-	set EE=EE+1
-	set QB[EE]=$68304349
-	set PB[2]=EE
-	set EE=0
-	set EE=EE+1
-	set SB[EE]=$68303134
-	set EE=EE+1
-	set SB[EE]=$6830364D
-	set EE=EE+1
-	set SB[EE]=$68303434
-	set EE=EE+1
-	set SB[EE]=$68303148
-	set EE=EE+1
-	set SB[EE]=$68303156
-	set EE=EE+1
-	set SB[EE]=$68303050
-	set EE=EE+1
-	set SB[EE]=$68303552
-	set EE=EE+1
-	set SB[EE]=$68303751
-	set EE=EE+1
-	set SB[EE]=$6830384E
-	set EE=EE+1
-	set SB[EE]=$6830394E
-	set EE=EE+1
-	set SB[EE]=$68304142
-	set EE=EE+1
-	set SB[EE]=$68304248
-	set EE=EE+1
-	set SB[EE]=$68304258
-	set EE=EE+1
-	set SB[EE]=$6830434F
-	set PB[3]=EE
-	set EE=0
-	set EE=EE+1
-	set TB[EE]=$68303136
-	set EE=EE+1
-	set TB[EE]=$6830364F
-	set EE=EE+1
-	set TB[EE]=$68303436
-	set EE=EE+1
-	set TB[EE]=$68303149
-	set EE=EE+1
-	set TB[EE]=$68303158
-	set EE=EE+1
-	set TB[EE]=$6830304E
-	set EE=EE+1
-	set TB[EE]=$68303556
-	set EE=EE+1
-	set TB[EE]=$68303753
-	set EE=EE+1
-	set TB[EE]=$68303952
-	set EE=EE+1
-	set TB[EE]=$68303851
-	set EE=EE+1
-	set TB[EE]=$68304148
-	set EE=EE+1
-	set TB[EE]=$6830424A
-	set EE=EE+1
-	set TB[EE]=$68304334
-	set EE=EE+1
-	set TB[EE]=$68304351
-	set PB[4]=EE
-	set EE=0
-	set EE=EE+1
-	set UB[EE]=$68303651
-	set EE=EE+1
-	set UB[EE]=$68303138
-	set EE=EE+1
-	set UB[EE]=$6830314B
-	set EE=EE+1
-	set UB[EE]=$68303438
-	set EE=EE+1
-	set UB[EE]=$68303051
-	set EE=EE+1
-	set UB[EE]=$6830315A
-	set EE=EE+1
-	set UB[EE]=$68303558
-	set EE=EE+1
-	set UB[EE]=$68303755
-	set EE=EE+1
-	set UB[EE]=$68303954
-	set EE=EE+1
-	set UB[EE]=$68303856
-	set EE=EE+1
-	set UB[EE]=$6830414C
-	set EE=EE+1
-	set UB[EE]=$6830424D
-	set EE=EE+1
-	set UB[EE]=$68304335
-	set EE=EE+1
-	set UB[EE]=$68304357
-	set PB[5]=EE
-	set EE=0
-	set EE=EE+1
-	set WB[EE]=$68303141
-	set EE=EE+1
-	set WB[EE]=$68303653
-	set EE=EE+1
-	set WB[EE]=$68303231
-	set EE=EE+1
-	set WB[EE]=$6830355A
-	set EE=EE+1
-	set WB[EE]=$68303441
-	set EE=EE+1
-	set WB[EE]=$6830314D
-	set EE=EE+1
-	set WB[EE]=$68303053
-	set EE=EE+1
-	set WB[EE]=$68303757
-	set EE=EE+1
-	set WB[EE]=$68303930
-	set EE=EE+1
-	set WB[EE]=$68304133
-	set EE=EE+1
-	set WB[EE]=$68304152
-	set EE=EE+1
-	set WB[EE]=$6830424F
-	set EE=EE+1
-	set WB[EE]=$68304339
-	set EE=EE+1
-	set WB[EE]=$68304430
-	set PB[6]=EE
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68303130
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68303150
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68303143
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$6830364A
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68303430
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$6830354E
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$6830304D
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$6830374A
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68303846
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$6830394C
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68304243
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68304246
+	set numberPlayer=numberPlayer+1
+	set MB[numberPlayer]=$68304346
+	set PB[1]=numberPlayer
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303132
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303154
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$6830364B
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303145
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303432
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303553
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$6830304F
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$6830374F
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303848
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68303957
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68304145
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68304245
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68304256
+	set numberPlayer=numberPlayer+1
+	set QB[numberPlayer]=$68304349
+	set PB[2]=numberPlayer
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303134
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$6830364D
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303434
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303148
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303156
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303050
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303552
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68303751
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$6830384E
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$6830394E
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68304142
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68304248
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$68304258
+	set numberPlayer=numberPlayer+1
+	set SB[numberPlayer]=$6830434F
+	set PB[3]=numberPlayer
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303136
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$6830364F
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303436
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303149
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303158
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$6830304E
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303556
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303753
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303952
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68303851
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68304148
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$6830424A
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68304334
+	set numberPlayer=numberPlayer+1
+	set TB[numberPlayer]=$68304351
+	set PB[4]=numberPlayer
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303651
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303138
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$6830314B
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303438
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303051
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$6830315A
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303558
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303755
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303954
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68303856
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$6830414C
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$6830424D
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68304335
+	set numberPlayer=numberPlayer+1
+	set UB[numberPlayer]=$68304357
+	set PB[5]=numberPlayer
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303141
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303653
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303231
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$6830355A
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303441
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$6830314D
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303053
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303757
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68303930
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68304133
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68304152
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$6830424F
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68304339
+	set numberPlayer=numberPlayer+1
+	set WB[numberPlayer]=$68304430
+	set PB[6]=numberPlayer
 	set i=0
 	loop
 		set RolledUnits[i]=99
@@ -10488,7 +10479,7 @@ function RNX takes nothing returns boolean
 endfunction
 
 function RCX takes nothing returns nothing
-	set OX=Player(-1+SF)
+	set OX=Player(-1+numberKickedPlayer)
 	call MultiboardSetItemValueBJ(JR,1,DC[1+GetPlayerId(OX)],"|cff888888"+GetPlayerName(Player(-1+1+GetPlayerId(OX)))+"|r")
 	call ForceRemovePlayer(ZI,OX)
 	if UI==false then
@@ -10499,28 +10490,28 @@ function RCX takes nothing returns nothing
 	call A4V(PP)
 	if UI==false then
 		if OX==Player(0) then
-			set JO=false
+			set SomePlayerProperty[0]=false
 		
 		elseif OX==Player(1) then
-			set KO=false
+			set SomePlayerProperty[1]=false
 		
 		elseif OX==Player(2) then
-			set LO=false
+			set SomePlayerProperty[2]=false
 		
 		elseif OX==Player(3) then
-			set MO=false
+			set SomePlayerProperty[3]=false
 		
 		elseif OX==Player(4) then
-			set SR=false
+			set SomePlayerProperty[4]=false
 		
 		elseif OX==Player(5) then
-			set TR=false
+			set SomePlayerProperty[5]=false
 		
 		elseif OX==Player(6) then
-			set UR=false
+			set SomePlayerProperty[6]=false
 		
 		elseif OX==Player(7) then
-			set WR=false
+			set SomePlayerProperty[7]=false
 		endif
 	endif
 	if RNX() then
@@ -10529,26 +10520,26 @@ function RCX takes nothing returns nothing
 	if RBX() then
 		set HO=false
 	endif
-	if AE==false then
+	if gameEnd==false then
 		set DN[1+GetPlayerId(OX)]="|cff999999"+QR+"|r"
 	
 	else
 		set DN[1+GetPlayerId(OX)]="|cff999999End|r"
 	endif
-	if AE then
-		set EE=1
+	if gameEnd then
+		set numberPlayer=1
 		set bj_forLoopAIndex=2
 		set bj_forLoopAIndexEnd=AN
 		loop
 			exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
 			set MN=false
-			set bj_forLoopBIndex=EE
+			set bj_forLoopBIndex=numberPlayer
 			set bj_forLoopBIndexEnd=8
 			loop
 				exitwhen bj_forLoopBIndex>bj_forLoopBIndexEnd
 				if IsPlayerInForce(Player(-1+bj_forLoopBIndex),YI) and MN==false then
 					call MultiboardSetItemValueBJ(VA,bj_forLoopAIndex,MultiboardGetRowCount(VA)-3,DN[bj_forLoopBIndex])
-					set EE=bj_forLoopBIndex+1
+					set numberPlayer=bj_forLoopBIndex+1
 					set MN=true
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
@@ -10634,7 +10625,7 @@ function REE takes nothing returns nothing
 endfunction
 
 function REX takes nothing returns nothing
-	set EE=CountPlayersInForceBJ(ZI)
+	set numberPlayer=CountPlayersInForceBJ(ZI)
 	if GetClickedButton()==MF then
 		set TF=TF+1
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted |c00ff0202yes|r")
@@ -10647,28 +10638,28 @@ function REX takes nothing returns nothing
 		set VG=VG+1
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,HR[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has voted : I don't care")
 	endif
-	set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(EE)*.5,1,1)+")"
-	if I2R(TF-UF)>=I2R(EE)/1.5 then
+	set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(numberPlayer)*.5,1,1)+")"
+	if I2R(TF-UF)>=I2R(numberPlayer)/1.5 then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked")
-		if Player(SF-1)==GetLocalPlayer() then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked")
+		if Player(numberKickedPlayer-1)==GetLocalPlayer() then
 			call EndGame(false)
 		endif
 		set YF=false
 		call TriggerExecute(L2)
 		call PauseTimerBJ(true,WF)
 	
-	elseif I2R(TF-UF)>=I2R(EE)/2. and UF+VG+TF==EE then
+	elseif I2R(TF-UF)>=I2R(numberPlayer)/2. and UF+VG+TF==numberPlayer then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked")
-		if Player(SF-1)==GetLocalPlayer() then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked")
+		if Player(numberKickedPlayer-1)==GetLocalPlayer() then
 			call EndGame(false)
 		endif
 		set YF=false
 		call TriggerExecute(L2)
 		call PauseTimerBJ(true,WF)
 	
-	elseif UF+VG+TF==EE then
+	elseif UF+VG+TF==numberPlayer then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"Vote Fail! "+BE+"")
 		set YF=false
@@ -10692,8 +10683,7 @@ function RFE takes nothing returns nothing
 	endif
 endfunction
 
-//-ap
-function RFX takes nothing returns nothing
+function InitApMode takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modeAP=true
@@ -10715,8 +10705,7 @@ function RGX takes nothing returns nothing
 	set p=null
 endfunction
 
-//-ph
-function RHX takes nothing returns nothing
+function InitPhMode takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modePH=true
@@ -10762,8 +10751,7 @@ function RJX takes nothing returns nothing
 	set p=null
 endfunction
 
-//-pr
-function RKX takes nothing returns nothing
+function InitPrMode takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modePR=true
@@ -10807,14 +10795,14 @@ function RKX takes nothing returns nothing
 endfunction
 
 function ROX takes nothing returns nothing
-	set EE=CountPlayersInForceBJ(ZI)
-	set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(EE)*.5,1,1)+")"
+	set numberPlayer=CountPlayersInForceBJ(ZI)
+	set BE="Positive Votes : "+I2S(TF-UF)+"\t(Require:"+R2SW(I2R(numberPlayer)*.5,1,1)+")"
 	call ForForce(ZI,ref_function_RXX)
 	if YF then
-		if I2R(TF-UF)>=I2R(EE)/2. then
+		if I2R(TF-UF)>=I2R(numberPlayer)/2. then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
-			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(SF-1))+" has been kicked.")
-			if Player(SF-1)==GetLocalPlayer() then
+			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked.")
+			if Player(numberKickedPlayer-1)==GetLocalPlayer() then
 				call EndGame(false)
 			endif
 			set YF=false
@@ -10882,7 +10870,7 @@ function RUE takes nothing returns nothing
 endfunction
 
 function RTX takes nothing returns boolean
-	return bj_forLoopAIndex==EE
+	return bj_forLoopAIndex==numberPlayer
 endfunction
 
 function RVX takes nothing returns boolean
@@ -10955,8 +10943,8 @@ function RYE takes nothing returns nothing
 endfunction
 
 function RZE takes nothing returns nothing
-	if XV==VV then
-		if VV>=5 then
+	if levelAnarchyLast==levelAnarchy then
+		if levelAnarchy>=5 then
 			call AXV("Abilities\\Spells\\Orc\\BattleStations\\OrcBurrowBattleStationsWhat1.wav")
 			call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),10.,"|cffFF0000Anarchy!!!|r")
 			call DisableTrigger(PQ)
@@ -10973,29 +10961,29 @@ function RZE takes nothing returns nothing
 			call ForGroup(P8,ref_function_RUE)
 		endif
 		call A_V(.5)
-		set VV=VV+1
-		if VV==1 then
+		set levelAnarchy=levelAnarchy+1
+		if levelAnarchy==1 then
 			call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),7.,"Anarchy Brewing: "+"|cffFF0000>|r"+" > > > ")
 			call DestroyForce(S8)
 			set S8=null
 		
-		elseif VV==2 then
+		elseif levelAnarchy==2 then
 			call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),7.,"Anarchy Brewing: "+"|cffFF0000> >|r"+" > > ")
 			call DestroyForce(S8)
 			set S8=null
 		
-		elseif VV==3 then
+		elseif levelAnarchy==3 then
 			call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),7.,"Anarchy Brewing: "+"|cffFF0000> > >|r"+" > ")
 			call DestroyForce(S8)
 			set S8=null
 		
-		elseif VV==4 then
+		elseif levelAnarchy==4 then
 			call DisplayTimedTextToForce(RJE(GetOwningPlayer(GetTriggerUnit())),7.,"Anarchy Brewing: "+"|cffFF0000> > > >|r"+" ")
 			call DestroyForce(S8)
 			set S8=null
-			set VV=5
+			set levelAnarchy=5
 		endif
-		set XV=VV
+		set levelAnarchyLast=levelAnarchy
 	endif
 endfunction
 
@@ -11299,28 +11287,28 @@ function SXE takes nothing returns nothing
 				set x=GetUnitX(PE)
 				set y=GetUnitY(PE)
 				if IsUnitInGroup(PE,AI) then
-					set EE=GetUnitPointValue(GetTriggerUnit())*1
+					set numberPlayer=GetUnitPointValue(GetTriggerUnit())*1
 				
 				elseif GetUnitTypeId(GetSpellAbilityUnit())==$68303751 or GetUnitTypeId(GetSpellAbilityUnit())==$68303752 then
-					set EE=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.9)
+					set numberPlayer=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.9)
 				
 				elseif GetUnitTypeId(GetSpellAbilityUnit())==$68303751 or GetUnitTypeId(GetSpellAbilityUnit())==$68303752 then
-					set EE=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.9)
+					set numberPlayer=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.9)
 				
 				else
-					set EE=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.5)
+					set numberPlayer=R2I(I2R(GetUnitPointValue(GetTriggerUnit()))*.5)
 				endif
-				call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSpellAbilityUnit())),7.,"|cffC0C0C0You sold a|r "+GetUnitName(PE)+" |cffC0C0C0for|r |cffFFcc00"+I2S(EE)+"|r |cffC0C0C0gold.|r")
+				call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSpellAbilityUnit())),7.,"|cffC0C0C0You sold a|r "+GetUnitName(PE)+" |cffC0C0C0for|r |cffFFcc00"+I2S(numberPlayer)+"|r |cffC0C0C0gold.|r")
 				call DestroyForce(S8)
 				set S8=null
-				call AdjustPlayerStateBJ(EE,GetOwningPlayer(PE),PLAYER_STATE_RESOURCE_GOLD)
-				call SetPlayerStateBJ(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED)-EE)
+				call AdjustPlayerStateBJ(numberPlayer,GetOwningPlayer(PE),PLAYER_STATE_RESOURCE_GOLD)
+				call SetPlayerStateBJ(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED)-numberPlayer)
 				set IX=GetUnitPointValue(PE)
-				set AX=IX-EE
+				set AX=IX-numberPlayer
 				call SetPlayerStateBJ(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(GetOwningPlayer(PE),PLAYER_STATE_GOLD_GATHERED)-AX)
 				set OX=GetOwningPlayer(GetSpellAbilityUnit())
-				if EE>0 then
-					call N0E(GetSpellAbilityUnit(),"+"+I2S(EE),100.,77.,0.,OX)
+				if numberPlayer>0 then
+					call N0E(GetSpellAbilityUnit(),"+"+I2S(numberPlayer),100.,77.,0.,OX)
 					call DestroyForce(S8)
 					set S8=null
 				endif
@@ -11408,9 +11396,9 @@ function TCE takes nothing returns nothing
 		set y=GetUnitY(GetTriggerUnit())
 		set bj_lastCreatedUnit=CreateUnit(OX,$6E30304F,x,y,bj_UNIT_FACING)
 		set PE=bj_lastCreatedUnit
-		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
-		call GroupAddUnit(RG[EE],PE)
-		call SetUnitUserData(PE,EE)
+		set numberPlayer=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
+		call GroupAddUnit(RG[numberPlayer],PE)
+		call SetUnitUserData(PE,numberPlayer)
 		call SetUnitColor(bj_lastCreatedUnit,GetPlayerColor(GetOwningPlayer(GetTriggerUnit())))
 		set BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+5
 		set NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+100
@@ -11428,14 +11416,14 @@ function TCE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
+	set numberPlayer=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
+		set numberPlayer=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
-		set EE=16000
+		set numberPlayer=16000
 	endif
-	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE then
+	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303945)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
@@ -11445,7 +11433,7 @@ function TCE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-100 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-100 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
@@ -11453,13 +11441,13 @@ function TCE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-300 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-300 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-500 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	endif
@@ -11519,9 +11507,9 @@ function TNE takes nothing returns nothing
 		set y=GetUnitY(GetTriggerUnit())
 		set bj_lastCreatedUnit=CreateUnit(OX,$6E30304E,x,y,bj_UNIT_FACING)
 		set PE=bj_lastCreatedUnit
-		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
-		call GroupAddUnit(RG[EE],PE)
-		call SetUnitUserData(PE,EE)
+		set numberPlayer=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
+		call GroupAddUnit(RG[numberPlayer],PE)
+		call SetUnitUserData(PE,numberPlayer)
 		call SetUnitColor(bj_lastCreatedUnit,GetPlayerColor(GetOwningPlayer(GetTriggerUnit())))
 		set BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+3
 		set NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+75
@@ -11539,14 +11527,14 @@ function TNE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
+	set numberPlayer=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
+		set numberPlayer=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
-		set EE=16000
+		set numberPlayer=16000
 	endif
-	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE then
+	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303945)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
@@ -11556,7 +11544,7 @@ function TNE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-100 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-100 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
@@ -11564,13 +11552,13 @@ function TNE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-300 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-300 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-500 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	endif
@@ -11608,9 +11596,9 @@ function TRE takes nothing returns nothing
 		set y=GetUnitY(GetTriggerUnit())
 		set bj_lastCreatedUnit=CreateUnit(OX,$6E30304D,x,y,bj_UNIT_FACING)
 		set PE=bj_lastCreatedUnit
-		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
-		call GroupAddUnit(RG[EE],PE)
-		call SetUnitUserData(PE,EE)
+		set numberPlayer=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
+		call GroupAddUnit(RG[numberPlayer],PE)
+		call SetUnitUserData(PE,numberPlayer)
 		call SetUnitColor(bj_lastCreatedUnit,GetPlayerColor(GetOwningPlayer(GetTriggerUnit())))
 		set BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+1
 		set NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+60
@@ -11628,14 +11616,14 @@ function TRE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
+	set numberPlayer=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
+		set numberPlayer=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
-		set EE=16000
+		set numberPlayer=16000
 	endif
-	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE then
+	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303945)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
@@ -11645,7 +11633,7 @@ function TRE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-100 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-100 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
@@ -11653,13 +11641,13 @@ function TRE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-300 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-300 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-500 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	endif
@@ -11728,9 +11716,9 @@ function TXE takes nothing returns nothing
 		set y=GetUnitY(GetTriggerUnit())
 		set bj_lastCreatedUnit=CreateUnit(OX,$6E30304C,x,y,bj_UNIT_FACING)
 		set PE=bj_lastCreatedUnit
-		set EE=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
-		call GroupAddUnit(RG[EE],PE)
-		call SetUnitUserData(PE,EE)
+		set numberPlayer=1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))
+		call GroupAddUnit(RG[numberPlayer],PE)
+		call SetUnitUserData(PE,numberPlayer)
 		call SetUnitColor(bj_lastCreatedUnit,GetPlayerColor(GetOwningPlayer(GetTriggerUnit())))
 		set NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]=NH[1+GetPlayerId(GetOwningPlayer(GetTriggerUnit()))]+25
 		if true then
@@ -11749,14 +11737,14 @@ function TXE takes nothing returns nothing
 		call DestroyForce(S8)
 		set S8=null
 	endif
-	set EE=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
+	set numberPlayer=S2I(LevelValue[numberLvl+1])+numberLvl*numberLvl*2
 	if YD then
-		set EE=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
+		set numberPlayer=S2I(LevelValue[numberLvl+0])+numberLvl*numberLvl*2
 	endif
 	if numberLvl>=30 then
-		set EE=16000
+		set numberPlayer=16000
 	endif
-	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE then
+	if GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303945)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
@@ -11766,7 +11754,7 @@ function TXE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-100 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-100 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303946)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
@@ -11774,13 +11762,13 @@ function TXE takes nothing returns nothing
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-300 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-300 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303947)
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303955)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	
-	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>EE-500 then
+	elseif GB[1+GetPlayerId(GetTriggerPlayer())]+PD[1+GetPlayerId(GetTriggerPlayer())]>numberPlayer-500 then
 		call UnitRemoveAbility(GetTriggerUnit(),$41303948)
 		call UnitAddAbility(GetTriggerUnit(),$41303950)
 	endif
@@ -11789,24 +11777,24 @@ endfunction
 function TYE takes nothing returns nothing
 	local real x=GetUnitX(GetDyingUnit())
 	local real y=GetUnitY(GetDyingUnit())
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68303759,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
-	call SetUnitUserData(PE,EE)
+	call GroupAddUnit(RG[numberPlayer],PE)
+	call SetUnitUserData(PE,numberPlayer)
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68303759,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
-	call SetUnitUserData(PE,EE)
+	call GroupAddUnit(RG[numberPlayer],PE)
+	call SetUnitUserData(PE,numberPlayer)
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68303759,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
-	call SetUnitUserData(PE,EE)
+	call GroupAddUnit(RG[numberPlayer],PE)
+	call SetUnitUserData(PE,numberPlayer)
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
 
@@ -11873,17 +11861,17 @@ function U7E takes nothing returns boolean
 endfunction
 
 function U8E takes nothing returns nothing
-	set QE=ISE(CA[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U5E))
-	set NA=ISE(CA[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U7E))
+	set QE=ISE(KingFromPlayer[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U5E))
+	set NA=ISE(KingFromPlayer[1+GetPlayerId(GetEnumPlayer())],Condition(ref_function_U7E))
 	if Q8E() then
-		set EE=CountUnitsInGroup(QE)*6+CountUnitsInGroup(NA)*3
+		set numberPlayer=CountUnitsInGroup(QE)*6+CountUnitsInGroup(NA)*3
 		set PE=Unit[1+GetPlayerId(GetEnumPlayer())]
 		set OX=GetEnumPlayer()
-		call N0E(PE,"+"+I2S(EE),100.,77.,0.,OX)
+		call N0E(PE,"+"+I2S(numberPlayer),100.,77.,0.,OX)
 		call DestroyForce(S8)
 		set S8=null
-		call AdjustPlayerStateBJ(EE,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
-		call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(EE)+"|r gold from Slave Trade.")
+		call AdjustPlayerStateBJ(numberPlayer,GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
+		call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"You received |cffFFcc00"+I2S(numberPlayer)+"|r gold from Slave Trade.")
 		call DestroyForce(S8)
 		set S8=null
 	endif
@@ -11903,12 +11891,6 @@ endfunction
 
 function UCE takes nothing returns boolean
 	return GetUnitTypeId(GetDyingUnit())==$68303339
-endfunction
-
-function IQV takes player IMV returns force
-	set XQV=CreateForce()
-	call ForceAddPlayer(XQV,IMV)
-	return XQV
 endfunction
 
 function UDE takes nothing returns nothing
@@ -12040,8 +12022,8 @@ endfunction
 
 // Removes all units that entered the middle lane for Team West from Group IG
 function V1X takes nothing returns nothing
-	set EE=GetUnitUserData(GetEnteringUnit())
-	call GroupRemoveUnit(IG[EE],GetEnteringUnit())
+	set numberPlayer=GetUnitUserData(GetEnteringUnit())
+	call GroupRemoveUnit(IG[numberPlayer],GetEnteringUnit())
 endfunction
 
 function V2X takes nothing returns boolean
@@ -12058,8 +12040,8 @@ endfunction
 
 // Removes all units that entered the middle lane for Team East from Group IG
 function V5X takes nothing returns nothing
-	set EE=GetUnitUserData(GetEnteringUnit())
-	call GroupRemoveUnit(IG[EE],GetEnteringUnit())
+	set numberPlayer=GetUnitUserData(GetEnteringUnit())
+	call GroupRemoveUnit(IG[numberPlayer],GetEnteringUnit())
 endfunction
 
 function V6X takes nothing returns nothing
@@ -12141,9 +12123,9 @@ function VDX takes nothing returns nothing
 	local real x=GetRectCenterX(IM)
 	local real y=GetRectCenterY(IM)
 	set PE=GetEnumUnit()
-	set EE=GetUnitUserData(GetEnumUnit())
+	set numberPlayer=GetUnitUserData(GetEnumUnit())
 	if Z7E() and IsUnitInGroup(PE,ZE) and IsUnitInGroup(GetEnumUnit(),FG)==false and IsUnitInGroup(GetEnumUnit(),AG)==false and IsUnitInGroup(GetEnumUnit(),NG)==false and GetUnitTypeId(PE)!=$65777370 then
-		call IssuePointOrderByIdLoc(GetEnumUnit(),851983,CO[EE])
+		call IssuePointOrderByIdLoc(GetEnumUnit(),851983,CO[numberPlayer])
 	
 	elseif CG and YD and GetUnitTypeId(GetEnumUnit())!=$65777370 or GetUnitTypeId(GetEnumUnit())!=$65303033 then
 		if GetUnitTypeId(GetEnumUnit())==$65777370 then
@@ -12179,7 +12161,7 @@ function VVX takes nothing returns nothing
 	set U8=null
 endfunction
 
-function VFX takes nothing returns nothing
+function OnKingsTaunt takes nothing returns nothing
 	set FE=GetSpellTargetLoc()
 	set QE=IJE(250.,FE)
 	set L8=IPE($65303033)
@@ -12196,7 +12178,7 @@ function VFX takes nothing returns nothing
 	call RemoveLocation(FE)
 endfunction
 
-function VGX takes nothing returns nothing
+function OnCommandAttack takes nothing returns nothing
 	local group g=null
 	local unit u
 	set FE=GetSpellTargetLoc()
@@ -12237,7 +12219,7 @@ endfunction
 function VJX takes nothing returns nothing
 	local real x
 	local real y
-	if EE<5 then
+	if numberPlayer<5 then
 		set x=GetUnitX(GetEnumUnit())
 		set y=GetUnitY(GetEnumUnit())
 		call SetUnitPositionLoc(GetEnumUnit(),CI)
@@ -12246,7 +12228,7 @@ function VJX takes nothing returns nothing
 		set x=GetUnitX(GetEnumUnit())
 		set y=GetUnitY(GetEnumUnit())
 		call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
-		call GroupRemoveUnit(OA[EE],GetEnumUnit())
+		call GroupRemoveUnit(OA[numberPlayer],GetEnumUnit())
 		call GroupAddUnit(VF,GetEnumUnit())
 		call GroupAddUnit(FG,GetEnumUnit())
 	
@@ -12259,16 +12241,16 @@ function VJX takes nothing returns nothing
 		set x=GetUnitX(GetEnumUnit())
 		set y=GetUnitY(GetEnumUnit())
 		call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
-		call GroupRemoveUnit(OA[EE],GetEnumUnit())
+		call GroupRemoveUnit(OA[numberPlayer],GetEnumUnit())
 		call GroupAddUnit(ZD,GetEnumUnit())
 		call GroupAddUnit(FG,GetEnumUnit())
 	endif
 endfunction
 
 function VKX takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if CountUnitsInGroup(OA[EE])>0 and CountUnitsInGroup(IG[EE])==0 then
-		call ForGroup(OA[EE],ref_function_VJX)
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if CountUnitsInGroup(OA[numberPlayer])>0 and CountUnitsInGroup(IG[numberPlayer])==0 then
+		call ForGroup(OA[numberPlayer],ref_function_VJX)
 	endif
 endfunction
 
@@ -12302,11 +12284,11 @@ function VXX takes nothing returns boolean
 endfunction
 
 function VOX takes nothing returns nothing
-	set EE=1+GetPlayerId(GetTriggerPlayer())
+	set numberPlayer=1+GetPlayerId(GetTriggerPlayer())
 	set PE=GetEnumUnit()
 	if IsUnitType(PE,UNIT_TYPE_UNDEAD)==false and IsUnitType(PE,UNIT_TYPE_PEON)==false and VEX() and VXX() and IsUnitType(PE,UNIT_TYPE_SAPPER)==false and GetUnitTypeId(PE)!=$65777370 and YD==false and IsUnitType(PE,UNIT_TYPE_ANCIENT)==false then
-		if IsUnitInRegion(DO[EE],GetTriggerUnit()) then
-			call IssuePointOrderByIdLoc(PE,851983,XF[EE])
+		if IsUnitInRegion(DO[numberPlayer],GetTriggerUnit()) then
+			call IssuePointOrderByIdLoc(PE,851983,XF[numberPlayer])
 		endif
 	endif
 endfunction
@@ -12333,13 +12315,13 @@ endfunction
 
 function VTX takes nothing returns nothing
 	if VSX() and VEX() and VXX() then
-		call IssuePointOrderByIdLoc(GetEnumUnit(),851983,EN[EE])
+		call IssuePointOrderByIdLoc(GetEnumUnit(),851983,EN[numberPlayer])
 	endif
 endfunction
 
 function VUX takes nothing returns nothing
 	if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
-		if EE<=4 then
+		if numberPlayer<=4 then
 			call IssuePointOrderByIdLoc(GetEnumUnit(),851983,HI)
 		
 		else
@@ -12349,12 +12331,12 @@ function VUX takes nothing returns nothing
 endfunction
 
 function VWX takes nothing returns nothing
-	set EE=1+GetPlayerId(GetEnumPlayer())
-	if CountUnitsInGroup(IG[EE])==0 then
-		call ForGroup(RG[EE],ref_function_VTX)
+	set numberPlayer=1+GetPlayerId(GetEnumPlayer())
+	if CountUnitsInGroup(IG[numberPlayer])==0 then
+		call ForGroup(RG[numberPlayer],ref_function_VTX)
 	endif
-	if BG==false and CountUnitsInGroup(RG[EE])==0 then
-		call ForGroup(IG[EE],ref_function_VUX)
+	if BG==false and CountUnitsInGroup(RG[numberPlayer])==0 then
+		call ForGroup(IG[numberPlayer],ref_function_VUX)
 	endif
 endfunction
 
@@ -12431,9 +12413,9 @@ function WCE takes nothing returns nothing
 	local real y=GetUnitY(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68304158,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
@@ -12451,9 +12433,9 @@ function WHE takes nothing returns nothing
 	local real y=GetUnitY(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68304435,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
 endfunction
@@ -12467,9 +12449,9 @@ function WKE takes nothing returns nothing
 	local real y=GetUnitY(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68304137,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 endfunction
 
@@ -12482,9 +12464,9 @@ function WME takes nothing returns nothing
 	local real y=GetUnitY(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$68304156,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	call SetUnitUserData(PE,GetUnitUserData(GetDyingUnit()))
 endfunction
 
@@ -12554,7 +12536,7 @@ endfunction
 function X0X takes nothing returns nothing
 	set QD=true
 	if (QA and GetOwningPlayer(GetAttacker())==Player(8)) or (SA and GetOwningPlayer(GetAttacker())==Player(9)) then
-		set EE=GetRandomInt(1,4)
+		set numberPlayer=GetRandomInt(1,4)
 		set FE=GetUnitLoc(GetAttacker())
 		set NX=GetUnitLoc(GetTriggerUnit())
 		if GetUnitAbilityLevelSwapped($41303235,GetAttacker())==1 then
@@ -12586,32 +12568,32 @@ endfunction
 
 function X3X takes nothing returns nothing
 	set PE=H6
-	set EE=kingSpell
-	set RR=OR[EE]
+	set numberPlayer=kingSpell
+	set RR=OR[numberPlayer]
 	set Q3=RR
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=4
-	set RR=OR[EE]
+	set numberPlayer=4
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=5
-	set RR=OR[EE]
+	set numberPlayer=5
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=6
-	set RR=OR[EE]
+	set numberPlayer=6
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
@@ -12624,8 +12606,8 @@ function X4X takes nothing returns nothing
 	local image img
 	set PE=H6
 	if numberLvl==4 then
-		set EE=kingSpell
-		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(EE)+".blp",128.,128.,0.,-4615.,-3772.,0.,0.,0.,0.,3)
+		set numberPlayer=kingSpell
+		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(numberPlayer)+".blp",128.,128.,0.,-4615.,-3772.,0.,0.,0.,0.,3)
 		call SetImageRenderAlways(img,true)
 		if IsPlayerAlly(GetLocalPlayer(),Player(8)) or IsPlayerObserver(GetLocalPlayer()) then
 			call ShowImage(img,true)
@@ -12635,15 +12617,15 @@ function X4X takes nothing returns nothing
 		endif
 	endif
 	if numberLvl==13 then
-		set EE=4
+		set numberPlayer=4
 	endif
 	if numberLvl==19 then
-		set EE=5
+		set numberPlayer=5
 	endif
 	if numberLvl==23 then
-		set EE=6
+		set numberPlayer=6
 	endif
-	set RR=OR[EE]
+	set RR=OR[numberPlayer]
 	if EB<XR then
 		call UnitAddAbility(PE,RR)
 		set EB=EB+1
@@ -12657,8 +12639,8 @@ endfunction
 
 function X5X takes nothing returns nothing
 	set PE=U6
-	set EE=kingSpell
-	set RR=OR[EE]
+	set numberPlayer=kingSpell
+	set RR=OR[numberPlayer]
 	set F5=RR
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
@@ -12666,24 +12648,24 @@ function X5X takes nothing returns nothing
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=4
-	set RR=OR[EE]
+	set numberPlayer=4
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=5
-	set RR=OR[EE]
+	set numberPlayer=5
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
 	call DestroyForce(S8)
 	set S8=null
 	set EB=EB+1
-	set EE=6
-	set RR=OR[EE]
+	set numberPlayer=6
+	set RR=OR[numberPlayer]
 	call UnitAddAbility(PE,RR)
 	set EB=EB+1
 	call DisplayTimedTextToForce(RJE(GetOwningPlayer(PE)),11.,"Your team's king learned the |cff7333AA"+GetObjectName(RR)+"|r ability.")
@@ -12696,8 +12678,8 @@ function X6X takes nothing returns nothing
 	local image img
 	set PE=U6
 	if numberLvl==4 then
-		set EE=kingSpell
-		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(EE)+".blp",128.,128.,0.,4475.,-3772.,0.,0.,0.,0.,3)
+		set numberPlayer=kingSpell
+		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(numberPlayer)+".blp",128.,128.,0.,4475.,-3772.,0.,0.,0.,0.,3)
 		call SetImageRenderAlways(img,true)
 		if IsPlayerAlly(GetLocalPlayer(),Player(9)) or IsPlayerObserver(GetLocalPlayer()) then
 			call ShowImage(img,true)
@@ -12707,15 +12689,15 @@ function X6X takes nothing returns nothing
 		endif
 	endif
 	if numberLvl==13 then
-		set EE=4
+		set numberPlayer=4
 	endif
 	if numberLvl==19 then
-		set EE=5
+		set numberPlayer=5
 	endif
 	if numberLvl==23 then
-		set EE=6
+		set numberPlayer=6
 	endif
-	set RR=OR[EE]
+	set RR=OR[numberPlayer]
 	if XB<XR then
 		call UnitAddAbility(PE,RR)
 		set XB=XB+1
@@ -12727,11 +12709,11 @@ function X6X takes nothing returns nothing
 	set img=null
 endfunction
 
-function X7X takes nothing returns boolean
-	return AE==false
+function IsGameOngoing takes nothing returns boolean
+	return gameEnd==false
 endfunction
 
-function X8X takes nothing returns nothing
+function KingIsLow takes nothing returns nothing
 	call LeaderboardSetPlayerItemValueBJ(Player(8),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,H6)))
 	call LeaderboardSetPlayerItemValueBJ(Player(9),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,U6)))
 	set FI=FI-1
@@ -13040,7 +13022,7 @@ function XYX takes nothing returns nothing
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
 			endloop
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13063,7 +13045,7 @@ function XYX takes nothing returns nothing
 				call SetUnitAbilityLevelSwapped($41303550,PE,GetPlayerTechCountSimple($52303030,GetOwningPlayer(PE))+1)
 				call UnitRemoveAbility(PE,$41303550)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13090,7 +13072,7 @@ function XYX takes nothing returns nothing
 			else
 				call SetUnitAbilityLevelSwapped($4130354F,PE,GetUnitAbilityLevelSwapped($4130354F,PE)+5)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13114,7 +13096,7 @@ function XYX takes nothing returns nothing
 			else
 				call SetUnitAbilityLevelSwapped($4130354F,PE,GetUnitAbilityLevelSwapped($4130354F,PE)+1)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13135,7 +13117,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XPX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13155,7 +13137,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XQX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13173,7 +13155,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XSX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Dark Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Dark Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13199,7 +13181,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XTX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Royal Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393938,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Royal Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393938,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13225,7 +13207,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XUX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PV[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cff7333AAProvoke Anarchy|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cff7333AAProvoke Anarchy|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13260,24 +13242,24 @@ function XYX takes nothing returns nothing
 endfunction
 
 function XZX takes nothing returns nothing
-	set EE=0
-	set EE=EE+1
-	set OR[EE]=$41303232
-	set EE=EE+1
-	set OR[EE]=$41304856
-	set EE=EE+1
-	set OR[EE]=$41393832
-	set EE=EE+1
-	set OR[EE]=$41393932
-	set EE=EE+1
-	set OR[EE]=$41303155
-	set EE=EE+1
-	set OR[EE]=$53303031
-	set EE=EE+1
-	set OR[EE]=$41303833
-	set EE=EE+1
-	set OR[EE]=$4130315A
-	set XR=EE
+	set numberPlayer=0
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41303232
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41304856
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41393832
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41393932
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41303155
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$53303031
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$41303833
+	set numberPlayer=numberPlayer+1
+	set OR[numberPlayer]=$4130315A
+	set XR=numberPlayer
 endfunction
 
 function X_X takes nothing returns boolean
@@ -13317,11 +13299,11 @@ function Y4E takes nothing returns nothing
 	local real x
 	local real y
 	set PE=GetSummonedUnit()
-	set EE=GetUnitUserData(GetSummoningUnit())
-	call SetUnitUserData(PE,EE)
-	call SetUnitColor(PE,GetPlayerColor(Player(-1+EE)))
+	set numberPlayer=GetUnitUserData(GetSummoningUnit())
+	call SetUnitUserData(PE,numberPlayer)
+	call SetUnitColor(PE,GetPlayerColor(Player(-1+numberPlayer)))
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	set x=GetUnitX(PE)
 	set y=GetUnitY(PE)
 	call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",x,y))
@@ -13346,14 +13328,14 @@ endfunction
 function Y9E takes nothing returns nothing
 	local real x=GetUnitX(GetDyingUnit())
 	local real y=GetUnitY(GetDyingUnit())
-	set EE=GetUnitUserData(GetDyingUnit())
+	set numberPlayer=GetUnitUserData(GetDyingUnit())
 	set bj_lastCreatedUnit=CreateUnit(GetOwningPlayer(GetDyingUnit()),$48303855,x,y,bj_UNIT_FACING)
 	set PE=bj_lastCreatedUnit
 	call GroupAddUnit(ZE,PE)
-	call GroupAddUnit(RG[EE],PE)
-	call SetUnitUserData(PE,EE)
+	call GroupAddUnit(RG[numberPlayer],PE)
+	call SetUnitUserData(PE,numberPlayer)
 	call DestroyEffect(AddSpecialEffect("Objects\\Spawnmodels\\Human\\HumanBlood\\HumanBloodKnight.mdl",x,y))
-	if EE<=4 then
+	if numberPlayer<=4 then
 		call GroupAddUnit(MA[1],PE)
 	
 	else
@@ -13371,9 +13353,9 @@ endfunction
 
 function YJE takes nothing returns nothing
 	set PE=GetSummonedUnit()
-	set EE=GetUnitUserData(GetSummoningUnit())
-	call SetUnitUserData(PE,EE)
-	call GroupAddUnit(RG[EE],PE)
+	set numberPlayer=GetUnitUserData(GetSummoningUnit())
+	call SetUnitUserData(PE,numberPlayer)
+	call GroupAddUnit(RG[numberPlayer],PE)
 	call GroupAddUnit(ZE,PE)
 endfunction
 
@@ -13635,7 +13617,7 @@ function Z3E takes nothing returns boolean
 	if GetSpellAbilityId()==$41393131 and RX==false and numberLvl!=9 and numberLvl!=19 then
 		set fbact[GetPlayerId(GetTriggerPlayer())+1]=true
 		set b=true
-		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),15.,"Bold move! "+PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00Champion|r")
+		call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),15.,"Bold move! "+PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00Champion|r")
 		if numberLvl+1<=2 then
 			set TV[GetPlayerId(GetTriggerPlayer())+1]=((numberLvl+1)*15) 
 		
@@ -13669,7 +13651,7 @@ function Z3E takes nothing returns boolean
 	elseif GetSpellAbilityId()==$41393131 and RX==false and numberLvl==9 and GB[1+GetPlayerId(GetTriggerPlayer())]>=7200 then
 		set fbact[GetPlayerId(GetTriggerPlayer())+1]=true
 		set b=true
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00ULTRA BOLD MOVE! |r"+PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00ULTRA BOLD MOVE! |r"+PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
 		if numberLvl==9 and 1+GetPlayerId(GetTriggerPlayer())<=4 then
 			set TV[i]=((numberLvl+1)+300)
 			set TV[j]=((numberLvl+1)+300)
@@ -13692,7 +13674,7 @@ function Z3E takes nothing returns boolean
 	elseif GetSpellAbilityId()==$41393131 and RX==false and numberLvl==19 and GB[1+GetPlayerId(GetTriggerPlayer())]>=30000 then
 		set fbact[GetPlayerId(GetTriggerPlayer())+1]=true
 		set b=true
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Are you INSANE? |r"+PV[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|cffFFcc00Are you INSANE? |r"+PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has challenged a |cffFFcc00BOSS Champion|r")
 		if numberLvl==19 and 1+GetPlayerId(GetTriggerPlayer())<=4 then
 			set TV[i]=((numberLvl+1)+980)
 			set TV[j]=((numberLvl+1)+980)
@@ -13779,7 +13761,7 @@ function ZGE takes nothing returns boolean
 endfunction
 
 function ZHE takes nothing returns boolean
-	return JO==false and KO==false and LO==false and MO==false and IN
+	return SomePlayerProperty[0]==false and SomePlayerProperty[1]==false and SomePlayerProperty[2]==false and SomePlayerProperty[3]==false and IN
 endfunction
 
 function ZIE takes nothing returns boolean
@@ -13787,7 +13769,7 @@ function ZIE takes nothing returns boolean
 endfunction
 
 function ZJE takes nothing returns boolean
-	return SR==false and TR==false and UR==false and WR==false and HO
+	return SomePlayerProperty[4]==false and SomePlayerProperty[5]==false and SomePlayerProperty[6]==false and SomePlayerProperty[7]==false and HO
 endfunction
 
 function ZNE takes nothing returns boolean
@@ -13796,28 +13778,28 @@ endfunction
 
 function ZKE takes nothing returns nothing
 	if ZIE() then
-		set JO=false
+		set SomePlayerProperty[0]=false
 	endif
 	if ZAE() then
-		set KO=false
+		set SomePlayerProperty[1]=false
 	endif
 	if ZNE() then
-		set LO=false
+		set SomePlayerProperty[2]=false
 	endif
 	if ZBE() then
-		set MO=false
+		set SomePlayerProperty[3]=false
 	endif
 	if ZCE() then
-		set SR=false
+		set SomePlayerProperty[4]=false
 	endif
 	if ZDE() then
-		set TR=false
+		set SomePlayerProperty[5]=false
 	endif
 	if ZFE() then
-		set UR=false
+		set SomePlayerProperty[6]=false
 	endif
 	if ZGE() then
-		set WR=false
+		set SomePlayerProperty[7]=false
 	endif
 	if ZHE() then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"Left Team has no playing players. Left Team's King has been upgraded.")
@@ -14495,7 +14477,7 @@ function initGlobals takes nothing returns nothing
 	set ref_function_ZRE=function ZRE
 	set ref_function_ZKE=function ZKE
 	set ref_function_ZLE=function ZLE
-	set ref_function_VFX=function VFX
+	set ref_function_OnKingsTaunt=function OnKingsTaunt
 	set ref_function_Z4E=function Z4E
 	set ref_function_VCX=function VCX
 	set ref_function_ZPE=function ZPE
@@ -14510,7 +14492,7 @@ function initGlobals takes nothing returns nothing
 	set ref_function_ZYE=function ZYE
 	set ref_function_Z0E=function Z0E
 	set ref_function_ZME=function ZME
-	set ref_function_VGX=function VGX
+	set ref_function_OnCommandAttack=function OnCommandAttack
 	set ref_function_VHX=function VHX
 	set ref_function_VYX=function VYX
 	set ref_function_VZX=function VZX
@@ -14572,8 +14554,8 @@ function initGlobals takes nothing returns nothing
 	set ref_function_X3X=function X3X
 	set ref_function_X5X=function X5X
 	set ref_function_X6X=function X6X
-	set ref_function_X7X=function X7X
-	set ref_function_X8X=function X8X
+	set ref_function_IsGameOngoing=function IsGameOngoing
+	set ref_function_KingIsLow=function KingIsLow
 	set ref_function_X9X=function X9X
 	set ref_function_OEX=function OEX
 	set ref_function_OXX=function OXX
@@ -14603,9 +14585,9 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RCX=function RCX
 	set ref_function_RDX=function RDX
 	set ref_function_RQX=function RQX
-	set ref_function_RFX=function RFX
-	set ref_function_RHX=function RHX
-	set ref_function_RKX=function RKX
+	set ref_function_InitApMode=function InitApMode
+	set ref_function_InitPhMode=function InitPhMode
+	set ref_function_InitPrMode=function InitPrMode
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
 	set ref_function_IRX=function IRX
@@ -14803,8 +14785,8 @@ function main takes nothing returns nothing
 	set ML=Rect(2050.,3600.,7050.,2000.)
 	set QL=Rect(-5150.,850.,-3925.,1700.)
 	set SL=Rect(3925.,1700.,5150.,850.)
-	set UL=Rect(-3925.,-1250.,-5150.,3700.)
-	set WL=Rect(3925.,-1250.,5150.,3700.)
+	set rectWestMiddleLane=Rect(-3925.,-1250.,-5150.,3700.)
+	set rectEastMiddleLane=Rect(3925.,-1250.,5150.,3700.)
 	set YL=Rect(-4750.,2950.,-4350.,2500.)
 	set ZL=Rect(4350.,2950.,4750.,2500.)
 	set VK=Rect(-8100.,2600.,-6200.,3090.)
@@ -15028,10 +15010,10 @@ function main takes nothing returns nothing
 	set IQE=0
 	loop
 		exitwhen IQE>1
-		set PV[IQE]=""
-		set sArmorType[IQE]=""
+		set PlayerColor[IQE]=""
+		set SArmorType[IQE]=""
 		set YV[IQE]=""
-		set sAttackType[IQE]=""
+		set SAttackType[IQE]=""
 		set MX[IQE]=""
 		set PX[IQE]=""
 		set HR[IQE]=""
@@ -15686,7 +15668,7 @@ function main takes nothing returns nothing
 	set B0=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(B0,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 	call TriggerAddCondition(B0,Condition(ref_function_ZLE))
-	call TriggerAddAction(B0,ref_function_VFX)
+	call TriggerAddAction(B0,ref_function_OnKingsTaunt)
 	set DQ=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(DQ,EVENT_PLAYER_UNIT_SPELL_FINISH)
 	call TriggerAddCondition(DQ,Condition(ref_function_Z4E))
@@ -15717,7 +15699,7 @@ function main takes nothing returns nothing
 	set GQ=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(GQ,EVENT_PLAYER_UNIT_SPELL_EFFECT)
 	call TriggerAddCondition(GQ,Condition(ref_function_ZME))
-	call TriggerAddAction(GQ,ref_function_VGX)
+	call TriggerAddAction(GQ,ref_function_OnCommandAttack)
 	set C0=CreateTrigger()
 	call TriggerRegisterTimerEventPeriodic(C0,2.)
 	call TriggerAddCondition(C0,Condition(ref_function_VHX))
@@ -15732,7 +15714,7 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(F0,Condition(ref_function_VZX))
 	call TriggerAddAction(F0,ref_function_V0X)
 	set G0=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(G0,UL)
+	call TriggerRegisterEnterRectSimple(G0,rectWestMiddleLane)
 	call TriggerAddCondition(G0,Condition(ref_function_VZX))
 	call TriggerAddAction(G0,ref_function_V1X)
 	set H0=CreateTrigger()
@@ -15745,7 +15727,7 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(J0,Condition(ref_function_V2X))
 	call TriggerAddAction(J0,ref_function_V4X)
 	set K0=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(K0,WL)
+	call TriggerRegisterEnterRectSimple(K0,rectEastMiddleLane)
 	call TriggerAddCondition(K0,Condition(ref_function_V2X))
 	call TriggerAddAction(K0,ref_function_V5X)
 	set L0=CreateTrigger()
@@ -15807,11 +15789,11 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(V1,Condition(ref_function_EMX))
 	call TriggerAddAction(V1,ref_function_ETX)
 	set E1=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(E1,UL)
+	call TriggerRegisterEnterRectSimple(E1,rectWestMiddleLane)
 	call TriggerAddCondition(E1,Condition(ref_function_EUX))
 	call TriggerAddAction(E1,ref_function_EWX)
 	set X1=CreateTrigger()
-	call TriggerRegisterLeaveRectSimple(X1,UL)
+	call TriggerRegisterLeaveRectSimple(X1,rectWestMiddleLane)
 	call TriggerAddCondition(X1,Condition(ref_function_EYX))
 	call TriggerAddAction(X1,ref_function_EZX)
 	set O1=CreateTrigger()
@@ -15819,11 +15801,11 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(O1,Condition(ref_function_E_X))
 	call TriggerAddAction(O1,ref_function_E0X)
 	set R1=CreateTrigger()
-	call TriggerRegisterEnterRectSimple(R1,WL)
+	call TriggerRegisterEnterRectSimple(R1,rectEastMiddleLane)
 	call TriggerAddCondition(R1,Condition(ref_function_E1X))
 	call TriggerAddAction(R1,ref_function_E2X)
 	set I1=CreateTrigger()
-	call TriggerRegisterLeaveRectSimple(I1,WL)
+	call TriggerRegisterLeaveRectSimple(I1,rectEastMiddleLane)
 	call TriggerAddCondition(I1,Condition(ref_function_E3X))
 	call TriggerAddAction(I1,ref_function_E4X)
 	set A1=CreateTrigger()
@@ -15889,8 +15871,8 @@ function main takes nothing returns nothing
 	call TriggerAddAction(U1,ref_function_X6X)
 	set W1=CreateTrigger()
 	call TriggerRegisterTimerEventPeriodic(W1,1.)
-	call TriggerAddCondition(W1,Condition(ref_function_X7X))
-	call TriggerAddAction(W1,ref_function_X8X)
+	call TriggerAddCondition(W1,Condition(ref_function_IsGameOngoing))
+	call TriggerAddAction(W1,ref_function_KingIsLow)
 	set Y1=CreateTrigger()
 	call TriggerRegisterEnterRectSimple(Y1,RL)
 	call TriggerAddCondition(Y1,Condition(ref_function_X9X))
@@ -15985,13 +15967,13 @@ function main takes nothing returns nothing
 	call TriggerAddAction(M2,ref_function_RDX)
 	set P2=CreateTrigger()
 	call TriggerAddCondition(P2,Condition(ref_function_RQX))
-	call TriggerAddAction(P2,ref_function_RFX)
+	call TriggerAddAction(P2,ref_function_InitApMode)
 	set U2=CreateTrigger()
 	call TriggerAddCondition(U2,Condition(ref_function_RQX))
-	call TriggerAddAction(U2,ref_function_RHX)
+	call TriggerAddAction(U2,ref_function_InitPhMode)
 	set W2=CreateTrigger()
 	call TriggerAddCondition(W2,Condition(ref_function_RQX))
-	call TriggerAddAction(W2,ref_function_RKX)
+	call TriggerAddAction(W2,ref_function_InitPrMode)
 	set Y10=CreateTrigger()
 	call TriggerAddCondition(Y10,Condition(ref_function_Y_10))
 	call TriggerAddAction(Y10,ref_function_Y_11)
