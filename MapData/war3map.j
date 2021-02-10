@@ -1541,7 +1541,13 @@ globals
 	timer debug_functiontimings_timer=null
 	multiboard debug_functiontimings_multiboard=null
 	hashtable debug_functiontimings_sorttable=null
-
+	trigger debug_functiontimings_chat_showmultiboard_trigger=null
+	trigger debug_functiontimings_chat_reset_trigger=null
+	code ref_function_DebugFunctionTimingsChatHandlerShowMultiboardChecker=null
+	code ref_function_DebugFunctionTimingsChatHandlerShowMultiboard=null
+	code ref_function_DebugFunctionTimingsChatHandlerResetCounterChecker=null
+	code ref_function_DebugFunctionTimingsChatHandlerResetCounter=null
+	code ref_function_DebugFunctionTimingsUpdateMultiboard=null
 endglobals
 
 
@@ -14187,7 +14193,7 @@ function DebugFunctionTimingsCreateMultiboard takes nothing returns nothing
 
 	call MultiboardDisplay(debug_functiontimings_multiboard, true)
 	
-	//call TimerStart(CreateTimer(), .5, true, function DebugFunctionTimingsUpdateMultiboard)
+	call TimerStart(CreateTimer(), .5, true, ref_function_DebugFunctionTimingsUpdateMultiboard)
 endfunction
 
 function DebugFunctionTimingsUpdateMultiboard takes nothing returns nothing
@@ -14238,6 +14244,27 @@ function DebugFunctionTimingsUpdateMultiboard takes nothing returns nothing
 	endloop
 endfunction
 
+function DebugFunctionTimingsResetCounters takes nothing returns nothing
+	call FlushChildHashtable(debug_functiontimings_table, 1)
+	call FlushChildHashtable(debug_functiontimings_table, 3)
+endfunction
+
+
+function DebugFunctionTimingsChatHandlerShowMultiboardChecker takes nothing returns boolean
+	return SubStringBJ(GetEventPlayerChatString(),1,19)=="-debug-timings-show"
+endfunction
+
+function DebugFunctionTimingsChatHandlerShowMultiboard takes nothing returns nothing
+	call DebugFunctionTimingsCreateMultiboard()
+endfunction
+
+function DebugFunctionTimingsChatHandlerResetCounterChecker takes nothing returns boolean
+	return SubStringBJ(GetEventPlayerChatString(),1,20)=="-debug-timings-reset"
+endfunction
+
+function DebugFunctionTimingsChatHandlerResetCounter takes nothing returns nothing
+	call DebugFunctionTimingsResetCounters()
+endfunction
 
 function DebugFunctionTimingsInvokeStart takes string functionName,integer functionIdentifier returns nothing
 	local real timeStart = TimerGetElapsed(debug_functiontimings_timer)
@@ -15013,7 +15040,11 @@ function initGlobals takes nothing returns nothing
 	set debug_functiontimings_timer=CreateTimer()
 	set debug_functiontimings_nb_functionidentifiers=420
 	set debug_functiontimings_sorttable=InitHashtable()
-
+	set ref_function_DebugFunctionTimingsChatHandlerShowMultiboardChecker=function DebugFunctionTimingsChatHandlerShowMultiboardChecker
+	set ref_function_DebugFunctionTimingsChatHandlerShowMultiboard=function DebugFunctionTimingsChatHandlerShowMultiboard
+	set ref_function_DebugFunctionTimingsChatHandlerResetCounterChecker=function DebugFunctionTimingsChatHandlerResetCounterChecker
+	set ref_function_DebugFunctionTimingsChatHandlerResetCounter=function DebugFunctionTimingsChatHandlerResetCounter
+	set ref_function_DebugFunctionTimingsUpdateMultiboard=function DebugFunctionTimingsUpdateMultiboard
 	
 endfunction
 
@@ -16774,7 +16805,29 @@ function main takes nothing returns nothing
 	//call TimerStart(CreateTimer(), 2, false, function DebugFunctionTimingsCreateMultiboard)
 	
 	
-
+	set debug_functiontimings_chat_showmultiboard_trigger=CreateTrigger()
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(0),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(1),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(2),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(3),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(4),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(5),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(6),"-debug-timings-show",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_showmultiboard_trigger,Player(7),"-debug-timings-show",false)
+	call TriggerAddCondition(debug_functiontimings_chat_showmultiboard_trigger,Condition(ref_function_DebugFunctionTimingsChatHandlerShowMultiboardChecker))
+	call TriggerAddAction(debug_functiontimings_chat_showmultiboard_trigger,ref_function_DebugFunctionTimingsChatHandlerShowMultiboard)
+	
+	set debug_functiontimings_chat_reset_trigger=CreateTrigger()
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(0),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(1),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(2),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(3),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(4),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(5),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(6),"-debug-timings-reset",false)
+	call TriggerRegisterPlayerChatEvent(debug_functiontimings_chat_reset_trigger,Player(7),"-debug-timings-reset",false)
+	call TriggerAddCondition(debug_functiontimings_chat_reset_trigger,Condition(ref_function_DebugFunctionTimingsChatHandlerResetCounterChecker))
+	call TriggerAddAction(debug_functiontimings_chat_reset_trigger,ref_function_DebugFunctionTimingsChatHandlerResetCounter)
 endfunction
 
 function InitCustomPlayerSlots takes nothing returns nothing
