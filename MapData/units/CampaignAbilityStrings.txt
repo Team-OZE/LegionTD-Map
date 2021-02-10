@@ -5493,7 +5493,7 @@ Name=Provoke Anarchy
 Order=acidbomb
 Targetattach=origin
 Tip=Provoke Anarchy - [|cffFFcc00E|r]
-Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800 AoE and Purges enemies in 715 AoE|n|nCooldown: 40seconds|nManacost: 60% Mana
+Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800 AoE and Purges enemies in 715 AoE|n|nCooldown: 10 seconds|nManacost: 40% Mana
 
 [A956]
 Animnames=spell,slam
