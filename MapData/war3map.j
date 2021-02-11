@@ -974,10 +974,10 @@ globals
 	code ref_function_XLX=null
 	code ref_function_XPX=null
 	code ref_function_XQX=null
-	code ref_function_XSX=null
+	code ref_function_IncreaseDarkPresenceLvl=null
 	code ref_function_XWX=null
-	code ref_function_XTX=null
-	code ref_function_XUX=null
+	code ref_function_IncreaseRoyalPresenceLvl=null
+	code ref_function_IncreaseAnarchyLvl=null
 	code ref_function_X1X=null
 	code ref_function_X4X=null
 	code ref_function_OVX=null
@@ -12968,15 +12968,15 @@ function XSE takes nothing returns nothing
 	endif
 endfunction
 
-function XSX takes nothing returns nothing
+function IncreaseDarkPresenceLvl takes nothing returns nothing
 	call SetPlayerTechResearchedSwap($52393939,GetPlayerTechCountSimple($52393939,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
 
-function XTX takes nothing returns nothing
+function IncreaseRoyalPresenceLvl takes nothing returns nothing
 	call SetPlayerTechResearchedSwap($52393938,GetPlayerTechCountSimple($52393938,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
 
-function XUX takes nothing returns nothing
+function IncreaseAnarchyLvl takes nothing returns nothing
 	call SetPlayerTechResearchedSwap($52393935,GetPlayerTechCountSimple($52393935,GetEnumPlayer())+1,GetEnumPlayer())
 endfunction
 
@@ -13155,7 +13155,7 @@ function XYX takes nothing returns nothing
 	endif
 	if GetUnitTypeId(GetSoldUnit())==$75393964 then
 		if GetPlayerTechCountSimple($52393939,OX)<GetPlayerTechMaxAllowedSwap($52393939,OX) and GetPlayerTechCountSimple($52393938,OX)==0 then
-			call ForForce(RJE(OX),ref_function_XSX)
+			call ForForce(RJE(OX),ref_function_IncreaseDarkPresenceLvl)
 			call DestroyForce(S8)
 			set S8=null
 			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Dark Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,OX))+"|r")
@@ -13181,7 +13181,7 @@ function XYX takes nothing returns nothing
 	endif
 	if GetUnitTypeId(GetSoldUnit())==$75393972 then
 		if GetPlayerTechCountSimple($52393938,OX)<GetPlayerTechMaxAllowedSwap($52393938,OX) and GetPlayerTechCountSimple($52393939,OX)==0 then
-			call ForForce(RJE(OX),ref_function_XTX)
+			call ForForce(RJE(OX),ref_function_IncreaseRoyalPresenceLvl)
 			call DestroyForce(S8)
 			set S8=null
 			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Royal Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393938,OX))+"|r")
@@ -13207,7 +13207,7 @@ function XYX takes nothing returns nothing
 	endif
 	if GetUnitTypeId(GetSoldUnit())==$75393937 then
 		if GetPlayerTechCountSimple($52393935,OX)<GetPlayerTechMaxAllowedSwap($52393935,OX) and modeCC then
-			call ForForce(RJE(OX),ref_function_XUX)
+			call ForForce(RJE(OX),ref_function_IncreaseAnarchyLvl)
 			call DestroyForce(S8)
 			set S8=null
 			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cff7333AAProvoke Anarchy|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,OX))+"|r")
@@ -14143,10 +14143,10 @@ function initGlobals takes nothing returns nothing
 	set ref_function_XLX=function XLX
 	set ref_function_XPX=function XPX
 	set ref_function_XQX=function XQX
-	set ref_function_XSX=function XSX
+	set ref_function_IncreaseDarkPresenceLvl=function IncreaseDarkPresenceLvl
 	set ref_function_XWX=function XWX
-	set ref_function_XTX=function XTX
-	set ref_function_XUX=function XUX
+	set ref_function_IncreaseRoyalPresenceLvl=function IncreaseRoyalPresenceLvl
+	set ref_function_IncreaseAnarchyLvl=function IncreaseAnarchyLvl
 	set ref_function_X1X=function X1X
 	set ref_function_X4X=function X4X
 	set ref_function_OVX=function OVX
