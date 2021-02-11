@@ -3119,13 +3119,13 @@ endfunction
 
 function CHX takes nothing returns nothing
 	set QO=S2R(SubStringBJ(GetEventPlayerChatString(),7,StringLength(GetEventPlayerChatString())))
-	if QO<=450. and QO>=50. then
-		set QO=QO*16.5
+	if QO<=150. and QO>=50. then
+		set QO=QO*25
 		call SetCameraFieldForPlayer(GetTriggerPlayer(),CAMERA_FIELD_FARZ,20000.,0.)
 		call SetCameraFieldForPlayer(GetTriggerPlayer(),CAMERA_FIELD_TARGET_DISTANCE,QO,.5)
 	
 	else
-		call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),7.,"Enter a zoom % between 50 and 450. (Default is 100)")
+		call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),7.,"Enter a zoom % between 50 and 150. (Default is 100)")
 		call DestroyForce(S8)
 		set S8=null
 	endif
@@ -14850,22 +14850,18 @@ function main takes nothing returns nothing
 	set KP=Rect(1200.,-800.,2700.,100.)
 	set LP=Rect(6300.,6500.,7800.,5500.)
 	set MP=Rect(6300.,-800.,7800.,100.)
-	call SetCameraFieldForPlayer(Player(0),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(0),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(1),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(1),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(2),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(2),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(3),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(3),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(4),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(4),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(5),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(5),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(6),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(6),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
-	call SetCameraFieldForPlayer(Player(7),CAMERA_FIELD_FARZ,20000.,0.)
-	call SetCameraFieldForPlayer(Player(7),CAMERA_FIELD_TARGET_DISTANCE,2200.,.5)
+	set i=0
+	loop
+		exitwhen i>23
+		call SetCameraFieldForPlayer(Player(i),CAMERA_FIELD_FARZ,20000.,0.)
+		if i<=7 then
+			call SetCameraFieldForPlayer(Player(i),CAMERA_FIELD_TARGET_DISTANCE,2500.,.5)
+		
+		else
+			call SetCameraFieldForPlayer(Player(i),CAMERA_FIELD_TARGET_DISTANCE,3000.,.5)
+		endif
+		set i=i+1
+	endloop
 	set QP=CreateCameraSetup()
 	call CameraSetupSetField(QP,CAMERA_FIELD_ZOFFSET,0.,0.)
 	call CameraSetupSetField(QP,CAMERA_FIELD_ROTATION,90.8,0.)
