@@ -6693,14 +6693,11 @@ function N0E takes unit NVE,string ATE,real IEE,real IXE,real N1E,player RSE ret
 	call SetTextTagVelocityBJ(N2E,40.,90.)
 	call ShowTextTagForceBJ(false,N2E,bj_FORCE_ALL_PLAYERS)
 	call ShowTextTagForceBJ(true,N2E,N3E)
-	set N2E=null
 	call DestroyForce(N3E)
-	set N3E=null
 	call RemoveLocation(IVE)
 	set IVE=null
 	set N2E=null
 	set N3E=null
-	set IVE=null
 endfunction
 
 function FWE takes nothing returns nothing
@@ -9904,8 +9901,6 @@ function PXE takes nothing returns nothing
 	endif
 	set NVE=null
 	set FYE=null
-	set NVE=null
-	set FYE=null
 	set RSE=null
 endfunction
 
@@ -11087,8 +11082,6 @@ function NFV takes unit u,integer NCV,integer NAV,real NJV,integer NDV returns n
 	set t=null
 	set tt=null
 	call NIV(u,NCV,NAV)
-	set t=null
-	set tt=null
 endfunction
 
 function SKE takes nothing returns nothing
@@ -11103,7 +11096,6 @@ function SLE takes nothing returns nothing
 	call GroupRemoveUnit(IE,GetEnumUnit())
 	call PauseTimer(t)
 	call DestroyTimer(t)
-	set t=null
 	set t=null
 endfunction
 
@@ -11936,7 +11928,6 @@ function UIE takes nothing returns nothing
 	call TriggerSleepAction(1.)
 	call IssueImmediateOrderById(NVE,852526)
 	call UnitApplyTimedLifeBJ(3.,$42544C46,NVE)
-	set NVE=null
 	set NVE=null
 endfunction
 
@@ -13398,12 +13389,10 @@ function N4E takes unit NVE,string ATE,real IEE,real IXE,real N1E,real N7E,real 
 	call ShowTextTagForceBJ(false,N2E,N3E)
 	set N2E=null
 	call DestroyForce(N3E)
-	set N3E=null
 	call RemoveLocation(IVE)
 	set IVE=null
 	set N2E=null
 	set N3E=null
-	set IVE=null
 endfunction
 
 function YLE takes nothing returns nothing
@@ -13421,8 +13410,6 @@ function YLE takes nothing returns nothing
 	call N4E(NVE,ATE,100.,0.,0.,10.,IEE,RSE)
 	call DestroyForce(S8)
 	set S8=null
-	set NVE=null
-	set FYE=null
 	set NVE=null
 	set FYE=null
 	set RSE=null
@@ -13457,7 +13444,6 @@ function YSE takes nothing returns nothing
 		call IssueImmediateOrderById(NVE,852526)
 		call UnitApplyTimedLifeBJ(3.,$42544C46,NVE)
 	endif
-	set NVE=null
 	set NVE=null
 endfunction
 
