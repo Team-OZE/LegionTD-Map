@@ -1414,15 +1414,15 @@ globals
 	code ref_function_RCX=null
 	code ref_function_RDX=null
 	code ref_function_RQX=null
-	code ref_function_InitApMode=null
-	code ref_function_InitPhMode=null
-	code ref_function_InitPrMode=null
+	code ref_function_InitModeAP=null
+	code ref_function_InitModePH=null
+	code ref_function_InitModePR=null
 	code ref_function_R2X=null
 	code ref_function_R3X=null
 	code ref_function_IRX=null
-	code ref_function_ICX=null
+	code ref_function_InitModeCC=null
 	code ref_function_IIX=null
-	code ref_function_IDX=null
+	code ref_function_InitModeAC=null
 	code ref_ProcessGameMode=null
 	code ref_function_ILX=null
 	code ref_function_IMX=null
@@ -7248,13 +7248,13 @@ function OIE takes nothing returns nothing
 	endloop
 endfunction
 
-function ICX takes nothing returns nothing
+function InitModeCC takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set modeCC=true
 	call OIE()
 endfunction
 
-function IDX takes nothing returns nothing
+function InitModeAC takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set modeAC=true
 endfunction
@@ -10690,7 +10690,7 @@ function RFE takes nothing returns nothing
 	endif
 endfunction
 
-function InitApMode takes nothing returns nothing
+function InitModeAP takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modeAP=true
@@ -10712,7 +10712,7 @@ function RGX takes nothing returns nothing
 	set p=null
 endfunction
 
-function InitPhMode takes nothing returns nothing
+function InitModePH takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modePH=true
@@ -10758,7 +10758,7 @@ function RJX takes nothing returns nothing
 	set p=null
 endfunction
 
-function InitPrMode takes nothing returns nothing
+function InitModePR takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set EC=true
 	set modePR=true
@@ -14583,15 +14583,15 @@ function initGlobals takes nothing returns nothing
 	set ref_function_RCX=function RCX
 	set ref_function_RDX=function RDX
 	set ref_function_RQX=function RQX
-	set ref_function_InitApMode=function InitApMode
-	set ref_function_InitPhMode=function InitPhMode
-	set ref_function_InitPrMode=function InitPrMode
+	set ref_function_InitModeAP=function InitModeAP
+	set ref_function_InitModePH=function InitModePH
+	set ref_function_InitModePR=function InitModePR
 	set ref_function_R2X=function R2X
 	set ref_function_R3X=function R3X
 	set ref_function_IRX=function IRX
-	set ref_function_ICX=function ICX
+	set ref_function_InitModeCC=function InitModeCC
 	set ref_function_IIX=function IIX
-	set ref_function_IDX=function IDX
+	set ref_function_InitModeAC=function InitModeAC
 	set ref_ProcessGameMode=function ProcessGameMode
 	set ref_function_ILX=function ILX
 	set ref_function_IMX=function IMX
@@ -15961,13 +15961,13 @@ function main takes nothing returns nothing
 	call TriggerAddAction(M2,ref_function_RDX)
 	set P2=CreateTrigger()
 	call TriggerAddCondition(P2,Condition(ref_function_RQX))
-	call TriggerAddAction(P2,ref_function_InitApMode)
+	call TriggerAddAction(P2,ref_function_InitModeAP)
 	set U2=CreateTrigger()
 	call TriggerAddCondition(U2,Condition(ref_function_RQX))
-	call TriggerAddAction(U2,ref_function_InitPhMode)
+	call TriggerAddAction(U2,ref_function_InitModePH)
 	set W2=CreateTrigger()
 	call TriggerAddCondition(W2,Condition(ref_function_RQX))
-	call TriggerAddAction(W2,ref_function_InitPrMode)
+	call TriggerAddAction(W2,ref_function_InitModePR)
 	set Y10=CreateTrigger()
 	call TriggerAddCondition(Y10,Condition(ref_function_Y_10))
 	call TriggerAddAction(Y10,ref_function_Y_11)
@@ -15976,10 +15976,10 @@ function main takes nothing returns nothing
 	call TriggerAddAction(Z2,ref_function_R3X)
 	set I3=CreateTrigger()
 	call TriggerAddCondition(I3,Condition(ref_function_IRX))
-	call TriggerAddAction(I3,ref_function_ICX)
+	call TriggerAddAction(I3,ref_function_InitModeCC)
 	set A3=CreateTrigger()
 	call TriggerAddCondition(A3,Condition(ref_function_IIX))
-	call TriggerAddAction(A3,ref_function_IDX)
+	call TriggerAddAction(A3,ref_function_InitModeAC)
 	set C3=CreateTrigger()
 	call TriggerAddAction(C3,ref_ProcessGameMode)
 	set F3=CreateTrigger()
