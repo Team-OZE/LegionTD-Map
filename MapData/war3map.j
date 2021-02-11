@@ -746,7 +746,7 @@ globals
 	trigger D6=null
 	unit F6=null
 	unit G6=null
-	unit H6=null
+	unit kingWest=null
 	unit J6=null
 	unit K6=null
 	unit L6=null
@@ -755,7 +755,7 @@ globals
 	unit Q6=null
 	unit S6=null
 	unit T6=null
-	unit U6=null
+	unit kingEast=null
 	unit W6=null
 	unit Y6=null
 	unit Z6=null
@@ -1618,9 +1618,9 @@ function NNE takes nothing returns nothing
 	set RSE=Player(7)
 	set R7=CreateUnit(RSE,$65303033,5538.,572.,300.)
 	set RSE=Player(8)
-	set H6=CreateUnit(RSE,$6830304B,-4545.,-3260.,270.)
+	set kingWest=CreateUnit(RSE,$6830304B,-4545.,-3260.,270.)
 	set RSE=Player(9)
-	set U6=CreateUnit(RSE,$6830304B,4545.,-3260.,270.)
+	set kingEast=CreateUnit(RSE,$6830304B,4545.,-3260.,270.)
 	call CreateUnit(RSE,$75303133,-295.,-1445.,300.)
 	set RSE=null
 endfunction
@@ -2787,11 +2787,11 @@ function BWX takes nothing returns nothing
 	set HO=true
 	call A_V(1.)
 	if SomePlayerProperty[0]==false and SomePlayerProperty[1]==false and SomePlayerProperty[2]==false and SomePlayerProperty[3]==false then
-		call UnitAddItemByIdSwapped($49303030,H6)
+		call UnitAddItemByIdSwapped($49303030,kingWest)
 		set IN=false
 	endif
 	if SomePlayerProperty[4]==false and SomePlayerProperty[5]==false and SomePlayerProperty[6]==false and SomePlayerProperty[7]==false then
-		call UnitAddItemByIdSwapped($49303030,U6)
+		call UnitAddItemByIdSwapped($49303030,kingEast)
 		set HO=false
 	endif
 endfunction
@@ -2816,16 +2816,16 @@ endfunction
 function C0X takes nothing returns nothing
 	local group g=null
 	local group gg=null
-	local real x=GetUnitX(H6)
-	local real y=GetUnitY(H6)
+	local real x=GetUnitX(kingWest)
+	local real y=GetUnitY(kingWest)
 	set gg=IHE(1100.,x,y,Condition(ref_function_CWX))
 	if CountUnitsInGroup(gg)>0 then
-		call UnitAddAbility(H6,$4176756C)
+		call UnitAddAbility(kingWest,$4176756C)
 		set g=IHE(715.,x,y,Condition(ref_function_CYX))
 		call ForGroup(g,ref_function_CZX)
 	
 	elseif CountUnitsInGroup(gg)==0 then
-		call UnitRemoveAbility(H6,$4176756C)
+		call UnitRemoveAbility(kingWest,$4176756C)
 	endif
 	call A4V(gg)
 	call A4V(g)
@@ -2836,16 +2836,16 @@ endfunction
 function C1X takes nothing returns nothing
 	local group g=null
 	local group gg=null
-	local real x=GetUnitX(U6)
-	local real y=GetUnitY(U6)
+	local real x=GetUnitX(kingEast)
+	local real y=GetUnitY(kingEast)
 	set gg=IHE(1100.,x,y,Condition(ref_function_CWX))
 	if CountUnitsInGroup(gg)>0 then
-		call UnitAddAbility(U6,$4176756C)
+		call UnitAddAbility(kingEast,$4176756C)
 		set g=IHE(720.,x,y,Condition(ref_function_CYX))
 		call ForGroup(g,ref_function_C_X)
 	
 	elseif CountUnitsInGroup(gg)==0 then
-		call UnitRemoveAbility(U6,$4176756C)
+		call UnitRemoveAbility(kingEast,$4176756C)
 	endif
 	call A4V(gg)
 	call A4V(g)
@@ -2900,7 +2900,7 @@ function C9X takes nothing returns nothing
 	local unit uu=GetAttacker()
 	local real r=GetUnitState(u,UNIT_STATE_LIFE)
 	local real rr=GetUnitState(u,UNIT_STATE_MAX_LIFE)
-	if H6!=u and U6!=u then
+	if kingWest!=u and kingEast!=u then
 		set G7=.01
 		set r=r-r*G7
 		if r>=r*G7+2. then
@@ -2918,7 +2918,7 @@ function C9X takes nothing returns nothing
 			call SetWidgetLife(u,1.)
 		endif
 	
-	elseif H6==u then
+	elseif kingWest==u then
 		set H7=H7+.002
 		if H7>.1 then
 			set H7=.1
@@ -2939,7 +2939,7 @@ function C9X takes nothing returns nothing
 			call SetWidgetLife(u,1.)
 		endif
 	
-	elseif U6==u then
+	elseif kingEast==u then
 		set J7=J7+.002
 		if J7>.1 then
 			set J7=.1
@@ -5346,8 +5346,8 @@ function DQE takes nothing returns nothing
 	set SomePlayerProperty[7]=true
 	call TriggerExecute(N0)
 	call TriggerExecute(L4)
-	call SetUnitUserData(H6,9)
-	call SetUnitUserData(U6,10)
+	call SetUnitUserData(kingWest,9)
+	call SetUnitUserData(kingEast,10)
 	set g1=IPE($68303546)
 	call ForGroup(g1,ref_function_DLE)
 	set g2=IPE($68303545)
@@ -5721,7 +5721,7 @@ function E6X takes nothing returns nothing
 endfunction
 
 function E7X takes nothing returns boolean
-	return GetTriggerUnit()==H6
+	return GetTriggerUnit()==kingWest
 endfunction
 
 function E8X takes nothing returns nothing
@@ -5735,7 +5735,7 @@ function E8X takes nothing returns nothing
 endfunction
 
 function E9X takes nothing returns boolean
-	return GetTriggerUnit()==U6
+	return GetTriggerUnit()==kingEast
 endfunction
 
 function EAX takes nothing returns boolean
@@ -6727,11 +6727,11 @@ function FWE takes nothing returns nothing
 		set LB[GetUnitUserData(FYE)]=LB[IQE]+1
 		set AHE=R2I(I2R(AHE)*OD[GetUnitUserData(NVE)])
 	endif
-	if FYE==H6 then
+	if FYE==kingWest then
 		call SetPlayerState(Player(9),PLAYER_STATE_RESOURCE_GOLD,GetPlayerState(Player(9),PLAYER_STATE_RESOURCE_GOLD)+AHE)
 		call SetPlayerState(Player(9),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(Player(9),PLAYER_STATE_GOLD_GATHERED)+AHE)
 	endif
-	if FYE==U6 then
+	if FYE==kingEast then
 		call SetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD,GetPlayerState(Player(8),PLAYER_STATE_RESOURCE_GOLD)+AHE)
 		call SetPlayerState(Player(8),PLAYER_STATE_GOLD_GATHERED,GetPlayerState(Player(8),PLAYER_STATE_GOLD_GATHERED)+AHE)
 	endif
@@ -6963,13 +6963,13 @@ function G2E takes nothing returns nothing
 	set U=0
 	if numberLvl>=10 and H==false then
 		set H=true
-		call UnitAddAbility(H6,$41393535)
-		call UnitAddAbility(U6,$41393535)
+		call UnitAddAbility(kingWest,$41393535)
+		call UnitAddAbility(kingEast,$41393535)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"Your team's King learned the |cff7333AAProvoke Anarchy|r"+" ability.")
 	
 	elseif numberLvl==5 and modeAC then
-		call UnitAddAbility(H6,$41393535)
-		call UnitAddAbility(U6,$41393535)
+		call UnitAddAbility(kingWest,$41393535)
+		call UnitAddAbility(kingEast,$41393535)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,11.,"Your team's King learned the |cff7333AAProvoke Anarchy|r"+" ability.")
 	endif
 	if numberLvl==5 and modeAC then
@@ -7141,7 +7141,7 @@ function HVE takes nothing returns nothing
 endfunction
 
 function HZE takes nothing returns nothing
-	if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
+	if GetEnumUnit()!=kingEast and GetEnumUnit()!=kingWest then
 		call RemoveUnit(GetEnumUnit())
 	endif
 endfunction
@@ -7295,10 +7295,10 @@ function ProcessGameMode takes nothing returns nothing
 	
 	// Auto-heal
 	set myTrigger=CreateTrigger()
-	call TriggerRegisterUnitEvent(myTrigger,H6,EVENT_UNIT_DAMAGED)
+	call TriggerRegisterUnitEvent(myTrigger,kingWest,EVENT_UNIT_DAMAGED)
 	call TriggerAddAction(myTrigger,ref_function_eK)
 	set myTrigger=CreateTrigger()
-	call TriggerRegisterUnitEvent(myTrigger,U6,EVENT_UNIT_DAMAGED)
+	call TriggerRegisterUnitEvent(myTrigger,kingEast,EVENT_UNIT_DAMAGED)
 	call TriggerAddAction(myTrigger,ref_function_iK)	
 	
 	// Covert input-string to lower case
@@ -8477,7 +8477,7 @@ endfunction
 
 function M0E takes nothing returns nothing
 	call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
-	call SetUnitAnimation(H6,"Stand Victory")
+	call SetUnitAnimation(kingWest,"Stand Victory")
 	call CameraSetupApplyForPlayer(true,SP,GetEnumPlayer(),0.)
 	call CameraSetupApplyForPlayer(true,UP,GetEnumPlayer(),11.)
 endfunction
@@ -8500,8 +8500,8 @@ function M2E takes nothing returns nothing
 	set UI=false
 	set EA=HR[1+GetPlayerId(Player(8))]+GetPlayerName(Player(8))
 	call PauseAllUnitsBJ(true)
-	call SetUnitFacingTimed(H6,bj_UNIT_FACING,0.)
-	call SetUnitFacingTimed(U6,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingWest,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingEast,bj_UNIT_FACING,0.)
 	call CinematicModeBJ(true,bj_FORCE_ALL_PLAYERS)
 	call TriggerExecute(MU)
 	call ShowInterfaceForceOff(bj_FORCE_ALL_PLAYERS,1.)
@@ -8674,10 +8674,10 @@ function M5E takes nothing returns nothing
 	endloop
 	call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA)-2,EA)
 	if HN==Player(8) then
-		call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA)-1,I2S(R2I(GetUnitStateSwap(UNIT_STATE_LIFE,H6)))+" hp left")
+		call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA)-1,I2S(R2I(GetUnitStateSwap(UNIT_STATE_LIFE,kingWest)))+" hp left")
 	
 	else
-		call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA)-1,I2S(R2I(GetUnitStateSwap(UNIT_STATE_LIFE,U6)))+" hp left")
+		call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA)-1,I2S(R2I(GetUnitStateSwap(UNIT_STATE_LIFE,kingEast)))+" hp left")
 	endif
 	call MultiboardSetItemValueBJ(VA,2,MultiboardGetRowCount(VA),QR+" (Level "+I2S(numberLvl)+")")
 	call MultiboardDisplay(VA,true)
@@ -8734,7 +8734,7 @@ function M9E takes nothing returns boolean
 endfunction
 
 function MCE takes nothing returns nothing
-	if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
+	if GetEnumUnit()!=kingEast and GetEnumUnit()!=kingWest then
 		if IsUnitType(GetEnumUnit(),UNIT_TYPE_GIANT) or IsUnitType(GetEnumUnit(),UNIT_TYPE_SUMMONED) then
 			call RemoveUnit(GetEnumUnit())
 		endif
@@ -8767,7 +8767,7 @@ endfunction
 
 function MME takes nothing returns nothing
 	call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
-	call SetUnitAnimation(H6,"Stand Victory")
+	call SetUnitAnimation(kingWest,"Stand Victory")
 	call CameraSetupApplyForPlayer(true,SP,GetEnumPlayer(),0.)
 	call CameraSetupApplyForPlayer(true,UP,GetEnumPlayer(),10.)
 endfunction
@@ -8787,7 +8787,7 @@ endfunction
 
 function MPE takes nothing returns nothing
 	call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
-	call SetUnitAnimation(U6,"Stand Victory")
+	call SetUnitAnimation(kingEast,"Stand Victory")
 	call CameraSetupApplyForPlayer(true,TP,GetEnumPlayer(),0.)
 	call CameraSetupApplyForPlayer(true,WP,GetEnumPlayer(),10.)
 endfunction
@@ -8808,8 +8808,8 @@ function MQE takes nothing returns nothing
 		set HN=Player(9)
 	endif
 	call PauseAllUnitsBJ(true)
-	call SetUnitFacingTimed(H6,bj_UNIT_FACING,0.)
-	call SetUnitFacingTimed(U6,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingWest,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingEast,bj_UNIT_FACING,0.)
 	call CinematicModeBJ(true,bj_FORCE_ALL_PLAYERS)
 	call TriggerExecute(PU)
 	call ShowInterfaceForceOff(bj_FORCE_ALL_PLAYERS,1.)
@@ -8851,7 +8851,7 @@ endfunction
 
 function MWE takes nothing returns nothing
 	call CinematicFadeBJ(2,3.,"ReplaceableTextures\\CameraMasks\\DreamFilter_Mask.blp",0.,0.,0.,0.)
-	call SetUnitAnimation(U6,"Stand Victory")
+	call SetUnitAnimation(kingEast,"Stand Victory")
 	call CameraSetupApplyForPlayer(true,TP,GetEnumPlayer(),0.)
 	call CameraSetupApplyForPlayer(true,WP,GetEnumPlayer(),10.)
 endfunction
@@ -8876,8 +8876,8 @@ function MYE takes nothing returns nothing
 	set UI=false
 	set EA=HR[1+GetPlayerId(Player(9))]+GetPlayerName(Player(9))
 	call PauseAllUnitsBJ(true)
-	call SetUnitFacingTimed(H6,bj_UNIT_FACING,0.)
-	call SetUnitFacingTimed(U6,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingWest,bj_UNIT_FACING,0.)
+	call SetUnitFacingTimed(kingEast,bj_UNIT_FACING,0.)
 	call CinematicModeBJ(true,bj_FORCE_ALL_PLAYERS)
 	call TriggerExecute(MU)
 	call ShowInterfaceForceOff(bj_FORCE_ALL_PLAYERS,1.)
@@ -9014,8 +9014,8 @@ function NYE takes nothing returns nothing
 endfunction
 
 function O0X takes nothing returns nothing
-	call UnitAddAbility(H6,$41303531)
-	call UnitAddAbility(U6,$41303531)
+	call UnitAddAbility(kingWest,$41303531)
+	call UnitAddAbility(kingEast,$41303531)
 	call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_O_X)
 endfunction
 
@@ -9164,25 +9164,25 @@ function O9X takes nothing returns nothing
 endfunction
 
 function OIX takes nothing returns boolean
-	return IsUnitSelected(H6,GetOwningPlayer(H6))==false or IsPlayerInForce(GetOwningPlayer(H6),ZI)==false
+	return IsUnitSelected(kingWest,GetOwningPlayer(kingWest))==false or IsPlayerInForce(GetOwningPlayer(kingWest),ZI)==false
 endfunction
 
 function OAX takes nothing returns boolean
-	return GetTriggerUnit()==H6 and UA==0 and OIX()
+	return GetTriggerUnit()==kingWest and UA==0 and OIX()
 endfunction
 
 function OBX takes nothing returns boolean
-	return IsUnitSelected(U6,GetOwningPlayer(U6))==false or IsPlayerInForce(GetOwningPlayer(U6),ZI)==false
+	return IsUnitSelected(kingEast,GetOwningPlayer(kingEast))==false or IsPlayerInForce(GetOwningPlayer(kingEast),ZI)==false
 endfunction
 
 function OCX takes nothing returns boolean
-	return GetTriggerUnit()==U6 and WA==0 and OBX()
+	return GetTriggerUnit()==kingEast and WA==0 and OBX()
 endfunction
 
 function ODX takes nothing returns nothing
 	set WA=5
-	call SetUnitOwner(U6,GetTriggerPlayer(),false)
-	call SetUnitColor(U6,GetPlayerColor(GetTriggerPlayer()))
+	call SetUnitOwner(kingEast,GetTriggerPlayer(),false)
+	call SetUnitColor(kingEast,GetPlayerColor(GetTriggerPlayer()))
 endfunction
 
 function Q8E takes nothing returns boolean
@@ -9260,8 +9260,8 @@ endfunction
 
 function ONX takes nothing returns nothing
 	set UA=5
-	call SetUnitOwner(H6,GetTriggerPlayer(),false)
-	call SetUnitColor(H6,GetPlayerColor(GetTriggerPlayer()))
+	call SetUnitOwner(kingWest,GetTriggerPlayer(),false)
+	call SetUnitColor(kingWest,GetPlayerColor(GetTriggerPlayer()))
 endfunction
 
 function OOX takes nothing returns boolean
@@ -9366,7 +9366,7 @@ function OZE takes nothing returns boolean
 endfunction
 
 function OZX takes nothing returns nothing
-	set PE=U6
+	set PE=kingEast
 	set numberPlayer=CountPlayersInForceBJ(I3E(Condition(ref_function_OWX)))
 	call DestroyForce(S8)
 	set S8=null
@@ -9400,7 +9400,7 @@ function OZX takes nothing returns nothing
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
 	endif
-	set PE=H6
+	set PE=kingWest
 	set numberPlayer=CountPlayersInForceBJ(I3E(Condition(ref_function_OYX)))
 	call DestroyForce(S8)
 	set S8=null
@@ -9583,7 +9583,7 @@ function PEE takes nothing returns nothing
 endfunction
 
 function PFE takes nothing returns nothing
-	if GetEnumUnit()!=U6 and GetEnumUnit()!=H6 then
+	if GetEnumUnit()!=kingEast and GetEnumUnit()!=kingWest then
 		if IsUnitType(GetEnumUnit(),UNIT_TYPE_GIANT) or IsUnitType(GetEnumUnit(),UNIT_TYPE_SUMMONED) then
 			call RemoveUnit(GetEnumUnit())
 		endif
@@ -9683,23 +9683,23 @@ function PPE takes nothing returns nothing
 			set WC[bj_forLoopAIndex]=bj_lastReplacedUnit
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		if GetUnitAbilityLevel(H6,$41303232)==1 then
-			call SetUnitAbilityLevel(H6,$41303232,2)
+		if GetUnitAbilityLevel(kingWest,$41303232)==1 then
+			call SetUnitAbilityLevel(kingWest,$41303232,2)
 		endif
-		if GetUnitAbilityLevel(U6,$41303232)==1 then
-			call SetUnitAbilityLevel(U6,$41303232,2)
+		if GetUnitAbilityLevel(kingEast,$41303232)==1 then
+			call SetUnitAbilityLevel(kingEast,$41303232,2)
 		endif
-		if GetUnitAbilityLevel(H6,$41304856)==1 then
-			call SetUnitAbilityLevel(H6,$41304856,2)
+		if GetUnitAbilityLevel(kingWest,$41304856)==1 then
+			call SetUnitAbilityLevel(kingWest,$41304856,2)
 		endif
-		if GetUnitAbilityLevel(U6,$41304856)==1 then
-			call SetUnitAbilityLevel(U6,$41304856,2)
+		if GetUnitAbilityLevel(kingEast,$41304856)==1 then
+			call SetUnitAbilityLevel(kingEast,$41304856,2)
 		endif
-		if GetUnitAbilityLevel(H6,$41393832)==1 then
-			call SetUnitAbilityLevel(H6,$41393832,2)
+		if GetUnitAbilityLevel(kingWest,$41393832)==1 then
+			call SetUnitAbilityLevel(kingWest,$41393832,2)
 		endif
-		if GetUnitAbilityLevel(U6,$41393832)==1 then
-			call SetUnitAbilityLevel(U6,$41393832,2)
+		if GetUnitAbilityLevel(kingEast,$41393832)==1 then
+			call SetUnitAbilityLevel(kingEast,$41393832,2)
 		endif
 	endif
 	if numberLvl==15 then
@@ -9711,23 +9711,23 @@ function PPE takes nothing returns nothing
 			set WC[bj_forLoopAIndex]=bj_lastReplacedUnit
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		if GetUnitAbilityLevel(H6,$41303232)==2 then
-			call SetUnitAbilityLevel(H6,$41303232,3)
+		if GetUnitAbilityLevel(kingWest,$41303232)==2 then
+			call SetUnitAbilityLevel(kingWest,$41303232,3)
 		endif
-		if GetUnitAbilityLevel(U6,$41303232)==2 then
-			call SetUnitAbilityLevel(U6,$41303232,3)
+		if GetUnitAbilityLevel(kingEast,$41303232)==2 then
+			call SetUnitAbilityLevel(kingEast,$41303232,3)
 		endif
-		if GetUnitAbilityLevel(H6,$41304856)==2 then
-			call SetUnitAbilityLevel(H6,$41304856,3)
+		if GetUnitAbilityLevel(kingWest,$41304856)==2 then
+			call SetUnitAbilityLevel(kingWest,$41304856,3)
 		endif
-		if GetUnitAbilityLevel(U6,$41304856)==2 then
-			call SetUnitAbilityLevel(U6,$41304856,3)
+		if GetUnitAbilityLevel(kingEast,$41304856)==2 then
+			call SetUnitAbilityLevel(kingEast,$41304856,3)
 		endif
-		if GetUnitAbilityLevel(H6,$41393832)==2 then
-			call SetUnitAbilityLevel(H6,$41393832,3)
+		if GetUnitAbilityLevel(kingWest,$41393832)==2 then
+			call SetUnitAbilityLevel(kingWest,$41393832,3)
 		endif
-		if GetUnitAbilityLevel(U6,$41393832)==2 then
-			call SetUnitAbilityLevel(U6,$41393832,3)
+		if GetUnitAbilityLevel(kingEast,$41393832)==2 then
+			call SetUnitAbilityLevel(kingEast,$41393832,3)
 		endif
 	endif
 	if numberLvl==19 then
@@ -9739,23 +9739,23 @@ function PPE takes nothing returns nothing
 			set WC[bj_forLoopAIndex]=bj_lastReplacedUnit
 			set bj_forLoopAIndex=bj_forLoopAIndex+1
 		endloop
-		if GetUnitAbilityLevel(H6,$41303232)==3 then
-			call SetUnitAbilityLevel(H6,$41303232,4)
+		if GetUnitAbilityLevel(kingWest,$41303232)==3 then
+			call SetUnitAbilityLevel(kingWest,$41303232,4)
 		endif
-		if GetUnitAbilityLevel(U6,$41303232)==3 then
-			call SetUnitAbilityLevel(U6,$41303232,4)
+		if GetUnitAbilityLevel(kingEast,$41303232)==3 then
+			call SetUnitAbilityLevel(kingEast,$41303232,4)
 		endif
-		if GetUnitAbilityLevel(H6,$41304856)==3 then
-			call SetUnitAbilityLevel(H6,$41304856,4)
+		if GetUnitAbilityLevel(kingWest,$41304856)==3 then
+			call SetUnitAbilityLevel(kingWest,$41304856,4)
 		endif
-		if GetUnitAbilityLevel(U6,$41304856)==3 then
-			call SetUnitAbilityLevel(U6,$41304856,4)
+		if GetUnitAbilityLevel(kingEast,$41304856)==3 then
+			call SetUnitAbilityLevel(kingEast,$41304856,4)
 		endif
-		if GetUnitAbilityLevel(H6,$41393832)==3 then
-			call SetUnitAbilityLevel(H6,$41393832,4)
+		if GetUnitAbilityLevel(kingWest,$41393832)==3 then
+			call SetUnitAbilityLevel(kingWest,$41393832,4)
 		endif
-		if GetUnitAbilityLevel(U6,$41393832)==3 then
-			call SetUnitAbilityLevel(U6,$41393832,4)
+		if GetUnitAbilityLevel(kingEast,$41393832)==3 then
+			call SetUnitAbilityLevel(kingEast,$41393832,4)
 		endif
 	endif
 	if numberLvl==10 or numberLvl==20 then
@@ -12052,7 +12052,7 @@ function V6X takes nothing returns nothing
 endfunction
 
 function V7X takes nothing returns nothing
-	call IssueTargetOrderById(GetTriggerUnit(),851983,H6)
+	call IssueTargetOrderById(GetTriggerUnit(),851983,kingWest)
 endfunction
 
 function V8X takes nothing returns nothing
@@ -12060,7 +12060,7 @@ function V8X takes nothing returns nothing
 endfunction
 
 function V9X takes nothing returns nothing
-	call IssueTargetOrderById(GetTriggerUnit(),851983,U6)
+	call IssueTargetOrderById(GetTriggerUnit(),851983,kingEast)
 endfunction
 
 function VAX takes nothing returns nothing
@@ -12083,11 +12083,11 @@ function VCX takes nothing returns nothing
 	call A_V(.01)
 	call UnitRemoveAbility(u,$41393137)
 	call RemoveDestructable(d)
-	if u==H6 and NVV(LE)==false and LE!=null then
-		call IssueTargetOrderById(H6,851983,LE)
+	if u==kingWest and NVV(LE)==false and LE!=null then
+		call IssueTargetOrderById(kingWest,851983,LE)
 	
-	elseif u==U6 and NVV(ME)==false and ME!=null then
-		call IssueTargetOrderById(U6,851983,ME)
+	elseif u==kingEast and NVV(ME)==false and ME!=null then
+		call IssueTargetOrderById(kingEast,851983,ME)
 	endif
 	set LE=null
 	set ME=null
@@ -12102,11 +12102,11 @@ function VCX takes nothing returns nothing
 	call A_V(.01)
 	call UnitRemoveAbility(u,$41393136)
 	call RemoveDestructable(d)
-	if u==H6 and NVV(LE)==false and LE!=null then
-		call IssueTargetOrderById(H6,851983,LE)
+	if u==kingWest and NVV(LE)==false and LE!=null then
+		call IssueTargetOrderById(kingWest,851983,LE)
 	
-	elseif u==U6 and NVV(ME)==false and ME!=null then
-		call IssueTargetOrderById(U6,851983,ME)
+	elseif u==kingEast and NVV(ME)==false and ME!=null then
+		call IssueTargetOrderById(kingEast,851983,ME)
 	endif
 	set LE=null
 	set ME=null
@@ -12259,21 +12259,21 @@ endfunction
 
 function VLX takes nothing returns nothing
 	if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
-		call IssueTargetOrderById(GetEnumUnit(),851983,H6)
+		call IssueTargetOrderById(GetEnumUnit(),851983,kingWest)
 	endif
 endfunction
 
 function VMX takes nothing returns nothing
 	if GetUnitCurrentOrder(GetEnumUnit())!=851983 then
-		call IssueTargetOrderById(GetEnumUnit(),851983,U6)
+		call IssueTargetOrderById(GetEnumUnit(),851983,kingEast)
 	endif
 endfunction
 
 function VNX takes nothing returns nothing
-	if GetAttacker()==H6 and NVV(GetTriggerUnit())==false then
+	if GetAttacker()==kingWest and NVV(GetTriggerUnit())==false then
 		set LE=GetTriggerUnit()
 	
-	elseif GetAttacker()==U6 and NVV(GetTriggerUnit())==false then
+	elseif GetAttacker()==kingEast and NVV(GetTriggerUnit())==false then
 		set ME=GetTriggerUnit()
 	endif
 endfunction
@@ -12570,7 +12570,7 @@ function X2X takes nothing returns nothing
 endfunction
 
 function X3X takes nothing returns nothing
-	set PE=H6
+	set PE=kingWest
 	set numberPlayer=kingSpell
 	set RR=OR[numberPlayer]
 	set Q3=RR
@@ -12607,7 +12607,7 @@ endfunction
 
 function X4X takes nothing returns nothing
 	local image img
-	set PE=H6
+	set PE=kingWest
 	if numberLvl==4 then
 		set numberPlayer=kingSpell
 		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(numberPlayer)+".blp",128.,128.,0.,-4615.,-3772.,0.,0.,0.,0.,3)
@@ -12641,7 +12641,7 @@ function X4X takes nothing returns nothing
 endfunction
 
 function X5X takes nothing returns nothing
-	set PE=U6
+	set PE=kingEast
 	set numberPlayer=kingSpell
 	set RR=OR[numberPlayer]
 	set F5=RR
@@ -12679,7 +12679,7 @@ endfunction
 
 function X6X takes nothing returns nothing
 	local image img
-	set PE=U6
+	set PE=kingEast
 	if numberLvl==4 then
 		set numberPlayer=kingSpell
 		set img=CreateImage("war3mapImported\\SpellGroundIcons\\spell"+I2S(numberPlayer)+".blp",128.,128.,0.,4475.,-3772.,0.,0.,0.,0.,3)
@@ -12717,15 +12717,15 @@ function IsGameOngoing takes nothing returns boolean
 endfunction
 
 function KingIsLow takes nothing returns nothing
-	call LeaderboardSetPlayerItemValueBJ(Player(8),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,H6)))
-	call LeaderboardSetPlayerItemValueBJ(Player(9),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,U6)))
+	call LeaderboardSetPlayerItemValueBJ(Player(8),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,kingWest)))
+	call LeaderboardSetPlayerItemValueBJ(Player(9),VX,R2I(GetUnitStateSwap(UNIT_STATE_LIFE,kingEast)))
 	set FI=FI-1
 	set GI=GI-1
-	if FI<=0 and GetUnitLifePercent(H6)<=10. then
+	if FI<=0 and GetUnitLifePercent(kingWest)<=10. then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"|cffFF0000Left King has less than 10% life remaining.|r")
 		set FI=120
 	endif
-	if GI<=0 and GetUnitLifePercent(U6)<=10. then
+	if GI<=0 and GetUnitLifePercent(kingEast)<=10. then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,7.,"|cffFF0000Right King has less than 10% life remaining.|r")
 		set GI=120
 	endif
@@ -12876,20 +12876,20 @@ function XSE takes nothing returns nothing
 	local real X1E=30000.
 	local integer X6E=0
 	local integer OXE=0
-	if GetTriggerUnit()==H6 and GetEventDamage()+1.>=GetWidgetLife(H6) then
+	if GetTriggerUnit()==kingWest and GetEventDamage()+1.>=GetWidgetLife(kingWest) then
 		set i=0
 		loop
 			exitwhen i>3
 			set i=i+1
 			if GetUnitAbilityLevel(Unit[i],$41303834)>0 then
-				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(H6),GetUnitY(H6)))
-				if GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
-					call SetWidgetLife(H6,GetWidgetLife(H6)+GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE)
-					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i]+GetPlayerName(Player(i-1))+"|r activates |c00FFFF00Holy Light|r, healing the King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
+				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(kingWest),GetUnitY(kingWest)))
+				if GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE<X1E then
+					call SetWidgetLife(kingWest,GetWidgetLife(kingWest)+GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE)
+					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i]+GetPlayerName(Player(i-1))+"|r activates |c00FFFF00Holy Light|r, healing the King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
 					set X6E=1
 				
 				else
-					call SetWidgetLife(H6,GetWidgetLife(H6)+X1E)
+					call SetWidgetLife(kingWest,GetWidgetLife(kingWest)+X1E)
 					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i]+GetPlayerName(Player(i-1))+"|r activates |c00FFFF00Holy Light|r, healing the King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 					set X6E=1
 				endif
@@ -12903,14 +12903,14 @@ function XSE takes nothing returns nothing
 				set i=0
 				loop
 					exitwhen AV==NV or X6E==1
-					call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(H6),GetUnitY(H6)))
-					if GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
-						call SetWidgetLife(H6,GetWidgetLife(H6)+GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE)
-						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the West King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(H6,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
+					call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(kingWest),GetUnitY(kingWest)))
+					if GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE<X1E then
+						call SetWidgetLife(kingWest,GetWidgetLife(kingWest)+GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE)
+						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the West King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
 						set X6E=1
 					
 					else
-						call SetWidgetLife(H6,GetWidgetLife(H6)+X1E)
+						call SetWidgetLife(kingWest,GetWidgetLife(kingWest)+X1E)
 						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the West King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 						set X6E=1
 					endif
@@ -12920,20 +12920,20 @@ function XSE takes nothing returns nothing
 		endif
 		set X6E=0
 	endif
-	if GetTriggerUnit()==U6 and GetEventDamage()+1.>=GetWidgetLife(U6) then
+	if GetTriggerUnit()==kingEast and GetEventDamage()+1.>=GetWidgetLife(kingEast) then
 		set i=0
 		loop
 			exitwhen i>3
 			set i=i+1
 			if GetUnitAbilityLevel(Unit[i+4],$41303834)>0 then
-				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(U6),GetUnitY(U6)))
-				if GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
-					call SetWidgetLife(U6,GetWidgetLife(U6)+GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE)
-					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i+4]+GetPlayerName(Player(i+3))+"|r activates |c00FFFF00Holy Light|r, healing the King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
+				call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(kingEast),GetUnitY(kingEast)))
+				if GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE<X1E then
+					call SetWidgetLife(kingEast,GetWidgetLife(kingEast)+GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE)
+					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i+4]+GetPlayerName(Player(i+3))+"|r activates |c00FFFF00Holy Light|r, healing the King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
 					set OXE=1
 				
 				else
-					call SetWidgetLife(U6,GetWidgetLife(U6)+X1E)
+					call SetWidgetLife(kingEast,GetWidgetLife(kingEast)+X1E)
 					call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Missed heal: "+HR[i+4]+GetPlayerName(Player(i+3))+"|r activates |c00FFFF00Holy Light|r, healing the King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 					set OXE=1
 				endif
@@ -12948,14 +12948,14 @@ function XSE takes nothing returns nothing
 				loop
 					exitwhen NV==AV or OXE==1
 					set i=i+1
-					call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(U6),GetUnitY(U6)))
-					if GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE<X1E then
-						call SetWidgetLife(U6,GetWidgetLife(U6)+GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE)
-						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the East King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(U6,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
+					call DestroyEffect(AddSpecialEffect("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GetUnitX(kingEast),GetUnitY(kingEast)))
+					if GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE<X1E then
+						call SetWidgetLife(kingEast,GetWidgetLife(kingEast)+GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE)
+						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the East King "+R2SW(XZE*100.,1,1)+"% (|c00FFFF00"+R2SW(GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)*XZE,1,1)+"|r)")
 						set OXE=1
 					
 					else
-						call SetWidgetLife(U6,GetWidgetLife(U6)+X1E)
+						call SetWidgetLife(kingEast,GetWidgetLife(kingEast)+X1E)
 						call DisplayTextToForce(bj_FORCE_ALL_PLAYERS,"Bonus heal: A |cffFFcc00Presence|r "+"|r activates |c00FFFF00Holy Light|r, healing the East King for |c00FFFF00"+R2SW(X1E,1,1)+"|r HP")
 						set OXE=1
 					endif
@@ -13002,11 +13002,11 @@ endfunction
 function XYX takes nothing returns nothing
 	if IsPlayerAlly(GetOwningPlayer(GetSellingUnit()),Player(8)) then
 		set OX=Player(8)
-		set PE=H6
+		set PE=kingWest
 	
 	else
 		set OX=Player(9)
-		set PE=U6
+		set PE=kingEast
 	endif
 	call SetPlayerTechMaxAllowedSwap($52303030,50,OX) // Set max. King HP
 	if GetUnitTypeId(GetSoldUnit())==$75393938 then
@@ -13581,7 +13581,7 @@ function Z1E takes nothing returns nothing
 	call UnitAddAbility(GetTriggerUnit(),$41393533)
 	set RJ[20]=true
 	call SetUnitState(GetTriggerUnit(),UNIT_STATE_MANA,GetUnitState(GetTriggerUnit(),UNIT_STATE_MANA)*.6)
-	if GetTriggerUnit()==H6 then
+	if GetTriggerUnit()==kingWest then
 		call DisableTrigger(MQ)
 		call DisableTrigger(MQ)
 	
@@ -13801,12 +13801,12 @@ function ZKE takes nothing returns nothing
 	endif
 	if ZHE() then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"Left Team has no playing players. Left Team's King has been upgraded.")
-		call UnitAddItemByIdSwapped($49303030,H6)
+		call UnitAddItemByIdSwapped($49303030,kingWest)
 		set IN=false
 	endif
 	if ZJE() then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"Right Team has no playing players. Right Team's King has been upgraded.")
-		call UnitAddItemByIdSwapped($49303030,U6)
+		call UnitAddItemByIdSwapped($49303030,kingEast)
 		set HO=false
 	endif
 endfunction
@@ -13921,10 +13921,10 @@ endfunction
 
 function eK takes nothing returns nothing
 	local real wk
-	if GetEventDamage()+1.>=GetUnitState(H6,UNIT_STATE_LIFE) then
-		set wk=GetUnitState(H6,UNIT_STATE_MAX_LIFE)
-		call SetUnitState(H6,UNIT_STATE_LIFE,wk)
-		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",H6,"origin"))
+	if GetEventDamage()+1.>=GetUnitState(kingWest,UNIT_STATE_LIFE) then
+		set wk=GetUnitState(kingWest,UNIT_STATE_MAX_LIFE)
+		call SetUnitState(kingWest,UNIT_STATE_LIFE,wk)
+		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",kingWest,"origin"))
 		set GRR=GRR-1
 		if GRR<1 then
 			call DisableTrigger(GetTriggeringTrigger())
@@ -13938,10 +13938,10 @@ endfunction
 
 function iK takes nothing returns nothing
 	local real wk
-	if GetEventDamage()+1.>=GetUnitState(U6,UNIT_STATE_LIFE) then
-		set wk=GetUnitState(U6,UNIT_STATE_MAX_LIFE)
-		call SetUnitState(U6,UNIT_STATE_LIFE,wk)
-		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",U6,"origin"))
+	if GetEventDamage()+1.>=GetUnitState(kingEast,UNIT_STATE_LIFE) then
+		set wk=GetUnitState(kingEast,UNIT_STATE_MAX_LIFE)
+		call SetUnitState(kingEast,UNIT_STATE_LIFE,wk)
+		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",kingEast,"origin"))
 		set GII=GII-1
 		if GII<1 then
 			call DisableTrigger(GetTriggeringTrigger())
@@ -15285,11 +15285,11 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(JU,Condition(ref_function_MKE))
 	call TriggerAddAction(JU,ref_function_MQE)
 	set KU=CreateTrigger()
-	call TriggerRegisterUnitEvent(KU,H6,EVENT_UNIT_DEATH)
+	call TriggerRegisterUnitEvent(KU,kingWest,EVENT_UNIT_DEATH)
 	call TriggerAddCondition(KU,Condition(ref_function_MSE))
 	call TriggerAddAction(KU,ref_function_MYE)
 	set LU=CreateTrigger()
-	call TriggerRegisterUnitEvent(LU,U6,EVENT_UNIT_DEATH)
+	call TriggerRegisterUnitEvent(LU,kingEast,EVENT_UNIT_DEATH)
 	call TriggerAddCondition(LU,Condition(ref_function_MZE))
 	call TriggerAddAction(LU,ref_function_M2E)
 	set MU=CreateTrigger()
@@ -15893,14 +15893,14 @@ function main takes nothing returns nothing
 	call TriggerRegisterTimerEventPeriodic(X2,1.)
 	call TriggerAddAction(X2,ref_function_OFX)
 	set O2=CreateTrigger()
-	call TriggerRegisterUnitEvent(O2,H6,EVENT_UNIT_ISSUED_ORDER)
-	call TriggerRegisterUnitEvent(O2,H6,EVENT_UNIT_ISSUED_POINT_ORDER)
-	call TriggerRegisterUnitEvent(O2,H6,EVENT_UNIT_ISSUED_TARGET_ORDER)
+	call TriggerRegisterUnitEvent(O2,kingWest,EVENT_UNIT_ISSUED_ORDER)
+	call TriggerRegisterUnitEvent(O2,kingWest,EVENT_UNIT_ISSUED_POINT_ORDER)
+	call TriggerRegisterUnitEvent(O2,kingWest,EVENT_UNIT_ISSUED_TARGET_ORDER)
 	call TriggerAddAction(O2,ref_function_OGX)
 	set R2=CreateTrigger()
-	call TriggerRegisterUnitEvent(R2,U6,EVENT_UNIT_ISSUED_ORDER)
-	call TriggerRegisterUnitEvent(R2,U6,EVENT_UNIT_ISSUED_POINT_ORDER)
-	call TriggerRegisterUnitEvent(R2,U6,EVENT_UNIT_ISSUED_TARGET_ORDER)
+	call TriggerRegisterUnitEvent(R2,kingEast,EVENT_UNIT_ISSUED_ORDER)
+	call TriggerRegisterUnitEvent(R2,kingEast,EVENT_UNIT_ISSUED_POINT_ORDER)
+	call TriggerRegisterUnitEvent(R2,kingEast,EVENT_UNIT_ISSUED_TARGET_ORDER)
 	call TriggerAddAction(R2,ref_function_OHX)
 	set I2=CreateTrigger()
 	call TriggerRegisterAnyUnitEventBJ(I2,EVENT_PLAYER_UNIT_SPELL_EFFECT)
@@ -16100,8 +16100,8 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(Y4,Condition(ref_function_CVX))
 	call TriggerAddAction(Y4,ref_function_CEX)
 	set V=CreateTrigger()
-	call TriggerRegisterUnitEvent(V,H6,EVENT_UNIT_DAMAGED)
-	call TriggerRegisterUnitEvent(V,U6,EVENT_UNIT_DAMAGED)
+	call TriggerRegisterUnitEvent(V,kingWest,EVENT_UNIT_DAMAGED)
+	call TriggerRegisterUnitEvent(V,kingEast,EVENT_UNIT_DAMAGED)
 	call TriggerAddAction(V,ref_function_XSE)
 	set Z4=CreateTrigger()
 	call TriggerRegisterPlayerChatEvent(Z4,Player(0),"-pierce",true)
