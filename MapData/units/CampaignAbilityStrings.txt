@@ -1132,7 +1132,7 @@ Name=King's Taunt!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIco\CrownOfCmndTarget.mdl
 Tip=King's Taunt - [|cffFFcc00F|r]
-Ubertip=Cast this ability to taunt stuck creeps or use it to speed them up or to divert them.|nCooldown: 10sec
+Ubertip=Cast this ability to taunt stuck creeps or use it to speed them up or to divert them.|nCooldown: 10 seconds
 
 [A051]
 Art=ReplaceableTextures\CommandButtons\BTNSpellBookBLS.blp
@@ -1396,7 +1396,7 @@ Ubertip=OLD Deals 10damage per second and disables a target for 8seconds. Durati
 Art=ReplaceableTextures\CommandButtons\BTNEntanglingRoots.blp
 Name=Entangle
 Tip=Entangle
-Ubertip="Entangles a nearby enemy unit, immobilizing it and dealing 10 damage per second. Lasts 8 seconds. Duration is reduced to 4seconds for boss units"
+Ubertip="Entangles a nearby enemy unit, immobilizing it and dealing 10 damage per second. Lasts 8 seconds. Duration is reduced to 4 seconds for boss units"
 
 [A06F]
 Art=,
@@ -1571,7 +1571,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNThickFur.blp
 Name=Concussion
 Order=bash
 Tip=Concussion
-Ubertip=Each attack has a 25% chance to deal 250 damage and stun for 3 seconds. Stun is reduced greatly on bosses(1sec).
+Ubertip=Each attack has a 25% chance to deal 250 damage and stun for 3 seconds. Stun is reduced greatly on bosses (1 sec).
 
 [A072]
 Art=ReplaceableTextures\CommandButtons\BTNSpiritLink.blp
@@ -2358,7 +2358,7 @@ Ubertip=gives you 5% chance to finish off enemy with a single blow! (Does not wo
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
 Name=Berserk
 Tip=Berserk
-Ubertip="Increases attack speed by 40%, 60%, 80% respectively when health is below 80%, 60%, 40%. When HP drops below 20% it becomes damage immune and gains 100% ms for 1.5sec"
+Ubertip="Increases attack speed by 40%, 60%, 80% respectively when health is below 80%, 60%, 40%. When HP drops below 20% it becomes damage immune and gains 100% ms for 1.5 sec"
 
 [A0AB]
 Art=ReplaceableTextures\CommandButtons\BTNCripple.blp
@@ -2694,9 +2694,9 @@ Missilearc=0.1
 Missileart=Abilities\Weapons\LordofFlameMissile\LordofFlameMissile.mdl
 MissileHoming=1
 Missilespeed=1000
-Name=Multishot ( Firelord)
+Name=Multishot
 Tip=Rockets
-Ubertip="A volley of missiles at flying enemies, nearby. Each rocket deals13 - 14 units. damage."
+Ubertip="A volley of missiles at flying enemies, nearby. Each rocket hits 13 - 14 units."
 
 [A0BZ]
 Art=,
@@ -5564,7 +5564,7 @@ Name=Dark Presence
 Order=howlofterror
 TargetArt=Abilities\Spells\Items\OrbDarkness\OrbDarkness.mdl
 Tip=Dark Presence - [|cffFFcc00R|r]
-Ubertip=King summons dark forces. His base damage is increased by 350% and it bounce for 50% of the damage to a second target. He also and gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|nDuration: 25seconds|nCooldown: 50seconds|n
+Ubertip=King summons dark forces. His base damage is increased by 350% and it bounce for 50% of the damage to a second target. He also and gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|nDuration: 25 seconds|nCooldown: 50 seconds|n
 
 [A971]
 Animnames=spell,slam
@@ -5580,7 +5580,7 @@ Order=ancestralspirittarget
 TargetArt=Abilities\Spells\Undead\DeathPact\DeathPactTarget.mdl
 Targetattach=origin
 Tip=Royal Presence - [|cffFFcc00R|r]
-Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30seconds|nCooldown: 70seconds
+Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30 seconds|nCooldown: 70seconds
 
 [A975]
 Art=ReplaceableTextures\CommandButtons\BTNICON_TEMPLATE_STARTER.blp
@@ -5607,7 +5607,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNThickFur.blp
 Name=Concussion
 Order=bash
 Tip=Concussion
-Ubertip=Each attack has a 15% chance to deal 125 damage and stun for 1.5 seconds. Stun is reduced greatly on bosses(0.5sec).
+Ubertip=Each attack has a 15% chance to deal 125 damage and stun for 1.5 seconds. Stun is reduced greatly on bosses (0.5 sec).
 
 [A979]
 Art=ReplaceableTextures\PassiveButtons\PASBTNEvasion.blp
@@ -5642,7 +5642,7 @@ Name=Command Attack!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIem\AIemTarget.mdl
 Tip=Command Attack - [|cffFFcc00D|r]
-Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 40sec
+Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 40 seconds
 
 [A982]
 Animnames=attack,slam
