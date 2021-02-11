@@ -123,7 +123,7 @@ globals
 	real yg=0.
 	string array MX
 	string array PX
-	integer array QX
+	integer array UnitsPerLevel
 	integer EO=0
 	integer array XO
 	integer array OO
@@ -417,8 +417,8 @@ globals
 	rect PM=null
 	rect QM=null
 	rect SM=null
-	rect TM=null
-	rect UM=null
+	rect rectWestAnarchyArea=null
+	rect rectEastAnarchyArea=null
 	rect WM=null
 	rect YM=null
 	rect ZM=null
@@ -2641,7 +2641,7 @@ function BJX takes nothing returns nothing
 endfunction
 
 function BKX takes nothing returns nothing
-	if QX[10]!=3 then
+	if UnitsPerLevel[10]!=3 then
 		call TriggerExecute(U4)
 	endif
 endfunction
@@ -5171,7 +5171,7 @@ function DNE takes nothing returns nothing
 		if SubStringBJ(sUnitsPerLevel,numberPlayer,numberPlayer)=="," then
 			set AX=AX+1
 			set IX=S2I(SubStringBJ(sUnitsPerLevel,numberPlayer+1,numberPlayer+3))
-			set QX[AX]=IX
+			set UnitsPerLevel[AX]=IX
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
@@ -5206,10 +5206,10 @@ function DNE takes nothing returns nothing
 		set BE=GetObjectName(WV[bj_forLoopAIndex])
 		set TO="|cffC0C0C0 (Value: |r|cffFFcc00"+LevelValue[bj_forLoopAIndex]+"|r|cffC0C0C0)|r"
 		if modeQG and bj_forLoopAIndex>=30 then
-			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S((bj_forLoopAIndex)-9)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(QX[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
+			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S((bj_forLoopAIndex)-9)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(UnitsPerLevel[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
 		
 		else
-			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S(bj_forLoopAIndex)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(QX[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
+			set YV[bj_forLoopAIndex]="|cffC0C0C0[|r |cffFFcc00L"+I2S(bj_forLoopAIndex)+"|r |cffC0C0C0]|r"+" "+BE+"s"+TO+"|cffC0C0C0 --- (|r"+MX[bj_forLoopAIndex]+"|cffC0C0C0, |r"+PX[bj_forLoopAIndex]+"|cffC0C0C0) --- |r"+I2S(UnitsPerLevel[bj_forLoopAIndex])+"|cffC0C0C0 at each spawn.|r"
 		endif
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
@@ -8977,7 +8977,7 @@ endfunction
 
 function NYE takes nothing returns nothing
 	local timer t=GetExpiredTimer()
-	local integer c=QX[numberLvl]
+	local integer c=UnitsPerLevel[numberLvl]
 	local integer AHE=1
 	local integer id=WV[numberLvl]
 	if XG>=c then
@@ -12799,7 +12799,7 @@ function XCX takes nothing returns nothing
 endfunction
 
 function XDX takes nothing returns boolean
-	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1
+	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and UnitsPerLevel[numberLvl]!=1
 endfunction
 
 function XEX takes nothing returns boolean
@@ -12822,7 +12822,7 @@ function XFX takes nothing returns nothing
 endfunction
 
 function XGX takes nothing returns boolean
-	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1
+	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and UnitsPerLevel[numberLvl]!=1
 endfunction
 
 function XHX takes nothing returns nothing
@@ -12841,7 +12841,7 @@ function XHX takes nothing returns nothing
 endfunction
 
 function XIX takes nothing returns boolean
-	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and QX[numberLvl]!=1 and numberLvl!=10 and numberLvl!=20 and numberLvl!=30 and numberLvl<30
+	return GetUnitTypeId(GetEnteringUnit())==WV[numberLvl] and UnitsPerLevel[numberLvl]!=1 and numberLvl!=10 and numberLvl!=20 and numberLvl!=30 and numberLvl<30
 endfunction
 
 function XJX takes nothing returns boolean
@@ -13732,12 +13732,12 @@ function Y_11 takes nothing returns nothing
 	set LevelValue[35]="35000"
 	
 	set sUnitsPerLevel=",90,90,120,140,108,126,128,170,120,017,110,140,130,125,100,160,165,099,099,013,096,123,111,115,172,102,126,081,120,006,033,018,007,011,002"
-	set QX[30]=6
-	set QX[31]=33
-	set QX[32]=18
-	set QX[33]=7
-	set QX[34]=11
-	set QX[35]=2
+	set UnitsPerLevel[30]=6
+	set UnitsPerLevel[31]=33
+	set UnitsPerLevel[32]=18
+	set UnitsPerLevel[33]=7
+	set UnitsPerLevel[34]=11
+	set UnitsPerLevel[35]=2
 endfunction
 
 function Z4E takes nothing returns boolean
@@ -14847,8 +14847,8 @@ function main takes nothing returns nothing
 	set KM=Rect(-190.,5625.,190.,5875.)
 	set MM=Rect(-775.,5375.,775.,3700.)
 	set PM=Rect(-775.,1650.,775.,250.)
-	set TM=Rect(-5600.,-900.,-3500.,-4000.)
-	set UM=Rect(3500.,-900.,5600.,-4000.)
+	set rectWestAnarchyArea=Rect(-5600.,-900.,-3500.,-4000.)
+	set rectEastAnarchyArea=Rect(3500.,-900.,5600.,-4000.)
 	set RP=Rect(-5600.,-625.,-3500.,-4000.)
 	set IP=Rect(3500.,-625.,5600.,-4000.)
 	set VP=Rect(-5600.,-1150.,-3500.,-4000.)
@@ -16368,28 +16368,28 @@ function main takes nothing returns nothing
 	set RHE=null
 	set RHE=CreateRegion()
 	set KQ=CreateTrigger()
-	call RegionAddRect(RHE,TM)
+	call RegionAddRect(RHE,rectWestAnarchyArea)
 	call TriggerRegisterEnterRegion(KQ,RHE,null)
 	call TriggerAddCondition(KQ,Condition(ref_function_OKE))
 	call TriggerAddAction(KQ,ref_function_R_E)
 	set RHE=null
 	set RHE=CreateRegion()
 	set LQ=CreateTrigger()
-	call RegionAddRect(RHE,UM)
+	call RegionAddRect(RHE,rectEastAnarchyArea)
 	call TriggerRegisterEnterRegion(LQ,RHE,null)
 	call TriggerAddCondition(LQ,Condition(ref_function_OLE))
 	call TriggerAddAction(LQ,ref_function_R0E)
 	set RHE=null
 	set RHE=CreateRegion()
 	set MQ=CreateTrigger()
-	call RegionAddRect(RHE,TM)
+	call RegionAddRect(RHE,rectWestAnarchyArea)
 	call TriggerRegisterLeaveRegion(MQ,RHE,null)
 	call TriggerAddCondition(MQ,Condition(ref_function_OPE))
 	call TriggerAddAction(MQ,ref_function_RYE)
 	set RHE=null
 	set RHE=CreateRegion()
 	set PQ=CreateTrigger()
-	call RegionAddRect(RHE,UM)
+	call RegionAddRect(RHE,rectEastAnarchyArea)
 	call TriggerRegisterLeaveRegion(PQ,RHE,null)
 	call TriggerAddCondition(PQ,Condition(ref_function_OPE))
 	call TriggerAddAction(PQ,ref_function_RZE)
