@@ -2557,7 +2557,7 @@ TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Targetattachcount=1
 Tip=Heartstopper Aura
-Ubertip=Every unit affected by Heartstopper aura loses (1% of MaxHP + 3) per second.
+Ubertip=Every unit affected by Heartstopper aura (400 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BF]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
@@ -2587,7 +2587,7 @@ Researchubertip="Increases the movement speed and life regeneration rate of near
 TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Tip=Heartstopper Aura
-Ubertip=Enemy unit hit by Heartstopper Aura will lose (1% of MaxHP+3 Damage) per second.
+Ubertip=Every unit affected by Heartstopper aura (400 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BI]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
