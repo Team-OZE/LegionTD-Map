@@ -501,7 +501,6 @@ globals
 	trigger IT=null
 	trigger AT=null
 	trigger NT=null
-	trigger BT=null
 	trigger CT=null
 	trigger DT=null
 	trigger FT=null
@@ -1088,7 +1087,6 @@ globals
 	code ref_function_FDE=null
 	code ref_function_FGE=null
 	code ref_function_FJE=null
-	code ref_function_FKE=null
 	code ref_function_FME=null
 	code ref_function_FQE=null
 	code ref_function_FWE=null
@@ -1520,13 +1518,6 @@ globals
 	code ref_function_B0X=null
 	code ref_function_FOX=null
 endglobals
-
-function A9E takes nothing returns nothing
-	local player RSE=Player(12)
-	set F7=CreateUnit(RSE,$68304437,0.,-1663.6,270.)
-	call SetUnitColor(F7,ConvertPlayerColor(12))
-	set RSE=null
-endfunction
 
 function A9V takes nothing returns nothing
 	local integer i=0
@@ -3393,7 +3384,6 @@ function CPE takes nothing returns nothing
 	call TriggerExecute(OT)
 	call TriggerExecute(XT)
 	call TriggerExecute(RT)
-	call TriggerExecute(BT)
 	if QH then
 		call TriggerExecute(XS)
 	endif
@@ -6485,15 +6475,6 @@ endfunction
 
 function FJE takes nothing returns nothing
 	call ForForce(ZI,ref_function_FHE)
-endfunction
-
-function FKE takes nothing returns nothing
-	call SetPlayerTechResearchedSwap($52303034,15,Player(10))
-	call SetPlayerTechResearchedSwap($52303034,15,Player(11))
-	set PE=F7
-	call SetUnitVertexColorBJ(PE,100.,100.,100.,35.)
-	call TriggerRegisterUnitStateEvent(U4,PE,UNIT_STATE_LIFE,LESS_THAN,1000.)
-	call DisableTrigger(GetTriggeringTrigger())
 endfunction
 
 function FLE takes nothing returns nothing
@@ -14268,7 +14249,6 @@ function initGlobals takes nothing returns nothing
 	set ref_function_FDE=function FDE
 	set ref_function_FGE=function FGE
 	set ref_function_FJE=function FJE
-	set ref_function_FKE=function FKE
 	set ref_function_FME=function FME
 	set ref_function_FQE=function FQE
 	set ref_function_FWE=function FWE
@@ -14935,7 +14915,6 @@ function main takes nothing returns nothing
 	set O8=CreateDestructable($4C546C74,5696.,1664.,256.,.873,5)
 	set R8=CreateDestructable($4C546C74,-3396.,1664.,256.,.806,5)
 	call NXE()
-	call A9E()
 	call NNE()
 	call InitTrig_quickCls()
 	call PreloadGenClear()
@@ -15197,8 +15176,6 @@ function main takes nothing returns nothing
 	call TriggerAddAction(AT,ref_function_FGE)
 	set NT=CreateTrigger()
 	call TriggerAddAction(NT,ref_function_FJE)
-	set BT=CreateTrigger()
-	call TriggerAddAction(BT,ref_function_FKE)
 	set CT=CreateTrigger()
 	call TriggerAddAction(CT,ref_function_FME)
 	set DT=CreateTrigger()
