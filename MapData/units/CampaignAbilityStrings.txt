@@ -2613,11 +2613,11 @@ Targetattachcount=1
 [A0BL]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
-Ubertip="Increased attack power of friendly troops, nearby."
+Tip=Command Aura
+Ubertip="Increases nearby friendly units attack damage."
 
 [A0BM]
 Art=,
@@ -4250,10 +4250,10 @@ Ubertip=Nearby friendly melee units gain 18% of their attack damage when they hi
 [A0FE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0FF]
 Art=ReplaceableTextures\CommandButtons\BTNTornado.blp
@@ -4408,154 +4408,154 @@ Ubertip=Slows nearby enemie's movement speed by 35%.
 [A0FZ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G0]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G1]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G3]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G4]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G5]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G6]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G7]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G8]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G9]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GD]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GF]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GG]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GH]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GI]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCommand.blp
@@ -5580,7 +5580,7 @@ Order=ancestralspirittarget
 TargetArt=Abilities\Spells\Undead\DeathPact\DeathPactTarget.mdl
 Targetattach=origin
 Tip=Royal Presence - [|cffFFcc00R|r]
-Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30 seconds|nCooldown: 70seconds
+Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30 seconds|nCooldown: 70 seconds
 
 [A975]
 Art=ReplaceableTextures\CommandButtons\BTNICON_TEMPLATE_STARTER.blp
@@ -5775,11 +5775,11 @@ Ubertip=Gives a 15% chance to dodge an attack.
 [ACac]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
-Ubertip="Increased attack power of friendly troops, nearby."
+Tip=Command Aura
+Ubertip="Increases nearby friendly units attack damage."
 
 [ACcr]
 Art=ReplaceableTextures\CommandButtons\BTNCripple.blp

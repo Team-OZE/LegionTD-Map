@@ -2734,8 +2734,8 @@ function BRX takes nothing returns boolean
 endfunction
 
 function BSX takes nothing returns nothing
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\"")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join https://discord.gg/dhtvnvH and get the latest updates for this mod")
+	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\"")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join https://discord.gg/dhtvnvH and get the latest updates for this map")
 endfunction
 
 function BTX takes nothing returns nothing
@@ -9465,7 +9465,7 @@ function P3E takes nothing returns nothing
 endfunction
 
 function P8E takes nothing returns boolean
-	// Remove attack ability from upgraded unit so that u can't kill your own or teammates units during building time
+	// Make units invulnerable so that u can't kill your own or teammates units during building time
 	call SetUnitInvulnerable(GetTriggerUnit(),true)
 	return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_UNDEAD)==false)!=false!=false!=false
 endfunction
@@ -10140,7 +10140,7 @@ function QUE takes nothing returns nothing
 endfunction
 
 function QVE takes nothing returns boolean
-	// Remove attack ability from summoned unit so that u can't kill your own or teammates units during building time
+	// Make units invulnerable so that u can't kill your own or teammates units during building time
 	call SetUnitInvulnerable(GetTriggerUnit(),true)
 	return IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
