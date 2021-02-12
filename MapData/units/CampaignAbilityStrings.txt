@@ -609,7 +609,7 @@ Ubertip="Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. 
 Art=ReplaceableTextures\CommandButtons\BTNInfernal.blp
 Name=Invoke Inferno
 Tip=Invoke Inferno
-Ubertip="Invokes an infernal to wreak havok among enemies. Lasts 60 seconds. (60 second cooldown)|n|n(55-66 Damage, 1.35 Speed, 900HP, Chaos/Fortified)|n|nHave a skill: Immolation"
+Ubertip="Invokes an infernal to wreak havok among enemies. Lasts 60 seconds. (60 second cooldown)|n|n(55-66 Damage, 1.35 Speed, 900HP, Chaos/Fortified)|n|nHas a skill: Immolation"
 
 [A02T]
 Art=,
