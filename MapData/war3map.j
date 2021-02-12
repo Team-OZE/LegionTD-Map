@@ -9465,6 +9465,8 @@ function P3E takes nothing returns nothing
 endfunction
 
 function P8E takes nothing returns boolean
+	// Remove attack ability from upgraded unit so that u can't kill your own or teammates units during building time
+	call UnitRemoveAbility(GetTriggerUnit(),'Aatk')
 	return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_UNDEAD)==false)!=false!=false!=false
 endfunction
 
@@ -10138,6 +10140,8 @@ function QUE takes nothing returns nothing
 endfunction
 
 function QVE takes nothing returns boolean
+	// Remove attack ability from summoned unit so that u can't kill your own or teammates units during building time
+	call UnitRemoveAbility(GetTriggerUnit(),'Aatk')
 	return IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
 
