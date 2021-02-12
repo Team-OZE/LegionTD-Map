@@ -7307,18 +7307,24 @@ function ProcessGameMode takes nothing returns nothing
 		call ConditionalTriggerExecute(U2)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Handpicked|r: Everyone has random units and up to 6 manual rerolls")
 	
-	elseif mode_pr then
-		call ConditionalTriggerExecute(W2)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
-	
 	elseif mode_ap then
 		call ConditionalTriggerExecute(P2)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")	
+	
+	else
+		call ConditionalTriggerExecute(W2)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
 	endif
 	
-	if mode_qg then
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
-		call ConditionalTriggerExecute(Y10)
+	if     mode_cc then
+			call ConditionalTriggerExecute(I3)
+		call DestroyTrigger(A3)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
+	
+	elseif mode_ac then
+		call ConditionalTriggerExecute(A3)
+		call DestroyTrigger(I3)
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
 	endif
 	
 	if mode_mi then
@@ -7330,15 +7336,9 @@ function ProcessGameMode takes nothing returns nothing
 		endif
 	endif
 	
-	if     mode_cc then
-		call ConditionalTriggerExecute(I3)
-		call DestroyTrigger(A3)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Challenge Champions|r: Champions can be manually challenged")
-	
-	elseif mode_ac then
-		call ConditionalTriggerExecute(A3)
-		call DestroyTrigger(I3)
-		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Champions|r: Champions will spawn in all waves starting at Level 6")
+	if mode_qg then
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Quick Game|r: Levels 21-29 have been removed")
+		call ConditionalTriggerExecute(Y10)
 	endif
 	
 	if modeX3 then
