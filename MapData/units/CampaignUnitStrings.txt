@@ -5969,7 +5969,7 @@ Name=Altar of Heroes
 Requires=u01D,u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Altar of Heroes [|cffFFcc00Z|r]
-Ubertip=Summons Heroes. |n- Each hero have a different aura ability.|n- Heroes can be upgraded 11 times|n|n(|cffFF0000!!!|r) You can't change builder if you construct this building.
+Ubertip=Summons Heroes. |n- Each hero have a different aura ability.|n- Heroes can be upgraded 11 times|n(|cffFF0000!!!|r) You can't change builder if you construct this building.
 Upgrade=h0G5,h0DY,h0HC,h0FK,h0EQ,h0EO,h0GI,h0EK,h0DE,h0EJ,H0DC
 
 [h0DC]
@@ -9044,7 +9044,7 @@ Name=Altar of Prophets
 Requires=u01D,u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Altar of Prophets [|cffFFcc00Z|r]
-Ubertip=Summons Heroes. |n- Each hero have a different aura ability.|n- Heroes can be upgraded 11 times|n|n
+Ubertip=Summons Heroes. |n- Each hero have a different aura ability.|n- Heroes can be upgraded 11 times|n
 Upgrade=h0G5,h0DY,h0HC,h0FK,h0EQ,h0EO,h0GI,h0EK,h0DE,h0EJ,H0DC
 
 [h997]
@@ -9755,7 +9755,7 @@ Hotkey=W
 Missilespeed=1500,1500
 Name=Provoke Anarchy Upgrade
 Tip=Provoke Anarchy Upgrade - [|cffFFcc00W|r]
-Ubertip=Teaches King the Provoke Anarchy Skill. Skill activates when it's maxed (level 10).|n(Works only in -CC mode)|n[|cffFFcc00Provoke Anarchy|r]: Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at (AoE 1800) and Purges enemies in 715 AoE|n|n|cffFFcc00+2 income|r
+Ubertip=Teaches King the Provoke Anarchy Skill. Skill activates when it's maxed (level 10).|n[|cffFFcc00Provoke Anarchy|r]: Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at (AoE 1800) and Purges enemies in 715 AoE|n|n|cffFFcc00+2 income|r
 
 [u998]
 Art=ReplaceableTextures\CommandButtons\BTNHeartOfAszune.blp
