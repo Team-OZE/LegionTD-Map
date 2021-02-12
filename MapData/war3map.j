@@ -83,7 +83,7 @@ globals
 	integer CV=0
 	integer DV=0
 	integer GV=0
-	unit array JV
+	unit array UnitWarRoom
 	integer array SV
 	integer array TV
 	integer array UV
@@ -1629,55 +1629,55 @@ function NXE takes nothing returns nothing
 	local integer i=1
 	local player RSE=Player(0)
 	call CreateUnit(RSE,$68303234,-5500.,4300.,270.)
-	set JV[1]=CreateUnit(RSE,$68393935,-5850.,4300.,270.)
+	set UnitWarRoom[1]=CreateUnit(RSE,$68393935,-5850.,4300.,270.)
 	call CreateUnit(RSE,$68303543,-5500.,4100.,270.)
 	set G6=CreateUnit(RSE,$68303233,-5850.,4000.,270.)
 	set M6=CreateUnit(RSE,$68303544,-5500.,3950.,270.)
 	set RSE=Player(1)
 	call CreateUnit(RSE,$68303234,-5500.,600.,270.)
-	set JV[2]=CreateUnit(RSE,$68393935,-5850.,600.,270.)
+	set UnitWarRoom[2]=CreateUnit(RSE,$68393935,-5850.,600.,270.)
 	call CreateUnit(RSE,$68303543,-5500.,400.,270.)
 	set T6=CreateUnit(RSE,$68303233,-5850.,250.,270.)
 	set K6=CreateUnit(RSE,$68303544,-5500.,250.,270.)
 	set RSE=Player(2)
 	call CreateUnit(RSE,$68303234,-3200.,4300.,270.)
-	set JV[3]=CreateUnit(RSE,$68393935,-3600.,4300.,270.)
+	set UnitWarRoom[3]=CreateUnit(RSE,$68393935,-3600.,4300.,270.)
 	call CreateUnit(RSE,$68303543,-3200.,4100.,270.)
 	set V7=CreateUnit(RSE,$68303233,-3600.,4000.,270.)
 	set S6=CreateUnit(RSE,$68303544,-3200.,3950.,270.)
 	set RSE=Player(3)
 	call CreateUnit(RSE,$68303234,-3200.,600.,270.)
-	set JV[4]=CreateUnit(RSE,$68393935,-3600.,600.,270.)
+	set UnitWarRoom[4]=CreateUnit(RSE,$68393935,-3600.,600.,270.)
 	call CreateUnit(RSE,$68303543,-3200.,400.,270.)
 	set W6=CreateUnit(RSE,$68303233,-3600.,250.,270.)
 	set C7=CreateUnit(RSE,$68303544,-3200.,250.,270.)
 	set RSE=Player(4)
 	call CreateUnit(RSE,$68303234,3600.,4300.,270.)
-	set JV[5]=CreateUnit(RSE,$68393935,3200.,4300.,270.)
+	set UnitWarRoom[5]=CreateUnit(RSE,$68393935,3200.,4300.,270.)
 	call CreateUnit(RSE,$68303543,3600.,4100.,270.)
 	set B7=CreateUnit(RSE,$68303233,3200.,4000.,270.)
 	set X7=CreateUnit(RSE,$68303544,3600.,3950.,270.)
 	set RSE=Player(5)
 	call CreateUnit(RSE,$68303234,3600.,600.,270.)
-	set JV[6]=CreateUnit(RSE,$68393935,3200.,600.,270.)
+	set UnitWarRoom[6]=CreateUnit(RSE,$68393935,3200.,600.,270.)
 	call CreateUnit(RSE,$68303543,3600.,400.,270.)
 	set D7=CreateUnit(RSE,$68303233,3200.,250.,270.)
 	set E7=CreateUnit(RSE,$68303544,3600.,250.,270.)
 	set RSE=Player(6)
 	call CreateUnit(RSE,$68303234,5925.,4300.,270.)
-	set JV[7]=CreateUnit(RSE,$68393935,5550.,4300.,270.)
+	set UnitWarRoom[7]=CreateUnit(RSE,$68393935,5550.,4300.,270.)
 	call CreateUnit(RSE,$68303543,5925.,4100.,270.)
 	set L6=CreateUnit(RSE,$68303233,5550.,4000.,270.)
 	set J6=CreateUnit(RSE,$68303544,5925.,3950.,270.)
 	set RSE=Player(7)
 	call CreateUnit(RSE,$68303234,5925.,600.,270.)
-	set JV[8]=CreateUnit(RSE,$68393935,5550.,600.,270.)
+	set UnitWarRoom[8]=CreateUnit(RSE,$68393935,5550.,600.,270.)
 	call CreateUnit(RSE,$68303543,5925.,400.,270.)
 	set N7=CreateUnit(RSE,$68303233,5550.,250.,270.)
 	set A7=CreateUnit(RSE,$68303544,5925.,250.,270.)
 	loop
 		exitwhen i>8
-		call UnitAddAbility(JV[i],$41393130)
+		call UnitAddAbility(UnitWarRoom[i],$41393130)
 		set i=i+1
 	endloop
 	set RSE=null
@@ -6222,8 +6222,8 @@ function OCE takes nothing returns nothing
 	local integer i=1
 	loop
 		exitwhen i>8
-		call UnitRemoveAbility(JV[i],$41393131)
-		call UnitAddAbility(JV[i],$41393038)
+		call UnitRemoveAbility(UnitWarRoom[i],$41393131)
+		call UnitAddAbility(UnitWarRoom[i],$41393038)
 		set i=i+1
 	endloop
 endfunction
@@ -6824,8 +6824,8 @@ function ODE takes nothing returns nothing
 	local integer i=1
 	loop
 		exitwhen i>8
-		call UnitRemoveAbility(JV[i],$41393038)
-		call UnitAddAbility(JV[i],$41393131)
+		call UnitRemoveAbility(UnitWarRoom[i],$41393038)
+		call UnitAddAbility(UnitWarRoom[i],$41393131)
 		set i=i+1
 	endloop
 endfunction
@@ -7242,8 +7242,8 @@ function OIE takes nothing returns nothing
 	local integer i=1
 	loop
 		exitwhen i>8
-		call UnitRemoveAbility(JV[i],$41393130)
-		call UnitAddAbility(JV[i],$41393131)
+		call UnitRemoveAbility(UnitWarRoom[i],$41393130)
+		call UnitAddAbility(UnitWarRoom[i],$41393131)
 		set i=i+1
 	endloop
 endfunction
@@ -7274,6 +7274,7 @@ function ProcessGameMode takes nothing returns nothing
 	local boolean mode_mi=false
 	local boolean mode_cc=false
 	local boolean mode_ac=false
+	local integer cnt_loop=1
 	
 	// Mastermind
 	call FogEnableOn()
@@ -7391,6 +7392,16 @@ function ProcessGameMode takes nothing returns nothing
 	
 	if modeX3 then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000X3-Mode|r: Everything you send will be tripled")
+	endif
+	
+	// Remove War Room if not in -cc mode
+	if not mode_cc then
+	loop
+			exitwhen cnt_loop>8
+			call RemoveUnit(UnitWarRoom[cnt_loop])
+			set cnt_loop=cnt_loop+1
+		endloop
+		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|c0096FF96War Room removed, as it is only needed in -cc mode|r")
 	endif
 	
 	call DisableTrigger(GetTriggeringTrigger())
@@ -13643,8 +13654,8 @@ function Z3E takes nothing returns boolean
 		elseif numberLvl+1>28 then
 			set TV[GetPlayerId(GetTriggerPlayer())+1]=((numberLvl+1)*15)+300
 		endif
-		call UnitRemoveAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393131)
-		call UnitAddAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393038)
+		call UnitRemoveAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393131)
+		call UnitAddAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393038)
 	
 	elseif GetSpellAbilityId()==$41393131 and RX==false and numberLvl==9 and GB[1+GetPlayerId(GetTriggerPlayer())]>=7200 then
 		set fbact[GetPlayerId(GetTriggerPlayer())+1]=true
@@ -13662,8 +13673,8 @@ function Z3E takes nothing returns boolean
 			set TV[o]=((numberLvl+1)+300)
 			set TV[p]=((numberLvl+1)+300)
 		endif
-		call UnitRemoveAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393131)
-		call UnitAddAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393038)
+		call UnitRemoveAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393131)
+		call UnitAddAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393038)
 	
 	elseif GetSpellAbilityId()==$41393131 and RX==false and numberLvl==9 and GB[1+GetPlayerId(GetTriggerPlayer())]<7200 then
 		call DisplayTimedTextToPlayer(GetTriggerPlayer(),0.,0.,5.,"Nice Try! Come back when you reached |cffFFcc007200 Value")
@@ -13685,8 +13696,8 @@ function Z3E takes nothing returns boolean
 			set TV[o]=((numberLvl+1)+980)
 			set TV[p]=((numberLvl+1)+980)
 		endif
-		call UnitRemoveAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393131)
-		call UnitAddAbility(JV[1+GetPlayerId(GetTriggerPlayer())],$41393038)
+		call UnitRemoveAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393131)
+		call UnitAddAbility(UnitWarRoom[1+GetPlayerId(GetTriggerPlayer())],$41393038)
 	
 	elseif GetSpellAbilityId()==$41393131 and numberLvl==19 and GB[1+GetPlayerId(GetTriggerPlayer())]<30000 then
 		call DisplayTimedTextToPlayer(GetTriggerPlayer(),0.,0.,5.,"You need to grind more strength EXP! Come back when you reached |cffFFcc0030000 Value|r")
