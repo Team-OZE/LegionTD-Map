@@ -5914,8 +5914,6 @@ function BGE takes nothing returns nothing
 	local integer j=0
 	local real BLE=0.
 	local unit BHE
-	local unit u
-	local unit uu
 	local real x
 	local real y
 	loop
@@ -5932,13 +5930,7 @@ function BGE takes nothing returns nothing
 				call UnitAddAbility(BHE,$41393436)
 				call IssueImmediateOrderById(BHE,852100)
 				call GroupRemoveUnit(g,BHE)
-				set u=CreateUnit(Player(15),$75303036,x-10.,y,0.)
-				set uu=CreateUnit(Player(15),$75303036,x,y,0.)
 				call SetWidgetLife(BHE,99999.)
-				call UnitAddAbility(u,$41393437)
-				call UnitAddAbility(uu,$41393438)
-				call UnitApplyTimedLife(u,$42544C46,3.)
-				call UnitApplyTimedLife(uu,$42544C46,3.)
 				if BLE<327. then
 					call UnitAddAbility(BHE,$41393134)
 				
@@ -5997,8 +5989,6 @@ function BGE takes nothing returns nothing
 	endloop
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFF0000WARNING!|r A creep |cffFFcc00Champion|r has risen!")
 	set i=0
-	set u=null
-	set uu=null
 	set BHE=null
 	set g=null
 endfunction
@@ -6010,8 +6000,6 @@ function BME takes nothing returns nothing
 	local integer j=0
 	local real BLE=0.
 	local unit BHE
-	local unit u
-	local unit uu
 	local real x
 	local real y
 	loop
@@ -6030,13 +6018,7 @@ function BME takes nothing returns nothing
 					call UnitAddAbility(BHE,$41393436)
 					call IssueImmediateOrderById(BHE,852164)
 					call GroupRemoveUnit(g,BHE)
-					set u=CreateUnit(Player(15),$75303036,x-10.,y,0.)
-					set uu=CreateUnit(Player(15),$75303036,x,y,0.)
 					call SetWidgetLife(BHE,99999.)
-					call UnitAddAbility(u,$41393437)
-					call UnitAddAbility(uu,$41393438)
-					call UnitApplyTimedLife(u,$42544C46,3.)
-					call UnitApplyTimedLife(uu,$42544C46,3.)
 					if numberLvl<4 then
 						call UnitAddAbility(BHE,$41393039)
 					
@@ -6097,8 +6079,6 @@ function BME takes nothing returns nothing
 		exitwhen i>8
 	endloop
 	set i=0
-	set u=null
-	set uu=null
 	set BHE=null
 	set g=null
 endfunction
@@ -6110,8 +6090,6 @@ function BPE takes nothing returns nothing
 	local integer j=0
 	local real BLE=0.
 	local unit BHE
-	local unit u
-	local unit uu
 	local real x
 	local real y
 	loop
@@ -6128,13 +6106,7 @@ function BPE takes nothing returns nothing
 				call UnitAddAbility(BHE,$41393436)
 				call IssueImmediateOrderById(BHE,852164)
 				call GroupRemoveUnit(g,BHE)
-				set u=CreateUnit(Player(15),$75303036,x-10.,y,0.)
-				set uu=CreateUnit(Player(15),$75303036,x,y,0.)
 				call SetWidgetLife(BHE,99999.)
-				call UnitAddAbility(u,$41393437)
-				call UnitAddAbility(uu,$41393438)
-				call UnitApplyTimedLife(u,$42544C46,3.)
-				call UnitApplyTimedLife(uu,$42544C46,3.)
 				if BLE<361. then
 					call UnitAddAbility(BHE,$41393133)
 				
@@ -6193,8 +6165,6 @@ function BPE takes nothing returns nothing
 	endloop
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,9.,"|cffFF0000WARNING!|r A creep |cffFFcc00Champion|r has risen!")
 	set i=0
-	set u=null
-	set uu=null
 	set BHE=null
 	set g=null
 endfunction
@@ -10885,15 +10855,6 @@ function AXV takes string AOV returns nothing
 	call StartSound(APV)
 	call KillSoundWhenDone(APV)
 	set APV=null
-	set APV=null
-endfunction
-
-function RWE takes real x,real y returns nothing
-	local unit u=CreateUnit(Player(15),$75303036,x,y,0.)
-	call SetUnitScale(u,4.,4.,4.)
-	call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Human\\MassTeleport\\MassTeleportTarget.mdl",u,"origin"))
-	call UnitApplyTimedLife(u,$42544C46,3.)
-	set u=null
 endfunction
 
 function RYE takes nothing returns nothing
@@ -10910,8 +10871,6 @@ function RYE takes nothing returns nothing
 			if IsUnitInGroup(GetTriggerUnit(),M8)==false then
 				call GroupAddUnit(M8,GetTriggerUnit())
 			endif
-			call RWE(-4540.,-1060.)
-			call RWE(GetRectCenterX(AK),GetRectCenterY(AK))
 			call ForGroup(M8,ref_function_RTE)
 		endif
 		call A_V(.5)
@@ -10955,8 +10914,6 @@ function RZE takes nothing returns nothing
 			if IsUnitInGroup(GetTriggerUnit(),P8)==false then
 				call GroupAddUnit(P8,GetTriggerUnit())
 			endif
-			call RWE(4540.,-1060.)
-			call RWE(GetRectCenterX(NK),GetRectCenterY(NK))
 			call ForGroup(P8,ref_function_RUE)
 		endif
 		call A_V(.5)
@@ -14976,8 +14933,6 @@ function main takes nothing returns nothing
 	set bj_stockUpdateTimer=CreateTimer()
 	call TimerStart(bj_stockUpdateTimer,bj_STOCK_RESTOCK_INITIAL_DELAY,false,ref_function_APE)
 	set bj_stockItemPurchased=CreateTrigger()
-	call TriggerRegisterPlayerUnitEvent(bj_stockItemPurchased,Player(15),EVENT_PLAYER_UNIT_SELL_ITEM,null)
-	call TriggerAddAction(bj_stockItemPurchased,function RemovePurchasedItem)
 	call DetectGameStarted()
 	set A6E=CreateTrigger()
 	if GetHandleId(A6E)-$100008!=B8 and true then
