@@ -7721,7 +7721,7 @@ function JWE takes nothing returns nothing
 		call ForForce(ZI,ref_function_JHE)
 	endif
 	call PlaySoundBJ(YP)
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cff33AA33Congratulations!|r Both teams have completed Legion TD MEGA. To break the tie, a bonus wave will be spawned in |cffFFcc0060|r seconds. This wave will continuously spawn units until a King is defeated!")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cff33AA33Congratulations!|r Both teams have completed Legion TD 6.0. To break the tie, a bonus wave will be spawned in |cffFFcc0060|r seconds. This wave will continuously spawn units until a King is defeated!")
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,30.,"|cffAA3333This is the final opportunity to build or upgrade units|r")
 	call StartTimerBJ(NE,false,60.)
 	call TimerDialogSetTitle(EX,"Next wave in")
@@ -10381,24 +10381,6 @@ endfunction
 function R3X takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set YN=true
-	set bj_forLoopAIndex=1
-	set bj_forLoopAIndexEnd=TI
-	loop
-		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set bj_forLoopAIndex=bj_forLoopAIndex+1
-	endloop
-	set bj_forLoopAIndex=1
-	set bj_forLoopAIndexEnd=10
-	loop
-		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set bj_forLoopAIndex=bj_forLoopAIndex+1
-	endloop
-	set bj_forLoopAIndex=1
-	set bj_forLoopAIndexEnd=12
-	loop
-		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		set bj_forLoopAIndex=bj_forLoopAIndex+1
-	endloop
 endfunction
 
 function OHE takes nothing returns nothing
@@ -10664,7 +10646,7 @@ endfunction
 
 function RGX takes nothing returns nothing
 	local player p=GetEnumPlayer()
-	call SetPlayerTechMaxAllowedSwap($52303047,6,p)
+	call SetPlayerTechMaxAllowedSwap($52303047,6,p) // 6 rerolls
 	call ReplaceUnitBJ(Unit[1+GetPlayerId(p)],$75303054,3)
 	call SelectUnitForPlayerSingle(bj_lastReplacedUnit,GetOwningPlayer(bj_lastReplacedUnit))
 	set Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]=bj_lastReplacedUnit
@@ -15236,7 +15218,7 @@ function main takes nothing returns nothing
 	call TriggerAddCondition(LU,Condition(ref_function_MZE))
 	call TriggerAddAction(LU,ref_function_M2E)
 	set MU=CreateTrigger()
-	call TriggerRegisterPlayerChatEvent(MU,Player(0),"-scores",true)
+	call TriggerRegisterPlayerChatEvent(MU,Player(0),"-scores",true) // Maybe remove this one?
 	call TriggerAddAction(MU,ref_function_M4E)
 	set PU=CreateTrigger()
 	call TriggerAddAction(PU,ref_function_M5E)
