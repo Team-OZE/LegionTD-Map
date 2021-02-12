@@ -5812,7 +5812,7 @@ Name=Ghost
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to |cffFFcc00G|rhost
-Ubertip=|cffccccccDamage: |r|cffff8000105-115|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000400|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Heartstopper|r|n
+Ubertip=|cffccccccDamage: |r|cffff8000105-115|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff8000550|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Heartstopper|r|n
 
 [h0CW]
 Art=ReplaceableTextures\CommandButtons\BTNZombie.blp
