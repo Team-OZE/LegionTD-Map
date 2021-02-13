@@ -5642,7 +5642,7 @@ Name=Command Attack!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIem\AIemTarget.mdl
 Tip=Command Attack
-Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 40 seconds
+Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 10 seconds
 
 [A982]
 Animnames=attack,slam
