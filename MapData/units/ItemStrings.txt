@@ -220,7 +220,7 @@ Art=ReplaceableTextures\CommandButtons\BTNPipeOfInsight.blp
 Description=Increased mana regeneration rate for nearby troops.
 Name=Flute of Insight
 Tip=Flute of Insight
-Ubertip=Increase the speed of mana regeneration of the hero and the friendly troops around him.|nSuppresses the effect''Arcane Aura''.
+Ubertip=Increase the speed of mana regeneration of the hero and the friendly troops around him.|nSuppresses the effect''Brilliance Aura''.
 
 [lgdh]
 Art=ReplaceableTextures\CommandButtons\BTNHornOfDoom.blp

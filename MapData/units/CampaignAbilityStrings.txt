@@ -1131,7 +1131,7 @@ Hotkey=F
 Name=King's Taunt!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIco\CrownOfCmndTarget.mdl
-Tip=King's Taunt - [|cffFFcc00F|r]
+Tip=King's Taunt
 Ubertip=Cast this ability to taunt stuck creeps or use it to speed them up or to divert them.|nCooldown: 10 seconds
 
 [A051]
@@ -1828,8 +1828,8 @@ Order=holybolt
 ResearchArt=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
 Researchhotkey=S
 TargetArt=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
-Tip=Holy Light [|cffFFcc00S|r]
-Ubertip="A holy light that can heal a friendly King for 50,000hp. (Only 1 charge)"
+Tip=Holy Light
+Ubertip="A holy light that can heal a friendly King for 50,000 HP. (Only 1 charge)"
 
 [A085]
 Art=ReplaceableTextures\CommandButtons\BTNVolcano.blp
@@ -2158,8 +2158,8 @@ Targetattach2=origin
 Targetattach3=origin
 Targetattach4=origin
 Targetattach5=origin
-Tip=Get resources(|cffffcc00G|r)
-Ubertip=Gold mining and logging.
+Tip=Get resources
+Ubertip=Logging
 Unart=ReplaceableTextures\CommandButtons\BTNReturnGoods.blp
 UnButtonpos=3,1
 
@@ -2175,7 +2175,7 @@ Buttonpos=,2
 Hotkey=Z
 Name=Hire PanicX
 Requires=u004
-Tip=Hire PanicX [|cffFFcc00Z|r]
+Tip=Hire PanicX
 Ubertip="PanicX is one of best Legion TD player. as a Beta tester for Legion TD, he knows how to kill creep with minimum cost.|n|cffFFcc00(Value=100)|r|n|cffCCCCCCDamage:50 ; Speed:1 ; HP:500|r|n|cffCCCCCCPiercing damage, Medium armor.|r|n"
 
 [A09F]
@@ -2183,7 +2183,7 @@ Art=ReplaceableTextures\CommandButtons\BTNHeroMountainKing.blp
 Buttonpos=1,2
 Hotkey=X
 Name=Hire LISK
-Tip=Hire LISK [|cffFFcc00X|r]
+Tip=Hire LISK
 Ubertip="LISK is the original Creator of LegionTD. He stop and move to Starcraft 2 after LegionTD version 1.5/1.6. |n|n|cffFFcc00 +1 income|r |cffFFcc00(Value=300)|r|n|cffCCCCCCDamage:150 ; Speed:1.35 ; HP:1300|r|n|cffCCCCCCSiege damage, Fortified armor.|r"
 
 [A09G]
@@ -2192,7 +2192,7 @@ Buttonpos=2,2
 Hotkey=C
 Name=Hire Egze
 Requires=u004
-Tip=Hire Egze [|cffFFcc00C|r]
+Tip=Hire Egze
 Ubertip="Egze is the Creator of LegionTD 2. He continue legionTD 2 after LISK quit. His map became very popular until cheat was found, and he can't update new version because he lost his PC (and all source files).|n|n|cffFFcc00 +3 income|r |cffFFcc00(Value=500)|r|n|cffCCCCCCDamage:200 ; Speed:0.85 ; HP:2300|r|n|cffCCCCCCNormal damage, Heavy armor.|r"
 
 [A09H]
@@ -2200,7 +2200,7 @@ Art=ReplaceableTextures\CommandButtons\BTNDoomGuard.blp
 Buttonpos=3,2
 Hotkey=V
 Name=Hire HuanAk
-Tip=Hire HuanAk [|cffFFcc00V|r]
+Tip=Hire HuanAk
 Ubertip="HuanAK, Creator of LegionTD 3, he decided to work on LegionTD map after Egze stopped working on version 2.7.|n|n|cffFFcc00 +5 income|r |cffFFcc00(Value=900)|r|n|cffCCCCCCDamage:300 ; Speed:0.75 ; HP:4000|r|n|cffCCCCCCChaos damage, Unarmored.|r"
 
 [A09J]
@@ -2234,7 +2234,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDoomGuard.blp
 Buttonpos=3,2
 Hotkey=V
 Name=Hire HuanAk
-Tip=Hire HuanAk [|cffFFcc00V|r]
+Tip=Hire HuanAk
 Ubertip="HuanAK, Creator of LegionTD 3, he decided to work on LegionTD map after Egze stopped working on version 2.7.|n|n|cffFFcc00 +5 income|r |cffFFcc00(Value=900)|r|n|cffCCCCCCDamage:300 ; Speed:0.75 ; HP:4000|r|n|cffCCCCCCChaos damage, Unarmored.|r"
 
 [A09T]
@@ -2248,7 +2248,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNHeroBlademaster.blp
 Buttonpos=2,2
 Hotkey=C
 Name=Hire Egze
-Tip=Hire Egze [|cffFFcc00C|r]
+Tip=Hire Egze
 Ubertip="Egze is the Creator of LegionTD 2. he continue legionTD 2 after LISK quit. His map became very popular untill cheat was found, and he can't update new version because he lost his PC (and all source files).|n|n|cffFFcc00 +3 income|r |cffFFcc00(Value=500)|r|n|cffCCCCCCDamage:200 ; Speed:0.85 ; HP:2300|r|n|cffCCCCCCNormal damage, Heavy armor.|r"
 
 [A09V]
@@ -2256,7 +2256,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNChaosWarlord.blp
 Buttonpos=,2
 Hotkey=Z
 Name=Hire PanicX
-Tip=Hire PanicX [|cffFFcc00Z|r]
+Tip=Hire PanicX
 Ubertip="PanicX is one of best Legion TD player. as a Beta tester for Legion TD, he knows how to kill creep with minimum cost.|n |cffFFcc00(Value=100)|r|n|cffCCCCCCDamage:50 ; Speed:1 ; HP:500|r|n|cffCCCCCCPiercing damage, Medium armor.|r"
 
 [A09W]
@@ -2264,7 +2264,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNHeroMountainKing.blp
 Buttonpos=1,2
 Hotkey=X
 Name=Hire LISK
-Tip=Hire LISK [|cffFFcc00X|r]
+Tip=Hire LISK
 Ubertip="LISK is the original Creator of LegionTD. He stop and move to Starcraft 2 after LegionTD version 1.5/1.6. |n|n|cffFFcc00 +1 income|r |cffFFcc00(Value=300)|r|n|cffCCCCCCDamage:150 ; Speed:1.35 ; HP:1300|r|n|cffCCCCCCSiege damage, Fortified armor.|r"
 
 [A09X]
@@ -2557,7 +2557,7 @@ TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Targetattachcount=1
 Tip=Heartstopper Aura
-Ubertip=Every unit affected by Heartstopper aura (400 range) loses 0.5% of MaxHP + 3 HP per second.
+Ubertip=Every unit affected by Heartstopper aura (550 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BF]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
@@ -2587,7 +2587,7 @@ Researchubertip="Increases the movement speed and life regeneration rate of near
 TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Tip=Heartstopper Aura
-Ubertip=Every unit affected by Heartstopper aura (400 range) loses 0.5% of MaxHP + 3 HP per second.
+Ubertip=Every unit affected by Heartstopper aura (550 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BI]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
@@ -3690,25 +3690,25 @@ Ubertip=An aura that gives friendly nearby units a 13% bonus damage to their ran
 [A0EA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
-Tip="Arcane Aura, [|cffffcc00Level1|r]"
+Tip="Brilliance Aura, [|cffffcc00Level1|r]"
 Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per second.
 
 [A0EB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3718,11 +3718,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0EC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3732,11 +3732,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0ED]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3746,11 +3746,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0EE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3760,11 +3760,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0EF]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3774,11 +3774,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EG]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3788,11 +3788,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EH]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3802,11 +3802,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EI]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3816,11 +3816,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EJ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3830,11 +3830,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per
 [A0EK]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3844,25 +3844,25 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0EL]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
-Tip="Arcane Aura, [|cffffcc00Level1|r]"
+Tip="Brilliance Aura, [|cffffcc00Level1|r]"
 Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per second.
 
 [A0EM]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3872,11 +3872,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per
 [A0EN]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3886,11 +3886,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EO]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3900,11 +3900,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EP]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3914,11 +3914,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EQ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3928,11 +3928,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0ER]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3942,11 +3942,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0ES]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3956,11 +3956,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0ET]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -5249,7 +5249,7 @@ Tip=Champion 700 HP
 Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDemonGate.blp
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip=|cffffff00Challenge not ready|r
 
 [A909]
@@ -5261,7 +5261,7 @@ Tip=Champion 500 HP
 Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDemonGate.blp
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip=Enabled with -CC mode
 
 [A911]
@@ -5269,7 +5269,7 @@ Art=ReplaceableTextures\CommandButtons\BTNDemonGate.blp
 Hotkey=Q
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip="How tough are you anyway? Pressing this rewards you bonus love, and gold at the end of the wave.|n|nYou can't Challenge more than 1 champion per wave."
 
 [A912]
@@ -5492,7 +5492,7 @@ Hotkey=E
 Name=Provoke Anarchy
 Order=acidbomb
 Targetattach=origin
-Tip=Provoke Anarchy - [|cffFFcc00E|r]
+Tip=Provoke Anarchy
 Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800 AoE and Purges enemies in 715 AoE|n|nCooldown: 10 seconds|nManacost: 40% Mana
 
 [A956]
@@ -5506,7 +5506,7 @@ Hotkey=E
 Name=Anarcy
 Order=ancestralspirittarget
 Targetattach=origin
-Tip=Anarchy - [|cffFFcc00E|r]
+Tip=Anarchy
 
 [A957]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCommand.blp
@@ -5563,7 +5563,7 @@ Hotkey=R
 Name=Dark Presence
 Order=howlofterror
 TargetArt=Abilities\Spells\Items\OrbDarkness\OrbDarkness.mdl
-Tip=Dark Presence - [|cffFFcc00R|r]
+Tip=Dark Presence
 Ubertip=King summons dark forces. His base damage is increased by 350% and it bounce for 50% of the damage to a second target. He also and gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|nDuration: 25 seconds|nCooldown: 50 seconds|n
 
 [A971]
@@ -5579,7 +5579,7 @@ Name=Royal Presence
 Order=ancestralspirittarget
 TargetArt=Abilities\Spells\Undead\DeathPact\DeathPactTarget.mdl
 Targetattach=origin
-Tip=Royal Presence - [|cffFFcc00R|r]
+Tip=Royal Presence
 Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30 seconds|nCooldown: 70 seconds
 
 [A975]
@@ -5641,7 +5641,7 @@ Hotkey=D
 Name=Command Attack!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIem\AIemTarget.mdl
-Tip=Command Attack - [|cffFFcc00D|r]
+Tip=Command Attack
 Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 40 seconds
 
 [A982]

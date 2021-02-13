@@ -1109,8 +1109,8 @@ EffectArt=Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl
 
 [BHab]
 Buffart=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
-Bufftip=Arcane Aura
-Buffubertip=This warrior is affected by the Arcane Aura.. His mana regenerates at an increased rate.
+Bufftip=Brilliance Aura
+Buffubertip=This warrior is affected by the Brilliance Aura. His mana regenerates at an increased rate.
 Spelldetail=2
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
