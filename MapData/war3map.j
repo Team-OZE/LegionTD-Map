@@ -44,6 +44,7 @@ globals
 	boolean gameEnd=false
 	integer levelAnarchy=0
 	integer levelAnarchyLast=0
+	trigger gg_trg_NoTeamKill=null
 	
 	image array VisualPick
 	integer array VisualPickXY
@@ -2113,7 +2114,7 @@ function ATX takes nothing returns nothing
 	set KH[1+GetPlayerId(GetTriggerPlayer())]=KH[1+GetPlayerId(GetTriggerPlayer())]+1
 	set MN=false
 	call SelectUnitForPlayerSingle(Unit[1+GetPlayerId(GetTriggerPlayer())],GetTriggerPlayer())
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r use Re-Roll.")
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r used reroll.")
 	call DestroyForce(S8)
 	set S8=null
 	call ReRollNah(GetTriggerPlayer())
@@ -9464,9 +9465,31 @@ function P3E takes nothing returns nothing
 	call A4V(QE)
 endfunction
 
+// Sends a stop-command to a unit, if it tries to attack an ally
+function NoKill takes nothing returns nothing
+    local unit A=GetAttacker()
+    local unit D=GetTriggerUnit()
+    local player P=GetOwningPlayer(A)
+    if IsUnitAlly(D,P)then
+        call IssueImmediateOrder(A,"stop")
+    endif
+    set A=null
+    set D=null
+    set P=null
+endfunction
+
+function InitTrig_NoTeamKill takes nothing returns nothing
+    local integer i=0
+    set gg_trg_NoTeamKill=CreateTrigger()
+    loop
+        call TriggerRegisterPlayerUnitEvent(gg_trg_NoTeamKill,Player(i),EVENT_PLAYER_UNIT_ATTACKED,null)
+        set i=i+1
+        exitwhen i>7
+    endloop
+    call TriggerAddAction(gg_trg_NoTeamKill,function NoKill)
+endfunction
+
 function P8E takes nothing returns boolean
-	// Make units invulnerable so that u can't kill your own or teammates units during building time
-	call SetUnitInvulnerable(GetTriggerUnit(),true)
 	return (IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT) and IsUnitType(GetTriggerUnit(),UNIT_TYPE_UNDEAD)==false)!=false!=false!=false
 endfunction
 
@@ -10140,8 +10163,6 @@ function QUE takes nothing returns nothing
 endfunction
 
 function QVE takes nothing returns boolean
-	// Make units invulnerable so that u can't kill your own or teammates units during building time
-	call SetUnitInvulnerable(GetTriggerUnit(),true)
 	return IsUnitType(GetTriggerUnit(),UNIT_TYPE_ANCIENT)!=false!=false!=false
 endfunction
 
@@ -14647,6 +14668,7 @@ function main takes nothing returns nothing
 	call GFE()
 	call GWE()
 	call GYE()
+	call InitTrig_NoTeamKill()
 	call SetMapFlag(MAP_LOCK_RESOURCE_TRADING,true)
 	call SetCameraBounds(-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 	call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
