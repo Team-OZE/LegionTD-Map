@@ -1162,6 +1162,7 @@ globals
 	code ref_function_QVE=null
 	code ref_function_QEE=null
 	code ref_function_GSE=null
+	code ref_function_GRE=null
 	code ref_function_QXE=null
 	code ref_function_QOE=null
 	code ref_function_QRE=null
@@ -3433,6 +3434,12 @@ function CUX takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	set ZH=true
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cff3333AANO Saving|r: Put limit on how much lumber player can save.")
+endfunction
+
+function GRE takes nothing returns nothing
+	call AdjustPlayerStateBJ(BI[1+GetPlayerId(GetEnumPlayer())],GetEnumPlayer(),PLAYER_STATE_RESOURCE_GOLD)
+	set BN[1+GetPlayerId(GetEnumPlayer())]=BN[1+GetPlayerId(GetEnumPlayer())]+BI[1+GetPlayerId(GetEnumPlayer())]
+	call DisplayTimedTextToForce(I3E(Condition(ref_function_GVE)),7.,"::: You earned |cffFFcc00"+I2S(BI[1+GetPlayerId(GetEnumPlayer())])+"|r gold from your income. ")
 endfunction
 
 function CVE takes nothing returns nothing
@@ -6866,6 +6873,7 @@ function G2E takes nothing returns nothing
 		call G1E()
 		call ODE()
 	endif
+	call ForForce(ZI,ref_function_GRE)
 	call SetPlayerStateBJ(Player(8),PLAYER_STATE_RESOURCE_GOLD,0)
 	call SetPlayerStateBJ(Player(9),PLAYER_STATE_RESOURCE_GOLD,0)
 	call PlaySoundBJ(OQ)
@@ -13972,6 +13980,7 @@ function initGlobals takes nothing returns nothing
 	set ref_function_F4E=function F4E
 	set ref_function_F7E=function F7E
 	set ref_function_GEE=function GEE
+	set ref_function_GRE=function GRE
 	set ref_function_GNE=function GNE
 	set ref_function_G4E=function G4E
 	set ref_function_G5E=function G5E
