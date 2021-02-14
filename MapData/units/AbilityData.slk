@@ -5077,6 +5077,7 @@ C;X15;K"air,ground,friend,self,neutral"
 C;X16;K0.0
 C;X17;K10.0
 C;X18;K10.0
+C;X19;K10.0
 C;X20;K25
 C;X21;K0.0
 C;X22;K800.0
@@ -5243,6 +5244,7 @@ C;X15;K"enemies"
 C;X16;K0.0
 C;X17;K0.7
 C;X18;K0.0
+C;X19;K7.0
 C;X21;K250.0
 C;X22;K700.0
 C;X23;K40.0

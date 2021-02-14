@@ -1521,6 +1521,13 @@ globals
 	code ref_function_FOX=null
 endglobals
 
+function ShowKingInfo takes nothing returns nothing
+	local texttag tag
+	//GetPlayerTechCount(owner,$52303030,true) // HP
+	//GetPlayerTechCount(owner,$52303031,true) // Attack
+	//GetPlayerTechCount(owner,$52303032,true) // Regen
+endfunction
+
 function A9V takes nothing returns nothing
 	local integer i=0
 	set VCV=0
