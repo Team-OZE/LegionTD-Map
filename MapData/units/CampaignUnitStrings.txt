@@ -6656,16 +6656,17 @@ Upgrade=h0I9,H0DC
 [h0EP]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 9|r]
+Name=Dread Lord - [|cffffcc00Level 9|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 9|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 9|r]
 Ubertip=|cffccccccDamage: |r|cffff800099|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000900|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GQ,H0DC
 
@@ -7553,282 +7554,291 @@ Ubertip=,
 [h0GI]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
-Buttonpos=2,1
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 1|r]
+Name=Dread Lord - [|cffffcc00Level 1|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 1|r]
-Ubertip=|cffccccccDamage: |r|cffff800011|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000100|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 1: |cffcccccc2% life steal. |r|nLevel 2: |cffcccccc4% life steal. |r|nLevel 3: |cffcccccc6% life steal. |r|nLevel 4: |cffcccccc8% life steal. |r|nLevel 5: |cffcccccc10% life steal. |r|nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
+Tip=Promote to Dread Lord - [|cffffcc00Level 1|r]
+Ubertip=|cffccccccDamage: |r|cffff800011|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000100|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |cff808080Vampiric Aura|r|cffcccccc|nLevel 1: |cffff80002% life steal |r|n|cffccccccLevel 2: |cffff80004% life steal |r|n|cffccccccLevel 3: |cffff80006% life steal|r
 Upgrade=h0GS,H0DC
 
 [h0GJ]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 3|r]
+Name=Dread Lord - [|cffffcc00Level 3|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 3|r]
-Ubertip=|cffccccccDamage: |r|cffff800033|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 3: |cffcccccc6% life steal. |r|nLevel 4: |cffcccccc8% life steal. |r|nLevel 5: |cffcccccc10% life steal. |r|nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
-Upgrade=h0GK,H0DC
+Tip=Promote to Dread Lord - [|cffffcc00Level 3|r]
+Ubertip=|cffccccccDamage: |r|cffff800033|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |cff808080Vampiric Aura|r|cffcccccc|nLevel 1: |cffff80002% life steal |r|n|cffccccccLevel 2: |cffff80004% life steal |r|n|cffccccccLevel 3: |cffff80006% life steal|r
+Upgrade=H0DC
 
 [h0GK]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 4|r]
+Name=Dread Lord - [|cffffcc00Level 4|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 4|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 4|r]
 Ubertip=|cffccccccDamage: |r|cffff800044|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000400|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 4: |cffcccccc8% life steal. |r|nLevel 5: |cffcccccc10% life steal. |r|nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GM,H0DC
 
 [h0GL]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 7|r]
+Name=Dread Lord - [|cffffcc00Level 7|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 7|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 7|r]
 Ubertip=|cffccccccDamage: |r|cffff800077|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000700|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GN,H0DC
 
 [h0GM]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 5|r]
+Name=Dread Lord - [|cffffcc00Level 5|r]
 Requires=u00S,u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 5|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 5|r]
 Ubertip=|cffccccccDamage: |r|cffff800055|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000500|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 5: |cffcccccc10% life steal. |r|nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GP,H0DC
 
 [h0GN]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 8|r]
+Name=Dread Lord - [|cffffcc00Level 8|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 8|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 8|r]
 Ubertip=|cffccccccDamage: |r|cffff800088|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000800|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0EP,H0DC
 
 [h0GO]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 11|r]
+Name=Dread Lord - [|cffffcc00Level 11|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 11|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 11|r]
 Ubertip=|cffccccccDamage: |r|cffff8000165|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000210|r|cffcccccc|nHit Points: |r|cffff80001900|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|nAbility: |n|r|cff808080 Vampiric Aura - |cffccccccNearby friendly melee units gain 20% of their attack damage when they hit enemy units.|r|n|r|cff808080 Evasion - |cffccccccGives a 20% chance to avoid an attack.|r
 Upgrade=H0DC
 
 [h0GP]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 6|r]
+Name=Dread Lord - [|cffffcc00Level 6|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 6|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 6|r]
 Ubertip=|cffccccccDamage: |r|cffff800066|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GL,H0DC
 
 [h0GQ]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 10|r]
+Name=Dread Lord - [|cffffcc00Level 10|r]
 Requires=u00R,u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 10|r]
+Tip=Promote to Dread Lord - [|cffffcc00Level 10|r]
 Ubertip=|cffccccccDamage: |r|cffff8000110|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 10: |cffcccccc20% life steal. |r
 Upgrade=h0GO,H0DC
 
 [h0GR]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 5|r]
+Name=Dread Lord - [|cffffcc00Level 5|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GS]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
 BuildingSoundLabel=BuildingConstructionLoop
+Buttonpos=,2
 Hotkey=F
 LoopingSoundFadeIn=512
 LoopingSoundFadeOut=512
 Missileart=Abilities\Spells\Orc\LightningBolt\LightningBoltMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Dread Lords - [|cffffcc00Level 2|r]
+Name=Dread Lord - [|cffffcc00Level 2|r]
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Dread Lords - [|cffffcc00Level 2|r]
-Ubertip=|cffccccccDamage: |r|cffff800022|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |r|cff808080 Vampiric Aura |nLevel 2: |cffcccccc4% life steal. |r|nLevel 3: |cffcccccc6% life steal. |r|nLevel 4: |cffcccccc8% life steal. |r|nLevel 5: |cffcccccc10% life steal. |r|nLevel 6: |cffcccccc12% life steal. |r|nLevel 7: |cffcccccc14% life steal. |r|nLevel 8: |cffcccccc16% life steal. |r|nLevel 9: |cffcccccc18% life steal. |r|nLevel 10: |cffcccccc20% life steal. |r
+Tip=Promote to Dread Lord - [|cffffcc00Level 2|r]
+Ubertip=|cffccccccDamage: |r|cffff800022|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180|r|cffcccccc|nHit Points: |r|cffff8000200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Hero|r|cffcccccc|nAbility: |cff808080Vampiric Aura|r|cffcccccc|nLevel 1: |cffff80002% life steal |r|n|cffccccccLevel 2: |cffff80004% life steal |r|n|cffccccccLevel 3: |cffff80006% life steal|r
 Upgrade=h0GJ,H0DC
 
 [h0GT]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 2|r]
+Name=Dread Lord - [|cffffcc00Level 2|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GU]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 6|r]
+Name=Dread Lord - [|cffffcc00Level 6|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GV]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 4r]
+Name=Dread Lord - [|cffffcc00Level 4r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GW]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 8|r]
+Name=Dread Lord - [|cffffcc00Level 8|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GX]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 7|r]
+Name=Dread Lord - [|cffffcc00Level 7|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GY]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 10|r]
+Name=Dread Lord - [|cffffcc00Level 10|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0GZ]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 3|r]
+Name=Dread Lord - [|cffffcc00Level 3|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0H0]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 1|r]
+Name=Dread Lord - [|cffffcc00Level 1|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0H1]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 11|r]
+Name=Dread Lord - [|cffffcc00Level 11|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
 [h0H2]
 Art=ReplaceableTextures\CommandButtons\BTNHeroDreadLord.blp
-Buttonpos=1
+Buttonpos=,2
 Missilearc=0.1
 Missileart=Abilities\Weapons\FarseerMissile\FarseerMissile.mdl
 MissileHoming=1
 Missilespeed=1200
-Name=Dread Lords - [|cffffcc00Level 9|r]
+Name=Dread Lord - [|cffffcc00Level 9|r]
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 

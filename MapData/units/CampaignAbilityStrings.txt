@@ -3955,7 +3955,7 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 
 [A0ET]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
-Buttonpos=2,2
+Buttonpos=,
 Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
@@ -3969,12 +3969,12 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 
 [A0EU]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -3983,12 +3983,12 @@ Ubertip=Nearby friendly melee units gain 10% of their attack damage when they hi
 
 [A0EV]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -3997,12 +3997,12 @@ Ubertip=Nearby friendly melee units gain 4% of their attack damage when they hit
 
 [A0EW]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4011,12 +4011,12 @@ Ubertip=Nearby friendly melee units gain 12% of their attack damage when they hi
 
 [A0EX]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4025,26 +4025,26 @@ Ubertip=Nearby friendly melee units gain 18% of their attack damage when they hi
 
 [A0EY]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip="Vampirism, [|cffffcc00Level1|r]"
+Tip="Vampiric Aura - [|cffffcc00Level 1|r]"
 Ubertip=Nearby friendly melee units gain 2% of their attack damage when they hit enemy units.
 
 [A0EZ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4053,12 +4053,12 @@ Ubertip=Nearby friendly melee units gain 20% of their attack damage when they hi
 
 [A0F0]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4067,12 +4067,12 @@ Ubertip=Nearby friendly melee units gain 6% of their attack damage when they hit
 
 [A0F1]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4081,26 +4081,26 @@ Ubertip=Nearby friendly melee units gain 8% of their attack damage when they hit
 
 [A0F2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip="Vampirism, [|cffffcc00Level1|r]"
+Tip="Vampiric Aura [|cffffcc00Level 1|r]"
 Ubertip=Nearby friendly melee units gain 2% of their attack damage when they hit enemy units.
 
 [A0F3]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4109,12 +4109,12 @@ Ubertip=Nearby friendly melee units gain 14% of their attack damage when they hi
 
 [A0F4]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4123,12 +4123,12 @@ Ubertip=Nearby friendly melee units gain 4% of their attack damage when they hit
 
 [A0F5]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4137,12 +4137,12 @@ Ubertip=Nearby friendly melee units gain 22% of their attack damage when they hi
 
 [A0F6]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4151,12 +4151,12 @@ Ubertip=Nearby friendly melee units gain 16% of their attack damage when they hi
 
 [A0F7]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4165,12 +4165,12 @@ Ubertip=Nearby friendly melee units gain 6% of their attack damage when they hit
 
 [A0F8]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4179,12 +4179,12 @@ Ubertip=Nearby friendly melee units gain 8% of their attack damage when they hit
 
 [A0F9]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4193,12 +4193,12 @@ Ubertip=Nearby friendly melee units gain 10% of their attack damage when they hi
 
 [A0FA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4207,12 +4207,12 @@ Ubertip=Nearby friendly melee units gain 12% of their attack damage when they hi
 
 [A0FB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4221,12 +4221,12 @@ Ubertip=Nearby friendly melee units gain 14% of their attack damage when they hi
 
 [A0FC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4235,12 +4235,12 @@ Ubertip=Nearby friendly melee units gain 16% of their attack damage when they hi
 
 [A0FD]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -5855,10 +5855,10 @@ Ubertip=The thrown stone inflicts on the specified enemy100 units. damage and st
 [ACvp]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
 Buttonpos=2,2
-Name=Vampirism
+Name=Vampiric Aura
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip=Vampirism
+Tip=Vampiric Aura
 Ubertip="Nearby friendly troops receive additional20 units. health for each hit, hand-to-hand combat."
 
 [AEbu]
@@ -6274,7 +6274,7 @@ TargetArt=Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl
 [AIva]
 Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
 Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
-Name=Thing: vampirism
+Name=Thing: Vampiric Aura
 SpecialArt=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
 
 [AIvl]

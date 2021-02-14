@@ -1275,8 +1275,8 @@ Targetattach=origin
 
 [BUav]
 Buffart=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
-Bufftip=Vampirism
-Buffubertip="This warrior is affected by the spell''Vampirism''. He can restore his health, attacking opponents."
+Bufftip=Vampiric Aura
+Buffubertip="Nearby friendly melee units gain some of their attack damage back in HP when they hit enemy units."
 SpecialArt=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
 Specialattach=origin
 Spelldetail=2
