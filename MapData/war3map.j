@@ -2693,7 +2693,6 @@ function BOX takes nothing returns nothing
 	if SC[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))]==false then
 		call UnitAddAbility(Unit[1+GetPlayerId(GetOwningPlayer(bj_lastReplacedUnit))],$41303834)
 	endif
-	call SetPlayerTechResearchedSwap($52303044,5,GetOwningPlayer(GetTriggerUnit()))
 	call SetPlayerTechResearchedSwap($52303049,1,GetOwningPlayer(GetTriggerUnit()))
 	set PE=bj_lastReplacedUnit
 	set MN=false
@@ -10670,6 +10669,7 @@ endfunction
 
 function InitModeAP takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
+	call SetPlayerTechMaxAllowedSwap($52303044,6,localPlayer)
 	set EC=true
 	set modeAP=true
 endfunction
