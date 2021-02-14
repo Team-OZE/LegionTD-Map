@@ -521,7 +521,7 @@ Targetattach=hand,left
 Targetattach1=hand,right
 Targetattachcount=2
 Tip=Faerie Fire
-Ubertip=Reduce enemy's armor by 5. last 5 second
+Ubertip=Reduce enemy's armor by 5 (lasts 5 seconds)
 
 [A02E]
 Animnames=spell,slam
@@ -2474,7 +2474,7 @@ Name=Leaked 80-90%
 Art=ReplaceableTextures\CommandButtons\BTNFaerieFireOn.blp
 Name=Faerie Fire
 Tip=Faerie Fire
-Ubertip=Reduce enemy's armor by 4. last 5 second
+Ubertip=Reduce enemy's armor by 4 (lasts 5 seconds)
 
 [A0B2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCleavingAttack.blp
