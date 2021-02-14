@@ -9077,10 +9077,10 @@ LoopingSoundFadeOut=512
 Missileart=Abilities\Weapons\Rifle\RifleImpact.mdl
 MissileHoming=1
 Missilespeed=,
-Name=HELLRAISER
+Name=Hellraiser
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to HELLRAISER
+Tip=Promote to Hellraiser
 Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000270|r|cffcccccc|nHit Points: |r|cffff8000690|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Death Bass, Planed |r|n"
 
 [h999]
