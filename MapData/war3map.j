@@ -2737,7 +2737,7 @@ endfunction
 
 function BSX takes nothing returns nothing
 	//call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r You can reduce graphic lag by type \"-zoom 150\" or \"-zoom 200\"")
-	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join https://discord.gg/dhtvnvH and get the latest updates for this map")
+	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,12.,"|cff33AA33Tip:|r Join |cff33AA33discord.gg/dhtvnvH|r and get the latest updates for this map")
 endfunction
 
 function BTX takes nothing returns nothing

@@ -5505,7 +5505,7 @@ Art=ReplaceableTextures\CommandButtons\BTNWyvernRider.blp
 Buttonpos=1
 Missileart=abilities\weapons\WyvernSpear\WyvernSpearMissile.mdl
 Missilespeed=1500
-Name=Wind rider
+Name=Wind Rider
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
@@ -5519,10 +5519,10 @@ LoopingSoundFadeOut=512
 Missileart=abilities\weapons\WyvernSpear\WyvernSpearMissile.mdl
 MissileHoming=1
 Missilespeed=,
-Name=Wind rider
+Name=Wind Rider
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
-Tip=Promote to Wind rider
+Tip=Promote to Wind Rider
 Ubertip=|cffccccccDamage: |r|cffff800082-98|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000600|r|cffcccccc|nHit Points: |r|cffff80001450|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Envenomed Spears|r|n
 
 [h0C9]
