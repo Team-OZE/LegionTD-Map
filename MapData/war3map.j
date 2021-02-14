@@ -7321,6 +7321,7 @@ function ProcessGameMode takes nothing returns nothing
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000All Pick|r: Pick your race with your race picker unit")	
 	
 	else
+		set mode_pr=true
 		call ConditionalTriggerExecute(W2)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,"|CFFFF0000Prophet Random|r: Everyone gets randomly new units every round")
 	endif
