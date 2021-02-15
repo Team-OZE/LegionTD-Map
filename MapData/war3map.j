@@ -45,6 +45,8 @@ globals
 	integer levelAnarchy=0
 	integer levelAnarchyLast=0
 	trigger gg_trg_NoTeamKill=null
+	texttag kingInfoWest=null
+	texttag kingInfoEast=null
 	
 	image array VisualPick
 	integer array VisualPickXY
@@ -1522,10 +1524,69 @@ globals
 endglobals
 
 function ShowKingInfo takes nothing returns nothing
-	local texttag tag
-	//GetPlayerTechCount(owner,$52303030,true) // HP
-	//GetPlayerTechCount(owner,$52303031,true) // Attack
-	//GetPlayerTechCount(owner,$52303032,true) // Regen
+	local string text=""
+	local integer kingNumber=8
+	
+	// Delete old texts
+	call DestroyTextTag(kingInfoWest)
+	call DestroyTextTag(kingInfoEast)
+	
+	loop
+		exitwhen kingNumber>9
+		
+		// Show King Attack, HP and Regeneration
+		if GetPlayerTechCount(Player(kingNumber),$52303031,true)!=GetPlayerTechMaxAllowedSwap($52303031,Player(kingNumber)) then
+			set text="|c00FF0000Attack:|r   "+I2S(GetPlayerTechCount(Player(kingNumber),$52303031,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52303031,Player(kingNumber)))
+		else
+			set text=text+"|c00FF0000Attack:   Max|r"
+		endif
+		if GetPlayerTechCount(Player(kingNumber),$52303030,true)!=GetPlayerTechMaxAllowedSwap($52303030,Player(kingNumber)) then
+			set text=text+"\n\n|cff33AA33HP:|r          "+I2S(GetPlayerTechCount(Player(kingNumber),$52303030,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52303030,Player(kingNumber)))
+		else
+			set text=text+"\n\n|cff33AA33HP:          Max|r"
+		endif
+		if GetPlayerTechCount(Player(kingNumber),$52303032,true)!=GetPlayerTechMaxAllowedSwap($52303032,Player(kingNumber)) then
+			set text=text+"\n\n|c0096FF96Regen:|r    "+I2S(GetPlayerTechCount(Player(kingNumber),$52303032,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52303032,Player(kingNumber)))
+		else
+			set text=text+"\n\n|c0096FF96Regen:    Max|r"
+		endif
+		
+		// Show Anarchy Level if -cc Mode
+		if modeCC then
+			if GetPlayerTechCount(Player(kingNumber),$52393935,true)!=GetPlayerTechMaxAllowedSwap($52393935,Player(kingNumber)) then
+					set text=text+"\n\n|cff7333AAAnarchy:|r "+I2S(GetPlayerTechCount(Player(kingNumber),$52393935,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52393935,Player(kingNumber)))
+			else
+				set text=text+"\n\n|cff7333AAAnarchy: Active|r"
+			endif
+		endif
+		
+		// Show Dark Presence if activated
+		if GetPlayerTechCount(Player(kingNumber),$52393939,true)!=0 then
+			if GetPlayerTechCount(Player(kingNumber),$52393939,true)!=GetPlayerTechMaxAllowedSwap($52393939,Player(kingNumber)) then
+				set text=text+"\n\n|c000000FFDark Pr:|r   "+I2S(GetPlayerTechCount(Player(kingNumber),$52393939,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52393939,Player(kingNumber)))
+			else
+				set text=text+"\n\n|c000000FFDark Pr:  Active|r"
+			endif
+		endif
+		
+		// Show Royal Presence if activated
+		if GetPlayerTechCount(Player(kingNumber),$52393938,true)!=0 then
+			if GetPlayerTechCount(Player(kingNumber),$52393938,true)!=GetPlayerTechMaxAllowedSwap($52393938,Player(kingNumber)) then
+				set text=text+"\n\n|c00FFFF00Royal Pr:|r  "+I2S(GetPlayerTechCount(Player(kingNumber),$52393938,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52393938,Player(kingNumber)))
+			else
+				set text=text+"\n\n|c00FFFF00Royal Pr:  Active|r"
+			endif
+		endif
+		
+		if     kingNumber==8 and (IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) then
+			set kingInfoWest = CreateTextTagLocBJ(text,Location(-4000,-3650),0.,9.,255.,255.,255.,0.)
+		
+		elseif kingNumber==9 and (IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) then
+			set kingInfoEast = CreateTextTagLocBJ(text,Location(5080,-3650),0.,9.,255.,255.,255.,0.)
+		endif
+		
+		set kingNumber=kingNumber+1
+	endloop
 endfunction
 
 function A9V takes nothing returns nothing
@@ -3183,13 +3244,13 @@ function CJX takes nothing returns nothing
 	local integer i=0
 	local player p=GetTriggerPlayer()
 	local integer KK_1
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King HP: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,GetTriggerPlayer())))
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"|c00FF0000King Attack:|r "+I2S(GetPlayerTechCountSimple($52303031,GetTriggerPlayer())))
 	call DestroyForce(S8)
 	set S8=null
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Damage: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,GetTriggerPlayer())))
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"|cff33AA33King HP:|r "+I2S(GetPlayerTechCountSimple($52303030,GetTriggerPlayer())))
 	call DestroyForce(S8)
 	set S8=null
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King Regen: |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,GetTriggerPlayer())))
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"|c0096FF96King Regen:|r "+I2S(GetPlayerTechCountSimple($52303032,GetTriggerPlayer())))
 	call DestroyForce(S8)
 	set S8=null
 	if GetPlayerTeam(p)==0 then
@@ -3218,10 +3279,10 @@ function CJX takes nothing returns nothing
 	endif
 	if numberLvl>4 then
 		if IsPlayerAlly(GetTriggerPlayer(),Player(8)) then
-			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King's Active Skill: |cff7333AA"+GetObjectName(Q3)+"|r")
+			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King's active skill: |cff7333AA"+GetObjectName(Q3)+"|r")
 		
 		else
-			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King's Active Skill: |cff7333AA"+GetObjectName(F5)+"|r")
+			call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),7.,"King's active skill: |cff7333AA"+GetObjectName(F5)+"|r")
 		endif
 	endif
 	if modeCC then
@@ -12997,7 +13058,7 @@ function XYX takes nothing returns nothing
 				endif
 				set bj_forLoopBIndex=bj_forLoopBIndex+1
 			endloop
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13020,7 +13081,7 @@ function XYX takes nothing returns nothing
 				call SetUnitAbilityLevelSwapped($41303550,PE,GetPlayerTechCountSimple($52303030,GetOwningPlayer(PE))+1)
 				call UnitRemoveAbility(PE,$41303550)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's hit points to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303030,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13030,7 +13091,7 @@ function XYX takes nothing returns nothing
 			call SetPlayerUnitAvailableBJ($75303038,false,GetOwningPlayer(GetSellingUnit()))
 			call AdjustPlayerStateBJ(80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_RESOURCE_LUMBER)
 			call AdjustPlayerStateBJ(-80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_LUMBER_GATHERED)
-			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! (your purchase has been refunded)")
+			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! Your purchase has been refunded.")
 			call DestroyForce(S8)
 			set S8=null
 		endif
@@ -13047,7 +13108,7 @@ function XYX takes nothing returns nothing
 			else
 				call SetUnitAbilityLevelSwapped($4130354F,PE,GetUnitAbilityLevelSwapped($4130354F,PE)+5)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13071,7 +13132,7 @@ function XYX takes nothing returns nothing
 			else
 				call SetUnitAbilityLevelSwapped($4130354F,PE,GetUnitAbilityLevelSwapped($4130354F,PE)+1)
 			endif
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's attack to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303031,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13081,7 +13142,7 @@ function XYX takes nothing returns nothing
 			call SetPlayerUnitAvailableBJ($75303039,false,GetOwningPlayer(GetSellingUnit()))
 			call AdjustPlayerStateBJ(80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_RESOURCE_LUMBER)
 			call AdjustPlayerStateBJ(-80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_LUMBER_GATHERED)
-			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! (your purchase has been refunded)")
+			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! Your purchase has been refunded.")
 			call DestroyForce(S8)
 			set S8=null
 		endif
@@ -13092,7 +13153,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XPX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
@@ -13102,7 +13163,7 @@ function XYX takes nothing returns nothing
 			call AdjustPlayerStateBJ(80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_RESOURCE_LUMBER)
 			call AdjustPlayerStateBJ(-80,GetOwningPlayer(GetSellingUnit()),PLAYER_STATE_LUMBER_GATHERED)
 			call SetPlayerUnitAvailableBJ($75303041,false,GetOwningPlayer(GetSellingUnit()))
-			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! (your purchase has been refunded)")
+			call DisplayTimedTextToForce(IZE(GetOwningPlayer(GetSellingUnit())),10.,"This upgrade is already maxed! Your purchase has been refunded.")
 			call DestroyForce(S8)
 			set S8=null
 		endif
@@ -13112,7 +13173,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_XQX)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's regeneration to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52303032,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13130,7 +13191,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_IncreaseDarkPresenceLvl)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Dark Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's skill: |cffFFcc00Dark Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393939,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13139,7 +13200,7 @@ function XYX takes nothing returns nothing
 				call UnitAddAbility(PE,$41393639)
 				call UnitAddAbility(PE,$41393636)
 				call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_XWX)
-				call DisplayTimedTextToForce(RJE(OX),10.,"|cffFFcc00Dark Presence|r Activated!")
+				call DisplayTimedTextToForce(RJE(OX),10.,"|cffFFcc00Dark Presence|r activated!")
 				call DestroyForce(S8)
 				set S8=null
 			endif
@@ -13156,7 +13217,7 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_IncreaseRoyalPresenceLvl)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cffFFcc00Royal Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393938,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's skill: |cffFFcc00Royal Presence|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393938,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+5
@@ -13165,7 +13226,7 @@ function XYX takes nothing returns nothing
 				call UnitAddAbility(PE,$41393731)
 				call UnitAddAbility(PE,$41393636)
 				call ForForce(bj_FORCE_ALL_PLAYERS,ref_function_XWX)
-				call DisplayTimedTextToForce(RJE(OX),10.,"|cffFFcc00Royal Presence|r Activated!")
+				call DisplayTimedTextToForce(RJE(OX),10.,"|cffFFcc00Royal Presence|r activated!")
 				call DestroyForce(S8)
 				set S8=null
 			endif
@@ -13182,14 +13243,14 @@ function XYX takes nothing returns nothing
 			call ForForce(RJE(OX),ref_function_IncreaseAnarchyLvl)
 			call DestroyForce(S8)
 			set S8=null
-			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your team King's Skill: |cff7333AAProvoke Anarchy|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,OX))+"|r")
+			call DisplayTimedTextToForce(RJE(OX),10.,PlayerColor[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+GetPlayerName(GetOwningPlayer(GetSellingUnit()))+"|r upgraded your King's skill: |cff7333AAProvoke Anarchy|r to level |cffFFcc00"+I2S(GetPlayerTechCountSimple($52393935,OX))+"|r")
 			call DestroyForce(S8)
 			set S8=null
 			set KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=KB[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+1
 			set BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]=BI[1+GetPlayerId(GetOwningPlayer(GetSellingUnit()))]+2
 			if GetPlayerTechCountSimple($52393935,OX)==10 then
 				call UnitAddAbility(PE,$41393535)
-				call DisplayTimedTextToForce(RJE(OX),10.,"|cff7333AAProvoke Anarchy|r Activated!")
+				call DisplayTimedTextToForce(RJE(OX),10.,"|cff7333AAProvoke Anarchy|r activated!")
 				call DestroyForce(S8)
 				set S8=null
 			endif
@@ -13214,6 +13275,8 @@ function XYX takes nothing returns nothing
 	else
 		call DestroyEffect(AddSpecialEffectLoc("Abilities\\Spells\\Human\\HolyBolt\\HolyBoltSpecialArt.mdl",GO))
 	endif
+	
+	call ShowKingInfo()
 endfunction
 
 function XZX takes nothing returns nothing
@@ -14686,6 +14749,7 @@ function main takes nothing returns nothing
 	call GWE()
 	call GYE()
 	call InitTrig_NoTeamKill()
+	call ShowKingInfo()
 	call SetMapFlag(MAP_LOCK_RESOURCE_TRADING,true)
 	call SetCameraBounds(-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),-8192.+GetCameraMargin(CAMERA_MARGIN_LEFT),8960.-GetCameraMargin(CAMERA_MARGIN_TOP),8192.-GetCameraMargin(CAMERA_MARGIN_RIGHT),-4608.+GetCameraMargin(CAMERA_MARGIN_BOTTOM))
 	call SetDayNightModels("Environment\\DNC\\DNCLordaeron\\DNCLordaeronTerrain\\DNCLordaeronTerrain.mdl","Environment\\DNC\\DNCLordaeron\\DNCLordaeronUnit\\DNCLordaeronUnit.mdl")
