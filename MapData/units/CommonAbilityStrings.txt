@@ -695,7 +695,7 @@ TargetArt=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExp
 [B03K]
 Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Bufftip=Frost Aura
-Buffubertip=This unit have Frost Aura
+Buffubertip=This unit has Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 
@@ -947,7 +947,7 @@ Targetattachcount=1
 [B976]
 Buffart=ReplaceableTextures\CommandButtons\BTNThornShield.blp
 Bufftip=Counter Attack
-Buffubertip=Melee units that attack the champion take 40% of the damage too
+Buffubertip=Melee units that attack the champion take 20% of the damage too
 SpecialArt=Abilities\Spells\NightElf\ThornsAura\ThornsAuraDamage.mdl
 Specialattach=head
 Spelldetail=2

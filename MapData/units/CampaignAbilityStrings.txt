@@ -5683,7 +5683,7 @@ ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
 Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Death Bass
-Ubertip=Deals 110 damage to up to 4 units around the HELLRAISER.
+Ubertip=Deals 110 damage to up to 4 units around the Hellraiser.
 
 [A989]
 Art=,

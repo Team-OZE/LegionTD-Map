@@ -9063,7 +9063,7 @@ Buttonpos=1
 Missileart=.mdl
 MissileHoming=1
 Missilespeed=,
-Name=HELLRAISER
+Name=Hellraiser
 Specialart=Objects\Spawnmodels\Human\HumanLargeDeathExplode\HumanLargeDeathExplode.mdl
 Ubertip=,
 
