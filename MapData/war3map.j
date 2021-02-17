@@ -1899,7 +1899,7 @@ function ACX takes nothing returns nothing
 		call PauseUnit(NVE,true)
 		call IssueImmediateOrderById(NVE,851972)
 		call PauseUnit(NVE,false)
-		if OX_1==GetLocalPlayer() then
+		if OX_1==localPlayer then
 			call DisplayTimedTextToPlayer(OX_1,0.,0.,10.,"|c11FF0000You can only heal the King when he is below 50% of HP.")
 		endif
 	
@@ -10698,7 +10698,7 @@ function REX takes nothing returns nothing
 	if I2R(TF-UF)>=I2R(numberPlayer)/1.5 then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked")
-		if Player(numberKickedPlayer-1)==GetLocalPlayer() then
+		if Player(numberKickedPlayer-1)==localPlayer then
 			call EndGame(false)
 		endif
 		set YF=false
@@ -10708,7 +10708,7 @@ function REX takes nothing returns nothing
 	elseif I2R(TF-UF)>=I2R(numberPlayer)/2. and UF+VG+TF==numberPlayer then
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
 		call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked")
-		if Player(numberKickedPlayer-1)==GetLocalPlayer() then
+		if Player(numberKickedPlayer-1)==localPlayer then
 			call EndGame(false)
 		endif
 		set YF=false
@@ -10859,7 +10859,7 @@ function ROX takes nothing returns nothing
 		if I2R(TF-UF)>=I2R(numberPlayer)/2. then
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,10.,"|cFFC0C000Vote Count:|r |cFFFF0000Yes: "+I2S(TF)+"|r|cFF00FF00 No: "+I2S(UF)+"|r\t "+BE)
 			call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,2.,GetPlayerName(Player(numberKickedPlayer-1))+" has been kicked.")
-			if Player(numberKickedPlayer-1)==GetLocalPlayer() then
+			if Player(numberKickedPlayer-1)==localPlayer then
 				call EndGame(false)
 			endif
 			set YF=false
