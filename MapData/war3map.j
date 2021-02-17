@@ -1578,11 +1578,14 @@ function ShowKingInfo takes nothing returns nothing
 			endif
 		endif
 		
-		if     kingNumber==8 and (IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) then
+		// Create text tags
+		if      kingNumber==8 then
 			set kingInfoWest = CreateTextTagLocBJ(text,Location(-4000,-3650),0.,9.,255.,255.,255.,0.)
-		
-		elseif kingNumber==9 and (IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) then
+			call SetTextTagVisibility(kingInfoWest,IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) // Show if king is ally or player is observer
+			
+		elseif  kingNumber==9 then
 			set kingInfoEast = CreateTextTagLocBJ(text,Location(5080,-3650),0.,9.,255.,255.,255.,0.)
+			call SetTextTagVisibility(kingInfoEast,IsPlayerAlly(localPlayer,Player(kingNumber)) or IsPlayerObserver(localPlayer)) // Show if king is ally or player is observer
 		endif
 		
 		set kingNumber=kingNumber+1
