@@ -5043,12 +5043,13 @@ function DHE takes nothing returns nothing
 	call A_V(2.)
 	call CreateLeaderboardBJ(bj_FORCE_ALL_PLAYERS,"King HP")
 	set VX=bj_lastCreatedLeaderboard
-	if GetPlayerTeam(localPlayer)==0 then
+	if GetPlayerTeam(localPlayer)==0 or IsPlayerObserver(localPlayer) then
 		call LeaderboardAddItemBJ(Player(8),VX,GetPlayerName(Player(8)),0)
-	
-	elseif GetPlayerTeam(localPlayer)==1 then
+	endif
+	if GetPlayerTeam(localPlayer)==1 or IsPlayerObserver(localPlayer) then
 		call LeaderboardAddItemBJ(Player(9),VX,GetPlayerName(Player(9)),0)
 	endif
+	
 	call LeaderboardDisplayBJ(true,VX)
 endfunction
 
