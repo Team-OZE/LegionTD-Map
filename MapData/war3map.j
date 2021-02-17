@@ -7308,8 +7308,10 @@ function ProcessGameMode takes nothing returns nothing
 	local integer cnt_loop=1
 	
 	// Mastermind
-	call FogEnableOn()
-	call FogMaskEnableOn()
+	if(bj_cineModePriorFogSetting) then
+		call FogEnableOn()
+		call FogMaskEnableOn()
+	endif
 	
 	set numberPlayer=1+GetPlayerId(localPlayer)
 	if IsPlayerAlly(localPlayer,Player(8)) then
@@ -8248,8 +8250,10 @@ function LJE takes nothing returns nothing
 	call TriggerExecute(GU)
 	call TriggerExecute(PT)
 	call TriggerExecute(KT)
-	call FogEnableOn()
-	call FogMaskEnableOn()
+	if(bj_cineModePriorFogSetting) then
+		call FogEnableOn()
+		call FogMaskEnableOn()
+	endif
 	call ForForce(ZI,ref_function_LHE)
 	call MultiboardSetItemValueBJ(JR,2,CountPlayersInForceBJ(YI)+3,FR+"None")
 	call MultiboardSetItemValueBJ(JR,2,CountPlayersInForceBJ(YI)+4,FR+"None")
