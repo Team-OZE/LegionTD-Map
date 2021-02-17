@@ -10616,11 +10616,11 @@ endfunction
 function RDX takes nothing returns nothing
 	local string printGameModes
 	
-	call CreateTextTagLocBJ("|CFFFF0000Choose Game Mode|r",Location(-7450,4750),0.,15.,100.,100.,100.,0.)
+	call CreateTextTagLocBJ("|CFFFF0000Choose Game Mode|r",Location(-7450,4750),0.,14.,100.,100.,100.,0.)
 	set texttagGameMode1=bj_lastCreatedTextTag
 	call SetTextTagLifespanBJ(texttagGameMode1,15.)
 	
-	call CreateTextTagLocBJ("|CFFFF0000-PRO|r: League (|CFFFF0000-PRACMIQG|r)\n or customized modes below",Location(-7420,4600),0.,10.,100.,100.,100.,0.)
+	call CreateTextTagLocBJ("|CFFFF0000-PRO|r: League (|CFFFF0000-PRACMIQG|r)\n or customized modes below",Location(-7420,4600),0.,9.,100.,100.,100.,0.)
 	set texttagGameMode2=bj_lastCreatedTextTag
 	call SetTextTagLifespanBJ(texttagGameMode2,15.)
 	
@@ -10635,7 +10635,7 @@ function RDX takes nothing returns nothing
 		set printGameModes=printGameModes+"\n\n\n\n"
 	endif
 	
-	call CreateTextTagLocBJ(printGameModes,Location(-7700,4150),0.,10.,100.,100.,100.,0.)
+	call CreateTextTagLocBJ(printGameModes,Location(-7700,4150),0.,9.,100.,100.,100.,0.)
 	
 	set CC=bj_lastCreatedTextTag
 	call SetTextTagLifespanBJ(CC,15.)
@@ -10654,7 +10654,7 @@ function RDX takes nothing returns nothing
 		set printGameModes=printGameModes+"\n"
 	endif
 	
-	call CreateTextTagLocBJ(printGameModes,Location(-7050,4150),0.,10.,100.,100.,100.,0.)
+	call CreateTextTagLocBJ(printGameModes,Location(-7050,4150),0.,9.,100.,100.,100.,0.)
 	
 	call SetUnitPosition(Unit[1+GetPlayerId(Player(0))],-7080,4000)
 	
