@@ -4089,7 +4089,7 @@ Name=Warden
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Warden
-Ubertip="|cffccccccDamage: |r|cffff8000100-110|r|cffcccccc|nSpeed: |r|cffff80000.48|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff80002792|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored |r|cffcccccc|nAbility: |r|cff808080 Coup de Grace, Lifesteal, Fan of Knives |r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000100-110|r|cffcccccc|nSpeed: |r|cffff80000.48|r|cffcccccc|nRange: |r|cffff8000100|r|cffcccccc|nHit Points: |r|cffff80002792|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored |r|cffcccccc|nAbility: |r|cff808080 Coup de Grace, Lifesteal, Fan of Knives|r|n"
 
 [h094]
 Art=ReplaceableTextures\CommandButtons\BTNHeroWarden.blp
