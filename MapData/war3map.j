@@ -2633,7 +2633,7 @@ function BEX takes nothing returns nothing
 	set bj_forLoopAIndexEnd=ER
 	loop
 		exitwhen bj_forLoopAIndex>bj_forLoopAIndexEnd
-		call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetTriggerPlayer())
+		//call SetPlayerTechMaxAllowedSwap(OC[bj_forLoopAIndex],0,GetTriggerPlayer())
 		set bj_forLoopAIndex=bj_forLoopAIndex+1
 	endloop
 	set numberPlayer=GetRandomInt(0,ER)
@@ -2654,7 +2654,7 @@ function BEX takes nothing returns nothing
 		set bj_lastCreatedUnit=CreateUnit(GetTriggerPlayer(),$65303036,x,y,bj_UNIT_FACING)
 	endif
 	call SelectUnitForPlayerSingle(bj_lastCreatedUnit,GetTriggerPlayer())
-	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r Changed builder.")
+	call DisplayTimedTextToForce(RJE(GetTriggerPlayer()),10.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r changed builder.")
 	call DestroyForce(S8)
 	set S8=null
 endfunction
@@ -5700,7 +5700,7 @@ function DXE takes nothing returns nothing
 	call SetPlayerTechMaxAllowedSwap($68304442,1,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($68393936,1,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($65303033,10,GetEnumPlayer())
-	call SetPlayerTechMaxAllowedSwap($52303044,0,GetEnumPlayer())
+	call SetPlayerTechMaxAllowedSwap($52303044,999,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($52303047,0,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($52303048,0,GetEnumPlayer())
 	call SetPlayerTechMaxAllowedSwap($52393937,0,GetEnumPlayer())
@@ -7194,7 +7194,7 @@ endfunction
 
 function I0X takes nothing returns nothing
 	call SetPlayerTechMaxAllowedSwap($68304442,0,GetTriggerPlayer())
-	call SetPlayerTechMaxAllowedSwap($52303044,0,GetTriggerPlayer())
+	//call SetPlayerTechMaxAllowedSwap($52303044,0,GetTriggerPlayer())
 	call SetPlayerTechMaxAllowedSwap($52303047,0,GetTriggerPlayer())
 	call SetPlayerTechMaxAllowedSwap($52303049,0,GetTriggerPlayer())
 	call DisplayTimedTextToForce(I3E(Condition(ref_function_Q4E)),12.,"|cff33AA33Tip:|r Change builder is disabled after you built Altar of Heroes")
@@ -10752,7 +10752,6 @@ endfunction
 
 function InitModeAP takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	call SetPlayerTechMaxAllowedSwap($52303044,6,localPlayer)
 	set primaryModeSelected=true
 	set modeAP=true
 endfunction
