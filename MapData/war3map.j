@@ -246,7 +246,7 @@ globals
 	integer array TB
 	integer array UB
 	integer array WB
-	boolean EC=false
+	boolean primaryModeSelected=false
 	integer array OC
 	texttag BC=null
 	texttag CC=null
@@ -2577,7 +2577,7 @@ function BCX takes nothing returns nothing
 		call CreateNUnitsAtLoc(1,$75303144,GetEnumPlayer(),CX,bj_UNIT_FACING)
 		call GroupAddUnit(MC,bj_lastCreatedUnit)
 	endif
-	if EC then
+	if primaryModeSelected then
 		call CreateNUnitsAtLoc(1,$75303053,GetEnumPlayer(),CX,bj_UNIT_FACING)
 		call GroupAddUnit(MC,bj_lastCreatedUnit)
 		call CreateNUnitsAtLoc(1,$75303052,GetEnumPlayer(),CX,bj_UNIT_FACING)
@@ -2811,7 +2811,7 @@ function BQX takes nothing returns nothing
 endfunction
 
 function BRX takes nothing returns boolean
-	return EC
+	return primaryModeSelected
 endfunction
 
 function BSX takes nothing returns nothing
@@ -7516,7 +7516,7 @@ function ISX takes nothing returns nothing
 endfunction
 
 function RQX takes nothing returns boolean
-	return EC==false
+	return primaryModeSelected==false
 endfunction
 
 function ITX takes nothing returns nothing
@@ -10753,7 +10753,7 @@ endfunction
 function InitModeAP takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
 	call SetPlayerTechMaxAllowedSwap($52303044,6,localPlayer)
-	set EC=true
+	set primaryModeSelected=true
 	set modeAP=true
 endfunction
 
@@ -10775,7 +10775,7 @@ endfunction
 
 function InitModePH takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	set EC=true
+	set primaryModeSelected=true
 	set modePH=true
 	call A_V(1.)
 	call ForForce(ZI,ref_function_RGX)
@@ -10821,7 +10821,7 @@ endfunction
 
 function InitModePR takes nothing returns nothing
 	call DisableTrigger(GetTriggeringTrigger())
-	set EC=true
+	set primaryModeSelected=true
 	set modePR=true
 	call A_V(1.)
 	set OO[1]=11
