@@ -2273,6 +2273,15 @@ endfunction
 function B1X takes nothing returns nothing
 	local integer ii=0
 	local integer B2X=0
+	
+	// Check if "king-owner" left -> return control to king
+	if GetOwningPlayer(kingWest)==GetTriggerPlayer() then
+		call SetUnitOwner(kingWest,Player(8),true)
+	
+	elseif GetOwningPlayer(kingEast)==GetTriggerPlayer() then
+		call SetUnitOwner(kingEast,Player(9),true)
+	endif
+	
 	call DisplayTimedTextToForce(bj_FORCE_ALL_PLAYERS,15.,PlayerColor[1+GetPlayerId(GetTriggerPlayer())]+GetPlayerName(GetTriggerPlayer())+"|r has left the game.")
 	call MultiboardSetItemValueBJ(JR,1,DC[1+GetPlayerId(GetTriggerPlayer())],"|cff888888"+GetPlayerName(Player(-1+1+GetPlayerId(GetTriggerPlayer())))+"|r")
 	call ForceRemovePlayer(ZI,GetTriggerPlayer())
@@ -9228,8 +9237,7 @@ endfunction
 
 function ODX takes nothing returns nothing
 	set WA=5
-	call SetUnitOwner(kingEast,GetTriggerPlayer(),false)
-	call SetUnitColor(kingEast,GetPlayerColor(GetTriggerPlayer()))
+	call SetUnitOwner(kingEast,GetTriggerPlayer(),true)
 endfunction
 
 function Q8E takes nothing returns boolean
@@ -9307,8 +9315,7 @@ endfunction
 
 function ONX takes nothing returns nothing
 	set UA=5
-	call SetUnitOwner(kingWest,GetTriggerPlayer(),false)
-	call SetUnitColor(kingWest,GetPlayerColor(GetTriggerPlayer()))
+	call SetUnitOwner(kingWest,GetTriggerPlayer(),true)
 endfunction
 
 function OOX takes nothing returns boolean
