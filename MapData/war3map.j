@@ -1565,7 +1565,7 @@ function ShowKingInfo takes nothing returns nothing
 			if GetPlayerTechCount(Player(kingNumber),$52393939,true)!=GetPlayerTechMaxAllowedSwap($52393939,Player(kingNumber)) then
 				set text=text+"\n\n|c000000FFDark Pr:|r   "+I2S(GetPlayerTechCount(Player(kingNumber),$52393939,true))+"/"+I2S(GetPlayerTechMaxAllowedSwap($52393939,Player(kingNumber)))
 			else
-				set text=text+"\n\n|c000000FFDark Pr:  Active|r"
+				set text=text+"\n\n|c000000FFDark Pr:   Active|r"
 			endif
 		endif
 		
