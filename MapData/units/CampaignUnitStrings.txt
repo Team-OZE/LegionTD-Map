@@ -1986,7 +1986,7 @@ Name=Violet
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Violet
-Ubertip="|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000850|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n"
 
 [h046]
 Art=ReplaceableTextures\CommandButtons\BTNRockGolem.blp
@@ -3557,7 +3557,7 @@ Name=Highborne
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Highborne
-Ubertip="|cffccccccDamage: |r|cffff800090-101|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001270|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Storm Geyser|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800090-101|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001270|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Sphere, Storm Geyser|r|n"
 
 [h07U]
 Art=ReplaceableTextures\CommandButtons\BTNSnapDragon.blp
@@ -3586,7 +3586,7 @@ Name=Trident
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Trident
-Ubertip="|cffccccccDamage: |r|cffff8000140-160|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Concussion,Submerge|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000140-160|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Concussion, Submerge|r|n"
 
 [h07W]
 Art=ReplaceableTextures\CommandButtons\BTNSeaGiantGreen.blp
@@ -3617,7 +3617,7 @@ Name=Hydra
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Hydra
-Ubertip="|cffccccccDamage: |r|cffff8000178-205|r|cffcccccc|nSpeed: |r|cffff80000.89|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Attack, Mitosis|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000178-205|r|cffcccccc|nSpeed: |r|cffff80000.89|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Fire Ball, Mitosis|r|n"
 
 [h07Y]
 Art=ReplaceableTextures\CommandButtons\BTNGreenHydra.blp
@@ -5851,7 +5851,7 @@ Name=The Butcher
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to The Butcher
-Ubertip="|cffccccccDamage: |r|cffff8000237-275|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Plague Cloud, Life Steal,Undead's Armor|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000237-275|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Plague Cloud, Life Steal, Undead's Armor|r|n"
 
 [h0CZ]
 Art=ReplaceableTextures\CommandButtons\BTNAbomination.blp

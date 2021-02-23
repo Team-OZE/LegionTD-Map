@@ -851,7 +851,7 @@ Tip=Shrapnel
 Art=ReplaceableTextures\CommandButtons\BTNHumanArtilleryUpOne.blp
 Name=Shrapnel
 Tip=Shrapnel
-Ubertip=Bombs have a 40% chance of releasing shrapnel and dealing 50 damage to up to 3 nearby enemies.
+Ubertip="Every time this unit attacks, it has a 40% chance of releasing bomb shrapnel which will deal 50 damage to 3 nearby enemies."
 
 [A03X]
 Animnames=spell,slam
@@ -1120,7 +1120,7 @@ Name=Boss Unit
 Art=ReplaceableTextures\CommandButtons\BTNWeb.blp
 Name=Sticky Webs
 Tip=Sticky Webs
-Ubertip=Attacks slow enemies' movement by 40% and attack by 30% for 6 seconds. Air units only.
+Ubertip="Attacks slow enemies' movementspeed by 40% and attackspeed by 30% for 6 seconds. Air units only."
 
 [A050]
 Art=ReplaceableTextures\CommandButtons\BTNBandit.blp
@@ -2352,7 +2352,7 @@ Ubertip="Increases the attack rate of a target unit by 30%, but drains 5 hit poi
 Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
 Name=Finishing Blow!
 Tip=Finishing Blow!
-Ubertip=gives you 5% chance to finish off enemy with a single blow! (Does not work on bosses)
+Ubertip="This unit has a 5% chance to do 60 times normal damage on an attack"
 
 [A0A8]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
@@ -5226,7 +5226,7 @@ MissileHoming=1
 Missilespeed=1200
 Name=Triple Fire Ball
 Tip=Triple Fire Ball
-Ubertip=Every shot hits 2 additional enemies for 40 damage.
+Ubertip="Every time this unit attacks, it hits 3 additional enemies with fireballs for 40 damage each."
 
 [A77K]
 Animnames=slam

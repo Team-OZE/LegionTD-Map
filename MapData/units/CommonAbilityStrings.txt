@@ -37,7 +37,7 @@ TargetArt=Abilities\Weapons\PoisonSting\PoisonStingTarget.mdl
 [B005]
 Buffart=ReplaceableTextures\CommandButtons\BTNSpellSteal.blp
 Bufftip=Adrenaline Rush
-Buffubertip=This unit has increased attack speed.
+Buffubertip=This unit has increased attack speed and movement speed.
 Spelldetail=2
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
