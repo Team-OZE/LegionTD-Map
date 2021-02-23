@@ -3448,7 +3448,7 @@ Name=Defiler
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Defiler - [|cffFFcc00G|r]
-Ubertip="|cffccccccDamage: |r|cffff800085-89|r|cffcccccc|nSpeed: |r|cffff80000.97|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Biotoxin|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800085-89|r|cffcccccc|nSpeed: |r|cffff80000.97|r|cffcccccc|nRange: |r|cffff800180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Biotoxin|r|n"
 
 [h07N]
 Art=ReplaceableTextures\CommandButtons\BTNMurlocFlesheater.blp
