@@ -1,5 +1,3 @@
-[HERO]
-Name=герой
 [Misc]
 BoneDecayTime=8
 BulletDeathTime=8

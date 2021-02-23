@@ -26,7 +26,7 @@ Requires5=u00R
 Requires6=u00R
 Requires7=u00R
 Requirescount=8
-Tip=Research Advanced Lumberjack Training - [|cffffcc00Q|r] 1/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 2/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 3/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 4/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 5/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 6/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 7/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 8/16
+Tip=Research Advanced Lumberjack Training - 1/16,Research Advanced Lumberjack Training - 2/16,Research Advanced Lumberjack Training - 3/16,Research Advanced Lumberjack Training - 4/16,Research Advanced Lumberjack Training - 5/16,Research Advanced Lumberjack Training - 6/16,Research Advanced Lumberjack Training - 7/16,Research Advanced Lumberjack Training - 8/16
 Ubertip=Increases the amount of lumber that Wisp harvests by 1.
 
 [R004]
@@ -90,7 +90,7 @@ Art=ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp
 Buttonpos=3
 Name=Change Builder
 Tip=Change Builder 1/5,Change Builder 2/5,Change Builder 3/5,Change Builder 4/5,Change Builder 5/5
-Ubertip=you can still use change builder 5 times.,you can still use change builder 4 times.,you can still use change builder 3 times.,you can still use change builder 2 times.,you can only use change builder for 1 more time.
+Ubertip=You can still use change builder 5 times.,You can still use change builder 4 times.,You can still use change builder 3 times.,You can still use change builder 2 times.,You can only use change builder for 1 more time.
 
 [R00E]
 Art=ReplaceableTextures\CommandButtons\BTNAnimalWarTraining.blp
@@ -109,13 +109,13 @@ Art=ReplaceableTextures\CommandButtons\BTNSelectHeroOn.blp
 Buttonpos=3
 Name=Change Tower
 Tip=Change Tower 1/6,Change Tower 2/6,Change Tower 3/6,Change Tower 4/6 ,Change Tower 5/6 ,Change Tower 6/6 
-Ubertip="Get Random Towers.|n|nyou can still use random 6 time, |n|n(next random cost 50 gold & 50 lumber)|n","Get Random Towers.|n|nyou can still use change tower 5 time, |n|n(next random cost 100 gold & 100 lumber)","Get Random Towers.|n|nyou can still use random 4 time, |n|n(next random cost 150 gold & 150 lumber)","Get Random Towers. |n|nyou can still use random 3 time, |n|n(next random cost 200 gold & 200 lumber)","Get Random Towers. |n|nyou can still use random 2 time, |n|n(next random cost 250 gold & 250 lumber)",Get Random Towers. |n|n(this is your final random)
+Ubertip="Get Random Towers.|nYou can still use reroll 6 times. |n(Next random cost 50 gold & 50 lumber)|n","Get Random Towers.|nYou can still use reroll 5 times. |n(Next random cost 100 gold & 100 lumber)","Get Random Towers.|nYou can still use reroll 4 times. |n(Next random cost 150 gold & 150 lumber)","Get Random Towers. |nYou can still use reroll 3 times. |n(Next random cost 200 gold & 200 lumber)","Get Random Towers. |nYou can still use reroll 2 times. |n(Next random cost 250 gold & 250 lumber)",Get Random Towers. |n(This is your final reroll)
 
 [R00H]
 Art=ReplaceableTextures\CommandButtons\BTNHumanLumberUpgrade1.blp
 Hotkey=Q,Q,Q,Q,Q,Q,Q,Q
 Name=Advanced Lumberjack Training 9,Advanced Lumberjack Training 10,Advanced Lumberjack Training 11,Advanced Lumberjack Training 12,Advanced Lumberjack Training 13,Advanced Lumberjack Training 14,Advanced Lumberjack Training 15,Advanced Lumberjack Training 16
-Tip=Research Advanced Lumberjack Training - [|cffffcc00Q|r] 9/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 10/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 11/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 12/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 13/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 14/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 15/16,Research Advanced Lumberjack Training - [|cffffcc00Q|r] 16/16
+Tip=Research Advanced Lumberjack Training - 9/16,Research Advanced Lumberjack Training - 10/16,Research Advanced Lumberjack Training - 11/16,Research Advanced Lumberjack Training - 12/16,Research Advanced Lumberjack Training - 13/16,Research Advanced Lumberjack Training - 14/16,Research Advanced Lumberjack Training - 15/16,Research Advanced Lumberjack Training - 16/16
 Ubertip=Increases the amount of lumber that Wisp harvests by 1.
 
 [R00I]

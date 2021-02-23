@@ -37,7 +37,7 @@ TargetArt=Abilities\Weapons\PoisonSting\PoisonStingTarget.mdl
 [B005]
 Buffart=ReplaceableTextures\CommandButtons\BTNSpellSteal.blp
 Bufftip=Adrenaline Rush
-Buffubertip=This unit has increased attack speed.
+Buffubertip=This unit has increased attack speed and movement speed.
 Spelldetail=2
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
@@ -45,7 +45,7 @@ Targetattach=origin
 [B006]
 Buffart=ReplaceableTextures\CommandButtons\BTNBattleRoar.blp
 Bufftip=Battle Cry
-Buffubertip=This unit damage has been increased.
+Buffubertip=The damage and armor of this unit has been increased.
 Spelldetail=1
 TargetArt=Abilities\Spells\NightElf\BattleRoar\RoarTarget.mdl
 Targetattach=overhead
@@ -695,7 +695,7 @@ TargetArt=Objects\Spawnmodels\Undead\UndeadLargeDeathExplode\UndeadLargeDeathExp
 [B03K]
 Buffart=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Bufftip=Frost Aura
-Buffubertip=This unit have Frost Aura
+Buffubertip=This unit has Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 
@@ -947,7 +947,7 @@ Targetattachcount=1
 [B976]
 Buffart=ReplaceableTextures\CommandButtons\BTNThornShield.blp
 Bufftip=Counter Attack
-Buffubertip=Melee units that attack the champion take 40% of the damage too
+Buffubertip=Melee units that attack the champion take 20% of the damage too
 SpecialArt=Abilities\Spells\NightElf\ThornsAura\ThornsAuraDamage.mdl
 Specialattach=head
 Spelldetail=2
@@ -1109,8 +1109,8 @@ EffectArt=Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl
 
 [BHab]
 Buffart=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
-Bufftip=Arcane Aura
-Buffubertip=This warrior is affected by the Arcane Aura.. His mana regenerates at an increased rate.
+Bufftip=Brilliance Aura
+Buffubertip=This warrior is affected by the Brilliance Aura. His mana regenerates at an increased rate.
 Spelldetail=2
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
@@ -1275,8 +1275,8 @@ Targetattach=origin
 
 [BUav]
 Buffart=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
-Bufftip=Vampirism
-Buffubertip="This warrior is affected by the spell''Vampirism''. He can restore his health, attacking opponents."
+Bufftip=Vampiric Aura
+Buffubertip="Nearby friendly melee units gain some of their attack damage back in HP when they hit enemy units."
 SpecialArt=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
 Specialattach=origin
 Spelldetail=2

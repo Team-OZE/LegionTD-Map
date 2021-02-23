@@ -51,14 +51,14 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
 Name=Club Smash
 Order=bash
 Tip=Club Smash
-Ubertip=Each attack has a 25% chance to deal 20 bonus damage and stun for 1.5 seconds. Duration is reduced to 0.15sec on bosses.
+Ubertip=Each attack has a 25% chance to deal 20 bonus damage and stun for 1.5 seconds. Duration is reduced to 0.15 sec on bosses.
 
 [A00E]
 Art=ReplaceableTextures\CommandButtons\BTNGrabTree.blp
 Name=Knock Out
 Order=bash
 Tip=Knock Out
-Ubertip="Each attack has a 27% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0,35 sec."
+Ubertip="Each attack has a 33% chance to deal 145 bonus damage and stun for 3 seconds. Stun on bosses 0.35 sec."
 
 [A00F]
 Art=ReplaceableTextures\PassiveButtons\PASBTNPoisonSting.blp
@@ -117,7 +117,7 @@ Name=Forbidden Fruit
 TargetArt=Abilities\Spells\Undead\Cripple\CrippleTarget.mdl
 Targetattach=origin
 Tip=Forbidden Fruit
-Ubertip=Returns 30% of melee damage received back to attackers. Deals 270damage to nearby enemies when it dies(limited to 30 targets).
+Ubertip=Returns 30% of melee damage received back to attackers. Deals 270 damage to nearby enemies when it dies (max. 30 targets)
 
 [A00O]
 Art=ReplaceableTextures\CommandButtons\BTNBloodKey.blp
@@ -125,7 +125,7 @@ Name=Chrono Trigger
 TargetArt=Abilities\Spells\Undead\UnholyAura\UnholyAura.mdl
 Targetattach=origin
 Tip=Chrono Trigger
-Ubertip=Slows nearby enemies' movement by 50%.
+Ubertip=Slows nearby enemies' movement by 50%.|n(Does not stack with Frost Aura)
 
 [A00P]
 Art=,
@@ -156,7 +156,7 @@ Ubertip="30% chance to reduce damage taken by 50 every time this unit is attacke
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
 Name=Advanced Telescope
 Tip=Advanced Telescope
-Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. (do not stack with Telescope)
+Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks.|n(Does not stack with Telescope)
 
 [A00W]
 Animnames=attack
@@ -202,7 +202,7 @@ Researchhotkey=W
 Researchtip="Spirit of Water, [|cffffcc00Level%d|r] (|cffffcc00W|r)"
 Researchubertip="Summons a water elemental to attack the Archmage's enemies. |nLasts 60 seconds. |n|n|cffffcc00Attacks land and air units.|r |n|n|cffffcc00Level 1|r - 450 hit points, 21 - 29 damage. |n|cffffcc00Level 2|r - 675 hit points, 31 - 39 damage. |n|cffffcc00Level 3|r - 900 hit points, 41 - 49 damage."
 Tip=Conjure Fanatic
-Ubertip=Conjures a fanatic to attack its master's enemies. Lasts 60 seconds.(40 seconds cooldown)
+Ubertip=Conjures a fanatic to attack its master's enemies. Lasts 60 seconds. (40 seconds cooldown)
 
 [A010]
 Art=ReplaceableTextures\CommandButtons\BTNUndeadShrine.blp
@@ -264,7 +264,7 @@ Researchhotkey=W
 Researchtip="Spirit of Water, [|cffffcc00Level%d|r] (|cffffcc00W|r)"
 Researchubertip="Summons a water elemental to attack the Archmage's enemies. |nLasts 60 seconds. |n|n|cffffcc00Attacks land and air units.|r |n|n|cffffcc00Level 1|r - 450 hit points, 21 - 29 damage. |n|cffffcc00Level 2|r - 675 hit points, 31 - 39 damage. |n|cffffcc00Level 3|r - 900 hit points, 41 - 49 damage."
 Tip=Diablo
-Ubertip=Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds.(40 seconds cooldown)
+Ubertip=Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (40 seconds cooldown)
 
 [A017]
 Art=,
@@ -283,7 +283,7 @@ Name=Water of Life
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
 Researchhotkey=F
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Water of Life
 
@@ -377,7 +377,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNFrost.blp
 Missileart=Abilities\Weapons\ZigguratFrostMissile\ZigguratFrostMissile.mdl
 Name=Cold Attack
 Tip=Cold Attack
-Ubertip=Adds a cold effect to this unit's attacks that slows enemy units' movement speed for 4 seconds. Duration vs King 1.4sec
+Ubertip=Adds a cold effect to this unit's attacks that slows enemy units' movement speed for 4 seconds. Duration vs King 1.4 sec
 
 [A01N]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
@@ -478,7 +478,7 @@ Missilespeed=1200
 Name=Sacred Blessing
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Sacred Blessing
 
@@ -506,7 +506,7 @@ Missilespeed=1200
 Name=Water of Life
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Water of Life
 
@@ -521,7 +521,7 @@ Targetattach=hand,left
 Targetattach1=hand,right
 Targetattachcount=2
 Tip=Faerie Fire
-Ubertip=Reduce enemy's armor by 5. last 5 second
+Ubertip=Reduce enemy's armor by 5 (lasts 5 seconds)
 
 [A02E]
 Animnames=spell,slam
@@ -535,7 +535,7 @@ Missilespeed=1200
 Name=Forbidden Fruit
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Forbidden Fruit
 
@@ -603,13 +603,13 @@ Ubertip="Conjures a fanatic to attack its master's enemies. Lasts 60 seconds. (6
 Art=ReplaceableTextures\CommandButtons\BTNKelThuzad.blp
 Name=Diablo
 Tip=Diablo
-Ubertip="Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (60 second cooldown)|n|n(51-54 Damage, 1 Speed, 450HP, Piercing/Light). Summons Imps (they have a skill: Immolation)"
+Ubertip="Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (60 second cooldown)|n|n(51-54 Damage, 1 Speed, 700HP, Chaos/Unarmored). Summons Imps (they have a skill: Immolation)"
 
 [A02P]
 Art=ReplaceableTextures\CommandButtons\BTNInfernal.blp
 Name=Invoke Inferno
 Tip=Invoke Inferno
-Ubertip="Invokes an infernal to wreak havok among enemies. Lasts 60 seconds. (60 second cooldown)|n|n(55-66 Damage, 1.35 Speed, 900HP, Chaos/Fortified)|n|nHave a skill: Immolation"
+Ubertip="Invokes an infernal to wreak havok among enemies. Lasts 60 seconds. (60 second cooldown)|n|n(55-66 Damage, 1.35 Speed, 900HP, Chaos/Fortified)|n|nHas a skill: Immolation"
 
 [A02T]
 Art=,
@@ -644,7 +644,7 @@ Unubertip="|cffc3dbffRight click, to deactivate auto-cast.|r"
 Art=ReplaceableTextures\CommandButtons\BTNGuldanSkull.blp
 Name=Killing Spree
 Tip=Killing Spree
-Ubertip="Has a 30% chance to increase damage by 33% for 4 seconds with each attack. If the attack kills a unit, chance is increased to 100%.|n|nDoes not stack with itself."
+Ubertip="Has a 30% chance to increase damage by 33% for 4 seconds with each attack. If the attack kills a unit, chance is increased to 100%.|n(Does not stack with itself)"
 
 [A02Y]
 Art=ReplaceableTextures\CommandButtons\BTNUndeadShrine.blp
@@ -754,7 +754,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNBash.blp
 Name=Swipe
 Order=bash
 Tip=Swipe
-Ubertip=Each attack has a 17% chance to deal 180 bonus damage and stun for 1(0.5) seconds.
+Ubertip=Each attack has a 17% chance to deal 180 bonus damage and stun for 1 (0.5) seconds.
 
 [A03E]
 Art=ReplaceableTextures\CommandButtons\BTNTentacle.blp
@@ -843,7 +843,7 @@ Missilespeed=1200
 Name=Shrapnel
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Shrapnel
 
@@ -851,7 +851,7 @@ Tip=Shrapnel
 Art=ReplaceableTextures\CommandButtons\BTNHumanArtilleryUpOne.blp
 Name=Shrapnel
 Tip=Shrapnel
-Ubertip=Bombs have a 40% chance of releasing shrapnel and dealing 50 damage to up to 3 nearby enemies.
+Ubertip="Every time this unit attacks, it has a 40% chance of releasing bomb shrapnel which will deal 50 damage to 3 nearby enemies."
 
 [A03X]
 Animnames=spell,slam
@@ -864,7 +864,7 @@ Missilespeed=1200
 Name=Aftershock
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Aftershock
 
@@ -935,7 +935,7 @@ Missilespeed=1200
 Name=Silent Scream
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Silent Scream
 Ubertip=Deals 30 damage to up to 3 units around the Phantom.
@@ -963,7 +963,7 @@ Missilespeed=1200
 Name=Cacophony
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Cacophony
 Ubertip=Deals 80 damage to up to 4 units around the Hellghost.
@@ -985,7 +985,7 @@ Unubertip="|cffc3dbffRight click, to deactivate auto-cast.|r"
 Art=ReplaceableTextures\CommandButtons\BTNCorpseExplode.blp
 Name=Insanity
 Tip=Insanity
-Ubertip="Has a 25% chance to gain the Insanity buff for 7 seconds with each attack. Insanity increases damage by 35%, armor by 25, |nDoes not stack with itself."
+Ubertip="Has a 25% chance to gain the Insanity buff for 7 seconds with each attack. Insanity increases damage by 35%, armor by 25, |n(Does not stack with itself)"
 
 [A04D]
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
@@ -1102,7 +1102,7 @@ Missilespeed=1200
 Name=Catastrophe
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Catastrophe
 
@@ -1120,7 +1120,7 @@ Name=Boss Unit
 Art=ReplaceableTextures\CommandButtons\BTNWeb.blp
 Name=Sticky Webs
 Tip=Sticky Webs
-Ubertip=Attacks slow enemies' movement by 20% and attack by 15% for 6 seconds. Air units only.
+Ubertip="Attacks slow enemies' movementspeed by 40% and attackspeed by 30% for 6 seconds. Air units only."
 
 [A050]
 Art=ReplaceableTextures\CommandButtons\BTNBandit.blp
@@ -1131,8 +1131,8 @@ Hotkey=F
 Name=King's Taunt!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIco\CrownOfCmndTarget.mdl
-Tip=King's Taunt - [|cffFFcc00F|r]
-Ubertip=Cast this ability to taunt wave creeps to attack King or Player units to attack in Arena.|nCooldown: 10sec|n
+Tip=King's Taunt
+Ubertip=Cast this ability to taunt stuck creeps or use it to speed them up or to divert them.|nCooldown: 10 seconds
 
 [A051]
 Art=ReplaceableTextures\CommandButtons\BTNSpellBookBLS.blp
@@ -1161,7 +1161,7 @@ Art=ReplaceableTextures\CommandButtons\BTNBansheeMaster.blp
 Buttonpos=1
 Name=Slave Trade
 Tip=Slave Trade
-Ubertip="When the round ends, you will receive 3 gold for each surviving servant and 6 gold for each surviving slavemaster.|n|nHowever, if all slavemasters are dead, no gold is received.|n|nDoes not stack."
+Ubertip="When the round ends, you will receive 3 gold for each surviving servant and 6 gold for each surviving slavemaster.|n|nHowever, if all slavemasters are dead, no gold is received.|n(Does not stack)"
 
 [A056]
 Animnames=spell,entangle
@@ -1172,13 +1172,13 @@ Missilespeed=1500
 Name=Throw Net
 Order=ensnare
 Tip=Throw Net
-Ubertip="Traps an enemy, binding it to the ground so that it cannot move. If cast on an air unit, it will pull the unit into melee range.|n|nLasts 7 seconds."
+Ubertip="Traps an enemy, binding it to the ground so that it cannot move. If cast on an air unit, it will pull the unit into melee range.|nLasts 7 seconds."
 
 [A057]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
 Name=Fury
 Tip=Fury
-Ubertip=Has a 20% chance to increase attack speed by 60% for 4 seconds with each attack.|n|nDoes not stack with itself.
+Ubertip=Has a 20% chance to increase attack speed by 60% for 4 seconds with each attack.|n(Does not stack with itself)
 
 [A058]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
@@ -1321,7 +1321,7 @@ Name=Marked Target
 Art=ReplaceableTextures\CommandButtons\BTNSpy.blp
 Name=Mark Target
 Tip=Mark Target
-Ubertip="Each attack marks an enemy target, causing it to take 25% more damage from piercing attacks.|n|nDoes not stack."
+Ubertip="Each attack marks an enemy target, causing it to take 25% more damage from piercing attacks.|n(Does not stack)"
 
 [A060]
 Art=ReplaceableTextures\CommandButtons\BTNScout.blp
@@ -1342,7 +1342,7 @@ Missilespeed=9999
 Name=Guardian Spirit
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Guardian Spirit
 Ubertip="The Warden hurls a flurry of knives, damaging nearby enemies. Each knife does 125 damage."
@@ -1355,7 +1355,7 @@ Name=Guardian Spirit
 Art=ReplaceableTextures\CommandButtons\BTNBloodKey.blp
 Name=Chrono Trigger
 Tip=Chrono Trigger
-Ubertip=Slows nearby enemies' movement by 50%.
+Ubertip=Slows nearby enemies' movement by 50%.|n(Does not stack with Frost Aura)
 
 [A065]
 Art=,
@@ -1396,7 +1396,7 @@ Ubertip=OLD Deals 10damage per second and disables a target for 8seconds. Durati
 Art=ReplaceableTextures\CommandButtons\BTNEntanglingRoots.blp
 Name=Entangle
 Tip=Entangle
-Ubertip="Entangles a nearby enemy unit, immobilizing it and dealing 10 damage per second. Lasts 8 seconds. Duration is reduced to 4seconds for boss units"
+Ubertip="Entangles a nearby enemy unit, immobilizing it and dealing 10 damage per second. Lasts 8 seconds. Duration is reduced to 4 seconds for boss units"
 
 [A06F]
 Art=,
@@ -1537,7 +1537,7 @@ Tip=Storm Geyser
 Art=ReplaceableTextures\CommandButtons\BTNMonsoon.blp
 Name=Storm Geyser
 Tip=Storm Geyser
-Ubertip="Summons a storm geyser from beneath the ground, healing nearby friendly units 10 hp/sec, and shocking up to 3 nearby enemies for 40 damage every 7 seconds. Lasts 15 seconds.|n|nHealing aura does not stack."
+Ubertip="Summons a storm geyser from beneath the ground, healing nearby friendly units 10 hp/sec, and shocking up to 3 nearby enemies for 40 damage every 7 seconds. Lasts 15 seconds.|nHealing aura does not stack"
 
 [A06X]
 Art=ReplaceableTextures\CommandButtons\BTNNagaBurrow.blp
@@ -1571,7 +1571,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNThickFur.blp
 Name=Concussion
 Order=bash
 Tip=Concussion
-Ubertip=Each attack has a 25% chance to deal 250 damage and stun for 3 seconds. Stun is reduced greatly on bosses(1sec).
+Ubertip=Each attack has a 25% chance to deal 250 damage and stun for 3 seconds. Stun is reduced greatly on bosses (1 sec).
 
 [A072]
 Art=ReplaceableTextures\CommandButtons\BTNSpiritLink.blp
@@ -1660,13 +1660,13 @@ EffectArt=Abilities\Spells\NightElf\FanOfKnives\FanOfKnivesCaster.mdl
 Missilearc=0.1
 Missileart=Abilities\Spells\NightElf\FanOfKnives\FanOfKnivesMissile.mdl
 Missilespeed=700
-Name=Fan throw
+Name=Fan of Knives
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
-Tip="Fan throw, [|cffffcc00Level1|r] (|cffffcc00F|r)"
-Ubertip="Hurls a flurry of knives, damaging nearby enemies. Each knife does 100 damage. max 10 target only"
+Tip=Fan of Knives
+Ubertip="Hurls a flurry of knives, damaging nearby enemies. Each knife does 100 damage (Max. 10 targets)"
 
 [A07I]
 Animnames=attack
@@ -1828,8 +1828,8 @@ Order=holybolt
 ResearchArt=ReplaceableTextures\CommandButtons\BTNHolyBolt.blp
 Researchhotkey=S
 TargetArt=Abilities\Spells\Human\HolyBolt\HolyBoltSpecialArt.mdl
-Tip=Holy Light [|cffFFcc00S|r]
-Ubertip="A holy light that can heal a friendly King for 50,000hp. (Only 1 charge)"
+Tip=Holy Light
+Ubertip="A holy light that can heal a friendly King for 50,000 HP. (Only 1 charge)"
 
 [A085]
 Art=ReplaceableTextures\CommandButtons\BTNVolcano.blp
@@ -1976,7 +1976,7 @@ Ubertip=An aura that gives nearby friendly units a 11% bonus damage to their ran
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
 Name=Advanced Telescope
 Tip=Advanced Telescope
-Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks. (do not stack with Telescope)
+Ubertip=An aura that gives nearby friendly units a 24% bonus damage to their ranged attacks.|n(Does not stack with Telescope)
 
 [A08L]
 Art=,
@@ -2086,7 +2086,7 @@ Name=+12 damage
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=This aura will slows nearby enemies' movement speed.
+Ubertip=This aura will slow nearby enemies' movement speed.|n(Does not stack with Chrono Trigger)
 
 [A095]
 Art=ReplaceableTextures\CommandButtons\BTNBreathOfFrost.blp
@@ -2110,7 +2110,7 @@ Name=Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 Tip=Frost Aura
-Ubertip=Slows nearby enemie's movement speed by 40%.
+Ubertip=Slows nearby enemie's movement speed by 40%.|n(Does not stack with Chrono Trigger)
 
 [A098]
 Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
@@ -2123,13 +2123,13 @@ Researchhotkey=N
 Researchtip="Ice star, [|cffffcc00Level%d|r] (|cffffcc00N|r)"
 Researchubertip="Blasts enemy units around a target enemy unit with a wave of damaging frost that slows movement and attack rate. |n|n|cffffcc00Level 1|r - 100 target damage, 50 nova damage. |n|cffffcc00Level 2|r - 100 target damage, 100 nova damage. |n|cffffcc00Level 3|r - 100 target damage, 150 nova damage."
 Tip=Frost Nova
-Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 10 nova damage."
+Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 20 nova damage."
 
 [A099]
 Art=ReplaceableTextures\CommandButtons\BTNGlacier.blp
 Name=Frost Nova
 Tip=Frost Nova
-Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 10 nova damage."
+Ubertip="Blasts enemy units with a wave of frost that deals 120 damage to the target, and 20 nova damage."
 
 [A09A]
 Art=ReplaceableTextures\CommandButtons\BTNHowlOfTerror.blp
@@ -2158,8 +2158,8 @@ Targetattach2=origin
 Targetattach3=origin
 Targetattach4=origin
 Targetattach5=origin
-Tip=Get resources(|cffffcc00G|r)
-Ubertip=Gold mining and logging.
+Tip=Get resources
+Ubertip=Logging
 Unart=ReplaceableTextures\CommandButtons\BTNReturnGoods.blp
 UnButtonpos=3,1
 
@@ -2167,7 +2167,7 @@ UnButtonpos=3,1
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 40%.
+Ubertip=Slows nearby enemies' movement by 40%.|n(Does not stack with Chrono Trigger)
 
 [A09E]
 Art=ReplaceableTextures\CommandButtons\BTNChaosWarlord.blp
@@ -2175,7 +2175,7 @@ Buttonpos=,2
 Hotkey=Z
 Name=Hire PanicX
 Requires=u004
-Tip=Hire PanicX [|cffFFcc00Z|r]
+Tip=Hire PanicX
 Ubertip="PanicX is one of best Legion TD player. as a Beta tester for Legion TD, he knows how to kill creep with minimum cost.|n|cffFFcc00(Value=100)|r|n|cffCCCCCCDamage:50 ; Speed:1 ; HP:500|r|n|cffCCCCCCPiercing damage, Medium armor.|r|n"
 
 [A09F]
@@ -2183,7 +2183,7 @@ Art=ReplaceableTextures\CommandButtons\BTNHeroMountainKing.blp
 Buttonpos=1,2
 Hotkey=X
 Name=Hire LISK
-Tip=Hire LISK [|cffFFcc00X|r]
+Tip=Hire LISK
 Ubertip="LISK is the original Creator of LegionTD. He stop and move to Starcraft 2 after LegionTD version 1.5/1.6. |n|n|cffFFcc00 +1 income|r |cffFFcc00(Value=300)|r|n|cffCCCCCCDamage:150 ; Speed:1.35 ; HP:1300|r|n|cffCCCCCCSiege damage, Fortified armor.|r"
 
 [A09G]
@@ -2192,7 +2192,7 @@ Buttonpos=2,2
 Hotkey=C
 Name=Hire Egze
 Requires=u004
-Tip=Hire Egze [|cffFFcc00C|r]
+Tip=Hire Egze
 Ubertip="Egze is the Creator of LegionTD 2. He continue legionTD 2 after LISK quit. His map became very popular until cheat was found, and he can't update new version because he lost his PC (and all source files).|n|n|cffFFcc00 +3 income|r |cffFFcc00(Value=500)|r|n|cffCCCCCCDamage:200 ; Speed:0.85 ; HP:2300|r|n|cffCCCCCCNormal damage, Heavy armor.|r"
 
 [A09H]
@@ -2200,7 +2200,7 @@ Art=ReplaceableTextures\CommandButtons\BTNDoomGuard.blp
 Buttonpos=3,2
 Hotkey=V
 Name=Hire HuanAk
-Tip=Hire HuanAk [|cffFFcc00V|r]
+Tip=Hire HuanAk
 Ubertip="HuanAK, Creator of LegionTD 3, he decided to work on LegionTD map after Egze stopped working on version 2.7.|n|n|cffFFcc00 +5 income|r |cffFFcc00(Value=900)|r|n|cffCCCCCCDamage:300 ; Speed:0.75 ; HP:4000|r|n|cffCCCCCCChaos damage, Unarmored.|r"
 
 [A09J]
@@ -2209,13 +2209,13 @@ Name=Frost Aura
 TargetArt=Abilities\Spells\Other\GeneralAuraTarget\GeneralAuraTarget.mdl
 Targetattach=origin
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 60%.
+Ubertip=Slows nearby enemies' movement by 60%.|n(Does not stack with Chrono Trigger)
 
 [A09K]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfLightning.blp
 Name=Frost Aura
 Tip=Frost Aura
-Ubertip=Slows nearby enemies' movement by 60%.
+Ubertip=Slows nearby enemies' movement by 60%.|n(Does not stack with Chrono Trigger)
 
 [A09N]
 Art=ReplaceableTextures\CommandButtons\BTNTelescope.blp
@@ -2234,7 +2234,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDoomGuard.blp
 Buttonpos=3,2
 Hotkey=V
 Name=Hire HuanAk
-Tip=Hire HuanAk [|cffFFcc00V|r]
+Tip=Hire HuanAk
 Ubertip="HuanAK, Creator of LegionTD 3, he decided to work on LegionTD map after Egze stopped working on version 2.7.|n|n|cffFFcc00 +5 income|r |cffFFcc00(Value=900)|r|n|cffCCCCCCDamage:300 ; Speed:0.75 ; HP:4000|r|n|cffCCCCCCChaos damage, Unarmored.|r"
 
 [A09T]
@@ -2248,7 +2248,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNHeroBlademaster.blp
 Buttonpos=2,2
 Hotkey=C
 Name=Hire Egze
-Tip=Hire Egze [|cffFFcc00C|r]
+Tip=Hire Egze
 Ubertip="Egze is the Creator of LegionTD 2. he continue legionTD 2 after LISK quit. His map became very popular untill cheat was found, and he can't update new version because he lost his PC (and all source files).|n|n|cffFFcc00 +3 income|r |cffFFcc00(Value=500)|r|n|cffCCCCCCDamage:200 ; Speed:0.85 ; HP:2300|r|n|cffCCCCCCNormal damage, Heavy armor.|r"
 
 [A09V]
@@ -2256,7 +2256,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNChaosWarlord.blp
 Buttonpos=,2
 Hotkey=Z
 Name=Hire PanicX
-Tip=Hire PanicX [|cffFFcc00Z|r]
+Tip=Hire PanicX
 Ubertip="PanicX is one of best Legion TD player. as a Beta tester for Legion TD, he knows how to kill creep with minimum cost.|n |cffFFcc00(Value=100)|r|n|cffCCCCCCDamage:50 ; Speed:1 ; HP:500|r|n|cffCCCCCCPiercing damage, Medium armor.|r"
 
 [A09W]
@@ -2264,7 +2264,7 @@ Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNHeroMountainKing.blp
 Buttonpos=1,2
 Hotkey=X
 Name=Hire LISK
-Tip=Hire LISK [|cffFFcc00X|r]
+Tip=Hire LISK
 Ubertip="LISK is the original Creator of LegionTD. He stop and move to Starcraft 2 after LegionTD version 1.5/1.6. |n|n|cffFFcc00 +1 income|r |cffFFcc00(Value=300)|r|n|cffCCCCCCDamage:150 ; Speed:1.35 ; HP:1300|r|n|cffCCCCCCSiege damage, Fortified armor.|r"
 
 [A09X]
@@ -2284,7 +2284,7 @@ Ubertip="An aura that gives friendly nearby units a damage shield, which deals 4
 Art=ReplaceableTextures\CommandButtons\BTNStormBolt.blp
 Name=Storm Bolt
 Tip=Storm Bolt
-Ubertip="Throws a magical hammer at a target enemy unit, dealing 300 damage and stunning the target for 3 seconds.(1 second on boss)"
+Ubertip="Throws a magical hammer at a target enemy unit, dealing 300 damage and stunning the target for 3 seconds. (1 second on boss)"
 
 [A09Z]
 Art=ReplaceableTextures\PassiveButtons\PASBTNEnvenomedSpear.blp
@@ -2296,13 +2296,13 @@ Ubertip=Deals 30 poison damage per second. |nLasts 5 seconds. (Stackable)
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Greater Healing Aura
 Tip=Greater Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 12. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 12.|n(Does not stack)
 
 [A0A1]
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Healing Aura
 Tip=Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 6. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 6.|n(Does not stack)
 
 [A0A2]
 Art=ReplaceableTextures\CommandButtons\BTNTimberWolf.blp
@@ -2352,13 +2352,13 @@ Ubertip="Increases the attack rate of a target unit by 30%, but drains 5 hit poi
 Art=ReplaceableTextures\CommandButtons\BTNClawsOfAttack.blp
 Name=Finishing Blow!
 Tip=Finishing Blow!
-Ubertip=gives you 5% chance to finish off enemy with a single blow! (Does not work on bosses)
+Ubertip="This unit has a 5% chance to do 60 times normal damage on an attack"
 
 [A0A8]
 Art=ReplaceableTextures\CommandButtons\BTNBerserkForTrolls.blp
 Name=Berserk
 Tip=Berserk
-Ubertip="Increases attack speed by 40%, 60%, 80% respectively when health is below 80%, 60%, 40%. When HP drops below 20% it becomes damage immune and gains 100% ms for 1.5sec"
+Ubertip="Increases attack speed by 40%, 60%, 80% respectively when health is below 80%, 60%, 40%. When HP drops below 20% it becomes damage immune and gains 100% ms for 1.5 sec"
 
 [A0AB]
 Art=ReplaceableTextures\CommandButtons\BTNCripple.blp
@@ -2385,13 +2385,13 @@ Ubertip=10% Life Steal
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Greater Healing Aura
 Tip=Greater Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 12. . (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 12.|n(Does not stack with Healing Aura)
 
 [A0AG]
 Art=ReplaceableTextures\CommandButtons\BTNHealingWard.blp
 Name=Healing Aura
 Tip=Healing Aura
-Ubertip=Increases the life regeneration rate of nearby friendly units by 6. (do not stack)
+Ubertip=Increases the life regeneration rate of nearby friendly units by 6.|n(Does not stack with Greater Healing Aura)
 
 [A0AM]
 Art=ReplaceableTextures\CommandButtons\BTNBloodLustOn.blp
@@ -2438,7 +2438,7 @@ Ubertip="An aura that gives friendly nearby units a damage shield, which deals 8
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
 Name=Sickness Aura
 Tip=Sickness Aura
-Ubertip=Decreases the damage of nearby enemies by 5%.( Stackable with Despair Aura).
+Ubertip=Decreases the damage of nearby enemies by 5%. (Stackable with Despair Aura)
 
 [A0AS]
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
@@ -2474,7 +2474,7 @@ Name=Leaked 80-90%
 Art=ReplaceableTextures\CommandButtons\BTNFaerieFireOn.blp
 Name=Faerie Fire
 Tip=Faerie Fire
-Ubertip=Reduce enemy's armor by 4. last 5 second
+Ubertip=Reduce enemy's armor by 4 (lasts 5 seconds)
 
 [A0B2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCleavingAttack.blp
@@ -2557,7 +2557,7 @@ TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Targetattachcount=1
 Tip=Heartstopper Aura
-Ubertip=Every unit affected by Heartstopper aura loses (1% of MaxHP + 3) per second.
+Ubertip=Every unit affected by Heartstopper aura (550 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BF]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
@@ -2587,7 +2587,7 @@ Researchubertip="Increases the movement speed and life regeneration rate of near
 TargetArt=Abilities\Spells\Undead\RegenerationAura\ObsidianRegenAura.mdl
 Targetattach=origin
 Tip=Heartstopper Aura
-Ubertip=Enemy unit hit by Heartstopper Aura will lose (1% of MaxHP+3 Damage) per second.
+Ubertip=Every unit affected by Heartstopper aura (550 range) loses 0.5% of MaxHP + 3 HP per second.
 
 [A0BI]
 Art=ReplaceableTextures\CommandButtons\BTNOrbOfCorruption.blp
@@ -2613,11 +2613,11 @@ Targetattachcount=1
 [A0BL]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
-Ubertip="Increased attack power of friendly troops, nearby."
+Tip=Command Aura
+Ubertip="Increases nearby friendly units attack damage."
 
 [A0BM]
 Art=,
@@ -2694,9 +2694,9 @@ Missilearc=0.1
 Missileart=Abilities\Weapons\LordofFlameMissile\LordofFlameMissile.mdl
 MissileHoming=1
 Missilespeed=1000
-Name=Multishot ( Firelord)
+Name=Multishot
 Tip=Rockets
-Ubertip="A volley of missiles at flying enemies, nearby. Each rocket deals13 - 14 units. damage."
+Ubertip="A volley of missiles at flying enemies, nearby. Each rocket hits 13 - 14 units."
 
 [A0BZ]
 Art=,
@@ -3690,25 +3690,25 @@ Ubertip=An aura that gives friendly nearby units a 13% bonus damage to their ran
 [A0EA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
-Tip="Arcane Aura, [|cffffcc00Level1|r]"
+Tip="Brilliance Aura, [|cffffcc00Level1|r]"
 Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per second.
 
 [A0EB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3718,11 +3718,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0EC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3732,11 +3732,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0ED]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3746,11 +3746,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0EE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3760,11 +3760,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0EF]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3774,11 +3774,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EG]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3788,11 +3788,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EH]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3802,11 +3802,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EI]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3816,11 +3816,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EJ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3830,11 +3830,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per
 [A0EK]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3844,25 +3844,25 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 [A0EL]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
-Tip="Arcane Aura, [|cffffcc00Level1|r]"
+Tip="Brilliance Aura, [|cffffcc00Level1|r]"
 Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per second.
 
 [A0EM]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3872,11 +3872,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 1% of max mana per
 [A0EN]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3886,11 +3886,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EO]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3900,11 +3900,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 2% of max mana per
 [A0EP]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3914,11 +3914,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0EQ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3928,11 +3928,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 3% of max mana per
 [A0ER]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3942,11 +3942,11 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 [A0ES]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
 Buttonpos=2,2
-Name=Arcane Aura
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3955,12 +3955,12 @@ Ubertip=Increases nearby friendly units' mana regeneration by 4% of max mana per
 
 [A0ET]
 Art=ReplaceableTextures\PassiveButtons\PASBTNBrilliance.blp
-Buttonpos=2,2
-Name=Arcane Aura
+Buttonpos=,
+Name=Brilliance Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNBrilliance.blp
 Researchbuttonpos=2
 Researchhotkey=R
-Researchtip="Arcane Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
+Researchtip="Brilliance Aura, [|cffffcc00Level%d|r] (|cffffcc00R|r)"
 Researchubertip="Increased troop mana regeneration rate, nearby. |n|n|cffffcc00Level1|r - Slight increase. |n|cffffcc00Level2|r - Average rise.|n|cffffcc00Level3|r - Significant increase."
 TargetArt=Abilities\Spells\Human\Brilliance\Brilliance.mdl
 Targetattach=origin
@@ -3969,12 +3969,12 @@ Ubertip=Increases nearby friendly units' mana regeneration by 5% of max mana per
 
 [A0EU]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -3983,12 +3983,12 @@ Ubertip=Nearby friendly melee units gain 10% of their attack damage when they hi
 
 [A0EV]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -3997,12 +3997,12 @@ Ubertip=Nearby friendly melee units gain 4% of their attack damage when they hit
 
 [A0EW]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4011,12 +4011,12 @@ Ubertip=Nearby friendly melee units gain 12% of their attack damage when they hi
 
 [A0EX]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4025,26 +4025,26 @@ Ubertip=Nearby friendly melee units gain 18% of their attack damage when they hi
 
 [A0EY]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip="Vampirism, [|cffffcc00Level1|r]"
+Tip="Vampiric Aura - [|cffffcc00Level 1|r]"
 Ubertip=Nearby friendly melee units gain 2% of their attack damage when they hit enemy units.
 
 [A0EZ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4053,12 +4053,12 @@ Ubertip=Nearby friendly melee units gain 20% of their attack damage when they hi
 
 [A0F0]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4067,12 +4067,12 @@ Ubertip=Nearby friendly melee units gain 6% of their attack damage when they hit
 
 [A0F1]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4081,26 +4081,26 @@ Ubertip=Nearby friendly melee units gain 8% of their attack damage when they hit
 
 [A0F2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip="Vampirism, [|cffffcc00Level1|r]"
+Tip="Vampiric Aura [|cffffcc00Level 1|r]"
 Ubertip=Nearby friendly melee units gain 2% of their attack damage when they hit enemy units.
 
 [A0F3]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4109,12 +4109,12 @@ Ubertip=Nearby friendly melee units gain 14% of their attack damage when they hi
 
 [A0F4]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4123,12 +4123,12 @@ Ubertip=Nearby friendly melee units gain 4% of their attack damage when they hit
 
 [A0F5]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4137,12 +4137,12 @@ Ubertip=Nearby friendly melee units gain 22% of their attack damage when they hi
 
 [A0F6]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4151,12 +4151,12 @@ Ubertip=Nearby friendly melee units gain 16% of their attack damage when they hi
 
 [A0F7]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4165,12 +4165,12 @@ Ubertip=Nearby friendly melee units gain 6% of their attack damage when they hit
 
 [A0F8]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4179,12 +4179,12 @@ Ubertip=Nearby friendly melee units gain 8% of their attack damage when they hit
 
 [A0F9]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4193,12 +4193,12 @@ Ubertip=Nearby friendly melee units gain 10% of their attack damage when they hi
 
 [A0FA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4207,12 +4207,12 @@ Ubertip=Nearby friendly melee units gain 12% of their attack damage when they hi
 
 [A0FB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4221,12 +4221,12 @@ Ubertip=Nearby friendly melee units gain 14% of their attack damage when they hi
 
 [A0FC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=2,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4235,12 +4235,12 @@ Ubertip=Nearby friendly melee units gain 16% of their attack damage when they hi
 
 [A0FD]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
-Buttonpos=,2
-Name=Vampirism
+Buttonpos=,
+Name=Vampiric Aura
 ResearchArt=ReplaceableTextures\CommandButtons\BTNVampiricAura.blp
 Researchbuttonpos=2
 Researchhotkey=V
-Researchtip="Vampirism, [|cffffcc00Level%d|r] (|cffffcc00V|r)"
+Researchtip="Vampiric Aura [|cffffcc00Level%d|r] (|cffffcc00V|r)"
 Researchubertip=Nearby friendly melee units gain hit points when they hit enemy units. |n|n|cffffcc00Level 1|r - Gains 15% of attack damage. |n|cffffcc00Level 2|r - Gains 30% of attack damage. |n|cffffcc00Level 3|r - Gains 45% of attack damage.
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
@@ -4250,10 +4250,10 @@ Ubertip=Nearby friendly melee units gain 18% of their attack damage when they hi
 [A0FE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0FF]
 Art=ReplaceableTextures\CommandButtons\BTNTornado.blp
@@ -4408,154 +4408,154 @@ Ubertip=Slows nearby enemie's movement speed by 35%.
 [A0FZ]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G0]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G1]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G2]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G3]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G4]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G5]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G6]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G7]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G8]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0G9]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GA]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GB]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GC]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GD]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GE]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GF]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GG]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GH]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
+Tip=Command Aura
 
 [A0GI]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCommand.blp
@@ -5226,7 +5226,7 @@ MissileHoming=1
 Missilespeed=1200
 Name=Triple Fire Ball
 Tip=Triple Fire Ball
-Ubertip=Every second shot hits 3 nearby enemies for 40 damage.
+Ubertip="Every time this unit attacks, it hits 3 additional enemies with fireballs for 40 damage each."
 
 [A77K]
 Animnames=slam
@@ -5249,7 +5249,7 @@ Tip=Champion 700 HP
 Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDemonGate.blp
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip=|cffffff00Challenge not ready|r
 
 [A909]
@@ -5261,7 +5261,7 @@ Tip=Champion 500 HP
 Art=ReplaceableTextures\CommandButtonsDisabled\DISBTNDemonGate.blp
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip=Enabled with -CC mode
 
 [A911]
@@ -5269,7 +5269,7 @@ Art=ReplaceableTextures\CommandButtons\BTNDemonGate.blp
 Hotkey=Q
 Name=Challenge a Champion
 Requires=u004
-Tip=Challenge a |cffFFcc00Champion|r - [|cffFFcc00Q|r]
+Tip=Challenge a |cffFFcc00Champion|r
 Ubertip="How tough are you anyway? Pressing this rewards you bonus love, and gold at the end of the wave.|n|nYou can't Challenge more than 1 champion per wave."
 
 [A912]
@@ -5492,8 +5492,8 @@ Hotkey=E
 Name=Provoke Anarchy
 Order=acidbomb
 Targetattach=origin
-Tip=Provoke Anarchy - [|cffFFcc00E|r]
-Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800AoE and Purges enemies in 715 AoE|n|nCooldown: 40seconds|nManacost: 60% Mana
+Tip=Provoke Anarchy
+Ubertip=Removes first barrier to King's quarters till the end of the wave |nPermenantely increases allied units MS by 10% at 1800 AoE and Purges enemies in 715 AoE|n|nCooldown: 10 seconds|nManacost: 40% Mana
 
 [A956]
 Animnames=spell,slam
@@ -5506,7 +5506,7 @@ Hotkey=E
 Name=Anarcy
 Order=ancestralspirittarget
 Targetattach=origin
-Tip=Anarchy - [|cffFFcc00E|r]
+Tip=Anarchy
 
 [A957]
 Art=ReplaceableTextures\PassiveButtons\PASBTNCommand.blp
@@ -5563,8 +5563,8 @@ Hotkey=R
 Name=Dark Presence
 Order=howlofterror
 TargetArt=Abilities\Spells\Items\OrbDarkness\OrbDarkness.mdl
-Tip=Dark Presence - [|cffFFcc00R|r]
-Ubertip=King summons dark forces. His base damage is increased by 350% and it bounce for 50% of the damage to a second target. He also and gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|nDuration: 25seconds|nCooldown: 50seconds|n
+Tip=Dark Presence
+Ubertip=King summons dark forces. His base damage is increased by 350% and it bounce for 50% of the damage to a second target. He also and gains 35% lifesteal|nPassively Increases Mana regen by 1% of max.|n|nDuration: 25 seconds|nCooldown: 50 seconds|n
 
 [A971]
 Animnames=spell,slam
@@ -5579,8 +5579,8 @@ Name=Royal Presence
 Order=ancestralspirittarget
 TargetArt=Abilities\Spells\Undead\DeathPact\DeathPactTarget.mdl
 Targetattach=origin
-Tip=Royal Presence - [|cffFFcc00R|r]
-Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30seconds|nCooldown: 70seconds
+Tip=Royal Presence
+Ubertip=Enemy units affected by Royal Presence (715 AoE) lose 1% of their MaxHP per second.(non-lethal)|nPassively Increases Mana regen by 1% of max.|n|nDuration: 30 seconds|nCooldown: 70 seconds
 
 [A975]
 Art=ReplaceableTextures\CommandButtons\BTNICON_TEMPLATE_STARTER.blp
@@ -5607,7 +5607,7 @@ Art=ReplaceableTextures\PassiveButtons\PASBTNThickFur.blp
 Name=Concussion
 Order=bash
 Tip=Concussion
-Ubertip=Each attack has a 15% chance to deal 125 damage and stun for 1.5 seconds. Stun is reduced greatly on bosses(0.5sec).
+Ubertip=Each attack has a 15% chance to deal 125 damage and stun for 1.5 seconds. Stun is reduced greatly on bosses (0.5 sec).
 
 [A979]
 Art=ReplaceableTextures\PassiveButtons\PASBTNEvasion.blp
@@ -5641,8 +5641,8 @@ Hotkey=D
 Name=Command Attack!
 Order=channel
 TargetArt=Abilities\Spells\Items\AIem\AIemTarget.mdl
-Tip=Command Attack - [|cffFFcc00D|r]
-Ubertip=Cast this to order your units to Attack!|nCooldown: 40sec|n
+Tip=Command Attack
+Ubertip=Cast this to order units in a small circle to attack!|nIt also works on teammate's units.|nCooldown: 10 seconds
 
 [A982]
 Animnames=attack,slam
@@ -5680,10 +5680,10 @@ Missilespeed=1200
 Name=Death Bass
 Order=fanofknives
 ResearchArt=ReplaceableTextures\CommandButtons\BTNFanOfKnives.blp
-Researchtip="Fan throw, [|cffffcc00Level%d|r] (|cffffcc00F|r)"
+Researchtip=Fan of Knives
 Researchubertip="Throwing multiple throwing knives, fanning out. |n|n|cffffcc00Level1|r - By75 units. damage to each enemy.|n|cffffcc00Level2|r - By125 units. damage to each enemy. |n|cffffcc00Level3|r - By190 units. damage to each enemy."
 Tip=Death Bass
-Ubertip=Deals 110 damage to up to 4 units around the HELLRAISER.
+Ubertip=Deals 110 damage to up to 4 units around the Hellraiser.
 
 [A989]
 Art=,
@@ -5775,11 +5775,11 @@ Ubertip=Gives a 15% chance to dodge an attack.
 [ACac]
 Art=ReplaceableTextures\PassiveButtons\PASBTNGnollCommandAura.blp
 Buttonpos=,2
-Name=Fighting spirit
+Name=Command Aura
 TargetArt=Abilities\Spells\Orc\WarDrums\DrumsCasterHeal.mdl
 Targetattach=origin
-Tip=Fighting spirit
-Ubertip="Increased attack power of friendly troops, nearby."
+Tip=Command Aura
+Ubertip="Increases nearby friendly units attack damage."
 
 [ACcr]
 Art=ReplaceableTextures\CommandButtons\BTNCripple.blp
@@ -5855,10 +5855,10 @@ Ubertip=The thrown stone inflicts on the specified enemy100 units. damage and st
 [ACvp]
 Art=ReplaceableTextures\PassiveButtons\PASBTNVampiricAura.blp
 Buttonpos=2,2
-Name=Vampirism
+Name=Vampiric Aura
 TargetArt=Abilities\Spells\Undead\VampiricAura\VampiricAura.mdl
 Targetattach=origin
-Tip=Vampirism
+Tip=Vampiric Aura
 Ubertip="Nearby friendly troops receive additional20 units. health for each hit, hand-to-hand combat."
 
 [AEbu]
@@ -6274,7 +6274,7 @@ TargetArt=Abilities\Spells\Orc\FeralSpirit\feralspiritdone.mdl
 [AIva]
 Art=ReplaceableTextures\CommandButtons\BTNMaskOfDeath.blp
 Missileart=Abilities\Spells\Items\WandOfNeutralization\NeutralizationMissile.mdl
-Name=Thing: vampirism
+Name=Thing: Vampiric Aura
 SpecialArt=Abilities\Spells\Undead\VampiricAura\VampiricAuraTarget.mdl
 
 [AIvl]
