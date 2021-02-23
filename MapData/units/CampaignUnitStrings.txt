@@ -465,7 +465,7 @@ Name=Peewee
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Peewee
-Ubertip="|cffccccccDamage: |r|cffff800017-19|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000130|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800017-19|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000130|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h00T
 
 [h00N]
@@ -480,7 +480,7 @@ Name=Tempest
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Tempest
-Ubertip="|cffccccccDamage: |r|cffff800030-44|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800030-44|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h00U
 
 [h00O]
@@ -512,7 +512,7 @@ Name=Captain
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Captain
-Ubertip="|cffccccccDamage: |r|cffff800060-72|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000240 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000585|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Leadership|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800060-72|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000240 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000585|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Leadership|r|n"
 Upgrade=h00Z
 
 [h00Q]
@@ -527,7 +527,7 @@ Name=Cyborg
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Cyborg
-Ubertip="|cffccccccDamage: |r|cffff8000121-135|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001185|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000121-135|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001185|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h00W
 
 [h00S]
@@ -544,7 +544,7 @@ Name=Neotank
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Neotank
-Ubertip="|cffccccccDamage: |r|cffff8000143-159|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000600 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001420|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000143-159|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000600 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001420|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h00V
 
 [h00T]
@@ -559,7 +559,7 @@ Name=Veteran
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Veteran
-Ubertip="|cffccccccDamage: |r|cffff800083-94|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001350|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Finishing Blow|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800083-94|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001350|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Finishing Blow|r|n"
 
 [h00U]
 Art=ReplaceableTextures\CommandButtons\BTNUndeadAirBarge.blp
@@ -573,7 +573,7 @@ Name=Leviathan
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Leviathan
-Ubertip="|cffccccccDamage: |r|cffff8000263-305|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff8000325 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001620|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Shrapnel|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000263-305|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff8000325 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001620|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Shrapnel|r|n"
 
 [h00V]
 Art=ReplaceableTextures\CommandButtons\BTNSeigeEngineWithMissles.blp
@@ -589,7 +589,7 @@ Name=Doomsday Machine
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Doomsday Machine
-Ubertip="|cffccccccDamage: |r|cffff8000322-640|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000600 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80003015|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Withdraw|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000322-640|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000600 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80003015|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Withdraw|r|n"
 
 [h00W]
 Art=ReplaceableTextures\CommandButtons\BTNRobots.blp
@@ -603,7 +603,7 @@ Name=Krogoth
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Krogoth
-Ubertip="|cffccccccDamage: |r|cffff8000176-184|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003000|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Vital Strike|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000176-184|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003000|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Vital Strike|r|n"
 
 [h00X]
 Art=ReplaceableTextures\CommandButtons\BTNMarine.blp
@@ -635,7 +635,7 @@ Name=Pyro
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Pyro - [|cffFFcc00G|r]
-Ubertip="|cffccccccDamage: |r|cffff800048-52|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000225 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800048-52|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000225 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h11Y
 
 [h00Z]
@@ -650,7 +650,7 @@ Name=Admiral
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Admiral
-Ubertip="|cffccccccDamage: |r|cffff8000153-173|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000240 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001235|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Superiority|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000153-173|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000240 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001235|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Superiority|r|n"
 
 [h010]
 Art=ReplaceableTextures\CommandButtons\BTNGnoll.blp
@@ -663,7 +663,7 @@ Name=Gnoll Warrior
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Gnoll Warrior
-Ubertip="|cffccccccDamage: |r|cffff80006-8|r|cffcccccc|nSpeed: |r|cffff80000.83|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000230|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Gnoll Poison|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80006-8|r|cffcccccc|nSpeed: |r|cffff80000.83|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000230|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Gnoll Poison|r|n"
 Upgrade=h011
 
 [h011]
@@ -678,7 +678,7 @@ Name=Gnoll Savage
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Gnoll Savage
-Ubertip="|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.91|r|cffcccccc|nRange: |r|cffff8000150 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Deadly Poison|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.91|r|cffcccccc|nRange: |r|cffff8000150 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Deadly Poison|r|n"
 
 [h012]
 Art=ReplaceableTextures\CommandButtons\BTNOgre.blp
@@ -692,7 +692,7 @@ Name=Ogre Basher
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Ogre Basher
-Ubertip="|cffccccccDamage: |r|cffff800011-13|r|cffcccccc|nSpeed: |r|cffff80000.78|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000325|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Club Smash|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800011-13|r|cffcccccc|nSpeed: |r|cffff80000.78|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000325|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Club Smash|r|n"
 Upgrade=h013
 
 [h013]
@@ -707,7 +707,7 @@ Name=Ogre Pulverizer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Ogre Pulverizer
-Ubertip="|cffccccccDamage: |r|cffff800041-61|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001050|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Knock Out|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800041-61|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001050|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Knock Out|r|n"
 
 [h014]
 Art=ReplaceableTextures\CommandButtons\BTNHarpy.blp
@@ -758,7 +758,7 @@ Name=Troll Fighter
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Troll Fighter
-Ubertip="|cffccccccDamage: |r|cffff800063-72|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000575|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800063-72|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000575|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h017
 
 [h017]
@@ -775,7 +775,7 @@ Name=Troll Champion
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Troll Champion
-Ubertip="|cffccccccDamage: |r|cffff8000105-117|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Adrenaline Rush|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000105-117|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Adrenaline Rush|r|n"
 
 [h018]
 Art=ReplaceableTextures\CommandButtons\BTNGrizzlyBear.blp
@@ -789,7 +789,7 @@ Name=Grizzly
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Grizzly
-Ubertip="|cffccccccDamage: |r|cffff800099-115|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001125|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800099-115|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001125|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h019
 
 [h019]
@@ -808,7 +808,7 @@ Name=Greymane
 Requires=u004
 Specialart=Objects\Spawnmodels\NightElf\NightElfLargeDeathExplode\NightElfLargeDeathExplode.mdl
 Tip=Promote to Greymane
-Ubertip="|cffccccccDamage: |r|cffff8000142-168|r|cffcccccc|nSpeed: |r|cffff80000.72|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002115|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified |r|cffcccccc|nAbility: |r|cff808080 Battle Cry|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000142-168|r|cffcccccc|nSpeed: |r|cffff80000.72|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002115|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Battle Cry|r|n"
 
 [h01A]
 Art=ReplaceableTextures\CommandButtons\BTNBlueDragonSpawn.blp
@@ -822,7 +822,7 @@ Name=Spawn of Dragon
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Spawn of Dragon
-Ubertip="|cffccccccDamage: |r|cffff8000141-159|r|cffcccccc|nSpeed: |r|cffff80001.44|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001360|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Circle Slash|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000141-159|r|cffcccccc|nSpeed: |r|cffff80001.44|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001360|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Circle Slash|r|n"
 Upgrade=h01B
 
 [h01B]
@@ -839,7 +839,7 @@ Name=Dragon Aspect
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Dragon Aspect
-Ubertip="|cffccccccDamage: |r|cffff8000260-275|r|cffcccccc|nSpeed: |r|cffff80001.25|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002575|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Whitefire|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000260-275|r|cffcccccc|nSpeed: |r|cffff80001.25|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002575|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Whitefire|r|n"
 
 [h01C]
 Art=ReplaceableTextures\CommandButtons\BTNEnt.blp
@@ -852,7 +852,7 @@ Name=Ent
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Ent
-Ubertip="|cffccccccDamage: |r|cffff800011-13|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000170|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800011-13|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000170|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h01D
 
 [h01D]
@@ -867,7 +867,7 @@ Name=Guardian
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Guardian
-Ubertip="|cffccccccDamage: |r|cffff800053-64|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001300|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Entangle|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800053-64|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001300|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Entangle|r|n"
 
 [h01E]
 Art=ReplaceableTextures\CommandButtons\BTNArcher.blp
@@ -883,7 +883,7 @@ Name=Ranger
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Ranger
-Ubertip="|cffccccccDamage: |r|cffff800015-18|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000750 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000110|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Vulture Eye|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800015-18|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000750 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000110|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Vulture Eye|r|n"
 Upgrade=h01F
 
 [h01F]
@@ -900,7 +900,7 @@ Name=Meliai
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Meliai
-Ubertip="|cffccccccDamage: |r|cffff800060-95|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff8000750 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000435|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Precision, Mark Target|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800060-95|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff8000750 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000435|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Precision, Mark Target|r|n"
 
 [h01G]
 Art=ReplaceableTextures\CommandButtons\BTNChimaera.blp
@@ -916,7 +916,7 @@ Name=Thunderbird
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Thunderbird
-Ubertip="|cffccccccDamage: |r|cffff8000120-132|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Aftershock, Faerie Luck|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000120-132|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Aftershock, Faerie Luck|r|n"
 
 [h01H]
 Art=ReplaceableTextures\CommandButtons\BTNFaerieDragon.blp
@@ -947,7 +947,7 @@ Name=Tree of Travel
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Tree of Travel
-Ubertip="|cffccccccDamage: |r|cffff800074-82|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Helping Hand|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800074-82|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Helping Hand|r|n"
 Upgrade=h01J
 
 [h01J]
@@ -962,7 +962,7 @@ Name=Tree of Time
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Tree of Time
-Ubertip="|cffccccccDamage: |r|cffff8000138-144|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001395|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Chrono Trigger|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000138-144|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001395|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Chrono Trigger|r|n"
 
 [h01K]
 Art=ReplaceableTextures\CommandButtons\BTNDruidOfTheClaw.blp
@@ -977,7 +977,7 @@ Name=Halfbreed
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Halfbreed
-Ubertip="|cffccccccDamage: |r|cffff800086-90|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001005|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800086-90|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001005|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h01L
 
 [h01L]
@@ -993,7 +993,7 @@ Name=Goliath
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Goliath
-Ubertip="|cffccccccDamage: |r|cffff8000246-278|r|cffcccccc|nSpeed: |r|cffff80001.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001655|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Natural Armor, Reassurance, Finish Blow, Fury|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000246-278|r|cffcccccc|nSpeed: |r|cffff80001.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001655|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Natural Armor, Reassurance, Finish Blow, Fury|r|n"
 
 [h01M]
 animProps=upgrade
@@ -1008,7 +1008,7 @@ Name=Yggdrasil
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Yggdrasil
-Ubertip="|cffccccccDamage: |r|cffff800091-101|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001500|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Sacred Blessing|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800091-101|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001500|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Sacred Blessing|r|n"
 Upgrade=h01N,h01O,h22O
 
 [h01N]
@@ -1024,7 +1024,7 @@ Name=Tree of Life
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Tree of Life
-Ubertip="|cffccccccDamage: |r|cffff8000316-360|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003500|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Water of Life|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000316-360|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003500|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Water of Life|r|n"
 
 [h01O]
 animProps=upgrade
@@ -1039,7 +1039,7 @@ Name=Tree of Knowledge
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Tree of Knowledge - [|cffFFcc00G|r]
-Ubertip="|cffccccccDamage: |r|cffff8000221-251|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Forbidden Fruit|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000221-251|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003300|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Forbidden Fruit|r|n"
 
 [h01P]
 Art=ReplaceableTextures\CommandButtons\BTNSkeletonWarrior.blp
@@ -1052,7 +1052,7 @@ Name=Bone Warrior
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Bone Warrior
-Ubertip="|cffccccccDamage: |r|cffff80004-5|r|cffcccccc|nSpeed: |r|cffff80000.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff800070|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Frenzy|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80004-5|r|cffcccccc|nSpeed: |r|cffff80000.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff800070|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frenzy|r|n"
 Upgrade=h01Q,h01R,h01S
 
 [h01Q]
@@ -1067,7 +1067,7 @@ Name=Skeletor
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Skeletor
-Ubertip="|cffccccccDamage: |r|cffff800033-39|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Frenzy, Killing Spree|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800033-39|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001000|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Frenzy, Killing Spree|r|n"
 
 [h01R]
 Art=ReplaceableTextures\CommandButtons\BTNSkeletonArcher.blp
@@ -1115,7 +1115,7 @@ Name=Carrion Spitter
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Carrion Spitter
-Ubertip="|cffccccccDamage: |r|cffff800012-17|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000215|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800012-17|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000215|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h01U
 
 [h01U]
@@ -1132,7 +1132,7 @@ Name=Nightcrawler
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Nightcrawler
-Ubertip="|cffccccccDamage: |r|cffff800043-52|r|cffcccccc|nSpeed: |r|cffff80000.4|r|cffcccccc|nRange: |r|cffff8000550 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000425|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Sticky Webs|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800043-52|r|cffcccccc|nSpeed: |r|cffff80000.4|r|cffcccccc|nRange: |r|cffff8000550 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000425|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Sticky Webs|r|n"
 
 [h01V]
 Art=ReplaceableTextures\CommandButtons\BTNFelGuard.blp
@@ -1146,7 +1146,7 @@ Name=Gateguard
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Gateguard
-Ubertip="|cffccccccDamage: |r|cffff800024-37|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000650|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Conjure Fiend|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800024-37|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000650|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Conjure Fiend|r|n"
 Upgrade=h01W
 
 [h01W]
@@ -1161,7 +1161,7 @@ Name=Harbinger
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Harbinger
-Ubertip="|cffccccccDamage: |r|cffff800072-96|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001330|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Conjure Fanatic|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800072-96|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001330|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Conjure Fanatic|r|n"
 
 [h01X]
 Art=ReplaceableTextures\CommandButtons\BTNObsidianStatue.blp
@@ -1178,7 +1178,7 @@ Name=Overseer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Overseer
-Ubertip="|cffccccccDamage: |r|cffff800064-76|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000425 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000625|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blood Thirst|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800064-76|r|cffcccccc|nSpeed: |r|cffff80001.5|r|cffcccccc|nRange: |r|cffff8000425 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000625|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Blood Thirst|r|n"
 Upgrade=h01Y
 
 [h01Y]
@@ -1198,7 +1198,7 @@ Name=Keeper of Souls
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Keeper of Souls
-Ubertip="|cffccccccDamage: |r|cffff8000120-132|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000425 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001080|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Sound of Madness|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000120-132|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000425 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001080|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Sound of Madness|r|n"
 
 [h01Z]
 Art=ReplaceableTextures\CommandButtons\BTNFacelessOne.blp
@@ -1212,7 +1212,7 @@ Name=Nightmare
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Nightmare
-Ubertip="|cffccccccDamage: |r|cffff800015-45|r|cffcccccc|nSpeed: |r|cffff80000.25|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000995|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Shadow Walker|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800015-45|r|cffcccccc|nSpeed: |r|cffff80000.25|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000995|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Shadow Walker|r|n"
 Upgrade=h020
 
 [h020]
@@ -1227,7 +1227,7 @@ Name=Doppelganger
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Doppelganger
-Ubertip="|cffccccccDamage: |r|cffff800026-50|r|cffcccccc|nSpeed: |r|cffff80000.14|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Fatality|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800026-50|r|cffcccccc|nSpeed: |r|cffff80000.14|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Fatality|r|n"
 
 [h021]
 Art=ReplaceableTextures\CommandButtons\BTNEredarWarlockPurple.blp
@@ -1243,7 +1243,7 @@ Name=Lord of Death
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Lord of Death
-Ubertip="|cffccccccDamage: |r|cffff800035-45|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000845|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Invoke Inferno|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800035-45|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000845|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Invoke Inferno|r|n"
 Upgrade=h022
 
 [h022]
@@ -1260,7 +1260,7 @@ Name=Hades
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Hades
-Ubertip="|cffccccccDamage: |r|cffff800085-95|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001475|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Diablo|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800085-95|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001475|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Diablo|r|n"
 
 [h023]
 Art=ReplaceableTextures\CommandButtons\BTNTownHall.blp
@@ -1932,7 +1932,7 @@ Name=Aqua Spirit
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Aqua Spirit
-Ubertip="|cffccccccDamage: |r|cffff800020-25|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000200|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Water Splash|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800020-25|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000200|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Water Splash|r|n"
 Upgrade=h043
 
 [h043]
@@ -1949,7 +1949,7 @@ Name=Oceanus
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Oceanus
-Ubertip="|cffccccccDamage: |r|cffff800066-71|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000575|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Deluge|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800066-71|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000450 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000575|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Deluge|r|n"
 
 [h044]
 Art=ReplaceableTextures\CommandButtons\BTNScout.blp
@@ -1986,7 +1986,7 @@ Name=Violet
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Violet
-Ubertip="|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800051-61|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Blue Wind|r|n"
 
 [h046]
 Art=ReplaceableTextures\CommandButtons\BTNRockGolem.blp
@@ -2000,7 +2000,7 @@ Name=Mudman
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Mudman
-Ubertip="|cffccccccDamage: |r|cffff800075-81|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001010|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800075-81|r|cffcccccc|nSpeed: |r|cffff80001.1|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001010|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h047
 
 [h047]
@@ -2015,7 +2015,7 @@ Name=Golem
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Golem
-Ubertip="|cffccccccDamage: |r|cffff8000166-180|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000166-180|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 
 [h048]
 Art=ReplaceableTextures\CommandButtons\BTNBanditMage.blp
@@ -2064,7 +2064,7 @@ Name=Seer of Darkness
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Seer of Darkness
-Ubertip="|cffccccccDamage: |r|cffff8000142-156|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001520|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Energy Shield|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000142-156|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001520|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Energy Shield|r|n"
 Upgrade=h04B
 
 [h04B]
@@ -2081,7 +2081,7 @@ Name=Fenix
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Fenix
-Ubertip="|cffccccccDamage: |r|cffff8000213-225|r|cffcccccc|nSpeed: |r|cffff80000.92|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Energy Shield, Focus Energy|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000213-225|r|cffcccccc|nSpeed: |r|cffff80000.92|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Energy Shield, Focus Energy|r|n"
 
 [h04C]
 Art=ReplaceableTextures\CommandButtons\BTNWispSplode.blp
@@ -2612,7 +2612,7 @@ Name=Soul of Hero
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Soul of Hero
-Ubertip="|cffccccccDamage: |r|cffff8000142-157|r|cffcccccc|nSpeed: |r|cffff80000.66|r|cffcccccc|nRange: |r|cffff8000110 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000700|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Change Stance|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000142-157|r|cffcccccc|nSpeed: |r|cffff80000.66|r|cffcccccc|nRange: |r|cffff8000110 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000700|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Change Stance|r|n"
 
 [h05R]
 Art=ReplaceableTextures\CommandButtons\BTNVoidWalker.blp
@@ -2628,7 +2628,7 @@ Name=Phantom
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Phantom
-Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000475|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Silent Scream|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000475|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Silent Scream|r|n"
 Upgrade=h05U
 
 [h05S]
@@ -2645,7 +2645,7 @@ Name=Wanderer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Wanderer
-Ubertip="|cffccccccDamage: |r|cffff800016-20|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000285|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800016-20|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000285|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h062,h05T
 
 [h05T]
@@ -2678,7 +2678,7 @@ Name=Hellghost
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Hellghost
-Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000270 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000580|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Cacophony|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000270 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000580|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Cacophony|r|n"
 Upgrade=h998
 
 [h05V]
@@ -2695,7 +2695,7 @@ Name=Outcast
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Outcast
-Ubertip="|cffccccccDamage: |r|cffff800073-80|r|cffcccccc|nSpeed: |r|cffff80000.75|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001240|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800073-80|r|cffcccccc|nSpeed: |r|cffff80000.75|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001240|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h05W
 
 [h05W]
@@ -2712,7 +2712,7 @@ Name=Forsaken One
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Forsaken One
-Ubertip="|cffccccccDamage: |r|cffff8000105-119|r|cffcccccc|nSpeed: |r|cffff80000.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002405|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Insanity|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000105-119|r|cffcccccc|nSpeed: |r|cffff80000.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002405|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Insanity|r|n"
 
 [h05X]
 Art=ReplaceableTextures\CommandButtons\BTNSpiritWyvern.blp
@@ -2728,7 +2728,7 @@ Name=Apparition
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Apparition
-Ubertip="|cffccccccDamage: |r|cffff8000118-130|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000665|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Sickness Aura|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000118-130|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000665|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Sickness Aura|r|n"
 Upgrade=h05Y
 
 [h05Y]
@@ -2745,7 +2745,7 @@ Name=Gravekeeper
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Gravekeeper
-Ubertip="|cffccccccDamage: |r|cffff8000209-219|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001025|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Despair Aura|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000209-219|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001025|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Despair Aura|r|n"
 
 [h05Z]
 Art=ReplaceableTextures\CommandButtons\BTNPriest.blp
@@ -2972,7 +2972,7 @@ Name=Mutant
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Mutant
-Ubertip="|cffccccccDamage: |r|cffff8000209-220|r|cffcccccc|nSpeed: |r|cffff80001.17|r|cffcccccc|nRange: |r|cffff8000525 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Inject Steroids|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000209-220|r|cffcccccc|nSpeed: |r|cffff80001.17|r|cffcccccc|nRange: |r|cffff8000525 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Inject Steroids|r|n"
 
 [h06J]
 Art=ReplaceableTextures\CommandButtons\BTNGoblinSapper.blp
@@ -3002,7 +3002,7 @@ Name=Servant
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Servant
-Ubertip="|cffccccccDamage: |r|cffff800015-20|r|cffcccccc|nSpeed: |r|cffff80001.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000180|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Fortified |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800015-20|r|cffcccccc|nSpeed: |r|cffff80001.6|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000180|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h06L
 
 [h06L]
@@ -3017,7 +3017,7 @@ Name=Slavemaster
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Slavemaster
-Ubertip="|cffccccccDamage: |r|cffff800091-101|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff8000110 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001150|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Fortified |r|cffcccccc|nAbility: |r|cff808080 Slave Trade|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800091-101|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff8000110 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001150|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Slave Trade|r|n"
 
 [h06M]
 Art=ReplaceableTextures\CommandButtons\BTNHeadhunter.blp
@@ -3033,7 +3033,7 @@ Name=Tribesman
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Tribesman
-Ubertip="|cffccccccDamage: |r|cffff800033-42|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000325 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000385|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Throw Net|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800033-42|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000325 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000385|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Throw Net|r|n"
 Upgrade=h06N
 
 [h06N]
@@ -3053,7 +3053,7 @@ Name=Alpha Male
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Alpha Male
-Ubertip="|cffccccccDamage: |r|cffff800076-87|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000900|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Throw Net, Fury|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800076-87|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000900|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Throw Net, Fury|r|n"
 
 [h06O]
 Art=ReplaceableTextures\CommandButtons\BTNWitchDoctor.blp
@@ -3100,7 +3100,7 @@ Name=Harlot
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Harlot
-Ubertip="|cffccccccDamage: |r|cffff8000100-108|r|cffcccccc|nSpeed: |r|cffff80001.05|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000975|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000100-108|r|cffcccccc|nSpeed: |r|cffff80001.05|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000975|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h06R
 
 [h06R]
@@ -3115,7 +3115,7 @@ Name=Mistress
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Mistress
-Ubertip="|cffccccccDamage: |r|cffff8000153-169|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002150|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Seduce|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000153-169|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002150|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Seduce|r|n"
 
 [h06S]
 Art=ReplaceableTextures\CommandButtons\BTNTauren.blp
@@ -3129,7 +3129,7 @@ Name=Minotaur
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Minotaur
-Ubertip="|cffccccccDamage: |r|cffff8000128-152|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001515|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Tremor|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000128-152|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001515|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Tremor|r|n"
 Upgrade=h06T
 
 [h06T]
@@ -3144,7 +3144,7 @@ Name=Bigfoot
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Bigfoot
-Ubertip="|cffccccccDamage: |r|cffff8000233-257|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Fissure|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000233-257|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Fissure|r|n"
 
 [h06U]
 Art=ReplaceableTextures\CommandButtons\BTNGoblinSapper.blp
@@ -3270,7 +3270,7 @@ Name=Mutant (juiced)
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Mutant
-Ubertip="|cffccccccDamage: |r|cffff8000209-220|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff8000525 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Inject Steroids|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000209-220|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff8000525 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001600|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Inject Steroids|r|n"
 
 [h077]
 Art=ReplaceableTextures\CommandButtons\BTNHeroAlchemist.blp
@@ -3411,7 +3411,7 @@ Name=Hatchling
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Hatchling
-Ubertip="|cffccccccDamage: |r|cffff80009-10|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000160|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80009-10|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000160|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h07L
 
 [h07K]
@@ -3433,7 +3433,7 @@ Name=Swamprunner
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Swamprunner
-Ubertip="|cffccccccDamage: |r|cffff800024-30|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800024-30|r|cffcccccc|nSpeed: |r|cffff80000.85|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h07N,h07M
 
 [h07M]
@@ -3448,7 +3448,7 @@ Name=Defiler
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Defiler - [|cffFFcc00G|r]
-Ubertip="|cffccccccDamage: |r|cffff800085-89|r|cffcccccc|nSpeed: |r|cffff80000.97|r|cffcccccc|nRange: |r|cffff800180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Biotoxin|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800085-89|r|cffcccccc|nSpeed: |r|cffff80000.97|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Biotoxin|r|n"
 
 [h07N]
 Art=ReplaceableTextures\CommandButtons\BTNMurlocFlesheater.blp
@@ -3478,7 +3478,7 @@ Name=Egg Sack
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Egg Sack
-Ubertip="|cffccccccDamage: |r|cffff800016-18|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000320|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Withdraw|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800016-18|r|cffcccccc|nSpeed: |r|cffff80000.9|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000320|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Withdraw|r|n"
 Upgrade=h07P
 
 [h07P]
@@ -3495,7 +3495,7 @@ Name=Sky Dragon
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Sky Dragon
-Ubertip="|cffccccccDamage: |r|cffff800062-72|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000225 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000935|r|cffcccccc|nAttack Type: |r|cffff8000Magic/Pierce(air)|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Brawl, Withdraw|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800062-72|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000225 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000935|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Brawl, Withdraw|r|n"
 
 [h07Q]
 Art=ReplaceableTextures\CommandButtons\BTNLobstrokkRed.blp
@@ -3509,7 +3509,7 @@ Name=Bottom Feeder
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Bottom Feeder
-Ubertip="|cffccccccDamage: |r|cffff800041-46|r|cffcccccc|nSpeed: |r|cffff80001.7|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001250|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Delicacy|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800041-46|r|cffcccccc|nSpeed: |r|cffff80001.7|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001250|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Delicacy|r|n"
 Upgrade=h07R
 
 [h07R]
@@ -3524,7 +3524,7 @@ Name=King Claw
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to King Claw
-Ubertip="|cffccccccDamage: |r|cffff8000101-109|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Delicacy|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000101-109|r|cffcccccc|nSpeed: |r|cffff80001.35|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002700|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Delicacy|r|n"
 
 [h07S]
 Art=ReplaceableTextures\CommandButtons\BTNSeaWitch.blp
@@ -3571,7 +3571,7 @@ Name=Komodo
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Komodo
-Ubertip="|cffccccccDamage: |r|cffff800083-94|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001100|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Submerge|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800083-94|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001100|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Submerge|r|n"
 Upgrade=h07V
 
 [h07V]
@@ -3586,7 +3586,7 @@ Name=Trident
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Trident
-Ubertip="|cffccccccDamage: |r|cffff8000140-160|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Concussion, Submerge|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000140-160|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002300|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Concussion, Submerge|r|n"
 
 [h07W]
 Art=ReplaceableTextures\CommandButtons\BTNSeaGiantGreen.blp
@@ -3600,7 +3600,7 @@ Name=Sea Giant
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Sea Giant
-Ubertip="|cffccccccDamage: |r|cffff8000119-131|r|cffcccccc|nSpeed: |r|cffff80000.82|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001680|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Sweeping Swing|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000119-131|r|cffcccccc|nSpeed: |r|cffff80000.82|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001680|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Sweeping Swing|r|n"
 Upgrade=h07X
 
 [h07X]
@@ -3617,7 +3617,7 @@ Name=Hydra
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Hydra
-Ubertip="|cffccccccDamage: |r|cffff8000178-205|r|cffcccccc|nSpeed: |r|cffff80000.89|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Fire Ball, Mitosis|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000178-205|r|cffcccccc|nSpeed: |r|cffff80000.89|r|cffcccccc|nRange: |r|cffff8000350 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002400|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Triple Fire Ball, Mitosis|r|n"
 
 [h07Y]
 Art=ReplaceableTextures\CommandButtons\BTNGreenHydra.blp
@@ -3792,7 +3792,7 @@ Name=Colt
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Colt
-Ubertip="|cffccccccDamage: |r|cffff800010-12|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000150|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800010-12|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000150|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h08I
 
 [h08G]
@@ -3814,7 +3814,7 @@ Name=Novice
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Novice
-Ubertip="|cffccccccDamage: |r|cffff800018-20|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000210|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800018-20|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000210|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h08L
 
 [h08I]
@@ -3863,7 +3863,7 @@ Name=Crusader
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Crusader
-Ubertip="|cffccccccDamage: |r|cffff800052-60|r|cffcccccc|nSpeed: |r|cffff80000.63|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001400|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800052-60|r|cffcccccc|nSpeed: |r|cffff80000.63|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001400|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 
 [h08M]
 Art=ReplaceableTextures\CommandButtons\BTNHuntress.blp
@@ -3890,7 +3890,7 @@ Name=Sentry
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Sentry
-Ubertip="|cffccccccDamage: |r|cffff800024-32|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000350|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Magic Missile|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800024-32|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000350|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Magic Missile|r|n"
 Upgrade=h08P
 
 [h08O]
@@ -3918,7 +3918,7 @@ Name=Nightsaber
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Nightsaber
-Ubertip="|cffccccccDamage: |r|cffff800086-90|r|cffcccccc|nSpeed: |r|cffff80000.72|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000850|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Moon Glaive|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800086-90|r|cffcccccc|nSpeed: |r|cffff80000.72|r|cffcccccc|nRange: |r|cffff8000500 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000850|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Moon Glaive|r|n"
 
 [h08Q]
 Art=ReplaceableTextures\CommandButtons\BTNCagedIllidan.blp
@@ -3934,7 +3934,7 @@ Name=Prisoner
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Prisoner
-Ubertip="|cffccccccDamage: |r|cffff800041-47|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000550|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800041-47|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000300 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000550|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h08S
 
 [h08R]
@@ -3962,7 +3962,7 @@ Name=Maverick
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Maverick
-Ubertip="|cffccccccDamage: |r|cffff8000148-158|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000920|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Mirage|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000148-158|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000920|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Mirage|r|n"
 
 [h08T]
 Art=ReplaceableTextures\CommandButtons\BTNDragonHawk.blp
@@ -4042,7 +4042,7 @@ Name=Sword Mage
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=[|cffFFcc00G|r] - Promote to Sword Mage
-Ubertip="|cffccccccDamage: |r|cffff8000151-161|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002200|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium |r|cffcccccc|nAbility: |r|cff808080 Enchant Fire|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000151-161|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002200|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Enchant Fire|r|n"
 
 [h090]
 Art=ReplaceableTextures\CommandButtons\BTNAssassin.blp
@@ -4056,7 +4056,7 @@ Name=Moon Guard
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Moon Guard
-Ubertip="|cffccccccDamage: |r|cffff800079-89|r|cffcccccc|nSpeed: |r|cffff80000.54|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001450|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Fan of Knives|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800079-89|r|cffcccccc|nSpeed: |r|cffff80000.54|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001450|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Fan of Knives|r|n"
 Upgrade=h093
 
 [h091]
@@ -4089,7 +4089,7 @@ Name=Warden
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Warden
-Ubertip="|cffccccccDamage: |r|cffff8000100-110|r|cffcccccc|nSpeed: |r|cffff80000.48|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002792|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored |r|cffcccccc|nAbility: |r|cff808080 Coup de Grace, Lifesteal, Fan of Knives|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000100-110|r|cffcccccc|nSpeed: |r|cffff80000.48|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002792|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Coup de Grace, Lifesteal, Fan of Knives|r|n"
 
 [h094]
 Art=ReplaceableTextures\CommandButtons\BTNHeroWarden.blp
@@ -4685,7 +4685,7 @@ Name=Clockwerk
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Clockwreck
-Ubertip="|cffccccccDamage: |r|cffff800076-84|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001370|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Cluster Rockets|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800076-84|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001370|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Cluster Rockets|r|n"
 
 [h0AG]
 Art=ReplaceableTextures\CommandButtons\BTNClockWerkGoblin.blp
@@ -4821,7 +4821,7 @@ Name=Assault Tank
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Assault Tank
-Ubertip="|cffccccccDamage: |r|cffff8000252-268|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80003300|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Goblin Driver|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000252-268|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000250 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80003300|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Goblin Driver|r|n"
 
 [h0AR]
 Art=ReplaceableTextures\CommandButtons\BTNGoblinSteamroller.blp
@@ -4837,7 +4837,7 @@ Name=Steamroller
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Steamroller
-Ubertip="|cffccccccDamage: |r|cffff8000130-150|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001350|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Goblin Driver|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000130-150|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001350|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Goblin Driver|r|n"
 Upgrade=h0AQ
 
 [h0AS]
@@ -4861,7 +4861,7 @@ Name=Medium Land Mine
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Medium Land Mine
-Ubertip="|cffccccccDamage: |r|cffff8000579-579|r|cffcccccc|nSpeed: |r|cffff80002.0|r|cffcccccc|nRange: |r|cffff8000405 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Kaboom(7sec), Dangerous mine|r|n"
+Ubertip="|cffccccccDamage: |r|cffff80001892592013-1892592013|r|cffcccccc|nSpeed: |r|cffff80002.0|r|cffcccccc|nRange: |r|cffff8000405 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000600|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Kaboom(7sec), Dangerous mine|r|n"
 Upgrade=h0AU
 
 [h0AU]
@@ -4876,7 +4876,7 @@ Name=Ultra Land Mine
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Ultra Land Mine
-Ubertip="|cffccccccDamage: |r|cffff80001774908419-1774908419|r|cffcccccc|nSpeed: |r|cffff80002.0|r|cffcccccc|nRange: |r|cffff8000405 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000900|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Kaboom(10sec), Dangerous Mine|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000406-406|r|cffcccccc|nSpeed: |r|cffff80002.0|r|cffcccccc|nRange: |r|cffff8000405 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000900|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Kaboom(10sec), Dangerous Mine|r|n"
 
 [h0AV]
 Art=ReplaceableTextures\CommandButtons\BTNGoblinLandMine.blp
@@ -5125,7 +5125,7 @@ Name=Orc Warrior
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Orc Warrior
-Ubertip="|cffccccccDamage: |r|cffff800010-10|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000100|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800010-10|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000100|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h0BS
 
 [h0BG]
@@ -5321,7 +5321,7 @@ Name=Blood Orc Warrior
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Blood Orc Warrior
-Ubertip="|cffccccccDamage: |r|cffff800050-50|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000500|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Frenzy|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800050-50|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000500|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 Frenzy|r|n"
 Upgrade=h0BU
 
 [h0BT]
@@ -5389,7 +5389,7 @@ Name=Raider
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Raider
-Ubertip="|cffccccccDamage: |r|cffff800031-44|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Summon Wolf|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800031-44|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Summon Wolf|r|n"
 Upgrade=h0C0
 
 [h0BY]
@@ -5418,7 +5418,7 @@ Name=Blood Raider
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Blood Raider
-Ubertip="|cffccccccDamage: |r|cffff800072-96|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Summon Blood Wolf|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800072-96|r|cffcccccc|nSpeed: |r|cffff80001.3|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001200|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Summon Blood Wolf|r|n"
 
 [h0C1]
 Art=ReplaceableTextures\CommandButtons\BTNGuldan.blp
@@ -5537,7 +5537,7 @@ Name=Orc Warchief
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Orc Warchief
-Ubertip="|cffccccccDamage: |r|cffff8000190-200|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000150 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001800|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Pulverize|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000190-200|r|cffcccccc|nSpeed: |r|cffff80001.4|r|cffcccccc|nRange: |r|cffff8000150 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001800|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Pulverize|r|n"
 Upgrade=h0CC
 
 [h0CA]
@@ -5573,7 +5573,7 @@ Name=Thrall
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Thrall
-Ubertip="|cffccccccDamage: |r|cffff8000282-298|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003800|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Storm Bolt|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000282-298|r|cffcccccc|nSpeed: |r|cffff80000.95|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003800|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Storm Bolt|r|n"
 
 [h0CD]
 Art=ReplaceableTextures\CommandButtons\BTNChaosGrunt.blp
@@ -5646,7 +5646,7 @@ Name=Ghoul
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Ghoul
-Ubertip="|cffccccccDamage: |r|cffff800024-30|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000560|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800024-30|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff800090 (Melee)|r|cffcccccc|nHit Points: |r|cffff8000560|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Unarmored|r|cffcccccc|nAbility: |r|cff808080 None|r|n"
 Upgrade=h0CK
 
 [h0CJ]
@@ -5713,7 +5713,7 @@ Name=Meat Wagon
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Meat Wagon
-Ubertip="|cffccccccDamage: |r|cffff800031-37|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff8000675 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000280|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Small Splash|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800031-37|r|cffcccccc|nSpeed: |r|cffff80000.88|r|cffcccccc|nRange: |r|cffff8000675 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000280|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Small Splash|r|n"
 Upgrade=h0CP
 
 [h0CP]
@@ -5730,7 +5730,7 @@ Name=War Machine
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to War Machine
-Ubertip="|cffccccccDamage: |r|cffff8000100-149|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000825 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r|cffcccccc|nAbility: |r|cff808080 Small Splash|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000100-149|r|cffcccccc|nSpeed: |r|cffff80000.5|r|cffcccccc|nRange: |r|cffff8000825 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000750|r|cffcccccc|nAttack Type: |r|cffff8000Siege|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r|cffcccccc|nAbility: |r|cff808080 Small Splash|r|n"
 
 [h0CQ]
 Art=ReplaceableTextures\CommandButtons\BTNNecromancer.blp
@@ -5827,7 +5827,7 @@ Name=Zombie
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Zombie
-Ubertip="|cffccccccDamage: |r|cffff800059-64|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001360|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Disease Cloud|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800059-64|r|cffcccccc|nSpeed: |r|cffff80000.7|r|cffcccccc|nRange: |r|cffff8000100 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001360|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Disease Cloud|r|n"
 Upgrade=h0CY
 
 [h0CX]
@@ -5851,7 +5851,7 @@ Name=The Butcher
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to The Butcher
-Ubertip="|cffccccccDamage: |r|cffff8000237-275|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Plague Cloud, Life Steal, Undead's Armor|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000237-275|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000120 (Melee)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Medium|r|cffcccccc|nAbility: |r|cff808080 Plague Cloud, Life Steal, Undead's Armor|r|n"
 
 [h0CZ]
 Art=ReplaceableTextures\CommandButtons\BTNAbomination.blp
@@ -5874,7 +5874,7 @@ Name=Guardian of Death
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Deploy Guardian of Death
-Ubertip="|cffccccccDamage: |r|cffff8000121-143|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001550|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Cleave Attack|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000121-143|r|cffcccccc|nSpeed: |r|cffff80001.2|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80001550|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Cleave Attack|r|n"
 Upgrade=h0D2
 
 [h0D1]
@@ -5900,7 +5900,7 @@ Name=Death Dragon
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Death Dragon
-Ubertip="|cffccccccDamage: |r|cffff8000313-328|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal |r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Death's Breath|r|n"
+Ubertip="|cffccccccDamage: |r|cffff8000313-328|r|cffcccccc|nSpeed: |r|cffff80001.0|r|cffcccccc|nRange: |r|cffff8000400 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80002800|r|cffcccccc|nAttack Type: |r|cffff8000Normal|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Death's Breath|r|n"
 
 [h0D3]
 Art=ReplaceableTextures\CommandButtons\BTNFrostWyrm.blp
@@ -9001,7 +9001,7 @@ Name=Destroyer
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=P|cffFFcc00r|romote to Destroyer
-Ubertip="|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000235 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001550|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy |r|cffcccccc|nAbility: |r|cff808080 Triple Attack|r|n"
+Ubertip="|cffccccccDamage: |r|cffff800064-68|r|cffcccccc|nSpeed: |r|cffff80000.44|r|cffcccccc|nRange: |r|cffff8000235 (Ranged)|r|cffcccccc|nHit Points: |r|cffff80001550|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Heavy|r|cffcccccc|nAbility: |r|cff808080 Triple Attack|r|n"
 
 [h22C]
 Art=ReplaceableTextures\CommandButtons\BTNChaosSpaceOrc.blp
@@ -9025,7 +9025,7 @@ Name=Tree of Battle
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Tree of Battle
-Ubertip="|cffccccccDamage: |r|cffff8000201-221|r|cffcccccc|nSpeed: |r|cffff80000.42|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003700|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Fortified|r"
+Ubertip="|cffccccccDamage: |r|cffff8000201-221|r|cffcccccc|nSpeed: |r|cffff80000.42|r|cffcccccc|nRange: |r|cffff8000180 (Melee)|r|cffcccccc|nHit Points: |r|cffff80003700|r|cffcccccc|nAttack Type: |r|cffff8000Pierce|r|cffcccccc|nDefense Type: |r|cffff8000Normal|r"
 
 [h995]
 Art=ReplaceableTextures\CommandButtons\BTNBeastiary.blp
@@ -9081,7 +9081,7 @@ Name=Hellraiser
 Requires=u004
 Specialart=Objects\Spawnmodels\Human\HCancelDeath\HCancelDeath.mdl
 Tip=Promote to Hellraiser
-Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000270 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000690|r|cffcccccc|nAttack Type: |r|cffff8000Magic|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Death Bass, Planed |r|n"
+Ubertip="|cffccccccDamage: |r|cffff80000-0|r|cffcccccc|nSpeed: |r|cffff80000.8|r|cffcccccc|nRange: |r|cffff8000270 (Ranged)|r|cffcccccc|nHit Points: |r|cffff8000690|r|cffcccccc|nAttack Type: |r|cffff8000Chaos|r|cffcccccc|nDefense Type: |r|cffff8000Light|r|cffcccccc|nAbility: |r|cff808080 Death Bass, Planed |r|n"
 
 [h999]
 animProps=upgrade
