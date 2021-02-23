@@ -45,7 +45,7 @@ Targetattach=origin
 [B006]
 Buffart=ReplaceableTextures\CommandButtons\BTNBattleRoar.blp
 Bufftip=Battle Cry
-Buffubertip=This unit damage has been increased.
+Buffubertip=The damage and armor of this unit has been increased.
 Spelldetail=1
 TargetArt=Abilities\Spells\NightElf\BattleRoar\RoarTarget.mdl
 Targetattach=overhead

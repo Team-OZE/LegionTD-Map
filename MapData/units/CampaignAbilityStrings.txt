@@ -264,7 +264,7 @@ Researchhotkey=W
 Researchtip="Spirit of Water, [|cffffcc00Level%d|r] (|cffffcc00W|r)"
 Researchubertip="Summons a water elemental to attack the Archmage's enemies. |nLasts 60 seconds. |n|n|cffffcc00Attacks land and air units.|r |n|n|cffffcc00Level 1|r - 450 hit points, 21 - 29 damage. |n|cffffcc00Level 2|r - 675 hit points, 31 - 39 damage. |n|cffffcc00Level 3|r - 900 hit points, 41 - 49 damage."
 Tip=Diablo
-Ubertip=Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds.(40 seconds cooldown)
+Ubertip=Invokes a diabolic creature that reawakens the dead. Lasts 60 seconds. (40 seconds cooldown)
 
 [A017]
 Art=,
@@ -2284,7 +2284,7 @@ Ubertip="An aura that gives friendly nearby units a damage shield, which deals 4
 Art=ReplaceableTextures\CommandButtons\BTNStormBolt.blp
 Name=Storm Bolt
 Tip=Storm Bolt
-Ubertip="Throws a magical hammer at a target enemy unit, dealing 300 damage and stunning the target for 3 seconds.(1 second on boss)"
+Ubertip="Throws a magical hammer at a target enemy unit, dealing 300 damage and stunning the target for 3 seconds. (1 second on boss)"
 
 [A09Z]
 Art=ReplaceableTextures\PassiveButtons\PASBTNEnvenomedSpear.blp
@@ -2438,7 +2438,7 @@ Ubertip="An aura that gives friendly nearby units a damage shield, which deals 8
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
 Name=Sickness Aura
 Tip=Sickness Aura
-Ubertip=Decreases the damage of nearby enemies by 5%.( Stackable with Despair Aura).
+Ubertip=Decreases the damage of nearby enemies by 5%. (Stackable with Despair Aura)
 
 [A0AS]
 Art=ReplaceableTextures\CommandButtons\BTNDisenchant.blp
